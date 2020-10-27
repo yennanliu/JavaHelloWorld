@@ -24,3 +24,6 @@ hs_err_pid*
 
 # intellJ
 .idea/
+
+# built jar 
+target/
