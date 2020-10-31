@@ -1,3 +1,7 @@
+## Main project
+- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src)
+- [Sprint Web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
+
 ## Quick start
 ```
 mkdir -p src/main/java/hello
@@ -15,7 +19,6 @@ mvn package
 ### Run
 ```
 java -jar target/gs-maven-0.1.0.jar
-
 ```
 
 ### Test 
