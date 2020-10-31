@@ -5,7 +5,16 @@
 3. open the project (*/JavaHelloWorld/SpringWeb*) with Intellj
 4. Run the project via Intellj or CLI : `./mvnw spring-boot:run`
 
-## SpringWeb
+### Build the project
+```bash
+mvn clean package
+```
+### Run
+```bash
+java -jar target/SpringREST-0.0.1-SNAPSHOT.jar
+```
+
+## SpringREST
 - https://spring.io/guides/gs/rest-service/
 - https://github.com/spring-guides/gs-rest-service
 
