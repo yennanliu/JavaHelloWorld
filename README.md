@@ -1,6 +1,6 @@
 ## Main project
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src)
-- [Sprint Web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
+- [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
 
 ## Quick start
 ```
