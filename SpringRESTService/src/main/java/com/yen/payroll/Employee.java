@@ -35,7 +35,7 @@ public class Employee {
         return this.role;
     }
 
-    public void SetId(Long id){
+    public void setId(Long id){
         this.id = id;
     }
 
