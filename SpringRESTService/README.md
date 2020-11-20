@@ -15,5 +15,10 @@ mvn clean package
 java -jar target/SpringREST-0.0.1-SNAPSHOT.jar
 ```
 
+### Progress
+- 20201120
+	- https://spring.io/guides/tutorials/rest/
+	- `EmployeeController.java`
+
 ## SpringRESTService
 - https://spring.io/guides/tutorials/rest/
