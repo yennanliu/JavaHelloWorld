@@ -16,9 +16,6 @@ java -jar target/SpringREST-0.0.1-SNAPSHOT.jar
 
 ## SpringREST
 - https://spring.io/guides/gs/rest-service/
+- https://spring.io/guides/tutorials/rest/
 - https://github.com/spring-guides/gs-rest-service
-
-### Ref
-- https://spring.io/quickstart
 - https://spring.io/guides/gs/rest-service/
-- https://github.com/spring-guides/gs-rest-service

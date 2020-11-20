@@ -16,6 +16,7 @@ public class GreetingController {
 
     // The @GetMapping annotation ensures that HTTP GET requests to /greeting are mapped to the greeting() method.
     @GetMapping("/greeting")
+    // mapping to the "greeting" method
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
