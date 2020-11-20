@@ -18,7 +18,9 @@ java -jar target/SpringREST-0.0.1-SNAPSHOT.jar
 ### Progress
 - 20201120
 	- https://spring.io/guides/tutorials/rest/
-	- `EmployeeController.java`
+	- `EmployeeNotFoundException.java`
+	- next:
+		- `EmployeeNotFoundAdvice.java`
 
 ## SpringRESTService
 - https://spring.io/guides/tutorials/rest/
