@@ -22,8 +22,6 @@ jobs:
         java-version: 1.8
     - name: Build with Maven (JavaHelloWorld)
       run: mvn -B package --file pom.xml
-    - name: Build with Maven (SpringWeb)
-      run: mvn -B package --file SpringWeb/pom.xml
     - name: Build with Maven (SpringREST)
       run: mvn -B package --file SpringREST/pom.xml
     - name: Build with Maven (SpringRESTService)
