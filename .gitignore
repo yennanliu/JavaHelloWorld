@@ -37,3 +37,8 @@ target/maven-status
 
 doc/.DS_Store
 .DS_Store
+
+*.class
+.DS_Store
+src/java/main/JavaBasics/*.class
+.idea/
