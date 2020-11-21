@@ -6,8 +6,10 @@ class TicketWindow extends Thread{
     // re-write run method in Thread
     public void run(){
         while (true){
-            System.out.println(Thread.currentThread().getName() +
-                    " now selling the " + tickets + "ticket now");
+            if (tickets > 0) {
+                System.out.println(Thread.currentThread().getName() +
+                        " is now selling the " + tickets-- + " ticket now");
+            }
         }
     }
 }

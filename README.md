@@ -6,6 +6,7 @@
 		- [CallableDemo_1](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/CallableDemo_1.java)
 	- Thread case study : box office
 		- [ThreadDemo_2](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/ThreadDemo_2.java)
+		- [RunnableDemo_2](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/RunnableDemo_2.java)
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
