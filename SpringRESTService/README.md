@@ -11,7 +11,7 @@
 ```bash
 mvn clean package
 ```
-### Run
+### Run : payroll
 ```bash
 java -jar target/SpringREST-0.0.1-SNAPSHOT.jar
 ```
@@ -32,6 +32,13 @@ curl -X PUT localhost:8080/employees/3 -H 'Content-type:application/json' -d '{"
 curl -X DELETE localhost:8080/employees/3
 curl localhost:8080/employees/3
 
+```
+
+### Run : payrollREST
+```bash
+# The indicated part pipes the output to json_pp and asks it to make your JSON pretty. (Or use whatever tool you like!)
+#                                  v------------------v
+curl -v localhost:8080/employees/1 | json_pp
 ```
 
 ### Progress
