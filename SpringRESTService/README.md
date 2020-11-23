@@ -39,6 +39,8 @@ curl localhost:8080/employees/3
 # The indicated part pipes the output to json_pp and asks it to make your JSON pretty. (Or use whatever tool you like!)
 #                                  v------------------v
 curl -v localhost:8080/employees/1 | json_pp
+
+curl -v localhost:8080/employees | json_pp
 ```
 
 ### Progress
