@@ -15,12 +15,22 @@ mvn clean package
 java -jar target/SpringREST-0.0.1-SNAPSHOT.jar
 ```
 ```bash
-# try the API 
+# 1) try the API : get the list of employees
 curl -v localhost:8080/employees
-# try the API : what if query a not existing employee
+
+# 2) query a not existing employee
 curl -v localhost:8080/employees/99
-# add a new employee via http POST
+
+# 3) add a new employee via http POST
 curl -X POST localhost:8080/employees -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "gardener"}'
+
+# 4) update the existing employee
+curl -X PUT localhost:8080/employees/3 -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "ring bearer"}'
+
+# 5) delete an existing employee
+curl -X DELETE localhost:8080/employees/3
+curl localhost:8080/employees/3
+
 ```
 
 ### Progress
