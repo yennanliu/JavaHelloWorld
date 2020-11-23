@@ -1,4 +1,5 @@
 ## SpringRESTService
+- We tried to build the [payroll](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringRESTService/src/main/java/com/yen/payroll) as service V1, however it's not "RESTful enough" (meaning : lack some necessary feature as a RESTful service), so now we have the [payrollREST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringRESTService/src/main/java/com/yen/payrollREST) as our service V2 as a RESTful one.
 
 ### Quick start
 1. Create a "web" project via https://start.spring.io/
