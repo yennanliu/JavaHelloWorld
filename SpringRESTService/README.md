@@ -14,6 +14,10 @@ mvn clean package
 ```bash
 java -jar target/SpringREST-0.0.1-SNAPSHOT.jar
 ```
+```bash
+# hit the API endpoint
+curl -v localhost:8080/employees
+```
 
 ### Progress
 - 20201120
