@@ -49,6 +49,11 @@ curl -v localhost:8080/employees | json_pp
 	- `EmployeeNotFoundException.java`
 	- next:
 		- `EmployeeNotFoundAdvice.java`
+- 20201123
+	- new app : `/payrollREST`
+	- next:
+		- https://spring.io/guides/tutorials/rest/
+		- EmployeeController (Injecting EmployeeModelAssembler into the controller)
 
 ## SpringRESTService
 - https://spring.io/guides/tutorials/rest/

@@ -43,6 +43,9 @@ class EmployeeController {
 
         List<EntityModel<Employee>> employees = repository.findAll().stream()
                 .map(employee -> EntityModel.of(employee,
+                        // ***
+                        // What is the point of adding all these links? It makes it possible to evolve REST services over time. Existing links can be maintained while new links are added in the future. Newer clients may take advantage of the new links, while legacy clients can sustain themselves on the old links. This is especially helpful if services get relocated and moved around. As long as the link structure is maintained, clients can STILL find and interact with things.
+                        // ***
                         linkTo(methodOn(EmployeeController.class).one(employee.getId())).withSelfRel(),
                         linkTo(methodOn(EmployeeController.class).all()).withRel("employees")))
                 .collect(Collectors.toList());
