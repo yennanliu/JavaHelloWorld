@@ -15,8 +15,12 @@ mvn clean package
 java -jar target/SpringREST-0.0.1-SNAPSHOT.jar
 ```
 ```bash
-# hit the API endpoint
+# try the API 
 curl -v localhost:8080/employees
+# try the API : what if query a not existing employee
+curl -v localhost:8080/employees/99
+# add a new employee via http POST
+curl -X POST localhost:8080/employees -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "gardener"}'
 ```
 
 ### Progress
