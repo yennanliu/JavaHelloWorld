@@ -102,19 +102,41 @@ class EmployeeController {
         return assembler.toModel(employee);
     }
 
-    @PutMapping("/employees/{id}")
-    Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
+    //    @PutMapping("/employees/{id}")
+    //    Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
+    //
+    //        return repository.findById(id)
+    //                .map(employee -> {
+    //                    employee.setName(newEmployee.getName());
+    //                    employee.setRole(newEmployee.getRole());
+    //                    return repository.save(employee);
+    //                })
+    //                .orElseGet(() -> {
+    //                    newEmployee.setId(id);
+    //                    return repository.save(newEmployee);
+    //                });
+    //    }
 
-        return repository.findById(id)
+    // The Employee object built from the save() operation is then wrapped using the EmployeeModelAssembler into an EntityModel<Employee> object. Using the getRequiredLink() method, you can retrieve the Link created by the EmployeeModelAssembler with a SELF rel. This method returns a Link which must be turned into a URI with the toUri method.
+    @PutMapping("/employees/{id}")
+    ResponseEntity<?> replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
+
+        Employee updatedEmployee = repository.findById(id) //
                 .map(employee -> {
                     employee.setName(newEmployee.getName());
                     employee.setRole(newEmployee.getRole());
                     return repository.save(employee);
-                })
+                }) //
                 .orElseGet(() -> {
                     newEmployee.setId(id);
                     return repository.save(newEmployee);
                 });
+
+        EntityModel<Employee> entityModel = assembler.toModel(updatedEmployee);
+
+        return ResponseEntity //
+                .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
+                .body(entityModel);
     }
 
     @DeleteMapping("/employees/{id}")
