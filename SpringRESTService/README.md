@@ -37,10 +37,15 @@ curl localhost:8080/employees/3
 ### Run : payrollREST
 ```bash
 # The indicated part pipes the output to json_pp and asks it to make your JSON pretty. (Or use whatever tool you like!)
-#                                  v------------------v
+
+# get all employees
+curl -v localhost:8080/employees | json_pp
+
+# get employee with id = 1 
 curl -v localhost:8080/employees/1 | json_pp
 
-curl -v localhost:8080/employees | json_pp
+# add new employee
+curl -v -X POST localhost:8080/employees -H 'Content-Type:application/json' -d '{"name": "Samwise Gamgee", "role": "gardener"}'
 ```
 
 ### Progress
