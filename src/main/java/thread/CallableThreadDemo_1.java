@@ -53,5 +53,3 @@ class MyCallable1000 implements Callable<Integer>{
         return sum;
     }
 }
-
-
