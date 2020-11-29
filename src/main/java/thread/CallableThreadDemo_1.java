@@ -20,6 +20,8 @@ public class CallableThreadDemo_1 {
         t2.start();
         t3.start();
 
+        // will be waiting till all ft1.get(), ft2.get(), ft3.get() finished, (get method)
+        // then do the next command
         System.out.println(">>> MAIN SUM = " + (ft1.get() + ft2.get() + ft3.get()));
     }
 }
