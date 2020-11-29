@@ -25,8 +25,12 @@ class EmployeeController {
     // An EmployeeRepository is injected by constructor into the controller.
     private final EmployeeRepository repository;
 
-    EmployeeController(EmployeeRepository repository) {
+    private final EmployeeModelAssembler assembler;
+
+    EmployeeController(EmployeeRepository repository, EmployeeModelAssembler assembler) {
+
         this.repository = repository;
+        this.assembler = assembler;
     }
 
     // We have routes for ehateoasach operations (@GetMapping, @PostMapping, @PutMapping and @DeleteMapping, corresponding to HTTP GET, POST, PUT, and DELETE calls). (NOTE: It’s useful to read each method and understand what they do.)
@@ -39,18 +43,28 @@ class EmployeeController {
     // Not quite.
     // Since we’re talking REST, it should encapsulate collections of employee resources.
     // That’s why you fetch all the employees, but then transform them into a list of EntityModel<Employee> objects. (Thanks Java 8 Stream API!)
+    //    CollectionModel<EntityModel<Employee>> all() {
+    //
+    //        List<EntityModel<Employee>> employees = repository.findAll().stream()
+    //                .map(employee -> EntityModel.of(employee,
+    //                        // ***
+    //                        // What is the point of adding all these links? It makes it possible to evolve REST services over time. Existing links can be maintained while new links are added in the future. Newer clients may take advantage of the new links, while legacy clients can sustain themselves on the old links. This is especially helpful if services get relocated and moved around. As long as the link structure is maintained, clients can STILL find and interact with things.
+    //                        // ***
+    //                        linkTo(methodOn(EmployeeController.class).one(employee.getId())).withSelfRel(),
+    //                        linkTo(methodOn(EmployeeController.class).all()).withRel("employees")))
+    //                .collect(Collectors.toList());
+    //
+    //        return CollectionModel.of(employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
+
+    //Applying the same thing in the aggregate root controller method is more impressive:
+    //Getting aggregate root resource using the assembler
+    // The code is, again, almost the same (as above), however you get to replace all that EntityModel<Employee> creation logic with map(assembler::toModel). Thanks to Java 8 method references, it’s super easy to plug it in and simplify your controller.
     CollectionModel<EntityModel<Employee>> all() {
 
-        List<EntityModel<Employee>> employees = repository.findAll().stream()
-                .map(employee -> EntityModel.of(employee,
-                        // ***
-                        // What is the point of adding all these links? It makes it possible to evolve REST services over time. Existing links can be maintained while new links are added in the future. Newer clients may take advantage of the new links, while legacy clients can sustain themselves on the old links. This is especially helpful if services get relocated and moved around. As long as the link structure is maintained, clients can STILL find and interact with things.
-                        // ***
-                        linkTo(methodOn(EmployeeController.class).one(employee.getId())).withSelfRel(),
-                        linkTo(methodOn(EmployeeController.class).all()).withRel("employees")))
+        List<EntityModel<Employee>> employees = repository.findAll().stream() //
+                .map(assembler::toModel) //
                 .collect(Collectors.toList());
-
-        return CollectionModel.of(employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
+    return CollectionModel.of(employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
     }
 
     @PostMapping("/employees")
@@ -66,11 +80,14 @@ class EmployeeController {
                 .orElseThrow(() -> new EmployeeNotFoundException(id));
 
         // The return type of the method has changed from Employee to EntityModel<Employee>. EntityModel<T> is a generic container from Spring HATEOAS that includes not only the data but a collection of links.
-        return EntityModel.of(employee,
-                // linkTo(methodOn(EmployeeController.class).one(id)).withSelfRel() asks that Spring HATEOAS build a link to the EmployeeController 's one() method, and flag it as a self link.
-                linkTo(methodOn(EmployeeController.class).one(id)).withSelfRel(),
-                // linkTo(methodOn(EmployeeController.class).all()).withRel("employees") asks Spring HATEOAS to build a link to the aggregate root, all(), and call it "employees".
-                linkTo(methodOn(EmployeeController.class).all()).withRel("employees"));
+        //        return EntityModel.of(employee,
+        //                // linkTo(methodOn(EmployeeController.class).one(id)).withSelfRel() asks that Spring HATEOAS build a link to the EmployeeController 's one() method, and flag it as a self link.
+        //                linkTo(methodOn(EmployeeController.class).one(id)).withSelfRel(),
+        //                // linkTo(methodOn(EmployeeController.class).all()).withRel("employees") asks Spring HATEOAS to build a link to the aggregate root, all(), and call it "employees".
+        //                linkTo(methodOn(EmployeeController.class).all()).withRel("employees"));
+
+        // This code is almost the same (as above), except instead of creating the EntityModel<Employee> instance here, you delegate it to the assembler. Maybe that doesn’t look like much?
+        return assembler.toModel(employee);
     }
 
     @PutMapping("/employees/{id}")
