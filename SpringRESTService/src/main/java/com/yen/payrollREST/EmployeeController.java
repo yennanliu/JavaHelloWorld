@@ -139,8 +139,15 @@ class EmployeeController {
                 .body(entityModel);
     }
 
+    //    @DeleteMapping("/employees/{id}")
+    //    void deleteEmployee(@PathVariable Long id) {
+    //        repository.deleteById(id);
+    //    }
+
+    // That employee resource has now been updated and the location URI sent back. Finally, update the DELETE operation suitably:
     @DeleteMapping("/employees/{id}")
-    void deleteEmployee(@PathVariable Long id) {
+    ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
         repository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }
