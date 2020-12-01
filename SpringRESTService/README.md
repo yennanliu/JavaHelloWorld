@@ -65,6 +65,15 @@ curl -v -X POST localhost:8080/employees -H 'Content-Type:application/json' -d '
 		- https://spring.io/guides/tutorials/rest/
 		- That employee resource has now been updated and the location URI sent back. Finally, update the DELETE operation suitably:
 		- `Handling DELETE requests`
+- 20201201
+	- next:
+		- app : ``/payrollREST``
+		- https://spring.io/guides/tutorials/rest/
+		- Spring Data JPA’s JpaRepository base interface
+		- ```java
+		interface OrderRepository extends JpaRepository<Order, Long> {}
+		```
+		- inks/src/main/java/payroll/OrderController.java
 
 ## SpringRESTService
 - https://spring.io/guides/tutorials/rest/
