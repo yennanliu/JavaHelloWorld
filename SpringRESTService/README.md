@@ -74,6 +74,11 @@ curl -v -X POST localhost:8080/employees -H 'Content-Type:application/json' -d '
 		interface OrderRepository extends JpaRepository<Order, Long> {}
 		```
 		- inks/src/main/java/payroll/OrderController.java
+-20201206
+	- next:
+		- app : ``/payrollREST``
+		- https://spring.io/guides/tutorials/rest/
+		- links/src/main/java/payroll/OrderModelAssembler.java
 
 ## SpringRESTService
 - https://spring.io/guides/tutorials/rest/
