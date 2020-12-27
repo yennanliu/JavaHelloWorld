@@ -1,7 +1,9 @@
 package thread;
 
-public class ThreadWithPriority {
-    public static void main(String[] args) {
+import jdk.nashorn.internal.runtime.regexp.joni.exception.InternalException;
+
+public class ThreadSleep {
+    public static void main(String[] args){
         // define 2 thread objects
 
         // thread 1
@@ -9,8 +11,16 @@ public class ThreadWithPriority {
             for (int i = 0; i < 10; i++) {
                 System.out.println(
                         Thread.currentThread().getName() + "now output stream i = " + i);
+                if (i == 2){
+                    try{
+                        // sleep while i = 2, in order to let other thread run first
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
             }
-        }, "LOW PRIORITY THREAD");
+        }, "THREAD-1");
 
         // thread 2
         Thread thread2 = new Thread(() ->{
@@ -18,11 +28,7 @@ public class ThreadWithPriority {
                 System.out.println(
                         Thread.currentThread().getName() + "now output stream j = " + j);
             }
-        }, "HIGH PRIORITY THREAD");
-
-        // set up the thread priority
-        thread1.setPriority(Thread.MIN_PRIORITY);
-        thread2.setPriority(10);
+        }, "THREAD-2");
 
         // run
         thread1.start();

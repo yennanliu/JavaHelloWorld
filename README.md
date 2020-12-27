@@ -7,9 +7,11 @@
 	- Thread case study : box office
 		- [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
 		- [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
-	- [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
-	- [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
-	- [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
+	- Other Thread examples
+		- [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
+		- [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
+		- [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
+		- [ThreadSleep](./src/main/java/thread/ThreadSleep.java)
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
