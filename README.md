@@ -1,16 +1,16 @@
 ## Main project
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src)
 	- Thread demo
-		- [ThreadDemo_1](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/ThreadDemo_1.java)
-		- [RunnableDemo_1](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/RunnableDemo_1.java)
-		- [CallableDemo_1](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/CallableDemo_1.java)
+		- [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
+		- [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
+		- [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
 	- Thread case study : box office
-		- [ThreadDemo_2](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/ThreadDemo_2.java)
-		- [RunnableDemo_2](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/RunnableDemo_2.java)
-	- [CallableThreadDemo_1](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/CallableThreadDemo_1.java)
-	- [DamonThread_Demo1](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/DamonThread_Demo1.java)
-	- [ThreadWithPriority](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/ThreadWithPriority.java)
-	
+		- [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
+		- [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
+	- [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
+	- [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
+	- [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
+
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
 - [Spring RESTService](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringRESTService)
