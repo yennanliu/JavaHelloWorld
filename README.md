@@ -5,11 +5,11 @@
 		- [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
 		- [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
 	- Thread case study : box office
-		- # part 1
+		- `part 1`
 		- [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
 		- [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
-		- # part 2
-		- [SalesThread](./src/main/java/thread/SalesThread.java)
+		- `part 2`
+		- [MultiSalesThread](./src/main/java/thread/MultiSalesThread.java.java)
 	- Other Thread examples
 		- [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
 		- [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
