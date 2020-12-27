@@ -45,4 +45,4 @@ src/java/main/JavaBasics/*.class
 SpringRESTService/SpringRESTService.iml
 
 # maven
-gs-maven*
+#gs-maven*
