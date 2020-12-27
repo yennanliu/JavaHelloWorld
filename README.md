@@ -22,6 +22,9 @@
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
 - [Spring RESTService](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringRESTService)
+- Spring
+- SpringMVC
+- Mybatis
 
 ## Relative Project
 - [utility_Java](https://github.com/yennanliu/utility_Java)
@@ -52,3 +55,5 @@ mvn test
 
 ### Ref
 - https://spring.io/guides/gs/maven/
+- Java learning ref
+	- https://www.itread01.com/content/1542679410.html
