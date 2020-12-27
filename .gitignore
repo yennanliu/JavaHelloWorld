@@ -43,3 +43,6 @@ doc/.DS_Store
 src/java/main/JavaBasics/*.class
 .idea/
 SpringRESTService/SpringRESTService.iml
+
+# maven
+gs-maven*
