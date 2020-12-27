@@ -57,3 +57,5 @@ mvn test
 - https://spring.io/guides/gs/maven/
 - Java learning ref
 	- https://www.itread01.com/content/1542679410.html
+- Spring MVC Tutorial
+	- http://tw.gitbook.net/spring/spring_overview.html
