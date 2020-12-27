@@ -10,7 +10,7 @@ public class ThreadSleep {
         Thread thread1 = new Thread(() ->{
             for (int i = 0; i < 10; i++) {
                 System.out.println(
-                        Thread.currentThread().getName() + "now output stream i = " + i);
+                        Thread.currentThread().getName() + " now output stream i = " + i);
                 if (i == 2){
                     try{
                         // sleep while i = 2, in order to let other thread run first
@@ -26,7 +26,7 @@ public class ThreadSleep {
         Thread thread2 = new Thread(() ->{
             for (int j = 0; j < 10; j++) {
                 System.out.println(
-                        Thread.currentThread().getName() + "now output stream j = " + j);
+                        Thread.currentThread().getName() + " now output stream j = " + j);
             }
         }, "THREAD-2");
 

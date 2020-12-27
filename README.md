@@ -12,6 +12,7 @@
 		- [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
 		- [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
 		- [ThreadSleep](./src/main/java/thread/ThreadSleep.java)
+		- [ThreadYield](./src/main/java/thread/ThreadYield.java)
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
