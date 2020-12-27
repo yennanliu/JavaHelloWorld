@@ -23,7 +23,8 @@ class SalesThread implements Runnable {
                     e.printStackTrace();
                 }
                 System.out.println(
-                        Thread.currentThread().getName() + " is selling " + tickets + " ticket");
+                        // tickets-- is equal as tickets = tickets - 1
+                        Thread.currentThread().getName() + " is selling " + tickets-- + " ticket");
             }
         }
     }

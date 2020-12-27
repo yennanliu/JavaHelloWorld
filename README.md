@@ -10,6 +10,7 @@
 			- [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
 		- `part 2`
 			- [MultiSalesThread](./src/main/java/thread/MultiSalesThread.java)
+			- [MultiSalesThreadSynchronized](./src/main/java/thread/MultiSalesThreadSynchronized.java)
 	- Other Thread examples
 		- [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
 		- [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
