@@ -10,6 +10,9 @@
 - https://github.com/spring-guides/gs-rest-service
 
 ### Ref
-- https://spring.io/quickstart
-- https://spring.io/guides/gs/rest-service/
-- https://github.com/spring-guides/gs-rest-service
+- Main ref 1
+	- https://spring.io/quickstart
+	- https://spring.io/guides/gs/rest-service/
+	- https://github.com/spring-guides/gs-rest-service
+- Main ref 2
+	- https://ithelp.ithome.com.tw/users/20107812/ironman/1538?page=1
