@@ -60,4 +60,8 @@ mvn test
 - Java learning ref
 	- https://www.itread01.com/content/1542679410.html
 - Spring MVC Tutorial
-	- http://tw.gitbook.net/spring/spring_overview.html
+	- EN
+		- https://www.tutorialspoint.com/spring/index.htm
+	- ZH
+		- https://ithelp.ithome.com.tw/users/20107812/ironman/1538
+		- http://tw.gitbook.net/spring/spring_overview.html
