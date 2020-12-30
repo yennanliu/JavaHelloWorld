@@ -18,7 +18,7 @@
 		- [ThreadSleep](./src/main/java/thread/ThreadSleep.java)
 		- [ThreadYield](./src/main/java/thread/ThreadYield.java)
 		- [ThreadJoin](./src/main/java/thread/ThreadJoin.java)
-
+		- [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
 - [Spring RESTService](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringRESTService)
