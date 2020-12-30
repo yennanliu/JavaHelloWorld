@@ -9,6 +9,15 @@
 - https://spring.io/guides/gs/rest-service/
 - https://github.com/spring-guides/gs-rest-service
 
+### MVC
+	- M : model : 
+		- the data model that define data for web services and vice versa.
+		- web service <--- data model ---> DB, other persistent data storage
+	- V : view : 
+		- prepare the page for web service with data from "model" layer
+	- C : controller
+		- control the information interaction within different layers (M, V)
+
 ### Ref
 - Main ref 1
 	- https://spring.io/quickstart
