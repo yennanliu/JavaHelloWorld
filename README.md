@@ -23,7 +23,8 @@
 		- [LockThread](./src/main/java/thread/ThreadLock.java)
 	- Getter & Setter
 		- [GetterSetterDemo1](./src/main/java/Basics/GetterSetterDemo1.java)
-		
+		- [GetterSetterDemo2](./src/main/java/Basics/GetterSetterDemo2.java)
+
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
 - [Spring RESTService](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringRESTService)

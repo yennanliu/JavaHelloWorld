@@ -9,7 +9,12 @@ public class GetterSetterDemo1 {
         // run getter -> set up instance attribution
         hello.setHello("yaaaaa helo helo");
         // run setter -> get instance attribution
-        System.out.println(hello.getHello());
+        System.out.println("output = " + hello.getHello());
+
+        // run 2
+        GetterSetterDemo1 hello2 = new GetterSetterDemo1();
+        hello2.setHello("");
+        System.out.println( "output = " + hello2.getHello());
     }
 
     // private variable
