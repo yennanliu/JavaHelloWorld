@@ -79,10 +79,14 @@ mvn test
 - Java learning ref
 	- https://www.itread01.com/content/1542679410.html
 - Spring Boot API Tutorial
-	- https://www.tutorialspoint.com/spring_boot/spring_boot_building_restful_web_services.htm
-	- https://mari-azevedo.medium.com/building-a-restful-api-with-java-and-spring-framework-part-1-6c364a885831
-		- https://github.com/mariazevedo88/travels-api
-		- https://github.com/mariazevedo88/travels-java-api
+	- [tutorialspoint Spring Boot API](https://www.tutorialspoint.com/spring_boot/spring_boot_building_restful_web_services.htm)
+	- Build API for travel management
+		- [part 1](https://mari-azevedo.medium.com/building-a-restful-api-with-java-and-spring-framework-part-1-6c364a885831)
+		- [part 2](https://mari-azevedo.medium.com/construindo-uma-api-restful-com-java-e-spring-framework-parte-2-7a6c3e2ad453)
+		- [part 3](https://mari-azevedo.medium.com/construindo-uma-api-restful-com-java-e-spring-framework-parte-3-ab34fcc00dee)
+		- [part 4](https://mari-azevedo.medium.com/construindo-uma-api-restful-com-java-e-spring-framework-parte-4-6287f68ffc3c?source=follow_footer---------0----------------------------)
+			- https://github.com/mariazevedo88/travels-api
+			- https://github.com/mariazevedo88/travels-java-api
 - Spring MVC Tutorial
 	- EN
 		- https://www.tutorialspoint.com/spring/index.htm
