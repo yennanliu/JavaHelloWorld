@@ -24,6 +24,20 @@
 	- Getter & Setter
 		- [GetterSetterDemo1](./src/main/java/Basics/GetterSetterDemo1.java)
 		- [GetterSetterDemo2](./src/main/java/Basics/GetterSetterDemo2.java)
+	- Constructor
+		- Constructor can define value to its attribution when create the object
+		- Constructor aka Constructoring method -> for new object initialization
+		- if there NO input arguments
+			- java will make one with `NO Constructor` as default
+		- if there IS input arguments
+			- the one will override the default one (one with NO Constructor as default)
+		- java form
+		```java
+		[decorator] method(parameters){
+			method code
+		}
+		```
+		- [Constructor1](./src/main/java/Basics/ConstructorDemo1.java)
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
