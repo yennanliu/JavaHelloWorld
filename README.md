@@ -1,5 +1,5 @@
 ## Main project
-- [https://github.com/yennanliu/utility_Java](utility_Java) : legacy java intro project
+- [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java intro project
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src)
 	- Thread demo
 		- [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
