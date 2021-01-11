@@ -1,5 +1,7 @@
 package com.yen.model;
 
+// The POJO class
+
 public class Product {
     private String id;
     private String name;
