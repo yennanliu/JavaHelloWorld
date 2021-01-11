@@ -1,9 +1,11 @@
 package com.yen.SprintBootREST;
 
+/*
+ * Please use "com.yen.controller.DemoAPP" rather than this one, will fix soon.
+ */
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-//import com.yen.controller.ProductServiceController;
 
 @SpringBootApplication
 public class SprintBootRestApplication {
@@ -11,3 +13,4 @@ public class SprintBootRestApplication {
 		SpringApplication.run(SprintBootRestApplication.class, args);
 	}
 }
+
