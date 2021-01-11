@@ -1,4 +1,5 @@
 ## Main project
+- [https://github.com/yennanliu/utility_Java](utility_Java) : legacy java intro project
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src)
 	- Thread demo
 		- [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
@@ -77,9 +78,13 @@ mvn test
 - https://spring.io/guides/gs/maven/
 - Java learning ref
 	- https://www.itread01.com/content/1542679410.html
+- Spring Boot API Tutorial
+	- https://www.tutorialspoint.com/spring_boot/spring_boot_building_restful_web_services.htm
+	- https://mari-azevedo.medium.com/building-a-restful-api-with-java-and-spring-framework-part-1-6c364a885831
+		- https://github.com/mariazevedo88/travels-api
+		- https://github.com/mariazevedo88/travels-java-api
 - Spring MVC Tutorial
 	- EN
 		- https://www.tutorialspoint.com/spring/index.htm
 	- ZH
-		- https://ithelp.ithome.com.tw/users/20107812/ironman/1538
 		- http://tw.gitbook.net/spring/spring_overview.html
