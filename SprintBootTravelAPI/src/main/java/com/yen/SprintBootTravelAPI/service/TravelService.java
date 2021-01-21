@@ -1,4 +1,5 @@
-// TODO: fix the class
+////TODO: fix the class
+//
 //package com.yen.SprintBootTravelAPI.service;
 //
 //import java.io.IOException;
@@ -57,7 +58,9 @@
 //    }
 //
 //    private LocalDateTime parseStartDate(JSONObject travel) {
-//        var startDate = (String) travel.get("startDate");
+//        travel = new Travel;
+//        //String startDate = travel.get("startDate");
+//        String startDate = "2021-01-01";
 //        DateTimeFormatter formatter = DateTimeFormatter.ISO_INSTANT;
 //        return ZonedDateTime.parse(startDate, formatter.withZone(ZoneId.of("UTC"))).toLocalDateTime();
 //    }
@@ -79,7 +82,7 @@
 //
 //        travel.setOrderNumber(orderNumber != null ? orderNumber : travel.getOrderNumber());
 //        travel.setAmount(jsonTravel.get("amount") != null ? parseAmount(jsonTravel) : travel.getAmount());
-//        travel.setStartDate(jsonTravel.get("startDate") != null ? parseStartDate(jsonTravel) : travel.getStartDate());
+//        travel.s/**/etStartDate(jsonTravel.get("startDate") != null ? parseStartDate(jsonTravel) : travel.getStartDate());
 //        travel.setEndDate(jsonTravel.get("endDate") != null ? parseEndDate(jsonTravel) : travel.getEndDate());
 //        travel.setType(type != null ? TravelTypeEnum.getEnum(type) : travel.getType());
 //    }
