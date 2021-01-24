@@ -8,6 +8,11 @@ group = 'com.yen'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+jar {
+	baseName = 'SpringSearchTwitter'
+	version = '0.0.1-SNAPSHOT'
+}
+
 repositories {
 	mavenCentral()
 }
