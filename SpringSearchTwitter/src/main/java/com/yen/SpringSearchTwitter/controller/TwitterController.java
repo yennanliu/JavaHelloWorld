@@ -15,11 +15,17 @@ public class TwitterController {
     @Autowired
     private Twitter twitter;
 
+    //    @RequestMapping("/twitter")
+    //    public String helloTwitter(@RequestParam(defaultValue = "ETF") String search, Model model) {
+    //        SearchResults searchResults = twitter.searchOperations().search(search);
+    //        String text = searchResults.getTweets().get(0).getText();
+    //        return "resultPage";
+    //    }
+
     @RequestMapping("/twitter")
-    public String helloTwitter(@RequestParam(defaultValue = "masterSpringMVC4") String search, Model model) {
+    public String helloTwitter(@RequestParam(defaultValue = "ETF") String search, Model model){
         SearchResults searchResults = twitter.searchOperations().search(search);
         String text = searchResults.getTweets().get(0).getText();
         return "resultPage";
     }
-
 }

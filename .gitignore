@@ -46,3 +46,6 @@ SpringRESTService/SpringRESTService.iml
 
 # maven
 gs-maven*
+
+# SpringSearchTwitter
+SpringSearchTwitter/src/main/resources/application.properties
