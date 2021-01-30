@@ -13,6 +13,8 @@ import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.ConnectionRepository;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.connect.web.ConnectController;
+import org.springframework.social.twitter.api.Twitter;
+import org.springframework.social.twitter.api.impl.TwitterTemplate;
 
 @Configuration
 public class SocialConfig implements SocialConfigurer {
@@ -43,9 +45,11 @@ public class SocialConfig implements SocialConfigurer {
         return new ConnectController(connectionFactoryLocator, connectionRepository);
     }
 
+
     @Bean
-    public org.springframework.social.twitter.api.Twitter twitter() {
-        return null;
+    public Twitter twitter(final @Value("${spring.social.twitter.appId}") String appId,
+                           final @Value("${spring.social.twitter.appSecret}") String appSecret) {
+        return new TwitterTemplate(appId, appSecret);
     }
 
 }
