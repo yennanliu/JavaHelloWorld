@@ -39,6 +39,8 @@
 		}
 		```
 		- [Constructor1](./src/main/java/Basics/ConstructorDemo1.java)
+	- Others
+		-[GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
