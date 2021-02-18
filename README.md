@@ -33,12 +33,14 @@
 		- if there IS input arguments
 			- the one will override the default one (one with NO Constructor as default)
 		- java form
+
 		```java
 		[decorator] method(parameters){
 			method code
 		}
 		```
 		- [Constructor1](./src/main/java/Basics/ConstructorDemo1.java)
+		
 	- Others
 		-[GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
 	- Array
