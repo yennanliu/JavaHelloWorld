@@ -3,13 +3,13 @@
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic1
     - Array
-        -[Array1D](./src/main/java/Basics/Array1D.java)
+        - [Array1D](./src/main/java/Basics/Array1D.java)
         - Array in memory (java)
             - every valuable in the method is "local" valuable 
             - "local" valuable will be put into the "Stack"
             - Any object from "new" will be put into the "Heap"
     - Others
-        -[GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
+        - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic2
     - Thread demo
