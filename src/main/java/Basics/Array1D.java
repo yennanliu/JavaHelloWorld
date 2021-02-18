@@ -6,6 +6,10 @@ public class Array1D {
     public static void main(String[] args){
         System.out.println("Array1D ...");
 
+        /* every valuable in the method is "local" valuable (method = main in this example)*/
+        /* "local" valuable will be put into the "Stack" */
+        /* Any object from "new" will be put into the "Heap" */
+
         // let's define some array!
         Integer[] arr1  = new Integer[]{1,2,3};
 
