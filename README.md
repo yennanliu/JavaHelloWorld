@@ -1,6 +1,13 @@
 ## Main project
 - [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java intro project
-- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src)
+
+- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic1
+	- Array
+		-[Array1D](./src/main/java/Basics/Array1D.java)
+	- Others
+		-[GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
+
+- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic2
 	- Thread demo
 		- [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
 		- [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
@@ -40,11 +47,6 @@
 		}
 		```
 		- [Constructor1](./src/main/java/Basics/ConstructorDemo1.java)
-		
-	- Others
-		-[GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
-	- Array
-		-[Array1D](./src/main/java/Basics/Array1D.java)
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
