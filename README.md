@@ -8,6 +8,8 @@
             - every valuable in the method is "local" valuable 
             - "local" valuable will be put into the "Stack"
             - Any object from "new" will be put into the "Heap"
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array1DinMemory.svg"></p>
+
     - Others
         - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
 
