@@ -2,6 +2,8 @@
 - [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java intro project
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic1
+    - Basic operator
+        - [TernaryOperator](./src/main/java/Basics/TernaryOperator.java)
     - Array
         - [Array1D](./src/main/java/Basics/Array1D.java)
         - Array in memory (java)
