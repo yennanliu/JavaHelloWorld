@@ -6,11 +6,14 @@
         - [TernaryOperator](./src/main/java/Basics/TernaryOperator.java)
     - Array
         - [Array1D](./src/main/java/Basics/Array1D.java)
+        - [Array2D](./src/main/java/Basics/Array2D.java)
         - Array in memory (java)
             - every valuable in the method is "local" valuable 
             - "local" valuable will be put into the "Stack"
             - Any object from "new" will be put into the "Heap"
+- Array1D:
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array1DimMemory.svg"></p>
+- Array2D:
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array2DimMemory.svg"></p>
 
     - Others
