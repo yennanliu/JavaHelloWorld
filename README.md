@@ -62,8 +62,8 @@
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
-        - [staticDemo 1](./src/main/java/thread/staticDemo1.java)
-        - [staticDemo 2](./src/main/java/thread/staticDemo2.java)
+        - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
+        - [staticDemo 2](./src/main/java/Basics/staticDemo2.java)
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
