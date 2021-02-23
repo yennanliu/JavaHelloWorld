@@ -11,6 +11,8 @@
             - every valuable in the method is "local" valuable 
             - "local" valuable will be put into the "Stack"
             - Any object from "new" will be put into the "Heap"
+    - Class
+        - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
 - Array1D:
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array1DimMemory.svg"></p>
 - Array2D:
