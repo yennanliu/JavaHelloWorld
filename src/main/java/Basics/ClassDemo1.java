@@ -2,6 +2,9 @@ package Basics;
 
 // https://www.youtube.com/watch?v=5_Ltjn8gObw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=180
 
+// im-memory pic :
+// https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ClassDemo1.png
+
 public class ClassDemo1 {
     public static void main(String [] args){
         // run
