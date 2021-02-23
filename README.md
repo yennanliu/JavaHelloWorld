@@ -13,6 +13,7 @@
             - Any object from "new" will be put into the "Heap"
     - Class
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
+        - [Attr VS Local Variable1 Demo1](./src/main/java/Basics/AttrVSLocalVariable1.java)
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_in_memory.svg"></p>
 
 - Array1D:
