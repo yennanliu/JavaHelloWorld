@@ -75,9 +75,10 @@
             - [ref1](https://blog.csdn.net/Richchigga/article/details/103133472)
             - [ref2](https://www.itread01.com/content/1547084653.html)
             - [ref-scala](https://github.com/yennanliu/utility_Scala)
+            - [SingletonDemo1](./src/main/java/Basics/SingletonDemo1.java)
             ```
             # Steps
-            1.  make constructor private
+            1. make constructor private
             2. make object inside class
             3. export a public static method 
             4. implement the code
@@ -85,20 +86,23 @@
             ```java
             // https://www.youtube.com/watch?v=b-UAaq-G4uI&list=PLmOn9nNkQxJEqCNXBu5ozT_26xwvUbHyE&index=91
 
-            // 餓漢式, cros : could create a class, but not uses it -> resource wasting
+            // Method 1) : 餓漢式
+            // pros : Thread safety
+            // cons : could create a class, but not uses it -> resource wasting
             class Single{
-                public Single(); // make constructor private
+                public Single() {}; // make constructor private
                 private static Single s = new Single();
                 public static Single getInstance(){
                     return s;
                 }
-
             }
 
-            // 懶漢式
+            // Method 2) : 懶漢式
+            // pros : no resource wasting, only make the instance when need it
+            // cons : Thread safety concern
             class Single2{
                 private Single2(){}
-                private static Single2 s;
+                private static Single2 s = null;
                 public static Single2 getInstance(){
                     if (s == null){
                         s = new Single2();
@@ -107,6 +111,20 @@
                 }
             }
 
+            // Method 3) : static internal method
+            // optimize with above method 1), and 2)
+            // pros : 1. no resource wasting, only make the instance when need it
+            // pros : 2. Thread safety (no interruption when running)
+            class Singleton{
+                private Singleton(){};
+                private static class SingltonInstance{ // make it private
+                    private static  final Singleton INSTANCE = new Singleton();
+                }
+                // export below static method to public
+                public static Singleton getInstance(){
+                    return SingltonInstance.INSTANCE;
+                }
+            }
             ```
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
