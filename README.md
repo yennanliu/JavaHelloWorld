@@ -69,6 +69,45 @@
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
         - [staticDemo 2](./src/main/java/Basics/staticDemo2.java)
+    - Singleton pattern
+        - Only allow some classes be existing in some specific class instances
+            -> can save resources
+            - [ref1](https://blog.csdn.net/Richchigga/article/details/103133472)
+            - [ref2](https://www.itread01.com/content/1547084653.html)
+            - [ref-scala](https://github.com/yennanliu/utility_Scala)
+            ```
+            # Steps
+            1.  make constructor private
+            2. make object inside class
+            3. export a public static method 
+            4. implement the code
+            ```
+            ```java
+            // https://www.youtube.com/watch?v=b-UAaq-G4uI&list=PLmOn9nNkQxJEqCNXBu5ozT_26xwvUbHyE&index=91
+
+            // 餓漢式, cros : could create a class, but not uses it -> resource wasting
+            class Single{
+                public Single(); // make constructor private
+                private static Single s = new Single();
+                public static Single getInstance(){
+                    return s;
+                }
+
+            }
+
+            // 懶漢式
+            class Single2{
+                private Single2(){}
+                private static Single2 s;
+                public static Single2 getInstance(){
+                    if (s == null){
+                        s = new Single2();
+                    }
+                    return s;
+                }
+            }
+
+            ```
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring REST](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringREST)
