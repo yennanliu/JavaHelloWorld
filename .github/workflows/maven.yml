@@ -21,8 +21,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven (JavaHelloWorld)
-      run: mvn -B package --file pom.xml
+      run: mvn clean package
     - name: Build with Maven (SpringREST)
-      run: mvn -B package --file SpringREST/pom.xml
-    - name: Build with Maven (SpringRESTService)
-      run: mvn -B package --file SpringRESTService/pom.xml
+      run: cd SpringTwitter && mvn clean package
