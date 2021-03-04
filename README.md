@@ -15,6 +15,9 @@
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
         - [Class Demo2](./src/main/java/Basics/ClassDemo2.java)
         - [Attr VS Local Variable1 Demo1](./src/main/java/Basics/AttrVSLocalVariable1.java)
+    - Others
+        - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
+        
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ClassDemo2.svg"></p>
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_in_memory.svg"></p>
 
@@ -23,8 +26,6 @@
 - Array2D:
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array2DimMemory.svg"></p>
 
-    - Others
-        - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic2
     - Thread demo
