@@ -24,6 +24,7 @@ public class TweetController {
     @Autowired
     private Twitter twitterImpl;
 
+    //endpoint : http://localhost:8080/twitter
     @RequestMapping("/twitter")
     public String helloTwitter(@RequestParam(defaultValue = "ETF") String search, Model model){
         SearchResults searchResults = twitterImpl.searchOperations().search(search);
@@ -48,14 +49,20 @@ public class TweetController {
         SearchResults searchResults = twitterImpl.searchOperations().search(search);
         System.out.println("searchResults = " + searchResults);
 
-        List<String> tweets =
-                searchResults.getTweets()
-                        .stream()
-                        .map(Tweet::getText)
-                        .collect(Collectors.toList());
+        //        List<String> tweets =
+        //                searchResults.getTweets()
+        //                        .stream()
+        //                        .map(Tweet::getText)
+        //                        .collect(Collectors.toList());
+
+        List<Tweet> tweets =
+                searchResults.getTweets();
+        model.addAttribute("tweets", tweets);
+        model.addAttribute("search", search);
 
         System.out.println("tweets = " + tweets);
         model.addAttribute("tweets", tweets);
+
         return "resultPage";
     }
 }
