@@ -41,4 +41,21 @@ public class TweetController {
         model.addAttribute("tweets", tweets);
         return "resultPage";
     }
+
+    // endpoint : http://localhost:8080/api/v1/twitter/?search=<keyword>
+    @RequestMapping("/api/v1")
+    public String queryTwitter(@RequestParam(defaultValue = "ETF") String search, Model model){
+        SearchResults searchResults = twitterImpl.searchOperations().search(search);
+        System.out.println("searchResults = " + searchResults);
+
+        List<String> tweets =
+                searchResults.getTweets()
+                        .stream()
+                        .map(Tweet::getText)
+                        .collect(Collectors.toList());
+
+        System.out.println("tweets = " + tweets);
+        model.addAttribute("tweets", tweets);
+        return "resultPage";
+    }
 }

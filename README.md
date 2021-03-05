@@ -136,6 +136,9 @@
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring Twitter](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringTwitter)
+    - endpoint : 
+        - http://localhost:8080/api/v1/?search=trump
+        - http://localhost:8080/test1
 
 ## Relative Project
 - [utility_Java](https://github.com/yennanliu/utility_Java)
