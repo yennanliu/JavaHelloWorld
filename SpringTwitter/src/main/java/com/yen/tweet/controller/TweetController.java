@@ -18,7 +18,8 @@ public class TweetController {
     @RequestMapping("/test3")
     public String hello(Model model){
         model.addAttribute("message", "hello from the controller !!!");
-        return "resultPage";
+        //return "resultPage";
+        return "testPage";
     }
 
     @Autowired
@@ -40,7 +41,8 @@ public class TweetController {
 
         System.out.println("tweets = " + tweets);
         model.addAttribute("tweets", tweets);
-        return "resultPage";
+        //return "resultPage";
+        return "testPage";
     }
 
     // endpoint : http://localhost:8080/api/v1/twitter/?search=<keyword>
@@ -63,6 +65,7 @@ public class TweetController {
         System.out.println("tweets = " + tweets);
         model.addAttribute("tweets", tweets);
 
-        return "resultPage";
+        //return "resultPage";
+        return "testPage";
     }
 }
