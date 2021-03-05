@@ -1,6 +1,9 @@
 ## Main project
 - [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java intro project
 
+<details>
+<summary>Java Hello World</summary>
+
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic1
     - Basic operator
         - [TernaryOperator](./src/main/java/Basics/TernaryOperator.java)
@@ -17,7 +20,7 @@
         - [Attr VS Local Variable1 Demo1](./src/main/java/Basics/AttrVSLocalVariable1.java)
     - Others
         - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
-        
+
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ClassDemo2.svg"></p>
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_in_memory.svg"></p>
 
@@ -129,6 +132,7 @@
                 }
             }
             ```
+</details>
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
 - [Spring Twitter](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringTwitter)
