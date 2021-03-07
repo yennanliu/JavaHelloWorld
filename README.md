@@ -31,46 +31,19 @@
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array2DimMemory.svg"></p>
 
 
-- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic2
-    - Thread demo
-        - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
-        - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
-        - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
-    - Thread case study : box office
-        - `part 1`
-            - [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
-            - [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
-        - `part 2`
-            - [MultiSalesThread](./src/main/java/thread/MultiSalesThread.java)
-            - [MultiSalesThreadSynchronized](./src/main/java/thread/MultiSalesThreadSynchronized.java)
-    - Other Thread examples
-        - [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
-        - [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
-        - [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
-        - [ThreadSleep](./src/main/java/thread/ThreadSleep.java)
-        - [ThreadYield](./src/main/java/thread/ThreadYield.java)
-        - [ThreadJoin](./src/main/java/thread/ThreadJoin.java)
-    - Thread Lock
-        - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
-        - [LockThread](./src/main/java/thread/ThreadLock.java)
-    - Getter & Setter
-        - [GetterSetterDemo1](./src/main/java/Basics/GetterSetterDemo1.java)
-        - [GetterSetterDemo2](./src/main/java/Basics/GetterSetterDemo2.java)
-    - Constructor
-        - Constructor can define value to its attribution when create the object
-        - Constructor aka Constructoring method -> for new object initialization
-        - if there NO input arguments
-            - java will make one with `NO Constructor` as default
-        - if there IS input arguments
-            - the one will override the default one (one with NO Constructor as default)
-        - java form
-
-        ```java
-        [decorator] method(parameters){
-            method code
-        }
-        ```
-        - [Constructor1](./src/main/java/Basics/ConstructorDemo1.java)
+- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic2 : OOP/class
+    - 1. Java class and its class members:
+        - field
+        - method
+        - constructor
+        - code
+        - internal class
+    - 2. OOP features:
+        - 1. Encapsulation
+        - 2. Inheritance
+        - 3. Polymorphism
+    - 3. Other key words
+        - this, super, static, final, abstract, interface, package
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
@@ -133,6 +106,49 @@
                 }
             }
             ```
+
+
+- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic4
+    - Thread demo
+        - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
+        - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
+        - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
+    - Thread case study : box office
+        - `part 1`
+            - [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
+            - [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
+        - `part 2`
+            - [MultiSalesThread](./src/main/java/thread/MultiSalesThread.java)
+            - [MultiSalesThreadSynchronized](./src/main/java/thread/MultiSalesThreadSynchronized.java)
+    - Other Thread examples
+        - [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
+        - [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
+        - [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
+        - [ThreadSleep](./src/main/java/thread/ThreadSleep.java)
+        - [ThreadYield](./src/main/java/thread/ThreadYield.java)
+        - [ThreadJoin](./src/main/java/thread/ThreadJoin.java)
+    - Thread Lock
+        - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
+        - [LockThread](./src/main/java/thread/ThreadLock.java)
+    - Getter & Setter
+        - [GetterSetterDemo1](./src/main/java/Basics/GetterSetterDemo1.java)
+        - [GetterSetterDemo2](./src/main/java/Basics/GetterSetterDemo2.java)
+    - Constructor
+        - Constructor can define value to its attribution when create the object
+        - Constructor aka Constructoring method -> for new object initialization
+        - if there NO input arguments
+            - java will make one with `NO Constructor` as default
+        - if there IS input arguments
+            - the one will override the default one (one with NO Constructor as default)
+        - java form
+
+        ```java
+        [decorator] method(parameters){
+            method code
+        }
+        ```
+        - [Constructor1](./src/main/java/Basics/ConstructorDemo1.java)
+
 </details>
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
