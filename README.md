@@ -45,6 +45,17 @@
     - Other key words
         - this, super, static, final, abstract, interface, package
 
+    - java : "everything is an object"
+        - we encapsulate functionality, structure ... into the class, and use them via instantiate the class.
+        ```
+        Frontend       Backend                  DB
+        --------       --------               --------
+        pom       -->   Class object   -->    table
+        (HTML)    <--   (Java)         <--    (Mysql, Postgre...)
+        (CSS)                 
+        (JS)
+        ```
+
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
