@@ -32,17 +32,17 @@
 
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic2 : OOP/class
-    - 1. Java class and its class members:
+    - Java class and its class members:
         - field
         - method
         - constructor
         - code
         - internal class
-    - 2. OOP features:
-        - 1. Encapsulation
-        - 2. Inheritance
-        - 3. Polymorphism
-    - 3. Other key words
+    - OOP features:
+        - Encapsulation
+        - Inheritance
+        - Polymorphism
+    - Other key words
         - this, super, static, final, abstract, interface, package
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
