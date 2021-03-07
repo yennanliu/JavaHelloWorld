@@ -10,6 +10,7 @@
     - Array
         - [Array1D](./src/main/java/Basics/Array1D.java)
         - [Array2D](./src/main/java/Basics/Array2D.java)
+        - [ArrayClassDemo](./src/main/java/Basics/ArrayClassDemo.java)
         - Array in memory (java)
             - every valuable in the method is "local" valuable 
             - "local" valuable will be put into the "Stack"
