@@ -57,6 +57,7 @@
         ```
     - Anonymous Object
         - [AnonymousObject1](./src/main/java/Basics/AnonymousObject1.java)
+        - [AnonymousObject2](./src/main/java/Basics/AnonymousObject2.java)***
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
