@@ -64,6 +64,10 @@
         - [AnonymousObject1](./src/main/java/Basics/AnonymousObject1.java)
         - [AnonymousObject2](./src/main/java/Basics/AnonymousObject2.java)***
 
+    - Overloading
+        - In same class, if `more than one methods are with same name, but WITH DIFFERENT PRRAMETER NUMBERS OR DIFFERENT PRRAMETER TYPE`
+        - [Overloading1](./src/main/java/Basics/Overloading1.java)
+
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
