@@ -45,6 +45,11 @@
     - Other key words
         - this, super, static, final, abstract, interface, package
 
+    - Steps:
+        - step 1: create class, design elements in class
+        - step 2: create class instance
+        - step 3: call the method, attr... inside class via `class.attr`, `class.method`
+
     - java : "everything is an object"
         - we encapsulate functionality, structure ... into the class, and use them via instantiate the class.
         ```
