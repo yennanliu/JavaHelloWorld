@@ -8,9 +8,9 @@ package Basics;
 public class Overloading1 {
     public static void main(String[] args){
         // run
-        OverloadingClass1 overloas_c = new OverloadingClass1();
-        System.out.println(overloas_c.myPrint("yayaya"));
-        System.out.println(overloas_c.myPrint(100));
+        OverloadingClass1 overload_c = new OverloadingClass1();
+        System.out.println(overload_c.myPrint("yayaya"));
+        System.out.println(overload_c.myPrint(100));
     }
 }
 
