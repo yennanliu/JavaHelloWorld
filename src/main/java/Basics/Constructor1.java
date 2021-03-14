@@ -11,6 +11,7 @@ public class Constructor1 {
          *   1. create class instance (*** here the "Person_1" is the DEFAULT CONSTRUCTOR; rather than class)
          *   2. (if there no given constructor, java will have a default one)
          *   3. -> create class instance = new + "constructor"
+         *   4. java will not offer "default" constructor anymore once we have already define a constructor explicitly
          *
          *  Use case :
          *   1. create class instance
@@ -40,7 +41,8 @@ public class Constructor1 {
 
 class Person_1{
     // constructor (constructor has to be in the same name with class)
-    public Person_1(){  // constructor1
+    // below constructor are also "overriding" constructor
+    public Person_1(){ // constructor1
     }
 
     public Person_1(String name){ // constructor2
