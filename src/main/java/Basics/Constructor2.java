@@ -22,7 +22,6 @@ public class Constructor2 {
     }
 }
 
-
 class Person_2 {
     // attr
     private int age;

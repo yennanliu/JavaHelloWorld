@@ -86,6 +86,7 @@
             - `Initialize the instance attr`
         - [Constructor1](./src/main/java/Basics/Constructor1.java)
         - [Constructor2](./src/main/java/Basics/Constructor2.java)
+        - [Constructor3](./src/main/java/Basics/Constructor3.java)
         - [ConstructorDemo1](./src/main/java/Basics/ConstructorDemo1.java)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
