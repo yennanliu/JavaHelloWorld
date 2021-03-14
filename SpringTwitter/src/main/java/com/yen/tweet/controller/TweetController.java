@@ -57,15 +57,22 @@ public class TweetController {
         //                        .map(Tweet::getText)
         //                        .collect(Collectors.toList());
 
-        List<Tweet> tweets =
-                searchResults.getTweets();
+        //        List<Tweet> tweets =
+        //                searchResults.getTweets();
+
+        List<String> tweets =
+                searchResults.getTweets()
+                        .stream()
+                        .map(Tweet::getText)
+                        .collect(Collectors.toList());
+
         model.addAttribute("tweets", tweets);
         model.addAttribute("search", search);
 
         System.out.println("tweets = " + tweets);
-        model.addAttribute("tweets", tweets);
+        System.out.println("search = " + search);
 
-        //return "resultPage";
-        return "testPage";
+        return "resultPage";
+        //return "testPage";
     }
 }

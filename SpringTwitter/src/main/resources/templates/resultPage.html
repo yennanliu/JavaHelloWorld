@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head lang="en">
-<meta charest="UTF-8"/>
-<title>HELLO TWITTER</title>
-
-<link href="/webjars/materializecss/1.0.0/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <meta charest="UTF-8"/>
+  <title>HELLO TWITTER</title>
+  <link href="/webjars/materializecss/1.0.0/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
 <div class="row">
-<!--    <h2 class="indigo-test center" th:text="|Tweet Results For ${search}|">Tweets</h2>-->
+
+<!-- <h2 class="indigo-test center" th:text="|Tweet Results For ${search}|">Tweets</h2>-->
     <ul class="collection">
-        <li class="collection-item avatar" th:each="tweet : $(tweets)">
-            <img th:src="${tweet.user.profileImageUrl}" alt="" class="circle"/>
-            <span class="title" th:text="${tweet.user.name}">Username</span>
-            <p th:text="${tweet.text}">Tweet message</p>
-        </li>
+<!--        <li class="collection-item avatar" th:each="tweet : $(tweets)">-->
+<!--            <img th:src="${tweet.user.profileImageUrl}" alt="" class="circle"/>-->
+<!--            <span class="title" th:text="${tweet.user.name}">Username</span>-->
+<!--            <p th:text="${tweet.text}">Tweet message</p>-->
+<!--        </li>-->
     </ul>
 
 </div>
@@ -25,6 +24,7 @@
 <p>hey hey hey</p>
 
 <u1>
+    <p th:text= "${search}" ></p>
     <li th:each="tweet :  ${tweets}" th:text = "${tweet}" > Some tweet</li>
     <p>hey2 hey2 hey2</p>
 </u1>
