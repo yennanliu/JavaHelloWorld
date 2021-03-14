@@ -76,6 +76,16 @@
         - [Overloading1](./src/main/java/Basics/Overloading1.java)
         - [Overloading2](./src/main/java/Basics/Overloading2.java)
 
+    - Constructor
+        - Intro :
+            - create class instance (*** here the "Person_1" is the DEFAULT CONSTRUCTOR; rather than class)
+            - (if there no given constructor, java will have a default one)
+            - create class instance = new + "constructor"
+        - Use case :
+            - create class instance
+            - `Initialize the instance attr`
+        - [Constructor1](./src/main/java/Basics/Constructor1.java)
+
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
