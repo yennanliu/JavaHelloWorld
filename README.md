@@ -85,6 +85,7 @@
             - create class instance
             - `Initialize the instance attr`
         - [Constructor1](./src/main/java/Basics/Constructor1.java)
+        - [ConstructorDemo1](./src/main/java/Basics/ConstructorDemo1.java)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
@@ -174,21 +175,6 @@
     - Getter & Setter
         - [GetterSetterDemo1](./src/main/java/Basics/GetterSetterDemo1.java)
         - [GetterSetterDemo2](./src/main/java/Basics/GetterSetterDemo2.java)
-    - Constructor
-        - Constructor can define value to its attribution when create the object
-        - Constructor aka Constructoring method -> for new object initialization
-        - if there NO input arguments
-            - java will make one with `NO Constructor` as default
-        - if there IS input arguments
-            - the one will override the default one (one with NO Constructor as default)
-        - java form
-
-        ```java
-        [decorator] method(parameters){
-            method code
-        }
-        ```
-        - [Constructor1](./src/main/java/Basics/ConstructorDemo1.java)
 
 </details>
 
