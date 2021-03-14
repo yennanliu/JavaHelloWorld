@@ -186,9 +186,6 @@
         - http://localhost:8080/api/v1/?search=trump
         - http://localhost:8080/test1
 
-## Relative Project
-- [utility_Java](https://github.com/yennanliu/utility_Java)
-
 ## Quick start
 ```
 mkdir -p src/main/java/hello
