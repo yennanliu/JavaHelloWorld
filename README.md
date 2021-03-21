@@ -96,6 +96,12 @@
         - [Constructor2](./src/main/java/Basics/Constructor2.java)
         - [Constructor3](./src/main/java/Basics/Constructor3.java)
         - [ConstructorDemo1](./src/main/java/Basics/ConstructorDemo1.java)
+    - Encapsulation
+        - [Encapsulation1](./src/main/java/Basics/Encapsulation1.java)
+        - In short :
+            - hide the things need to hide : users don't need to know how does the library/Class... do the implementation
+            - export the things need to export : users only need to know the how/where (e.g. : `API`) to use the library/Class.
+        - pros : make the code extenable, scalable, easy to maintain
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
