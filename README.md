@@ -21,14 +21,14 @@
         - [Attr VS Local Variable1 Demo1](./src/main/java/Basics/AttrVSLocalVariable1.java)
     - Methods
         - [Dynamic Numbers of Var1](./src/main/java/Basics/DynamicNumVar1.java)
-    - Value Assignment
+        
+    - Value Reference/Assignment:
         - [Value Assignment1](./src/main/java/Basics/ValueAssignment1.java)
+        - [valueTransfer1](./src/main/java/Basics/valueTransfer1.java)
+        - [valueTransfer2](./src/main/java/Basics/valueTransfer2.java) : plz refer this [video](https://www.youtube.com/watch?v=26FZPGNSZlg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=211)
         -  Concepts
             - Basic data type :  assigned value is the storage "actual value"
             - Reference data type :  assigned value is the storage "address value" (e.g. : 0X111, 0XABC)
-    - Value reference:
-        - [valueTransfer1](./src/main/java/Basics/valueTransfer1.java)
-        - [valueTransfer2](./src/main/java/Basics/valueTransfer2.java) : plz refer this [video](https://www.youtube.com/watch?v=26FZPGNSZlg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=211)
     - Others
         - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
 
