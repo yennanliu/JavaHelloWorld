@@ -102,6 +102,11 @@
             - hide the things need to hide : users don't need to know how does the library/Class... do the implementation
             - export the things need to export : users only need to know the how/where (e.g. : `API`) to use the library/Class.
         - pros : make the code extenable, scalable, easy to maintain
+    - JavaBean
+        - A java class that has below properties
+            - 1. the class is a `public` class
+            - 2. with a `no argument` `public` constructor
+            - 3. has corresponding getter, setter methods
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
