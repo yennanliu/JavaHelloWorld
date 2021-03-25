@@ -31,7 +31,7 @@ public class SearchService {
         return results;
     }
 
-    private SearchParameters.ResultType getResultType(String searchType) {
+    public SearchParameters.ResultType getResultType(String searchType) {
         for (SearchParameters.ResultType knownType : SearchParameters.ResultType.values()) {
             if (knownType.name().equalsIgnoreCase(searchType)) {
                 return knownType;
@@ -39,7 +39,7 @@ public class SearchService {
         }
         return SearchParameters.ResultType.RECENT;
     }
-    private SearchParameters createSearchParam(String searchType, String taste) {
+    public SearchParameters createSearchParam(String searchType, String taste) {
         SearchParameters.ResultType resultType =
                 getResultType(searchType);
         SearchParameters searchParameters = new
