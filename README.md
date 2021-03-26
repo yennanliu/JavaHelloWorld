@@ -25,7 +25,8 @@
     - Value Reference/Assignment:
         - Assignment
             - [Value Assignment1](./src/main/java/Basics/ValueAssignment1.java)
-            - Ordering
+            - [Value Assignment2](./src/main/java/Basics/ValueAssignment2.java)
+            - implemented Ordering (1->2->3->4, meaning : 4) will be the final value)
                 - 1) default initial values
                 - 2) explicit initial values
                 - 3) assigne values via constructor
