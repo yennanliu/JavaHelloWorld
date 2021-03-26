@@ -116,9 +116,8 @@
             - 1. the class is a `public` class
             - 2. with a `no argument` `public` constructor
             - 3. has corresponding getter, setter methods
-
     - This
-        -[thisDemo1](./src/main/java/Basics/thisDemo1)
+        - [thisDemo1](./src/main/java/Basics/thisDemo1)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
