@@ -23,13 +23,20 @@
         - [Dynamic Numbers of Var1](./src/main/java/Basics/DynamicNumVar1.java)
 
     - Value Reference/Assignment:
-        - [Value Assignment1](./src/main/java/Basics/ValueAssignment1.java)
-        - [valueTransfer1](./src/main/java/Basics/valueTransfer1.java)
-        - [valueTransfer2](./src/main/java/Basics/valueTransfer2.java) : plz refer this [video](https://www.youtube.com/watch?v=26FZPGNSZlg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=211)
-        - [valueTransfer3](./src/main/java/Basics/valueTransfer3.java)
-        -  Concepts
-            - Basic data type :  assigned value is the storage "actual value"
-            - Reference data type :  assigned value is the storage "address value" (e.g. : 0X111, 0XABC)
+        - Assignment
+            - [Value Assignment1](./src/main/java/Basics/ValueAssignment1.java)
+            - Ordering
+                - 1) default initial values
+                - 2) explicit initial values
+                - 3) assigne values via constructor
+                - 4) getter, setter. e.g. "class.method", "class.attr"
+        - Transfer
+            - [valueTransfer1](./src/main/java/Basics/valueTransfer1.java)
+            - [valueTransfer2](./src/main/java/Basics/valueTransfer2.java) : plz refer this [video](https://www.youtube.com/watch?v=26FZPGNSZlg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=211)
+            - [valueTransfer3](./src/main/java/Basics/valueTransfer3.java)
+            -  Concepts
+                - Basic data type :  assigned value is the storage "actual value"
+                - Reference data type :  assigned value is the storage "address value" (e.g. : 0X111, 0XABC)
     - Recursion
         - [Recursion1](./src/main/java/Basics/Recursion1.java)
         - [Recursion2](./src/main/java/Basics/Recursion2.java)
