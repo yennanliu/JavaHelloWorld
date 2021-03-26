@@ -33,6 +33,5 @@ class User_{
     public void setAge(int a){
         age = a;
     }
-
 }
 

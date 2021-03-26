@@ -111,6 +111,7 @@
             - export the things need to export : users only need to know the how/where (e.g. : `API`) to use the library/Class.
         - pros : make the code extenable, scalable, easy to maintain
     - JavaBean
+        - [CustomerBean](./src/main/java/Basics/CustomerBean.java)
         - A java class that has below properties
             - 1. the class is a `public` class
             - 2. with a `no argument` `public` constructor
