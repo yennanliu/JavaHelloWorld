@@ -117,6 +117,11 @@
             - 2. with a `no argument` `public` constructor
             - 3. has corresponding getter, setter methods
     - This
+        - 1. `this` can be used in `attr`, `class`, `method`, `constructor`
+        - 2. `this` on  `attr`, `method`
+            - this can be referred as "current class"
+            - in class, method, we can use "this.method" for calling other method in same class
+            - pattern : `this.attr`, `this.method`
         - [thisDemo1](./src/main/java/Basics/thisDemo1)
         - [thisDemo2](./src/main/java/Basics/thisDemo2.java)
 

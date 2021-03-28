@@ -8,8 +8,11 @@ public class thisDemo2 {
         Person_4 p1 = new Person_4();
         p1.setAge(100);
         System.out.println(p1.getAge());
+
         p1.setName("tommy");
         System.out.println(p1.getName());
+
+        p1.eat();
     }
 }
 
@@ -17,6 +20,14 @@ class Person_4 {
     // attr
     private String name;
     private int age;
+
+    // constructor
+    public Person_4(){
+    }
+    
+    public Person_4(String name){
+        this.name = name;
+    }
 
     // getter, setter
     public void setName(String name){
@@ -35,5 +46,15 @@ class Person_4 {
 
     public int getAge() {
         return age;
+    }
+
+    // method
+    public void eat(){
+        System.out.println("ppl eat");
+        this.sleep();
+    }
+
+    public void sleep(){
+        System.out.println("ppl sleep");
     }
 }
