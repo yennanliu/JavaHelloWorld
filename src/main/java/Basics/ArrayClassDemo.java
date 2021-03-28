@@ -21,13 +21,13 @@ public class ArrayClassDemo {
         stu[i].score = (int)(Math.random() * (100-0+1) );
         }
 
-        // let's print the student data
-        for (int i = 0 ; i < stu.length ; i ++){
-            // via print command
-            //System.out.println("number = " +  stu[i].number + " | " + "state = " + stu[i].state + " | " + "score = " + stu[i].score);
-            // or can via method
-            System.out.println(stu[i].StudentInfo());
-          }
+    // let's print the student data
+    for (int i = 0 ; i < stu.length ; i ++){
+        // via print command
+        //System.out.println("number = " +  stu[i].number + " | " + "state = " + stu[i].state + " | " + "score = " + stu[i].score);
+        // or can via method
+        System.out.println(stu[i].StudentInfo());
+        }
     }
 }
 
