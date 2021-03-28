@@ -118,6 +118,7 @@
             - 3. has corresponding getter, setter methods
     - This
         - [thisDemo1](./src/main/java/Basics/thisDemo1)
+        - [thisDemo2](./src/main/java/Basics/thisDemo2)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
