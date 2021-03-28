@@ -124,6 +124,7 @@
             - pattern : `this.attr`, `this.method`
         - [thisDemo1](./src/main/java/Basics/thisDemo1)
         - [thisDemo2](./src/main/java/Basics/thisDemo2.java)
+        - [thisDemo3](./src/main/java/Basics/thisDemo3)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
