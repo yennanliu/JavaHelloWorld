@@ -21,7 +21,7 @@ public class Boy {
         return name;
     }
 
-    public void setName(){
+    public void setName(String name){
         this.name = name;
     }
 
@@ -35,14 +35,14 @@ public class Boy {
 
     // method
     public void marry(Girl girl){
-        System.out.println("i wanna marry to a girl ~ " + girl.getName());
+        System.out.println("I wanna marry to a girl ~ " + girl.getName());
     }
 
     public void shout(){
         if (this.age > 18){
-            System.out.println("i can marry !!!");
+            System.out.println("I can marry !!!");
         } else {
-            System.out.println("too young to marry");
+            System.out.println("The girl is too young to marry");
         }
     }
 }

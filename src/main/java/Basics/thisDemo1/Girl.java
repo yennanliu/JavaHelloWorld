@@ -21,13 +21,13 @@ public class Girl {
         return name;
     }
 
-    public void setName(){
+    public void setName(String name){
         this.name = name;
     }
 
     // method
     public void marry(Boy boy){
-        System.out.println("i wanna marry to a boy !!! " + boy.getName());
+        System.out.println("I wanna marry to a boy !!! " + boy.getName());
         //***  not this one :boy.marry(new Girl()); <- will create a new Girl instance, but not the current one
         boy.marry(this); // "this" is the "current class" (Girl class type in this example)
     }
