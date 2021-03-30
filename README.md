@@ -122,9 +122,13 @@
             - this can be referred as "current class"
             - in class, method, we can use "this.method" for calling other method in same class
             - pattern : `this.attr`, `this.method`
+        - 3. this call `constructor`
+            - in the class's constructor, we use  "this(var) or this() or ..." calling the other constructor in the same class
+            - CAN'T call itself (constructor) (via this())
         - [thisDemo1](./src/main/java/Basics/thisDemo1)
         - [thisDemo2](./src/main/java/Basics/thisDemo2.java)
         - [thisDemo3](./src/main/java/Basics/thisDemo3)
+        - [thisDemo4](./src/main/java/Basics/thisDemo4.java)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
