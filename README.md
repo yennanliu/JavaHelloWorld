@@ -125,6 +125,8 @@
         - 3. this call `constructor`
             - in the class's constructor, we use  "this(var) or this() or ..." calling the other constructor in the same class
             - CAN'T call itself (constructor) (via this())
+            - calling constructor via `this()` need to be in the `1st line` of code
+            - can only use `1` `this()` inside a constructor
         - [thisDemo1](./src/main/java/Basics/thisDemo1)
         - [thisDemo2](./src/main/java/Basics/thisDemo2.java)
         - [thisDemo3](./src/main/java/Basics/thisDemo3)
