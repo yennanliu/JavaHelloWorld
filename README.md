@@ -131,6 +131,7 @@
         - [thisDemo2](./src/main/java/Basics/thisDemo2.java)
         - [thisDemo3](./src/main/java/Basics/thisDemo3)
         - [thisDemo4](./src/main/java/Basics/thisDemo4.java)
+        - [thisDemo5](./src/main/java/Basics/thisDemo5)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
