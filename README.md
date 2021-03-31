@@ -229,6 +229,10 @@
     - endpoint : 
         - http://localhost:8080/api/v1/?search=trump
         - http://localhost:8080/test1
+    - MVC
+        - model : the layer define data (backend). e.g. : DB, DB class, model.bean
+        - view : show data for client (frontend) side. e.g. :  view utils, view UI
+        - controller : deal with bisiness logic. e.g. : controller service, controller adapter, controller base
 
 ## Quick start
 ```
