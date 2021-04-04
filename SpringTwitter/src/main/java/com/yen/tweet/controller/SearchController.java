@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class SearchController {
         this.searchService = searchService;
     }
 
-    @RequestMapping("/search/{searchType}")
+    @RequestMapping(value = "/search/{searchType}", method = RequestMethod.GET)
     public ModelAndView search(
             @PathVariable String searchType,
             @MatrixVariable List<String> keywords) {
