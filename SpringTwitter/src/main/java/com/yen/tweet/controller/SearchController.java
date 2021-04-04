@@ -26,6 +26,10 @@ public class SearchController {
     public ModelAndView search(
             @PathVariable String searchType,
             @MatrixVariable List<String> keywords) {
+
+        System.out.println("*** searchType = " + searchType);
+        System.out.println("*** keywords = " + keywords);
+
         List<LightTweet> tweets = searchService.search(searchType, keywords);
         //ModelAndView modelAndView = new ModelAndView("resultPage");
         ModelAndView modelAndView = new ModelAndView("testPage");
