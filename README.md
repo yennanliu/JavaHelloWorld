@@ -124,12 +124,13 @@
         - 2. `this` on  `attr`, `method`
             - this can be referred as "current class"
             - in class, method, we can use "this.method" for calling other method in same class
-            - pattern : `this.attr`, `this.method`
+            - pattern : `this.attr`, `this.method`, `this.constructor`....
         - 3. this call `constructor`
             - in the class's constructor, we use  "this(var) or this() or ..." calling the other constructor in the same class
             - CAN'T call itself (constructor) (via this())
             - calling constructor via `this()` need to be in the `1st line` of code
             - can only use `1` `this()` inside a constructor
+            - if constructor's variable is as same as class's variable => we MUST use `this.var` explicitly
         - [thisDemo1](./src/main/java/Basics/thisDemo1)
         - [thisDemo2](./src/main/java/Basics/thisDemo2.java)
         - [thisDemo3](./src/main/java/Basics/thisDemo3)
