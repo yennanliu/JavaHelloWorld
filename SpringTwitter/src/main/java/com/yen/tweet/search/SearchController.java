@@ -1,6 +1,6 @@
 package com.yen.tweet.search;
 
-// p.109
+// p.109 p.110
 
 //import com.yen.tweet.service.LightTweet;
 import com.yen.tweet.search.SearchService;
@@ -19,12 +19,13 @@ import java.util.List;
 public class SearchController {
 
     private SearchService searchService;
+
     @Autowired
     public SearchController(SearchService searchService) {
         this.searchService = searchService;
     }
 
-    @RequestMapping(value = "/search/{searchType}", method = RequestMethod.GET)
+    @RequestMapping("/search/{searchType}")
     public ModelAndView search(
             @PathVariable String searchType,
             @MatrixVariable List<String> keywords) {
@@ -33,8 +34,9 @@ public class SearchController {
         System.out.println("*** keywords = " + keywords);
 
         List<Tweet> tweets = searchService.search(searchType, keywords);
-        //ModelAndView modelAndView = new ModelAndView("resultPage");
-        ModelAndView modelAndView = new ModelAndView("testPage");
+        ModelAndView modelAndView = new ModelAndView("resultPage");
+        //ModelAndView modelAndView = new ModelAndView("testPage");
+
         modelAndView.addObject("tweets", tweets);
         modelAndView.addObject("search", String.join(",", keywords));
         return modelAndView;
