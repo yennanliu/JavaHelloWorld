@@ -1,4 +1,4 @@
-package com.yen.tweet.controller;
+package com.yen.tweet.search;
 
 import com.yen.tweet.service.LightTweet;
 import com.yen.tweet.service.SearchService;
@@ -31,6 +31,7 @@ public class SearchController {
         System.out.println("*** keywords = " + keywords);
 
         List<LightTweet> tweets = searchService.search(searchType, keywords);
+        //List<Tweet> tweets = searchService.search(searchType, keywords);
         //ModelAndView modelAndView = new ModelAndView("resultPage");
         ModelAndView modelAndView = new ModelAndView("testPage");
         modelAndView.addObject("tweets", tweets);
