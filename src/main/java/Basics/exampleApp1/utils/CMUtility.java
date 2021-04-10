@@ -11,7 +11,7 @@ package Basics.exampleApp1.utils;
 import java.util.*;
 
 /**
- * CMUtilit tool：
+ * CMUtility tool：
  * 将不同的功能封装为方法，就是可以直接通过调用方法使用它的功能，而无需考虑具体的功能实现细节。
  */
 public class CMUtility {
@@ -27,7 +27,7 @@ public class CMUtility {
             c = str.charAt(0);
             if (c != '1' && c != '2' &&
                     c != '3' && c != '4' && c != '5') {
-                System.out.print("选择错误，请重新输入：");
+                System.out.print("Choice wrong, plz input again：");
             } else break;
         }
         return c;
@@ -61,7 +61,7 @@ public class CMUtility {
                 n = Integer.parseInt(str);
                 break;
             } catch (NumberFormatException e) {
-                System.out.print("数字输入错误，请重新输入：");
+                System.out.print("number input wrong, plz input again ：");
             }
         }
         return n;
@@ -83,7 +83,7 @@ public class CMUtility {
                 n = Integer.parseInt(str);
                 break;
             } catch (NumberFormatException e) {
-                System.out.print("数字输入错误，请重新输入：");
+                System.out.print("number input wrong, plz input again ：");
             }
         }
         return n;
@@ -116,7 +116,7 @@ public class CMUtility {
             if (c == 'Y' || c == 'N') {
                 break;
             } else {
-                System.out.print("选择错误，请重新输入：");
+                System.out.print("choice input wrong, plz input again ：");
             }
         }
         return c;
@@ -133,7 +133,7 @@ public class CMUtility {
             }
 
             if (line.length() < 1 || line.length() > limit) {
-                System.out.print("输入长度（不大于" + limit + "）错误，请重新输入：");
+                System.out.print("input length（is less than" + limit + "）wrong, plz enter again ：");
                 continue;
             }
             break;
