@@ -1,5 +1,7 @@
 package com.yen.tweet.search;
 
+// p.109
+
 //import com.yen.tweet.service.LightTweet;
 import com.yen.tweet.search.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,6 @@ public class SearchController {
         System.out.println("*** keywords = " + keywords);
 
         List<Tweet> tweets = searchService.search(searchType, keywords);
-        //List<Tweet> tweets = searchService.search(searchType, keywords);
         //ModelAndView modelAndView = new ModelAndView("resultPage");
         ModelAndView modelAndView = new ModelAndView("testPage");
         modelAndView.addObject("tweets", tweets);
