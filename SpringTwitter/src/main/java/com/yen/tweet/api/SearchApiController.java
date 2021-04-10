@@ -1,15 +1,17 @@
 //package com.yen.tweet.api;
 //
+//// p.129
+//
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.social.twitter.api.Tweet;
 //import org.springframework.web.bind.annotation.*;
 //
 //import java.util.List;
 //
-//import com.yen.tweet.service.SearchService;
+//import com.yen.tweet.search.SearchService;
 //
 //@RestController
-//@RequestMapping("/api/v1/search")
+//@RequestMapping("/search")
 //public class SearchApiController {
 //    private SearchService searchService;
 //

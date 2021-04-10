@@ -1,5 +1,8 @@
-package com.yen.tweet.service;
+package com.yen.tweet.search;
 
+// p.112
+
+//import com.yen.tweet.service.Tweet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.twitter.api.SearchParameters;
 import org.springframework.social.twitter.api.Tweet;
@@ -18,17 +21,17 @@ public class SearchService {
         this.twitter = twitter;
     }
 
-    public List<LightTweet> search (String searchType, List<String> keywords) {
+    public List<Tweet> search (String searchType, List<String> keywords) {
         List<SearchParameters> searches = keywords.stream()
                 .map(taste -> createSearchParam(searchType, taste))
                 .collect(Collectors.toList());
 
-        List<LightTweet> results = searches.stream()
+        List<Tweet> results = searches.stream()
                 .map(params -> twitter.searchOperations()
                 .search(params))
                 .flatMap(searchResults ->  searchResults.getTweets().stream())
-                .map(LightTweet::ofTweet)
                 .collect(Collectors.toList());
+                  //.map(Tweet::ofTweet)
 
         return results;
     }
@@ -41,7 +44,7 @@ public class SearchService {
         }
         return SearchParameters.ResultType.RECENT;
     }
-    public SearchParameters createSearchParam(String searchType, String taste) {
+    private SearchParameters createSearchParam(String searchType, String taste) {
         SearchParameters.ResultType resultType =
                 getResultType(searchType);
         SearchParameters searchParameters = new
