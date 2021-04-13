@@ -47,9 +47,14 @@ public class CustomerView {
                     break;
                 case '5':
                     System.out.println("leave !");
-                    break;
-            }
 
+                    System.out.println("Confirm if leave ?");
+                    char isExist =  CMUtility.readConfirmSelection();
+                    if (isExist == 'Y'){
+                        isFlag = false;
+                    }
+                    //break;
+            }
             //isFlag = false;
         }
     };
