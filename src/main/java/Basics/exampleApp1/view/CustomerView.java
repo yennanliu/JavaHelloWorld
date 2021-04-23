@@ -3,6 +3,7 @@ package Basics.exampleApp1.view;
 // https://www.youtube.com/watch?v=c2d0vVbvoSQ&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=248
 // https://www.youtube.com/watch?v=KyQNP7_6DUM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=252
 // https://www.youtube.com/watch?v=wWzlY8i8klE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=254
+// https://www.youtube.com/watch?v=7BPztY4LTD0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=255
 
 /*
  *   CustomerView
@@ -76,8 +77,35 @@ public class CustomerView {
      *  add new customer
      */
     private void addNewCustomer(){
-        System.out.println("addNewCustomer");
+        //System.out.println("addNewCustomer");
+        System.out.println("--------------------- Add New Customer --------------------- \n");
 
+        System.out.println("name, ");
+        String name = CMUtility.readString(10); // max name length = 10
+
+        System.out.println("gender, ");
+        char gender = CMUtility.readChar(); // gender is char tyep
+
+        System.out.println("age, ");
+        Integer age = CMUtility.readInt();
+
+        System.out.println("phone, ");
+        String phone = CMUtility.readString(10);
+
+        System.out.println("email, ");
+        String email = CMUtility.readString(10);
+
+        // init a Customer class instance
+        Customer customer = new Customer(name, gender, age, phone, email);
+
+        // save above records into a CustomerList
+        boolean isSuccess =  customerList.addCustomer(customer);
+        if (isSuccess){
+            System.out.println("add new customer OK !");
+            System.out.println("--------------------- Add New Customer End --------------------- \n");
+        } else {
+            System.out.println("add new customer failed !");
+        }
     };
 
     /***
