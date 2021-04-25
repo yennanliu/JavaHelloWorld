@@ -5,6 +5,7 @@ package Basics.exampleApp1.view;
 // https://www.youtube.com/watch?v=wWzlY8i8klE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=254
 // https://www.youtube.com/watch?v=7BPztY4LTD0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=255
 // https://www.youtube.com/watch?v=tyHqaFFLxEY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=256
+// https://www.youtube.com/watch?v=zD8ezdN_KZw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=257
 
 /*
  *   CustomerView
@@ -166,8 +167,42 @@ public class CustomerView {
      *  delete customer
      */
     private void deleteCustomer(){
-        System.out.println("deleteCustomer");
+        //System.out.println("deleteCustomer");
+        System.out.println("--------------------- Delete Customer --------------------- \n");
 
+        int number;
+        // infinite loop
+        for (;;){
+            System.out.println("Please input customer id you want to delete (-1 exit)");
+            number = CMUtility.readInt();
+
+            if (number == -1){
+                return;
+            }
+
+            Customer customer = customerList.getCustomer(number - 1);
+            if (customer == null){
+                System.out.println("customer not found !");
+            } else{
+                break;
+            }
+        }
+        // let's delete the customer here
+        System.out.println("Make sure if delete (Y/N), ");
+        char isDelete = CMUtility.readConfirmSelection();
+        if (isDelete == 'Y'){
+            // actual delete op
+            boolean deleteSuccess =  customerList.deleteCustomer(number - 1);
+            if (deleteSuccess){
+                System.out.println("--------------------- Delete Customer OK ! --------------------- \n");
+            } else {
+                System.out.println("--------------------- Delete Customer Failed ! --------------------- \n");
+            }
+
+        } else{
+            // but this return is not necessary, since the program will back to the main menu if isDelete != 'Y' anyway
+            return;
+        }
     };
 
     /***
