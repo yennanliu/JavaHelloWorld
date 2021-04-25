@@ -48,7 +48,8 @@ public class CustomerList {
      * @return : true: modify success, false : modify failed
      */
     public boolean replaceCustomer(int index, Customer cust){
-        if (index <= 0 || index >= total){
+        System.out.println("*** index = " + index);
+        if (index < 0 || index >= total){
             System.out.println("replaceCustomer failed! (index <= 0 || index >= total)");
             return false;
         }

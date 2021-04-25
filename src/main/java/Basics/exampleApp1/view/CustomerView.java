@@ -4,6 +4,7 @@ package Basics.exampleApp1.view;
 // https://www.youtube.com/watch?v=KyQNP7_6DUM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=252
 // https://www.youtube.com/watch?v=wWzlY8i8klE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=254
 // https://www.youtube.com/watch?v=7BPztY4LTD0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=255
+// https://www.youtube.com/watch?v=tyHqaFFLxEY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=256
 
 /*
  *   CustomerView
@@ -112,7 +113,52 @@ public class CustomerView {
      *  modify customer
      */
     private void modifyCustomer(){
-        System.out.println("modifyCustomer");
+        //System.out.println("modifyCustomer");
+        System.out.println("--------------------- Modify Customer  --------------------- \n");
+        // here we declare Customer first, because we want to modify the Customer information outside the for loop
+        Customer cust;
+        // here we declare number first, because we want to use number outside the for loop
+        int number;
+        // infinite loop
+        for (;;){
+            System.out.println("Please input customer id you want to modify (-1 exit)");
+            number = CMUtility.readInt();
+            if (number == -1){
+                return;
+            }
+
+            cust = customerList.getCustomer(number - 1);
+            if (cust == null){
+                System.out.println("can't find customer !");
+            } else{
+                // if customer found, end the loop
+                break;
+            }
+        }
+        // let's modify the customer here
+        System.out.println("Customer name(" + cust.getName() + "):");
+        String name = CMUtility.readString(10, cust.getName()); // if user don't input new name, but just press enter -> use the original customer name by default
+
+        System.out.println("Customer gender(" + cust.getGender() + "):");
+        char gender = CMUtility.readChar(cust.getGender());
+
+        System.out.println("Customer age(" + cust.getAge() + "):");
+        Integer age = CMUtility.readInt(cust.getAge());
+
+        System.out.println("Customer phone(" + cust.getPhone() + "):");
+        String phone = CMUtility.readString(13, cust.getPhone());
+
+        System.out.println("Customer email(" + cust.getEmail() + "):");
+        String email = CMUtility.readString(30, cust.getEmail());
+
+        Customer newCust = new Customer(name, gender, age, phone, email);
+
+        boolean isReplaced =  customerList.replaceCustomer(number -1 , newCust);
+        if (isReplaced){
+            System.out.println("--------------------- Modify Customer OK ! --------------------- \n");
+        } else {
+            System.out.println("--------------------- Modify Customer Failed ! --------------------- \n");
+        }
 
     };
 
@@ -135,12 +181,12 @@ public class CustomerView {
         if (total == 0){
             System.out.println("no any customer !");
         } else{
-            System.out.println("id\tname\tsex\tgender\tphone\t\temail");
+            System.out.println("id\tname\tsex\tage\tgender\tphone\t\temail");
             Customer[] custs =  customerList.getAllCustomers();
             for (int i=0; i < custs.length; i ++){
                 Customer cust = custs[i];
                 System.out.println(
-                        (i+1) + "\t" + cust.getName() + "\t" + cust.getGender() + "\t" + cust.getPhone() + "\t" + cust.getEmail()
+                        (i+1) + "\t" + cust.getName() + "\t" + cust.getGender() +  "\t" + cust.getAge() + "\t" + cust.getPhone() + "\t" + cust.getEmail()
                 );
             }
         }
