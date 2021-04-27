@@ -107,18 +107,21 @@
         - [Constructor2](./src/main/java/Basics/Constructor2.java)
         - [Constructor3](./src/main/java/Basics/Constructor3.java)
         - [ConstructorDemo1](./src/main/java/Basics/ConstructorDemo1.java)
+
     - Encapsulation
         - [Encapsulation1](./src/main/java/Basics/Encapsulation1.java)
         - In short :
             - hide the things need to hide : users don't need to know how does the library/Class... do the implementation
             - export the things need to export : users only need to know the how/where (e.g. : `API`) to use the library/Class.
         - pros : make the code extenable, scalable, easy to maintain
+
     - JavaBean
         - [CustomerBean](./src/main/java/Basics/CustomerBean.java)
         - A java class that has below properties
             - 1. the class is a `public` class
             - 2. with a `no argument` `public` constructor
             - 3. has corresponding getter, setter methods
+
     - This
         - 1. `this` can be used in `attr`, `class`, `method`, `constructor`
         - 2. `this` on  `attr`, `method`
@@ -136,6 +139,10 @@
         - [thisDemo3](./src/main/java/Basics/thisDemo3)
         - [thisDemo4](./src/main/java/Basics/thisDemo4.java)
         - [thisDemo5](./src/main/java/Basics/thisDemo5)
+
+    - Extends
+        - [Extends_demo1](./src/main/java/Basics/Extends_demo1)
+        - the "children" class can `reuse`, `overwrite` the `attr/method` that their "parent" class already defined
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
