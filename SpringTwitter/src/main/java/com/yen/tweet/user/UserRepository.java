@@ -3,14 +3,24 @@ package com.yen.tweet.user;
 // p.136, p.137
 
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Service
 @Repository
 public class UserRepository {
+
+    // constructor
+    public UserRepository(){
+    }
+
+    public UserRepository(String email, User user){
+    }
+
     // User is from com.yen.tweet.user
     private final Map<String, User> userMap = new ConcurrentHashMap<>();
 
