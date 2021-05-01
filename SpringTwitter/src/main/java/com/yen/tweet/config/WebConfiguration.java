@@ -25,5 +25,6 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
         urlPathHelper.setRemoveSemicolonContent(false);
         configurer.setUrlPathHelper(urlPathHelper);
         configurer.setUseSuffixPatternMatch(true);
+        configurer.setUseRegisteredSuffixPatternMatch(true);
     }
 }
