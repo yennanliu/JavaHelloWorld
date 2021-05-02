@@ -46,6 +46,8 @@ SpringRESTService/SpringRESTService.iml
 
 # maven
 gs-maven*
+target/maven-status/*
+dependency-reduced-pom.xml
 
 # SpringSearchTwitter
 SpringSearchTwitter/src/main/resources/application.properties
@@ -55,3 +57,4 @@ SpringSearchTwitter/src/main/resources/application.properties
 # SpringTwitter/src/main/resources/*
 
 SpringTwitter/SpringTwitter.iml
+
