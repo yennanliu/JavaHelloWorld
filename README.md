@@ -142,6 +142,7 @@
 
     - Extends
         - [Extends_demo1](./src/main/java/Basics/Extends_demo1)
+        - [Extends_demo2](./src/main/java/Basics/Extends_demo2)
         - the "children" class can `reuse`, `overwrite` the `attr/method` that their "parent" class already defined
         - general form : `class A extends B{}`
             - A : children class (subclass)
