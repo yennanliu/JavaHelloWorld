@@ -152,7 +152,9 @@
             - One superclass can have `multiple` subclass
             - A subclass can only have `ONE` superclass
             - superclass - subclass is a `relative` concept
-            - It's OK to have "multi-layer" extends. e.g. : `A extends B, B extends C ....`
+            - It's OK to have "indirect" extends. e.g. : `A extends B, B extends C ....`
+            - If there a class that we don't explicitly define its superclass (extends), then this class extends from `java.lang.Object` class by default
+            - All classes in java (except java.lang.Object) are `direct/indirect` subclass of  `java.lang.Object`
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
