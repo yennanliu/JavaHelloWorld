@@ -22,5 +22,5 @@ jobs:
         java-version: 1.8
     - name: Build with Maven (JavaHelloWorld)
       run: mvn clean package
-    - name: Build with Maven (SpringREST)
+    - name: Build with Maven (SpringTwitter)
       run: cd SpringTwitter && mvn clean package
