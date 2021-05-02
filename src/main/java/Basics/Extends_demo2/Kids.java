@@ -9,12 +9,12 @@ package Basics.Extends_demo2;
  *   3) has getter, setter
  */
 
-public class Kids {
+public class Kids extends ManKind{
     // attr
     private int yearsOld;
 
     // method
-    public void pringAge(){
+    public void printAge(){
         System.out.println("hii i am " + yearsOld + " years old !");
     }
 
