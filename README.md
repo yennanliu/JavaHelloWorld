@@ -143,6 +143,12 @@
     - Extends
         - [Extends_demo1](./src/main/java/Basics/Extends_demo1)
         - the "children" class can `reuse`, `overwrite` the `attr/method` that their "parent" class already defined
+        - general form : `class A extends B{}`
+            - A : children class (subclass)
+            - B : parent class (superclass)
+            - Once A extends from B, A will get all structure, attr, method from B
+            - Note : private method CAN'T be called (it is received, but can't be called due to the `encapsulation`) in subclass (child class)
+            - Subclass (child class) `CAN STILL define its own method`, attr after extends from superclass (parent class)
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
