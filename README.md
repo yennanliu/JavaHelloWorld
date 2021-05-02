@@ -148,7 +148,11 @@
             - B : parent class (superclass)
             - Once A extends from B, A will get all structure, attr, method from B
             - Note : private method CAN'T be called (it is received, but can't be called due to the `encapsulation`) in subclass (child class)
-            - Subclass (child class) `CAN STILL define its own method`, attr after extends from superclass (parent class)
+            - Subclass (child class) `CAN STILL define its own method, attr ...` after extending from superclass (parent class)
+            - One superclass can have `multiple` subclass
+            - A subclass can only have `ONE` superclass
+            - superclass - subclass is a `relative` concept
+            - It's OK to have "multi-layer" extends. e.g. : `A extends B, B extends C ....`
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
