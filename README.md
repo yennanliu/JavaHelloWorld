@@ -157,6 +157,11 @@
             - If there a class that we don't explicitly define its superclass (extends), then this class extends from `java.lang.Object` class by default
             - All classes in java (except java.lang.Object) are `direct/indirect` subclass of  `java.lang.Object`
 
+    - Overwrite
+        - [Overwrite_demo1](./src/main/java/Basics/Overwrite_demo1)
+        - `subclass` can overwrite the same method (same method name, same param) that its `superclass` has
+        - Note : same method name, same param are needed ( for overwrite)
+
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
