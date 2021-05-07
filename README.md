@@ -190,11 +190,12 @@
         - [ControllAccess_1_1](./src/main/java/Basics/ControllAccess_1_1)
         - [ref](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/access_level.png"></p>
+    
     - Super      
         - [Super_1](./src/main/java/Basics/Super_1)
         - `super` can be recognized about "superclass relative"
-        -  super can be called : attr, method, constructor
-        -  using
+        - super can be called : attr, method, constructor
+        - using
             -  we can call method in superclass explicitly via super.method_name from subclass
             - If method name are same in superclass and subclass -> we need to call method in superclass (current class) explicitly via `super.method`
             - calling subclass's (current class) method : `this.method`
