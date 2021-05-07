@@ -159,7 +159,7 @@
 
     - Overwrite
         - [Overwrite_demo1](./src/main/java/Basics/Overwrite_demo1)
-        - [Overwrite_demo1](./src/main/java/Basics/Overwrite_demo2)
+        - [Overwrite_demo2](./src/main/java/Basics/Overwrite_demo2)
         - `subclass` can overwrite the same method (same method name, same param) that its `superclass` has
         - Note : For overwrited methods, it's needed to have the same method name, and the same params as the one in superclass (method name + params ) (for overwrite)
         - access_modifiers
@@ -168,10 +168,18 @@
         - return_value_type
             - if return_value_type is `void` in superclass -> it's needed to be `void` in subclass as well
             - if return_value_type is `A type` in superclass -> the return_value_type in subclass can be "A type" or `any subclass of A type`
+            - if return_value_type is `basic data type` (e.g. Int, String, float...) in superclass -> the return_value_type need the be the same basic data type as its superclass
+        - Exception_type
+            - subclass' Exception_type must be `smaller or equal` than the one in superclass
+
         ```java
         // pattern
         access_modifiers return_value_type method_name(parames){
-            // java code
+        // java code
+        }
+        // pattern2
+        access_modifiers return_value_type method_name throws Exception_type (parames){
+        // java code
         }
         ```
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
