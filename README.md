@@ -160,8 +160,15 @@
     - Overwrite
         - [Overwrite_demo1](./src/main/java/Basics/Overwrite_demo1)
         - `subclass` can overwrite the same method (same method name, same param) that its `superclass` has
-        - Note : same method name, same param are needed ( for overwrite)
-
+        - Note : For overwrited methods, it's needed to have the same method name, and the same params as the one in superclass (method name + params ) (for overwrite)
+        - method in subclass can have "bigger" `access_modifiers` than its superclass (access_modifiers : private, public, ...)
+        - `private` method in superclass `CAN NOT` be overwritten
+            ```java
+            // pattern
+            access_modifiers return_value_type method_name(parames){
+                // code
+            }
+            ```
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
