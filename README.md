@@ -185,6 +185,12 @@
         // java code
         }
         ```
+    - Controlling Access
+        - [ControllAccess_1](./src/main/java/Basics/ControllAccess_1)
+        - [ControllAccess_1_1](./src/main/java/Basics/ControllAccess_1_1)
+        - [ref](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/access_level.png"></p>
+
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
