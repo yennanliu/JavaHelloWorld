@@ -32,4 +32,10 @@ public class Person {
     public Double info_1(){
         return 3.14;
     }
+
+    // static method CAN NOT be overwritten
+    public static void eat_static(){
+        System.out.println("this is eat_static !");
+    }
+
 }

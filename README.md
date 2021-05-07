@@ -162,6 +162,7 @@
         - [Overwrite_demo2](./src/main/java/Basics/Overwrite_demo2)
         - `subclass` can overwrite the same method (same method name, same param) that its `superclass` has
         - Note : For overwrited methods, it's needed to have the same method name, and the same params as the one in superclass (method name + params ) (for overwrite)
+        - only `non-static` method can be overwritten
         - access_modifiers
             - method in subclass can have "bigger" `access_modifiers` than its superclass (access_modifiers : private, public, ...)
             - `private` method in superclass `CAN NOT` be overwritten
@@ -174,10 +175,12 @@
 
         ```java
         // pattern
+        @override   //  @override is just a comment, not necessary actually
         access_modifiers return_value_type method_name(parames){
         // java code
         }
         // pattern2
+        @override
         access_modifiers return_value_type method_name throws Exception_type (parames){
         // java code
         }
