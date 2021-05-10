@@ -195,12 +195,17 @@
     - Super      
         - [Super_1](./src/main/java/Basics/Super_1)
         - [Super_2](./src/main/java/Basics/Super_2)
-        - `super` can be recognized about "superclass relative"
-        - super can be called : attr, method, constructor
+        - `super` can be recognized as "superclass relative"
+        - super can be called on : attr, method, constructor
         - using
             -  we can call method in superclass explicitly via super.method_name from subclass
             - If method name are same in superclass and subclass -> we need to call method in superclass (current class) explicitly via `super.method`
             - calling subclass's (current class) method : `this.method`
+        - super call constructor
+            - we can use superclass' constructor in subclass via "super constructor"
+            - "super constructor" need to be declared in 1ST LINE of subclass constructor
+            - in subclass, we can only chosse either "this constructor" or "super constructor"  (choose one of them !)
+            -  if we don't declare any "this constructor" or "super constructor"..  -> it will use "super constructor" (super(), no argument) by default
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo

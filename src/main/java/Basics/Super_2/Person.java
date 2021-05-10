@@ -8,7 +8,7 @@ public class Person {
     int age;
     int id = 1001;  // personal id
 
-    // constructor
+    // constructor (this one is needed for Student class (Student is subclass of Person class))
     public Person(){
     }
 
