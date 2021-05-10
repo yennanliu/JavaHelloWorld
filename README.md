@@ -195,6 +195,7 @@
     - Super      
         - [Super_1](./src/main/java/Basics/Super_1)
         - [Super_2](./src/main/java/Basics/Super_2)
+        - [Instance_1](./src/main/java/Basics/Instance_1.java)
         - `super` can be recognized as "superclass relative"
         - super can be called on : attr, method, constructor
         - using
