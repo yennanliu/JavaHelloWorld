@@ -208,6 +208,21 @@
             - "super constructor" need to be declared in 1ST LINE of subclass constructor
             - in subclass, we can only chosse either "this constructor" or "super constructor"  (choose one of them !)
             -  if we don't declare any "this constructor" or "super constructor"..  -> it will use "super constructor" (super(), no argument) by default
+    - Polymorphism
+        - [polymorphism_1](./src/main/java/Basics/polymorphism_1)
+        - call superclass and point to subclass' instance
+        - pattern : ```java superclass p1 = new subclass();```
+        - (following above) p1 will be the superclass class type, so it CAN'T use the method that only exist in subclass
+        - During compile
+            - => can only call methods defined in superclass
+        - During runtime
+            - => will run the methods overridden in subclass
+        - summary :
+            - =>  Compile : check left (<-)
+            - =>  Running : check right (->)
+        - use requirements:
+            - there is extends in class (superclass, subclass)
+            - method override is necessary
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
