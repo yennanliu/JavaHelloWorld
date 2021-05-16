@@ -9,6 +9,10 @@ public class Account {
     private double annualInterestRate;
 
     // constructor
+    public Account(){
+
+    }
+
     public Account(int id, double balance, double annualInterestRate) {
         super(); // optional (by default there is a super() in 1st line
         this.id = id;
