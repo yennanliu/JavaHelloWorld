@@ -13,8 +13,6 @@ package Basics;
  *        -> when we create subclass instance via subclass constructor => we must DIRECT/IN-DIRECT call constructor in superclass
  *        -> e.g. : superclass constructor -> superclass1 constructor -> superclass2 constructor -> ..... -> java.lang.Object
  *
- *
- *
  */
 
 public class Instance_1 {
