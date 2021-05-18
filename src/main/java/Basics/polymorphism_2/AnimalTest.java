@@ -1,4 +1,4 @@
-package Basics.Polymorphism_2;
+package Basics.polymorphism_2;
 
 // https://www.youtube.com/watch?v=-dlhK0u7d2I&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=280
 
