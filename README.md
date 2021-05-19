@@ -211,7 +211,7 @@
     - Polymorphism
         - [polymorphism_1](./src/main/java/Basics/polymorphism_1)
         - [polymorphism_2](./src/main/java/Basics/polymorphism_2)
-        - call superclass and point to subclass' instance
+         - call superclass and point to subclass' instance
         - pattern : ```java superclass p1 = new subclass();```
         - (following above) p1 will be the superclass class type, so it CAN'T use the method that only exist in subclass
         - During compile
@@ -224,7 +224,12 @@
         - use requirements:
             - there is extends in class (superclass, subclass)
             - method override is necessary
+    - Upcasting VS DownCasting
+        - [Upcasting_1](./src/main/java/Basics/Upcasting_1) - Upcasting
+        - [Upcasting](https://www.javatpoint.com/upcasting-and-downcasting-in-java)
+    <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/upcasting_downcasting.png"></p>
 
+ 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)

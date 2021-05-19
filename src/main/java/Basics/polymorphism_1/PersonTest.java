@@ -44,6 +44,8 @@ public class PersonTest {
         p2.eat(); // should call subclass' method (rewrite from superclass)
         p2.walk();
         //p2.makeMoney();  //but can't use makeMoney, since it's Person class type now
+        p2.name = "jim";
+        //p2.isSmoking = true; // can't use this  isSmoking method as well, since it's Person class type now
 
         System.out.println("============================");
 
