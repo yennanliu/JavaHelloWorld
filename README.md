@@ -208,10 +208,11 @@
             - "super constructor" need to be declared in 1ST LINE of subclass constructor
             - in subclass, we can only chosse either "this constructor" or "super constructor"  (choose one of them !)
             -  if we don't declare any "this constructor" or "super constructor"..  -> it will use "super constructor" (super(), no argument) by default
-    - Polymorphism
+    - Polymorphism (`Upcasting`)
         - [polymorphism_1](./src/main/java/Basics/polymorphism_1)
         - [polymorphism_2](./src/main/java/Basics/polymorphism_2)
          - call superclass and point to subclass' instance
+        - Polymorphism is actually `Upcasting`
         - pattern : ```java superclass p1 = new subclass();```
         - (following above) p1 will be the superclass class type, so it CAN'T use the method that only exist in subclass
         - During compile
@@ -226,7 +227,9 @@
             - method override is necessary
     - Upcasting VS DownCasting
         - [Upcasting_1](./src/main/java/Basics/Upcasting_1) - Upcasting
-        - [Upcasting](https://www.javatpoint.com/upcasting-and-downcasting-in-java)
+        - [Upcasting ref](https://www.javatpoint.com/upcasting-and-downcasting-in-java)
+        - Superclass ---DownCasting---> Subclass
+        - Superclass <---Upcasting--- Subclass
     <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/upcasting_downcasting.png"></p>
 
  

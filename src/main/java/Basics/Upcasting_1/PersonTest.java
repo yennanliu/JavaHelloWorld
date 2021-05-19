@@ -6,7 +6,7 @@ package Basics.Upcasting_1;
 public class PersonTest {
     public static void main(String[] args){
 
-        /** Polymorphism  (subclass' instance)
+        /** Polymorphism (Upcasting) (subclass' instance)
          *   -> declare an instance, but it actually implements on its SUBCLASS
          *   -> e.g. : call superclass and point to subclass' instance
          */
@@ -25,9 +25,15 @@ public class PersonTest {
 
         /**
          *  Example 2 : how can we call subclass' attr and method ?
-         *   -> Upcasting
+         *   -> DownCasting
          */
-        Man m2 = (Man) p2;
+        Man m2 = (Man) p2; // DownCasting
+        m2.makeMoney();
+        m2.isSmoking = true;
 
+        // when use DownCasting, we may face "ClassCastException" exception (as below)
+        // so it's good to use isClassOf verify it before run
+        //Woman w1 = (Woman) p2;
+        //w1.goShopping();
     }
 }
