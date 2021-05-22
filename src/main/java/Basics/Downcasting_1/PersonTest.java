@@ -1,4 +1,4 @@
-package Basics.Upcasting_1;
+package Basics.Downcasting_1;
 
 // https://www.youtube.com/watch?v=AFlcbyee_vs&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=286
 // ref : Basics.polymorphism_1

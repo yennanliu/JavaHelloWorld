@@ -226,7 +226,7 @@
             - there is extends in class (superclass, subclass)
             - method override is necessary
     - Upcasting VS DownCasting
-        - [Upcasting_1](./src/main/java/Basics/Upcasting_1) - Upcasting
+        - [Downcasting_1](src/main/java/Basics/Downcasting_1)
         - [Upcasting ref](https://www.javatpoint.com/upcasting-and-downcasting-in-java)
         - Superclass ---DownCasting---> Subclass
         - Superclass <---Upcasting--- Subclass
