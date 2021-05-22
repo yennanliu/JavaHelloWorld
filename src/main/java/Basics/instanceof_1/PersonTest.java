@@ -1,6 +1,8 @@
 package Basics.instanceof_1;
 
 // https://www.youtube.com/watch?v=kQtKcNX4O44&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=287
+// https://www.youtube.com/watch?v=qlP0S-iNAJ8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=288
+
 // ref : Basics.polymorphism_1
 
 public class PersonTest {
@@ -58,5 +60,31 @@ public class PersonTest {
             System.out.println("==========  Object  ========== ");
         }
 
+
+        System.out.println("============================");
+
+        // more examples 1
+        // https://www.youtube.com/watch?v=qlP0S-iNAJ8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=288
+
+        // example 1: compile pass, runtime failed
+        //Person p3 = new Woman();
+        //Man m3 = (Man) p3;
+
+        System.out.println("============================");
+
+        // example 2: compile pass, runtime pass
+        Object obj = new Woman();
+        Person p3 = (Person) obj;
+
+        System.out.println("============================");
+
+        // example 3 : compile pass, runtime failed
+        // -> in order to Downcasting, we need do Uppercasting first !!
+        //Person p4 = new Person();
+        //Man m4 = (Man) p4;
+        //m2.makeMoney();
+
+        // example 4 : compile failed, runtime failed
+        //Man m5 = new Woman(); // type mismatch
     }
 }

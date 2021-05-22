@@ -216,7 +216,7 @@
         - Polymorphism is actually `Upcasting`
         - pattern : 
         ```java 
-        superclass p1 = new subclass();
+        super class p1 = new subclass();
         ```
         - (following above) p1 will be the superclass class type, so it CAN'T use the method that only exist in subclass
         - During compile
@@ -246,13 +246,14 @@
         - Summary:
             - `Uppercasting` : make subclass to superclass type
             - `Downcasting` : make superclass to subclass type
+            - In dev, we use Uppercasting >> than Downcasting
     <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/upcasting_downcasting.png"></p>
 
     - Instanceof
         - [instanceof_1](./src/main/java/Basics/instanceof_1) - instanceof demo
         - `a instanceof A` : check if a is instance of A, if yes, return True, else False
         - using case :
-            -> to prevent the "ClassCastException" exception, we use instanceof before we do DownCasting. (if return true, then do DownCasting, else do nothing)
+            -> to prevent the "ClassCastException" exception, we use instanceof before we do DownCasting. (if return true, then do `DownCasting`, else do nothing)
  
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
