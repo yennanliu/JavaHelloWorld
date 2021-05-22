@@ -229,11 +229,23 @@
         - use requirements:
             - there is extends in class (superclass, subclass)
             - method override is necessary
-    - Upcasting VS DownCasting
+    - `Downcasting`
         - [Downcasting_1](src/main/java/Basics/Downcasting_1)
+        - [Downcasting_2](src/main/java/Basics/Downcasting_2)
         - [Upcasting ref](https://www.javatpoint.com/upcasting-and-downcasting-in-java)
+        - pattern : 
+        ```java 
+        // MUST do upperCasting first (?)
+        superclass p1 = new subclass();
+        // then do downcasting
+        subclass x1 = (subclass) p1;
+        ```
+    - Upcasting VS DownCasting
         - Superclass ---DownCasting---> Subclass
         - Superclass <---Upcasting--- Subclass
+        - Summary:
+            - `Uppercasting` : make subclass to superclass type
+            - `Downcasting` : make superclass to subclass type
     <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/upcasting_downcasting.png"></p>
 
     - Instanceof
