@@ -211,9 +211,13 @@
     - Polymorphism (`Upcasting`)
         - [polymorphism_1](./src/main/java/Basics/polymorphism_1)
         - [polymorphism_2](./src/main/java/Basics/polymorphism_2)
+        - [polymorphism_3](./src/main/java/Basics/polymorphism_3)
          - call superclass and point to subclass' instance
         - Polymorphism is actually `Upcasting`
-        - pattern : ```java superclass p1 = new subclass();```
+        - pattern : 
+        ```java 
+        superclass p1 = new subclass();
+        ```
         - (following above) p1 will be the superclass class type, so it CAN'T use the method that only exist in subclass
         - During compile
             - => can only call methods defined in superclass
