@@ -232,6 +232,11 @@
         - Superclass <---Upcasting--- Subclass
     <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/upcasting_downcasting.png"></p>
 
+    - Instanceof
+        - [instanceof_1](./src/main/java/Basics/instanceof_1) - instanceof demo
+        - `a instanceof A` : check if a is instance of A, if yes, return True, else False
+        - using case :
+            -> to prevent the "ClassCastException" exception, we use instanceof before we do DownCasting. (if return true, then do DownCasting, else do nothing)
  
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
