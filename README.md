@@ -5,6 +5,20 @@
 <summary>Java Hello World</summary>
 
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic1
+    - Data types
+        - Primitive Data Types
+            - Int, String, Float, boolean, char....
+        - Reference types (Non-Primitive Data Types)
+            - user defined. e.g. :
+            ```java
+            class myClass{
+                int id;
+                Double age;
+            }
+            myClass m1 = new myClass;
+            ```
+        - [ref1](https://www.w3schools.com/java/java_data_types.asp)
+        - [ref2](https://www.geeksforgeeks.org/types-references-java/)
     - Basic operator
         - [TernaryOperator](./src/main/java/Basics/TernaryOperator.java)
     - Array
@@ -212,11 +226,13 @@
         - [polymorphism_1](./src/main/java/Basics/polymorphism_1)
         - [polymorphism_2](./src/main/java/Basics/polymorphism_2)
         - [polymorphism_3](./src/main/java/Basics/polymorphism_3)
+        - [polymorphism_4](./src/main/java/Basics/polymorphism_4)
          - call superclass and point to subclass' instance
         - Polymorphism is actually `Upcasting`
+        - Polymorphism NOT working in `attr` (still use its superclass' attr)
         - pattern : 
         ```java 
-        super class p1 = new subclass();
+        superclass p1 = new subclass();
         ```
         - (following above) p1 will be the superclass class type, so it CAN'T use the method that only exist in subclass
         - During compile
