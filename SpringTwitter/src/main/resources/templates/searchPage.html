@@ -6,29 +6,27 @@
     <title>Search</title>
 </head>
 <body>
-    <div class="row" layout:fragment="content">
-        <h4 class="indigo-text center">Please enter a search term</h4>
- 
-        <!--错误时候的提示-->
-        <div class="col s6 offset-s3">
-            <div id="errorMessage" class="card-panel red lighten-2" th:if="${error}">
-                <span class="card-title" th:text="${error}"></span>
-            </div>
+
+<div class="row" layout:fragment="content">
+
+    <h4 class="indigo-text center">Please enter a search term</h4>
+
+    <div class="col s6 offset-s3">
+        <div id="errorMessage" class="card-panel red lighten-2" th:if="${error}">
+            <span class="card-title" th:text="${error}"></span>
         </div>
- 
-        <!--查找时用的表单-->
+
         <form action="/postSearch" method="post" class="col s12">
             <div class="row center">
-                <div class="input-field col s6 offset-s3">
-                    <!--添加搜索的图标-->
+                <div class="input-field">
                     <i class="mdi-action-search prefix"></i>
-                    <!--查找框-->
                     <input id="search" name="search" type="text" class="validate"/>
-                    <!--添加的标签，只要用户还没有输入就显示，输入了标签上移，for值与上面的id一样-->
                     <label for="search">Search</label>
                 </div>
             </div>
         </form>
     </div>
+</div>
+
 </body>
 </html>

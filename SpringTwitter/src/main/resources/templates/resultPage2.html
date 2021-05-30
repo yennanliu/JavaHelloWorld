@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+  <meta charest="UTF-8"/>
+  <title>HELLO TWITTER</title>
+  <link href="/webjars/materializecss/1.0.0/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<div class="row">
+
+<!-- <h2 class="indigo-test center" th:text="|Tweet Results For ${search}|">Tweets</h2>-->
+    <ul class="collection">
+<!--        <li class="collection-item avatar" th:each="tweet : $(tweets)">-->
+<!--            <img th:src="${tweet.user.profileImageUrl}" alt="" class="circle"/>-->
+<!--            <span class="title" th:text="${tweet.user.name}">Username</span>-->
+<!--            <p th:text="${tweet.text}">Tweet message</p>-->
+<!--        </li>-->
+    </ul>
+
+</div>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+<p>hey hey hey</p>
+
+<u1>
+    <p th:text= "${search}" ></p>
+    <li th:each="tweet :  ${tweets}" th:text = "${tweet}" > Some tweet</li>
+    <p>hey2 hey2 hey2</p>
+</u1>
+
+<script src="/webjars/jquery/2.2.4/jquery.js"></script>
+<script src="/webjars/materializecss/1.0.0/js/materialize.js"></script>
+
+<!--<script src="/Users/yennan.liu/.m2/repository/org/webjars/jquery/2.2.4/jquery.js"></script>-->
+<!--<script src="/Users/yennan.liu/.m2/repository/org/webjars/materializecss/1.0.0/js/materialize.js"></script>-->
+
+</body>
+</html>
