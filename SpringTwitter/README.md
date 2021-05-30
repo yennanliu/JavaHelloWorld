@@ -2,6 +2,9 @@
 
 ### Endpoints 
 - http://localhost:8080/twitter
+- http://localhost:8080/api/v1/?search=jpop
+- http://localhost:8080/api/v2/?search=jpop
+
 - http://localhost:8080/api/v1/<search_word>
 - http://localhost:8080/api/v1/users
 
@@ -12,6 +15,15 @@
 
 ### API examples
 ```bash
+# V1
+http://localhost:8080/api/v1/?search=jpop
+
+# V2
+http://localhost:8080/api/v2/?search=jpop
+```
+
+```bash
+# dev examples
 curl -X GET http://localhost:8080/api/users
 
 curl -X POST http://localhost:8080/api/users -F 'email=test@gmail.com' -F 'bisthDate=2021-01-01'
