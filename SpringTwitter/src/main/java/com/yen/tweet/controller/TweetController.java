@@ -33,16 +33,13 @@ public class TweetController {
 //        return "redirect:result";
 //    }
 
-    @RequestMapping("/search")
-    public String queryTwitter2(@RequestParam(defaultValue = "ETF") String search, Model model){
+    @RequestMapping("/api/v2")
+    public String queryTwitter2(@RequestParam(defaultValue = "XBOX") String search, Model model){
         SearchResults searchResults = twitter.searchOperations().search(search);
         System.out.println("searchResults = " + searchResults);
-
         List<Tweet> tweets = searchResults.getTweets();
-
         model.addAttribute("tweets", tweets);
         model.addAttribute("search", search);
-
         return "resultPage";
     }
 

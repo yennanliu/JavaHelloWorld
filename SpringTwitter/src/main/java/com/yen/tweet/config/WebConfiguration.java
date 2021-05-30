@@ -40,4 +40,12 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
                 .paths(path -> path.startsWith("/api/"))
                 .build();
     }
+
+    @Bean
+    public Docket search(){
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .paths(path -> path.startsWith("/"))
+                .build();
+    }
 }
