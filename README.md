@@ -228,6 +228,7 @@
         - [polymorphism_3](./src/main/java/Basics/polymorphism_3)
         - [polymorphism_4](./src/main/java/Basics/polymorphism_4)
         - [polymorphism_5](./src/main/java/Basics/polymorphism_5)
+        - [polymorphism_6](./src/main/java/Basics/polymorphism_6)
          - call superclass and point to subclass' instance
         - Polymorphism is actually `Upcasting`
         - Polymorphism NOT working in `attr` (still use its superclass' attr)
