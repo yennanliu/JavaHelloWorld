@@ -272,7 +272,12 @@
         - `a instanceof A` : check if a is instance of A, if yes, return True, else False
         - using case :
             -> to prevent the "ClassCastException" exception, we use instanceof before we do DownCasting. (if return true, then do `DownCasting`, else do nothing)
- 
+
+    - java.lang.Object
+        - [objectDemo1](./src/main/java/Basics/objectDemo1)
+            - java.lang.Object basics, properties
+            - garbage collect (GC) intro
+
 - [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
