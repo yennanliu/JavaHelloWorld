@@ -3,6 +3,8 @@ package Basics.EqualsDemo1;
 // https://www.youtube.com/watch?v=zcP75HnjiAE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=295
 // https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Basics/EqualsDemo1/demo1.java
 
+import java.util.Date;
+
 /**
  *   Difference between == and equals()
  *
@@ -13,7 +15,18 @@ package Basics.EqualsDemo1;
  *   2) Equals
  *      2-1) Equals is a method, NOT operator
  *      2-2) Equals can ONLY be used in Reference data type
+ *      2-3) in Object, definition of equals():
+ *           // public boolean equals(Object obj) {
+ *           //    return (this == obj);
  *
+ *           -> same equals in Object is SAME as ==
+ *           -> compare the ADDRESS IN MEMORY ( or if the SAME INSTANCE)
+ *
+ *     2-4) For some types (class) such as String, Date, File
+ *           -> They've overridden the equals method
+ *           -> SO compare if "content" (attr: such as value..) are the SAME; but NOT address
+ *           - e.g.
+ *              for Customer, content : name, age
  *
  */
 
@@ -41,6 +54,7 @@ public class demo2 {
 
         System.out.println("==============");
 
+        // example 2
         String str1 = new String("java");
         String str2 = new String("java");
 
@@ -55,6 +69,15 @@ public class demo2 {
          *        // public boolean equals(@Nullable Object anObject)
          */
         System.out.println(str1.equals(str2)); //true
+
+
+        System.out.println("==============");
+
+        // example 3
+        Date date1 = new Date(5435435L);
+        Date date2 = new Date(5435435L);
+
+        System.out.println(date1.equals(date2)); //true
     }
 
 }
