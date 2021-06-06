@@ -4,7 +4,7 @@
 <details>
 <summary>Java Hello World</summary>
 
-- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic1
+- [JavaHelloWorld](./tree/main/src) : basic1
     - Data types
         - Primitive Data Types
             - Int, String, Float, boolean, char....
@@ -62,16 +62,16 @@
     - Others
         - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
 
-<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ClassDemo2.svg"></p>
-<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_in_memory.svg"></p>
+<p ><img src ="./blob/main/doc/pic/ClassDemo2.svg"></p>
+<p ><img src ="./blob/main/doc/pic/class_in_memory.svg"></p>
 
 - Array1D:
-<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array1DimMemory.svg"></p>
+<p ><img src ="./blob/main/doc/pic/array1DimMemory.svg"></p>
 - Array2D:
-<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array2DimMemory.svg"></p>
+<p ><img src ="./blob/main/doc/pic/array2DimMemory.svg"></p>
 
 
-- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic2 : OOP/class
+- [JavaHelloWorld](./tree/main/src) : basic2 : OOP/class
     - Java class and its class members:
         - field
         - method
@@ -204,7 +204,7 @@
         - [ControllAccess_1_1](./src/main/java/Basics/ControllAccess_1_1)
         - [ref](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
 
-    <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/access_level.png"></p>
+    <p ><img src ="./blob/main/doc/pic/access_level.png"></p>
 
     - Super      
         - [Super_1](./src/main/java/Basics/Super_1)
@@ -265,7 +265,7 @@
             - `Uppercasting` : make subclass to superclass type
             - `Downcasting` : make superclass to subclass type
             - In dev, we use Uppercasting >> than Downcasting
-    <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/upcasting_downcasting.png"></p>
+    <p ><img src ="./blob/main/doc/pic/upcasting_downcasting.png"></p>
 
     - Instanceof
         - [instanceof_1](./src/main/java/Basics/instanceof_1) - instanceof demo
@@ -278,7 +278,7 @@
             - java.lang.Object basics, properties
             - garbage collect (GC) intro
 
-- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic3
+- [JavaHelloWorld](./tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
         - [staticDemo 2](./src/main/java/Basics/staticDemo2.java)
@@ -341,7 +341,7 @@
             ```
 
 
-- [JavaHelloWorld](https://github.com/yennanliu/JavaHelloWorld/tree/main/src) : basic4
+- [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
@@ -369,8 +369,8 @@
 
 </details>
 
-- [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
-- [Spring Twitter](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringTwitter)
+- [Spring web](./tree/main/SpringWeb)
+- [Spring Twitter](./tree/main/SpringTwitter)
     - endpoint : 
         - http://localhost:8080/api/v1/?search=trump
         - http://localhost:8080/test1
