@@ -18,7 +18,6 @@ package Basics.EqualsDemo1;
  *           -> will compare if their address in memory are the SAME
  *           -> e.g. if they are belong to the same instance
  *           -> (plz check example 4 below)
- *
  */
 
 public class demo1 {
@@ -56,6 +55,8 @@ public class demo1 {
         // example 4
         Customer cust1 = new Customer("tom", 21);
         Customer cust2 = new Customer("tom", 21);
+
+        System.out.println("==============");
 
         // NOTE : cust1 and cust2 are in the different address (in memory)
         System.out.println(cust1 == cust2); // FALSE
