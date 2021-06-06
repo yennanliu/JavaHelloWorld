@@ -62,13 +62,13 @@
     - Others
         - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
 
-<p ><img src ="./blob/main/doc/pic/ClassDemo2.svg"></p>
-<p ><img src ="./blob/main/doc/pic/class_in_memory.svg"></p>
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ClassDemo2.svg"></p>
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_in_memory.svg"></p>
 
 - Array1D:
-<p ><img src ="./blob/main/doc/pic/array1DimMemory.svg"></p>
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array1DimMemory.svg"></p>
 - Array2D:
-<p ><img src ="./blob/main/doc/pic/array2DimMemory.svg"></p>
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/array2DimMemory.svg"></p>
 
 
 - [JavaHelloWorld](./tree/main/src) : basic2 : OOP/class
@@ -204,7 +204,7 @@
         - [ControllAccess_1_1](./src/main/java/Basics/ControllAccess_1_1)
         - [ref](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
 
-    <p ><img src ="./blob/main/doc/pic/access_level.png"></p>
+    <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/access_level.png"></p>
 
     - Super      
         - [Super_1](./src/main/java/Basics/Super_1)
@@ -265,7 +265,7 @@
             - `Uppercasting` : make subclass to superclass type
             - `Downcasting` : make superclass to subclass type
             - In dev, we use Uppercasting >> than Downcasting
-    <p ><img src ="./blob/main/doc/pic/upcasting_downcasting.png"></p>
+    <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/upcasting_downcasting.png"></p>
 
     - Instanceof
         - [instanceof_1](./src/main/java/Basics/instanceof_1) - instanceof demo
