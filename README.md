@@ -278,6 +278,14 @@
             - java.lang.Object basics, properties
             - garbage collect (GC) intro
 
+    - Equals
+         - [EqualsDemo1](./src/main/java/Basics/EqualsDemo1)
+         -  If compare "basic data type"
+            - type don't need to be the same, ONLY compare their "actual value" in memory
+        - If compare "REFERENCE data type"
+            - will compare if their address in memory are the SAME
+            - e.g. if they are belong to the same instance     
+
 - [JavaHelloWorld](./tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
