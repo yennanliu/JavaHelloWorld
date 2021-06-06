@@ -33,4 +33,28 @@ public class Customer {
     public void setAge(int age) {
         this.age = age;
     }
+
+    // method
+    // OVERWRITE the equals method -> compare if "content" are the same
+    @Override
+    public boolean equals(Object obj) {
+        // check if in same address -> if same address, the objects must are the SAME instance
+        System.out.println("Customer's equals ...");
+        if (this == obj){
+            return  true;
+        }
+
+        // check if objects are belong to the same class (Customer)
+        if (obj instanceof Customer){
+            Customer cust = (Customer) obj; // downcasting
+            // compare every attr
+//            if (this.age == cust.age && this.name.equals(cust.name)){ // NOTE : we need equals compare name attr here ( name is reference type)
+//                return true;
+//            } else {
+//                return false;
+//            }
+            return (this.age == cust.age && this.name.equals(cust.name)); // same as above logic
+        }
+        return false;
+    }
 }

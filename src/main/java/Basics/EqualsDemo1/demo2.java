@@ -28,6 +28,9 @@ import java.util.Date;
  *           - e.g.
  *              for Customer, content : name, age
  *
+ *    2-5) In general cases, we want equals to compare "content" rather than address
+ *         -> so we need to OVERWRITE the equals method
+ *
  */
 
 public class demo2 {
@@ -50,7 +53,7 @@ public class demo2 {
          *      //        return (this == obj);
          *      //    }
          */
-        System.out.println(cust1.equals(cust2)); //false
+        System.out.println(cust1.equals(cust2)); // false, (but will be true if we OVERWRITE the equals method)
 
         System.out.println("==============");
 

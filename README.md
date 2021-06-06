@@ -278,13 +278,24 @@
             - java.lang.Object basics, properties
             - garbage collect (GC) intro
 
-    - Equals
+    - `Equals` VS `==`
          - [EqualsDemo1](./src/main/java/Basics/EqualsDemo1)
-         -  If compare "basic data type"
-            - type don't need to be the same, ONLY compare their "actual value" in memory
-        - If compare "REFERENCE data type"
-            - will compare if their address in memory are the SAME
-            - e.g. if they are belong to the same instance     
+        - `==`
+            - ==, an operator
+            - can be used on basic data type and inference data type
+            -  If compare "basic data type"
+                - type don't need to be the same, ONLY compare their "actual value" in memory
+             - If compare "REFERENCE data type"
+                - will compare if their address in memory are the SAME
+                - e.g. if they are belong to the same instance
+        - `Equals`
+            - Equals is a method, NOT operator
+            - Equals can ONLY be used in Reference data type
+            - For some types (class) such as String, Date, File
+                - -> They've overridden the equals method
+                - -> SO compare if "content" (attr: such as value..) are the SAME; but NOT address
+            - In general cases, we want equals to compare "content" rather than address
+                - -> so we need to OVERWRITE the equals method
 
 - [JavaHelloWorld](./tree/main/src) : basic3
     - Static demo
