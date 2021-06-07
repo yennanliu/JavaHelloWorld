@@ -280,9 +280,11 @@
 
     - `Equals` VS `==`
          - [EqualsDemo1](./src/main/java/Basics/EqualsDemo1)
+         - [EqualsDemo2](./src/main/java/Basics/EqualsDemo2)
         - `==`
             - ==, an operator
-            - can be used on basic data type and inference data type
+            - For comparing `BASIC data type`
+            - compare "content" (attr: such as value..)
             -  If compare "basic data type"
                 - type don't need to be the same, ONLY compare their "actual value" in memory
              - If compare "REFERENCE data type"
@@ -290,7 +292,8 @@
                 - e.g. if they are belong to the same instance
         - `Equals`
             - Equals is a method, NOT operator
-            - Equals can ONLY be used in Reference data type
+            - For comparing `Reference data type`
+             - compare `address in memory`
             - For some types (class) such as String, Date, File
                 - -> They've overridden the equals method
                 - -> SO compare if "content" (attr: such as value..) are the SAME; but NOT address
