@@ -281,10 +281,11 @@
     - `Equals` VS `==`
          - [EqualsDemo1](./src/main/java/Basics/EqualsDemo1)
          - [EqualsDemo2](./src/main/java/Basics/EqualsDemo2)
+         - [EqualsDemo3](./src/main/java/Basics/EqualsDemo3)
         - `==`
             - ==, an operator
             - For comparing `BASIC data type`
-            - compare "content" (attr: such as value..)
+            - compare `CONTENT (attr: such as value..)`
             -  If compare "basic data type"
                 - type don't need to be the same, ONLY compare their "actual value" in memory
              - If compare "REFERENCE data type"
