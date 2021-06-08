@@ -1,6 +1,7 @@
 # SpringTwitter
 
 ### Endpoints 
+- http://localhost:8080/
 - http://localhost:8080/twitter
 - http://localhost:8080/api/v1/?search=jpop
 - http://localhost:8080/api/v2/?search=jpop

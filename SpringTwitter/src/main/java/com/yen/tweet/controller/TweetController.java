@@ -21,17 +21,22 @@ public class TweetController {
     @Autowired
     private Twitter twitter;
 
-//    @RequestMapping(value = "/postSearch", method = RequestMethod.POST)
-//    public String postSearch(HttpServletRequest request,
-//                             RedirectAttributes redirectAttributes) {
-//        String search = request.getParameter("search");
-//        if (search.toLowerCase().contains("struts")) {
-//            redirectAttributes.addFlashAttribute("error", "Try using spring instead!");
-//            return "redirect:/";
-//        }
-//        redirectAttributes.addAttribute("search", search);
-//        return "redirect:result";
-//    }
+    @RequestMapping("/")
+    public String home() {
+        return "searchPage";
+    }
+
+    @RequestMapping(value = "/postSearch", method = RequestMethod.POST)
+    public String postSearch(HttpServletRequest request,
+                             RedirectAttributes redirectAttributes) {
+        String search = request.getParameter("search");
+        if (search.toLowerCase().contains("struts")) {
+            redirectAttributes.addFlashAttribute("error", "Try using spring instead!");
+            return "redirect:/";
+        }
+        redirectAttributes.addAttribute("search", search);
+        return "redirect:result";
+    }
 
     @RequestMapping("/api/v2")
     public String queryTwitter2(@RequestParam(defaultValue = "XBOX") String search, Model model){
