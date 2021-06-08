@@ -392,8 +392,8 @@
 
 </details>
 
-- [Spring web](./tree/main/SpringWeb)
-- [Spring Twitter](./tree/main/SpringTwitter)
+- [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
+- [Spring Twitter](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringTwitter)
     - endpoint : 
         - http://localhost:8080/api/v1/?search=trump
         - http://localhost:8080/test1
