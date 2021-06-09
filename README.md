@@ -302,6 +302,9 @@
             - In general cases, we want equals to compare "content" rather than address
                 - -> so we need to OVERWRITE the equals method
 
+    - toString()
+        - [EqualsDemo1](./src/main/java/Basics/ToString_1.java)
+
 - [JavaHelloWorld](./tree/main/src) : basic3
     - Static demo
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
