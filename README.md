@@ -282,6 +282,7 @@
          - [EqualsDemo1](./src/main/java/Basics/EqualsDemo1)
          - [EqualsDemo2](./src/main/java/Basics/EqualsDemo2)
          - [EqualsDemo3](./src/main/java/Basics/EqualsDemo3)
+         - [EqualsDemo4](./src/main/java/Basics/EqualsDemo4)
         - `==`
             - ==, an operator
             - For comparing `BASIC data type`
