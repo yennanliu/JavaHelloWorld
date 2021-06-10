@@ -19,6 +19,10 @@
             ```
         - [ref1](https://www.w3schools.com/java/java_data_types.asp)
         - [ref2](https://www.geeksforgeeks.org/types-references-java/)
+    - Basics Data Types VS Wrapper
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/basic_types_wrapper.png"></p>
+        - Wrapper can "encapsulate" basic data type -> make them has `object` properties (for OOP)
+        - so can use object method, such as toString, equals, hashcode...
     - Basic operator
         - [TernaryOperator](./src/main/java/Basics/TernaryOperator.java)
     - Array
