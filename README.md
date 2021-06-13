@@ -28,6 +28,24 @@
         - [WrapperDemo4](./src/main/java/Basics/WrapperDemo1/WrapperTest4.java)
         - Need to pickup
             - Basic type <--> Wrapper <--> String
+        ```java
+        // basic type, wrapper -> String class
+        float f1 = 12.3f;
+        String str2 = String.valueOf(f1);
+
+        Double d1 = new Double(12.34);
+        String str3 =  String.valueOf(d1);
+
+        // String class -> basic type, wrapper
+        int num2 = Integer.parseInt(str1);
+
+        String  str2 = "true";
+        Boolean b1 = Boolean.parseBoolean(str2);
+
+        // wrapper -> basic type
+        Integer in1 = new Integer(12);
+        int in1_ = in1.intValue();
+        ```
         - "autoboxing", "unboxing"
         ```java
         // autoboxing
