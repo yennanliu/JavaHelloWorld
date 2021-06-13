@@ -281,6 +281,7 @@
 
     - java.lang.Object
         - [objectDemo1](./src/main/java/Basics/objectDemo1)
+        - [objectDemo2](./src/main/java/Basics/objectDemo2)
             - java.lang.Object basics, properties
             - garbage collect (GC) intro
 
