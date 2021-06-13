@@ -23,6 +23,19 @@
         - Wrapper can "encapsulate" basic data type -> make them has `object` properties (for OOP)
         - so can use object method, such as toString, equals, hashcode...
         - [WrapperDemo1](./src/main/java/Basics/WrapperDemo1)
+        - [WrapperDemo2](./src/main/java/Basics/WrapperDemo2)
+        - [WrapperDemo3](./src/main/java/Basics/WrapperDemo3)
+        - Need to pickup
+            - Basic type <--> Wrapper <--> String
+        - "autoboxing", "unboxing"
+        ```java
+        // autoboxing
+        int num = 10;
+        Integer in1 = num;
+        
+        // unboxing
+        int in3 = in1;
+        ```
     
         - <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/basic_types_wrapper.png"></p>
 
