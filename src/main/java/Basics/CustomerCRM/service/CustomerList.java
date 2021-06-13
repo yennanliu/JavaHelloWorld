@@ -1,4 +1,4 @@
-package Basics.exampleApp1.service;
+package Basics.CustomerCRM.service;
 
 // https://www.youtube.com/watch?v=c2d0vVbvoSQ&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=248
 // https://www.youtube.com/watch?v=HyZFx7MeTOs&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=251
@@ -9,7 +9,7 @@ package Basics.exampleApp1.service;
  *   -> such as go through, edit, delete, adding
  */
 
-import Basics.exampleApp1.bean.Customer;
+import Basics.CustomerCRM.bean.Customer;
 
 public class CustomerList {
     // attr

@@ -1,4 +1,4 @@
-package Basics.exampleApp1.view;
+package Basics.CustomerCRM.view;
 
 // https://www.youtube.com/watch?v=c2d0vVbvoSQ&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=248
 // https://www.youtube.com/watch?v=KyQNP7_6DUM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=252
@@ -12,9 +12,9 @@ package Basics.exampleApp1.view;
  *    -> for user interface, user data for client side...
  */
 
-import Basics.exampleApp1.bean.Customer;
-import Basics.exampleApp1.service.CustomerList;
-import Basics.exampleApp1.utils.CMUtility;
+import Basics.CustomerCRM.bean.Customer;
+import Basics.CustomerCRM.service.CustomerList;
+import Basics.CustomerCRM.utils.CMUtility;
 
 public class CustomerView {
     private CustomerList customerList = new CustomerList(10);
