@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/profile")
+@RequestMapping("/")
 //@RequestMapping(value = "/profile", params = {"save"}, method = RequestMethod.POST)
 public class ProfileController {
-    public String displayProfile() {
+    @RequestMapping("/profile")
+    public String displayProfile(ProfileForm profileForm) {
         return "profile/profilePage";
     }
 }
