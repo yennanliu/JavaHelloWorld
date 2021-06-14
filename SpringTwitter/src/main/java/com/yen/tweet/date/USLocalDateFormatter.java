@@ -2,8 +2,6 @@ package com.yen.tweet.date;
 
 // p.66
 
-//import com.sun.javafx.tools.packager.PackagerException;
-//import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.format.Formatter;
 
 import java.text.ParseException;
@@ -19,16 +17,15 @@ public class USLocalDateFormatter implements Formatter<LocalDate> {
         return LocalDate.parse(text, DateTimeFormatter.ofPattern(getPattern(locale)));
     }
 
+    @Override public String print(LocalDate object, Locale locale) {
+        return DateTimeFormatter.ofPattern(getPattern(locale)).format(object);
+    }
+
     public static String getPattern(Locale locale) {
         return isUnitedStates(locale) ? US_PATTERN : NORMAL_PATTERN;
     }
 
-    private static boolean isUnitedStates(Locale locale){
+    private static boolean isUnitedStates(Locale locale) {
         return Locale.US.getCountry().equals(locale.getCountry());
-    }
-
-    @Override
-    public String print(LocalDate localDate, Locale locale) {
-        return null;
     }
 }
