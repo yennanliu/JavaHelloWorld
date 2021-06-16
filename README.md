@@ -23,9 +23,10 @@
         - Wrapper can "encapsulate" basic data type -> make them has `object` properties (for OOP)
         - so can use object method, such as toString, equals, hashcode...
         - [WrapperDemo1](./src/main/java/Basics/WrapperDemo1/WrapperTest.java)
-        - [WrapperDemo2](./src/main/java/Basics/WrapperDemo1/WrapperTest2.java)
-        - [WrapperDemo3](./src/main/java/Basics/WrapperDemo1/WrapperTest3.java)
-        - [WrapperDemo4](./src/main/java/Basics/WrapperDemo1/WrapperTest4.java)
+            - [WrapperDemo1-1](./src/main/java/Basics/WrapperDemo1/WrapperTest2.java)
+            - [WrapperDemo1-2](./src/main/java/Basics/WrapperDemo1/WrapperTest3.java)
+            - [WrapperDemo1-4](./src/main/java/Basics/WrapperDemo1/WrapperTest4.java)
+        - [WrapperDemo2](./src/main/java/Basics/WrapperDemo2)
         - Need to pickup
             - Basic type <--> Wrapper <--> String
         ```java
