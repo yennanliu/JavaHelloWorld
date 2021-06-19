@@ -1,4 +1,4 @@
-
+package Basics;
 // https://www.youtube.com/watch?v=Obgvqy4_DVA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=318
 
 public class staticDemo4 {
@@ -42,7 +42,7 @@ class Japanese2{
 
         // can call static attr
         System.out.println(Japanese2.nation);
-        System.out.println(nation); // nation is actually Japanese2.nation
+        System.out.println(nation); // nation is actually Basics.Japanese2.nation
     }
 
     public void info(){
