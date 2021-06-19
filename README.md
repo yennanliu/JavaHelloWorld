@@ -357,9 +357,13 @@
                 -> every instance has its own attr
                 -> when modify attr in one instance, will NOT accect others
         - Static method
+            - lives in method's "static area"
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
         - [staticDemo 2](./src/main/java/Basics/staticDemo2.java)
         - [staticDemo 3](./src/main/java/Basics/staticDemo3.java)
+
+    <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/static1.svg"></p>
+
     - Singleton pattern
         - Only allow some classes be existing in some specific class instances
             -> can save resources

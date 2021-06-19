@@ -15,13 +15,16 @@ public class staticDemo3 {
         j2.age = 30;
 
         // nation is static attr
-        // so there is ONLY ONE such value in the java heap
+        // so there is ONLY ONE such value in the "static area"
         // and j1 already define nation
         System.out.println("j2.nation = " + j2.nation);
 
         j2.nation = "Japan";
 
         System.out.println("j1.nation = " + j1.nation);
+
+        // and we can call the static method directly
+        System.out.println(Japanese.nation);
     }
 }
 
