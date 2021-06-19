@@ -348,8 +348,18 @@
 
 - [JavaHelloWorld](./tree/main/src) : basic3
     - Static demo
+        - Can be used in `attribution`, `method`, `code block`, `inner class`
+        - Static attribution
+            - with `static` : static attr
+                -> every instance use THE SAME attr
+                -> when modify attr in one instance, will modify others as well
+            - Not with static : non-static attr (instance attr)
+                -> every instance has its own attr
+                -> when modify attr in one instance, will NOT accect others
+        - Static method
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
         - [staticDemo 2](./src/main/java/Basics/staticDemo2.java)
+        - [staticDemo 3](./src/main/java/Basics/staticDemo3.java)
     - Singleton pattern
         - Only allow some classes be existing in some specific class instances
             -> can save resources
