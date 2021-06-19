@@ -356,11 +356,28 @@
             - Not with static : non-static attr (instance attr)
                 -> every instance has its own attr
                 -> when modify attr in one instance, will NOT accect others
+            ```
+                        static attr    |  non static attr
+            class         yes          |    no     (can class call attr ?)
+            instance      yes          |    yes    (can instance call attr ?)
+            
+            ```
         - Static method
             - lives in method's "static area"
+            - `static method` is loaded when `class` is loaded
+            - `static method` CAN ONLY call `static method` or `static attr`
+            - `non static method` CAN call both : `static/non-static method` and `static/non-static attr`
+            - `this`, `super` are NOT allowed in static method
+            ```
+                        static method  |  non static method
+            class         yes          |    no     (can class call method ?)
+            instance      yes          |    yes    (can instance call method ?)
+                         
+            ```
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
         - [staticDemo 2](./src/main/java/Basics/staticDemo2.java)
         - [staticDemo 3](./src/main/java/Basics/staticDemo3.java)
+        - [staticDemo 4](./src/main/java/Basics/staticDemo4.java)
 
     <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/static1.svg"></p>
 
