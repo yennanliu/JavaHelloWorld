@@ -3,6 +3,7 @@
 ### Endpoints 
 - http://localhost:8080/
 - http://localhost:8080/twitter
+- http://localhost:8080/profile
 - http://localhost:8080/api/v1/?search=jpop
 - http://localhost:8080/api/v2/?search=jpop
 
@@ -38,3 +39,6 @@ curl -d "email=test@gmail.com&bisthDate=2021-01-01" -X POST http://localhost:808
 	- https://github.com/Mastering-Spring-MVC-4/mastering-spring-mvc4
 - Curl perform HTTP calls
 	- https://www.educative.io/edpresso/how-to-perform-a-post-request-using-curl
+- Spring tutorial
+	- https://www.youtube.com/watch?v=5pEyBvi1oOk&list=PLmOn9nNkQxJEFsK2HVO9-WA55Z7LZ2N0S
+	- https://www.youtube.com/playlist?list=PLmOn9nNkQxJF-fc4G_qDR7OWgBEOV9MIR
