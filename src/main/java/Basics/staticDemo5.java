@@ -2,6 +2,8 @@ package Basics;
 
 // https://www.youtube.com/watch?v=U_ho3BRDwsE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=321
 
+import java.io.DataOutput;
+
 /**
  *   static attr can be shared by ALL instances
  */
@@ -19,6 +21,11 @@ public class staticDemo5 {
         System.out.println("total instances = " + Circle.getTotal());
 
         Circle c3 = new Circle();
+
+        System.out.println("total instances = " + Circle.getTotal());
+
+        Circle c4 = new Circle(9.99);
+        System.out.println("c4's area = " + c4.findArea());
 
         System.out.println("total instances = " + Circle.getTotal());
     }
@@ -44,6 +51,16 @@ class Circle{
         // second time : 1
         // ....
         total++;
+    }
+
+    public Circle(double radius){
+        // don't forget below
+        // V1
+        //this();
+        // V2
+        id = id++;
+        total++;
+        this.radius = radius;
     }
 
     // getter, setter

@@ -379,6 +379,7 @@
         
         - When to use `static method` ?
             - method which use static attr
+            - constant in class (as attr) are usually declared as `static`
             - methods in util class 
                 - (can use directly, no need to instantiate class)
                 - e.g. Math, Array, Collections
@@ -448,6 +449,8 @@
             }
             ```
 
+    - Final
+        - for "constant"
 
 - [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo
