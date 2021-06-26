@@ -386,6 +386,7 @@
         - [staticDemo 2](./src/main/java/Basics/staticDemo2.java)
         - [staticDemo 3](./src/main/java/Basics/staticDemo3.java)
         - [staticDemo 4](./src/main/java/Basics/staticDemo4.java)
+        - [staticDemo 5](./src/main/java/Basics/staticDemo5.java)
 
     <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/static1.svg"></p>
 
