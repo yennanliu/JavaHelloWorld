@@ -401,6 +401,7 @@
             - [ref-scala](https://github.com/yennanliu/utility_Scala)
             - [SingletonDemo1](./src/main/java/Basics/SingletonDemo1.java)
             - [SingletonDemo2](./src/main/java/Basics/SingletonDemo2.java) : Singleton - Eager initialization
+            - [SingletonDemo3](./src/main/java/Basics/SingletonDemo3.java) : Singleton - Lazy initialization
             ```
             # Steps
             1. make constructor private

@@ -3,11 +3,13 @@ package Basics;
 // https://www.youtube.com/watch?v=uIWecsctHxM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=324
 
 /**
- *  Singleton
+ *  Singleton : Eager initialization
  *
  *  1) via some method, make sure THERE  IS ONLY 1 CLASS INSTANCE in the software program
  *  2) how to implement ?
  *    -> check below steps
+ *
+ *  3) // *** MAIN DIFFERENCE WITHIN EAGER & LAZY initialization (eager : create directly)
  */
 
 public class SingletonDemo2 {
@@ -36,7 +38,7 @@ class Bank{
 
     // step 2) create an "internal" class instance
     // step 4) make below class as static
-    private static Bank instance = new Bank();
+    private static Bank instance = new Bank(); // *** MAIN DIFFERENCE WITHIN EAGER & LAZY initialization (eager : create directly)
 
 
     // step 3) offer public STATIC method that can return the class (we create above)
