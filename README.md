@@ -374,6 +374,14 @@
             instance      yes          |    yes    (can instance call method ?)
                          
             ```
+        - When to use `static attr` ?
+            - attr can be used by multitple classes, and they are unchanged from class to class
+        
+        - When to use `static method` ?
+            - method which use static attr
+            - methods in util class 
+                - (can use directly, no need to instantiate class)
+                - e.g. Math, Array, Collections
         - [staticDemo 1](./src/main/java/Basics/staticDemo1.java)
         - [staticDemo 2](./src/main/java/Basics/staticDemo2.java)
         - [staticDemo 3](./src/main/java/Basics/staticDemo3.java)
