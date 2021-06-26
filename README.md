@@ -392,13 +392,15 @@
 
     <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/static1.svg"></p>
 
-    - Singleton pattern
+    - Design pattern : Singleton pattern
+        - Can only `create ONE class instance`
         - Only allow some classes be existing in some specific class instances
             -> can save resources
             - [ref1](https://blog.csdn.net/Richchigga/article/details/103133472)
             - [ref2](https://www.itread01.com/content/1547084653.html)
             - [ref-scala](https://github.com/yennanliu/utility_Scala)
             - [SingletonDemo1](./src/main/java/Basics/SingletonDemo1.java)
+            - [SingletonDemo2](./src/main/java/Basics/SingletonDemo2.java) : Singleton - Eager initialization
             ```
             # Steps
             1. make constructor private
@@ -409,7 +411,7 @@
             ```java
             // https://www.youtube.com/watch?v=b-UAaq-G4uI&list=PLmOn9nNkQxJEqCNXBu5ozT_26xwvUbHyE&index=91
 
-            // Method 1) : 餓漢式
+            // Method 1) : 餓漢式 (Eager initialization)
             // pros : Thread safety
             // cons : could create a class, but not uses it -> resource wasting
             class Single{
@@ -420,7 +422,7 @@
                 }
             }
 
-            // Method 2) : 懶漢式
+            // Method 2) : 懶漢式 (lazy initialization)
             // pros : no resource wasting, only make the instance when need it
             // cons : Thread safety concern
             class Single2{
