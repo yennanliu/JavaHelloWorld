@@ -402,12 +402,21 @@
             - [SingletonDemo1](./src/main/java/Basics/SingletonDemo1.java)
             - [SingletonDemo2](./src/main/java/Basics/SingletonDemo2.java) : Singleton - Eager initialization
             - [SingletonDemo3](./src/main/java/Basics/SingletonDemo3.java) : Singleton - Lazy initialization
+            - [SingletonDemo4](./src/main/java/Basics/SingletonDemo4.java)
             ```
             # Steps
             1. make constructor private
             2. make object inside class
             3. export a public static method 
             4. implement the code
+        - Lazy initialization VS Eager initialization
+            - Lazy initialization : 
+                - pros : delay instance create (load fast)
+                - cons : thread un-safety --> need to use "multi-thread"
+            - Eager initialization:
+                - pros : thread safety (data, process in different threads `NOT` affect each other)
+                - cons : takes time to load
+
             ```
             ```java
             // https://www.youtube.com/watch?v=b-UAaq-G4uI&list=PLmOn9nNkQxJEqCNXBu5ozT_26xwvUbHyE&index=91
