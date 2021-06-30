@@ -463,6 +463,16 @@
 
     - Final
         - for "constant"
+    - Code block
+        -  purpose : for class, object initializing
+        -  static code block
+            - *** Executed when class is loaded (since it's static)
+            - will only run ONCE
+            - init class attr, inform
+        -  non-static code block
+            -  *** Executed when class is instantiated
+            -  *** can init class attr when instantiate the class
+        - [Block_demo1](./src/main/java/thread/Block_demo1.java)
 
 - [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo

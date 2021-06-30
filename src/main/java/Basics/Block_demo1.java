@@ -15,18 +15,23 @@ package Basics;
  *      - can have output inside
  *      - *** Executed when class is loaded (since it's static)
  *      - will only run ONCE
+ *      - init class attr, inform
+ *      - if we have multiple static code block, they will be executed in order
+ *      - execution ordering : static code block > non-static code block
+ *      - CAN only use static attr, method.. inside static code block
  *
  *   5. non-static code block
  *      - can have output inside
  *      - *** Executed when class is instantiated
  *      - can be run MULTIPLE TIMES ( when class is instantiated)
  *      - *** can init class attr when instantiate the class
+ *      - CAN use static/non-static attr, method.. inside non-static code block
  *
  *
  *   6. extra : when can we update attr value (in class)
  *      6-1. default init
  *      6-2. explicitly declare
- *      6-3. init in constryctor
+ *      6-3. init in constructor
  *      6-4. when there is instance, via "class.attr" or "class.method"
  *      6-5. init in code block (non-static)
  *
@@ -74,6 +79,11 @@ class Person2{
     // static code block
     static { // NOTE : static code block will be RUN when class is loaded
         System.out.println("helloooooo static block !!!!");
+        desc = "i am a traveler lover (static code block)";
+    }
+
+    static { // we can have multiple code block
+        System.out.println("helloooooo static block 2 !!!!");
     }
 
     // or can without decorator
@@ -81,6 +91,10 @@ class Person2{
     {   // non-static code block will be run when class is instantiated
         System.out.println("hola ~~~~~~~ block !!!!");
         age = 1; // init attr (age) as 1
+    }
+
+    {
+        System.out.println("hola ~~~~~~~ block 2 !!!!");
     }
 
     // method
