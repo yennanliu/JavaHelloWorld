@@ -393,7 +393,7 @@
     <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/static1.svg"></p>
 
     - Design pattern : Singleton pattern
-        - Can only `create ONE class instance`
+        - Can only `create ONE class instance` -> reduce system loading
         - Only allow some classes be existing in some specific class instances
             -> can save resources
             - [ref1](https://blog.csdn.net/Richchigga/article/details/103133472)
@@ -402,7 +402,6 @@
             - [SingletonDemo1](./src/main/java/Basics/SingletonDemo1.java)
             - [SingletonDemo2](./src/main/java/Basics/SingletonDemo2.java) : Singleton - Eager initialization
             - [SingletonDemo3](./src/main/java/Basics/SingletonDemo3.java) : Singleton - Lazy initialization
-            - [SingletonDemo4](./src/main/java/Basics/SingletonDemo4.java)
             ```
             # Steps
             1. make constructor private
