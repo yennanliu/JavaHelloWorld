@@ -472,7 +472,7 @@
         -  non-static code block
             -  *** Executed when class is instantiated
             -  *** can init class attr when instantiate the class
-        - [Block_demo1](./src/main/java/thread/Block_demo1.java)
+        - [Block_demo1](./src/main/java/Basics/Block_demo1.java)
 
 - [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo
