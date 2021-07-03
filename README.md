@@ -462,7 +462,14 @@
             ```
 
     - Final
-        - for "constant"
+        - Can decorate : class, method, attr
+        - Final class
+            - CAN'T BE EXTENDED (no sub class)
+            - example : String, System, StringBuffer
+        -  Final method
+            - CAN'T BE OVERRIDDEN (no overwrite method)
+            - example : getClass() method in Object class
+        - [FinalDemo1](./src/main/java/Basics/FinalDemo1.java)
     - Code block
         -  purpose : for class, object initializing
         -  static code block
