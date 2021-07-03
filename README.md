@@ -473,6 +473,7 @@
             -  *** Executed when class is instantiated
             -  *** can init class attr when instantiate the class
         - [Block_demo1](./src/main/java/Basics/Block_demo1.java)
+        - [Block_demo2](./src/main/java/Basics/Block_demo2)
 
 - [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo
