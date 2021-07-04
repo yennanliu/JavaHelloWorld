@@ -22,11 +22,22 @@ package Basics;
  *              - initialize in code block
  *              - initialize in constructor
  *      4.3) final variable
+ *          -> thr variable is a CONSTANT now
+ *          -> can't be changed, can only be used in method
+ *
+ *  5) static final
+ *     5.1) can be used in
+ *         - attr
+ *         - method
+ *    5.2) static attr -> global constant
  *
  */
 
 public class FinalDemo1 {
     public static void main(String[] args) {
+        FinalDemo1 finalDemo1 = new FinalDemo1();
+
+        finalDemo1.show(10);
     }
 
     public FinalDemo1(){
@@ -56,6 +67,18 @@ public class FinalDemo1 {
 //    public void setDown(int down){
 //        this.Down = down;
 //    }
+
+    public void show(){
+        final int NUM = 10;
+        // wrong : Cannot assign a value to final variable 'num'
+        //NUM += 10;
+    }
+
+    public void show(final int num){
+        // wrong : Cannot assign a value to final variable 'num'
+        //num = 20;
+        System.out.println(num);
+    }
 }
 
 
