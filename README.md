@@ -483,6 +483,21 @@
             -  *** can init class attr when instantiate the class
         - [Block_demo1](./src/main/java/Basics/Block_demo1.java)
         - [Block_demo2](./src/main/java/Basics/Block_demo2)
+   - Abstract
+        - [AbstractDemo1](./src/main/java/Basics/AbstractDemo1.java)
+        - Can decorate
+            - class
+            - method
+        - abstract class
+            - CAN NOT BE instantiated
+            - STILL NEED CONSTRUCTOR (used in sub class)
+            - in development, we always offer sub class that can instantiate via above
+        - abstract method
+            - ONLY has method declare, has NO code body (method implementation)
+            - inference : if a class has abstract method -> this class must be an ABSTRACT CLASS
+            - Abstract class can has NO abstract method
+            - if sub class overwrites all abstract methods in super class -> sub class CAN instantiate
+            - if sub class NOT overwrites all abstract methods in super class -> sub class CAN NOT instantiate, this sub class is also an abstract class
 
 - [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo
