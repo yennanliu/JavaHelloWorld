@@ -485,6 +485,7 @@
         - [Block_demo2](./src/main/java/Basics/Block_demo2)
    - Abstract
         - [AbstractDemo1](./src/main/java/Basics/AbstractDemo1.java)
+        - [AbstractDemo1](./src/main/java/Basics/AbstractDemo2)
         - Can decorate
             - class
             - method
