@@ -27,7 +27,13 @@ public class PersonTest {
 
         System.out.println("================");
 
-        //Person p = new Person();
+        Person p = new Person(){
+            @Override
+            public void eat(){};
+
+            @Override
+            public void sleep(){};
+        };
     }
 
     // method

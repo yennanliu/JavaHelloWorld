@@ -10,6 +10,16 @@ public class Student extends Person {
     public Student(){
     }
 
+    @Override
+    public void eat() {
+        System.out.println("student eat !!!!");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("student sleep !!!!");
+    }
+
     public Student(String name, int age, String major){
         this.name = name;
         this.age = age;

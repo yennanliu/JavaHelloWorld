@@ -18,13 +18,9 @@ public abstract class Person {
     }
 
     // method
-    public void eat(){
-        System.out.println("eat @@@@");
-    }
+    abstract public void eat();
 
-    public void sleep(){
-        System.out.println("sleep !!!!!");
-    }
+    abstract public void sleep();
 
     private void private_sleep() { // note :  private method CAN'T be called in subclass (child class)
         System.out.println("sleep !!!!!");
