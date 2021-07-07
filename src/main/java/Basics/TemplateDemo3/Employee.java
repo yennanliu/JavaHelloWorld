@@ -9,6 +9,14 @@ public abstract class Employee {
     private int number;
     private MyDate birthday;
 
+    // constructor
+    public Employee(String name, int number, MyDate birthday){
+        super();
+        this.name = name;
+        this.number = number;
+        this.birthday = birthday;
+    }
+
     // getter, setter
     public String getName() {
         return name;
@@ -35,14 +43,11 @@ public abstract class Employee {
     }
 
     // method
-    public abstract void earnings();
+    public abstract double earnings();
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", number=" + number +
-                ", birthday=" + birthday +
-                '}';
+        // need to call birthday.toDateString() for getting its content
+        return "name='" + name + '\'' + ", number=" + number + ", birthday=" + birthday.toDateString();
     }
 }
