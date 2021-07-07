@@ -1,4 +1,4 @@
-package Basics.TemplateDemo3;
+package Basics.AbstractDemo4;
 
 // https://www.youtube.com/watch?v=3VqFJPmA3wg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=348
 
@@ -48,6 +48,6 @@ public class MyDate {
 
     // method
     public String toDateString(){
-        return year + "year " + month + " month " + day + "day";
+        return " year = " + year + " month = " + month + " day = " + day;
     }
 }

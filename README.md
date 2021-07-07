@@ -496,6 +496,7 @@
         - [AbstractDemo1](./src/main/java/Basics/AbstractDemo1.java)
         - [AbstractDemo2](./src/main/java/Basics/AbstractDemo2)
         - [AbstractDemo3](./src/main/java/Basics/AbstractDemo3/PersonTest.java)
+        - [AbstractDemo4](./src/main/java/Basics/AbstractDemo4)
         - Can decorate
             - class
             - method
