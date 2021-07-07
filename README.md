@@ -463,7 +463,7 @@
             }
             ```
 
-    Design pattern : Template
+    - Design pattern : Template
         - [TemplateDemo1](./src/main/java/Basics/TemplateDemo1.java)
         - [TemplateDemo2](./src/main/java/Basics/TemplateDemo2.java)
         - Common use cases:
