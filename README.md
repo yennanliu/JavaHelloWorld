@@ -463,6 +463,15 @@
             }
             ```
 
+    Design pattern : Template
+        - [TemplateDemo1](./src/main/java/Basics/TemplateDemo1.java)
+        - [TemplateDemo2](./src/main/java/Basics/TemplateDemo2.java)
+        - Common use cases:
+            - DB op
+            - Junit for unit test
+            - Java Web (e.g. spring MVC) : Servlet's doGet/do/Post method
+            - JDBC (spring)
+
     - Final
         - Can decorate : class, method, attr
         - Final class
