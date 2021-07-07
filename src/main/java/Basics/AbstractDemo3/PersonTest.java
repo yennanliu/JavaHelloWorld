@@ -17,6 +17,7 @@ public class PersonTest {
         System.out.println("================");
 
         Worker2 worker2 = new Worker2();
+
         // non anonymous class, non anonymous instance
         method1(worker2);
 
@@ -27,13 +28,46 @@ public class PersonTest {
 
         System.out.println("================");
 
+
+        /**
+         * -------------------------------------------------------
+         * create an anonymous sub class' instance (its superclass : Person).
+         * -------------------------------------------------------
+         */
         Person p = new Person(){
             @Override
-            public void eat(){};
+            public void eat(){
+                System.out.println("new eat !!");
+            };
 
             @Override
-            public void sleep(){};
+            public void sleep(){
+                System.out.println("new sleep !!");
+            };
         };
+
+        method1(p);
+
+
+        System.out.println("================");
+
+        /**
+         * -----------------------------------------------------------------------------
+         * create an anonymous sub class' anonymous instance (its superclass : Person).
+         * -----------------------------------------------------------------------------
+         */
+        method1(new Person() {
+                    @Override
+                    public void eat() {
+                        System.out.println("anonymous sub class' anonymous instance eat");
+                    }
+
+                    @Override
+                    public void sleep() {
+                        System.out.println("anonymous sub class' anonymous instance sleep");
+                    }
+                }
+            );
     }
 
     // method
@@ -43,7 +77,7 @@ public class PersonTest {
 
     public static void method1(Person p){
         p.eat();
-        p.walk();
+        p.sleep();
     }
 }
 
