@@ -510,6 +510,22 @@
             - Abstract class can has NO abstract method
             - if sub class overwrites all abstract methods in super class -> sub class CAN instantiate
             - if sub class NOT overwrites all abstract methods in super class -> sub class CAN NOT instantiate, this sub class is also an abstract class
+    - Interface
+        - [interfaceDemo1](./src/main/java/Basics/interfaceDemo1.java)
+        - use keyword "interface"
+        - in java, interface, and class are the structure in the same level
+        - how to define interface ? elements inside interface ?
+            - JDK 7 and before
+                - -> can ONLY use global constant and abstract method
+                - -> global constant : public static final (public static final can be omitted)
+                - -> abstract method : public abstract (public abstract can be omitted)
+            - JDK 8 and after
+                - -> can HAVE global constant, abstract method, static method, default method
+        - CAN NOT define constructor in interface
+            - interface CAN NOT be instantiated
+        - in java, we usually use CLASS to "implement" interface (not extend)
+            - -> if class implements all abstract methods in interface -> this class can be instantiated
+            - -> if class NOT implement all abstract methods in interface -> this class CAN NOT be instantiated
 
 - [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo
