@@ -1,6 +1,7 @@
 package Basics;
 
 // https://www.youtube.com/watch?v=RbSnqxlIuik&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=350
+// https://www.youtube.com/watch?v=qXb8Z9cjcDk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=351
 
 /**
  *   Interface
@@ -22,26 +23,34 @@ package Basics;
  *     -> if class implements all abstract methods in interface -> this class can be instantiated
  *     -> if class NOT implement all abstract methods in interface -> this class CAN NOT be instantiated
  *
+ *   6) in Java, we can implement multiple interfaces -> complement that java only have SINGLE inheritance
+ *     -> class Bullet implements Flyable, Attackable (check below)
+ *     -> pattern : class AA extends BB implement CC, DD, EE (inheritance -> implementation)
+ *
+ *  7) interface ----implementation --> class
+ *     class ----inheritance --> class
+ *     interface ----inheritance -->  interface
+ *
  */
 
-public class interfaceDemo1 {
+public class interfaceDemo2 {
     public static void main(String[] args) {
         // run
-        System.out.println(Flyable.MAX_SPEED);
-        System.out.println(Flyable.MIN_SPEED);
+        System.out.println(Flyable2.MAX_SPEED);
+        System.out.println(Flyable2.MIN_SPEED);
 
         // Cannot assign a value to final variable 'MIN_SPEED'
         //Flyable.MIN_SPEED = 999;
 
         System.out.println("==============");
 
-        Plane p1 = new Plane();
+        Plane2 p1 = new Plane2();
         p1.fly();
         p1.stop();
     }
 }
 
-class Plane implements Flyable{
+class Plane2 implements Flyable2{
 
     @Override
     public void fly() {
@@ -54,7 +63,7 @@ class Plane implements Flyable{
     }
 }
 
-abstract class Kite implements Flyable{
+abstract class Kite2 implements Flyable2{
 
     @Override
     public void fly() {
@@ -63,7 +72,7 @@ abstract class Kite implements Flyable{
 }
 
 
-interface Flyable{
+interface Flyable2{
 
     // attr
     // global constant
@@ -76,4 +85,45 @@ interface Flyable{
     public abstract void fly();
 
     void stop(); // omit public abstract
+}
+
+interface Attackable2{
+    void attack();
+}
+
+class Bullet2 implements Flyable2, Attackable2{
+
+    @Override
+    public void attack() {
+
+    }
+
+    @Override
+    public void fly() {
+
+    }
+
+    @Override
+    public void stop() {
+
+    }
+}
+
+
+class Bullet3 extends Object implements Flyable2, Attackable2 {
+
+    @Override
+    public void fly() {
+
+    }
+
+    @Override
+    public void stop() {
+
+    }
+
+    @Override
+    public void attack() {
+
+    }
 }

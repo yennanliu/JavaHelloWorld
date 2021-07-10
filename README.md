@@ -511,7 +511,7 @@
             - if sub class overwrites all abstract methods in super class -> sub class CAN instantiate
             - if sub class NOT overwrites all abstract methods in super class -> sub class CAN NOT instantiate, this sub class is also an abstract class
     - Interface
-        - [interfaceDemo1](./src/main/java/Basics/interfaceDemo1.java)
+        - [interfaceDemo1](src/main/java/Basics/interfaceDemo2.java)
         - use keyword "interface"
         - in java, interface, and class are the structure in the same level
         - how to define interface ? elements inside interface ?
