@@ -21,7 +21,6 @@ package Basics;
  *   5) in java, we usually use CLASS to "implement" interface (not extend)
  *     -> if class implements all abstract methods in interface -> this class can be instantiated
  *     -> if class NOT implement all abstract methods in interface -> this class CAN NOT be instantiated
- *
  */
 
 public class interfaceDemo1 {

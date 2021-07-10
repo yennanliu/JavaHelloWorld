@@ -1,6 +1,7 @@
 package Basics;
 
 // https://www.youtube.com/watch?v=qXb8Z9cjcDk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=351
+// https://www.youtube.com/watch?v=rM2f0mTie_Q&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=352
 
 /**
  *   Interface part 2
@@ -37,6 +38,9 @@ package Basics;
  *
  *  9) interface is like a "rule", "standard", "format"
  *     -> that everyone needs to follow
+ *     -> (implemented by class)
+ *
+ *  10) interface VS abstract class ?
  *
  */
 
