@@ -1,6 +1,7 @@
 package Basics;
 
 // https://www.youtube.com/watch?v=rM2f0mTie_Q&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=352
+// https://www.youtube.com/watch?v=JQzwqQfzl08&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=353
 
 /**
  *   Interface part 3
@@ -24,13 +25,49 @@ public class interfaceDemo3 {
         // wrong : 'USB' is abstract; cannot be instantiated
         //pc1.transferData(new USB());
 
+        /** DEMO 1: interface's non anonymous class and non anonymous instance */
         // will use the Flash class, which implements USB interface
-        pc1.transferData(new Flash());
-        // or
         Flash flash = new Flash();
         pc1.transferData(flash);
 
         System.out.println("============");
+
+        /** DEMO 2: interface's non anonymous class and anonymous instance */
+        pc1.transferData(new Printer());
+
+        System.out.println("============");
+
+        /** DEMO 3: interface's anonymous class and non anonymous instance */
+        USB phone = new USB(){
+
+            @Override
+            public void start() {
+                System.out.println("phone start");
+            }
+
+            @Override
+            public void stop() {
+                System.out.println("phone stop");
+            }
+        };
+
+        pc1.transferData(phone);
+
+        System.out.println("============");
+
+        /** DEMO 4: interface's anonymous class and anonymous instance */
+        pc1.transferData(new USB(){
+
+            @Override
+            public void start() {
+                System.out.println("ipod start");
+            }
+
+            @Override
+            public void stop() {
+                System.out.println("ipod stop");
+            }
+        });
     }
 }
 
