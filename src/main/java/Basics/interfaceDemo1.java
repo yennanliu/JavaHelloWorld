@@ -3,7 +3,7 @@ package Basics;
 // https://www.youtube.com/watch?v=RbSnqxlIuik&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=350
 
 /**
- *   Interface
+ *   Interface part 1
  *
  *   1) use keyword "interface"
  *   2) in java, interface, and class are the structure in the same level

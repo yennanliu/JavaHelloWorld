@@ -1,10 +1,9 @@
 package Basics;
 
-// https://www.youtube.com/watch?v=RbSnqxlIuik&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=350
 // https://www.youtube.com/watch?v=qXb8Z9cjcDk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=351
 
 /**
- *   Interface
+ *   Interface part 2
  *
  *   1) use keyword "interface"
  *   2) in java, interface, and class are the structure in the same level
@@ -27,9 +26,17 @@ package Basics;
  *     -> class Bullet implements Flyable, Attackable (check below)
  *     -> pattern : class AA extends BB implement CC, DD, EE (inheritance -> implementation)
  *
- *  7) interface ----implementation --> class
- *     class ----inheritance --> class
- *     interface ----inheritance -->  interface
+ *  7) relationships
+ *
+ *    7.1) interface ----implementation --> class
+ *    7.2) class ----inheritance --> class
+ *    7.3) interface ----inheritance -->  interface
+ *        -> example : interface CC_ extends AA_, BB
+ *
+ *  8) interface uses the mindset of polymorphism
+ *
+ *  9) interface is like a "rule", "standard", "format"
+ *     -> that everyone needs to follow
  *
  */
 
@@ -110,7 +117,7 @@ class Bullet2 implements Flyable2, Attackable2{
 }
 
 
-class Bullet3 extends Object implements Flyable2, Attackable2 {
+class Bullet3 extends Object implements Flyable2, Attackable2, CC_ {
 
     @Override
     public void fly() {
@@ -126,4 +133,27 @@ class Bullet3 extends Object implements Flyable2, Attackable2 {
     public void attack() {
 
     }
+
+    @Override
+    public void method1() {
+
+    }
+
+    @Override
+    public void method2() {
+
+    }
+}
+
+interface AA_{
+    void method1();
+}
+
+interface BB_ {
+    void method2();
+}
+
+// interface's multiple inheritance
+interface CC_ extends AA_, BB_{
+
 }
