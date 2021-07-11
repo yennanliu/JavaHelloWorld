@@ -481,6 +481,12 @@
             - safety -> prevent actual class to be visited directly
             - remote proxy -> RMI
             - delay loading -> load the proxy class first, if needed, load the actual class
+    - Design pattern : `Factory`
+        - [ProxyDemo1](./src/main/java/Basics/FactoryDemo1.java)
+        - Simple Factory
+        - Factory Method
+        - Abstract Factory
+
     - Final
         - Can decorate : class, method, attr
         - Final class
