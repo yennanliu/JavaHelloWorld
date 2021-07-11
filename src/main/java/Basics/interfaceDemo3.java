@@ -75,6 +75,10 @@ class Computer {
     // attr
 
     // method
+    // NOTE : this method gets any implementation which from USB interface
+    //        and use its start, stop method, while start, stop method
+    //        are NOT implemented in USB (USB is an interface), but
+    //        in the implementation of USB (e.g. Flash, Printer)
     public void transferData(USB usb){
         usb.start();
         // code that implements data transfer

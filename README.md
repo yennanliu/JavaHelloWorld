@@ -392,7 +392,7 @@
 
     <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/static1.svg"></p>
 
-    - Design pattern : Singleton pattern
+    - Design pattern : `Singleton` 
         - Can only `create ONE class instance` -> reduce system loading
         - Only allow some classes be existing in some specific class instances
             -> can save resources
@@ -463,7 +463,7 @@
             }
             ```
 
-    - Design pattern : Template
+    - Design pattern : `Template`
         - [TemplateDemo1](./src/main/java/Basics/TemplateDemo1.java)
         - [TemplateDemo2](./src/main/java/Basics/TemplateDemo2.java)
         - Common use cases:
@@ -471,6 +471,8 @@
             - Junit for unit test
             - Java Web (e.g. spring MVC) : Servlet's doGet/do/Post method
             - JDBC (spring)
+
+    - Design pattern : `Proxy`
 
     - Final
         - Can decorate : class, method, attr
