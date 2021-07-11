@@ -1,11 +1,9 @@
-package Basics.FactoryDemo1;
+package Basics.FactoryDemo2;
 
 // https://www.youtube.com/watch?v=aPXVO4ELqVA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=355
 
 /**
- *   Design pattern - Factory : Simple Factory
- *
- *   1) xxxFactory -> this is class is for instantiating class
+ *   Design pattern - Factory : Factory method
  *
  */
 
@@ -13,12 +11,12 @@ public class test {
     public static void main(String[] args) {
 
         // run
-        Car a = CarFactory.getCar("Audi");
+        Car a = new AudiFactory().getCar();
         a.run();
 
         System.out.println("=================");
 
-        Car b = CarFactory.getCar("Lexus");
+        Car b = new LexusFactory().getCar();
         b.run();
     }
 }

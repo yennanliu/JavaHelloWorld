@@ -482,9 +482,11 @@
             - remote proxy -> RMI
             - delay loading -> load the proxy class first, if needed, load the actual class
     - Design pattern : `Factory`
-        - [ProxyDemo1](./src/main/java/Basics/FactoryDemo1.java)
         - Simple Factory
+            - [ProxyDemo1](./src/main/java/Basics/FactoryDemo1)
         - Factory Method
+            - [ProxyDemo2](./src/main/java/Basics/FactoryDemo2)
+        - Simple Factory
         - Abstract Factory
 
     - Final
