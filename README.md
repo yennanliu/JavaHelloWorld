@@ -473,7 +473,14 @@
             - JDBC (spring)
 
     - Design pattern : `Proxy`
-
+        - [ProxyDemo1](./src/main/java/Basics/ProxyDemo1.java)
+        - [ProxyDemo2](./src/main/java/Basics/ProxyDemo2.java)
+        - Offers an agent (proxy) that help access control on the specific class
+            - -> So users can access the `agent` class only rather than "proxied" class
+        - using case:
+            - safety -> prevent actual class to be visited directly
+            - remote proxy -> RMI
+            - delay loading -> load the proxy class first, if needed, load the actual class
     - Final
         - Can decorate : class, method, attr
         - Final class
