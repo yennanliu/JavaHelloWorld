@@ -7,7 +7,6 @@ package Basics.FactoryDemo2;
  *
  */
 
-
 interface Car{
     void run();
 }

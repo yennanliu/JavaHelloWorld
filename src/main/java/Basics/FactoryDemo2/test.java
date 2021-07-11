@@ -20,4 +20,3 @@ public class test {
         b.run();
     }
 }
-

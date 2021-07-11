@@ -486,9 +486,9 @@
             - [ProxyDemo1](./src/main/java/Basics/FactoryDemo1)
         - Factory Method
             - [ProxyDemo2](./src/main/java/Basics/FactoryDemo2)
-        - Simple Factory
         - Abstract Factory
-
+            - diff between Abstract Factory VS Factory Method
+                -> complexity when create class
     - Final
         - Can decorate : class, method, attr
         - Final class
