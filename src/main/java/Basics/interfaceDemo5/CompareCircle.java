@@ -6,10 +6,6 @@ public class CompareCircle extends Circle implements CompareObject {
     //attr
 
     //constructor
-    public CompareCircle(){
-
-    }
-
     public CompareCircle(double radius){
         super(radius);
     }
@@ -22,22 +18,31 @@ public class CompareCircle extends Circle implements CompareObject {
             return 0;
         }
         // if o is the instance of Circle, -> then we can compare them
-        if (o instanceof CompareCircle){
-            CompareCircle c = (CompareCircle)o;
+        if (o instanceof CompareCircle) {
+            CompareCircle c = (CompareCircle) o;
             // wrong
             //return (int) (this.getRadius() - c.getRadius());
             // correct
-            if (this.getRadius() > c.getRadius()){
-                return 1;
-            } else if (this.getRadius() < c.getRadius()){
-                return  -1;
-            } else {
-                return 0 ;
-            }
-        } else {
-            // if type not match -> return 0 (raise an exception could be better)
-            //return 0;
-            throw new RuntimeException("insert data type is not matching");
+//            if (this.getRadius() > c.getRadius()){
+//                return 1;
+//            } else if (this.getRadius() < c.getRadius()){
+//                return  -1;
+//            } else {
+//                return 0 ;
+//            }
+            /**
+             *  double -> Double
+             *   when we use Double rather than double,
+             *   we can use the comparable method defined in Double
+             *   for comparision directly
+             */
+            // public Double getRadius()
+            return this.getRadius().compareTo(c.getRadius());
         }
+            // if type not match -> return 0 (raise an exception could be better)
+            else {
+                return 0;
+                //throw new RuntimeException("insert data type is not matching");
+            }
     }
 }

@@ -19,5 +19,8 @@ public class test {
         }
 
         System.out.println("==================");
+
+        int compareValue2 = c1.compareTo(new String("ss"));
+        System.out.println("compareValue2 = " + compareValue2);
     }
 }

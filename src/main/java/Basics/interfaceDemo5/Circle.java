@@ -4,24 +4,24 @@ package Basics.interfaceDemo5;
 
 public class Circle {
     // attr
-    private double radius;
+    private Double radius; // NOTE here : double -> Double
 
     // constructor
     public Circle(){
         super();
     }
 
-    public Circle(double radius){
+    public Circle(Double radius){ // NOTE here : double -> Double
         super();
         this.radius = radius;
     }
 
     // getter, setter
-    public double getRadius() {
+    public Double getRadius() {
         return radius;
     }
 
-    public void setRadius(double radius) {
+    public void setRadius(Double radius) {
         this.radius = radius;
-    }
+    } // NOTE here : double -> Double
 }
