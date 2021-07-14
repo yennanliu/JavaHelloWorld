@@ -117,7 +117,7 @@
         - method
         - constructor
         - code
-        - internal class
+        - inner class
     - OOP features:
         - Encapsulation
         - Inheritance
@@ -548,6 +548,8 @@
         - in java, we usually use CLASS to "implement" interface (not extend)
             - -> if class implements all abstract methods in interface -> this class can be instantiated
             - -> if class NOT implement all abstract methods in interface -> this class CAN NOT be instantiated
+    - Inner Class
+        - [InnerClassDemo1](src/main/java/Basics/InnerClassDemo1.java)
 
 - [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo
