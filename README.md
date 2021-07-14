@@ -533,6 +533,7 @@
         - [interfaceDemo3](src/main/java/Basics/interfaceDemo3.java)
         - [interfaceDemo4](src/main/java/Basics/interfaceDemo4)
         - [interfaceDemo5](src/main/java/Basics/interfaceDemo5)
+        - [interfaceDemo6](src/main/java/Basics/interfaceDemo6)
         - use keyword "interface"
         - in java, interface, and class are the structure in the same level
         - how to define interface ? elements inside interface ?
