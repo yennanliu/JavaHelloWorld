@@ -550,6 +550,7 @@
             - -> if class NOT implement all abstract methods in interface -> this class CAN NOT be instantiated
     - Inner Class
         - [InnerClassDemo1](src/main/java/Basics/InnerClassDemo1.java)
+        - [InnerClassDemo2](src/main/java/Basics/InnerClassDemo2.java)
 
 - [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo
