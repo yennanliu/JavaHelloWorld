@@ -551,6 +551,7 @@
     - Inner Class
         - [InnerClassDemo1](src/main/java/Basics/InnerClassDemo1.java)
         - [InnerClassDemo2](src/main/java/Basics/InnerClassDemo2.java)
+        - [InnerClassDemo3](src/main/java/Basics/InnerClassDemo3.java)
 
 - [JavaHelloWorld](./tree/main/src) : basic4
     - Thread demo

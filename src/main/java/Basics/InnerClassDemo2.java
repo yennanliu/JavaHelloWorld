@@ -14,6 +14,7 @@ package Basics;
  *     4-1) how to instantiate object inside inner local class ?
  *     4-2) how to use external structure inside inner local class ?
  *     4-3) in development, how to use local class ?
+ *        -> plz check Basic.InnerClassDemo3.java
  */
 
 
