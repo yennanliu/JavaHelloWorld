@@ -1,6 +1,7 @@
 package Basics;
 
 // https://www.youtube.com/watch?v=qjGy50cSiCQ&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=362
+// https://www.youtube.com/watch?v=LrcEVyq2uBI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=363
 
 /**
  *  Inner Class
@@ -32,13 +33,17 @@ public class InnerClassDemo2 {
         Person_inner2 p = new Person_inner2();
         Person_inner2.Bird bird = p.new Bird(); // *** NOTE HERE !
         bird.sing();
+
+        System.out.println("=================");
+
+        bird.display("EAGLE");
     }
 }
 
 
 class Person_inner2{
     // attr
-    String name;
+    String name = "JACK";
     int age;
 
     // method
@@ -59,9 +64,24 @@ class Person_inner2{
     }
 
     class Bird {
+        // attr
+        String name = "birdy";
+
+        // constructor
+        public Bird(){
+
+        }
+
         // method
         public void sing(){
             System.out.println("Bird is singing !");
+            Person_inner2.this.eat(); // call external class' non-static method
+        }
+
+        public void display(String name){
+            System.out.println("name = " + name); // method param ( display(String name) )
+            System.out.println("this.name = " + this.name); // inner class' attr
+            System.out.println("Person_inner2.this.name = " + Person_inner2.this.name); // external class' attr
         }
     }
 
