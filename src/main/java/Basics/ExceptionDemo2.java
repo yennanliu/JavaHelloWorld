@@ -4,6 +4,10 @@ package Basics;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
 /**
  *   Exception 2
  *    - finally using
@@ -36,6 +40,9 @@ import org.junit.jupiter.api.Test;
  *       - DB connection close
  *       - socket close
  *       - ....
+ *
+ *    5) we can have 1 try-catch-finally in the other try-catch-finally
+ *       ... and so on
  */
 
 public class ExceptionDemo2 {
@@ -95,4 +102,33 @@ public class ExceptionDemo2 {
             //return 3;  // <-- will return 3 if uncomment it
         }
     }
+
+    @Test
+    public void test4(){
+        // NOTE : this trick
+        // -> we declare fis first,
+        //    so if it's failed in try-catch
+        //    we can still use it in finally
+        FileInputStream fis = null;
+        try {
+            File file = new File("test.txt");
+            fis = new FileInputStream(file);
+
+            int data = fis.read();
+            while (data != -1){
+                System.out.println((char) data);
+                data = fis.read();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fis != null)  // if File file = new File("test.txt"); failed
+                fis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
