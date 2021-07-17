@@ -585,6 +585,12 @@
     - File IO
         - [File IO 1](./src/main/java/Basics/fileIO1.java)
         - [File IO 2](./src/main/java/Basics/fileIO2.java)
+    - Exception
+        - [ExceptionDemo1](./src/main/java/Basics/ExceptionDemo1.java)
+        - `try-catch-finally`
+            - Know the exception cases, can handle them in cases
+        - throws + `exception type`
+            - Have unhandled exception, so the program will throw the exception to `upper` layer anyway. If upper layer still CAN'T solve it, will pass to upper layer, and ... (repeat it till meet highest layer)
 
 </details>
 
