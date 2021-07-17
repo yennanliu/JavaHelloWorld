@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- *  Exception :
+ *  Exception 1
  *
  *  - "throw" - "get" model
  *
@@ -64,7 +64,7 @@ import java.io.IOException;
  *          - use try-catch-finally
  *          - use
  *       - Runtime exception
- *       
+ *
  *  2) throws
  *
  */

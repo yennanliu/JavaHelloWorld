@@ -587,6 +587,7 @@
         - [File IO 2](./src/main/java/Basics/fileIO2.java)
     - Exception
         - [ExceptionDemo1](./src/main/java/Basics/ExceptionDemo1.java)
+        - [ExceptionDemo2](./src/main/java/Basics/ExceptionDemo2.java)
         - `try-catch-finally`
             - Know the exception cases, can handle them in cases
         - throws + `exception type`
