@@ -586,12 +586,22 @@
         - [File IO 1](./src/main/java/Basics/fileIO1.java)
         - [File IO 2](./src/main/java/Basics/fileIO2.java)
     - Exception
-        - [ExceptionDemo1](./src/main/java/Basics/ExceptionDemo1.java)
-        - [ExceptionDemo2](./src/main/java/Basics/ExceptionDemo2.java)
+        - try-catch-finally
+            - [ExceptionDemo1](./src/main/java/Basics/ExceptionDemo1.java)
+            - [ExceptionDemo2](./src/main/java/Basics/ExceptionDemo2.java)
+        - throws
+            - [ExceptionDemo3](./src/main/java/Basics/ExceptionDemo3.java)
         - `try-catch-finally`
             - Know the exception cases, can handle them in cases
         - throws + `exception type`
             - Have unhandled exception, so the program will throw the exception to `upper` layer anyway. If upper layer still CAN'T solve it, will pass to upper layer, and ... (repeat it till meet highest layer)
+        - There are only 2 ways deal with exception:
+            - `try-catch-exception`
+                - -> Really deal with the exception on place
+            - `throws`
+                - -> NOT really deal with the exception,
+                - -> only "throws" the exception to the upper layer.
+                - (upper layer still need to deal with such exception)
 
 </details>
 
