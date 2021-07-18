@@ -1,6 +1,7 @@
 package Basics;
 
 // https://www.youtube.com/watch?v=kA42AuUDWJY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=374
+// https://www.youtube.com/watch?v=u9Jz6ja8GiU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=376
 
 import org.junit.jupiter.api.Test;
 
@@ -43,6 +44,11 @@ import java.io.IOException;
  *
  *    5) we can have 1 try-catch-finally in the other try-catch-finally
  *       ... and so on
+ *
+ *    6) we can use try-catch-finally to delay potential exception in compile to runtime
+ *
+ *    7) In regular cases, we only do the " try-catch-finally" for exception in compile,
+ *       but we do NOTHING for the exception in runtime
  */
 
 public class ExceptionDemo2 {
