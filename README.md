@@ -591,6 +591,8 @@
             - [ExceptionDemo2](./src/main/java/Basics/ExceptionDemo2.java)
         - throws
             - [ExceptionDemo3](./src/main/java/Basics/ExceptionDemo3.java)
+            - [ExceptionDemo4](./src/main/java/Basics/ExceptionDemo4.java)
+            - [ExceptionDemo5](./src/main/java/Basics/ExceptionDemo5)
         - `try-catch-finally`
             - Know the exception cases, can handle them in cases
         - throws + `exception type`
