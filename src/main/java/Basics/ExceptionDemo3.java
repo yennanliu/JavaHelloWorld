@@ -1,6 +1,7 @@
 package Basics;
 
 // https://www.youtube.com/watch?v=7tZRMKAsiUA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=377
+// https://www.youtube.com/watch?v=VkXeBUI98mY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=379
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,12 +23,25 @@ import java.io.IOException;
  *           which is different from try-catch-finally
  *
  *  2) There are only 2 ways deal with exception:
+ *
  *     2.1) try-catch-exception
  *        -> Really deal with the exception on place
  *     2.2) throws
  *        -> NOT really deal with the exception,
  *           only "throws" the exception to the upper layer.
  *           (upper layer still need to deal with such exception)
+ *
+ *  3) when to use try-catch-finally or throws ?
+ *
+ *     3.1) if there is NO throws in the overridden method in superclass
+ *          -> method in subclass CAN'T use throws as well
+ *          -> so method in subclass must use try-catch-finally
+ *     3.2) if in the running code, there are several methods been used,
+ *          and those methods dependent on each other. In such case, we
+ *          suggest use `throws` in the methods, and use `try-catch-finally`
+ *          in the running code. -> So the running code will raise exception
+ *          if there is an exception in the method that make the program not
+ *          work as expected
  */
 
 public class ExceptionDemo3 {
