@@ -2,6 +2,7 @@ package Basics;
 
 // https://www.youtube.com/watch?v=dnOC7KxniZw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=373
 // https://www.youtube.com/watch?v=RXPAMZEYEi8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=374
+// https://www.youtube.com/watch?v=JBGh4Lb9Fns&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=380
 
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +21,10 @@ import java.io.IOException;
  *        -> will generate an exception obj at the running code
  *        -> and throw the exception obj (to the program)
  *        -> Once there is an exception, the code below will NOT be run
+ *
+ *        -> throw can from
+ *           -> system auto generated
+ *           -> set up by developer
  *
  *  - Process 2 : "get"
  *      - method that deal with exception
