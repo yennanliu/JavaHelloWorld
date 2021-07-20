@@ -586,25 +586,38 @@
         - [File IO 1](./src/main/java/Basics/fileIO1.java)
         - [File IO 2](./src/main/java/Basics/fileIO2.java)
     - Exception
-        - try-catch-finally
-            - [ExceptionDemo1](./src/main/java/Basics/ExceptionDemo1.java)
-            - [ExceptionDemo2](./src/main/java/Basics/ExceptionDemo2.java)
-        - throws
-            - [ExceptionDemo3](./src/main/java/Basics/ExceptionDemo3.java)
-            - [ExceptionDemo4](./src/main/java/Basics/ExceptionDemo4.java)
-            - [ExceptionDemo5](./src/main/java/Basics/ExceptionDemo5)
-            - [ExceptionDemo6](./src/main/java/Basics/ExceptionDemo6)
-        - `try-catch-finally`
-            - Know the exception cases, can handle them in cases
-        - throws + `exception type`
-            - Have unhandled exception, so the program will throw the exception to `upper` layer anyway. If upper layer still CAN'T solve it, will pass to upper layer, and ... (repeat it till meet highest layer)
-        - There are only 2 ways deal with exception:
-            - `try-catch-exception`
-                - -> Really deal with the exception on place
-            - `throws`
-                - -> NOT really deal with the exception,
-                - -> only "throws" the exception to the upper layer.
-                - (upper layer still need to deal with such exception)
+        - [ExceptionDemo1](./src/main/java/Basics/ExceptionDemo1.java)
+        - [ExceptionDemo2](./src/main/java/Basics/ExceptionDemo2.java)
+        - [ExceptionDemo3](./src/main/java/Basics/ExceptionDemo3.java)
+        - [ExceptionDemo4](./src/main/java/Basics/ExceptionDemo4.java)
+        - [ExceptionDemo5](./src/main/java/Basics/ExceptionDemo5)
+        - [ExceptionDemo6](./src/main/java/Basics/ExceptionDemo6)
+        - [ExceptionDemo7](./src/main/java/Basics/ExceptionDemo7)
+        - "throw" - "get" model
+            - `throw`
+                - in `runtime`
+                - When program runs, once there is an exception
+                    - -> will generate an exception obj at the running code
+                -  throw can from
+                    - -> system auto generated
+                    - -> set up by developer
+            - `get`
+                 - method that deal with exception
+                 - two types
+                    - 1. try-catch-finally
+                        - `compile`
+                    - 2. throws
+                - `try-catch-finally`
+                    - Know the exception cases, can handle them in cases
+                - throws + `exception type`
+                    - Have unhandled exception, so the program will throw the exception to `upper` layer anyway. If upper layer still CAN'T solve it, will pass to upper layer, and ... (repeat it till meet highest layer)
+                - There are only 2 ways deal with exception:
+                    - `try-catch-exception`
+                        - -> Really deal with the exception on place
+                    - `throws`
+                        - -> NOT really deal with the exception,
+                        - -> only "throws" the exception to the upper layer.
+                        - (upper layer still need to deal with such exception)
 
 </details>
 
