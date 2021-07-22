@@ -594,6 +594,7 @@
         - [ExceptionDemo6](./src/main/java/Basics/ExceptionDemo6)
         - [ExceptionDemo7](./src/main/java/Basics/ExceptionDemo7)
         - [ExceptionDemo8](./src/main/java/Basics/ExceptionDemo8.java)
+        - [ExceptionDemo9](./src/main/java/Basics/ExceptionDemo9)
         - "throw" - "get" model
             - `throw`
                 - in `runtime`
