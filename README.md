@@ -593,6 +593,7 @@
         - [ExceptionDemo5](./src/main/java/Basics/ExceptionDemo5)
         - [ExceptionDemo6](./src/main/java/Basics/ExceptionDemo6)
         - [ExceptionDemo7](./src/main/java/Basics/ExceptionDemo7)
+        - [ExceptionDemo8](./src/main/java/Basics/ExceptionDemo8.java)
         - "throw" - "get" model
             - `throw`
                 - in `runtime`
