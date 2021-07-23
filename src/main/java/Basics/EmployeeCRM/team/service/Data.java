@@ -2,11 +2,11 @@ package Basics.EmployeeCRM.team.service;
 
 // https://www.youtube.com/watch?v=wcC_8L6Yf9o&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=388
 
-public class Data {
-    public static final int EMPLOYEE = 10;
-    public static final int PROGRAMMER = 11;
-    public static final int DESIGNER = 12;
-    public static final int ARCHITECT = 13;
+public class Data  {
+    public static final int EMPLOYEE = 10;    // Employee  :  10
+    public static final int PROGRAMMER = 11;  // Programmer:  11
+    public static final int DESIGNER = 12;    // Designer  :  12
+    public static final int ARCHITECT = 13;   // Architect :  13
 
     public static final int PC = 21;
     public static final int NOTEBOOK = 22;
