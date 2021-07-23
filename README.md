@@ -621,6 +621,10 @@
                         - -> only "throws" the exception to the upper layer.
                         - (upper layer still need to deal with such exception)
 
+- [JavaHelloWorld](./tree/main/src) : Mini project
+    - [CustomerCRM](./src/main/java/Basics/CustomerCRM)
+    - [EmployeeCRM](./src/main/java/Basics/EmployeeCRM)
+
 </details>
 
 - [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
