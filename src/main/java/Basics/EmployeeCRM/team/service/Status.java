@@ -7,10 +7,10 @@ import javax.print.attribute.standard.MediaSize;
 /**
  *  class defines employee status
  *
- *  NOTE : this is an `Enum Class`
- *
- *  https://www.programiz.com/java-programming/enums
- *  https://www.twblogs.net/a/5e8ac450bd9eee61ab2feb56
+ *  NOTE : We can also use `Enum Class` for implementation here
+ *  ref :
+ *      https://www.programiz.com/java-programming/enums
+ *      https://www.twblogs.net/a/5e8ac450bd9eee61ab2feb56
  *
  */
 
