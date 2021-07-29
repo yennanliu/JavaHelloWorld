@@ -2,8 +2,7 @@ package Basics.EmployeeCRM.team.service;
 
 // https://www.youtube.com/watch?v=nxXTXqKs8GU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=391
 
-import Basics.EmployeeCRM.team.domain.Employee;
-import Basics.EmployeeCRM.team.domain.Equipment;
+import Basics.EmployeeCRM.team.domain.*;
 //import static Basics.EmployeeCRM.team.service.Data.*;
 
 /**
@@ -39,8 +38,17 @@ public class NameListService {
             // get employee basic fields
             int id =  Integer.parseInt(Data.EMPLOYEES[i][1]);
             String name =  Data.EMPLOYEES[i][2];
+
             int age =  Integer.parseInt(Data.EMPLOYEES[i][3]);
             double salary =  Double.parseDouble(Data.EMPLOYEES[i][4]);  // note the syntax : Double.parseDouble
+
+            // NOTE : below we declare equipment, but NOT implement
+            //        -> PROGRAMMER, DESIGNER will implement their equipment themself
+            Equipment equipment;
+
+            double bonus;
+
+            int stock;
 
             switch (type){
 
@@ -48,15 +56,22 @@ public class NameListService {
                     employees[i] = new Employee(id, name, age, salary);
                     break;
 
-//                case Data.PROGRAMMER:
-//                    Equipment equipment = createEquipment(i);
-//                    employees[i] = new Employee(id, name, age, salary, equipment);
-//                    break;
+                case Data.PROGRAMMER:
+                    equipment = createEquipment(i);
+                    employees[i] = new Programmer(id, name, age, salary, equipment);
+                    break;
 
                 case Data.DESIGNER:
+                    equipment = createEquipment(i);
+                    bonus = Double.parseDouble( Data.EMPLOYEES[i][5]);
+                    employees[i] = new Designer(id, name, age, salary, equipment, bonus);
                     break;
 
                 case Data.ARCHITECT:
+                    equipment = createEquipment(i);
+                    bonus = Double.parseDouble( Data.EMPLOYEES[i][5]);
+                    stock = Integer.parseInt( Data.EMPLOYEES[i][6]);
+                    employees[i] = new Architect(id, name, age, salary, equipment, bonus, stock);
                     break;
             }
         }
@@ -94,7 +109,6 @@ public class NameListService {
                 new Basics.EmployeeCRM.team.domain.Printer(modelOrName, type);
                 break;
         }
-
         return null;
     }
 }

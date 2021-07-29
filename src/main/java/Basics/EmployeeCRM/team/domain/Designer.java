@@ -21,7 +21,7 @@ public class Designer extends Programmer{
 
     }
 
-    public Designer(int id, String name, int age, double salary, Equipment equipment){
+    public Designer(int id, String name, int age, double salary, Equipment equipment, double bonus){
         super(id, name, age, salary, equipment);
         this.bonus = bonus;
     }
