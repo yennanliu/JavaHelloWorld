@@ -9,7 +9,7 @@ public class Programmer extends Employee{
     // attr
     private int memberId;   // dev team id
     // NOTE : Status here is user defined
-    private Status status;  // employee status : BUSY, FREE, VOCATION...
+    private Status status = Status.FREE;  // employee status : BUSY, FREE, VOCATION...
     private Equipment equipment;
 
     // getter, setter
@@ -49,4 +49,12 @@ public class Programmer extends Employee{
     }
 
     // method
+
+    @Override
+    public String toString() {
+        return super.getDetails()  + " , " +
+                "memberId=" + memberId +
+                ", status=" + status + "\t\t\t" +
+                ", equipment=" + equipment.getDescription();
+    }
 }

@@ -44,11 +44,11 @@ public class Employee {
     }
 
     // constructor
-    public Employee(){
+    public Employee() {
         super();
     }
 
-    public Employee(int id, String name, int age, double salary){
+    public Employee(int id, String name, int age, double salary) {
         super();
         this.id = id;
         this.name = name;
@@ -57,4 +57,15 @@ public class Employee {
     }
 
     // method
+    public String getDetails(){
+        return "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary;
+    }
+
+    @Override
+    public String toString() {
+        return this.getDetails();
+    }
 }

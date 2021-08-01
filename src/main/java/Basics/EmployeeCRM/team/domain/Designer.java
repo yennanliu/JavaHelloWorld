@@ -28,4 +28,10 @@ public class Designer extends Programmer{
     }
 
     // method
+    @Override
+    public String toString() {
+        return super.getDetails() +
+                " status=" + getStatus() +
+                " bonus=" + bonus; //super.getEquipment().getDescription(); // TODO : fix this
+    }
 }

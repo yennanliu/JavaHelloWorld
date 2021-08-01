@@ -28,4 +28,10 @@ public class Architect extends Designer{
     }
 
     // method
+    @Override
+    public String toString() {
+        return super.getDetails() +
+                " status=" + getStatus() +
+                " bonus=" + getBonus() ; //",stock=" + stock + super.getEquipment().getDescription();  // TODO : fix this
+    }
 }
