@@ -1,6 +1,7 @@
 package Basics.EmployeeCRM.team.service;
 
 // https://www.youtube.com/watch?v=nxXTXqKs8GU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=391
+// https://www.youtube.com/watch?v=NIDV6Ol1QLw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=392
 
 import Basics.EmployeeCRM.team.domain.*;
 //import static Basics.EmployeeCRM.team.service.Data.*;
@@ -78,14 +79,6 @@ public class NameListService {
     }
 
     // method
-    public Employee[] getAllEmployees(){
-        return null;
-    }
-
-    public Employee getAllEmployees(int id){
-        return null;
-    }
-
     // get equipment from employee's index
     private Equipment createEquipment(int index){
 
@@ -110,5 +103,18 @@ public class NameListService {
                 break;
         }
         return null;
+    }
+
+    public Employee[] getAllEmployees(){
+        return employees;
+    }
+
+    public Employee getAllEmployees(int id) throws TeamException {
+        for (int i=0; i < employees.length; i++){
+            if (employees[i].getId() == id){ // basic data type (int), so can use `==`
+               return employees[i];
+            }
+        }
+        throw new TeamException("employee id not existed !");
     }
 }
