@@ -4,6 +4,7 @@ package Basics.CustomerCRM.service;
 
 import Basics.EmployeeCRM.team.domain.Employee;
 import Basics.EmployeeCRM.team.domain.Programmer;
+import Basics.EmployeeCRM.team.service.TeamException;
 
 /**
  *  dev team member add/modify/delete/
@@ -35,11 +36,49 @@ public class TeamService {
         return result;
     }
 
-    public void addMember(Employee e){
+    /** add member to dev team */
+    public void addMember(Employee e) throws TeamException {
+        // if members are full
+        if (total >= MAX_MEMBER){
+            System.out.println("members full !");
+            throw new TeamException("members full !");
+        }
+        // if member is not developer, can't be added
+        if (!(e instanceof Programmer)){
+            throw new TeamException("members not developer, can't be added !");
+        }
+        // if member already in dev team
+        if (isExist(e)){
+            throw new TeamException("members already in dev team !");
+        }
 
+        // if member already belongs to some other team
+        // if member is off (can't be added)
+        Programmer p = (Programmer) e; // Downcasting
+        if (p.getStatus().getNAME().equalsIgnoreCase("BUSY")){
+            throw new TeamException("member already belongs to some other team");
+        }else if (p.getStatus().getNAME().equalsIgnoreCase("VOCATION")){
+            throw new TeamException("member is off (in holiday)");
+        }
+
+        // at most 1 architect in the team
+
+        // at most 2 designers in the team
+
+        // at most 3 programmers in the team
     }
 
     public void removeMember(int memberId){
 
+    }
+
+    // check if member already in dev team
+    private boolean isExist(Employee e){
+        for (int i=0; i < total; i ++){
+            if (team[i].getId() == e.getId()){
+                return true;
+            }
+        }
+        return false;
     }
 }
