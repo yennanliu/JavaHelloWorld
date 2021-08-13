@@ -84,6 +84,7 @@ public class TeamService {
             }
         }
 
+        // V1
         if (p instanceof Architect){
             // if more than 1 Architect
             if (numOfArch >= 1){
@@ -100,6 +101,33 @@ public class TeamService {
                 }
             }
         }
+
+       /**
+        * *** NOTE : WE CAN'T WRITE LOGIC LIKE BELOW
+        *  -> below cases may happen
+        *
+        *  1) for (p instanceof Architect && numOfArch >= 1)
+        *    -> could be cases that instanceof Architect is true
+        *    -> but numOfArch >= 1 is false
+        *    -> So, the logic will go to ` else if (p instanceof Designer && numOfDes > 2) `
+        *    -> which is not what we want
+        *
+        *  2) consider case :
+        *    -> there are 2 designers in team, now we want add 1 new Architect
+        *    -> V1 (above) will work properly, while V2 (below) will be wrong
+        */
+
+// V2
+//        if (p instanceof Architect && numOfArch >= 1){
+//                throw new TeamException("more than 1 Architect !");
+//        }
+//        else if (p instanceof Designer && numOfDes > 2){
+//                    throw new TeamException("more than 2 Designer !");
+//        }
+//        else if (p instanceof Programmer && numOfPro > 3){
+//                    throw new TeamException("more than 3 Programmer !");
+//            }
+//        }
 
         // add p (member) to existing team
         team[total] = p;
