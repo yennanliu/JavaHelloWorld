@@ -1,9 +1,13 @@
 package Basics.CustomerCRM.service;
 
 // https://www.youtube.com/watch?v=4mopAdK6kN8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=395
+// https://www.youtube.com/watch?v=vBp_tt2gxYI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=395
 
+import Basics.EmployeeCRM.team.domain.Architect;
+import Basics.EmployeeCRM.team.domain.Designer;
 import Basics.EmployeeCRM.team.domain.Employee;
 import Basics.EmployeeCRM.team.domain.Programmer;
+import Basics.EmployeeCRM.team.service.Status;
 import Basics.EmployeeCRM.team.service.TeamException;
 
 /**
@@ -62,10 +66,48 @@ public class TeamService {
         }
 
         // at most 1 architect in the team
-
         // at most 2 designers in the team
-
         // at most 3 programmers in the team
+        // get how many architects/designers/programmers currently
+        int numOfArch = 0;
+        int numOfDes = 0;
+        int numOfPro = 0;
+        for (int i = 0; i < total; i++){
+            // NOTE : we start from the `small` group to `big` group
+            // (e.g. we have least Architect, then Designer, and Programmer)
+            if (team[i] instanceof Architect){
+                numOfArch ++;
+            }else if(team[i] instanceof Designer){
+                numOfDes ++;
+            }else if(team[i] instanceof Programmer){
+                numOfPro ++;
+            }
+        }
+
+        if (p instanceof Architect){
+            // if more than 1 Architect
+            if (numOfArch >= 1){
+                throw new TeamException("more than 1 Architect !");
+            }
+        else if (p instanceof Designer){
+            if (numOfDes > 2){
+                throw new TeamException("more than 2 Designer !");
+                }
+            }
+        else if (p instanceof Programmer){
+            if (numOfPro > 3){
+                throw new TeamException("more than 3 Programmer !");
+                }
+            }
+        }
+
+        // add p (member) to existing team
+        team[total] = p;
+        total ++;
+
+        // update member status
+        p.setStatus(Status.BUSY);
+        p.setMemberId(counter ++);
     }
 
     public void removeMember(int memberId){
