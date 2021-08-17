@@ -2,6 +2,7 @@ package Basics.CustomerCRM.service;
 
 // https://www.youtube.com/watch?v=4mopAdK6kN8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=395
 // https://www.youtube.com/watch?v=vBp_tt2gxYI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=395
+// https://www.youtube.com/watch?v=coOGqYVKq8A&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=398
 
 import Basics.EmployeeCRM.team.domain.Architect;
 import Basics.EmployeeCRM.team.domain.Designer;
@@ -12,7 +13,6 @@ import Basics.EmployeeCRM.team.service.TeamException;
 
 /**
  *  dev team member add/modify/delete/
- *
  */
 
 public class TeamService {
@@ -138,8 +138,33 @@ public class TeamService {
         p.setMemberId(counter ++);
     }
 
-    public void removeMember(int memberId){
+    /** remove member from team */
+    public void removeMember(int memberId) throws TeamException {
+         int i = 0;
+         // NOTE below syntax (;i < total; i++)
+         for (;i < total; i++){
+             // if memberId is found, delete it, and break the loop
+             if (team[i].getMemberId() == memberId){
+                 team[i].setStatus(Status.FREE);
+                 break;
+             }
+         }
 
+        // memberId is NOT found
+        if (i == total){
+            throw new TeamException("memberId is NOT found");
+        }
+
+        // move remaining members to left (1 index) for occupying the removed member index
+        // e.g. [1,2,3,4]
+        // remove 2
+        // -> [1,,3,4] -> [1,3,4]
+        for (int j = i + 1; j < total; j ++){
+            team[j-1] = team[j];
+        }
+        // set last element as null
+        team[total - 1] = null;
+        total --;
     }
 
     // check if member already in dev team
