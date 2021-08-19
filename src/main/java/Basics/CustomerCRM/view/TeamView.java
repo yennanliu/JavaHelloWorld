@@ -1,6 +1,7 @@
 package Basics.CustomerCRM.view;
 
 // https://www.youtube.com/watch?v=5kA26LIcXHU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=399
+// https://www.youtube.com/watch?v=UGjEUpcR2Pw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=400
 
 import Basics.CustomerCRM.service.TeamService;
 import Basics.EmployeeCRM.team.service.NameListService;
@@ -37,8 +38,11 @@ public class TeamView {
                     deleteMember();
                     break;
                 case '4':
-                    loopFlag = false;
-                    System.out.println("exit !");
+                    System.out.println("Exit ? (Y/N) ");
+                    char isExist = TSUtility.readConfirmSelection();
+                    if (isExist == 'Y'){
+                        loopFlag = false;
+                    }
                     break;
             }
         }
