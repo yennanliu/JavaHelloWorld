@@ -4,6 +4,7 @@ package Basics.CustomerCRM.view;
 // https://www.youtube.com/watch?v=UGjEUpcR2Pw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=400
 
 import Basics.CustomerCRM.service.TeamService;
+import Basics.EmployeeCRM.team.domain.Employee;
 import Basics.EmployeeCRM.team.service.NameListService;
 import Basics.EmployeeCRM.team.utils.TSUtility;
 
@@ -18,14 +19,17 @@ public class TeamView {
 
         // if keep looping
         boolean loopFlag = true;
+        char menu = 0;
 
         while(loopFlag){
 
-            listAllEmployees();
+            if (menu != '1'){
+                listAllEmployees();
+            }
 
             System.out.println("1) Employee List 2) Add Member 3) Remove Member 4) Exist. Please select (1 to 4)\n");
 
-            char menu = TSUtility.readMenuSelection();
+            menu = TSUtility.readMenuSelection();
 
             switch (menu){
                 case '1':
@@ -50,7 +54,24 @@ public class TeamView {
 
     /** show all employees */
     private void listAllEmployees(){
-        System.out.println("listAllEmployees");
+
+        System.out.println("--------------------- List All Employees --------------------- \n");
+
+        Employee[] employees =  listSvc.getAllEmployees();
+
+        if (employees == null || employees.length == 0){
+
+            System.out.println("No employee in company !");
+        }else{
+
+            System.out.println("ID\tName\tAge\tSalary\tPosition\tStatus\tBonus\tStock\tDevice");
+
+            for (int i =0; i < employees.length; i++){
+                System.out.println(employees[i]);
+            }
+        }
+
+        System.out.println("--------------------- List All Employees --------------------- \n");
     }
 
     private void getTeam(){
