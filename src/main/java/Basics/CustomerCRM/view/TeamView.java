@@ -3,6 +3,7 @@ package Basics.CustomerCRM.view;
 // https://www.youtube.com/watch?v=5kA26LIcXHU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=399
 // https://www.youtube.com/watch?v=UGjEUpcR2Pw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=400
 // https://www.youtube.com/watch?v=aDlqiw4HSBU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=403
+// https://www.youtube.com/watch?v=Ya-4PjiDN4o&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=404
 
 import Basics.CustomerCRM.service.TeamService;
 import Basics.EmployeeCRM.team.domain.Employee;
@@ -81,6 +82,7 @@ public class TeamView {
     }
 
     private void addMember(){
+
         System.out.println("--------------------- Add Member --------------------- \n");
         System.out.println("Plz enter the to-add member id");
         int id = TSUtility.readInt();
@@ -96,7 +98,28 @@ public class TeamView {
     }
 
     private void deleteMember(){
-        System.out.println("deleteMember");
+        System.out.println("--------------------- Delete Member --------------------- \n");
+
+        System.out.println("Plz enter the to-delete member id");
+        int memberId = TSUtility.readInt();
+
+        System.out.println("Confirm to Delete ? (Y/N)");
+        char isDelete = TSUtility.readConfirmSelection();
+
+        // if Not delete
+        if (isDelete == 'N'){
+            return;
+        }
+
+        // if delete
+        try {
+            teamSvc.removeMember(memberId);
+            System.out.println("delete member OK!");
+        } catch (TeamException e) {
+            System.out.println("delete member failed!" + e.getMessage());
+        }
+        // back to the main program
+        TSUtility.readReturn();
     }
 
     /** entry point */
