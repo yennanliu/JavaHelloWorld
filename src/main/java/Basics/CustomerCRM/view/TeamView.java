@@ -2,10 +2,12 @@ package Basics.CustomerCRM.view;
 
 // https://www.youtube.com/watch?v=5kA26LIcXHU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=399
 // https://www.youtube.com/watch?v=UGjEUpcR2Pw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=400
+// https://www.youtube.com/watch?v=aDlqiw4HSBU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=403
 
 import Basics.CustomerCRM.service.TeamService;
 import Basics.EmployeeCRM.team.domain.Employee;
 import Basics.EmployeeCRM.team.service.NameListService;
+import Basics.EmployeeCRM.team.service.TeamException;
 import Basics.EmployeeCRM.team.utils.TSUtility;
 
 public class TeamView {
@@ -79,7 +81,18 @@ public class TeamView {
     }
 
     private void addMember(){
-        System.out.println("addMember");
+        System.out.println("--------------------- Add Member --------------------- \n");
+        System.out.println("Plz enter the to-add member id");
+        int id = TSUtility.readInt();
+
+        try {
+            Employee emp =  listSvc.getEmployee(id);
+            teamSvc.addMember(emp);
+            System.out.println("add member OK !");
+            TSUtility.readReturn();
+        } catch (TeamException e) {
+            System.out.println("add member failed ! " + e.getMessage());
+        }
     }
 
     private void deleteMember(){

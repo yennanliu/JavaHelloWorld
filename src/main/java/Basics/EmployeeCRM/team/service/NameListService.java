@@ -109,7 +109,7 @@ public class NameListService {
         return employees;
     }
 
-    public Employee getAllEmployees(int id) throws TeamException {
+    public Employee getEmployee(int id) throws TeamException {
         for (int i=0; i < employees.length; i++){
             if (employees[i].getId() == id){ // basic data type (int), so can use `==`
                return employees[i];
