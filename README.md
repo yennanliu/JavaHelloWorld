@@ -598,29 +598,36 @@
                         - -> only "throws" the exception to the upper layer.
                         - (upper layer still need to deal with such exception)
 
-- [JavaHelloWorld](./tree/main/src) : Advance
-    - Thread demo
+- [JavaHelloWorld](./src/main/java/Advances) : Advance
+    - Process
+    - Thread
+        - Thread create and use
+        - Thread life cycle
+        - Thread sync
+        - Thread communication
+        - Thread create and use (JDK 5.0)
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
-    - Thread case study : box office
-        - `part 1`
-            - [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
-            - [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
-        - `part 2`
-            - [MultiSalesThread](./src/main/java/thread/MultiSalesThread.java)
-            - [MultiSalesThreadSynchronized](./src/main/java/thread/MultiSalesThreadSynchronized.java)
-    - Other Thread examples
-        - [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
-        - [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
-        - [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
-        - [ThreadSleep](./src/main/java/thread/ThreadSleep.java)
-        - [ThreadYield](./src/main/java/thread/ThreadYield.java)
-        - [ThreadJoin](./src/main/java/thread/ThreadJoin.java)
-    - Thread Lock
-        - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
-        - [LockThread](./src/main/java/thread/ThreadLock.java)
-
+        - case study
+            - box office
+            - `part 1`
+                - [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
+                - [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
+            - `part 2`
+                - [MultiSalesThread](./src/main/java/thread/MultiSalesThread.java)
+                - [MultiSalesThreadSynchronized](./src/main/java/thread/MultiSalesThreadSynchronized.java)
+        - other examples
+            - [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
+            - [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
+            - [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
+            - [ThreadSleep](./src/main/java/thread/ThreadSleep.java)
+            - [ThreadYield](./src/main/java/thread/ThreadYield.java)
+            - [ThreadJoin](./src/main/java/thread/ThreadJoin.java)
+        - Thread Lock
+            - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
+            - [LockThread](./src/main/java/thread/ThreadLock.java)
+    - Process VS Thread
 
 - [JavaHelloWorld](./tree/main/src) : Mini project
     - [CustomerCRM](./src/main/java/Basics/CustomerCRM)
