@@ -349,6 +349,7 @@
     - toString()
         - [EqualsDemo1](./src/main/java/Basics/ToString_1.java)
 
+
 - [JavaHelloWorld](./tree/main/src) : basic3
     - Static demo
         - Can be used in `attribution`, `method`, `code block`, `inner class`
@@ -598,7 +599,21 @@
                         - -> only "throws" the exception to the upper layer.
                         - (upper layer still need to deal with such exception)
 
+
 - [JavaHelloWorld](./src/main/java/Advances) : Advance
+    - `Program VS Process VS Thread`
+        - Program : collection of code for purpose, a static instance
+        - Process : `running process` of the program, or `a running program`. is a dynamic process. has its cycle : launch - exist - terminate
+            - examples
+                - running spotify
+                - running whatsapp
+            - Program is `static` ; while process is `dynamic`
+            - Process as `resource allocation` unit, will allocate threads to different memory spaces
+        - Thread : A process has `multiple` thread. Each thread is an execution unit inside the program
+            - if one process can run multiple threads `in parallell` -> We say it's a `mutiple threading` program
+            - thread as an allocation & execution unit, each thread has its independent running thread and counter (pc)
+            - Multiple threads in the same process CAN USE `same storage unit / memory space ..` -> they allocate instance from the same `heap`
+                -> but such memory sharing mechanisms may cause `thready safety` concerns.
     - Process
     - Thread
         - Thread create and use
@@ -627,7 +642,7 @@
         - Thread Lock
             - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
             - [LockThread](./src/main/java/thread/ThreadLock.java)
-    - Process VS Thread
+
 
 - [JavaHelloWorld](./tree/main/src) : Mini project
     - [CustomerCRM](./src/main/java/Basics/CustomerCRM)
