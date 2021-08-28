@@ -193,6 +193,9 @@
         - [thisDemo3](./src/main/java/Basics/thisDemo3)
         - [thisDemo4](./src/main/java/Basics/thisDemo4.java)
         - [thisDemo5](./src/main/java/Basics/thisDemo5)
+    - Getter & Setter
+        - [GetterSetterDemo1](./src/main/java/Basics/GetterSetterDemo1.java)
+        - [GetterSetterDemo2](./src/main/java/Basics/GetterSetterDemo2.java)
 
     - Extends
         - [Extends_demo1](./src/main/java/Basics/Extends_demo1)
@@ -554,32 +557,6 @@
         - [InnerClassDemo3](src/main/java/Basics/InnerClassDemo3.java)
 
 - [JavaHelloWorld](./tree/main/src) : basic4
-    - Thread demo
-        - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
-        - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
-        - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
-    - Thread case study : box office
-        - `part 1`
-            - [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
-            - [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
-        - `part 2`
-            - [MultiSalesThread](./src/main/java/thread/MultiSalesThread.java)
-            - [MultiSalesThreadSynchronized](./src/main/java/thread/MultiSalesThreadSynchronized.java)
-    - Other Thread examples
-        - [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
-        - [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
-        - [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
-        - [ThreadSleep](./src/main/java/thread/ThreadSleep.java)
-        - [ThreadYield](./src/main/java/thread/ThreadYield.java)
-        - [ThreadJoin](./src/main/java/thread/ThreadJoin.java)
-    - Thread Lock
-        - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
-        - [LockThread](./src/main/java/thread/ThreadLock.java)
-    - Getter & Setter
-        - [GetterSetterDemo1](./src/main/java/Basics/GetterSetterDemo1.java)
-        - [GetterSetterDemo2](./src/main/java/Basics/GetterSetterDemo2.java)
-
-- [JavaHelloWorld](./tree/main/src) : basic5
     - Unit Tests
         - [JUnit_1](./src/main/java/Basics/JUnit_1)
     - File IO
@@ -620,6 +597,30 @@
                         - -> NOT really deal with the exception,
                         - -> only "throws" the exception to the upper layer.
                         - (upper layer still need to deal with such exception)
+
+- [JavaHelloWorld](./tree/main/src) : Advance
+    - Thread demo
+        - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
+        - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
+        - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
+    - Thread case study : box office
+        - `part 1`
+            - [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
+            - [RunnableDemo_2](./src/main/java/thread/RunnableDemo_2.java)
+        - `part 2`
+            - [MultiSalesThread](./src/main/java/thread/MultiSalesThread.java)
+            - [MultiSalesThreadSynchronized](./src/main/java/thread/MultiSalesThreadSynchronized.java)
+    - Other Thread examples
+        - [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
+        - [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
+        - [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
+        - [ThreadSleep](./src/main/java/thread/ThreadSleep.java)
+        - [ThreadYield](./src/main/java/thread/ThreadYield.java)
+        - [ThreadJoin](./src/main/java/thread/ThreadJoin.java)
+    - Thread Lock
+        - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
+        - [LockThread](./src/main/java/thread/ThreadLock.java)
+
 
 - [JavaHelloWorld](./tree/main/src) : Mini project
     - [CustomerCRM](./src/main/java/Basics/CustomerCRM)
