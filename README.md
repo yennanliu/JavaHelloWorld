@@ -619,11 +619,13 @@
             - Concurrency : One CPU does different tasks (jump between tasks). e.g. one person does different stuffs
     - Process
     - Thread
+        - A `thread` is a thread of execution in a program. The JVM allows an application to have multiple threads of execution running concurrently.
         - Thread create and use
         - Thread life cycle
         - Thread sync
         - Thread communication
         - Thread create and use (JDK 5.0)
+        - [ThreadDemo1](src/main/java/Advances/ThreadDemo1.java)
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
