@@ -1,27 +1,12 @@
 package Advances;
 
-// https://www.youtube.com/watch?v=AkNZRvyYivk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=417
 // https://www.youtube.com/watch?v=bL5ppBbMJOQ&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=418
 
-/**
- *  Multi-thread
- *
- *  1) Method 1 : Inherit from `thread` class
- *
- *    -> Step 1) create a subclass inherited from `thread` class
- *    -> Step 2) override Thread class' run() -> the operation this thread needs to do
- *    -> Step 3) create instance of (subclass inherited from `thread` class)
- *    -> Step 4) run start() method via subclass above
- */
-
-// example run 1 - 100 even integers
-public class ThreadDemo1 {
+public class ThreadDemo2 {
     public static void main(String[] args) {
 
-        // Step 3) create instance of (subclass inherited from `thread` class)
-        MyThread t1 = new MyThread();
+        MyThread2 t1 = new MyThread2();
 
-        // Step 4) run start() method via subclass above
         /**
          *  `start` has 2 functionalities
          *
@@ -31,7 +16,15 @@ public class ThreadDemo1 {
         t1.start(); // 1st thread
         // t1.run();  // <-- if use run(), then there will be only 1 main thread, instead of multi thread
 
-        // 2nd thread
+
+        /**
+         *  HERE WE WANT TO LAUNCH THE OTHER THREAD
+         *   -> STILL LOOPING EVEN NUMS WITHIN 0-100
+         */
+        // in order to launch a new thread -> we need to create a new thread instance
+        MyThread2 t2 = new MyThread2();
+        t2.start();
+
         // below "for loop" is in the `main thread`
         for (int i = 0; i < 100; i++){
             if (i % 2 == 0){
@@ -42,9 +35,7 @@ public class ThreadDemo1 {
     }
 }
 
-// Step 1) create a subclass inherited from `thread` class
-class MyThread extends Thread {
-    // Step 2) override Thread class's run()
+class MyThread2 extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 100; i++){
