@@ -13,29 +13,30 @@ package Advances.ThreadDemo4;
  *   5) setName() : set current thread name (setter)
  *      5-1) via setName() method
  *      5-2) via constructor
- *
- *   6) yield : release current CPU execution
- *   7) join
  */
 
-class MyThread4_ extends Thread{
+class MyThread4_2 extends Thread{
     @Override
     public void run() {
-       for (int i = 0; i < 100; i ++){
-           if (i % 2 == 0){
-               System.out.println(Thread.currentThread().getName() + " : " + i);
-           }
-       }
+        for (int i = 0; i < 100; i ++){
+            if (i % 2 == 0){
+                System.out.println(Thread.currentThread().getName() + " : " + i);
+            }
+        }
     }
+    // constructor (we can set thread name via this)
+    public MyThread4_2(String name){
+        super(name);
+    }
+
 }
 
-public class ThreadMethodDemo1 {
+public class ThreadMethodDemo2 {
     public static void main(String[] args) {
 
         // multi-thread
-        MyThread4_ h1 = new MyThread4_();
-        // set thread name
-        h1.setName("Thread X");
+        // set thread name via constructor
+        MyThread4_2 h1 = new MyThread4_2("Thread X");
         h1.start();
 
         // main thread
@@ -44,13 +45,6 @@ public class ThreadMethodDemo1 {
         for (int i = 0; i < 100; i ++){
             if (i % 2 == 1){
                 System.out.println(Thread.currentThread().getName() + " : " + i);
-            }
-            if (i == 31){
-                try {
-                    h1.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
             }
         }
     }
