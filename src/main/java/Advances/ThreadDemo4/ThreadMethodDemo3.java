@@ -13,6 +13,15 @@ package Advances.ThreadDemo4;
  *   5) setName() : set current thread name (setter)
  *      5-1) via setName() method
  *      5-2) via constructor
+ *
+ *   6) yield : release current CPU execution
+ *   7) join : when use thread b's join() in thread a,
+ *             thread a will being `blocked` till thread b finished
+ *             , then thread a can run again
+ *   8) stop : force to terminate thread (not recommended)
+ *   9) sleep : (long millisecond) : ask thread sleep (for millisecond)
+ *              (current thread is blocked)
+ *   10) isAlive() : check if thread is active
  */
 
 class MyThread4_3 extends Thread{

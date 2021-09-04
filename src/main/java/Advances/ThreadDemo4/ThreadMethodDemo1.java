@@ -15,7 +15,13 @@ package Advances.ThreadDemo4;
  *      5-2) via constructor
  *
  *   6) yield : release current CPU execution
- *   7) join
+ *   7) join : when use thread b's join() in thread a,
+ *             thread a will being `blocked` till thread b finished
+ *             , then thread a can run again
+ *   8) stop : force to terminate thread (not recommended)
+ *   9) sleep : (long millisecond) : ask thread sleep (for millisecond)
+ *              (current thread is blocked)
+ *   10) isAlive() : check if thread is active
  */
 
 class MyThread4_ extends Thread{
@@ -23,6 +29,11 @@ class MyThread4_ extends Thread{
     public void run() {
        for (int i = 0; i < 100; i ++){
            if (i % 2 == 0){
+               try {
+                   sleep(10);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
                System.out.println(Thread.currentThread().getName() + " : " + i);
            }
        }
@@ -47,11 +58,17 @@ public class ThreadMethodDemo1 {
             }
             if (i == 31){
                 try {
+                    /**
+                     * when `join`, it will stop, and run the other thread first
+                     * -> use case : when we need data from the other thread,
+                     *               we use `join` make current thread `wait` a bit
+                     */
                     h1.join();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }
+        System.out.println("h1.isAlive() = " + h1.isAlive());
     }
 }
