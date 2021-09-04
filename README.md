@@ -628,6 +628,7 @@
         - [ThreadDemo1](src/main/java/Advances/ThreadDemo1.java)
         - [ThreadDemo2](src/main/java/Advances/ThreadDemo2.java)
         - [ThreadDemo3](src/main/java/Advances/ThreadDemo3.java)
+        - [ThreadDemo4](src/main/java/Advances/ThreadDemo4)
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
