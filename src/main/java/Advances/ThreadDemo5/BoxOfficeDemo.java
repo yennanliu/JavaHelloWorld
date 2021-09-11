@@ -14,15 +14,15 @@ class Thread_T extends Thread {
     // **** NOTE : WE NEED TO SET TICKET AS static attr
     //             since we want box offices sell 100 tickets in total
     //             rather than sell 100 tickets by each of them
-    private static int ticket = 100;
+    private static int tickets = 100;
 
     // method
     @Override
     public void run() {
         while(true){
-            if (ticket > 0){
-                System.out.println(Thread.currentThread().getName() + " sells ticket, ticket num = " + ticket);
-                ticket -=1 ;
+            if (tickets > 0){
+                System.out.println(Thread.currentThread().getName() + " sells ticket, ticket num = " + tickets);
+                tickets -=1 ;
             }else{
                 break;
             }
