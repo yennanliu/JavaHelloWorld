@@ -3,12 +3,12 @@ package Advances.ThreadDemo5;
 // https://www.youtube.com/watch?v=BZCBBSGPTXk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=422
 
 /**
- *  Example :
+ *  Example : (Method 1 : extends Thread class)
  *      set up 3 box offices selling tickets,
  *      100 tickets in total
  */
 
-class BoxOffice extends Thread {
+class Thread_T extends Thread {
 
     // attr
     // **** NOTE : WE NEED TO SET TICKET AS static attr
@@ -34,9 +34,9 @@ class BoxOffice extends Thread {
 public class BoxOfficeDemo {
     public static void main(String[] args) {
 
-        BoxOffice b1 = new BoxOffice();
-        BoxOffice b2 = new BoxOffice();
-        BoxOffice b3 = new BoxOffice();
+        Thread_T b1 = new Thread_T();
+        Thread_T b2 = new Thread_T();
+        Thread_T b3 = new Thread_T();
 
         b1.setName("box office 1");
         b2.setName("box office 2");
