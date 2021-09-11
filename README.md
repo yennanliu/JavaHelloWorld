@@ -634,7 +634,27 @@
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
-        - case study
+        - 2 ways create multi thread
+            - Method 1) : Extend `Thread` class
+                - Thread class is implemented from Runnable interface actually
+                ```java
+                // java
+                public class Thread implements Runnable
+                ```
+            - Method 2) : Implement `Runnable` interface
+                - we prefer Implement Runnable in general
+                    - reason 1) without single class inheritance limitation (Runnable is a interface)
+                    - reason 2) the attr/val .. are shared by multi thread by default (because the implementation way)
+                    ```java
+                    // java
+                    MyWindow my_window = new MyWindow();
+
+                    Thread t1 = new Thread(my_window); 
+                    Thread t2 = new Thread(my_window); 
+                    Thread t3 = new Thread(my_window);
+                    ```
+            - Note : We need to overwroide run() method in both 2 methods
+        - Case study
             - box office
             - `part 1`
                 - [ThreadDemo_2](./src/main/java/thread/ThreadDemo_2.java)
@@ -642,7 +662,7 @@
             - `part 2`
                 - [MultiSalesThread](./src/main/java/thread/MultiSalesThread.java)
                 - [MultiSalesThreadSynchronized](./src/main/java/thread/MultiSalesThreadSynchronized.java)
-        - other examples
+        - Other examples
             - [CallableThreadDemo_1](./src/main/java/thread/CallableThreadDemo_1.java)
             - [DamonThread_Demo1](./src/main/java/thread/DamonThread_Demo1.java)
             - [ThreadWithPriority](./src/main/java/thread/ThreadWithPriority.java)
