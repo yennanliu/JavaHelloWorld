@@ -600,7 +600,7 @@
                         - (upper layer still need to deal with such exception)
 
 
-- [JavaHelloWorld](./src/main/java/Advances) : Advance
+- [JavaHelloWorld](./src/main/java/Advances) : Advanced
     - `Program VS Process VS Thread`
         - Program : collection of code for purpose, a static instance
         - Process : `running process` of the program, or `a running program`. is a dynamic process. has its cycle : launch - exist - terminate
@@ -654,6 +654,10 @@
                     Thread t3 = new Thread(my_window);
                     ```
             - Note : We need to overwroide run() method in both 2 methods
+
+        - Thread Cycle
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_cycle.svg"></p>
+
         - Case study
             - box office
             - `part 1`
@@ -672,6 +676,7 @@
         - Thread Lock
             - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
             - [LockThread](./src/main/java/thread/ThreadLock.java)
+
 
 
 - [JavaHelloWorld](./tree/main/src) : Mini project
