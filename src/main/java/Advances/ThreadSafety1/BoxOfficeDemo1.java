@@ -20,21 +20,28 @@ package Advances.ThreadSafety1;
  *
  *    4) in java, we can solve above issue via `sync mechanism`
  *
- *       - https://www.baeldung.com/java-thread-safety
+ *         - https://www.baeldung.com/java-thread-safety
  *
- *       4-1) method 1 : Synchronized code block
+ *         4-1) method 1 : Synchronized code block
  *
  *
- *            // shared information : the variables that are modified/accessed ... by multiple threads
- *            // Synchronized monitor : known as `lock`, any class instance can be a `lock`
+ *            // 1) shared information : the variables that are modified/accessed ... by multiple threads
+ *            // 2) Synchronized monitor : known as `lock`, any class instance can be a `lock`
+ *            //    -> multiple threads MUST use the SAME lock
  *            Synchronized(Synchronized monitor){
  *
  *             // the code we need to sync
- *             // i.e. : the code manipulate the shared information
+ *             // i.e. : the code manipulates the shared information
  *            }
  *
- *       4-2) method 2 : Synchronized method
+ *         4-2) method 2 : Synchronized method
  *
+ *
+ *    5) Pros and Cons
+ *       pros : solve thread safety issue
+ *       cons : speed is slow ( a `single thread` now actually)
+ *              -> concurrent = 1
+ *              -> can have one thread run on the same time
  */
 
 
@@ -49,6 +56,7 @@ class WindowR implements Runnable{
 
     @Override
     public void run() {
+        //Object obj = new Object();  -> thread NOT safety, since the threads are NOT using the same lock
         while(true){
 
             synchronized (obj) {
@@ -75,7 +83,7 @@ public class BoxOfficeDemo1 {
     public static void main(String[] args) {
 
         WindowR w1 = new WindowR();
-        
+
         Thread t1 = new Thread(w1);
         Thread t2 = new Thread(w1);
         Thread t3 = new Thread(w1);
