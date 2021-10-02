@@ -656,7 +656,7 @@
             - Note : We need to overwroide run() method in both 2 methods
 
         - Thread Cycle
-<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_cycle2.svg"></p>
+        <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_cycle2.svg"></p>
 
         - Case study
             - box office
