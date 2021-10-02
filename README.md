@@ -631,6 +631,7 @@
         - [ThreadDemo4](src/main/java/Advances/ThreadDemo4) : common thread methods demo
         - [ThreadDemo5](src/main/java/Advances/ThreadDemo5)
             - [RunnableDemo1](src/main/java/Advances/ThreadDemo5/RunnableDemo1.java) : Runnable create multi thread demo
+        - [ThreadSafety1](src/main/java/Advances/ThreadSafety1)
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
@@ -656,7 +657,7 @@
             - Note : We need to overwroide run() method in both 2 methods
 
         - Thread Cycle
-        <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_cycle2.svg"></p>
+            <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_cycle2.svg"></p>
 
         - Case study
             - box office
