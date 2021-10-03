@@ -632,8 +632,9 @@
         - [ThreadDemo5](src/main/java/Advances/ThreadDemo5)
             - [RunnableDemo1](src/main/java/Advances/ThreadDemo5/RunnableDemo1.java) : Runnable create multi thread demo
         - Thread Safety
-            - [BoxOfficeThread1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeThread1.java) : thread (Thread) safety
-            - [BoxOfficeRunnable1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java) : thread (Runnable) safety
+            - [BoxOfficeThread1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeThread1.java) : thread (Thread) safety ("Synchronized code block")
+            - [BoxOfficeRunnable1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java) : thread (Runnable) safety ("Synchronized code block")
+            - [BoxOfficeRunnable2.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable2.java) : thread (Runnable) safety ("Synchronized method")
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)

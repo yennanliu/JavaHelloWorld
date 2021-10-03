@@ -6,6 +6,8 @@ package Advances.ThreadSafety1;
 /**
  *   Implement 3 box offices with Runnable interface (total ticket=100)
  *
+ *   - `Synchronized code block` for solving thread safety
+ *
  *   Issues
  *    1) duplicated, wrong ticket -> thready safety
  *
