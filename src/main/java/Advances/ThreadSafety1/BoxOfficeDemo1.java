@@ -1,6 +1,7 @@
 package Advances.ThreadSafety1;
 
 // https://www.youtube.com/watch?v=yB5BP_txa6g&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=431
+// https://www.youtube.com/watch?v=A_mB0jxIrgo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=433
 
 /**
  *   Implement 3 box offices with Runnable interface (total ticket=100)

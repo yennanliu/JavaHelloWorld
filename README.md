@@ -631,7 +631,9 @@
         - [ThreadDemo4](src/main/java/Advances/ThreadDemo4) : common thread methods demo
         - [ThreadDemo5](src/main/java/Advances/ThreadDemo5)
             - [RunnableDemo1](src/main/java/Advances/ThreadDemo5/RunnableDemo1.java) : Runnable create multi thread demo
-        - [ThreadSafety1](src/main/java/Advances/ThreadSafety1)
+        - Thread Safety
+            - [BoxOfficeDemo2.java](src/main/java/Advances/ThreadSafety1/BoxOfficeDemo2.java) : thread (Thread) safety
+            - [BoxOfficeDemo1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeDemo2.java) : thread (Runnable) safety
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
