@@ -58,7 +58,7 @@ class Thread_T extends Thread {
 }
 
 // entry point
-public class BoxOfficeDemo2 {
+public class BoxOfficeThread1 {
     public static void main(String[] args) {
 
         Thread_T b1 = new Thread_T();

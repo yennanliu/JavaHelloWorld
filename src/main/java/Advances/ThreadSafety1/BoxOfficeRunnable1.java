@@ -39,7 +39,8 @@ package Advances.ThreadSafety1;
  *            }
  *
  *         4-2) method 2 : Synchronized method
- *
+ *              - if the `manipulation code` is in the SAME method
+ *                 -> then we can DECLARE THIS METHOD as Synchronized
  *
  *    5) Pros and Cons
  *       pros : solve thread safety issue
@@ -84,7 +85,7 @@ class WindowR implements Runnable{
 }
 
 // entry point
-public class BoxOfficeDemo1 {
+public class BoxOfficeRunnable1 {
     public static void main(String[] args) {
 
         WindowR w1 = new WindowR();
