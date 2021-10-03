@@ -7,9 +7,8 @@ package Advances.ThreadSafety1;
  *
  *  - solve the thread safety via "Synchronized code block"
  *
- *
- *
- *
+ *  1)  in `Thread` thread, we can use `this` as Synchronized monitor
+ *      (make sure Synchronized monitor is UNIQUE)
  */
 
 class Thread_T extends Thread {
@@ -32,8 +31,14 @@ class Thread_T extends Thread {
 
         while(true){
 
-            synchronized (obj){
-
+            // note : we CAN'T use synchronized (this) below
+            //        since this is not THE ONLY object -> lock is NOT THE ONLY LOCK
+            //        `this` in ths example : b1, b2, b3
+            //synchronized (obj){
+            synchronized (Thread_T.class){  // but we can use Thread_T.class as synchronized monitor
+                                            // -> since class is also an object
+                                            // example : class clazz = Thread_T.class;
+                                            // (Thread_T.class will be loaded ONCE only)
                 if (tickets > 0){
 
                     try {

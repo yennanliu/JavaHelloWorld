@@ -29,6 +29,9 @@ package Advances.ThreadSafety1;
  *            // 1) shared information : the variables that are modified/accessed ... by multiple threads
  *            // 2) Synchronized monitor : known as `lock`, any class instance can be a `lock`
  *            //    -> multiple threads MUST use the SAME lock
+ *            // 3) in Runnable thread, we can use `this` as Synchronized monitor
+ *                  (make sure Synchronized monitor is UNIQUE)
+ *
  *            Synchronized(Synchronized monitor){
  *
  *             // the code we need to sync
@@ -60,8 +63,9 @@ class WindowR implements Runnable{
         //Object obj = new Object();  -> thread NOT safety, since the threads are NOT using the same lock
         while(true){
 
-            synchronized (obj) {
-
+            //synchronized (obj) {
+            synchronized (this) {   // note : we can use current object (this) as synchronized monitor as well
+                                    // `this` in this example is `WindowR`
                 if (tickets > 0) {
                     try {
                         Thread.sleep(100);
