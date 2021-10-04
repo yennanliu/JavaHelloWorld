@@ -44,6 +44,11 @@ package Advances.ThreadSafety1;
  *              - if the `manipulation code` is in the SAME method
  *                 -> then we can DECLARE THIS METHOD as Synchronized
  *
+ *             4-2-1) still use `Synchronized monitor` (we don't need to declare it explicitly)
+ *             4-2-2) Synchronized monitor
+ *                   - non-static : `this`
+ *                   - static : current class itself
+ *
  *    5) Pros and Cons
  *       pros : solve thread safety issue
  *       cons : speed is slow ( a `single thread` now actually)
