@@ -408,6 +408,7 @@
             - [SingletonDemo3](./src/main/java/Basics/SingletonDemo3.java) : Singleton - Lazy initialization
             - [SingletonDemo4](./src/main/java/Basics/SingletonDemo4.java)
             - [SingletonDemo5](./src/main/java/Basics/SingletonDemo5.java)
+            - [LazyInitSynchronized1](./src/main/java/Advances/LazyInitSynchronized1) : solve Lazy initialization's thread safety with synchronized method
             ```
             # Steps
             1. make constructor private
@@ -636,7 +637,7 @@
             - [BoxOfficeThread2.java](src/main/java/Advances/ThreadSafety1/BoxOfficeThread2.java) : thread (Thread) safety ("Synchronized method")
             - [BoxOfficeRunnable1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java) : thread (Runnable) safety ("Synchronized code block")
             - [BoxOfficeRunnable2.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable2.java) : thread (Runnable) safety ("Synchronized method")
-            - [explain](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java#L9)
+            - [explanation](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java#L9)
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
