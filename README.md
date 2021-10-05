@@ -638,6 +638,8 @@
             - [BoxOfficeRunnable1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java) : thread (Runnable) safety ("Synchronized code block")
             - [BoxOfficeRunnable2.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable2.java) : thread (Runnable) safety ("Synchronized method")
             - [explanation](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java#L9)
+        - Thread Dead Lock
+            - [DeadLock1](src/main/java/Advances/DeadLock1) : Dead Lock demo 1
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
