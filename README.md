@@ -633,11 +633,14 @@
         - [ThreadDemo5](src/main/java/Advances/ThreadDemo5)
             - [RunnableDemo1](src/main/java/Advances/ThreadDemo5/RunnableDemo1.java) : Runnable create multi thread demo
         - Thread Safety
-            - [BoxOfficeThread1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeThread1.java) : thread (Thread) safety ("Synchronized code block")
-            - [BoxOfficeThread2.java](src/main/java/Advances/ThreadSafety1/BoxOfficeThread2.java) : thread (Thread) safety ("Synchronized method")
-            - [BoxOfficeRunnable1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java) : thread (Runnable) safety ("Synchronized code block")
-            - [BoxOfficeRunnable2.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable2.java) : thread (Runnable) safety ("Synchronized method")
-            - [explanation](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java#L9)
+            - ThreadSafety1
+                - [BoxOfficeThread1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeThread1.java) : thread (Thread) safety ("Synchronized code block")
+                - [BoxOfficeThread2.java](src/main/java/Advances/ThreadSafety1/BoxOfficeThread2.java) : thread (Thread) safety ("Synchronized method")
+                - [BoxOfficeRunnable1.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java) : thread (Runnable) safety ("Synchronized code block")
+                - [BoxOfficeRunnable2.java](src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable2.java) : thread (Runnable) safety ("Synchronized method")
+                - [explanation](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java#L9)
+            - ThreadSafety2
+                - [ThreadSafety2](src/main/java/Advances/ThreadSafety2) : thread safety via "lock"
         - Thread Dead Lock
             - [DeadLock1](src/main/java/Advances/DeadLock1) : Dead Lock demo 1
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
