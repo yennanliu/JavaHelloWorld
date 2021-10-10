@@ -6,7 +6,7 @@ public class Customer {
     // attr
     private String firstName;
     private String lastName;
-    private Account account; // from Account.java (class type = Account)
+    private Account account; // from AccountDemo1.java (class type = Account)
 
     // constructor
     public Customer(String f, String l){
