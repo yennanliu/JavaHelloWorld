@@ -645,6 +645,13 @@
                 - [ThreadSafety3](src/main/java/Advances/ThreadSafety3) : thread safety example : bank account (synchronized method)
         - ThreadCommunication
             - [ThreadCommunication1](src/main/java/Advances/ThreadCommunication1) : Thread communication methods demo (wait(), notify(), notifyAll())
+            - Thread Communication methods:
+                - 1) wait():
+                    - once run this method, the thread will be in `blocked` status and RELEASE Synchronized monitor (lock)
+                - 2) notify():
+                    - once run this method, the thread will be "WAKED UP", if there are multiple threads, the first priority thread will be waked up
+                - 3) notifyAll():
+                    - once run this method, ALL of the OTHER threads will be "WAKED UP"
         - Thread Dead Lock
             - [DeadLock1](src/main/java/Advances/DeadLock1) : Dead Lock demo 1
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
