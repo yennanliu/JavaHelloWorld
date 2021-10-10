@@ -641,6 +641,8 @@
                 - [explanation](https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/ThreadSafety1/BoxOfficeRunnable1.java#L9)
             - ThreadSafety2
                 - [ThreadSafety2](src/main/java/Advances/ThreadSafety2) : thread safety via "lock"
+            - ThreadSafety3
+                - [ThreadSafety3](src/main/java/Advances/ThreadSafety3) : thread safety example : bank account (synchronized method)
         - Thread Dead Lock
             - [DeadLock1](src/main/java/Advances/DeadLock1) : Dead Lock demo 1
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)

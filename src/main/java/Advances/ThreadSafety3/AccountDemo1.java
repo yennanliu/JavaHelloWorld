@@ -43,7 +43,8 @@ class Account{
     }
 
     // method
-    public void deposit(double amt){
+    // NOTE : `synchronized method` here for solving thread safety
+    public synchronized void deposit(double amt){
         if (amt >= 0){
 
             this.balance += amt;
