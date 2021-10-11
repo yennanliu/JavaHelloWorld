@@ -645,6 +645,7 @@
                 - [ThreadSafety3](src/main/java/Advances/ThreadSafety3) : thread safety example : bank account (synchronized method)
         - ThreadCommunication
             - [ThreadCommunication1](src/main/java/Advances/ThreadCommunication1) : Thread communication methods demo (wait(), notify(), notifyAll())
+            - [ThreadCommunication2](src/main/java/Advances/ThreadCommunication2) : Thread communication demo : producer, consumer
             - Thread Communication methods:
                 - 1) wait():
                     - once run this method, the thread will be in `blocked` status and RELEASE Synchronized monitor (lock)
