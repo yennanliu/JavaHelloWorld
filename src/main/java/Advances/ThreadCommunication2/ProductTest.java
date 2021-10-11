@@ -44,8 +44,12 @@ public class ProductTest {
         Consumer c1 = new Consumer(clerk);
         c1.setName("Consumer-1");
 
+        Consumer c2 = new Consumer(clerk); // optional : add 1 more consumer
+        c2.setName("Consumer-2");
+
         p1.start();
         c1.start();
+        c2.start();
     }
 }
 
@@ -57,23 +61,36 @@ class Clerk{
 
     // method
     // produce product
-    public void produceProduct() {
+    public synchronized void produceProduct() {
         if (productCount < 20){
             productCount += 1;
             System.out.println(Thread.currentThread().getName()+ " starts producing " + productCount + " product ...");
+
+            /** notify consumer after producer produces 1 product */
+            notify();
         }else{
-            //System.out.println("meet max product count");
-            //wait();
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     // consume product
-    public void consumeProduct() {
+    public synchronized void consumeProduct() {
         if (productCount > 0){
             System.out.println(Thread.currentThread().getName()+ " starts consuming " + productCount + " product ...");
             productCount -= 1;
+
+            /** notify producer after consumer consumes 1 product */
+            notify();
         }else{
-            //wait();
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
@@ -94,7 +111,7 @@ class Producer extends Thread{
     public void run() {
         
         super.run();
-        System.out.println(this.getName() + "Producer produces product ...");
+        System.out.println(this.getName() + " Producer produces product ...");
 
         while (true){
 
@@ -125,12 +142,13 @@ class Consumer extends Thread {
     public void run() {
 
         super.run();
-        System.out.println(this.getName() + "Consumer consumes product ...");
+        System.out.println(this.getName() + " Consumer consumes product ...");
 
         while (true){
 
             try {
-                Thread.sleep(10);
+                //Thread.sleep(10);
+                Thread.sleep(20); // make consumer a bit slower than producer
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
