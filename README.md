@@ -631,6 +631,8 @@
         - [ThreadDemo3](src/main/java/Advances/ThreadDemo3.java)
         - [ThreadDemo4](src/main/java/Advances/ThreadDemo4) : common thread methods demo
         - [ThreadDemo5](src/main/java/Advances/ThreadDemo5)
+        - [ThreadDemo6](src/main/java/Advances/ThreadDemo6) : Callable interface (new in JDK 5.0)
+
             - [RunnableDemo1](src/main/java/Advances/ThreadDemo5/RunnableDemo1.java) : Runnable create multi thread demo
         - Thread Safety
             - ThreadSafety1
