@@ -660,8 +660,10 @@
         - [ThreadDemo_1](./src/main/java/thread/ThreadDemo_1.java)
         - [RunnableDemo_1](./src/main/java/thread/RunnableDemo_1.java)
         - [CallableDemo_1](./src/main/java/thread/CallableDemo_1.java)
-        - 2 ways create multi thread
-            - Method 1) : Extend `Thread` class
+        - Thread Pool
+            - [ThreadPool1](src/main/java/Advances/ThreadPool1)
+        - 4 ways create multi thread
+            - Method 1) : Inherit `Thread` class
                 - Thread class is implemented from Runnable interface actually
                 ```java
                 // java
@@ -680,6 +682,9 @@
                     Thread t3 = new Thread(my_window);
                     ```
             - Note : We need to overwroide run() method in both 2 methods
+
+            - Method 3) : Callable + Future
+            - Method 4) : Thread pool 
 
         - Thread Cycle
             <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_cycle2.svg"></p>
