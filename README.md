@@ -709,6 +709,9 @@
             - [LockThread](./src/main/java/thread/ThreadLock.java)
 
 
+- [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
+    - String class
+        - [StringClass](src/main/java/Advances/StringClass)
 
 - [JavaHelloWorld](./tree/main/src) : Mini project
     - [CustomerCRM](./src/main/java/Basics/CustomerCRM)
