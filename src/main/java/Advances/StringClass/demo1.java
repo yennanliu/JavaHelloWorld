@@ -6,7 +6,7 @@ package Advances.StringClass;
 import org.junit.jupiter.api.Test;
 
 /**
- *  String class demo 1
+ *  String class demo 1 : String class basic property
  */
 
 // demo via junit
