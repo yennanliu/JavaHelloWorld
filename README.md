@@ -19,6 +19,8 @@
             ```
         - [ref1](https://www.w3schools.com/java/java_data_types.asp)
         - [ref2](https://www.geeksforgeeks.org/types-references-java/)
+        - String
+            - [String method](./src/main/java/Advances.StringMethod)
     - Basics Data Types VS Wrapper
         - Wrapper can "encapsulate" basic data type -> make them has `object` properties (for OOP)
         - so can use object method, such as toString, equals, hashcode...
