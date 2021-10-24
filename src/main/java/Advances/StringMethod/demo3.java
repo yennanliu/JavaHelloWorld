@@ -21,8 +21,8 @@ public class demo3 {
         System.out.println(s2.replaceAll("\\d+", ","));  // , dffsfg , dvfd,t, ???
 
         // "^,|,$"
-        //       -> ^, : find `,` and beginning
-        //       -> ,$ : find `,` and the end
+        //       -> ^, : find `,` at beginning
+        //       -> ,$ : find `,` at the end
         System.out.println(s2.replaceAll("\\d+", ",").replaceAll("^,|,$", "")); //  dffsfg , dvfd,t, ???
 
         System.out.println("================");
