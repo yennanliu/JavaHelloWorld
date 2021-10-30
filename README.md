@@ -23,7 +23,7 @@
             - String basic method demo
                 - [String method](./src/main/java/Advances/StringMethod)
             - String <--> other class/dtype transform demo
-            - [String transform](./src/main/java/Advances/StringTransform)
+                - [String transform](./src/main/java/Advances/StringTransform)
     - Basics Data Types VS Wrapper
         - Wrapper can "encapsulate" basic data type -> make them has `object` properties (for OOP)
         - so can use object method, such as toString, equals, hashcode...
