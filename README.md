@@ -24,6 +24,8 @@
                 - [String method](./src/main/java/Advances/StringMethod)
             - String <--> other class/dtype transform demo
                 - [String transform](./src/main/java/Advances/StringTransform)
+            - String VS StringBuffer VS StringBuilder
+                - [StringBufferStringBuilder1](./src/main/java/Advances/StringBufferStringBuilder1)
     - Basics Data Types VS Wrapper
         - Wrapper can "encapsulate" basic data type -> make them has `object` properties (for OOP)
         - so can use object method, such as toString, equals, hashcode...
