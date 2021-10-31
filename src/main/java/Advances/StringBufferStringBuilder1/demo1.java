@@ -31,7 +31,7 @@ public class demo1 {
      *      - thready un-safety (methods without `synchronized`)
      *      - good efficiency
      *      - underline storage : char[]
-     *      
+     *
      *   2) Source code analysis:
      *
      *      // string

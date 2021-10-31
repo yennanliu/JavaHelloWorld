@@ -761,10 +761,12 @@ mvn test
 ```
 
 ### Ref
-- https://spring.io/guides/gs/maven/
+- Java interview questions
+    - https://www.interviewbit.com/java-interview-questions?utm_source=midfunnel&utm_medium=email&utm_campaign=none_scaler_academy_midfunnel_email_newsletter_india_all
 - Java learning ref
     - https://www.itread01.com/content/1542679410.html
 - Spring Boot API Tutorial
+    - https://spring.io/guides/gs/maven/
     - [tutorialspoint Spring Boot API](https://www.tutorialspoint.com/spring_boot/spring_boot_building_restful_web_services.htm)
     - Build API for travel management
         - [part 1](https://mari-azevedo.medium.com/building-a-restful-api-with-java-and-spring-framework-part-1-6c364a885831)
