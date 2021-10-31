@@ -4,8 +4,8 @@ package Advances.StringBufferStringBuilder1;
 
 /**
  *  StringBuffer and StringBuilder : demo1
+ *      - diff between String, StringBuffer, and StringBuilder
  */
-
 
 import org.junit.jupiter.api.Test;
 
@@ -31,8 +31,7 @@ public class demo1 {
      *      - thready un-safety (methods without `synchronized`)
      *      - good efficiency
      *      - underline storage : char[]
-     *
-     *
+     *      
      *   2) Source code analysis:
      *
      *      // string
@@ -47,9 +46,9 @@ public class demo1 {
      *      StringBuffer sb2 = new StringBuffer("abc"); // underline (create a length = 16 + "abc".length() char array)  : char[] value = new char["abc".length() + 16];
      *
      *   3) Questions:
-     *     3-1) size ?
-     *      System.out.println(sb2.length()); // 0
-     *      System.out.println(sb2.length()); // 3
+     *      3-1) size ?
+     *       System.out.println(sb2.length()); // 0
+     *       System.out.println(sb2.length()); // 3
      *
      *      3-2) extension ?
      *       -> StringBuffer:
