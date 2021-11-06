@@ -1,10 +1,12 @@
 package Advances.StringBufferStringBuilder1;
 
 // https://www.youtube.com/watch?v=dLw2jCYcET8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=464
+// https://www.youtube.com/watch?v=jJkIgazP6ok&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=466
 
 /**
  *  StringBuffer and StringBuilder : demo1
  *      - diff between String, StringBuffer, and StringBuilder
+ *      - common methods in SpringBuffer / SpringBuilder
  */
 
 import org.junit.jupiter.api.Test;
@@ -70,5 +72,56 @@ public class demo1 {
 
         StringBuffer sb1 = new StringBuffer();
         System.out.println(sb1.length());
+    }
+
+    // common methods in SpringBuffer / SpringBuilder
+    @Test
+    public void test2(){
+        StringBuffer s1 = new StringBuffer("");
+        StringBuffer s2 = new StringBuffer("abcde");
+
+        // append
+        System.out.println(s1.append(s2));
+        System.out.println(s1.append(1));
+        System.out.println(s1.append('1'));
+
+        System.out.println("=================");
+
+        // delete
+        StringBuffer s3 = new StringBuffer("abcde");
+
+        System.out.println(s3.delete(0,1));
+        System.out.println(s3.delete(0,2));
+        System.out.println(s3.delete(1,2));
+
+        System.out.println("=================");
+
+        // replace
+        StringBuffer s4 = new StringBuffer("hello");
+        System.out.println(s4.replace(0,1,"x"));
+
+        System.out.println("=================");
+
+        // insert
+        StringBuffer s5 = new StringBuffer("hello");
+        System.out.println(s5.insert(0,"!!!"));
+
+        System.out.println("=================");
+
+        // reverse
+        StringBuffer s6 = new StringBuffer("hello");
+        System.out.println(s6.reverse());
+
+        System.out.println("=================");
+
+        // indexOf
+        StringBuffer s7 = new StringBuffer("hello");
+        System.out.println(s7.indexOf("e"));
+
+        System.out.println("=================");
+
+        // substring
+        StringBuffer s8 = new StringBuffer("hello");
+        System.out.println(s8.substring(1,3));
     }
 }
