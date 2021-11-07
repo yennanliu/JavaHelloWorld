@@ -2,6 +2,7 @@ package Advances.StringBufferStringBuilder1;
 
 // https://www.youtube.com/watch?v=dLw2jCYcET8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=464
 // https://www.youtube.com/watch?v=jJkIgazP6ok&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=466
+// https://www.youtube.com/watch?v=H9iLq_2ctYY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=467
 
 /**
  *  StringBuffer and StringBuilder : demo1
@@ -23,14 +24,14 @@ public class demo1 {
      *   StringBuffer :
      *      - changeable array
      *      - since jdk 1.0
-     *      - thready safety (methods are with `synchronized`)
+     *      - thread safety (methods are with `synchronized`)
      *      - low efficiency
      *      - underline storage : char[]
      *
      *   StringBuilder :
      *      - changeable array
      *      - since jdk 1.5
-     *      - thready un-safety (methods without `synchronized`)
+     *      - thread un-safety (methods without `synchronized`)
      *      - good efficiency
      *      - underline storage : char[]
      *
@@ -57,8 +58,11 @@ public class demo1 {
      *          if StringBuffer can't storage new values, we need to expand it
      *          by default, size will be expanded to "2 times + 2" ( e.g. : size += (size + 2) )
      *
-     *       -> better use StringBuffer(int capacity) when dev
+     *       -> better to use StringBuffer(int capacity) when dev
      *          avoid extension op which would affect performance, use extra memory
+     *
+     *   4) Performance:
+     *      - StringBuilder > StringBuffer > String
      */
     @Test
     public void test1(){
