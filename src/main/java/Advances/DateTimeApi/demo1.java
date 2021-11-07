@@ -3,7 +3,11 @@ package Advances.DateTimeApi;
 // https://www.youtube.com/watch?v=Phw5yXG4dHM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=467
 // https://www.youtube.com/watch?v=xgCcuk6RGJo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=469
 
-/** DateTimeApi demo1 : DateTime API before JDK 8 */
+/** DateTimeApi demo1 :
+ *     DateTime API before JDK 8
+ *      - basic constructors
+ *      - basic methods
+ */
 
 import org.junit.jupiter.api.Test;
 
