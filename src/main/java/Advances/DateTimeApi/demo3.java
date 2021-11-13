@@ -5,7 +5,6 @@ package Advances.DateTimeApi;
 /** DateTimeApi demo3 :
  *      String -> java.sql.Date
  *      (transform "2021-01-01" to java.sql.Date)
- *
  */
 
 import org.junit.jupiter.api.Test;

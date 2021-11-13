@@ -5,8 +5,10 @@ package Advances.DateTimeApi;
 
 /** DateTimeApi demo1 :
  *     DateTime API before JDK 8
- *      - basic constructors
- *      - basic methods
+ *     1) System.currentTimeTimeMillis();
+ *     2) java.util.Date and its sub class java.sql.Date
+ *     3) SimpleDateFormat
+ *     4) Calendar
  */
 
 import org.junit.jupiter.api.Test;
