@@ -729,6 +729,9 @@
         - [InstantApi](src/main/java/Advances/InstantApi) : Instant API demo
         - [DateTimeFormatterApi](src/main/java/Advances/DateTimeFormatterApi) : DateTimeFormatter API demo
 
+    - Compare API
+        - [ComparableComparator](src/main/java/Advances/ComparableComparator) : Comparable, Comparator API demo
+
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
         - [StringClass](src/main/java/Advances/StringClass)
