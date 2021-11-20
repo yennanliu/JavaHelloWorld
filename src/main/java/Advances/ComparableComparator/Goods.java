@@ -75,6 +75,7 @@ public class Goods implements Comparable{
             //return Double.compare(this.price, goods.price);
 
         }
+        // *** NOTE this we throw, but not return
         throw new RuntimeException("input (price) type mismatch!");
     }
 }
