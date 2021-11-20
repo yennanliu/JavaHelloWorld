@@ -726,7 +726,7 @@
             - [demo2](src/main/java/Advances/DateTimeApi/demo2.java) : java.text.SimpleDateFormat, Calendar
         - [CalendarApi](src/main/java/Advances/CalendarApi) : Calendar API demo
         - [LocalDateTime](src/main/java/Advances/LocalDateTime) : LocalDate, LocalTime, LocalDateTime API demo
-
+        - [InstantApi](src/main/java/Advances/InstantApi) : Instant API demo
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
