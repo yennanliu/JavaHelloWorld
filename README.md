@@ -108,6 +108,7 @@
 
     - Others
         - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
+        - [System getProperties demo](./src/main/java/Advances/SystemGetPropertiesDemo1.java)
 
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ClassDemo2.svg"></p>
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_in_memory.svg"></p>
