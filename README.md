@@ -110,6 +110,7 @@
         - [GetArgsFromCli](./src/main/java/Basics/GetArgsFromCli.java)
         - [System getProperties Demo](./src/main/java/Advances/SystemGetPropertiesDemo1.java)
         - [BigInteger BigDecimal Demo](./src/main/java/Advances/BigIntegerBigDecimalDemo1.java)
+        - [Enumeration](./src/main/java/Advances/Enumeration) - Enumeration (枚舉類) demo 
 
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ClassDemo2.svg"></p>
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_in_memory.svg"></p>
