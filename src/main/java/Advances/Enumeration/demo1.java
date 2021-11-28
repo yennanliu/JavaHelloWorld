@@ -1,9 +1,10 @@
 package Advances.Enumeration;
 
 // https://www.youtube.com/watch?v=s24HnhgQHiA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=498
+// https://www.youtube.com/watch?v=Um-n9ecN898&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=498
 
 /**
- *   Enumeration (枚舉類) demo 1
+ *   Enumeration (枚舉類) demo 1 : user defined Enumeration
  *
  *   1) general intro
  *    1-1) when we have a class with limited, defined objects, we call this class as `Enumeration`
@@ -13,7 +14,9 @@ package Advances.Enumeration;
  *   2) how to define Enumeration ?
  *
  *    2-1) before jdk 5.0 : user defined
+ *      - https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo1.java
  *    2-2) after >= jdk 5.0 : use `enum` key word for Enumeration
+ *      - https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo2.java
  *
  */
 
@@ -37,7 +40,7 @@ public class demo1 {
 }
 
 
-// method 1 : user defined ( before jdk 5.0 )
+/** method 1) user defined Enumeration  (2-1) before jdk 5.0 : user defined) */
 class Season{
     // attr
     // step 1) declare Season object's attr, and make it private final
