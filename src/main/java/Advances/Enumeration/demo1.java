@@ -2,6 +2,7 @@ package Advances.Enumeration;
 
 // https://www.youtube.com/watch?v=s24HnhgQHiA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=498
 // https://www.youtube.com/watch?v=Um-n9ecN898&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=498
+// https://www.youtube.com/watch?v=LVOWihqbM70&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=501
 
 /**
  *   Enumeration (枚舉類) demo 1 : user defined Enumeration
@@ -14,10 +15,10 @@ package Advances.Enumeration;
  *
  *   2) how to define Enumeration ?
  *
- *    2-1) before jdk 5.0 : user defined
- *      - ref : https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo1.java
- *    2-2) after >= jdk 5.0 : use `enum` key word for Enumeration
- *      - ref : https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo2.java
+ *     2-1) before jdk 5.0 : user defined
+ *       - ref : https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo1.java
+ *     2-2) after >= jdk 5.0 : use `enum` key word for Enumeration
+ *       - ref : https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo2.java
  *
  *   3) common used methods in `enum` class
  *
@@ -27,6 +28,13 @@ package Advances.Enumeration;
  *          - transform a string to Enumeration object
  *     3-3) toString()
  *          - return current Enumeration constant value name
+ *
+ *   4) define Enumeration via `enum` and implement Interface
+ *
+ *      - ref : https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo3.java
+ *
+ *      4-1) define interface, and implement abstract method in Enumeration
+ *      4-2) implement the abstract methods in each object in Enumeration separately
  *
  */
 

@@ -8,6 +8,7 @@ package Advances.Enumeration;
  *   1) defined Enumeration (via `enum`) is ` class java.lang.Enum` 's subclass
  */
 
+
 public class demo2 {
     public static void main(String[] args) {
         // test
