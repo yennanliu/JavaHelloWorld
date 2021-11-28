@@ -7,6 +7,7 @@ package Advances.Enumeration;
  *   Enumeration (枚舉類) demo 1 : user defined Enumeration
  *
  *   1) general intro
+ *
  *    1-1) when we have a class with limited, defined objects, we call this class as `Enumeration`
  *    1-2) if we want to define a set of constant values : Enumeration is highly recommended
  *    1-3) if there is only 1 object in the Enumeration, we can use singleton implementation
@@ -14,9 +15,18 @@ package Advances.Enumeration;
  *   2) how to define Enumeration ?
  *
  *    2-1) before jdk 5.0 : user defined
- *      - https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo1.java
+ *      - ref : https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo1.java
  *    2-2) after >= jdk 5.0 : use `enum` key word for Enumeration
- *      - https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo2.java
+ *      - ref : https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo2.java
+ *
+ *   3) common used methods in `enum` class
+ *
+ *     3-1) values()
+ *          - return Enumeration object array, we can visit all elements in Enumeration via this method
+ *     3-2) valueOf(String objName)
+ *          - transform a string to Enumeration object
+ *     3-3) toString()
+ *          - return current Enumeration constant value name
  *
  */
 

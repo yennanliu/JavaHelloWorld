@@ -28,6 +28,29 @@ public class demo2 {
         System.out.println("==================");
 
         System.out.println(Season1.class.getSuperclass()); // class java.lang.Enum
+
+        System.out.println("==================");
+
+        // common methods demo
+        // ref : https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Enumeration/demo1.java
+
+        // values
+        Season1[] values = Season1.values();
+        for (int i=0; i < values.length; i++){
+            System.out.println(values[i]);
+        }
+
+        System.out.println("==================");
+
+        // valueOf(String objName)
+        // -> based on given objName, return obj in Enumeration which has same name as objName
+        Season1 winter2 = Season1.valueOf("WINTER");
+        System.out.println(winter2);
+
+        System.out.println("==================");
+
+        // toString()
+        System.out.println(summer.toString());
     }
 }
 
