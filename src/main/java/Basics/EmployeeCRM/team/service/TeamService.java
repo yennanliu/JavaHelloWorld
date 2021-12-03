@@ -1,15 +1,11 @@
-package Basics.CustomerCRM.service;
+package Basics.EmployeeCRM.team.service;
 
-// https://www.youtube.com/watch?v=4mopAdK6kN8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=395
-// https://www.youtube.com/watch?v=vBp_tt2gxYI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=395
-// https://www.youtube.com/watch?v=coOGqYVKq8A&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=398
+// https://www.youtube.com/watch?v=mwg4N3epx9Y&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=502
 
 import Basics.EmployeeCRM.team.domain.Architect;
 import Basics.EmployeeCRM.team.domain.Designer;
 import Basics.EmployeeCRM.team.domain.Employee;
 import Basics.EmployeeCRM.team.domain.Programmer;
-import Basics.EmployeeCRM.team.service.Status;
-import Basics.EmployeeCRM.team.service.TeamException;
 
 /**
  *  dev team member add/modify/delete/
@@ -98,32 +94,32 @@ public class TeamService {
             if (numOfArch >= 1){
                 throw new TeamException("more than 1 Architect !");
             }
-        else if (p instanceof Designer){
-            if (numOfDes > 2){
-                throw new TeamException("more than 2 Designer !");
+            else if (p instanceof Designer){
+                if (numOfDes > 2){
+                    throw new TeamException("more than 2 Designer !");
                 }
             }
-        else if (p instanceof Programmer){
-            if (numOfPro > 3){
-                throw new TeamException("more than 3 Programmer !");
+            else if (p instanceof Programmer){
+                if (numOfPro > 3){
+                    throw new TeamException("more than 3 Programmer !");
                 }
             }
         }
 
-       /**
-        * *** NOTE : WE CAN'T WRITE LOGIC LIKE BELOW
-        *  -> below cases may happen
-        *
-        *  1) for (p instanceof Architect && numOfArch >= 1)
-        *    -> could be cases that instanceof Architect is true
-        *    -> but numOfArch >= 1 is false
-        *    -> So, the logic will go to ` else if (p instanceof Designer && numOfDes > 2) `
-        *    -> which is not what we want
-        *
-        *  2) consider case :
-        *    -> there are 2 designers in team, now we want add 1 new Architect
-        *    -> V1 (above) will work properly, while V2 (below) will be wrong
-        */
+        /**
+         * *** NOTE : WE CAN'T WRITE LOGIC LIKE BELOW
+         *  -> below cases may happen
+         *
+         *  1) for (p instanceof Architect && numOfArch >= 1)
+         *    -> could be cases that instanceof Architect is true
+         *    -> but numOfArch >= 1 is false
+         *    -> So, the logic will go to ` else if (p instanceof Designer && numOfDes > 2) `
+         *    -> which is not what we want
+         *
+         *  2) consider case :
+         *    -> there are 2 designers in team, now we want add 1 new Architect
+         *    -> V1 (above) will work properly, while V2 (below) will be wrong
+         */
 
 // V2
 //        if (p instanceof Architect && numOfArch >= 1){
@@ -148,15 +144,15 @@ public class TeamService {
 
     /** remove member from team */
     public void removeMember(int memberId) throws TeamException {
-         int i = 0;
-         // NOTE below syntax (;i < total; i++)
-         for (;i < total; i++){
-             // if memberId is found, delete it, and break the loop
-             if (team[i].getMemberId() == memberId){
-                 team[i].setStatus(Status.FREE);
-                 break;
-             }
-         }
+        int i = 0;
+        // NOTE below syntax (;i < total; i++)
+        for (;i < total; i++){
+            // if memberId is found, delete it, and break the loop
+            if (team[i].getMemberId() == memberId){
+                team[i].setStatus(Status.FREE);
+                break;
+            }
+        }
 
         // memberId is NOT found
         if (i == total){
