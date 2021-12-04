@@ -2,6 +2,7 @@ package Advances.Annotation;
 
 // https://www.youtube.com/watch?v=97y91HqV2Xo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=504
 // https://www.youtube.com/watch?v=X6tq0n0oizI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=506
+// https://www.youtube.com/watch?v=vsN71Vedujk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=507
 
 /**
  *  Annotation demo 1
@@ -28,6 +29,12 @@ package Advances.Annotation;
  *      - step 2) define internal component, usually use `value` (e.g. String value();)
  *          - we can aldo give default value to it (e.g. String value() default "hello";)
  *      - step 3) if there is no arg in user-defined-Annotation, then it's just a "mark" purpose Annotation
+ *
+ *  6) JDK meta-Annotation : Annotation's Annotation
+ *      - Retention : define life cycle of the Annotation
+ *      - Target
+ *      - Documented
+ *      - Inherited
  */
 
 public class demo1 {
@@ -39,4 +46,17 @@ class Person{
     // attr
     private String name;
     private int age;
+
+    // constructor
+    @MyAnnotation
+    public Person(){
+
+    }
+
+    // method
+    @MyAnnotation
+    public void myPrint(String x){
+        System.out.println(x);
+    }
+
 }
