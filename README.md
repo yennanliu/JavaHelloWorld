@@ -76,6 +76,8 @@
             - every valuable in the method is "local" valuable 
             - "local" valuable will be put into the "Stack"
             - Any object from "new" will be put into the "Heap"
+    - Collection
+        - [Collection Demo1](./src/main/java/CollectionDemo/demo1.java)
     - Class
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
         - [Class Demo2](./src/main/java/Basics/ClassDemo2.java)
