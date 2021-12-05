@@ -3,6 +3,11 @@ package Advances.CollectionDemo;
 // https://www.youtube.com/watch?v=uplvcoAy_EI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=512
 // https://www.youtube.com/watch?v=J6OYuzYInYk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=514
 
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
 /**
  *   Collection demo 1
  *
@@ -30,10 +35,49 @@ package Advances.CollectionDemo;
  *          |--- Map interface : double array collection, storage key-value pair
  *            |--- HashMap, LinkedHashMap, TreeMap, HashTable, Properties
  *
- *  4) 
+ *  4) Collection methods
+ *      - 
  *
  */
 
 
 public class demo1 {
+    @Test
+    public void test1(){
+        Collection col1 = new ArrayList();
+
+        // add(Object e)
+        col1.add("aa");
+        col1.add("bb");
+        col1.add(123);
+        col1.add("dd");
+
+        System.out.println(col1);
+        System.out.println("----------");
+
+        // size()
+        System.out.println(col1.size());
+        System.out.println("----------");
+
+        // addAll()
+        Collection col2 = new ArrayList();
+        col2.add(789);
+        col2.add("xyz");
+
+        System.out.println(col2);
+        System.out.println("----------");
+
+        col1.addAll(col2);
+
+        System.out.println(col1);
+        System.out.println("----------");
+
+        // isEmpty : check if there is an element in ArrayList
+        System.out.println(col1.isEmpty());
+        System.out.println("----------");
+
+        // clear() : clear all elements in ArrayList
+        col2.clear();
+        System.out.println(col2);
+    }
 }
