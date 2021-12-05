@@ -44,6 +44,12 @@ package Advances.Annotation;
  *          - step 2) use MyAnnotation3 in MyAnnotations
  *
  *      - Element type annotation
+ *          - ElementType.TYPE_PARAMETER
+ *          - ElementType.TYPE_USE
+ *          - example : https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/Annotation/demo2.java
+ *
+ *  8) Annotation used A LOT in framework.
+ *      e.g. spring MVC, android dev ...
  */
 
 public class demo1 {
