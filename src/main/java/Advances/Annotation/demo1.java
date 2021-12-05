@@ -3,6 +3,7 @@ package Advances.Annotation;
 // https://www.youtube.com/watch?v=97y91HqV2Xo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=504
 // https://www.youtube.com/watch?v=X6tq0n0oizI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=506
 // https://www.youtube.com/watch?v=vsN71Vedujk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=507
+// https://www.youtube.com/watch?v=hKzyUbQaorM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=509
 
 /**
  *  Annotation demo 1
@@ -35,11 +36,23 @@ package Advances.Annotation;
  *      - Target
  *      - Documented
  *      - Inherited
+ *
+ *  7) Annotation new features since JDK 8
+ *
+ *      - repeatable annotation
+ *          - step 1) add @Repeatable on MyAnnotation3
+ *          - step 2) use MyAnnotation3 in MyAnnotations
+ *
+ *      - Element type annotation
  */
 
 public class demo1 {
+    public static void main(String[] args) {
+
+    }
 }
 
+/** demo 1 : basic annotation usage */
 //@MyAnnotation(value="hello")  // if not default value in MyAnnotation, then we need give in a value
 @MyAnnotation // if there's default value in MyAnnotation
 class Person{
@@ -58,5 +71,22 @@ class Person{
     public void myPrint(String x){
         System.out.println(x);
     }
+}
 
+/** demo 2 : use multiple annotations via array */
+@MyAnnotations({@MyAnnotation3, @MyAnnotation3(value="456")}) // before JDK 8
+class Person2{
+    // attr
+    private String name;
+    private int age;
+}
+
+/** demo 3 : use multiple annotations via repeatable annotations */
+// after JDK 8
+@MyAnnotation3()
+@MyAnnotation3(value="lol")
+class Person3{
+    // attr
+    private String name;
+    private int age;
 }
