@@ -1,6 +1,7 @@
 package Advances.CollectionDemo;
 
 // https://www.youtube.com/watch?v=uplvcoAy_EI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=512
+// https://www.youtube.com/watch?v=J6OYuzYInYk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=514
 
 /**
  *   Collection demo 1
@@ -20,6 +21,16 @@ package Advances.CollectionDemo;
  *          - e.g. add : need to update, move idx for many elements
  *     - 2-5) ordering, repeatable
  *
+ *   3) Collection framework:
+ *      - Collection interface : single array collection, for storage every single element
+ *          |--- List interface : storage ordering, repeatable element --> "dynamic" array
+ *            |--- ArrayList : LinkedList, Vector
+ *          |--- Set interface :  storage non-ordering, non-repeatable element
+ *            |--- HashSet, LinkedHastSet, TreeSet
+ *          |--- Map interface : double array collection, storage key-value pair
+ *            |--- HashMap, LinkedHashMap, TreeMap, HashTable, Properties
+ *
+ *  4) 
  *
  */
 
