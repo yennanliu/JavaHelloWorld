@@ -78,6 +78,7 @@
             - Any object from "new" will be put into the "Heap"
     - Collection
         - [Collection Demo1](./src/main/java/Advances/CollectionDemo/demo1.java)
+        - [Collection Demo2](./src/main/java/Advances/CollectionDemo/demo2.java)
     - Class
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
         - [Class Demo2](./src/main/java/Basics/ClassDemo2.java)

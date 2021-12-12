@@ -3,7 +3,7 @@ package Advances.CollectionDemo;
 /** Demo 2 */
 
 // https://www.youtube.com/watch?v=WO-54GprY0M&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=519
-
+// https://www.youtube.com/watch?v=hyj5uygJyLU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=520
 
 import org.junit.jupiter.api.Test;
 
@@ -56,5 +56,66 @@ public class demo2 {
 
         Collection col1 = Arrays.asList(123,456);
         System.out.println(col1.containsAll(col1)); // true
+    }
+
+    @Test
+    public void test3(){
+
+        /** remove */
+
+        Collection col1 = new ArrayList();
+        col1.add(123);
+        col1.add(456);
+        col1.add("yooooo");
+        col1.add(new String("kate"));
+        col1.add(new Person("kyo", 19));
+
+        System.out.println(col1.remove(123));
+        System.out.println(col1.remove(new Person("terry",10)));
+
+    }
+
+    @Test
+    public void test4(){
+
+        /** removeAll */
+        Collection col1 = Arrays.asList(123,456);
+        //col1.removeAll(col1);
+
+        System.out.println(col1);
+    }
+
+    @Test
+    public void test5(){
+
+        /** retainAll : get overlap within collections */
+
+        Collection col1 = new ArrayList();
+        col1.add(123);
+        col1.add(456);
+        col1.add("yooooo");
+
+        Collection col2 = Arrays.asList(123, 789,000);
+        col1.retainAll(col2);
+
+        System.out.println(col1);
+    }
+
+    @Test
+    public void test6(){
+
+        /** equals(Object obj) : check if two collections are equal */
+
+        Collection col1 = new ArrayList();
+        col1.add(123);
+        col1.add(456);
+        col1.add("yooooo");
+
+        Collection col2 = new ArrayList();
+        col2.add(123);
+        col2.add(456);
+        col2.add("yooooo");
+
+        System.out.println(col1.equals(col2)); // true
     }
 }
