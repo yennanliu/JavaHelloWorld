@@ -4,6 +4,7 @@ package Advances.CollectionDemo;
 
 // https://www.youtube.com/watch?v=WO-54GprY0M&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=519
 // https://www.youtube.com/watch?v=hyj5uygJyLU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=520
+// https://www.youtube.com/watch?v=hyj5uygJyLU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=520
 
 import org.junit.jupiter.api.Test;
 
@@ -117,5 +118,77 @@ public class demo2 {
         col2.add("yooooo");
 
         System.out.println(col1.equals(col2)); // true
+    }
+
+    @Test
+    public void test7(){
+
+        /** remove(Object obj) : remove obj element from current collection */
+
+        Collection col1 = new ArrayList();
+        col1.add(123);
+        col1.add(456);
+        col1.add(789);
+        col1.add("yooooo");
+        col1.add(new String("kate"));
+        col1.add(new Person("kyo", 19));
+
+        col1.remove(123);
+        System.out.println(col1);
+
+        System.out.println("-----------------");
+
+        col1.remove(new Person("kyo", 19));
+        System.out.println(col1);
+
+        System.out.println("-----------------");
+
+        /** removeAll(collection col1) : remove all elements from current collection */
+
+        Collection col2 = Arrays.asList(456, 789);
+        col1.removeAll(col2);
+        System.out.println(col1);
+    }
+
+    @Test
+    public void test8(){
+
+        /** retainAll : get overlap over 2 collections (in-place) */
+
+        Collection col1 = new ArrayList();
+        col1.add(123);
+        col1.add(456);
+        col1.add(789);
+        col1.add("yooooo");
+        col1.add(new String("kate"));
+        col1.add(new Person("kyo", 19));
+
+        Collection col2 = Arrays.asList(456, 789);
+
+        col1.retainAll(col2);
+
+        System.out.println(col1);
+    }
+
+    @Test
+    public void test9(){
+
+        /** equals (Object obj) */
+
+        Collection col1 = new ArrayList();
+        col1.add(123);
+        col1.add(456);
+        col1.add(789);
+        col1.add("yooooo");
+        col1.add(new String("kate"));
+        col1.add(new Person("kyo", 19));
+
+        Collection col2 = Arrays.asList(456, 789);
+        Collection col3 = Arrays.asList(456, 789);
+        Collection col4 = Arrays.asList(789, 456);
+
+        System.out.println(col1.equals(col2)); // false
+        System.out.println(col2.equals(col3)); // true
+        System.out.println(col3.equals(col4)); // false !! (ArrayList is ordering)
     }
 }
