@@ -79,8 +79,9 @@
     - Collection
         - [Collection Demo1](./src/main/java/Advances/CollectionDemo/demo1.java)
         - [Collection Demo2](./src/main/java/Advances/CollectionDemo/demo2.java)
-        - [Collection Demo2](./src/main/java/Advances/CollectionDemo/demo3.java) : collection <--> array
+        - [Collection Demo3](./src/main/java/Advances/CollectionDemo/demo3.java) : collection <--> array
         - [Iterator Demo1](./src/main/java/Advances/CollectionDemo/IteratorDemo1.java)
+        - [foreach Demo1](./src/main/java/Advances/CollectionDemo/foreachDemo1.java)
 
     - Class
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
