@@ -45,9 +45,4 @@ public class IteratorDemo1 {
 
         System.out.println(col1);
     }
-
-    @Test
-    public void test2(){
-
-    }
 }
