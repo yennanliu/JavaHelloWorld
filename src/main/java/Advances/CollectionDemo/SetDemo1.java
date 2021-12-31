@@ -54,9 +54,9 @@ public class SetDemo1 {
         set.add("aa");
         set.add("bb");
         set.add(new Person("tim",11));
-        set.add(new Person("tim",11));
+        set.add(new Person("tim",11)); // NOTE : will storage 2 "Person("tim",11)" since we haven't overwrote "equals", "hashCode" methods in Person class
         set.add(new User("ann",20));
-        set.add(new User("ann",20)); // NOTE : will still be on "User("ann",20)" if we overwrite "equals", "hashCode" method in User class
+        set.add(new User("ann",20)); // NOTE : only storage 1 "User("ann",20)" if we overwrite "equals", "hashCode" methods in User class
 
         Iterator iterator = set.iterator();
         while (iterator.hasNext()){
