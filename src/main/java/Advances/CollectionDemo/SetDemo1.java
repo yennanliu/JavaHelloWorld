@@ -3,6 +3,7 @@ package Advances.CollectionDemo;
 // https://www.youtube.com/watch?v=fbmCqWoecsI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=534
 // https://www.youtube.com/watch?v=8Zg6QDXSSAc&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=535
 // https://www.youtube.com/watch?v=FPxF4UR5EGE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=536
+// https://www.youtube.com/watch?v=fWaabv-UgCs&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=537
 
 import org.junit.jupiter.api.Test;
 
@@ -27,6 +28,10 @@ import java.util.Set;
  *      - TreeSet : use "Red–black tree" in low level. can ordering input elements based on their properties
  *
  *   3) There are NO extra defined methods in Set -> all methods it (Set) has are as SAME as Collections's (methods)
+ *
+ *   4) requirement :
+ *      - when add element to HashSet -> we need to Overwrite hashCode() and equals() method
+ *      - Overwritten hashCode() and equals() method should be "consistency" -> e.g. same elements SHOULD have SAME hash value
  */
 
 public class SetDemo1 {
