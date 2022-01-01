@@ -4,6 +4,8 @@ package Advances.CollectionDemo;
 // https://www.youtube.com/watch?v=J6OYuzYInYk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=514
 // https://www.youtube.com/watch?v=WO-54GprY0M&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=519
 
+/** Collection demo 1 */
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

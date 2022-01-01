@@ -1,6 +1,6 @@
 package Advances.CollectionDemo;
 
-/** Demo 2 */
+/** Collection demo 2 */
 
 // https://www.youtube.com/watch?v=WO-54GprY0M&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=519
 // https://www.youtube.com/watch?v=hyj5uygJyLU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=520

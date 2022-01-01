@@ -5,6 +5,8 @@ package Advances.CollectionDemo;
 // https://www.youtube.com/watch?v=FPxF4UR5EGE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=536
 // https://www.youtube.com/watch?v=fWaabv-UgCs&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=537
 
+/** Set demo 1 */
+
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;

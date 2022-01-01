@@ -86,6 +86,8 @@
             - [List Demo1](./src/main/java/Advances/CollectionDemo/ListDemo1.java)
         - Set
             - [Set Demo1](./src/main/java/Advances/CollectionDemo/SetDemo1.java)
+        - LinkedHashSet
+            - [LinkedHashSet Demo1](./src/main/java/Advances/CollectionDemo/LinkedHashSetDemo1.java)
     - Class
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
         - [Class Demo2](./src/main/java/Basics/ClassDemo2.java)

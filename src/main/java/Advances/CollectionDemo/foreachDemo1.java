@@ -2,6 +2,8 @@ package Advances.CollectionDemo;
 
 // https://www.youtube.com/watch?v=Qqxj6k1xI5I&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=526
 
+/** foreach demo 1 */
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
