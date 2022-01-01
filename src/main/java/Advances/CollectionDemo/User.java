@@ -4,7 +4,7 @@ package Advances.CollectionDemo;
 
 import java.util.Objects;
 
-public class User {
+public class User implements Comparable{
     private String name;
     private int age;
 
@@ -49,5 +49,26 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(name, age);
+    }
+
+    // ordering User obj
+    @Override
+    public int compareTo(Object o) {
+        if(o instanceof User){
+            User user = (User) o;
+
+            // approach 1) order by name (small -> big)
+            //return this.name.compareTo(user.name);
+
+            // approach 2) order by name (big -> small), order by age (small -> big)
+            int compare = - this.name.compareTo(user.name);
+            if (compare != 0){
+                return compare;
+            }else{
+                return Integer.compare(this.age, user.age);
+            }
+        }else{
+            throw new RuntimeException("input type not match!");
+        }
     }
 }
