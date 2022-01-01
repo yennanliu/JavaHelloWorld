@@ -84,12 +84,15 @@
         - [foreach Demo1](./src/main/java/Advances/CollectionDemo/foreachDemo1.java)
         - List
             - [List Demo1](./src/main/java/Advances/CollectionDemo/ListDemo1.java)
+            - Iterator methods : foreach, Iterator 
         - Set
             - [Set Demo1](./src/main/java/Advances/CollectionDemo/SetDemo1.java)
+            - Set, HashSet : "comparision" method : TreeSet : hashCode(), equals()
         - LinkedHashSet
             - [LinkedHashSet Demo1](./src/main/java/Advances/CollectionDemo/LinkedHashSetDemo1.java)
         - TreeSet
             - [TreeSet Demo1](./src/main/java/Advances/CollectionDemo/TreeSetDemo1.java)
+            - "comparision" method : TreeSet : compareTo(), compare()
     - Class
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
         - [Class Demo2](./src/main/java/Basics/ClassDemo2.java)
