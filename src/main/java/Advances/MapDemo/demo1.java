@@ -2,6 +2,7 @@ package Advances.MapDemo;
 
 // https://www.youtube.com/watch?v=ziY4_C8rxCg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=547
 // https://www.youtube.com/watch?v=9UZEcCqhdI0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=548
+// https://www.youtube.com/watch?v=pY4TlufD8aE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=549
 
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +38,26 @@ import java.util.Map;
  *      - value : non-ordering, can duplicated, storage by "Collection" --> class needs to overwrite equals() method
  *      - a key-value : form an "entry" instance
  *      - "entry" in Map : non-ordering, non-duplicated, storage by "Set"
+ *
+ *   5) HashMap low level mechanisms
+ *      - JDK 7
+ *          - HashMap map = new HashMap();
+ *          - (after instantiation, it creates a length=16 1-d array[] table)
+ *          - map.put(key1, value1);
+ *          - step 1) use key1's class's hashCode() method get key1's hash value, then get entry's address in storage space
+ *          - step 2) if nothing on the address -> add key1-value1 success  -- case 1
+ *                    if sth on the address -> one (e.g. key2-value2) or multiples key-value there
+ *                                          -> check if hashCode(key1) == hashCode(key2)
+ *                                              -> if false : add key1-value1 success -- case 2
+ *                                              -> if true
+ *                                                  -> use equals() compare key1 and key 2
+ *                                                      -> if equals() true : add key1-value1 success -- case 3
+ *                                                      -> if equals()  false :  REPLACE value2 with value1
+ *
+ *                     (Linked list is being used in case2, case3)
+ *           - extension : extend 2x times (VS original capacity), and copy original data to new structure
+ *
+ *      - JDK 8
  */
 
 public class demo1 {
