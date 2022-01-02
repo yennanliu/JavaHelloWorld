@@ -93,6 +93,8 @@
         - TreeSet
             - [TreeSet Demo1](./src/main/java/Advances/CollectionDemo/TreeSetDemo1.java)
             - "comparision" method : TreeSet : compareTo(), compare()
+    - Map
+        - [Map Demo1](./src/main/java/Advances/MapDemo/demo1.java)
     - Class
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
         - [Class Demo2](./src/main/java/Basics/ClassDemo2.java)
