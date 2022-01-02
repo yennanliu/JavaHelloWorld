@@ -38,11 +38,12 @@ public class TreeSetDemo1 {
     public void test1(){
         TreeSet set1 = new TreeSet();
 
-    // can only add same class elements
+    // below is wrong : can only add elements belong to same class
     //        set1.add(123);
     //        set1.add(456);
     //        set1.add("abc");
 
+        // below is OK
         set1.add(123);
         set1.add(345);
         set1.add(7);
@@ -56,6 +57,7 @@ public class TreeSetDemo1 {
 
     @Test
     public void test2(){
+        /** demo : natural ordering */
         TreeSet set1 = new TreeSet();
 
         set1.add(new User("zack", 99));
@@ -72,6 +74,7 @@ public class TreeSetDemo1 {
 
     @Test
     public void test3(){
+        /** demo : custom ordering */
         /** create custom Comparator (for custom ordering) */
         Comparator com = new Comparator() {
             // order by age (small -> big) (if same age, neglect)

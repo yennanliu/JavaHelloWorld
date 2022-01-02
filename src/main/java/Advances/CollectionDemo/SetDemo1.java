@@ -16,12 +16,12 @@ import java.util.Set;
 /**
  *  Set Demo 1
  *
- *   0) Set is an interface, we need to implement it before use it
+ *   0) "Set" is an interface, we need to implement it before using.
  *      plz check below implemented classes
  *
  *   1) Collection framework:
  *      ....
- *       |--- Set interface :  storage non-ordering, non-repeatable element
+ *       |--- Set interface :  storage non-ordering, non-repeatable elements
  *         |--- HashSet, LinkedHastSet, TreeSet
  *
  *   2) 3 implemented classes (Set)
@@ -32,8 +32,8 @@ import java.util.Set;
  *   3) There are NO extra defined methods in Set -> all methods it (Set) has are as SAME as Collections's (methods)
  *
  *   4) requirement :
- *      - when add element to HashSet -> we need to Overwrite hashCode() and equals() method
- *      - Overwritten hashCode() and equals() method should be "consistency" -> e.g. same elements SHOULD have SAME hash value
+ *      - when add element to HashSet -> we need to Overwrite hashCode() and equals() methods
+ *      - Overwritten hashCode() and equals() methods should be "consistency" -> e.g. same elements SHOULD have SAME hash value
  */
 
 public class SetDemo1 {
@@ -46,12 +46,12 @@ public class SetDemo1 {
          *    0) HashSet : array + linked list (low level structure)
          *
          *    1) non-ordering :
-         *      - non-equal to randomness
+         *      - non-ordering != randomness
          *      - ordering in storage space is NOT based on input ordering, BUT on record's hash value
          *
          *    2) non-duplicated
          *      - check duplicated or not (added elements) based on "equals()" method
-         *      - Need to overwrite "equals", "hashCode" methods for user-defined class
+         *      - Need to overwrite "equals", "hashCode" methods if user-defined class
          *      - can only add "one" same element into HashSet
          *      - plz check below "set.add(new User("ann",20))" example
          *
@@ -79,7 +79,7 @@ public class SetDemo1 {
         set.add("aa");
         set.add("bb");
         set.add(new Person("tim",11));
-        set.add(new Person("tim",11)); // NOTE : will storage 2 "Person("tim",11)" since we haven't overwrote "equals", "hashCode" methods in Person class
+        set.add(new Person("tim",11)); // NOTE : will storage 2 "Person("tim",11)" since we haven't overwritten "equals", "hashCode" methods in Person class
         set.add(new User("ann",20));
         set.add(new User("ann",20)); // NOTE : only storage 1 "User("ann",20)" if we overwrite "equals", "hashCode" methods in User class
 
@@ -87,10 +87,5 @@ public class SetDemo1 {
         while (iterator.hasNext()){
             System.out.println(iterator.next());
         }
-    }
-
-    @Test
-    public void test2(){
-
     }
 }

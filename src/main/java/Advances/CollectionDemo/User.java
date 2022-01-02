@@ -37,6 +37,7 @@ public class User implements Comparable{
                 '}';
     }
 
+    /** equals(), hashCode() methods are for "Set, HashSet comparision" */
     @Override
     public boolean equals(Object o) {
         System.out.println("--> User's equals() ...");
@@ -52,6 +53,7 @@ public class User implements Comparable{
         return Objects.hash(name, age);
     }
 
+    /** compareTo(), compare() methods are for "TreeSet comparision" */
     // ordering User obj
     @Override
     public int compareTo(Object o) {
@@ -62,7 +64,7 @@ public class User implements Comparable{
             //return this.name.compareTo(user.name);
 
             // approach 2) order by name (big -> small), order by age (small -> big)
-            int compare = - this.name.compareTo(user.name);
+            int compare = -this.name.compareTo(user.name);
             if (compare != 0){
                 return compare;
             }else{

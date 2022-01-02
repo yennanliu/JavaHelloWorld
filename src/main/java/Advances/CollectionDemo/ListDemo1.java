@@ -27,9 +27,9 @@ import java.util.List;
  *      - LinkedList
  *      - Vector
  *  6) ArrayList VS LinkedList VS Vector ?
- *    same :   all of the 3 classes implements list interface. Can storage ordering, duplicated records
+ *    same :   all of the 3 classes are list interface's implementation. Can storage ordering, duplicated records
  *    difference  :
- *                  - ArrayList  : main implemented class from List interface. thread non safety, high efficiency. Under the hood : use Object[] for storage
+ *                  - ArrayList  : main implementation from List interface. thread non safety, high efficiency. low level : use Object[] for storage
  *                  - LinkedList : use case : frequent add, delete op. LinkedList has better performance than ArrayList. Under the hood : use dequeue (double direction queue) for storage
  *                  - Vector : `aged` (old) implemented class from List interface (since JDK 1). thread safety, low efficiency. Under the hood : use Object[] for storage
  *
@@ -37,16 +37,15 @@ import java.util.List;
  *      - ArrayList List = new ArrayList() // under the hood Object[] elementData init as {}, not create array yet
  *
  *  8) Summary :
- *      - JDK 7 : ArrayList instantiate similar singlet's lazy Eager initialization (餓漢式)
- *      - JDK 8 : ArrayList instantiate similar singlet's lazy initialization (懶漢式)
- *                - delay class creation, save resource
+ *      - JDK 7 : ArrayList instantiation is similar to "singlet lazy Eager initialization" (餓漢式)
+ *      - JDK 8 : ArrayList  instantiation is similar to "singlet lazy initialization" (懶漢式)
+ *                - delay class creation, save resources
  *
  */
 
 public class ListDemo1 {
     /**
-     *  List common methods
-     *
+     *  List common methods 1
      */
     @Test
     public void test1(){
@@ -74,6 +73,9 @@ public class ListDemo1 {
 
     @Test
     public void test2(){
+        /**
+         *  List common methods 2
+         */
         ArrayList list1 = new ArrayList();
 
         list1.add(123);
