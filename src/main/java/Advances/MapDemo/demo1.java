@@ -1,6 +1,7 @@
 package Advances.MapDemo;
 
 // https://www.youtube.com/watch?v=ziY4_C8rxCg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=547
+// https://www.youtube.com/watch?v=9UZEcCqhdI0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=548
 
 import org.junit.jupiter.api.Test;
 
@@ -28,6 +29,14 @@ import java.util.Map;
  *          - array + linked list (before JDK 7)
  *          - array + linked list + red-black tree (after JDK 8)
  *
+ *   3) CurrentHashMap VS Hashtable ?
+ *      -> CurrentHashMap for high concurrency
+ *
+ *   4) Map
+ *      - key : non-ordering, non-duplicated, storage by "Set"  --> Map (HashMap) class needs to overwrite equals(), and hashCode() methods
+ *      - value : non-ordering, can duplicated, storage by "Collection" --> class needs to overwrite equals() method
+ *      - a key-value : form an "entry" instance
+ *      - "entry" in Map : non-ordering, non-duplicated, storage by "Set"
  */
 
 public class demo1 {
