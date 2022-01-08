@@ -4,11 +4,14 @@ package Advances.MapDemo;
 // https://www.youtube.com/watch?v=9UZEcCqhdI0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=548
 // https://www.youtube.com/watch?v=pY4TlufD8aE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=549
 // https://www.youtube.com/watch?v=lI08A3nYviM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=550
+// https://www.youtube.com/watch?v=y-MDDtzyjKE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=552
+// https://www.youtube.com/watch?v=8_yeocWxCqU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=553
 
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /** Map demo 1 */
@@ -65,6 +68,16 @@ import java.util.Map;
  *          - low level structure : array + Node[] + read-black tree, instead of Entry[]
  *              - if 1) a index has > 8 elements and 2) current array length > 64
  *                   -> all elements on this index will being storage in red-black tree
+ *
+ *     6) LinkedHashMap : low level structure (concept only)
+ *
+ *          source code:
+ *                static class Entry<K,V> extends HashMap.Node<K,V> {
+ *                    Entry<K,V> before, after; // record added element ordering
+ *                    Entry(int hash, K key, V value, Node<K,V> next) {
+ *                    super(hash, key, value, next);
+ *                    }
+ *                }
  */
 
 public class demo1 {
@@ -91,5 +104,18 @@ public class demo1 {
         map.put("a",999);
 
         System.out.println(map);
+    }
+
+    @Test
+    public void test3(){
+        /** demo : LinkedHashMap  */
+        //Map map = new HashMap<>();
+        Map map = new LinkedHashMap();
+
+        map.put(123,"aa");
+        map.put(456,"bb");
+        map.put(789,"cc");
+
+        System.out.println(map); // LinkedHashMap can save elements in order
     }
 }
