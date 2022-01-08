@@ -14,7 +14,7 @@ import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/** Map demo 1 */
+/** Map demo 1 : concepts, properties */
 
 /**
  *   Map : double array data structure -> key-value record
@@ -78,6 +78,7 @@ import java.util.Map;
  *                    super(hash, key, value, next);
  *                    }
  *                }
+ *      7) .. plz check Advances.MapDemo.demo2.java
  */
 
 public class demo1 {
