@@ -3,6 +3,7 @@ package Advances.MapDemo;
 // https://www.youtube.com/watch?v=ziY4_C8rxCg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=547
 // https://www.youtube.com/watch?v=9UZEcCqhdI0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=548
 // https://www.youtube.com/watch?v=pY4TlufD8aE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=549
+// https://www.youtube.com/watch?v=lI08A3nYviM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=550
 
 import org.junit.jupiter.api.Test;
 
@@ -58,6 +59,12 @@ import java.util.Map;
  *           - extension : extend 2x times (VS original capacity), and copy original data to new structure
  *
  *      - JDK 8
+ *          - HashMap map = new HashMap()
+ *          - there is NOT a length=16 1-d array[] table) being created
+ *          - when first call put() method -> create a length=16 1-d array[]
+ *          - low level structure : array + Node[] + read-black tree, instead of Entry[]
+ *              - if 1) a index has > 8 elements and 2) current array length > 64
+ *                   -> all elements on this index will being storage in red-black tree
  */
 
 public class demo1 {
