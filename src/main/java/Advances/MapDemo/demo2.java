@@ -1,13 +1,13 @@
 package Advances.MapDemo;
 
 // https://www.youtube.com/watch?v=eCLnvAplhNI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=554
+// https://www.youtube.com/watch?v=OmWTqukxSzU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=555
 
 /** Map demo 2 : methods */
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  *   Map : double array data structure -> key-value record
@@ -20,13 +20,13 @@ import java.util.Map;
  *
  *
  *    7) Methods
- *      7-1) add, delete, modify
+ *      7-1) add, remove, modify
+ *      7-1') put, get
  *      7-2) find
- *      7-3) collection
- *
- *
- *
- *
+ *      7-3) source view op
+ *          - keySet()
+ *          - valueSet()
+ *          - Set entrySet
  */
 
 public class demo2 {
@@ -76,6 +76,7 @@ public class demo2 {
 
     @Test
     public void test2(){
+        /** get, containsKey, containsValue methods */
         // init HashMap
         Map map = new HashMap();
 
@@ -95,5 +96,57 @@ public class demo2 {
 
         // containsValue
         System.out.println(map.containsValue(123));
+    }
+
+    @Test
+    public void test3(){
+        /** keySet, valueSet, entrySet methods */
+        // init HashMap
+        Map map = new HashMap();
+
+        // add
+        map.put(123,"aa");
+        map.put(456,"bb");
+        map.put("cc",789);
+
+        // KeySet() : loop over all keys
+        Set set = map.keySet();
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+        System.out.println("==================");
+
+        // valueSet() : loop over all value
+        Collection values = map.values();
+        for (Object obj: values){
+            System.out.println(obj);
+        }
+
+        System.out.println("==================");
+
+
+        // entrySet() : loop over all key-value
+        // method 1) : entrySet
+        Set entrySet = map.entrySet();
+        Iterator iterator1 = entrySet.iterator();
+        while (iterator1.hasNext()){
+            Object obj = iterator1.next();
+            // elements in entrySet collection are all entry
+            Map.Entry entry = (Map.Entry) obj;
+            System.out.println(entry.getKey() + "  ---> " + entry.getValue());
+        }
+
+        System.out.println("==================");
+
+        // method 2) : KeySet
+        Set KeySet = map.keySet();
+        Iterator iterator2 = KeySet.iterator();
+        while (iterator2.hasNext()){
+            Object key = iterator2.next();
+            Object value = map.get(key);
+            System.out.println( key + "  ---> " + value);
+        }
     }
 }
