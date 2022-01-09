@@ -96,6 +96,8 @@
     - Map
         - [Map Demo1](./src/main/java/Advances/MapDemo/demo1.java) : concepts, properties
         - [Map Demo2](./src/main/java/Advances/MapDemo/demo2.java) : methods
+    - TreeMap
+        - [TreeMap Demo1](./src/main/java/Advances/MapDemo/TreeMap/demo1.java)
     - Class
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
         - [Class Demo2](./src/main/java/Basics/ClassDemo2.java)
