@@ -100,6 +100,9 @@
         - [TreeMap Demo1](./src/main/java/Advances/TreeMap/demo1.java)
     - `Properties`
         - [Properties Demo1](./src/main/java/Advances/Properties/demo1.java)
+    - `Collections` : Collection tool
+        - NOTE : `Collections` is NOT a data structure, but a tool class for operating data structures (e.g. Set, List, Map..) under collection
+        - [Collections Demo1](./src/main/java/Advances/Collections/demo1.java)
     - Class
         - [Class Demo1](./src/main/java/Basics/ClassDemo1.java)
         - [Class Demo2](./src/main/java/Basics/ClassDemo2.java)
