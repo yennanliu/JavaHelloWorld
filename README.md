@@ -744,9 +744,9 @@
         - Thread Lock
             - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
             - [LockThread](./src/main/java/thread/ThreadLock.java)
-            
+
     - Generic
-        - [demo 1](./src/main/java/Advances/Generic/demo1.java)
+        - [demo 1](./src/main/java/Advances/Generic/demo1.java) : Generic intro
 
     - TimeStamp API
         -  DateTime API before JDK 8
