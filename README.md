@@ -726,7 +726,6 @@
 
         - Thread Cycle
             <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_cycle2.svg"></p>
-
         - Case study
             - box office
             - `part 1`
@@ -745,6 +744,9 @@
         - Thread Lock
             - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
             - [LockThread](./src/main/java/thread/ThreadLock.java)
+            
+    - Generic
+        - [demo 1](./src/main/java/Advances/Generic/demo1.java)
 
     - TimeStamp API
         -  DateTime API before JDK 8
