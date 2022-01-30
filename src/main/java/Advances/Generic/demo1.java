@@ -22,7 +22,9 @@ package Advances.Generic;
  *        -> 2.1) generic class, generic interface, generic method
  *        -> Advances.Generic.demo3.java
  *
- *     4) generic type CAN'T be used in static method
+ *     4) generic type CAN'T be used in static class
+ *          - but generic type CAN be used in static method
+ *          - copyFromArrayList method in Advances.Generic.Order class
  *     5) generic type CAN'T be used in exception class
  */
 
