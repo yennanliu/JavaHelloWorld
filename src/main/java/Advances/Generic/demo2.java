@@ -2,11 +2,13 @@ package Advances.Generic;
 
 // https://www.youtube.com/watch?v=cgsQbgB5egA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=566
 
+/** demo2 : generic type to custom class, work with custom/natural ordering */
+
+
 import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.TreeSet;
 
 public class demo2 {

@@ -2,6 +2,7 @@ package Advances.Generic;
 
 // https://www.youtube.com/watch?v=FIta2Jr0EVQ&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=564
 // https://www.youtube.com/watch?v=iwh5wKKp3rs&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=565
+// https://www.youtube.com/watch?v=kRiy9mS2B9A&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=567
 
 /**
  *   Generic demo 1
@@ -16,6 +17,10 @@ package Advances.Generic;
  *                -> w.g.  add(E e) --initialize--> add (Integer e)
  *        -> 2.4) Generic type myst be a "Class" (can't use basic type (e.g. int, float))
  *        -> 2.5) if NOT use generic when initialize, will use default type : java.Lang.Object
+ *
+ *     3) define custom generic type
+ *        -> 2.1) generic class, generic interface, generic method
+ *        -> Advances.Generic.demo3.java
  */
 
 import org.junit.jupiter.api.Test;
