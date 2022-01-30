@@ -747,6 +747,7 @@
 
     - Generic
         - [demo 1](./src/main/java/Advances/Generic/demo1.java) : Generic intro
+        - [demo 2](./src/main/java/Advances/Generic/demo1.java) : Generic type with custom class demo
 
     - TimeStamp API
         -  DateTime API before JDK 8

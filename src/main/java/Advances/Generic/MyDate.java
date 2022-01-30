@@ -2,7 +2,7 @@ package Advances.Generic;
 
 // https://www.youtube.com/watch?v=3VqFJPmA3wg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=348
 
-public class MyDate {
+public class MyDate implements Comparable<MyDate> {
 
     //attr
     private int year;
@@ -49,5 +49,23 @@ public class MyDate {
     // method
     public String toDateString(){
         return " year = " + year + " month = " + month + " day = " + day;
+    }
+
+    @Override
+    public int compareTo(MyDate m) {
+        // compare year
+        int minusYear = this.getYear() - m.getYear();
+        if (minusYear != 0){
+            return minusYear;
+        }
+
+        // compare month
+        int minusMonth = this.getMonth() - m.getMonth();
+        if (minusMonth != 0){
+            return minusMonth;
+        }
+
+        // compare date
+        return this.getDay() - m.getDay();
     }
 }
