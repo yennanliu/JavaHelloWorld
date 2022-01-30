@@ -1,10 +1,14 @@
 package Advances.Generic;
 
 // https://www.youtube.com/watch?v=kRiy9mS2B9A&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=567
+// https://www.youtube.com/watch?v=ilutsOhRmuk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=568
 
 /** demo3 : generic class, generic interface, generic method */
 
+import Advances.CollectionDemo.Person;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 public class demo3 {
     @Test
@@ -39,5 +43,20 @@ public class demo3 {
         SubOrder2<String> sub2 = new SubOrder2<>(); // type inference (either new SubOrder2<String>() or new SubOrder2<>() is OK)
         sub2.setOrderT("abc");
         sub2.setOrderT("xyz");
+    }
+
+    @Test
+    public void test4(){
+        ArrayList<String> list1 = null;
+        ArrayList<Integer> list2 = null;
+
+        // CAN'T assign different generic type reference to each other
+        //list1 = list2;
+
+        // comare
+        Person p1 = null;
+        Person p2 = null;
+
+        p1 = p2;
     }
 }

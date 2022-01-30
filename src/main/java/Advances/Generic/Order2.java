@@ -1,9 +1,9 @@
 package Advances.Generic;
 
-// https://www.youtube.com/watch?v=kRiy9mS2B9A&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=568
+// https://www.youtube.com/watch?v=ilutsOhRmuk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=568
 
 // custom class with generic type
-public class Order<T> {
+public class Order2<T> {
 
     // attr
     String orderName;
@@ -12,10 +12,16 @@ public class Order<T> {
 
     // constructor
     // inside class, we can use the genetic type (T)
-    public Order(){
+    public Order2(){
+
+        // wrong (compile failed)
+        //T[] arr = new T[10];
+
+        // OK  (compile ok)
+        T[] arr = (T[])  new Object[10];
     }
 
-    public Order(String orderName, int orderId, T orderT){
+    public Order2(String orderName, int orderId, T orderT){
         this.orderName = orderName;
         this.orderId = orderId;
         this.orderT = orderT;
@@ -40,9 +46,4 @@ public class Order<T> {
                 ", orderT=" + orderT +
                 '}';
     }
-
-    // generic type CAN'T be used in static method
-//    public static void show(T orderT){
-//        System.out.println(orderT);
-//    }
 }

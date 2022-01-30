@@ -21,6 +21,9 @@ package Advances.Generic;
  *     3) define custom generic type
  *        -> 2.1) generic class, generic interface, generic method
  *        -> Advances.Generic.demo3.java
+ *
+ *     4) generic type CAN'T be used in static method
+ *     5) generic type CAN'T be used in exception class
  */
 
 import org.junit.jupiter.api.Test;
