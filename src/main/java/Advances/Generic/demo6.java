@@ -1,10 +1,12 @@
 package Advances.Generic;
 
 // https://www.youtube.com/watch?v=nEutJOatwyc&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=570
+// https://www.youtube.com/watch?v=_53WGmiijGA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=572
 
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /** demo6 : generic
@@ -13,11 +15,13 @@ import java.util.List;
  *      - 1-1) : class A is class B's super class,
  *               -> however, there is NO super-sub class relation in G<A> and G<B>
  *               -> G<A> and G<B> are in the SAME LAYER
+ *               -> plz check test2
  *               extra : A is B's super class
  *                       -> A<G> is B<G>'s super class as well
  *
  *  2) generic type with wildcard
  *      - https://docs.oracle.com/javase/tutorial/extra/generics/wildcards.html
+ *      - sign : "?"
  *
  */
 
@@ -53,6 +57,32 @@ public class demo6 {
         ArrayList<String> list2 = null;
         list1 = list2; // this one is OK
      }
+
+     /** generic type with wildcard */
+    @Test
+    public void test3(){
+        List<Object> list1 = null;
+        List<String> list2 = null;
+
+        // wildcard
+        List<?> list3 = null;
+
+        // BOTH as OK (via wildcard trick)
+        list3 = list1;
+        list3 = list2;
+
+        myPrint(list1);
+        myPrint(list2);
+    }
+
+
+// use wildcard in method
+public void myPrint(List<?> list){
+    Iterator<?> iterator = list.iterator();
+    while (iterator.hasNext()){
+        // NOTE : we use Object type here, since Object is sub class of all class
+        Object obj = iterator.next();
+        System.out.println(obj);
+        }
+    }
 }
-
-
