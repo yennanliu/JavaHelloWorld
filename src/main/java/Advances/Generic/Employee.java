@@ -12,6 +12,9 @@ public class Employee implements Comparable<Employee>{
     private MyDate birthday;
 
     // constructor
+    public Employee(){
+    }
+
     public Employee(String name, int number, MyDate birthday){
         super();
         this.name = name;
