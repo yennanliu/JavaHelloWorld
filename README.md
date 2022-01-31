@@ -751,6 +751,7 @@
         - [demo 3](./src/main/java/Advances/Generic/demo3.java) : Generic with custom structure
         - [demo 4](./src/main/java/Advances/Generic/demo4.java) : Generic method demo
         - [demo 5](./src/main/java/Advances/Generic/demo5.java) : Generic class demo (example : DAO)
+        - [demo 6](./src/main/java/Advances/Generic/demo6.java) : Generic type with inheritance, wildcard
 
     - TimeStamp API
         -  DateTime API before JDK 8

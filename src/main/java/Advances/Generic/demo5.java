@@ -2,6 +2,9 @@ package Advances.Generic;
 
 // https://www.youtube.com/watch?v=fGNOpFN0rv8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=570
 
+/** demo5 : generic example : DAO */
+
+
 import Advances.Generic.dao.EmployeeDAO;
 import Advances.Generic.dao.StudentDAO;
 import org.junit.jupiter.api.Test;
