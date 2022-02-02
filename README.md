@@ -752,7 +752,9 @@
         - [demo 4](./src/main/java/Advances/Generic/demo4.java) : Generic method demo
         - [demo 5](./src/main/java/Advances/Generic/demo5.java) : Generic class demo (example : DAO)
         - [demo 6](./src/main/java/Advances/Generic/demo6.java) : Generic type with inheritance, wildcard
-
+        - [demo 7](./src/main/java/Advances/Generic/demo7.java) : Generic type with limited condition
+        - [demo 8](./src/main/java/Advances/Generic/demo8.java) : Generic type example1
+                
     - TimeStamp API
         -  DateTime API before JDK 8
             - 1) System.currentTimeTimeMillis();
