@@ -2,9 +2,11 @@ package Advances.Generic;
 
 // https://www.youtube.com/watch?v=nEutJOatwyc&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=570
 // https://www.youtube.com/watch?v=_53WGmiijGA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=572
+// https://www.youtube.com/watch?v=UWwPoU_SId0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=573
 
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -75,6 +77,33 @@ public class demo6 {
         myPrint(list2);
     }
 
+
+    /** generic type with wildcard 2 */
+    @Test
+    public void test4(){
+        List<String> list3 = new ArrayList<>();
+
+        list3.add("aa");
+        list3.add("bb");
+        list3.add("cc");
+
+        List<?> list = null;
+        list = list3;
+
+        // write : we CAN'T add any value (any type) to list<?> (generic type)
+        // However, we can add null to it
+        //list.add("dd");
+        //list.add("?");
+        list.add(null);
+
+        System.out.println(list);
+
+        // read : it's OK that we can read list<?>, read object type : Object
+        Object o1 = list.get(0);
+        System.out.println(o1);
+
+        System.out.println(list.get(3));
+    }
 
 // use wildcard in method
 public void myPrint(List<?> list){
