@@ -757,7 +757,8 @@
         - [demo 6](./src/main/java/Advances/Generic/demo6.java) : Generic type with inheritance, wildcard
         - [demo 7](./src/main/java/Advances/Generic/demo7.java) : Generic type with limited condition
         - [demo 8](./src/main/java/Advances/Generic/demo8.java) : Generic type example1
-                
+        - [demo 9](./src/main/java/Advances/Generic/demo9.java) : Generic type example2
+                       
     - TimeStamp API
         -  DateTime API before JDK 8
             - 1) System.currentTimeTimeMillis();

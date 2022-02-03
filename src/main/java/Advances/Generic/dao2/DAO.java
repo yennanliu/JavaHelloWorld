@@ -6,11 +6,11 @@ import java.util.*;
 
 public class DAO<T> {
 
-    private Map<String, T> map;
+    Map<String, T> map = new HashMap<>();
 
     // method
     // save T type object to Map
-    private void save(String id, T entity){
+    public void save(String id, T entity){
         map.put(id, entity);
     }
 
@@ -38,6 +38,6 @@ public class DAO<T> {
 
     // delete key=id object in Map
     public void delete(String id){
-
+        map.remove(id);
     }
 }
