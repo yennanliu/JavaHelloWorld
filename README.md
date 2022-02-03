@@ -386,7 +386,10 @@
 
     - toString()
         - [EqualsDemo1](./src/main/java/Basics/ToString_1.java)
-
+    - For loop
+        - [forLoop1](./src/main/java/Basics/forLoop1.java) : endless for loop
+        - [forLoop2](./src/main/java/Basics/forLoop2.java) : for loop (ArrayList) demo
+      - [forLoop3](./src/main/java/Basics/forLoop3.java) : for loop (Hashmap) demo
 
 - [JavaHelloWorld](./tree/main/src) : basic3
     - Static demo
