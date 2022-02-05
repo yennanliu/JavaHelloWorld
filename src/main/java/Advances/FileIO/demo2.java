@@ -1,9 +1,12 @@
 package Advances.FileIO;
 
 // https://www.youtube.com/watch?v=4d426JMTXhc&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=577
+// https://www.youtube.com/watch?v=mPFq9hUP74c&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=578
 
 import org.junit.jupiter.api.Test;
+
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 
 
@@ -63,5 +66,51 @@ public class demo2 {
 
         boolean renameTo = file1.renameTo(file2);
         System.out.println(renameTo);
+    }
+
+    @Test
+    public void test4(){
+        File file1 = new File("hello.txt");
+
+        System.out.println(file1.isDirectory());
+        System.out.println(file1.isFile());
+        System.out.println(file1.exists());
+        System.out.println(file1.canRead());
+        System.out.println(file1.canWrite());
+        System.out.println(file1.isHidden());
+    }
+
+    @Test
+    public void test5() throws IOException {
+        // create file
+        File file1 = new File("hello.txt");
+        if (!file1.exists()){
+            file1.createNewFile();
+            System.out.println("crate file OK");
+        }else{
+            file1.delete();
+            System.out.println("delete file OK");
+        }
+    }
+
+    @Test
+    public void test6(){
+        // create file path
+        File file1 = new File("/Users/yennanliu/JavaHelloWorld/src/main/java/myTest");
+
+        // mkdir : will create given path (NOT create all parent paths is NOT exist)
+        boolean mkdir = file1.mkdir();
+        if (mkdir){
+            System.out.println("create dir OK");
+        }
+
+
+        File file2 = new File("/Users/yennanliu/JavaHelloWorld/src/main/scala/myTest2");
+
+        // mkdirs : if upper paths not exist, will CREATE ALL of them (upper paths) as well at once
+        boolean mkdir2 = file2.mkdirs();
+        if (mkdir2){
+            System.out.println("create dir OK");
+        }
     }
 }
