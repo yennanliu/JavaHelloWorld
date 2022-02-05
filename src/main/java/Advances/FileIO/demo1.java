@@ -3,14 +3,12 @@ package Advances.FileIO;
 // https://www.youtube.com/watch?v=QPSOYtdlC4M&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=576
 
 import org.junit.jupiter.api.Test;
-
 import java.io.File;
 
 /** File IO demo 1 : File class
  *
  *  1) File class object : represents a doc or doc path (file)
  *  2) File class is under java.io classs
- *
  */
 
 public class demo1 {
@@ -19,7 +17,6 @@ public class demo1 {
      *
      *  1) how to create file class instance
      *  2) relative VS absolute path
-     *
      */
     @Test
     public void test1(){

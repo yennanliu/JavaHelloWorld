@@ -761,6 +761,7 @@
             - [File IO 1](./src/main/java/Basics/fileIO1.java)
             - [File IO 2](./src/main/java/Basics/fileIO2.java)
             - [demo 1](./src/main/java/Advances/FileIO/demo1.java) : File IO basic
+            - [demo 2](./src/main/java/Advances/FileIO/demo1.java) : File IO common methods
                        
     - TimeStamp API
         -  DateTime API before JDK 8
