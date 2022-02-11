@@ -762,7 +762,10 @@
             - [File IO 2](./src/main/java/Basics/fileIO2.java)
             - [demo 1](./src/main/java/Advances/FileIO/demo1.java) : File IO basic
             - [demo 2](./src/main/java/Advances/FileIO/demo2.java) : File IO common methods
-                       
+    
+        - IO flow
+            - [IO flow 1](./src/main/java/Basics/IOFlow/demo1.java)
+
     - TimeStamp API
         -  DateTime API before JDK 8
             - 1) System.currentTimeTimeMillis();
@@ -787,6 +790,8 @@
 - [JavaHelloWorld](./tree/main/src) : Mini project
     - [CustomerCRM](./src/main/java/Basics/CustomerCRM)
     - [EmployeeCRM](./src/main/java/Basics/EmployeeCRM)
+
+- [JavaHelloWorld - Utils](./tree/main/src/utils) : General Util class
 
 </details>
 
