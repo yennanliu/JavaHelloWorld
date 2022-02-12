@@ -3,6 +3,13 @@ package Advances.IOFlow;
 // https://www.youtube.com/watch?v=kqG8IQNMN_s&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=584
 // https://www.youtube.com/watch?v=lms-HDCYCvQ&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=586
 
+import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  *  IOFlow demo 1
  *
@@ -39,4 +46,33 @@ package Advances.IOFlow;
  */
 
 public class demo1 {
+
+    public static void main(String[] args) {
+        File file = new File("hello.txt"); // under current project !!!
+        System.out.println(file.getAbsolutePath()); // /Users/yennanliu/JavaHelloWorld/hello.txt
+    }
+
+    /** FileReader demo 1 */
+    @Test
+    public void test1() throws IOException {
+
+        // step 1) instantiate file class object, declare the file we are going to operate
+        //File file = new File("hello.txt"); // under current module
+        File file = new File("src/main/java/Advances/IOFlow/hello.txt");
+        System.out.println(file.getAbsolutePath()); // /Users/yennanliu/JavaHelloWorld/hello.txt
+
+        // step 2) offer flow (file IO flow)
+        FileReader fr = new FileReader(file);
+
+        // step 3) data read in
+        // read() : return read char, if meet END of file, return -1
+        int data = fr.read(); // char mapping to an integer
+        while (data != -1){
+            System.out.print((char) data); // should be char data type
+            data = fr.read(); // read next record  (similar as iterator)
+        }
+
+        // step 4) close flow
+        fr.close();
+    }
 }
