@@ -764,8 +764,10 @@
             - [demo 2](./src/main/java/Advances/FileIO/demo2.java) : File IO common methods
     
         - IO flow
-            - [IO flow 1](./src/main/java/Advances/IOFlow/demo1.java)
-
+            - [IO flow 1](./src/main/java/Advances/IOFlow/demo1.java) : FileReader demo           
+            - [IO flow 2](./src/main/java/Advances/IOFlow/demo2.java) : FileWriter demo
+            - [IO flow 3](./src/main/java/Advances/IOFlow/demo3.java) : File copy
+        
     - TimeStamp API
         -  DateTime API before JDK 8
             - 1) System.currentTimeTimeMillis();
