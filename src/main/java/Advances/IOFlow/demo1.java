@@ -54,25 +54,40 @@ public class demo1 {
 
     /** FileReader demo 1 */
     @Test
-    public void test1() throws IOException {
+    public void test1() {
+        FileReader fr = null;
+        try{
+            // step 1) instantiate file class object, declare the file we are going to operate
+            //File file = new File("hello.txt"); // under current module
+            File file = new File("src/main/java/Advances/IOFlow/hello.txt");
+            System.out.println(file.getAbsolutePath()); // /Users/yennanliu/JavaHelloWorld/hello.txt
 
-        // step 1) instantiate file class object, declare the file we are going to operate
-        //File file = new File("hello.txt"); // under current module
-        File file = new File("src/main/java/Advances/IOFlow/hello.txt");
-        System.out.println(file.getAbsolutePath()); // /Users/yennanliu/JavaHelloWorld/hello.txt
+            // step 2) offer flow (file IO flow)
+            fr = new FileReader(file);
 
-        // step 2) offer flow (file IO flow)
-        FileReader fr = new FileReader(file);
+            // step 3) data read in  (V1)
+            // read() : return read char, if meet END of file, return -1
+//            int data = fr.read(); // char mapping to an integer
+//            while (data != -1){
+//                System.out.print((char) data); // should be char data type
+//                data = fr.read(); // read next record  (similar as iterator)
+//            }
 
-        // step 3) data read in
-        // read() : return read char, if meet END of file, return -1
-        int data = fr.read(); // char mapping to an integer
-        while (data != -1){
-            System.out.print((char) data); // should be char data type
-            data = fr.read(); // read next record  (similar as iterator)
+            // step 3) data read in (V2)
+            int data;
+            while ((data = fr.read()) != -1){
+                System.out.print((char) data);
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                // step 4) close flow
+                fr.close();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
         }
-
-        // step 4) close flow
-        fr.close();
     }
 }
