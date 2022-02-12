@@ -52,7 +52,12 @@ public class demo1 {
         System.out.println(file.getAbsolutePath()); // /Users/yennanliu/JavaHelloWorld/hello.txt
     }
 
-    /** FileReader demo 1 */
+    /** FileReader demo 1
+     *
+     *   1)  read() : return read char, if meet END of file, return -1
+     *   2)  exception handling : for CLOSING file conn in final step, we MUST use try-catch-finally (instead of throw Exception) -> make sure file conn is always closed
+     *
+     */
     @Test
     public void test1() {
         FileReader fr = null;
@@ -84,7 +89,9 @@ public class demo1 {
         }finally {
             try{
                 // step 4) close flow
-                fr.close();
+                if (fr != null){
+                    fr.close();
+                }
             }catch (IOException e){
                 e.printStackTrace();
             }
