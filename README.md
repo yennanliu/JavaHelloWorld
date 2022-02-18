@@ -769,7 +769,8 @@
             - [IO 3](./src/main/java/Advances/IOFlow/demo3.java) : File copy (txt)
             - [IO 4](./src/main/java/Advances/IOFlow/demo4.java) : File copy (picture)
             - [IO 5](./src/main/java/Advances/IOFlow/demo5.java) : make File copy as funciton
-        
+            - [IO 6](./src/main/java/Advances/IOFlow/demo4.java) : File copy (picture) : Buffered IO flow
+
     - TimeStamp API
         -  DateTime API before JDK 8
             - 1) System.currentTimeTimeMillis();
