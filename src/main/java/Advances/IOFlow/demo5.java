@@ -8,13 +8,31 @@ import java.io.*;
 
 public class demo5 {
 
+    /** test copyFile method (binary file) */
     @Test
-    public void testCopyFile(){
+    public void testCopyFile1(){
 
         long start = System.currentTimeMillis();
 
         String src_path = "src/main/java/Advances/IOFlow/java.png";
         String dest_path = "src/main/java/Advances/IOFlow/java3.png";
+        copyFile(src_path, dest_path);
+
+        long end = System.currentTimeMillis();
+
+        System.out.println("copyFile cost time :" + (end - start));
+    }
+
+    /** test copyFile method (txt file) */
+    @Test
+    public void testCopyFile2(){
+
+        long start = System.currentTimeMillis();
+
+        // FileInputStream, FileOutputStream can be used on txt file IO as well
+        // It works fine if we don't print content during copy (transferred in binary format)
+        String src_path = "src/main/java/Advances/IOFlow/hello.txt";
+        String dest_path = "src/main/java/Advances/IOFlow/hello4.txt";
         copyFile(src_path, dest_path);
 
         long end = System.currentTimeMillis();

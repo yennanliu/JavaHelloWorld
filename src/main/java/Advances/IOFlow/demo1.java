@@ -34,8 +34,6 @@ import java.io.IOException;
  *        輸入流       | inputStream   |  Reader
  *        輸出流       | outputStream  |  Writer
  *
- *
- *
  *   5) I/O flow structure - 2
  *
  *    abstract class  |  節點流             |  緩衝流
@@ -43,6 +41,16 @@ import java.io.IOException;
  *     OutputStream   |  FileOutputStream  |  BufferedOutputStream
  *     Reader         |  FileReader        |  BufferedReader
  *     Writer         |  FileWriter        |  BufferedFileWriter
+ *
+ *   6) Summary
+ *
+ *     6-1) For txt (.txt, .java, .cpp..) file :
+ *             - use 字符流 (FileReader, FileWriter) or
+ *             - use 字節流 (FileInputStream, FileOutputStream)
+ *
+ *     6-2) For non-txt (binary) (.jpg, .mps, .avi) :
+ *             - use 字節流 (FileInputStream, FileOutputStream)
+ *
  */
 
 public class demo1 {
