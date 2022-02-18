@@ -1,39 +1,27 @@
-package utils;
+package Advances.IOFlow;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+// https://www.youtube.com/watch?v=OsfY3Y5ZDGM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=592
 
-public class FileUtils {
+import org.junit.jupiter.api.Test;
 
-    // methods
-    public static void printSubFile(File dir){
-        // print sub files
-        File[] subfiles = dir.listFiles();
+import java.io.*;
 
-        for (File f: subfiles){
-            if (f.isDirectory()){  // if directory
-                printSubFile(f);
-            }else{ // if file
-                System.out.println(f.getAbsolutePath());
-            }
-        }
+public class demo5 {
+
+    @Test
+    public void testCopyFile(){
+
+        long start = System.currentTimeMillis();
+
+        String src_path = "src/main/java/Advances/IOFlow/java.png";
+        String dest_path = "src/main/java/Advances/IOFlow/java3.png";
+        copyFile(src_path, dest_path);
+
+        long end = System.currentTimeMillis();
+
+        System.out.println("copyFile cost time :" + (end - start));
     }
 
-    public void deleteDirectory(File file){
-        // if file is file, then delete
-        // if file is a path, then NEED to delete all its sub files/paths, then delete the current path
-        if (file.isDirectory()) {
-            File[] all = file.listFiles();
-            // for loop and delete path/file in next level
-            for (File f: all){
-                deleteDirectory(f);
-            }
-        }
-        // delete current path
-        file.delete();
-    }
 
     /** method : copy (binary) file from src to dest */
     public void copyFile(String srcPath, String destPath){
@@ -78,3 +66,4 @@ public class FileUtils {
         }
     }
 }
+

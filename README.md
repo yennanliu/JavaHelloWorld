@@ -768,6 +768,7 @@
             - [IO 2](./src/main/java/Advances/IOFlow/demo2.java) : FileWriter demo
             - [IO 3](./src/main/java/Advances/IOFlow/demo3.java) : File copy (txt)
             - [IO 4](./src/main/java/Advances/IOFlow/demo4.java) : File copy (picture)
+            - [IO 5](./src/main/java/Advances/IOFlow/demo5.java) : make File copy as funciton
         
     - TimeStamp API
         -  DateTime API before JDK 8
