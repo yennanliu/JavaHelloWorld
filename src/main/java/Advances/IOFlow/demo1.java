@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- *  IOFlow demo 1 : FileReader
+ *  FileReader demo
  *
  *   1) I/O : input/output. for data transferred (across devices)
  *   2) Java does data transfer via  "stream"

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
-/**  IOFlow demo 4 : FileInputStream & FileOutputStream : (binary file IO) */
+/** FileInputStream & FileOutputStream : (binary file IO) demo */
 
 public class demo4 {
     @Test

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
-/**  IOFlow demo 2 : FileReader & FileWriter (txt file IO) */
+/** FileReader & FileWriter (txt file IO) demo */
 
 public class demo3 {
     @Test
