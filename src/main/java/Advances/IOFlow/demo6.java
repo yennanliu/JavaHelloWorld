@@ -21,13 +21,13 @@ import java.io.*;
  *
  *   3) "operation flow" (e.g. BufferedReader, BufferedFileWriter) is based on existing flow (e.g. BufferedInputStream, BufferedOutputStream)
  *
- *  Ref) I/O flow structure
+ *   4) Summary:
  *
- *       abstract class  |  節點流             |  緩衝流
- *       InputStream    |  FileInputStream   |  BufferedInputStream
- *       OutputStream   |  FileOutputStream  |  BufferedOutputStream
- *       Reader         |  FileReader        |  BufferedReader
- *       Writer         |  FileWriter        |  BufferedFileWriter
+ *       abstract class  |  節點流                                                |  緩衝流
+ *       InputStream     |  FileInputStream  (read(byte[] buffer))               |  BufferedInputStream   (read(byte[] buffer))
+ *       OutputStream    |  FileOutputStream (write(byte[] buffer, 0, len)       |  BufferedOutputStream  (write(byte[] buffer, 0, len)
+ *       Reader          |  FileReader       (read(char[] cbuf))                 |  BufferedReader        (read(char[] cbuf))
+ *       Writer          |  FileWriter       (write(char[] cbuf, 0, len)         |  BufferedFileWriter    (write(char[] cbuf, 0, len)
  */
 
 

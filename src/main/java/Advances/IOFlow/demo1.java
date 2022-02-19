@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- *  FileReader demo
+ *  - FileReader demo
  *
  *   1) I/O : input/output. for data transferred (across devices)
  *   2) Java does data transfer via  "stream"
@@ -20,35 +20,35 @@ import java.io.IOException;
  *      -> use STDIN, STDOUT in general
  *
  *
- *   Types of I/O flow
+ *   - Types of I/O flow
  *
- *   1) based on unit: 字節流 (8 bit), 字符流 (16 bit)
- *      ->  字節流 (8 bit) :  byte           : for picture, video files (non-text files)
- *      ->  字符流 (16 bit) : char  (2 byte) : for text files
+ *     1) based on unit: 字節流 (8 bit), 字符流 (16 bit)
+ *       ->  字節流 (8 bit) :  byte           : for picture, video files (non-text files)
+ *       ->  字符流 (16 bit) : char  (2 byte) : for text files
  *
- *   2) based in flow : inputStream, outputStream
- *   3) based on roles : 節點流, 處理流
+ *     2) based in flow : inputStream, outputStream
+ *     3) based on roles : 節點流, 處理流
  *
- *   4) I/O flow structure - 1
+ *     4) I/O flow structure - 1
  *    abstract class  | 字節流         |  字符流
  *        輸入流       | inputStream   |  Reader
  *        輸出流       | outputStream  |  Writer
  *
- *   5) I/O flow structure - 2
+ *     5) I/O flow structure - 2
  *
- *    abstract class  |  節點流             |  緩衝流
- *     InputStream    |  FileInputStream   |  BufferedInputStream
- *     OutputStream   |  FileOutputStream  |  BufferedOutputStream
- *     Reader         |  FileReader        |  BufferedReader
- *     Writer         |  FileWriter        |  BufferedFileWriter
+ *       abstract class  |  節點流                                                |  緩衝流
+ *       InputStream     |  FileInputStream  (read(byte[] buffer))               |  BufferedInputStream   (read(byte[] buffer))
+ *       OutputStream    |  FileOutputStream (write(byte[] buffer, 0, len)       |  BufferedOutputStream  (write(byte[] buffer, 0, len)
+ *       Reader          |  FileReader       (read(char[] cbuf))                 |  BufferedReader        (read(char[] cbuf))
+ *       Writer          |  FileWriter       (write(char[] cbuf, 0, len)         |  BufferedFileWriter    (write(char[] cbuf, 0, len)
  *
- *   6) Summary
+ *    6) Summary
  *
- *     6-1) For txt (.txt, .java, .cpp..) file :
+ *      6-1) For txt (.txt, .java, .cpp..) file :
  *             - use 字符流 (FileReader, FileWriter) or
  *             - use 字節流 (FileInputStream, FileOutputStream)
  *
- *     6-2) For non-txt (binary) (.jpg, .mps, .avi) :
+ *      6-2) For non-txt (binary) (.jpg, .mps, .avi) :
  *             - use 字節流 (FileInputStream, FileOutputStream)
  *
  */
