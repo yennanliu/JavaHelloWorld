@@ -19,6 +19,7 @@ import java.io.*;
  *      - BufferedReader
  *      - BufferedFileWriter
  *
+ *   3) "operation flow" (e.g. BufferedReader, BufferedFileWriter) is based on existing flow (e.g. BufferedInputStream, BufferedOutputStream)
  *
  *  Ref) I/O flow structure
  *
