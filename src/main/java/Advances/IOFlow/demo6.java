@@ -10,12 +10,15 @@ import java.io.*;
 /** Buffered IO flow demo1
  *
  *  1) Buffered IO flow : for RAISING file IO efficiency
+ *       -> why ? java offers "buffer space" internally
+ *       -> so each time java will load batch of data into "buffer space", then other file io flow can start from there -> better efficiency
  *
  *  2) Buffered IO flow:
  *      - BufferedInputStream
  *      - BufferedOutputStream
  *      - BufferedReader
  *      - BufferedFileWriter
+ *
  *
  *  Ref) I/O flow structure
  *
@@ -54,6 +57,8 @@ public class demo6 {
             int len;
             while ((len = bis.read(buffer)) != -1){
                 bos.write(buffer, 0, len);
+                /** NOTE !!! we can refresh buffered space explicitly (via below code) */
+                //bos.flush();
             }
         }catch (IOException e){
             e.printStackTrace();
@@ -103,6 +108,8 @@ public class demo6 {
             int len;
             while ((len = bis.read(buffer)) != -1){
                 bos.write(buffer, 0, len);
+                /** NOTE !!! we can refresh buffered space explicitly (via below code) */
+                //bos.flush();
             }
         }catch (IOException e){
             e.printStackTrace();

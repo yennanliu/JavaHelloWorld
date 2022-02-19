@@ -33,6 +33,7 @@ public class FileUtils {
     }
 
     /** method : copy file from src to dest */
+    // https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/IOFlow/demo5.java#L44
     public void copyFile(String srcPath, String destPath){
         FileInputStream fis = null;
         FileOutputStream fos = null;
@@ -76,6 +77,7 @@ public class FileUtils {
     }
 
     /** method : copy file from src to dest via Buffered IO flow */
+    // https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/IOFlow/demo6.java#L86
     public void copyFileWithBuffered(String srcPath, String destPath) throws IOException {
 
         BufferedInputStream bis = null;
