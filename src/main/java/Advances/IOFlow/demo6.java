@@ -1,6 +1,7 @@
 package Advances.IOFlow;
 
 // https://www.youtube.com/watch?v=Rxm-W6-AK1c&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=593
+// https://www.youtube.com/watch?v=l7xOFkOQS7w&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=594
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +17,7 @@ import java.io.*;
  *      - BufferedReader
  *      - BufferedFileWriter
  *
- *  1) I/O flow structure
+ *  Ref) I/O flow structure
  *
  *       abstract class  |  節點流             |  緩衝流
  *       InputStream    |  FileInputStream   |  BufferedInputStream
@@ -71,6 +72,49 @@ public class demo6 {
             // after outer (layer) (e.g. bis, bos) are closed, java will close inner (layer) (e.g. fos, fis) automatically
             //fos.close();
             //fis.close();
+        }
+    }
+
+    @Test
+    public void copyFileWithBufferedTest1() throws IOException {
+        String src_file = "src/main/java/Advances/IOFlow/java.png";
+        String dest_file = "src/main/java/Advances/IOFlow/java5.png";
+
+        copyFileWithBuffered(src_file, dest_file);
+    }
+
+    /** method : copy file from src to dest via Buffered IO flow */
+    public void copyFileWithBuffered(String srcPath, String destPath) throws IOException {
+
+        BufferedInputStream bis = null;
+        BufferedOutputStream bos = null;
+
+        try{
+            File srcFile = new File(srcPath);
+            File destFile = new File(destPath);
+
+            FileInputStream fis = new FileInputStream(srcFile);
+            FileOutputStream fos = new FileOutputStream(destFile);
+
+            bis = new BufferedInputStream(fis);
+            bos = new BufferedOutputStream(fos);
+
+            byte[] buffer = new byte[10];
+            int len;
+            while ((len = bis.read(buffer)) != -1){
+                bos.write(buffer, 0, len);
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+
+            if (bis != null){
+                bis.close();
+            }
+
+            if (bos != null){
+                bos.close();
+            }
         }
     }
 }

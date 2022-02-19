@@ -1,9 +1,6 @@
 package utils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class FileUtils {
 
@@ -35,7 +32,7 @@ public class FileUtils {
         file.delete();
     }
 
-    /** method : copy (binary) file from src to dest */
+    /** method : copy file from src to dest */
     public void copyFile(String srcPath, String destPath){
         FileInputStream fis = null;
         FileOutputStream fos = null;
@@ -74,6 +71,41 @@ public class FileUtils {
                 }catch (IOException e){
                     e.printStackTrace();
                 }
+            }
+        }
+    }
+
+    /** method : copy file from src to dest via Buffered IO flow */
+    public void copyFileWithBuffered(String srcPath, String destPath) throws IOException {
+
+        BufferedInputStream bis = null;
+        BufferedOutputStream bos = null;
+
+        try{
+            File srcFile = new File(srcPath);
+            File destFile = new File(destPath);
+
+            FileInputStream fis = new FileInputStream(srcFile);
+            FileOutputStream fos = new FileOutputStream(destFile);
+
+            bis = new BufferedInputStream(fis);
+            bos = new BufferedOutputStream(fos);
+
+            byte[] buffer = new byte[10];
+            int len;
+            while ((len = bis.read(buffer)) != -1){
+                bos.write(buffer, 0, len);
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+
+            if (bis != null){
+                bis.close();
+            }
+
+            if (bos != null){
+                bos.close();
             }
         }
     }
