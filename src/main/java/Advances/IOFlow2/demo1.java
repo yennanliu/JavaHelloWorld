@@ -1,6 +1,7 @@
 package Advances.IOFlow2;
 
-//https://www.youtube.com/watch?v=ITikQNDAYEc&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=599
+// https://www.youtube.com/watch?v=ITikQNDAYEc&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=599
+// https://www.youtube.com/watch?v=JE-Vpvvdzr0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=600
 
 import org.junit.jupiter.api.Test;
 
@@ -23,6 +24,8 @@ import java.io.*;
 public class demo1 {
 
     /**
+     *  demo 1:
+     *
      *  1) Exception handling : we should still use try-catch-finally as standard style
      *  2) demo how to use InputStreamReader : byte input -> char input transformation
      */
@@ -42,5 +45,38 @@ public class demo1 {
         // close resources
         isr.close();
         fis.close();
+    }
+
+    /**
+     *  demo 2 : InputStreamReader and OutputStreamWriter
+     *
+     *  1) Exception handling : we should still use try-catch-finally as standard style
+     *
+     */
+    @Test
+    public void test2() throws IOException {
+
+        // step 1) make doc, flow
+        File file1 = new File("src/main/java/Advances/IOFlow2/hello.txt");
+        File file2 = new File("src/main/java/Advances/IOFlow2/hello2.txt");
+
+        FileInputStream fis = new FileInputStream(file1);
+        FileOutputStream fos = new FileOutputStream(file2);
+
+        InputStreamReader isr = new InputStreamReader(fis, "utf-8");
+        OutputStreamWriter osw = new OutputStreamWriter(fos, "gbk");
+
+        // step 2) read, write data
+        char[] cbuf = new char[20];
+        int len;
+        while ((len = isr.read(cbuf)) != -1){
+            osw.write(cbuf, 0, len);
+        }
+
+        // step 3) close resources
+        isr.close();
+        osw.close();
+        fis.close();
+        fos.close();
     }
 }
