@@ -18,15 +18,13 @@ import java.io.*;
  *
  *   3) decode : byte, byte array -> char, char array
  *      encode : char, char array -> byte, byte array
- *
- *
- *
  */
 
 public class demo1 {
 
     /**
-     *  Exception handling : we should still use try-catch-finally as standard style
+     *  1) Exception handling : we should still use try-catch-finally as standard style
+     *  2) demo how to use InputStreamReader : byte input -> char input transformation
      */
     @Test
     public void test1() throws IOException {
