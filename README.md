@@ -772,6 +772,9 @@
             - [IO 6](./src/main/java/Advances/IOFlow/demo6.java) : File copy (picture) : Buffered IO flow
             - [IO 7](./src/main/java/Advances/IOFlow/demo7.java) : File copy (txt): BufferedReader, BufferedFileWriter
             - [IO 8](./src/main/java/Advances/IOFlow/demo8.java) : File encrypt/decrypt demo
+            
+        - IO flow2
+            - [demo1](./src/main/java/Advances/IOFlow2/demo1.java) : Transformation flow demo : InputStreamReader, OutputStreamWriter
 
     - TimeStamp API
         -  DateTime API before JDK 8
