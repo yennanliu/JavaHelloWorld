@@ -1,39 +1,36 @@
 package Advances.ObjectInputOutputFlow;
 
-// https://www.youtube.com/watch?v=RUiVm1VkXB4&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=611
+// https://www.youtube.com/watch?v=F7FPaVlGhhc&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=611
+
+/**
+ *   Object Flow demo 2 : `serialization`, `deserialization` with custom java class
+ *
+ *   NOTE !!! : if we want a java class serializable, it needs below conditions (check Advances.ObjectInputOutputFlow.Person.java)
+ */
 
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
-/**
- *   Object Flow demo 1 : `serialization`, `deserialization` basic
- *
- *   1) ObjectInputStream, ObjectOutputStream
- *   2) purpose : can save, read, transform java instance <----> data flow
- *   3) serialization
- *   4) deserialization
- *   5) NOTE !!! : if we want a java class serializable, it needs below conditions (check Advances.ObjectInputOutputFlow.Person.java)
- */
+public class demo2 {
 
-public class demo1 {
-    /**
-     *  demo 1
-     *  serialization : transform in-memory java instance into hard disk or send via internet
-     *  will use ObjectOutputStream
-     */
     @Test
     public void test1() {
         ObjectOutputStream oos = null;
         try{
             // step 1) create flow, instance
-            oos = new ObjectOutputStream(new FileOutputStream("src/main/java/Advances/ObjectInputOutputFlow/output.txt"));
+            oos = new ObjectOutputStream(new FileOutputStream("src/main/java/Advances/ObjectInputOutputFlow/output2.txt"));
 
             // step 2) write data
             oos.writeObject(new String("London Tokyo NewYork"));
 
             // step 3) flush memory (so every write op will be reflected to output file)
             oos.flush();
+
+            // NOTE : we have to make Person class serializable, or will face "java.io.NotSerializableException: Advances.ObjectInputOutputFlow.Person" exception
+            oos.writeObject(new Person("amy", 17));
+            oos.flush();
+
         }catch (IOException e){
             e.printStackTrace();
         }finally {
@@ -63,13 +60,19 @@ public class demo1 {
         try{
 
             // step 1)
-            ois = new ObjectInputStream(new FileInputStream("src/main/java/Advances/ObjectInputOutputFlow/output.txt"));
+            ois = new ObjectInputStream(new FileInputStream("src/main/java/Advances/ObjectInputOutputFlow/output2.txt"));
 
             // step 2)
             Object obj = ois.readObject();
-            // transform it into string, since we know it's string data type
+
+            // NOTE : read data type should align with write data type
+            // read string : transform it into string, since we know it's string data type
             String str = (String) obj;
             System.out.println(str);
+
+            // read Person
+            Person p = (Person) ois.readObject();
+            System.out.println(p); //Person{name='amy', age=17}
 
         }catch (Exception e){
             e.printStackTrace();

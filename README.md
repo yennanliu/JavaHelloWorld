@@ -781,6 +781,7 @@
             - [demo2](./src/main/java/Advances/IOFlow3/demo2.java) : DataInputStream, DataOutputStream demo
         - ObjectInputOutputFlow
             - [demo1](./src/main/java/Advances/ObjectInputOutputFlow/demo1.java) : `serialization`, `deserialization` basic demo
+            - [demo2](./src/main/java/Advances/ObjectInputOutputFlow/demo2.java) : `serialization`, `deserialization` with custom java class
 
     - TimeStamp API
         -  DateTime API before JDK 8
