@@ -1,0 +1,3 @@
+Java basics project : RestAPI, backend, web, java basics... | #SE
+Scala POCs : API, backend, tools | #SE
+Data/backend | Distributed System | Python | Scala | TW/HK -> UK -> SG/JP -> ? | Hack everything* 🎸
