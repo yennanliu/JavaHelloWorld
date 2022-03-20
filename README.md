@@ -787,6 +787,9 @@
         - NIO
             - [demo1](./src/main/java/Advances/nio/demo1.java) 
 
+    - Internet
+        - [demo1](./src/main/java/Advances/internet/demo1.java) : TCP/UDP comparision
+
     - TimeStamp API
         -  DateTime API before JDK 8
             - 1) System.currentTimeTimeMillis();
