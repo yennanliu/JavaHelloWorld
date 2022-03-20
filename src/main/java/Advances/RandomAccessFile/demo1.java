@@ -95,7 +95,7 @@ public class demo1 {
         raf1.close();
     }
 
-    
+
     /** do "insert" like op via RandomAccessFile */
     @Test
     public void test4() throws IOException {

@@ -784,6 +784,8 @@
             - [demo2](./src/main/java/Advances/ObjectInputOutputFlow/demo2.java) : `serialization`, `deserialization` with custom java class
         - RandomAccessFile
             - [demo1](./src/main/java/Advances/RandomAccessFile/demo1.java) : RandomAccessFile input, and output flow demo
+        - NIO
+            - [demo1](./src/main/java/Advances/nio/demo1.java) 
 
     - TimeStamp API
         -  DateTime API before JDK 8
