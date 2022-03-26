@@ -22,6 +22,5 @@ package Advances.internet;
  */
 
 
-
 public class demo1 {
 }
