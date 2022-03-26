@@ -18,7 +18,6 @@ import java.net.Socket;
  *   1) client sends msg, server shows msg on terminal
  */
 
-
 public class demo2 {
 
     // client
@@ -27,16 +26,19 @@ public class demo2 {
         Socket socket = null;
         OutputStream os = null;
         try{
-
+            // step 1) : create socket instance
             InetAddress inet = InetAddress.getByName("127.0.0.1");
             socket = new Socket(inet, 9999);
 
+            // step 2) : create output stream (for output data)
             os = socket.getOutputStream();
+            // step 3) : write data op
             os.write("hellooo \n".getBytes());
             os.write("this is client side".getBytes());
 
         }catch (IOException e){
             e.printStackTrace();
+            // step 4) : close resources
         }finally {
             if (os != null){
                 try{
@@ -63,10 +65,14 @@ public class demo2 {
         InputStream is = null;
         ByteArrayOutputStream baos = null;
         try{
+            // step 1) : create server socket instance (java.net.ServerSocket)
+            // note : use server's port
             ss = new ServerSocket(9999);
 
+            // step 2) : use accept, receive client's socket
             socket = ss.accept();
 
+            // step 3) : get input flow
             is = socket.getInputStream();
 
             // method 1) : not recommended : may have decode issue
@@ -77,6 +83,7 @@ public class demo2 {
 //            System.out.println(str);
 //        }
 
+            // step 4) : read input flow
             // method 2)
             baos = new ByteArrayOutputStream();
             byte[] buffer = new byte[5];
@@ -90,7 +97,7 @@ public class demo2 {
 
         }catch (IOException e){
             e.printStackTrace();
-            // close resources
+            // step 5) :  close resources
         }finally {
             if (baos != null){
                 try{
