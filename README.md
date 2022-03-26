@@ -789,7 +789,8 @@
 
     - Internet
         - [demo1](./src/main/java/Advances/internet/demo1.java) : TCP/UDP comparision
-        - [demo2](./src/main/java/Advances/internet/demo2.java) : TCP demo 1 : client/server demo (via `socket`)
+        - [demo2](./src/main/java/Advances/internet/demo2.java) : TCP demo 1 : client/server (via `socket`) : send msg
+        - [demo3](./src/main/java/Advances/internet/demo3.java) : TCP demo 2 : client/server (via `socket`) : send file
     - TimeStamp API
         -  DateTime API before JDK 8
             - 1) System.currentTimeTimeMillis();
