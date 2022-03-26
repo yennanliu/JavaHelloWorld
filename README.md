@@ -640,7 +640,7 @@
 
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced
-    - `Program VS Process VS Thread`
+    - `Program VS Process (進程) VS Thread (線程)`
         - Program : collection of code for purpose, a static instance
         - Process : `running process` of the program, or `a running program`. is a dynamic process. has its cycle : launch - exist - terminate
             - examples
