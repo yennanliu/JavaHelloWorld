@@ -1,6 +1,6 @@
-## Main project
+## Relative project
 - [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java intro project
-
+- [JVM faq](https://github.com/yennanliu/CS_basics/blob/master/doc/faq/faq_JVM.md) : JVM cheatsheet
 <details>
 <summary>Java Hello World</summary>
 
@@ -855,6 +855,8 @@ mvn test
 ```
 
 ### Ref
+<details>
+<summary>Ref</summary>
 - Java interview questions
     - https://www.interviewbit.com/java-interview-questions?utm_source=midfunnel&utm_medium=email&utm_campaign=none_scaler_academy_midfunnel_email_newsletter_india_all
 - Java learning ref
@@ -874,3 +876,5 @@ mvn test
         - https://www.tutorialspoint.com/spring/index.htm
     - ZH
         - http://tw.gitbook.net/spring/spring_overview.html
+
+</details>
