@@ -1,6 +1,7 @@
 ## Relative project
 - [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java intro project
 - [JVM faq](https://github.com/yennanliu/CS_basics/blob/master/doc/faq/faq_JVM.md) : JVM cheatsheet
+
 <details>
 <summary>Java Hello World</summary>
 
@@ -831,32 +832,27 @@
         - controller : deal with bisiness logic. e.g. : controller service, controller adapter, controller base
 
 ## Quick start
-```
+```bash
 mkdir -p src/main/java/hello
 # check maven version
 mvn -v
 # build the project
 mvn compile
-```
 
-### Package the project
-```
+# Package the project
 mvn package
-```
 
-### Run
-```
+# Run
 java -jar target/gs-maven-0.1.0.jar
-```
 
-### Test 
-```
+# Test
 mvn test
 ```
 
 ### Ref
 <details>
 <summary>Ref</summary>
+
 - Java interview questions
     - https://www.interviewbit.com/java-interview-questions?utm_source=midfunnel&utm_medium=email&utm_campaign=none_scaler_academy_midfunnel_email_newsletter_india_all
 - Java learning ref
@@ -868,7 +864,7 @@ mvn test
         - [part 1](https://mari-azevedo.medium.com/building-a-restful-api-with-java-and-spring-framework-part-1-6c364a885831)
         - [part 2](https://mari-azevedo.medium.com/construindo-uma-api-restful-com-java-e-spring-framework-parte-2-7a6c3e2ad453)
         - [part 3](https://mari-azevedo.medium.com/construindo-uma-api-restful-com-java-e-spring-framework-parte-3-ab34fcc00dee)
-        - [part 4](https://mari-azevedo.medium.com/construindo-uma-api-restful-com-java-e-spring-framework-parte-4-6287f68ffc3c?source=follow_footer---------0----------------------------)
+        - [part 4](https://mari-azevedo.medium.com/construindo-uma-api-restful-com-java-e-spring-framework-parte-4-6287f68ffc3c?source=follow_footer)
             - https://github.com/mariazevedo88/travels-api
             - https://github.com/mariazevedo88/travels-java-api
 - Spring MVC Tutorial
