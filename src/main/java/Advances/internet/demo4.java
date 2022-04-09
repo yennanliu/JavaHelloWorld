@@ -41,6 +41,9 @@ public class demo4 {
             os.write(buffer, 0, len);
         }
 
+        // NOTE !!! : shutdown socket when file transmitted completed (or will block socket)
+        socket.shutdownOutput();
+
         // step 5) receive server's response, and print on terminal
         InputStream is = socket.getInputStream();
         // decode
@@ -48,10 +51,14 @@ public class demo4 {
         byte[] buffer2 = new byte[20];
         int len2;
         while((len2 = fis.read(buffer2)) != -1){
-            baos.write(buffer2, 0, len);
+            baos.write(buffer2, 0, len2);
         }
 
+        System.out.println("client msg >>>");
+        // TODO : fix this
         System.out.println(baos.toString());
+        //System.out.println("file received !! (msg from server)");
+        System.out.println("client msg >>>");
 
         // step 6) close resources
         fis.close();
@@ -86,6 +93,7 @@ public class demo4 {
 
         // step 6) send response to client
         OutputStream os = socket.getOutputStream();
+        System.out.println("file sent !! (server)");
         os.write("file received !! (msg from server)".getBytes());
 
         // step 7) close resources
