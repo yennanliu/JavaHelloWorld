@@ -10,7 +10,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- *   Implement TCP internet protocol : demo 2
+ *   Implement TCP internet protocol : demo 3
  *
  *   1) client sends doc, server saves it to local
  */
