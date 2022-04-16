@@ -54,8 +54,10 @@ public class Person {
         System.out.println("person show !!!!");
     }
 
-    private String showNation(){
+    private String showNation(String country){
         //System.out.println("From US");
-        return "From US";
+        String msg = "From " + country;
+        System.out.println(msg);
+        return msg;
     }
 }

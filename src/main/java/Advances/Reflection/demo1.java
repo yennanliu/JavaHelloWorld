@@ -2,7 +2,9 @@ package Advances.Reflection;
 
 // https://www.youtube.com/watch?v=UdZie846898&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=636
 // https://www.youtube.com/watch?v=4V-cslz9BpM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=637
+// https://www.youtube.com/watch?v=V9UjC0JvqrY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=638
 
+import Advances.Generic.SubOrder;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
@@ -13,6 +15,12 @@ import java.lang.reflect.Method;
 /**
  *  Reflection demo 1
  *
+ *   1) main common API
+ *      - java.lang.Class : represent a class
+ *      - java.lang.reflect.Method :  represent a class method
+ *      - java.lang.reflect.Field : represent a class attr
+ *      - java.lang.reflect.Constructor : represent a class constructor
+ *      ..
  */
 
 public class demo1 {
@@ -59,5 +67,26 @@ public class demo1 {
         // 3) call method via reflection
         Method show = clazz.getDeclaredMethod("show");
         show.invoke(p);
+
+        // 4) get class' private structure (attr, method..) via reflection
+        Constructor cons1 = clazz.getDeclaredConstructor(String.class);
+        cons1.setAccessible(true);
+        Person p1 = (Person) cons1.newInstance("trek");
+        System.out.println(p1);
+
+        // use private attr
+        Field name = clazz.getDeclaredField("name");
+        name.setAccessible(true);
+        name.set(p1, "athena");
+        System.out.println(p1);
+
+        // use private method
+        Method showNation = clazz.getDeclaredMethod("showNation", String.class);
+        // compare : p1.showNation("japan"); -> instance call method
+        // below is : "Method showNation" call instance -> still  instance call method
+        showNation.setAccessible(true); // note !!! we need this, so can access private method
+        String nation = (String) showNation.invoke(p1, "japan"); // similar as String nation = p1.showNation();
+        System.out.println("nation = " + nation);
+
     }
 }
