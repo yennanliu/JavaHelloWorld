@@ -4,6 +4,7 @@ package Advances.Reflection;
 // https://www.youtube.com/watch?v=4V-cslz9BpM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=637
 // https://www.youtube.com/watch?v=V9UjC0JvqrY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=638
 // https://www.youtube.com/watch?v=ny4F6MUv0hw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=639
+// https://www.youtube.com/watch?v=Q0NvegR4sNY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=639
 
 import Advances.Generic.SubOrder;
 import org.junit.jupiter.api.Test;
@@ -26,13 +27,23 @@ import java.lang.reflect.Method;
  *   2) Question:
  *      2-1) Reflection conflicts with OOP Encapsulation (封裝) ? explain ?
  *          -> NO conflict
- *          -> 
+ *          -> different purposes
  *
  *
  *      2-2) in general dev, which one we should use ? : "new <class>" or "reflection" ?
  *          -> use "new <class>" is better
  *          -> reflection is for "dynamic". so if we are NOT sure which class need to init, have to decide till runtime -> use "reflection"
  *              - example :  /login, /add ... endpoints via java servlet
+ *
+ *    3) java.lang.class understanding
+ *      - 3-1) java class loading steps
+ *          - 1) java.exe runs, creates .class (字節碼文件), then use java.exe parses and executes .class file (load .class to memory)
+ *          - 2) we call in-memory class above as "run-time class", which is a class instance
+ *
+ *    4) So, `Class clazz = Person.class;`
+ *       -> Class is a "run-time class
+ *       
+ *    5) in Java, everything is an instance
  */
 
 public class demo1 {
