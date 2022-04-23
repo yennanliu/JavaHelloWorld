@@ -3,6 +3,7 @@ package Advances.Reflection;
 // https://www.youtube.com/watch?v=UdZie846898&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=636
 // https://www.youtube.com/watch?v=4V-cslz9BpM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=637
 // https://www.youtube.com/watch?v=V9UjC0JvqrY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=638
+// https://www.youtube.com/watch?v=ny4F6MUv0hw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=639
 
 import Advances.Generic.SubOrder;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,17 @@ import java.lang.reflect.Method;
  *      - java.lang.reflect.Field : represent a class attr
  *      - java.lang.reflect.Constructor : represent a class constructor
  *      ..
+ *
+ *   2) Question:
+ *      2-1) Reflection conflicts with OOP Encapsulation (封裝) ? explain ?
+ *          -> NO conflict
+ *          -> 
+ *
+ *
+ *      2-2) in general dev, which one we should use ? : "new <class>" or "reflection" ?
+ *          -> use "new <class>" is better
+ *          -> reflection is for "dynamic". so if we are NOT sure which class need to init, have to decide till runtime -> use "reflection"
+ *              - example :  /login, /add ... endpoints via java servlet
  */
 
 public class demo1 {
@@ -50,7 +62,7 @@ public class demo1 {
 
         // 1) create an instance via reflection
         Class clazz = Person.class;
-        Constructor cons =  clazz.getConstructor(String.class, int.class);
+        Constructor cons = clazz.getConstructor(String.class, int.class);
 
         Object obj = cons.newInstance("kate", 17);
         System.out.println(obj.toString());
@@ -83,7 +95,7 @@ public class demo1 {
         // use private method
         Method showNation = clazz.getDeclaredMethod("showNation", String.class);
         // compare : p1.showNation("japan"); -> instance call method
-        // below is : "Method showNation" call instance -> still  instance call method
+        // below is : "Method showNation" call instance -> still instance call method
         showNation.setAccessible(true); // note !!! we need this, so can access private method
         String nation = (String) showNation.invoke(p1, "japan"); // similar as String nation = p1.showNation();
         System.out.println("nation = " + nation);
