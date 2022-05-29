@@ -42,7 +42,7 @@ import java.lang.reflect.Method;
  *
  *    4) So, `Class clazz = Person.class;`
  *       -> Class is a "run-time class
- *       
+ *
  *    5) in Java, everything is an instance
  */
 

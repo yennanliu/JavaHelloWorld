@@ -1,5 +1,9 @@
-## Relative project
+# JavaHelloWorld
+> Java basic, tutorial demo
+
+## Relative projects
 - [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java intro project
+- [Spring play ground](https://github.com/yennanliu/SpringPlayground) : web/backend projects via spring boot framework
 - [JVM faq](https://github.com/yennanliu/CS_basics/blob/master/doc/faq/faq_JVM.md) : JVM cheatsheet
 
 <details>
@@ -826,17 +830,7 @@
 
 </details>
 
-- [Spring web](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringWeb)
-- [Spring Twitter](https://github.com/yennanliu/JavaHelloWorld/tree/main/SpringTwitter)
-    - endpoint : 
-        - http://localhost:8080/api/v1/?search=trump
-        - http://localhost:8080/test1
-    - MVC
-        - model : the layer define data (backend). e.g. : DB, DB class, model.bean
-        - view : show data for client (frontend) side. e.g. :  view utils, view UI
-        - controller : deal with bisiness logic. e.g. : controller service, controller adapter, controller base
-
-## Quick start
+## Run
 ```bash
 mkdir -p src/main/java/hello
 # check maven version
