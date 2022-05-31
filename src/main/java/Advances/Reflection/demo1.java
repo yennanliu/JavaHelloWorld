@@ -119,7 +119,9 @@ public class demo1 {
      *
      *  method 1) : Class<Person> clazz1 = Person.class;
      *  method 2) : via running class instance, via getClass()
-     *  method 3) : via Class' static method : forName(String classPath)
+     *  method 3) : via Class' static method : forName(String classPath) (use most!!)
+     *  method 4) via "ClassLoader"  (rarely use)
+     *
      */
     @Test
     public void test3() throws ClassNotFoundException {
@@ -133,12 +135,19 @@ public class demo1 {
         Class clazz2 = p1.getClass();
         System.out.println("clazz2 = " + clazz2);
 
-        // method 3): via Class' static method : forName(String classPath)
+        // method 3): via Class' static method : forName(String classPath) (use most!!)
         Class clazz3 = Class.forName("Advances.Reflection.Person");
         System.out.println("clazz3 = " + clazz3);
 
         System.out.println("clazz1 == clazz2 ? " + (clazz1 == clazz2) ); // true, NOTE : clazz1, clazz2 are equal
         System.out.println("clazz1 == clazz3 ? " + (clazz1 == clazz3) ); // true, NOTE : clazz1, clazz3 are equal
+
+        // method 4) via "ClassLoader"  (rarely use)
+        ClassLoader classLoader = demo1.class.getClassLoader();
+        Class clazz4 = classLoader.loadClass("Advances.Reflection.Person");
+        System.out.println("clazz4 = " + clazz4);
+
+        System.out.println("clazz1 == clazz4 ? " + (clazz1 == clazz4) ); // true, NOTE : clazz1, clazz4 are equal
     }
 
 }
