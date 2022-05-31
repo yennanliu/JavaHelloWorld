@@ -5,6 +5,7 @@ package Advances.Reflection;
 // https://www.youtube.com/watch?v=V9UjC0JvqrY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=638
 // https://www.youtube.com/watch?v=ny4F6MUv0hw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=639
 // https://www.youtube.com/watch?v=Q0NvegR4sNY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=639
+// https://www.youtube.com/watch?v=mH0oEYLXk-U&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=641
 
 import Advances.Generic.SubOrder;
 import org.junit.jupiter.api.Test;
@@ -39,6 +40,7 @@ import java.lang.reflect.Method;
  *      - 3-1) java class loading steps
  *          - 1) java.exe runs, creates .class (字節碼文件), then use java.exe parses and executes .class file (load .class to memory)
  *          - 2) we call in-memory class above as "run-time class", which is a class instance
+ *          - 3) running class instance (in-memory) will be cased in cache (for a period of time)
  *
  *    4) So, `Class clazz = Person.class;`
  *       -> Class is a "run-time class
@@ -110,6 +112,33 @@ public class demo1 {
         showNation.setAccessible(true); // note !!! we need this, so can access private method
         String nation = (String) showNation.invoke(p1, "japan"); // similar as String nation = p1.showNation();
         System.out.println("nation = " + nation);
-
     }
+
+    /**
+     *  How to get Class instance ?
+     *
+     *  method 1) : Class<Person> clazz1 = Person.class;
+     *  method 2) : via running class instance, via getClass()
+     *  method 3) : via Class' static method : forName(String classPath)
+     */
+    @Test
+    public void test3() throws ClassNotFoundException {
+
+        // method 1) : via running class attr (xxx.class)
+        Class<Person> clazz1 = Person.class;
+        System.out.println("clazz1 = " + clazz1);
+
+        // method 2) : via running class instance, via getClass()
+        Person p1 = new Person();
+        Class clazz2 = p1.getClass();
+        System.out.println("clazz2 = " + clazz2);
+
+        // method 3): via Class' static method : forName(String classPath)
+        Class clazz3 = Class.forName("Advances.Reflection.Person");
+        System.out.println("clazz3 = " + clazz3);
+
+        System.out.println("clazz1 == clazz2 ? " + (clazz1 == clazz2) ); // true, NOTE : clazz1, clazz2 are equal
+        System.out.println("clazz1 == clazz3 ? " + (clazz1 == clazz3) ); // true, NOTE : clazz1, clazz3 are equal
+    }
+
 }

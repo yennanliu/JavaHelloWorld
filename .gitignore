@@ -55,6 +55,7 @@ SpringSearchTwitter/src/main/resources/application.properties
 #SpringTwitter
 # SpringTwitter/src/main/resources/application.properties
 # SpringTwitter/src/main/resources/*
-
 SpringTwitter/SpringTwitter.iml
 
+# springProfilesChangeDemo
+springProfilesChangeDemo.iml
