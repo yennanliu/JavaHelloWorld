@@ -794,6 +794,8 @@
     - ClassLoader
             <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_loader1.png"></p>
             <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_loader2.png"></p>
+            <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_loader3.png"></p>
+            <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_loader4.png"></p>
             - Steps
                 - Load -> Link -> Initialize
         - [video](https://www.youtube.com/watch?v=JOeiJ3EVWe4&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=642)
