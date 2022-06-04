@@ -1,8 +1,15 @@
 package Advances.ClassLoader;
 
 // https://www.youtube.com/watch?v=rePjvHVWnQ0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=643
+// https://www.youtube.com/watch?v=bpP8CE98MhE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=644
 
 import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class demo1 {
 
@@ -25,6 +32,39 @@ public class demo1 {
         // "BootstrapClassLoader"
         ClassLoader classLoader3 = String.class.getClassLoader();
         System.out.println(">>> classLoader3 = " + classLoader3); // null
+    }
+
+    /** properties : for load config files */
+    // method 1
+    @Test
+    public void test2() throws Exception {
+
+        Properties pros = new Properties();
+        FileInputStream fis = new FileInputStream("src/main/java/Advances/ClassLoader/jdbc.properties");
+        pros.load(fis);
+
+        String user = pros.getProperty("user");
+        String password = pros.getProperty("password");
+
+        System.out.println("user = " + user);
+        System.out.println("password = " + password);
+    }
+
+    // method 2
+    @Test
+    public void test3() throws Exception {
+
+        Properties pros = new Properties();
+        ClassLoader classLoader = demo1.class.getClassLoader();
+        // will load /src/jdbc.properties
+        InputStream fis = classLoader.getResourceAsStream("jdbc.properties");
+        pros.load(fis);
+
+        String user = pros.getProperty("user");
+        String password = pros.getProperty("password");
+
+        System.out.println("user = " + user);
+        System.out.println("password = " + password);
     }
 
 }
