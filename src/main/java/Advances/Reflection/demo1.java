@@ -6,10 +6,12 @@ package Advances.Reflection;
 // https://www.youtube.com/watch?v=ny4F6MUv0hw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=639
 // https://www.youtube.com/watch?v=Q0NvegR4sNY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=639
 // https://www.youtube.com/watch?v=mH0oEYLXk-U&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=641
+// https://www.youtube.com/watch?v=gqTCsLOIVRk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=642
 
 import Advances.Generic.SubOrder;
 import org.junit.jupiter.api.Test;
 
+import java.lang.annotation.ElementType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -46,6 +48,16 @@ import java.lang.reflect.Method;
  *       -> Class is a "run-time class
  *
  *    5) in Java, everything is an instance
+ *
+ *    6) from which class we can get their Class (via reflection)
+ *       - class (external class, internal static class..)
+ *       - interface
+ *       - []
+ *       - enum
+ *       - annotation (e.g. @interface..)
+ *       - primitive type
+ *       - void
+ *
  */
 
 public class demo1 {
@@ -148,6 +160,28 @@ public class demo1 {
         System.out.println("clazz4 = " + clazz4);
 
         System.out.println("clazz1 == clazz4 ? " + (clazz1 == clazz4) ); // true, NOTE : clazz1, clazz4 are equal
+    }
+
+    /** class instance's structure demo */
+    @Test
+    public void test4(){
+        Class c1 = Object.class;
+        Class c2 = Comparable.class;
+        Class c3 = String[].class;
+        Class c4 = int[][].class;
+        Class c5 = ElementType.class;
+        Class c6 = Override.class;
+        Class c7 = int.class;
+        Class c8 = void.class;
+        Class c9 = Class.class;
+
+        int[] a = new int[10];
+        int[] b = new int[100];
+        Class c10 = a.getClass();
+        Class c11 = b.getClass();
+
+        // if array element type, and dimension are the same, they belong to the same class
+        System.out.println(c10 == c11); // true
     }
 
 }
