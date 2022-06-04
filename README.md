@@ -797,8 +797,8 @@
             <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_loader3.png"></p>
             <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_loader4.png"></p>
             - Steps
-                - Load -> Link -> Initialize
-            - [demo1](./src/main/java/Advances/ClassLoader/demo1.java)
+                - `Load -> Link -> Initialize`
+        - [demo1](./src/main/java/Advances/ClassLoader/demo1.java)
         - [video](https://www.youtube.com/watch?v=JOeiJ3EVWe4&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=642)
         - [faq_JVM.md](https://github.com/yennanliu/CS_basics/blob/master/doc/faq/faq_JVM.md#5-explain-classloader-)
 

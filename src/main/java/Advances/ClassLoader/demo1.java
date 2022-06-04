@@ -25,8 +25,6 @@ public class demo1 {
         // "BootstrapClassLoader"
         ClassLoader classLoader3 = String.class.getClassLoader();
         System.out.println(">>> classLoader3 = " + classLoader3); // null
-
-
     }
 
 }
