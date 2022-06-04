@@ -35,7 +35,7 @@ public class demo1 {
     }
 
     /** properties : for load config files */
-    // method 1
+    // method 1 (load properties)
     @Test
     public void test2() throws Exception {
 
@@ -50,12 +50,13 @@ public class demo1 {
         System.out.println("password = " + password);
     }
 
-    // method 2
+    // method 2 (load properties)
     @Test
     public void test3() throws Exception {
 
         Properties pros = new Properties();
         ClassLoader classLoader = demo1.class.getClassLoader();
+        // TODO : fix below (file path)
         // will load /src/jdbc.properties
         InputStream fis = classLoader.getResourceAsStream("jdbc.properties");
         pros.load(fis);
