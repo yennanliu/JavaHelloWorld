@@ -790,7 +790,14 @@
         - RandomAccessFile
             - [demo1](./src/main/java/Advances/RandomAccessFile/demo1.java) : RandomAccessFile input, and output flow demo
         - NIO
-            - [demo1](./src/main/java/Advances/nio/demo1.java) 
+            - [demo1](./src/main/java/Advances/nio/demo1.java)
+    - ClassLoader
+            <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_loader1.png"></p>
+            <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/class_loader2.png"></p>
+            - Steps
+                - Load -> Link -> Initialize
+        - [video](https://www.youtube.com/watch?v=JOeiJ3EVWe4&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=642)
+        - [faq_JVM.md](https://github.com/yennanliu/CS_basics/blob/master/doc/faq/faq_JVM.md#5-explain-classloader-)
 
     - Internet
         - [demo1](./src/main/java/Advances/internet/demo1.java) : TCP/UDP comparision
