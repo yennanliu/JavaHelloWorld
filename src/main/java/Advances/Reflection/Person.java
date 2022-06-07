@@ -12,7 +12,7 @@ public class Person {
 
     // constructor
     public Person(){
-
+        System.out.println(">>> Person() no param constructor");
     }
 
     public Person(String name, int age){

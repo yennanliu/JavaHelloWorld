@@ -18,7 +18,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- *  Reflection demo 1
+ *  Reflection demo 1 : basic
  *
  *   1) main common API
  *      - java.lang.Class : represent a class
