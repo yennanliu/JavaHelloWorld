@@ -114,7 +114,8 @@
         - [Attr VS Local Variable1 Demo1](./src/main/java/Basics/AttrVSLocalVariable1.java)
     - Methods
         - [Dynamic Numbers of Var1](./src/main/java/Basics/DynamicNumVar1.java)
-
+    - Switch
+        - [Switch Demo1](./src/main/java/Basics/swith/demo1.java)
     - Value Reference/Assignment:
         - Assignment
             - [Value Assignment1](./src/main/java/Basics/ValueAssignment1.java)

@@ -2,8 +2,6 @@ package Advances.Reflection;
 
 // https://www.youtube.com/watch?v=UdZie846898&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=636
 
-import javax.swing.plaf.synth.SynthUI;
-
 public class Person {
 
     // attr
