@@ -2,20 +2,10 @@ package Advances.Reflection;
 
 // https://www.youtube.com/watch?v=hbxp9kCa9zM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=646
 
-import Advances.Generic.SubOrder;
 import org.junit.jupiter.api.Test;
-
-import java.awt.*;
-import java.lang.annotation.ElementType;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 /**
  *   Reflection demo2  : Create running class instance via reflection
- *
- *
  *
  */
 
@@ -47,7 +37,6 @@ public class demo2 {
         Class<Person> clazz2 = Person.class;
         Person p2 = clazz2.newInstance();
         System.out.println(">>> p2 = " + p2);
-
     }
 
 
