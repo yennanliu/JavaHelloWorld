@@ -829,7 +829,7 @@
     - Reflection
         - [Demo 1](src/main/java/Advances/Reflection/demo1.java) : Reflection basic demo
         - [Demo 2](src/main/java/Advances/Reflection/demo2.java) : Create running class instance via reflection
-        - [Demo 3](src/main/java/Advances/Reflection/demo1.java) : reflection dynamic
+        - [Demo 3](src/main/java/Advances/Reflection/demo3.java) : Reflection dynamic
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
