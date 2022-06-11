@@ -831,7 +831,7 @@
         - [Demo 1](src/main/java/Advances/Reflection/demo1.java) : Reflection basic demo
         - [Demo 2](src/main/java/Advances/Reflection/demo2.java) : Create running class instance via reflection
         - [Demo 3](src/main/java/Advances/Reflection/demo3.java) : Reflection dynamic
-        - [Demo 4](src/main/java/Advances/Reflection/demo3.java) : Reflection advance demo
+        - [Demo 4](src/main/java/Advances/Reflection/demo4.java) : Reflection : get Runtime class instance
 
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
