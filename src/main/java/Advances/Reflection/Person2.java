@@ -2,6 +2,8 @@ package Advances.Reflection;
 
 // https://www.youtube.com/watch?v=x6tmNMxMmZo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=648
 
+//@MyAnnotation(value = "hi")
+@MyAnnotation()
 public class Person2 extends Creature<String> implements Comparable<String>, MyInterface{
 
     private String name;
@@ -24,6 +26,7 @@ public class Person2 extends Creature<String> implements Comparable<String>, MyI
         return 0;
     }
 
+    @MyAnnotation(value = "abc")
     @Override
     public void info() {
         System.out.println(">>> I am a person2 ...");
