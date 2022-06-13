@@ -9,7 +9,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 /**
- *   Reflection demo4 : get attr, class name, data type, permission
+ *   Reflection demo4 : get attr, class name, data type, permission (running class instance)
  *
  */
 
