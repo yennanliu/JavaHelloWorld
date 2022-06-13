@@ -44,6 +44,8 @@ public class demo5 {
      *  @XXXyyy
      *  permission-annotation return-type method-name(type1 arg1 ...) throws xxxException(..){}
      *
+     *  1) @XXXyyy has to be with RUNTIME life-cycle (so we can get it via reflection)
+     *
      */
     @Test
     public void test2(){
@@ -76,10 +78,21 @@ public class demo5 {
                 }
             }
 
+            // 6) get throw exceptions
+            Class[] exceptionTypes = m.getExceptionTypes();
+            if ( !(exceptionTypes == null && exceptionTypes.length == 0) ){
+                System.out.println(">>> throws " );
+                for (int i = 0; i < exceptionTypes.length; i++){
+                    if (i == exceptionTypes.length - 1){
+                        System.out.println(exceptionTypes[i].getName());
+                        break;
+                    }
+                    System.out.println(exceptionTypes[i].getName() + ",");
+                }
+            }
+
             System.out.println("================");
-
         }
-
     }
 
 }

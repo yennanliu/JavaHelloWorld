@@ -36,7 +36,7 @@ public class Person2 extends Creature<String> implements Comparable<String>, MyI
         System.out.println(">>> person2 show ..." + msg);
     }
 
-    public String display(String input){
+    public String display(String input) throws NullPointerException, ClassCastException{
         return ">>> person2 input = " + input;
     }
 
