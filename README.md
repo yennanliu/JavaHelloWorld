@@ -835,6 +835,7 @@
         - [Demo 5](src/main/java/Advances/Reflection/demo5.java) : Reflection : get Runtime class instance : method
         - [Demo 6](src/main/java/Advances/Reflection/demo6.java) : Reflection get constructor
         - [Demo 7](src/main/java/Advances/Reflection/demo7.java) : Reflection get interface, packages
+        - [Demo 8](src/main/java/Advances/Reflection/demo8.java) : Reflection get/set attributions
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
