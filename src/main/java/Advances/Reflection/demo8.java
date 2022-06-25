@@ -62,7 +62,6 @@ public class demo8 {
         // set attr val
         name.set(p, "jack");
         System.out.println(name.get(p));
-
     }
 
 }
