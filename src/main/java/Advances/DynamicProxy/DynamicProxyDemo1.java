@@ -37,7 +37,7 @@ class SuperMan implements Human{
 /** class factory */
 class ProxyFactory{
 
-    // get proxy class (代理類) instance via method below (Q1 is resolved)
+    // get proxy class (代理類) instance via method below (Qestion 1 is resolved)
     public static Object getProxyInstance(Object obj){ // obj : proxied class instance
 
         MyInvocationHandler handler = new MyInvocationHandler();
@@ -79,8 +79,8 @@ class MyInvocationHandler implements InvocationHandler{
 /**
  *   In order to use dynamic proxy, we need to sort below :
  *
- *   Q1) how to load proxied class from memory, and init proxy class and its instance dynamically ?
- *   Q2) when call method through proxy class, how to call same method in proxied class dynamically ?
+ *   Qestion 1) how to load proxied class from memory, and init proxy class and its instance dynamically ?
+ *   Qestion 2) when call method through proxy class, how to call same method in proxied class dynamically ?
  */
 public class DynamicProxyDemo1 {
     public static void main(String[] args) {
