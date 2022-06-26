@@ -836,7 +836,9 @@
         - [Demo 6](src/main/java/Advances/Reflection/demo6.java) : Reflection get constructor
         - [Demo 7](src/main/java/Advances/Reflection/demo7.java) : Reflection get interface, packages
         - [Demo 8](src/main/java/Advances/Reflection/demo8.java) : Reflection get/set attributions
-        - [Demo 9](src/main/java/Advances/Reflection/demo9.java) : Reflection Get methods from running class instance (Important!!) 
+        - [Demo 9](src/main/java/Advances/Reflection/demo9.java) : Reflection Get methods from running class instance (Important!!)
+    - Dynamic Proxy (動態代理)
+        - [Demo 1](src/main/java/Advances/DynamicProxy/StaticProxyDemo1.java) : static proxy review/demo
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
