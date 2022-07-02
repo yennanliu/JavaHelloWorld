@@ -842,6 +842,7 @@
         - [DynamicProxyDemo1](src/main/java/Advances/DynamicProxy/DynamicProxyDemo1.java) : dynamic proxy demo
     - Lambda expression
         - [demo1](src/main/java/Advances/Lambda/demo1.java) : Lambda intro, example
+        - [demo2](src/main/java/Advances/Lambda/demo2.java) : Lambda basic form intro 1
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class

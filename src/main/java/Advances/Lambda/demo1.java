@@ -63,7 +63,6 @@ public class demo1 {
 
         int compare3 = com3.compare(100,-1);
         System.out.println(">>> compare3 = " + compare3);
-
     }
 
 }
