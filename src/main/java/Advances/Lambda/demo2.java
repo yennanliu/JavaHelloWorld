@@ -4,6 +4,7 @@ package Advances.Lambda;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 /**
@@ -19,6 +20,7 @@ import java.util.function.Consumer;
  *   3) lambda expression : (6 form)
  *      -> form 1) No param, No return value
  *      -> form 2) need one param, No return value
+ *      -> form 3) omit data type, use type inference (類型推斷)
  *
  *   4) (in java only) lambda essence : as interface instance
  *
@@ -26,7 +28,7 @@ import java.util.function.Consumer;
 
 public class demo2 {
 
-    /** form 1: No param, No return value */
+    /** form 1) No param, No return value */
     @Test
     public void test1(){
 
@@ -49,6 +51,7 @@ public class demo2 {
         };
 
         r2.run();
+
     }
 
     /**  form 2) need one param, No return value  */
@@ -74,6 +77,31 @@ public class demo2 {
 
         con2.accept("yyy");
 
+    }
+
+    /** form 3) omit data type, use type inference (類型推斷) */
+    @Test
+    public void test3(){
+
+        // v1 : lambda expression I
+        Consumer<String> con1 = (String s) -> {
+            System.out.println(s);
+        };
+
+        // v2 : lambda expression II : use type inference
+        Consumer<String> con2 = (s) -> { // omit s's type
+            System.out.println(s);
+        };
+
+        System.out.println("======= Review : type reference ========");
+
+        // example 1
+        ArrayList<String> list = new ArrayList<>(); // ArrayList<>, type reference
+
+        // example 2
+        int[] arr1 = new int[]{1,2,3};
+        // is same as below
+        int[] arr2 = {1,2,3}; // type reference
     }
 
 }
