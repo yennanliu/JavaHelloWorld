@@ -16,8 +16,14 @@ import java.util.function.Consumer;
  *
  *   2) format:
  *      -> : lambda operator
- *      "-> left" : lambda param (abstract method param)
- *      "-> right" : lambda body (overridden abstract method body)
+ *      "-> left" :
+ *          - lambda param (abstract method param)
+ *          - class type can be omitted (type inference (類型推斷))
+ *          - ( if there is only one param, bracket can be omitted as well)
+ *      "-> right" :
+ *          - lambda body (overridden abstract method body)
+ *          - should use a big bracket ({})
+ *          - if only one line lambda body, return, and bracket can be omitted
  *
  *   3) lambda expression : (6 form)
  *      -> form 1) No param, No return value
@@ -27,7 +33,9 @@ import java.util.function.Consumer;
  *      -> form 5) two or more params, have return value
  *      -> form 6) if only one line lambda body, return, and bracket can be omitted
  *
- *   4) (in java only) lambda essence : as interface instance
+ *   4) (in java only) lambda essence : as (functional) interface instance
+ *
+ *   5)
  *
  */
 
