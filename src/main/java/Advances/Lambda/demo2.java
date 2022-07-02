@@ -25,6 +25,7 @@ import java.util.function.Consumer;
  *      -> form 3) omit data type, use type inference (類型推斷)
  *      -> form 4) if only one param, param bracket can be omitted
  *      -> form 5) two or more params, have return value
+ *      -> form 6) if only one line lambda body, return, and bracket can be omitted
  *
  *   4) (in java only) lambda essence : as interface instance
  *
@@ -153,6 +154,34 @@ public class demo2 {
         };
 
         System.out.println(com2.compare(-1, -2));
+
+    }
+
+    /** form 6) if only one line lambda body, return bracket can be omitted */
+    @Test
+    public void test6(){
+
+        // v1 : lambda style
+        Comparator<Integer> com2 = (o1, o2) -> {
+            return o1.compareTo(o2);
+        };
+
+        // v2 : lambda style II
+        Comparator<Integer> com3 = (o1, o2) -> o1.compareTo(o2);
+
+    }
+
+    // form 6) advanced demo
+    @Test
+    public void test7(){
+
+        // v1 : lambda expression
+        Consumer<String> con3 = s -> { // omit s's type
+            System.out.println(s);
+        };
+
+        // v2 : lambda expression II
+        Consumer<String> con4 = s -> System.out.println(s);
 
     }
 
