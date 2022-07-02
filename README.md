@@ -840,6 +840,8 @@
     - Dynamic Proxy (動態代理)
         - [StaticProxyDemo1](src/main/java/Advances/DynamicProxy/StaticProxyDemo1.java) : static proxy review/demo
         - [DynamicProxyDemo1](src/main/java/Advances/DynamicProxy/DynamicProxyDemo1.java) : dynamic proxy demo
+    - Lambda expression
+        - [demo1](src/main/java/Advances/Lambda/demo1.java) : Lambda intro, example
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
