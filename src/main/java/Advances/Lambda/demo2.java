@@ -2,6 +2,7 @@ package Advances.Lambda;
 
 // https://www.youtube.com/watch?v=m_1FoxG9EvY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=667
 // https://www.youtube.com/watch?v=zBCTy62MTfU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=669
+// https://www.youtube.com/watch?v=bI2bXJs28Ok&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=670
 
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,8 @@ import java.util.function.Consumer;
 
 /**
  *  Lambda expression demo 2
+ *
+ *   0) lambda expression = functional interface instance
  *
  *   1) example 1:  (o1, o2) -> Integer.compare(o1, o2);
  *
@@ -33,10 +36,22 @@ import java.util.function.Consumer;
  *      -> form 5) two or more params, have return value
  *      -> form 6) if only one line lambda body, return, and bracket can be omitted
  *
- *   4) (in java only) lambda essence : as (functional) interface instance
+ *   4) (java only) lambda essence : as (functional) interface instance
  *
- *   5)
+ *   5) what's functional interface instance ?
+ *      -> if there is ONLY ONE abstract method declared in an interface
+ *          -> this is a functional interface.
+ *          -> usually has "@FunctionalInterface" annotation (optional)
+ *          -> plz check example : Advances.Lambda.MyInterface.java
+ *      -> can create its instance via lambda expression
+ *      -> java8 defines lots of functional interfaces at java.util.function pkg
  *
+ *   6) OOP VS OOF (函數式編程)
+ *      -> at general OOF, method is 1st tier.
+ *      -> However, in java, lambda expression is STILL an object
+ *      -> it belongs a special type -- functional interface
+ *
+ *   7) all anonymous classes can be implemented via lambda expression
  */
 
 public class demo2 {
