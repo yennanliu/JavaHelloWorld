@@ -4,7 +4,11 @@ package Advances.Lambda;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 /**
  *  Lambda expression demo 3
@@ -51,6 +55,47 @@ public class demo3 {
 
     public void happyTime(double money, Consumer<Double> con){
         con.accept(money);
+    }
+
+    @Test
+    public void test2(){
+
+        // V1 : tradition way
+        List<String> list = Arrays.asList("UK", "US", "JP", "TW", "UN");
+        List<String> r1 = filterString(list, new Predicate<String>() {
+            @Override
+            public boolean test(String s) {
+                return s.contains("U");
+            }
+        });
+
+        System.out.println("r1 = " + r1);
+
+        System.out.println("=====================");
+
+        // V2 : lambda expression
+        List<String> r2 = filterString(list, s -> {return s.contains("U");});
+        System.out.println("r2 = " + r2);
+
+        // V3 : lambda expression II
+        List<String> r3 = filterString(list, s ->  s.contains("U"));
+        System.out.println("r3 = " + r3);
+
+    }
+
+    // based on condition, filter out string in array,
+    // the condition is defined by Predicate method
+    public List<String> filterString(List<String> list, Predicate<String> pre){
+
+        ArrayList<String> filterList = new ArrayList<>();
+
+        for (String s : list){
+            if (pre.test(s)){
+                filterList.add(s);
+            }
+        }
+
+        return filterList;
     }
 
 }
