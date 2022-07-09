@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 /**
  *  Lambda expression demo 3
  *
- *   - Java default 4 functional interface
+ *   - Java's default 4 functional interfaces
  *
  *      - 1) Consumer interface :
  *          Consumer<T> void accept(T t)
@@ -24,7 +24,7 @@ import java.util.function.Predicate;
  *      - 3) Function interface:
  *          Function<T, R> R Apply(T t)
  *
- *      - 4) Predicate interface:
+ *      - 4) Predicate (斷言) interface:
  *          Predicate<T> boolean test(T t)
  */
 
@@ -83,6 +83,7 @@ public class demo3 {
 
     }
 
+    // method for test
     // based on condition, filter out string in array,
     // the condition is defined by Predicate method
     public List<String> filterString(List<String> list, Predicate<String> pre){
