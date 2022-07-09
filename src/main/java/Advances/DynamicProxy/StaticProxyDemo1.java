@@ -49,13 +49,13 @@ class NikeClothFactory implements ClothFactory{
 public class StaticProxyDemo1 {
     public static void main(String[] args) {
 
-        // 1) create "proxied class" (被代理類) instance
+        // step 1 : create "proxied class" (被代理類) instance
         NikeClothFactory nike = new NikeClothFactory();
 
-        // 2) create "proxy class" (代理類) instance
+        // step 2 : create "proxy class" (代理類) instance
         ProxyClothFactory proxyClothFactory = new ProxyClothFactory(nike);
 
-        // 3) run
+        // step 3 : run
         proxyClothFactory.produceCloth();
     }
 

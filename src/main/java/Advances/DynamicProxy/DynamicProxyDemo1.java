@@ -4,7 +4,6 @@ package Advances.DynamicProxy;
 
 /**
  *  Dynamic proxy demo 1
- *
  */
 
 import java.lang.reflect.InvocationHandler;
@@ -37,7 +36,7 @@ class SuperMan implements Human{
 /** class factory */
 class ProxyFactory{
 
-    // get proxy class (代理類) instance via method below (Qestion 1 is resolved)
+    // get proxy class (代理類) instance via method below (Question 1 is resolved)
     public static Object getProxyInstance(Object obj){ // obj : proxied class instance
 
         MyInvocationHandler handler = new MyInvocationHandler();
@@ -69,7 +68,7 @@ class MyInvocationHandler implements InvocationHandler{
          *   -> called by proxied class' (被代理類)
          *   -> obj : proxied class' (被代理類)
          */
-        Object returnedVal =  method.invoke(obj, args);
+        Object returnedVal = method.invoke(obj, args);
         // above method's return as invoke() 's return value
         return returnedVal;
     }
@@ -79,8 +78,8 @@ class MyInvocationHandler implements InvocationHandler{
 /**
  *   In order to use dynamic proxy, we need to sort below :
  *
- *   Qestion 1) how to load proxied class from memory, and init proxy class and its instance dynamically ?
- *   Qestion 2) when call method through proxy class, how to call same method in proxied class dynamically ?
+ *   Question 1) how to load proxied class from memory, and init proxy class and its instance dynamically ?
+ *   Question 2) when call method through proxy class, how to call same method in proxied class dynamically ?
  */
 public class DynamicProxyDemo1 {
     public static void main(String[] args) {
