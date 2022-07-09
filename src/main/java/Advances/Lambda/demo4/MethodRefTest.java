@@ -8,9 +8,21 @@ import java.util.function.Consumer;
 
 /**
  *  Method reference demo 1
+ *
  *      1) use cases
  *          -> when op we want to pass lambda expression already been implemented
  *
+ *      2) Method reference is "lambda expression" essentially
+ *         -> (lambda expression is implementation of functional interface)
+ *         -> so Method reference is also implementation of functional interface
+ *
+ *      3) syntax
+ *        -> class(or instance) :: method-class
+ *
+ *      4) 3 cases
+ *          -> case 1:  instance :: non-static-method
+ *          -> case 2:  class :: static-method
+ *          -> case 3:  class: non-static-method
  */
 
 public class MethodRefTest {
