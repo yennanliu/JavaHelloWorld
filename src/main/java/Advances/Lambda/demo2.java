@@ -19,7 +19,7 @@ import java.util.function.Consumer;
  *
  *   2) format:
  *      -> : lambda operator
- *      "-> left" :
+ *      "left -> " :
  *          - lambda param (abstract method param)
  *          - class type can be omitted (type inference (類型推斷))
  *          - ( if there is only one param, bracket can be omitted as well)
@@ -46,7 +46,7 @@ import java.util.function.Consumer;
  *      -> can create its instance via lambda expression
  *      -> java8 defines lots of functional interfaces at java.util.function pkg
  *
- *   6) OOP VS OOF (函數式編程)
+ *   6) OOP (物件導向編程) VS OOF (函數式編程)
  *      -> at general OOF, method is 1st tier.
  *      -> However, in java, lambda expression is STILL an object
  *      -> it belongs a special type -- functional interface
@@ -117,19 +117,19 @@ public class demo2 {
         };
 
         // v2 : lambda expression II : use type inference
-        Consumer<String> con2 = (s) -> { // omit s's type
+        Consumer<String> con2 = (s) -> { // omit "s" 's type
             System.out.println(s);
         };
 
-        System.out.println("======= Review : type reference ========");
+        System.out.println("======= Review : type inference ========");
 
         // example 1
-        ArrayList<String> list = new ArrayList<>(); // ArrayList<>, type reference
+        ArrayList<String> list = new ArrayList<>(); // ArrayList<>, type inference
 
         // example 2
         int[] arr1 = new int[]{1,2,3};
         // is same as below
-        int[] arr2 = {1,2,3}; // type reference
+        int[] arr2 = {1,2,3}; // type inference
     }
 
     /** form 4) if only one param, param bracket can be omitted */
