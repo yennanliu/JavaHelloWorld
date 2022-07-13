@@ -26,6 +26,28 @@ public class demo4 {
         }
     }
 
+    /** values(), ordinal(), and valueOf() demo */
+    @Test
+    public void test3(){
+
+        Car[] arr = Car.values();
+
+        for (Car c : arr){
+            System.out.println(">>> c = " + c);
+        }
+
+        // get enum val via valueOf(), if key not existed, throw IllegalArgumentException
+        System.out.println(Car.valueOf("Benz"));
+        System.out.println(Car.valueOf("Bmw"));
+
+        try{
+            System.out.println(Car.valueOf("xx"));
+        }catch (Exception e){
+            System.out.println("key not existed");
+        }
+
+    }
+
     public enum Color1 {
         RED("紅色", 1), GREEN("綠色", 2), BLANK("白色", 3), YELLOW("黃色", 4);
 
@@ -48,8 +70,8 @@ public class demo4 {
     public enum Car{
 
         Benz("BENZ", "benz"),
-        BMW("BMW", "bmw"),
-        TESLA("TESLA", "tesla");
+        Bmw("BMW", "bmw"),
+        Tesla("TESLA", "tesla");
 
         private String nominalName;
         private String name;
