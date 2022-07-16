@@ -2,11 +2,13 @@ package Advances.Lambda.demo4;
 
 // https://www.youtube.com/watch?v=dushR-wm_E8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=672
 // https://www.youtube.com/watch?v=jVfmtHhrKgA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=672
+// https://www.youtube.com/watch?v=0lufoYMLsF4&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=674
 
 import org.junit.jupiter.api.Test;
 
 import java.io.PrintStream;
 import java.util.Comparator;
+import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -127,14 +129,40 @@ public class MethodRefTest {
         System.out.println(func2.apply(10.01));
     }
 
+    /**
+     *   Example 5  (a bit hard)
+     *    -> class :: instance-method
+     *    -> comparator's int compare(T t1, T t2)
+     *    -> String's t1.compareTo(t2)
+     *    -> (if 1st arg (xx) is xx.compareTo, then we can use Method reference)
+     */
     @Test
     public void test5(){
 
+        // V1 : lambda expression
+        Comparator<String> com1 = (s1, s2) -> s1.compareTo(s2);
+        System.out.println(com1.compare("abc", "de"));
+
+        // V2 : Method reference
+        Comparator<String> com2 = String :: compareTo;
+        System.out.println(com2.compare("abc", "de"));
     }
 
+    /**
+     *   Example 6 (a bit hard)
+     *      -> BiPredicate's boolean test(T t1, T t2);
+     *      -> String's boolean t1.equals(t2)
+     */
     @Test
     public void test6(){
 
+        // V1 : lambda expression
+        BiPredicate<String, String> pre1 = (s1, s2) -> s1.equals(s2);
+        System.out.println(pre1.test("abc", "abc"));
+
+        // V2 : Method reference
+        BiPredicate<String, String> pre2 = String :: equals;
+        System.out.println(pre2.test("abc", "abc"));
     }
 
 }
