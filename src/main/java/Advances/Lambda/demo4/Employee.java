@@ -19,6 +19,15 @@ public class Employee {
         this.salary = salary;
     }
 
+    public Employee(Integer id) {
+        this.id = id;
+    }
+
+    public Employee(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }
@@ -49,6 +58,16 @@ public class Employee {
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
     }
 
 }
