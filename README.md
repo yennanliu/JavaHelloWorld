@@ -844,7 +844,7 @@
         - [demo1](src/main/java/Advances/Lambda/demo1.java) : Lambda intro, example
         - [demo2](src/main/java/Advances/Lambda/demo2.java) : `Lambda form 1-6` demo
         - [demo3](src/main/java/Advances/Lambda/demo3.java) : functional interface 1
-        - [demo4](src/main/java/Advances/Lambda/demo4) : method reference demo
+        - [MethodRefTest](src/main/java/Advances/Lambda/demo4/MethodRefTest.java) : method reference demo
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
