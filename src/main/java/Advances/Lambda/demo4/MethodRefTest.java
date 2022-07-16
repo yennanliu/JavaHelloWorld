@@ -149,7 +149,7 @@ public class MethodRefTest {
     }
 
     /**
-     *   Example 6 (a bit hard)
+     *   Example 6
      *      -> BiPredicate's boolean test(T t1, T t2);
      *      -> String's boolean t1.equals(t2)
      */
@@ -163,6 +163,27 @@ public class MethodRefTest {
         // V2 : Method reference
         BiPredicate<String, String> pre2 = String :: equals;
         System.out.println(pre2.test("abc", "abc"));
+    }
+
+    /**
+     *   Example 7
+     *      -> Function's R apply(T t)
+     *      -> Employee's String getName():
+     */
+    @Test
+    public void test7(){
+
+        Employee e1 = new Employee(101, "AMY", 17, 2000 );
+
+        // V1 : lambda expression
+        Function<Employee, String> func1 = e -> e.getName();
+        System.out.println(func1.apply(e1));
+
+        System.out.println("======================");
+
+        // V2 : Method reference
+        Function<Employee, String> func2 = Employee :: getName;
+        System.out.println(func2.apply(e1));
     }
 
 }
