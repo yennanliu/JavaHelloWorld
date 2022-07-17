@@ -846,6 +846,8 @@
         - [demo3](src/main/java/Advances/Lambda/demo3.java) : functional interface 1
         - [MethodRefTest](src/main/java/Advances/Lambda/demo4/MethodRefTest.java) : method reference demo
         - [ConstructorRefTest](src/main/java/Advances/Lambda/demo4/ConstructorRefTest.java) : Constructor reference demo
+    - Stream API
+        - [demo1](src/main/java/Advances/StreamAPI/demo1.java) : StreamAPI intro
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
