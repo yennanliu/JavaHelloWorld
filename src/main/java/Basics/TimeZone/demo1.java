@@ -27,11 +27,13 @@ public class demo1 {
         String result = "";
         if (hours > 0) {
             //result = String.format("(GMT+%d:%02d) %s", hours, minutes, tz.getID());
-            result = String.format("GMT+%d -> %s %s", hours, tz.getID(), tz.getDisplayName().replaceAll("\\s+","_"));
+            //result = String.format("GMT+%d -> %s %s", hours, tz.getID(), tz.getDisplayName().replaceAll("\\s+","_"));
+            result = String.format("%s  (\"%s\", \"GMT+%d\") ,", tz.getDisplayName().replaceAll("\\s+","_").replaceAll("-", "_"), tz.getID(), hours);
 
         } else {
             //result = String.format("(GMT%d:%02d) %s", hours, minutes, tz.getID());
-            result = String.format("GMT+%d -> %s %s", hours, tz.getID(), tz.getDisplayName().replaceAll("\\s+","_"));
+            //result = String.format("GMT+%d -> %s %s", hours, tz.getID(), tz.getDisplayName().replaceAll("\\s+","_"));
+            result = String.format("%s  (\"%s\", \"GMT+%d\") ,", tz.getDisplayName().replaceAll("\\s+","_").replaceAll("-", "_"), tz.getID(), hours);
 
         }
 
