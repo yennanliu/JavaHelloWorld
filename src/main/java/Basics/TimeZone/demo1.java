@@ -18,7 +18,8 @@ public class demo1 {
 
             String name = getTZName(TimeZone.getTimeZone(id));
 
-            if (!hash_Set.contains(name) && !name.contains("GMT")){
+            //if (!hash_Set.contains(name) && !name.contains("GMT")){
+            if (true){
                 String res = displayTimeZone(TimeZone.getTimeZone(id));
 
                 if (!res.contains("+-")){
@@ -44,16 +45,24 @@ public class demo1 {
         if (hours > 0) {
             //result = String.format("(GMT+%d:%02d) %s", hours, minutes, tz.getID());
             //result = String.format("GMT+%d -> %s %s", hours, tz.getID(), tz.getDisplayName().replaceAll("\\s+","_"));
+//            result = String.format("%s  (\"%s\", \"GMT+%d\") ,",
+//                    tz.getDisplayName().replaceAll("\\s+","_").replaceAll("-", "_").replaceAll("&", "_"),
+//                    tz.getID(),
+//                    hours);
             result = String.format("%s  (\"%s\", \"GMT+%d\") ,",
-                    tz.getDisplayName().replaceAll("\\s+","_").replaceAll("-", "_").replaceAll("&", "_"),
+                    tz.getID().replaceAll("/","_").replaceAll("-", "_").replaceAll("&", "_"),
                     tz.getID(),
                     hours);
 
         } else {
             //result = String.format("(GMT%d:%02d) %s", hours, minutes, tz.getID());
             //result = String.format("GMT+%d -> %s %s", hours, tz.getID(), tz.getDisplayName().replaceAll("\\s+","_"));
+//            result = String.format("%s  (\"%s\", \"GMT+%d\") ,",
+//                    tz.getDisplayName().replaceAll("\\s+","_").replaceAll("-", "_").replaceAll("&", "_"),
+//                    tz.getID(),
+//                    hours);
             result = String.format("%s  (\"%s\", \"GMT+%d\") ,",
-                    tz.getDisplayName().replaceAll("\\s+","_").replaceAll("-", "_").replaceAll("&", "_"),
+                    tz.getID().replaceAll("/","_").replaceAll("-", "_").replaceAll("&", "_"),
                     tz.getID(),
                     hours);
         }
