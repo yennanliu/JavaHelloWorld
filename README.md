@@ -1,5 +1,5 @@
 # JavaHelloWorld
-> Java basic, tutorial demo
+> `Java` basic demo & tutorial
 
 ## Relative projects
 - [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java intro project
@@ -878,7 +878,7 @@ java -jar target/gs-maven-0.1.0.jar
 # Test
 mvn test
 ```
-
+    
 ### Ref
 <details>
 <summary>Ref</summary>
