@@ -15,7 +15,6 @@ public class demo1 {
         }
 
         System.out.println("\nTotal TimeZone ID " + ids.length);
-
     }
 
     private static String displayTimeZone(TimeZone tz) {
@@ -27,9 +26,11 @@ public class demo1 {
 
         String result = "";
         if (hours > 0) {
-            result = String.format("(GMT+%d:%02d) %s", hours, minutes, tz.getID());
+            //result = String.format("(GMT+%d:%02d) %s", hours, minutes, tz.getID());
+            result = String.format("GMT+%d -> %s", hours, tz.getID());
         } else {
-            result = String.format("(GMT%d:%02d) %s", hours, minutes, tz.getID());
+            //result = String.format("(GMT%d:%02d) %s", hours, minutes, tz.getID());
+            result = String.format("GMT%d -> %s", hours, tz.getID());
         }
 
         return result;
