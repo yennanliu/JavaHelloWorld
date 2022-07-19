@@ -2,6 +2,8 @@ package Basics.TimeZone;
 
 // https://mkyong.com/java/java-display-list-of-timezone-with-gmt/
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
@@ -10,19 +12,26 @@ public class demo1 {
     public static void main(String[] args) {
 
         String[] ids = TimeZone.getAvailableIDs();
+        Set<String> hash_Set = new HashSet<String>();
+
         for (String id : ids) {
-            System.out.println(displayTimeZone(TimeZone.getTimeZone(id)));
+            String name = getTZName(TimeZone.getTimeZone(id));
+            if (!hash_Set.contains(name)){
+                System.out.println(displayTimeZone(TimeZone.getTimeZone(id)));
+                hash_Set.add(name);
+            }
         }
 
         System.out.println("\nTotal TimeZone ID " + ids.length);
     }
 
+    public static String getTZName(TimeZone tz){
+        return tz.getDisplayName().replaceAll("\\s+","_").replaceAll("-", "_");
+    }
+
     private static String displayTimeZone(TimeZone tz) {
 
         long hours = TimeUnit.MILLISECONDS.toHours(tz.getRawOffset());
-        long minutes = TimeUnit.MILLISECONDS.toMinutes(tz.getRawOffset()) - TimeUnit.HOURS.toMinutes(hours);
-        // avoid -4:-30 issue
-        minutes = Math.abs(minutes);
 
         String result = "";
         if (hours > 0) {
