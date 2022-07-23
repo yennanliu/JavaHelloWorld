@@ -9,6 +9,7 @@ import Advances.Lambda.demo4.EmployeeData;
 import org.junit.jupiter.api.Test;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -71,9 +72,13 @@ public class demo2 {
 
     /**
      *  demo 2
-     *      -> map(Function f) : receive a func as param, transform elements with it
-     *      -> flatMap(Function f) : receive a func as param, transform elements with it
+     *      -> map(Function f) : receive a func as param,
+     *                           transform elements with it
      *
+     *      -> flatMap(Function f) : receive a func as param,
+     *                               transform elements with it
+     *                               if there are sub-streams
+     *                               will put all of them into original stream ("flat")
      */
     @Test
     public void test2(){
@@ -94,6 +99,52 @@ public class demo2 {
         Stream<String> namesStream = employees.stream().map(Employee::getName);
         namesStream.filter(name -> name.length() > 3).forEach(System.out::println);
 
+        System.out.println("================");
+        
+        // flatMap demo 2
+        Stream<Stream<Character>> streamStream = list.stream().map(demo2::fromStringToStream);
+        streamStream.forEach(System.out::println);
+
+    }
+
+    /** transform char in string to stream */
+    public static Stream<Character> fromStringToStream(String str){
+
+        ArrayList<Character> list = new ArrayList<>();
+        for(Character c : str.toCharArray()){
+            list.add(c);
+        }
+        return list.stream();
+    }
+
+    /**
+     *  Review :
+     *     -> list.add() VS list.addAll()
+     *     -> similar as map VS flatMap
+     */
+    @Test
+    public void test3(){
+
+        ArrayList list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+
+        ArrayList list1_ = new ArrayList<>();
+        list1_.add(1);
+        list1_.add(2);
+        list1_.add(3);
+
+        ArrayList list2 = new ArrayList<>();
+        list2.add(4);
+        list2.add(5);
+        list2.add(6);
+
+        list1.add(list2);
+        System.out.println("list1 = " + list1);
+
+        list1_.addAll(list2);
+        System.out.println("list1_ = " + list1_);
     }
 
 }
