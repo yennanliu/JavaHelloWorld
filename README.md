@@ -848,6 +848,7 @@
         - [ConstructorRefTest](src/main/java/Advances/Lambda/demo4/ConstructorRefTest.java) : Constructor reference demo
     - Stream API
         - [demo1](src/main/java/Advances/StreamAPI/demo1.java) : StreamAPI intro
+        - [demo2](src/main/java/Advances/StreamAPI/demo2.java) : Stream intermedia op intro
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
