@@ -1,13 +1,17 @@
 package Advances.StreamAPI;
 
 // https://www.youtube.com/watch?v=vL23nxrQWuI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=678
+// https://www.youtube.com/watch?v=jPjOW6f1_EA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=678
 
 import Advances.Lambda.demo4.Employee;
 import Advances.Lambda.demo4.EmployeeData;
 
 import org.junit.jupiter.api.Test;
+import org.omg.CORBA.PUBLIC_MEMBER;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Stream;
 
 /**
@@ -15,7 +19,7 @@ import java.util.stream.Stream;
  *
  *   Stream intermedia op
  *      1) filter, sampling
- *      2)
+ *      2) mapping
  *      3)
  */
 
@@ -63,6 +67,33 @@ public class demo2 {
         list.add(new Employee(1001, "jack", 34, 700.1));
 
         list.stream().distinct().forEach(System.out::println);
+    }
+
+    /**
+     *  demo 2
+     *      -> map(Function f) : receive a func as param, transform elements with it
+     *      -> flatMap(Function f) : receive a func as param, transform elements with it
+     *
+     */
+    @Test
+    public void test2(){
+
+        // init
+        List<String> list = Arrays.asList("AA", "aa", "bb","cc", "dd");
+        Stream<String> stream = list.stream();
+
+        List<Employee> employees = EmployeeData.getEmployees();
+
+        // map demo 1
+        stream.map(str -> str.toUpperCase()).forEach(System.out::println);
+
+        System.out.println("================");
+
+        // map demo 2 : filter age > 3
+        //employees.stream().map(str -> str.getAge() > 3).map(Employee::getName);
+        Stream<String> namesStream = employees.stream().map(Employee::getName);
+        namesStream.filter(name -> name.length() > 3).forEach(System.out::println);
+
     }
 
 }
