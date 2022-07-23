@@ -100,11 +100,16 @@ public class demo2 {
         namesStream.filter(name -> name.length() > 3).forEach(System.out::println);
 
         System.out.println("================");
-        
-        // flatMap demo 2
+
+        // flatMap demo 1
+        // if still use map (not use flatMap)
         Stream<Stream<Character>> streamStream = list.stream().map(demo2::fromStringToStream);
         streamStream.forEach(System.out::println);
 
+        System.out.println("================");
+
+        Stream<Character> characterStream = list.stream().flatMap(demo2::fromStringToStream);
+        characterStream.forEach(System.out::println);
     }
 
     /** transform char in string to stream */
