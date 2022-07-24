@@ -19,6 +19,7 @@ import java.util.stream.Stream;
  *  Stream API demo 2
  *
  *   Stream intermedia op
+ *
  *      1) filter, sampling
  *      2) mapping
  *      3) ordering
@@ -203,7 +204,7 @@ public class demo2 {
                     }
                 }
         ).forEach(System.out::println);
-        
+
     }
 
 }
