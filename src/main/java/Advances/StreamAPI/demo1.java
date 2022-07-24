@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 /**
  *  Stream API demo 1
- *  
+ *
  *     stream initiation op
  *
  *    1) Stream API : for data manipulation (deal with CPU)
