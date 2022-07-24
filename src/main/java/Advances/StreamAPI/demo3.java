@@ -4,11 +4,9 @@ package Advances.StreamAPI;
 
 import Advances.Lambda.demo4.Employee;
 import Advances.Lambda.demo4.EmployeeData;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -99,12 +97,12 @@ public class demo3 {
 
         System.out.println("===================");
 
-        // forEach 1 : with stream
+        // forEach demo 1 : with stream
         list.stream().forEach(System.out::println);
 
         System.out.println("===================");
 
-        // forEach 1 : with collection
+        // forEach demo 2 : with collection
         list.forEach(System.out::println);
     }
 
