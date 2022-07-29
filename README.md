@@ -850,6 +850,7 @@
         - [demo1](src/main/java/Advances/StreamAPI/demo1.java) : Stream `initiation` op demo
         - [demo2](src/main/java/Advances/StreamAPI/demo2.java) : Stream `intermedia` op demo
         - [demo3](src/main/java/Advances/StreamAPI/demo3.java) : Stream `terminate` op demo
+        - [demo4](src/main/java/Advances/StreamAPI/demo4.java) : Stream reduce op demo
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
