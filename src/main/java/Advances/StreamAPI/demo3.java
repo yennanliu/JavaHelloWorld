@@ -1,6 +1,7 @@
 package Advances.StreamAPI;
 
 // https://www.youtube.com/watch?v=yjiiB2d4Dic&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=680
+// https://www.youtube.com/watch?v=o1wJWA_R9i8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=683
 
 import Advances.Lambda.demo4.Employee;
 import Advances.Lambda.demo4.EmployeeData;
@@ -9,6 +10,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -29,6 +32,7 @@ import java.util.stream.Stream;
  *              (for classType t : x){
  *                  ....
  *              }
+ *      10) collect(Collector c) : via Collector method, transform stream into other form, and return it
  */
 
 public class demo3 {
@@ -104,6 +108,32 @@ public class demo3 {
 
         // forEach demo 2 : with collection
         list.forEach(System.out::println);
+    }
+
+    /**  collect(Collector c)
+     *
+     *  -> get all employees who has salary > 6000,
+     *     return result as List or Set
+     *
+     *   Note !!!
+     *      -> we use Collectors.toList() here
+     */
+    @Test
+    public void test3(){
+
+        // init
+        List<Employee> employees = EmployeeData.getEmployees();
+        // get as List<T>
+        List<Employee> employeeList = employees.stream().filter(e -> e.getSalary() > 6000).collect(Collectors.toList());
+
+        employeeList.forEach(System.out::println);
+
+        System.out.println("===================");
+
+        // get as Set<T>
+        Set<Employee> employeeSet = employees.stream().filter(e -> e.getSalary() > 6000).collect(Collectors.toSet());
+
+        employeeSet.forEach(System.out::println);
     }
 
 }

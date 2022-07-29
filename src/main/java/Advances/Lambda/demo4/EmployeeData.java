@@ -15,8 +15,9 @@ public class EmployeeData {
         list.add(new Employee(1001, "jack", 34, 700.1));
         list.add(new Employee(1002, "ryu", 3, 900));
         list.add(new Employee(1003, "yen", 10, 1001.1));
-        list.add(new Employee(1004, "ken", 99, 0.1));
-        list.add(new Employee(1004, "ken", 99, 0.1));
+        list.add(new Employee(1004, "ken", 99, 9000));
+        list.add(new Employee(1004, "ken", 99, 100000));
+        list.add(new Employee(1005, "ken", 99, 7000));
 
         return list;
     }
