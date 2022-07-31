@@ -851,6 +851,10 @@
         - [demo2](src/main/java/Advances/StreamAPI/demo2.java) : Stream `intermedia` op demo
         - [demo3](src/main/java/Advances/StreamAPI/demo3.java) : Stream `terminate` op demo
         - [demo4](src/main/java/Advances/StreamAPI/demo4.java) : Stream reduce op demo
+    - Optional
+        - [demo1](src/main/java/Advances/Optional/demo1.java) : Optional demo 1
+        - <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/optional_1.png"></p>
+        - <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/optional_2.png"></p>
 
 - [JavaHelloWorld](./src/main/java/Advances) : Advanced data structure
     - String class
