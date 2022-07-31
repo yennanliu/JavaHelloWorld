@@ -6,7 +6,7 @@ public class Boy {
 
     private Girl girl;
 
-    public Boy(Girl girl) {
+    public Boy(Girl ann) {
         this.girl = girl;
     }
 
