@@ -2,6 +2,7 @@ package Basics.TimeZone;
 
 // https://mkyong.com/java/java-display-list-of-timezone-with-gmt/
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TimeZone;
@@ -12,6 +13,7 @@ public class demo1 {
     public static void main(String[] args) {
 
         String[] ids = TimeZone.getAvailableIDs();
+                ;
         Set<String> hash_Set = new HashSet<String>();
 
         for (String id : ids) {
@@ -21,10 +23,7 @@ public class demo1 {
             //if (!hash_Set.contains(name) && !name.contains("GMT")){
             if (true){
                 String res = displayTimeZone(TimeZone.getTimeZone(id));
-
-                if (!res.contains("+-")){
-                    System.out.println(displayTimeZone(TimeZone.getTimeZone(id)));
-                }
+                System.out.println(displayTimeZone(TimeZone.getTimeZone(id)));
                 hash_Set.add(name);
 
             }
@@ -50,7 +49,7 @@ public class demo1 {
 //                    tz.getID(),
 //                    hours);
             result = String.format("%s  (\"%s\", \"GMT+%d\") ,",
-                    tz.getID().replaceAll("/","_").replaceAll("-", "_").replaceAll("&", "_"),
+                    tz.getID().replaceAll("/","_").replaceAll("-", "_").replaceAll("&", "_").toUpperCase(),
                     tz.getID(),
                     hours);
 
@@ -62,12 +61,13 @@ public class demo1 {
 //                    tz.getID(),
 //                    hours);
             result = String.format("%s  (\"%s\", \"GMT+%d\") ,",
-                    tz.getID().replaceAll("/","_").replaceAll("-", "_").replaceAll("&", "_"),
+                    tz.getID().replaceAll("/","_").replaceAll("-", "_").replaceAll("&", "_").toUpperCase(),
                     tz.getID(),
                     hours);
         }
 
-        return result;
+        // NOTE : fix "UTC+-3" to "UTC-3"
+        return result.replaceAll("\\+-", "-");
     }
 
 }
