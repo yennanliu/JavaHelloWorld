@@ -13,7 +13,7 @@ public class demo2 {
                        .replaceAll("\\+-", "")
                        .replaceAll("\\++", "");
 
-        System.out.println(Integer. valueOf(val));
+        System.out.println(Integer.valueOf(val));
     }
 
 }
