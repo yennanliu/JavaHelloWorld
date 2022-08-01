@@ -840,10 +840,10 @@
     - Dynamic Proxy (動態代理)
         - static proxy
             - [StaticProxyDemo1](src/main/java/Advances/DynamicProxy/StaticProxyDemo1.java) : static proxy review/demo
-            - [StaticProxyDemo2](src/main/java/Advances/DynamicProxy/StaticProxyDemo1.java) : static proxy review/demo 2
+            - [StaticProxyDemo2](src/main/java/Advances/DynamicProxy/StaticProxyDemo2.java) : static proxy review/demo 2
         - dynamic proxy
             - [DynamicProxyDemo1](src/main/java/Advances/DynamicProxy/DynamicProxyDemo1.java) : dynamic proxy demo1
-            - [DynamicProxyDemo2](src/main/java/Advances/DynamicProxy/DynamicProxyDemo1.java) : dynamic proxy demo2
+            - [DynamicProxyDemo2](src/main/java/Advances/DynamicProxy/DynamicProxyDemo2.java) : dynamic proxy demo2
     - Lambda expression
         - [demo1](src/main/java/Advances/Lambda/demo1.java) : Lambda intro, example
         - [demo2](src/main/java/Advances/Lambda/demo2.java) : `Lambda form 1-6` demo
