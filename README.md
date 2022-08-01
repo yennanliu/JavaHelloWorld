@@ -838,8 +838,12 @@
         - [Demo 8](src/main/java/Advances/Reflection/demo8.java) : Reflection get/set attributions
         - [Demo 9](src/main/java/Advances/Reflection/demo9.java) : Reflection Get methods from running class instance (Important!!)
     - Dynamic Proxy (動態代理)
-        - [StaticProxyDemo1](src/main/java/Advances/DynamicProxy/StaticProxyDemo1.java) : static proxy review/demo
-        - [DynamicProxyDemo1](src/main/java/Advances/DynamicProxy/DynamicProxyDemo1.java) : dynamic proxy demo
+        - static proxy
+            - [StaticProxyDemo1](src/main/java/Advances/DynamicProxy/StaticProxyDemo1.java) : static proxy review/demo
+            - [StaticProxyDemo2](src/main/java/Advances/DynamicProxy/StaticProxyDemo1.java) : static proxy review/demo 2
+        - dynamic proxy
+            - [DynamicProxyDemo1](src/main/java/Advances/DynamicProxy/DynamicProxyDemo1.java) : dynamic proxy demo1
+            - [DynamicProxyDemo2](src/main/java/Advances/DynamicProxy/DynamicProxyDemo1.java) : dynamic proxy demo2
     - Lambda expression
         - [demo1](src/main/java/Advances/Lambda/demo1.java) : Lambda intro, example
         - [demo2](src/main/java/Advances/Lambda/demo2.java) : `Lambda form 1-6` demo

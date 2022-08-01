@@ -2,6 +2,8 @@ package Advances.DynamicProxy;
 
 // https://www.youtube.com/watch?v=lpzuJ0zYO9A&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=661
 
+/** static proxy demo 1 */
+
 /**
  *  Review : static proxy
  *
