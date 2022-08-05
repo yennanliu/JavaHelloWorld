@@ -5,6 +5,10 @@ public class User {
 
     private String location;
 
+    public User(){
+
+    }
+
     public User(String name, String location) {
         this.name = name;
         this.location = location;
