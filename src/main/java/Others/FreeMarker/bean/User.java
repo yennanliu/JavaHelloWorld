@@ -1,4 +1,4 @@
-package Others.FreeMarker;
+package Others.FreeMarker.bean;
 
 public class User {
     private String name;
