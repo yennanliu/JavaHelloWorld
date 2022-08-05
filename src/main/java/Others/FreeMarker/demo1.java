@@ -7,8 +7,10 @@ import Others.FreeMarker.bean.Book;
 import Others.FreeMarker.bean.User;
 import Others.FreeMarker.bean.User2;
 
+import Others.FreeMarker.utls.FileUtil;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.file.Path;
@@ -80,7 +82,9 @@ public class demo1 {
         //透過StringWriter的toString()取得內容，後續可以進行處理
         System.out.println(sw);
 
-        // save
+        // save to html
+        FileUtil fileUtil = new FileUtil();
+        fileUtil.saveFile(sw, "helloworld2.html");
     }
 
     @Test
@@ -107,6 +111,9 @@ public class demo1 {
 
         //透過StringWriter的toString()取得內容，後續可以進行處理
         System.out.println(sw);
+
+        FileUtil fileUtil = new FileUtil();
+        fileUtil.saveFile(sw, "helloworld3.html");
     }
 
     private static User2 prepareData() {
