@@ -533,6 +533,8 @@
             - safety -> prevent actual class to be visited directly
             - remote proxy -> RMI
             - delay loading -> load the proxy class first, if needed, load the actual class
+        - <img src ="./doc/pic/proxy1.png">
+
     - Design pattern : `Factory`
         - Simple Factory
             - [ProxyDemo1](./src/main/java/Basics/FactoryDemo1)
