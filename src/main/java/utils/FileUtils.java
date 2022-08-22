@@ -1,6 +1,9 @@
 package utils;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FileUtils {
 
@@ -18,7 +21,7 @@ public class FileUtils {
         }
     }
 
-    public void deleteDirectory(File file){
+    public static void deleteDirectory(File file){
         // if file is file, then delete
         // if file is a path, then NEED to delete all its sub files/paths, then delete the current path
         if (file.isDirectory()) {
@@ -111,4 +114,28 @@ public class FileUtils {
             }
         }
     }
+
+    public List<List<String>> loadCSVFile(File fileName) {
+        final String COMMA_DELIMITER = ",";
+
+        List<List<String>> records = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(COMMA_DELIMITER);
+                records.add(Arrays.asList(values));
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return records;
+    }
+
+    public List<List<String>> loadCSV(String fileName) {
+        File file = new File(fileName);
+        return loadCSVFile(file);
+    }
+
 }
