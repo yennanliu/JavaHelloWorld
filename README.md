@@ -910,10 +910,4 @@ mvn test
         - [part 4](https://mari-azevedo.medium.com/construindo-uma-api-restful-com-java-e-spring-framework-parte-4-6287f68ffc3c?source=follow_footer)
             - https://github.com/mariazevedo88/travels-api
             - https://github.com/mariazevedo88/travels-java-api
-- Spring MVC Tutorial
-    - EN
-        - https://www.tutorialspoint.com/spring/index.htm
-    - ZH
-        - http://tw.gitbook.net/spring/spring_overview.html
-
 </details>
