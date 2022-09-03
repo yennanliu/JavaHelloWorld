@@ -10,6 +10,11 @@ import java.util.Optional;
 
 /**  Optional demo 1
  *
+ *   -> for avoiding "Null pointer" exception in development
+ *   -> use methods
+ *      -> 1) ofNullable(T t)
+ *      -> 2) orElse(T t)
+ *
  *   1) Optional.of(T t) : return an optional instance, t NEEDS to be not null
  *   2) Optional.empty() : return a null Optional instance
  *   3) Optional.ofNullable(T t) : t can be null
