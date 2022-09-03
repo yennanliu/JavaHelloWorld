@@ -91,4 +91,21 @@ public class StringTest {
         System.out.println(Long.parseLong(id));
     }
 
+    @Test
+    public void test6(){
+        String[] data = new String[]{"a","b","c"};
+        System.out.println(data);
+        Arrays.stream(data).forEach(x -> System.out.println(x));
+
+        System.out.println();
+
+        String[] data2 = new String[]{"a","b","c","","d","e","f","g"};
+        Arrays.stream(data2)
+              .filter( x ->  x.length() > 0)
+              .forEach(x -> System.out.println(x));
+
+        String[] data3 = new String[]{"a","b","c","","d",null,"e","f","g", null};
+        // TODO : do same on data3
+    }
+
 }

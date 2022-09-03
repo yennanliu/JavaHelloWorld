@@ -41,4 +41,16 @@ public class getDefaultIfNull {
         System.out.println(Double.parseDouble(r1.getId() == null ? "0.0" : r1.getId()));
     }
 
+    @Test
+    public void test3(){
+
+        Report r1 = new Report("xxx",null,0,2.0);
+        System.out.println(
+                Double.parseDouble(r1.getId() == null ? "1.0" : r1.getId()) +
+                Double.parseDouble(r1.getId() == null ? "2.1" : r1.getId()) +
+                3.2
+        );
+
+    }
+
 }
