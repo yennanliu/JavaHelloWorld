@@ -138,4 +138,12 @@ public class FileUtils {
         return loadCSVFile(file);
     }
 
+    public File getResourceDirFile(String fileName){
+
+        // https://stackoverflow.com/questions/15749192/how-do-i-load-a-file-from-resource-folder
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource(fileName).getFile());
+        return file;
+    }
+
 }

@@ -10,7 +10,7 @@ import java.util.List;
 public class ParseCSVTest {
 
     @Test
-    public void test() throws FileNotFoundException {
+    public void test1() throws FileNotFoundException {
 
         String csvFile = "test.csv";
 
@@ -28,5 +28,51 @@ public class ParseCSVTest {
         System.out.println(data.toArray().length);
         data.stream().forEach(x -> System.out.println(x));
     }
-    
+
+    @Test
+    public void test2() throws FileNotFoundException {
+
+        String csvFile = "test2.csv";
+
+        FileUtils fileUtils = new FileUtils();
+        List<List<String>> data = fileUtils.loadCSVFile(fileUtils.getResourceDirFile(csvFile));
+
+        System.out.println(data.toArray().length);
+
+        data.stream()
+                .skip(1)
+                .forEach(
+                        x -> System.out.println(
+                                x.toString().replace("\"", "0")
+                        )
+                );
+
+        System.out.println("==============");
+
+        data.stream().skip(1).forEach(
+                x -> {
+                    String id = x.get(0).replace("\"", "0");
+                    String name = x.get(1).replace("\"", "0");
+                    String balance = x.get(2).replace("\"", "0");
+
+                    System.out.println("id = " + id + " name = " + name + " balance = " + balance);
+                }
+        );
+
+        System.out.println("==============");
+
+        // String x = r1.getId() == null ? "0.0" : r1.getId();
+
+        data.stream().skip(1).forEach(
+                x -> {
+                    String id = x.get(0).equals("") ? "0" : x.get(0);
+                    String name = x.get(1).equals("\"") ? "0" : x.get(1);
+                    String balance = x.get(2) == "" ? "0" : x.get(2);
+
+                    System.out.println("id = " + id + " name = " + name + " balance = " + balance);
+                }
+        );
+
+    }
+
 }
