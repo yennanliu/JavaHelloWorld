@@ -66,7 +66,7 @@ public class ParseCSVTest {
         data.stream().skip(1).forEach(
                 x -> {
                     String id = x.get(0).equals("") ? "0" : x.get(0);
-                    String name = x.get(1).equals("\"") ? "0" : x.get(1);
+                    String name = x.get(1).length() < 1 ? "0" : x.get(1);
                     String balance = x.get(2) == "" ? "0" : x.get(2);
 
                     System.out.println("id = " + id + " name = " + name + " balance = " + balance);
