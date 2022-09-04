@@ -8,26 +8,26 @@ import java.util.List;
 public class FileUtils {
 
     // methods
-    public static void printSubFile(File dir){
+    public static void printSubFile(File dir) {
         // print sub files
         File[] subfiles = dir.listFiles();
 
-        for (File f: subfiles){
-            if (f.isDirectory()){  // if directory
+        for (File f : subfiles) {
+            if (f.isDirectory()) {  // if directory
                 printSubFile(f);
-            }else{ // if file
+            } else { // if file
                 System.out.println(f.getAbsolutePath());
             }
         }
     }
 
-    public static void deleteDirectory(File file){
+    public static void deleteDirectory(File file) {
         // if file is file, then delete
         // if file is a path, then NEED to delete all its sub files/paths, then delete the current path
         if (file.isDirectory()) {
             File[] all = file.listFiles();
             // for loop and delete path/file in next level
-            for (File f: all){
+            for (File f : all) {
                 deleteDirectory(f);
             }
         }
@@ -35,9 +35,11 @@ public class FileUtils {
         file.delete();
     }
 
-    /** method : copy file from src to dest */
+    /**
+     * method : copy file from src to dest
+     */
     // https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/IOFlow/demo5.java#L44
-    public void copyFile(String srcPath, String destPath){
+    public void copyFile(String srcPath, String destPath) {
         FileInputStream fis = null;
         FileOutputStream fos = null;
 
@@ -45,12 +47,12 @@ public class FileUtils {
             File srcFile = new File(srcPath);
             File destFile = new File(destPath);
 
-            fis =  new FileInputStream(srcFile);
+            fis = new FileInputStream(srcFile);
             fos = new FileOutputStream(destFile);
 
             byte[] buffer = new byte[1024];
             int len; // record read-in char number (to cbuf) every time
-            while ((len = fis.read(buffer))!= -1){
+            while ((len = fis.read(buffer)) != -1) {
                 // NOTE !!! write len char each time
                 String str = new String(buffer, 0, len);
                 //System.out.println(str);
@@ -61,32 +63,34 @@ public class FileUtils {
             e.printStackTrace();
         } finally {
             // close fis
-            if (fis != null){
-                try{
+            if (fis != null) {
+                try {
                     fis.close();
-                }catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
             // close fos
-            if (fos != null){
-                try{
+            if (fos != null) {
+                try {
                     fos.close();
-                }catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
 
-    /** method : copy file from src to dest via Buffered IO flow */
+    /**
+     * method : copy file from src to dest via Buffered IO flow
+     */
     // https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/IOFlow/demo6.java#L86
     public void copyFileWithBuffered(String srcPath, String destPath) throws IOException {
 
         BufferedInputStream bis = null;
         BufferedOutputStream bos = null;
 
-        try{
+        try {
             File srcFile = new File(srcPath);
             File destFile = new File(destPath);
 
@@ -98,18 +102,18 @@ public class FileUtils {
 
             byte[] buffer = new byte[10];
             int len;
-            while ((len = bis.read(buffer)) != -1){
+            while ((len = bis.read(buffer)) != -1) {
                 bos.write(buffer, 0, len);
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
 
-            if (bis != null){
+            if (bis != null) {
                 bis.close();
             }
 
-            if (bos != null){
+            if (bos != null) {
                 bos.close();
             }
         }
@@ -138,7 +142,7 @@ public class FileUtils {
         return loadCSVFile(file);
     }
 
-    public File getResourceDirFile(String fileName){
+    public File getResourceDirFile(String fileName) {
 
         // https://stackoverflow.com/questions/15749192/how-do-i-load-a-file-from-resource-folder
         ClassLoader classLoader = getClass().getClassLoader();
