@@ -3,6 +3,7 @@ package dev;
 import dev.bean.Data;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,6 +32,35 @@ public class CustomSortingTest {
         System.out.println();
 
         Arrays.stream(dataList).forEach(System.out::println);
+    }
+
+    @Test
+    public void test2(){
+
+        Data d1 = new Data("1",null,null);
+        Data d2 = new Data("2",null,null);
+        Data d3 = new Data("3",null,null);
+        Data d4 = new Data("others",null,null);
+
+        //Data[] dataList = new Data[]{d1,d4,d3,d2};
+        List<Data> dataList = Arrays.asList(d1, d2, d4, d3);
+
+        Integer idx = dataList.indexOf(d4);
+
+        System.out.println(">>> idx = " + idx);
+
+        dataList.forEach(System.out::println);
+
+        System.out.println();
+
+        // NOTE : in order to use Arrays.sort, we HAVE to implement compareTom method in data bean first
+        dataList.remove(idx);
+        dataList.forEach(System.out::println);
+        Arrays.sort(dataList.toArray());
+
+        System.out.println();
+
+        Arrays.stream(dataList.toArray()).forEach(System.out::println);
     }
 
 }
