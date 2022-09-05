@@ -43,7 +43,7 @@ public class CustomSortingTest {
         Data d4 = new Data("others",null,null);
 
         //Data[] dataList = new Data[]{d1,d4,d3,d2};
-        List<Data> dataList = Arrays.asList(d1, d2, d4, d3);
+        List<Data> dataList = Arrays.asList(d1, d2, d3);
 
         Integer idx = dataList.indexOf(d4);
 
@@ -61,6 +61,87 @@ public class CustomSortingTest {
         System.out.println();
 
         Arrays.stream(dataList.toArray()).forEach(System.out::println);
+    }
+
+    @Test
+    public void test2_1(){
+
+        Data d1 = new Data("1",null,null);
+        Data d2 = new Data("2",null,null);
+        Data d3 = new Data("3",null,null);
+        Data d4 = new Data("others",null,null);
+
+        //Data[] dataList = new Data[]{d1,d4,d3,d2};
+        List<Data> dataList = new ArrayList<>();
+        //List<Data> dataList = Arrays.asList(d1, d2, d3);
+        dataList.add(d1);
+        dataList.add(d2);
+        dataList.add(d3);
+
+        Integer idx = dataList.indexOf(d3);
+
+        System.out.println(">>> idx = " + idx);
+
+        // Initial list
+        System.out.println("Initial List: " + dataList);
+
+        // remove element
+        dataList.remove(idx);
+
+        // Final list
+        System.out.println("Final List: " + dataList);
+
+    }
+
+    @Test
+    public void test3(){
+
+        // https://www.digitalocean.com/community/tutorials/java-list-remove-methods-arraylist-remove
+
+        List<String> list = new ArrayList<>();
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        list.add("C");
+        list.add("B");
+        list.add("A");
+        System.out.println(list);
+
+        boolean isRemoved = list.remove("C");
+        System.out.println(list);
+        System.out.println(isRemoved);
+
+        isRemoved = list.remove("X");
+        System.out.println(list);
+        System.out.println(isRemoved);
+
+    }
+
+    @Test
+    public void test4(){
+
+        // https://www.geeksforgeeks.org/list-removeint-index-method-in-java-with-examples/#:~:text=The%20remove(int%20index)%20method,the%20left%20in%20the%20List.
+
+        List<Integer> list = new ArrayList<Integer>(5);
+
+        // Add elements to the list
+        list.add(5);
+        list.add(10);
+        list.add(15);
+        list.add(20);
+        list.add(25);
+
+        // Index from which you want to remove element
+        int index = 2;
+
+        // Initial list
+        System.out.println("Initial List: " + list);
+
+        // remove element
+        list.remove(index);
+
+        // Final list
+        System.out.println("Final List: " + list);
     }
 
 }
