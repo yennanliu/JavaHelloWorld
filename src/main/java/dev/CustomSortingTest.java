@@ -61,6 +61,33 @@ public class CustomSortingTest {
         Arrays.stream(dataList).forEach(System.out::println);
     }
 
+
+    @Test
+    public void test2_x(){
+
+        Data d1 = new Data("1","123",null);
+        Data d2 = new Data("2","456",null);
+        Data d3 = new Data("3","others",null);
+        Data d4 = new Data("4","898",null);
+
+        List<Data> dataList = new ArrayList<>();
+
+        dataList.add(d1);
+        dataList.add(d3);
+        dataList.add(d2);
+        dataList.add(d4);
+
+        Data[] dataList2 = dataList.stream().toArray(Data[]::new);
+
+        Arrays.stream(dataList2).forEach(System.out::println);
+        
+        Arrays.sort(dataList2);
+
+        System.out.println();
+
+        Arrays.stream(dataList2).forEach(System.out::println);
+    }
+
     @Test
     public void test2_1(){
 
