@@ -37,30 +37,28 @@ public class CustomSortingTest {
     @Test
     public void test2(){
 
-        Data d1 = new Data("1",null,null);
-        Data d2 = new Data("2",null,null);
-        Data d3 = new Data("3",null,null);
-        Data d4 = new Data("others",null,null);
+        Data d1 = new Data("1","123",null);
+        Data d2 = new Data("2","456",null);
+        Data d3 = new Data("3","others",null);
+        Data d4 = new Data("4","898",null);
 
         //Data[] dataList = new Data[]{d1,d4,d3,d2};
-        List<Data> dataList = Arrays.asList(d1, d2, d3);
+        //List<Data> dataList = Arrays.asList(d3, d1, d4, d2);
+        //List<Data> dataList = Arrays.asList(d1,d3,d2);
+        Data[] dataList = new Data[]{d1,d3,d2,d4};
 
-        Integer idx = dataList.indexOf(d4);
-
-        System.out.println(">>> idx = " + idx);
-
-        dataList.forEach(System.out::println);
+        Arrays.stream(dataList).forEach(System.out::println);
 
         System.out.println();
 
         // NOTE : in order to use Arrays.sort, we HAVE to implement compareTom method in data bean first
-        dataList.remove(idx);
-        dataList.forEach(System.out::println);
-        Arrays.sort(dataList.toArray());
+//        dataList.remove(idx);
+//        dataList.forEach(System.out::println);
+        Arrays.sort(dataList);
 
         System.out.println();
 
-        Arrays.stream(dataList.toArray()).forEach(System.out::println);
+        Arrays.stream(dataList).forEach(System.out::println);
     }
 
     @Test
@@ -68,8 +66,8 @@ public class CustomSortingTest {
 
         Data d1 = new Data("1",null,null);
         Data d2 = new Data("2",null,null);
-        Data d3 = new Data("3",null,null);
-        Data d4 = new Data("others",null,null);
+        Data d3 = new Data("3","others",null);
+        Data d4 = new Data("4",null,null);
 
         //Data[] dataList = new Data[]{d1,d4,d3,d2};
         List<Data> dataList = new ArrayList<>();

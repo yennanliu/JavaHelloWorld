@@ -58,7 +58,11 @@ public class Data implements Comparable {
     public int compareTo(Object o) {
         if (o instanceof Data){
             Data data = (Data) o;
-            if (Integer.valueOf(this.id) > Integer.valueOf(data.id)){
+//
+            if (data.createTime.equals("others")){
+                return -1;
+            }
+            else if (Integer.valueOf(this.id) > Integer.valueOf(data.id)){
                 return 1;
             }
             else if (Integer.valueOf(this.id) < Integer.valueOf(data.id)){
