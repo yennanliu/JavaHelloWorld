@@ -55,6 +55,7 @@ public class Goods implements Comparable{
     // implement the ordering logic : low price -> high price
     @Override
     public int compareTo(Object o) {
+
         if (o instanceof Goods){
             Goods goods = (Goods) o;
             // method 1)

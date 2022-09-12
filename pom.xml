@@ -49,6 +49,14 @@
             <version>2.3.28</version>
         </dependency>
 
+        <!-- csv, json api -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-csv</artifactId>
+            <version>2.13.3</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

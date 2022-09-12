@@ -80,7 +80,7 @@ public class CustomSortingTest {
         Data[] dataList2 = dataList.stream().toArray(Data[]::new);
 
         Arrays.stream(dataList2).forEach(System.out::println);
-        
+
         Arrays.sort(dataList2);
 
         System.out.println();
