@@ -1,10 +1,12 @@
 package dev;
 
 import dev.bean.Data;
+import dev.bean.Data2;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -116,6 +118,48 @@ public class CustomSortingTest {
         // Final list
         System.out.println("Final List: " + dataList);
 
+    }
+
+    @Test
+    public void test2_2(){
+
+        Data2 d1 = new Data2("1", "others", "100");
+        Data2 d2 = new Data2("2", "a", "900000");
+        Data2 d3 = new Data2("3", "b", "200");
+        Data2 d4 = new Data2("4", "others", "70000");
+        Data2 d5 = new Data2("5", "d", "300");
+
+        //Data[] dataList = new Data[]{d1,d4,d3,d2};
+        List<Data2> dataList = new ArrayList<>();
+        //List<Data> dataList = Arrays.asList(d1, d2, d3);
+        dataList.add(d1);
+        dataList.add(d4);
+        dataList.add(d2);
+        dataList.add(d3);
+        dataList.add(d5);
+
+        // Initial list
+        System.out.println("Initial List: " + dataList);
+
+        Collections.sort(dataList, (o1, o2)->{
+            String id1 = o1.getId();
+            String id2 = o2.getId();
+            String type1 = o1.getType();
+            String type2 = o2.getType();
+            String value1 = o1.getValue();
+            String value2 = o2.getValue();
+            if (type1.equals("others") && !type2.equals("others")){
+                return 1;
+            }else if(!type1.equals("others") && type2.equals("others")){
+                return -1;
+            } else if (type1.equals("others") && type2.equals("others")) {
+                return 0;
+            }
+            return (int) (Double.parseDouble(value1) - Double.parseDouble(value2));
+        });
+
+        // Final list
+        System.out.println("Final List: " + dataList);
     }
 
     @Test
