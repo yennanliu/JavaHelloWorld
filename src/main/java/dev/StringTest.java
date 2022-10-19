@@ -1,5 +1,6 @@
 package dev;
 
+import java.text.DecimalFormat;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -106,6 +107,87 @@ public class StringTest {
 
         String[] data3 = new String[]{"a","b","c","","d",null,"e","f","g", null};
         // TODO : do same on data3
+    }
+
+    @Test
+    public void test7(){
+        String snapShotUTC = null;
+        snapShotUTC.replace(" ", " 23:59:59 ");
+    }
+
+    @Test
+    public void test8(){
+        String snapShotUTC = "";
+        snapShotUTC.replace(" ", " 23:59:59 ");
+    }
+
+    @Test
+    public void test9(){
+        String x = "Account s";
+        String y = "v_account_s";
+
+        String x_1 = "v" + x.toLowerCase().replace(" ", "_");
+        System.out.println("x_1 = " + x_1);
+
+        System.out.println(y.contains(x_1.toLowerCase()));
+    }
+
+    @Test
+    public void test10(){
+        String x = "xxxx";
+
+        String[] x_ = x.split("\\?");
+        System.out.println(x_[0]);
+        System.out.println(x_[1]);
+        System.out.println(x_.length);
+        System.out.println(x.contains("?"));
+
+        System.out.println();
+
+        String x2 = x.replaceAll("^[!@#?\\$%\\^\\&*\\)\\(+=._-]", "");
+        System.out.println(x2);
+
+        System.out.println();
+
+        String y = "wdvever";
+        String[] y_ = y.split("\\?");
+        System.out.println(y_[0]);
+//        System.out.println(y_[1]);
+        System.out.println(y.contains("?"));
+    }
+
+    @Test
+    public void test11(){
+
+        // https://www.delftstack.com/zh-tw/howto/java/how-to-print-a-float-with-2-decimal-places-in-java/
+
+        float Pi = 3.1415f;
+        System.out.println(Pi);
+        // Get only 2 decimal points
+        System.out.printf("%.2f", Pi);
+
+        System.out.println("------------");
+
+
+        float Pi2 = 3.1415f;
+        System.out.println(Pi2);
+        // Get only 2 decimal points
+        String str = String.format("%.02f", Pi2);
+        Pi2 = Float.valueOf(str);
+        System.out.println(Pi2);
+    }
+
+    @Test
+    public void test12(){
+
+        // https://www.delftstack.com/zh-tw/howto/java/how-to-round-a-double-to-two-decimal-places-in-java/
+
+        double val1 = 6482.236789;
+        System.out.println("Double value: "+val1);
+
+        DecimalFormat df = new DecimalFormat("###.##");
+        System.out.println("Rounded Double value (DecimalFormat): "+df.format(val1));
+
     }
 
 }
