@@ -1,10 +1,9 @@
 package dev;
 
 import org.junit.jupiter.api.Test;
-import utils.FileUtils;
+import utils.IFileUtils;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class FileTest {
@@ -31,7 +30,7 @@ public class FileTest {
     public void test2(){
 
         String CSV_ZIP_FILE = "some_file";
-        FileUtils.deleteDirectory(new File(CSV_ZIP_FILE));
+        IFileUtils.deleteDirectory(new File(CSV_ZIP_FILE));
 
         for (int i =1; i<5 ; i+=1){
             System.out.println(">>> " + i);

@@ -1,7 +1,7 @@
 package dev;
 
 import org.junit.jupiter.api.Test;
-import utils.FileUtils;
+import utils.IFileUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,8 +22,8 @@ public class ParseCSVTest {
         File file = new File(classLoader.getResource(csvFile).getFile());
         //InputStream inputStream = new FileInputStream(file);
 
-        FileUtils fileUtils = new FileUtils();
-        List<List<String>> data = fileUtils.loadCSVFile(file);
+        IFileUtils IFileUtils = new IFileUtils();
+        List<List<String>> data = IFileUtils.loadCSVFile(file);
 
         System.out.println(data.toArray().length);
         data.stream().forEach(x -> System.out.println(x));
@@ -34,8 +34,8 @@ public class ParseCSVTest {
 
         String csvFile = "test2.csv";
 
-        FileUtils fileUtils = new FileUtils();
-        List<List<String>> data = fileUtils.loadCSVFile(fileUtils.getResourceDirFile(csvFile));
+        IFileUtils IFileUtils = new IFileUtils();
+        List<List<String>> data = IFileUtils.loadCSVFile(IFileUtils.getResourceDirFile(csvFile));
 
         System.out.println(data.toArray().length);
 

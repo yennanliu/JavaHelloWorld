@@ -1,7 +1,7 @@
 package dev;
 
 import org.junit.jupiter.api.Test;
-import utils.FileUtils;
+import utils.IFileUtils;
 
 import java.io.File;
 import java.util.List;
@@ -22,8 +22,8 @@ public class FileIOTest {
         File file = new File(getClass().getResource("/templates/test1.ftl").getFile());
         String resources_file_path = getClass().getResource("/templates/test1.ftl").getFile();
 
-        FileUtils fileUtils = new FileUtils();
-        List<List<String>> res = fileUtils.loadCSVFile(file);
+        IFileUtils IFileUtils = new IFileUtils();
+        List<List<String>> res = IFileUtils.loadCSVFile(file);
 
         System.out.println(">>> resources_file_path = " + resources_file_path);
 

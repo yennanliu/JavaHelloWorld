@@ -186,7 +186,15 @@ public class StringTest {
         System.out.println("Double value: "+val1);
 
         DecimalFormat df = new DecimalFormat("###.##");
-        System.out.println("Rounded Double value (DecimalFormat): "+df.format(val1));
+        System.out.println("Rounded Double value (DecimalFormat): "+ df.format(val1));
+
+        String val2 = df.format(val1);
+        System.out.println("val2 = " + val2);
+
+
+        String val1_ = "6482.236789";
+        String val2_ = df.format(Double.parseDouble(val1_));
+        System.out.println("val2_ = " + val2_);
 
     }
 

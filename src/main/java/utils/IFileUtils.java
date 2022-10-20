@@ -4,8 +4,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import net.lingala.zip4j.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
+import net.lingala.zip4j.model.ZipParameters;
+import net.lingala.zip4j.model.enums.CompressionLevel;
+import net.lingala.zip4j.model.enums.EncryptionMethod;
 
-public class FileUtils {
+public class IFileUtils {
 
     // methods
     public static void printSubFile(File dir) {
@@ -148,6 +153,29 @@ public class FileUtils {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource(fileName).getFile());
         return file;
+    }
+
+    /** compress file with password */
+    public String encryptFile(List<String> srcFiles, String destZipFiles, String password){
+
+        try {
+            ZipParameters zipParameters = new ZipParameters();
+            zipParameters.setEncryptFiles(true);
+            zipParameters.setCompressionLevel(CompressionLevel.HIGHER);
+            zipParameters.setEncryptionMethod(EncryptionMethod.AES);
+            List<File> files = new ArrayList<>();
+            srcFiles.forEach(file -> {
+                files.add(new File(file));
+            });
+            ZipFile zipFile = new ZipFile(destZipFiles, password.toCharArray());
+            zipFile.addFiles(files, zipParameters);
+            System.out.println("encryptFile OK,  destZipFiles : " + destZipFiles);
+            return destZipFiles;
+            // Catch exceptions
+        } catch (ZipException e) {
+            System.out.println("encryptFile failed, exception:" + e);
+        }
+        return null;
     }
 
 }
