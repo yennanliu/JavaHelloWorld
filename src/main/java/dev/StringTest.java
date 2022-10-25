@@ -195,7 +195,27 @@ public class StringTest {
         String val1_ = "6482.236789";
         String val2_ = df.format(Double.parseDouble(val1_));
         System.out.println("val2_ = " + val2_);
-
     }
+
+    @Test
+    public void test13(){
+
+        //String fileName = "xxx.pdf";
+        String fileName = "xxx.csv";
+        String fileNameUpdated = fileName.replace("pdf", "zip");
+        System.out.println(fileNameUpdated);
+    }
+
+    @Test
+    public void test14(){
+
+        String x = "abc";
+        String msg = String.valueOf(
+            new StringBuffer().append("123").append(" >>>>").append(" x = ").append(x));
+
+        System.out.println(">>> msg = " + msg);
+    }
+
+
 
 }
