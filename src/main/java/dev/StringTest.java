@@ -216,6 +216,42 @@ public class StringTest {
         System.out.println(">>> msg = " + msg);
     }
 
+    @Test
+    public void test15(){
 
+        // https://docs.oracle.com/javase/tutorial/i18n/format/decimalFormat.html
+        // https://stackoverflow.com/questions/20774951/bigdecimal-string-formatting-with-thousands-separator
+        DecimalFormat formatter1 = new DecimalFormat("###,###");
+
+        String num1 = "10000000";
+        String num1_ = formatter1.format(Double.parseDouble(num1));
+        System.out.println("num1_ = " + num1_);
+
+        String num2 = "100";
+        String num2_ = formatter1.format(Double.parseDouble(num2));
+        System.out.println("num2_ = " + num2_);
+
+//        String num3 = null;
+//        String num3_ = formatter1.format(Double.parseDouble(num3));
+//        System.out.println("num3_ = " + num3_);
+
+        String num4 = "10000000.001";
+        String num4_ = formatter1.format(Double.parseDouble(num4));
+        System.out.println("num4_ = " + num4_);
+
+        DecimalFormat formatter2 = new DecimalFormat("###,###.###");
+
+        String num4_2 = formatter2.format(Double.parseDouble(num4));
+        System.out.println("num4_2 = " + num4_2);
+
+        String num5 = "0.001";
+        String num5_2 = formatter2.format(Double.parseDouble(num5));
+        System.out.println("num5_2 = " + num5_2);
+
+
+        String num6 = "10000";
+        String num6_2 = formatter2.format(Double.parseDouble(num6));
+        System.out.println("num6_2 = " + num6_2);
+    }
 
 }
