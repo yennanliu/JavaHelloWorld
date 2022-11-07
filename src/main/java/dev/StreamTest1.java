@@ -14,8 +14,13 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 
+
 public class StreamTest1 {
 
+    /**
+     *
+     *  Stream map return demo
+     */
     @Test
     public void MapTest1(){
 
@@ -39,13 +44,14 @@ public class StreamTest1 {
         System.out.println(brand_list);
     }
 
+    /**
+     *  GroupBy basic
+     *
+     *  Map<String, List<MyReport>> monthReportMap = myReport.stream()
+     *      .collect(Collectors.groupingBy(MyReport::getOwnerGroupKey));
+     */
     @Test
     public void GroupByTest1(){
-
-        /**
-         * Map<String, List<MyReport>> monthReportMap = myReport.stream()
-         *      .collect(Collectors.groupingBy(MyReport::getOwnerGroupKey));
-         */
 
         Car car1 = new Car(1,"TESLA",1000);
         Car car2 = new Car(2,"BENZ",3000);
@@ -68,6 +74,44 @@ public class StreamTest1 {
 
         // https://stackoverflow.com/questions/49605558/is-it-possible-to-use-foreach-in-groupingby-in-java-stream
         groupByResult.forEach((x,y) -> System.out.println("x = " + x + " y = " + y));
+    }
+
+    /**
+     *  1) groupingBy Car::getId
+     *  2) Collectors.groupingBy(Car::getIdAndBrand) : group by custom get method
+     */
+    @Test
+    public void GroupByTest2(){
+
+        Car car1 = new Car(1,"TESLA",1000);
+        Car car2 = new Car(2,"BENZ",3000);
+        Car car3 = new Car(3,"LEXUS",2000);
+        Car car4 = new Car(4,"LEXUS",1222);
+        Car car5 = new Car(5,"LEXUS",9000);
+        Car car6 = new Car(1,"TESLA",1000);
+
+        Car[] cars = new Car[]{car1, car2, car3, car4, car5, car6};
+        List<Car> car_list = Arrays.asList(cars);
+
+        Map<Integer, List<Car>> groupByResult = car_list
+                .stream()
+                .collect(Collectors.groupingBy(Car::getId)
+                );
+
+        System.out.println(">>> groupByResult = " + groupByResult);
+
+        System.out.println();
+
+        // https://stackoverflow.com/questions/49605558/is-it-possible-to-use-foreach-in-groupingby-in-java-stream
+        groupByResult.forEach((x,y) -> System.out.println("x = " + x + " y = " + y));
+
+
+        Map<String, List<Car>> groupByResult2 = car_list
+                .stream()
+                .collect(Collectors.groupingBy(Car::getIdAndBrand)
+                );
+
+        System.out.println(">>> groupByResult2 = " + groupByResult2);
     }
 
 }

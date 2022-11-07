@@ -40,6 +40,11 @@ public class Car {
         this.price = price;
     }
 
+    public String getIdAndBrand() {
+
+        return id + "-" + brand;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
