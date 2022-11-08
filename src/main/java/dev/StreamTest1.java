@@ -7,13 +7,10 @@ package dev;
 
 import dev.bean.Car;
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
-
 
 public class StreamTest1 {
 
@@ -43,6 +40,7 @@ public class StreamTest1 {
 
         System.out.println(brand_list);
     }
+
 
     /**
      *  GroupBy basic
