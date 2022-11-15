@@ -19,4 +19,12 @@ public class DateTimeUtilsTest {
     System.out.println("y = " + y);
   }
 
+  @Test
+  public void test2(){
+    int expireDay = 7;
+    long days = 1L * 1000 * 3600 * 24 * expireDay -1;
+    System.out.println(days);
+
+  }
+
 }

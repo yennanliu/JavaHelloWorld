@@ -4,7 +4,9 @@ package dev;
 // https://blog.csdn.net/xuexi_gan/article/details/114915890
 // https://github.com/yennanliu/til/blob/master/README.md#20221029
 
+//import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import dev.bean.Car;
 import org.junit.jupiter.api.Test;
 
@@ -39,7 +41,27 @@ public class FastJsonTest1 {
         String jString1 = JSON.toJSONString(cars);
 
         System.out.println(">>> jString1 = " + jString1); // jString1 = [{"brand":"TESLA","id":1,"idAndBrand":"1-TESLA","price":1000.0},{"brand":"BMW","id":2,"idAndBrand":"2-BMW","price":999.0},{"brand":"BENZ","id":3,"idAndBrand":"3-BENZ","price":362.0}]
+    }
 
+    @Test
+    public void Str2Json_1(){
+
+        // https://juejin.cn/post/6989067030775545886
+        // https://www.w3cschool.cn/fastjson/fastjson-ex2.html
+
+        // TODO Auto-generated method stub
+        //String str = "{\"cases\"[{\"classname\":\"HttpGet\",\"url\":\"https://www.baidu.com\"},{\"classname\":\"HttpPost\",\"url\":\"https:www.qq.com\"}]}";
+        //String str = "{\"cases\"[{\"classname\":\"HttpGet\",\"url\":\"https://www.baidu.com\"},{\"classname\":\"HttpPost\",\"url\":\"https:www.qq.com\"}]}";
+        //String str = "{\"avBar\":[{\"barAge\":174398800,\"barDate\":\"2011-11-23 23:30:33\",\"barName\":\"sss_0.62378174\"}";
+        String str = "{'area':{'area':'1','pagetype':'home'},'pagetype':'home'}";
+        JSONObject json;
+        try{
+            json = JSON.parseObject(str);
+            System.out.println(json);
+            System.out.println(json.get("pagetype"));
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 
 }
