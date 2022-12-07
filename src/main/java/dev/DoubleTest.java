@@ -40,5 +40,19 @@ public class DoubleTest {
     System.out.println(Double.parseDouble(s2));
   }
 
+  @Test
+  public void test4(){
+
+    String totalBUSD1 = "0.001" ;
+    String totalBUSD2 = "0.231" ;
+
+    Double diff = (Double.parseDouble(totalBUSD2) - Double.parseDouble(totalBUSD1));
+
+    System.out.println((Float.parseFloat(totalBUSD1)));
+    System.out.println( (Double.parseDouble(totalBUSD2)));
+    System.out.println( (Double.parseDouble(totalBUSD2) - Double.parseDouble(totalBUSD1)) );
+    System.out.println( diff );
+  }
+
 
 }
