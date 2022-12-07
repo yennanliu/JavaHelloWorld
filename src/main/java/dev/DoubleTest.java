@@ -18,5 +18,27 @@ public class DoubleTest {
     System.out.println(Double.parseDouble(s1) > Double.parseDouble(s2));
   }
 
+  @Test
+  public void test2(){
+
+    String s1 = "0.00000000";
+    double x = Double.parseDouble(s1);
+    System.out.println(Double.parseDouble(s1));
+    System.out.println(Double.parseDouble(s1) == 0.0);
+    System.out.println(Double.parseDouble(s1) == 0);
+  }
+
+  @Test
+  public void test3(){
+
+    String s1 = "3.23432.00000000";
+    //Double x = Double.parseDouble(s1);
+    //System.out.println(Double.parseDouble(s1));
+    //System.out.println(x);
+
+    String s2 = "2499.55831700";
+    System.out.println(Double.parseDouble(s2));
+  }
+
 
 }

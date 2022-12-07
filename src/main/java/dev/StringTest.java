@@ -254,4 +254,14 @@ public class StringTest {
         System.out.println("num6_2 = " + num6_2);
     }
 
+    @Test
+    public void test16(){
+        Object x = null;
+        //System.out.println(x.toString());
+        System.out.println(x);
+
+        Object y = "123";
+        System.out.println(y.toString());
+    }
+
 }
