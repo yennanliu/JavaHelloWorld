@@ -1,6 +1,8 @@
 package dev;
 
 import java.text.DecimalFormat;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -263,5 +265,54 @@ public class StringTest {
         Object y = "123";
         System.out.println(y.toString());
     }
+
+    @Test
+    public void test17(){
+
+       String url = "xxx";
+
+       System.out.println(url);
+
+        String[] x = url.split("\\\\?X-Amz");
+        System.out.println(x.toString());
+        System.out.println();
+        //Arrays.stream(x).forEach(y -> System.out.println(y));
+
+        String cleanedURL = x[0].replace("?", "");
+        System.out.println(cleanedURL);
+
+        System.out.println();
+        String[] y = cleanedURL.split("/");
+        Arrays.stream(y).forEach(k -> System.out.println(k));
+
+        System.out.println("--> bucket = " + y[3]);
+        System.out.println("--> bucket = " + cleanedURL.replace("//", "/").split("/")[2]);
+
+//        List<String> key = Arrays.stream(cleanedURL
+//            .replace("//", "/")
+//            .split("/")).collect(Collectors.toList());
+
+
+        String text = "\"OR\\n\\nThe Central Site Engineering\\u2019s \\u201cfrontend\\u201d, where developers turn to\"";
+
+//        text = text.replaceAll("(\\\\n)+"," ")
+//            .replaceAll("\\\\u[0-9A-Ha-h]{4}", "");
+//
+//        System.out.println(text);
+
+        String url_x = url
+            .replaceAll("\\b.*?amazonaws.com.*?\\b", "")
+            .split("X-Amz-Algorithm")[0]
+            .replace("?", "");
+
+        System.out.println("url_x = " + url_x);
+
+        String url_y = url
+            .split("pdf-download-task")[1].split("X-Amz-Algorithm")[0].replace("?", "");
+
+        System.out.println("url_y  = " + url_y);
+    }
+
+
 
 }
