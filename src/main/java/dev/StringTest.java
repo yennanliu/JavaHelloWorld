@@ -313,6 +313,12 @@ public class StringTest {
         System.out.println("url_y  = " + url_y);
     }
 
-
+    @Test
+    public void test18(){
+        String mystr = "xxx-portal-ttt.s3.ap-northeast-1.amazonaws.com";
+        String[] x = mystr.split("\\.");
+        System.out.println(x.length);
+        System.out.println(x[0]);
+    }
 
 }
