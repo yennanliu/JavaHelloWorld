@@ -877,9 +877,9 @@
 
 <details>
 <summary>Design pattern</summary>
-Course
+- Course
     - https://www.youtube.com/watch?v=fVF31BTB97I&list=PLmOn9nNkQxJH-C-qEI2rpewHTI9ITpMkt&index=2
-Code
+- Code
 </details>
 
 
