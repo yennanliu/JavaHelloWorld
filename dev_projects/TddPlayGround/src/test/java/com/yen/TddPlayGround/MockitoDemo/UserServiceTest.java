@@ -82,5 +82,19 @@ class UserServiceTest {
         assertEquals(i, 100);
     }
 
+    @Test
+    public void testGetUserByIdThrowException(){
+
+        Mockito.when(
+                userService.getUserById(9)).thenThrow(
+                        new RuntimeException("mock throw exception"));
+
+        //User user = userService.getUserById(9); //會拋出一個RuntimeException
+        // https://blog.csdn.net/qq_44336097/article/details/116005808
+        assertThrows(RuntimeException.class, () -> {
+            userService.getUserById(9);
+        });
+    }
+
 
 }
