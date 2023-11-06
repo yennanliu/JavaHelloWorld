@@ -8,7 +8,8 @@ public class TddPlayGroundApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(TddPlayGroundApplication.class, args);
+		SpringApplication.run(
+				TddPlayGroundApplication.class, args);
 	}
 
 }

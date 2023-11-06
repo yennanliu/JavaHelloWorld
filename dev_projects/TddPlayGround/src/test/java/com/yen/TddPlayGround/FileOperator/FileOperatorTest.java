@@ -27,5 +27,5 @@ class FileOperatorTest {
             fileOperator.readFile("xxx.txt");
         });
     }
-    
+
 }
