@@ -5,7 +5,6 @@ package com.yen.TddPlayGround.MockitoDemo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -22,8 +21,9 @@ public class UserService {
         return userDao.getById(id);
     }
 
-    public void insertUser(User user){
-        userDao.save(user);
+    public Integer insertUser(User user){
+        // no need to implement, since we mock in test
+        return userDao.insertUser(user);
     }
 
 }
