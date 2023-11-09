@@ -22,12 +22,12 @@ import java.net.URI;
 public class ProductController {
 
     @GetMapping("/name")
-    String getProductList(@RequestParam("name") String name){
+    public Product getProductList(){
 
-        return "product name = " + name;
+        return new Product("iphone",100);
     }
 
-    @PostMapping("/")
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Void> addProduct(Product product){
 

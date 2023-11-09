@@ -12,6 +12,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
@@ -49,13 +50,21 @@ class ProductControllerTest {
                 .andExpect(status().isOk());
     }
 
-//    @Test
-//    public void getProductShouldReturnProduct(){
-//
-//        when(productService.getProduct("iphone")).
-//                thenReturn(new Product("iphone", 100)
-//                );
-//    }
+    @Test
+    public void getProductShouldReturnProduct() throws Exception {
+
+        // mock service (productService.getProduct)
+        when(productService.getProduct("iphone")).
+                thenReturn(new Product("iphone", 100)
+                );
+
+        // Make request to controller through spring only.
+        // This does not involve tomcat or any network call.
+        ResultActions resultActions = mockMvc.perform(get("/product/name"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("name").value("iphone"))
+                .andExpect(jsonPath("price").value(100));
+    }
 
 
 }
