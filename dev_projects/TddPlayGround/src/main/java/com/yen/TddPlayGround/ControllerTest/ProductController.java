@@ -1,8 +1,6 @@
 package com.yen.TddPlayGround.ControllerTest;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +19,22 @@ import java.net.URI;
 @RequestMapping("/product")
 public class ProductController {
 
-    @GetMapping("/name")
-    public Product getProductList(){
+    private final ProductService productService;
 
-        return new Product("iphone",100);
+    @Autowired // TODO : check is necessary ?
+    public ProductController(ProductService productService) {
+
+        this.productService = productService;
+    }
+
+
+    @GetMapping("/name")
+    public Product getProduct(){
+
+        Product product = productService.getProduct("iphone");
+        product.setPrice(100);
+        //return new Product("iphone",100);
+        return product;
     }
 
     @PostMapping("/add")

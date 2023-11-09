@@ -37,16 +37,16 @@ class ProductControllerTest {
     @MockBean
     ProductService productService;
 
-    @Test
-    public void testGetProductList() throws Exception {
-
-        // https://stackoverflow.com/questions/53113052/is-there-any-other-way-to-put-parameter-of-mockmvc
-
-        mockMvc.perform(
-                get("/product/name")
-                .param("name", "123"))
-                .andExpect(status().isOk());
-    }
+//    @Test
+//    public void testGetProductList() throws Exception {
+//
+//        // https://stackoverflow.com/questions/53113052/is-there-any-other-way-to-put-parameter-of-mockmvc
+//
+//        mockMvc.perform(
+//                get("/product/name")
+//                .param("name", "123"))
+//                .andExpect(status().isOk());
+//    }
 
     @Test
     public void getProductShouldReturnProduct() throws Exception {
@@ -64,7 +64,7 @@ class ProductControllerTest {
                 .andExpect(jsonPath("price").value(100));
 
         // TODO : fix below
-        //verify(productService).getProduct("iphone");
+        verify(productService).getProduct("iphone");
     }
 
     @Test

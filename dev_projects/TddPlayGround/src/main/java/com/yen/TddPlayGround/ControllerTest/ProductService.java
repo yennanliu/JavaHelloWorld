@@ -8,8 +8,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductService {
 
+
+    private ProductRepository productRepository;
+
+
+    // TODO : verify pros & cons on below :
+    // Autowired or crrate a constructor with repository
+//    @Autowired
+//    ProductRepository productRepository;
+
     @Autowired
-    ProductRepository productRepository;
+    public ProductService(ProductRepository productRepository){
+        this.productRepository = productRepository;
+    }
 
     public Product getProduct(String name){
 
