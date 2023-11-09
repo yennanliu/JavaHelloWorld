@@ -29,8 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // https://github.com/sashinpivotal/spring-boot-tdd/blob/main/src/test/java/io/pivotal/workshop/CarControllerSliceTests.java
 
 @WebMvcTest(ProductController.class)
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
 class ProductControllerTest {
 
     @Autowired
@@ -64,6 +62,21 @@ class ProductControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("name").value("iphone"))
                 .andExpect(jsonPath("price").value(100));
+
+        // TODO : fix below
+        //verify(productService).getProduct("iphone");
+    }
+
+    @Test
+    public void getProductNotFound() throws Exception {
+
+        // mock service
+        when(productService.getProduct("pixel")).
+                thenThrow(new ProductNotFoundException()
+                );
+
+        ResultActions resultActions = mockMvc.perform(get("/product/pixel")) // NOTE the param (pixel) here !!!
+                .andExpect(status().isNotFound());
     }
 
 
