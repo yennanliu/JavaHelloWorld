@@ -2,6 +2,16 @@
 
 ## Quick start
 
+## Step
+
+- Write a test
+- run all tests
+- complete main code
+- run all tests
+- refactor
+- repeat above ...
+- run all tests
+
 ## Ref
 
 - TDD book
