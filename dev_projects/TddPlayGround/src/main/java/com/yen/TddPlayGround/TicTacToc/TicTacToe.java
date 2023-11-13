@@ -16,19 +16,46 @@ public class TicTacToe {
         checkYAxis(y);
 
         this.lastPlayer = nextPlayer();
-        setBox(x,y, lastPlayer);
+        setBox(x,y,lastPlayer);
         //this.round += 1;
 
         // check winner
-        for (int idx = 0; idx < 3; idx++){
-            if (board[0][idx] == lastPlayer &&
-                board[1][idx] == lastPlayer &&
-                board[2][idx] == lastPlayer){
-                return lastPlayer + " is the winner";
-            }
+        if (isWin()){
+            return lastPlayer + " is the winner";
         }
 
         return "No winner";
+    }
+
+    private boolean isWin(){
+
+        int winScore = lastPlayer * SIZE;
+
+        // check Y axis
+        for (int i = 0; i < SIZE; i++){
+            if (board[0][i] + board[1][i] + board[2][i] == winScore){
+                return true;
+            }
+        }
+
+        // check X axis // (0,1), (0,2), (0,3)
+        for (int j = 0; j < SIZE; j++){
+            if (board[j][0] + board[j][1] + board[j][2] == winScore){
+                return true;
+            }
+        }
+
+        // check diagonal
+        if (board[0][0] + board[1][1] + board[2][2] == winScore){
+            return true;
+        }
+
+        if (board[0][2] + board[1][1] + board[2][0] == winScore){
+            return true;
+        }
+
+
+        return false;
     }
 
     private void checkXAxis(int x){
