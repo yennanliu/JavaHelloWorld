@@ -31,10 +31,16 @@ public class TicTacToeSpec {
     public void whenXOutsideBoardThenRuntimeException(){
 
         TicTacToe ticTacToe = new TicTacToe();
+
         Exception exception = assertThrows(RuntimeException.class, () -> {
             ticTacToe.play(5,2);
         });
         System.out.println("exception = " + exception);
+
+        Exception exception2 = assertThrows(RuntimeException.class, () -> {
+            ticTacToe.play(2,5);
+        });
+        System.out.println("exception2 = " + exception2);
 
 
         ticTacToe.play(1,2);

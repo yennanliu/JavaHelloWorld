@@ -10,22 +10,31 @@ public class TicTacToe {
 
     public void play(int x, int y) {
 
+        checkXAxis(x);
+        checkYAxis(y);
+
+        setBox(x,y);
+    }
+
+    private void checkXAxis(int x){
         if (x < 1 || x > 3){
             throw new RuntimeException("X is out of bound");
         }
+    }
 
+    private void checkYAxis(int y){
         if (y < 1 || y > 3){
             throw new RuntimeException("Y is out of bound");
         }
+    }
+
+    private void setBox(int x, int y){
 
         if (board[x-1][y-1] != '\0'){
             throw new RuntimeException("place is occupied");
         }
 
-        else {
-            board[x-1][y-1] = 'X';
-        }
-
+        board[x-1][y-1] = 'X';
     }
 
 }
