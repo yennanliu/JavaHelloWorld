@@ -1,5 +1,6 @@
 package com.yen.TddPlayGround.TicTacToc;
 
+// book Java测试驱动开发 p.46
 // https://bitbucket.org/vfarcic/tdd-java-ch03-tic-tac-toe/src/master/src/main/java/com/packtpublishing/tddjava/ch03tictactoe/TicTacToe.java
 
 public class TicTacToe {
