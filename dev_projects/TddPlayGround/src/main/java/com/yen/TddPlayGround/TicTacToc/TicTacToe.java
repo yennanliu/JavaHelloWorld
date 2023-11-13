@@ -24,6 +24,10 @@ public class TicTacToe {
             return lastPlayer + " is the winner";
         }
 
+        if (isDraw()){
+            return "The result is draw";
+        }
+
         return "No winner";
     }
 
@@ -54,8 +58,20 @@ public class TicTacToe {
             return true;
         }
 
-
         return false;
+    }
+
+    private boolean isDraw(){
+
+        for (int i = 0; i < SIZE; i++){
+            for (int j = 0; j < SIZE; j++){
+                // if there is any "Non occupied" place
+                if (board[i][j] == '\0'){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     private void checkXAxis(int x){
