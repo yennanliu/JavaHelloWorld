@@ -8,12 +8,15 @@ public class TicTacToe {
     private char lastPlayer = '\0';
     private static final int SIZE = 3;
 
+    private int round = 0;
+
     public void play(int x, int y) {
 
         checkXAxis(x);
         checkYAxis(y);
 
         setBox(x,y);
+        this.round += 1;
     }
 
     private void checkXAxis(int x){
@@ -37,4 +40,11 @@ public class TicTacToe {
         board[x-1][y-1] = 'X';
     }
 
+    public char nextPlayer() {
+
+        if (this.round % 2 == 0){
+            return 'X';
+        }
+        return 'O';
+    }
 }
