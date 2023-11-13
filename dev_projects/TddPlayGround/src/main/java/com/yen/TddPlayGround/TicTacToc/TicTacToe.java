@@ -17,13 +17,13 @@ public class TicTacToe {
 
         this.lastPlayer = nextPlayer();
         setBox(x,y,lastPlayer);
-        //this.round += 1;
 
         // check winner
         if (isWin()){
             return lastPlayer + " is the winner";
         }
 
+        // check if draw game
         if (isDraw()){
             return "The result is draw";
         }
@@ -96,11 +96,6 @@ public class TicTacToe {
     }
 
     public char nextPlayer() {
-
-//        if (this.round % 2 == 0){
-//            return 'X';
-//        }
-//        return 'O';
 
         if (lastPlayer == 'X'){
             return 'O';
