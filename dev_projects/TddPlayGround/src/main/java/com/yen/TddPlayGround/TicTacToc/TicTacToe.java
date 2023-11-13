@@ -10,13 +10,25 @@ public class TicTacToe {
 
     private int round = 0;
 
-    public void play(int x, int y) {
+    public String play(int x, int y) {
 
         checkXAxis(x);
         checkYAxis(y);
 
-        setBox(x,y);
-        this.round += 1;
+        this.lastPlayer = nextPlayer();
+        setBox(x,y, lastPlayer);
+        //this.round += 1;
+
+        // check winner
+        for (int idx = 0; idx < 3; idx++){
+            if (board[0][idx] == lastPlayer &&
+                board[1][idx] == lastPlayer &&
+                board[2][idx] == lastPlayer){
+                return lastPlayer + " is the winner";
+            }
+        }
+
+        return "No winner";
     }
 
     private void checkXAxis(int x){
@@ -31,20 +43,26 @@ public class TicTacToe {
         }
     }
 
-    private void setBox(int x, int y){
+    private void setBox(int x, int y, char lastPlayer){
 
         if (board[x-1][y-1] != '\0'){
             throw new RuntimeException("place is occupied");
         }
 
-        board[x-1][y-1] = 'X';
+        board[x-1][y-1] = lastPlayer;
     }
 
     public char nextPlayer() {
 
-        if (this.round % 2 == 0){
-            return 'X';
+//        if (this.round % 2 == 0){
+//            return 'X';
+//        }
+//        return 'O';
+
+        if (lastPlayer == 'X'){
+            return 'O';
         }
-        return 'O';
+        return 'X';
     }
+
 }
