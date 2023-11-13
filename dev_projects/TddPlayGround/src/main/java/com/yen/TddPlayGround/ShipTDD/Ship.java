@@ -15,4 +15,23 @@ public class Ship {
         return this.location;
     }
 
+    public boolean moveForward() {
+        /**
+         *  NOTE : the logic we implement moveForward here:
+         *
+         *         Location expected = location.copy();
+         *         expected.forward();
+         *         ship.moveForward();
+         *
+         *        -> simply repeat what Location does to this method
+         */
+        return location.forward();
+    }
+
+    public boolean moveBackward() {
+
+        // same as moveForward
+        return location.backward();
+    }
+
 }
