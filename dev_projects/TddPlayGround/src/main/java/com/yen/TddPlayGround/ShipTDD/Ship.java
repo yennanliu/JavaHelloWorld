@@ -7,8 +7,15 @@ public class Ship {
 
     private final Location location;
 
+    private Planet planet;
+
     public Ship(Location location) {
         this.location = location;
+    }
+
+    public Ship(Location location, Planet planet) {
+        this.location = location;
+        this.planet = planet;
     }
 
     public Location getLocation() {
@@ -66,4 +73,9 @@ public class Ship {
         }
 
     }
+
+    public Planet getPlanet() {
+        return planet;
+    }
+
 }

@@ -116,4 +116,18 @@ class ShipSpec {
         assertEquals(ship.getLocation(), expected);
     }
 
+
+    @Test
+    public void whenInstantiatedThenPlanetIsStored(){
+
+        Location location = new Location(
+                new Point(21, 13), Direction.NORTH);
+
+        Point max = new Point(50, 50);
+        Planet planet = new Planet(max);
+
+        Ship ship = new Ship(location, planet);
+        assertEquals(ship.getPlanet(), planet);
+    }
+
 }
