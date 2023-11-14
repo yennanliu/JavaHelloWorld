@@ -1,12 +1,11 @@
-# Concurrency
+# Multithreading
 
 ## Command
 
 ```bash
 
 #java -jar fernflower.jar -dgs=true JarToDecompile.jar DecompiledJar
-
-java -jar ref_project/jcip-examples-src.jar -dgs=true JarToDecompile.jar DecompiledJar
+#java -jar ref_project/jcip-examples-src.jar -dgs=true JarToDecompile.jar DecompiledJar
 ```
 
 ## Ref
