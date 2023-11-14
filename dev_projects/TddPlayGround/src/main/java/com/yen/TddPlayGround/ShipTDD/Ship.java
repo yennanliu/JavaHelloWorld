@@ -32,7 +32,9 @@ public class Ship {
          *
          *        -> simply repeat what Location does to this method
          */
-        return location.forward();
+        //return location.forward();
+        // book p.80
+        return location.forward(planet.getMax());
     }
 
     public boolean moveBackward() {

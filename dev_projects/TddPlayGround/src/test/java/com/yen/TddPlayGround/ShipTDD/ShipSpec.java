@@ -21,6 +21,18 @@ class ShipSpec {
 //        ship = new Ship(location);
 //    }
 
+//    private Ship ship;
+//    private Planet planet;
+//    private Location location;
+//
+//    @BeforeTestMethod
+//    public void beforeTest(){
+//        Point max = new Point(50, 50);
+//        location = new Location(new Point(21, 13), Direction.NORTH);
+//        Planet planet = new Planet(max);
+//        ship = new Ship(location, planet);
+//    }
+
     @Test
     public void whenInstantiatedThenLocationIsSet() {
         Location location = new Location(
@@ -33,9 +45,15 @@ class ShipSpec {
     @Test
     public void whenMoveForwardThenForward(){
 
-        Location location = new Location(
-                new Point(21, 13), Direction.NORTH);
-        Ship ship = new Ship(location);
+        Point max = new Point(50, 50);
+        Location location = new Location(new Point(21, 13), Direction.NORTH);
+        Planet planet = new Planet(max);
+        Ship ship = new Ship(location, planet);
+
+
+//        Location location = new Location(
+//                new Point(21, 13), Direction.NORTH);
+        //Ship ship = new Ship(location);
 
         Location expected = location.copy();
         expected.forward();
@@ -88,9 +106,15 @@ class ShipSpec {
     @Test
     public void whenReceiveCommandsFThenForward(){
 
-        Location location = new Location(
-                new Point(21, 13), Direction.NORTH);
-        Ship ship = new Ship(location);
+
+        Point max = new Point(50, 50);
+        Location location = new Location(new Point(21, 13), Direction.NORTH);
+        Planet planet = new Planet(max);
+        Ship ship = new Ship(location, planet);
+
+//        Location location = new Location(
+//                new Point(21, 13), Direction.NORTH);
+//        Ship ship = new Ship(location);
 
         Location expected = location.copy();
         expected.forward();
@@ -103,9 +127,14 @@ class ShipSpec {
     @Test
     public void whenReceiveCommandsThenAllAreExecuted() {
 
-        Location location = new Location(
-                new Point(21, 13), Direction.NORTH);
-        Ship ship = new Ship(location);
+        Point max = new Point(50, 50);
+        Location location = new Location(new Point(21, 13), Direction.NORTH);
+        Planet planet = new Planet(max);
+        Ship ship = new Ship(location, planet);
+
+//        Location location = new Location(
+//                new Point(21, 13), Direction.NORTH);
+//        Ship ship = new Ship(location);
 
         Location expected = location.copy();
         expected.turnRight();
@@ -128,6 +157,21 @@ class ShipSpec {
 
         Ship ship = new Ship(location, planet);
         assertEquals(ship.getPlanet(), planet);
+    }
+
+    @Test
+    public void overpassEastBoundary() {
+
+        Location location = new Location(new Point(21, 13), Direction.NORTH);
+
+        Point max = new Point(50, 50);
+        Planet planet = new Planet(max);
+        Ship ship = new Ship(location, planet);
+
+        location.setDirection(Direction.EAST);
+        location.getPoint().setX(planet.getMax().getX());
+        ship.receiveCommands("f");
+        assertEquals(location.getX(), 1);
     }
 
 }
