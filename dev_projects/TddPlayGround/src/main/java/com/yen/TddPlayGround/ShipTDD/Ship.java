@@ -34,4 +34,36 @@ public class Ship {
         return location.backward();
     }
 
+    public void turnLeft() {
+
+        location.turnLeft();
+    }
+
+    public void turnRight() {
+
+        location.turnRight();
+    }
+
+    // l : left, r : right, f : forward, b : back
+    public void receiveCommands(String commands) {
+
+        for (char cmd : commands.toCharArray()){
+            System.out.println("_cmd = " + cmd);
+            switch (cmd){
+                case 'l':
+                    turnLeft();
+                    break;
+                case 'r':
+                    turnRight();
+                    break;
+                case 'f':
+                    moveForward();
+                    break;
+                case 'b':
+                    moveBackward();
+                    break;
+            }
+        }
+
+    }
 }
