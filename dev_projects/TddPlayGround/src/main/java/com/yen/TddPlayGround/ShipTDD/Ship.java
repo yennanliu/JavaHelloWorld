@@ -57,9 +57,12 @@ public class Ship {
     }
 
     // l : left, r : right, f : forward, b : back
-    public void receiveCommands(String commands) {
+    public String receiveCommands(String commands) {
+
+        StringBuilder output = new StringBuilder();
 
         for (char cmd : commands.toCharArray()){
+            boolean status = true;
             System.out.println("_cmd = " + cmd);
             switch (cmd){
                 case 'l':
@@ -69,14 +72,20 @@ public class Ship {
                     turnRight();
                     break;
                 case 'f':
-                    moveForward();
+                    status = moveForward();
                     break;
                 case 'b':
-                    moveBackward();
+                    status = moveBackward();
                     break;
             }
-        }
 
+            if (status){
+                output.append('O');
+            }else{
+                output.append('X');
+            }
+        }
+        return output.toString();
     }
 
     public Planet getPlanet() {

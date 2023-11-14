@@ -81,7 +81,7 @@ class ShipSpec {
         obstacles.add(new Point(45, 46));
         Planet planet = new Planet(max, obstacles);
         Ship ship = new Ship(location, planet);
-        
+
 //        Point max = new Point(50, 50);
 //        Location location = new Location(new Point(21, 13), Direction.NORTH);
 //        Planet planet = new Planet(max);
@@ -258,6 +258,24 @@ class ShipSpec {
         expected.backward(new Point(0, 0), new ArrayList<>());
         ship.receiveCommands("rflb");
         assertEquals(ship.getLocation(), expected);
+    }
+
+    @Test
+    public void whenReceiveCommandsThenOForOkAndXForObstacle() {
+
+        // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/5b832a142fab70505af2d9e3c7896cc5079bce32/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java#lines-19
+        Point max = new Point(50, 50);
+        Location location = new Location(new Point(21, 13), Direction.NORTH);
+        //Planet planet = new Planet(max, obstacles);
+        //Ship ship = new Ship(location, planet);
+        Planet planet = new Planet(max);
+        Ship ship = new Ship(location, planet);
+
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(location.getX() + 1, location.getY()));
+        ship.getPlanet().setObstacles(obstacles);
+        String status = ship.receiveCommands("rflb");
+        assertEquals(status, "OXOO");
     }
 
 }
