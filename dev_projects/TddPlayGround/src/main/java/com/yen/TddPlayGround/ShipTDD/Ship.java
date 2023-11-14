@@ -34,13 +34,16 @@ public class Ship {
          */
         //return location.forward();
         // book p.80
-        return location.forward(planet.getMax());
+        //return location.forward(planet.getMax());
+        // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/5b832a142fab70505af2d9e3c7896cc5079bce32/src/main/java/com/packtpublishing/tddjava/ch04ship/Ship.java#lines-25
+        return location.forward(planet.getMax(), planet.getObstacles());
     }
 
     public boolean moveBackward() {
 
         // same as moveForward
-        return location.backward();
+        //return location.backward();
+        return location.backward(planet.getMax(), planet.getObstacles());
     }
 
     public void turnLeft() {

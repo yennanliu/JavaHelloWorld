@@ -3,10 +3,14 @@ package com.yen.TddPlayGround.ShipTDD;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.event.annotation.BeforeTestMethod;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /** test class for Ship */
 // book p.70
+// https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/req06-obstacles/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java
 
 class ShipSpec {
 
@@ -45,15 +49,19 @@ class ShipSpec {
     @Test
     public void whenMoveForwardThenForward(){
 
+        // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/5b832a142fab70505af2d9e3c7896cc5079bce32/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java#lines-19
         Point max = new Point(50, 50);
         Location location = new Location(new Point(21, 13), Direction.NORTH);
-        Planet planet = new Planet(max);
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(44, 44));
+        obstacles.add(new Point(45, 46));
+        Planet planet = new Planet(max, obstacles);
         Ship ship = new Ship(location, planet);
 
-
-//        Location location = new Location(
-//                new Point(21, 13), Direction.NORTH);
-        //Ship ship = new Ship(location);
+//        Point max = new Point(50, 50);
+//        Location location = new Location(new Point(21, 13), Direction.NORTH);
+//        Planet planet = new Planet(max);
+//        Ship ship = new Ship(location, planet);
 
         Location expected = location.copy();
         expected.forward();
@@ -65,9 +73,19 @@ class ShipSpec {
     @Test
     public void whenMoveBackwardThenBackward() {
 
-        Location location = new Location(
-                new Point(21, 13), Direction.NORTH);
-        Ship ship = new Ship(location);
+        // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/5b832a142fab70505af2d9e3c7896cc5079bce32/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java#lines-19
+        Point max = new Point(50, 50);
+        Location location = new Location(new Point(21, 13), Direction.NORTH);
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(44, 44));
+        obstacles.add(new Point(45, 46));
+        Planet planet = new Planet(max, obstacles);
+        Ship ship = new Ship(location, planet);
+        
+//        Point max = new Point(50, 50);
+//        Location location = new Location(new Point(21, 13), Direction.NORTH);
+//        Planet planet = new Planet(max);
+//        Ship ship = new Ship(location, planet);
 
         Location expected = location.copy();
         expected.backward();
@@ -107,14 +125,19 @@ class ShipSpec {
     public void whenReceiveCommandsFThenForward(){
 
 
+//        Point max = new Point(50, 50);
+//        Location location = new Location(new Point(21, 13), Direction.NORTH);
+//        Planet planet = new Planet(max);
+//        Ship ship = new Ship(location, planet);
+
+        // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/5b832a142fab70505af2d9e3c7896cc5079bce32/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java#lines-19
         Point max = new Point(50, 50);
         Location location = new Location(new Point(21, 13), Direction.NORTH);
-        Planet planet = new Planet(max);
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(44, 44));
+        obstacles.add(new Point(45, 46));
+        Planet planet = new Planet(max, obstacles);
         Ship ship = new Ship(location, planet);
-
-//        Location location = new Location(
-//                new Point(21, 13), Direction.NORTH);
-//        Ship ship = new Ship(location);
 
         Location expected = location.copy();
         expected.forward();
@@ -127,14 +150,19 @@ class ShipSpec {
     @Test
     public void whenReceiveCommandsThenAllAreExecuted() {
 
+        // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/5b832a142fab70505af2d9e3c7896cc5079bce32/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java#lines-19
         Point max = new Point(50, 50);
         Location location = new Location(new Point(21, 13), Direction.NORTH);
-        Planet planet = new Planet(max);
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(44, 44));
+        obstacles.add(new Point(45, 46));
+        Planet planet = new Planet(max, obstacles);
         Ship ship = new Ship(location, planet);
 
-//        Location location = new Location(
-//                new Point(21, 13), Direction.NORTH);
-//        Ship ship = new Ship(location);
+//        Point max = new Point(50, 50);
+//        Location location = new Location(new Point(21, 13), Direction.NORTH);
+//        Planet planet = new Planet(max);
+//        Ship ship = new Ship(location, planet);
 
         Location expected = location.copy();
         expected.turnRight();
@@ -162,16 +190,74 @@ class ShipSpec {
     @Test
     public void overpassEastBoundary() {
 
+        // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/5b832a142fab70505af2d9e3c7896cc5079bce32/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java#lines-19
+        Point max = new Point(50, 50);
+        Location location = new Location(new Point(21, 13), Direction.NORTH);
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(44, 44));
+        obstacles.add(new Point(45, 46));
+        Planet planet = new Planet(max, obstacles);
+        Ship ship = new Ship(location, planet);
+
+//        Location location = new Location(new Point(21, 13), Direction.NORTH);
+//
+//        Point max = new Point(50, 50);
+//        Planet planet = new Planet(max);
+//        Ship ship = new Ship(location, planet);
+
+        location.setDirection(Direction.EAST);
+        location.getPoint().setX(planet.getMax().getX());
+        ship.receiveCommands("f");
+        assertEquals(location.getX(), 1);
+    }
+
+    @Test
+    public void givenDirectionEAndXEquals1WhenReceiveCommandsBThenWrap() {
+
+        // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/5b832a142fab70505af2d9e3c7896cc5079bce32/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java#lines-19
+        Point max = new Point(50, 50);
+        Location location = new Location(new Point(21, 13), Direction.NORTH);
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(44, 44));
+        obstacles.add(new Point(45, 46));
+        Planet planet = new Planet(max, obstacles);
+        Ship ship = new Ship(location, planet);
+
+//        Location location = new Location(new Point(21, 13), Direction.NORTH);
+//
+//        Point max = new Point(50, 50);
+//        Planet planet = new Planet(max);
+//        Ship ship = new Ship(location, planet);
+
+        location.setDirection(Direction.EAST);
+        location.getPoint().setX(1);
+        ship.receiveCommands("b");
+        assertEquals(location.getX(), planet.getMax().getX());
+    }
+
+
+    // book p.80
+    // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/5b832a142fab70505af2d9e3c7896cc5079bce32/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java#lines-133
+    @Test
+    public void whenReceiveCommandsThenStopOnObstacle() {
+
         Location location = new Location(new Point(21, 13), Direction.NORTH);
 
         Point max = new Point(50, 50);
         Planet planet = new Planet(max);
         Ship ship = new Ship(location, planet);
 
-        location.setDirection(Direction.EAST);
-        location.getPoint().setX(planet.getMax().getX());
-        ship.receiveCommands("f");
-        assertEquals(location.getX(), 1);
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(location.getX() + 1, location.getY()));
+        ship.getPlanet().setObstacles(obstacles);
+        Location expected = location.copy();
+        expected.turnRight();
+        // Moving forward would encounter an obstacle
+        // expected.forward(new Point(0, 0), new ArrayList<Point>());
+        expected.turnLeft();
+        expected.backward(new Point(0, 0), new ArrayList<>());
+        ship.receiveCommands("rflb");
+        assertEquals(ship.getLocation(), expected);
     }
 
 }
