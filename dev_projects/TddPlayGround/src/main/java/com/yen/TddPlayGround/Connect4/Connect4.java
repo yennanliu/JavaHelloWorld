@@ -20,6 +20,12 @@ public class Connect4 {
 
     private String[][] board = new String[ROWS][COLUMNS];
 
+    private static final String RED = "R";
+
+    private static final String GREEN = "G";
+
+    private String currentPlayer = RED;
+
 //    private final int maxDiscsInColumn = 6;
 //    private int discNum;
 
@@ -27,6 +33,21 @@ public class Connect4 {
     Connect4(){
         for (String[] row : board){
             Arrays.fill(row, EMPTY);
+        }
+    }
+
+
+    public String getCurrentPlayer(){
+
+        return this.currentPlayer;
+    }
+
+    public void SwitchPlayer(){
+
+        if (RED.equals(this.currentPlayer)){
+            this.currentPlayer = GREEN;
+        }else{
+            this.currentPlayer = RED;
         }
     }
 
@@ -53,7 +74,11 @@ public class Connect4 {
         this.checkPositionToInsert(row, column);
         board[row][column] = "X";
         System.out.println(">>> putDiscInColumn");
-        return column; //row;
+
+        // switch player
+        SwitchPlayer();
+        
+        return column; //row; // TODO : verify should return column or row
     }
 
     private void checkPositionToInsert(int row, int column) {

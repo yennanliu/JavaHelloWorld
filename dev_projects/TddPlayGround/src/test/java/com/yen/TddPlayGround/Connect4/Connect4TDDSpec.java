@@ -110,4 +110,21 @@ class Connect4TDDSpec {
         System.out.println(exception);
     }
 
+    // book p.96
+    @Test
+    public void whenFirstPlayerPlaysThenDiscColorIsRed(){
+
+        Connect4 tested = new Connect4();
+        assertEquals(tested.getCurrentPlayer(), "R");
+    }
+
+    @Test
+    public void whenSecondPlayerPlaysThenDiscColorIsRed(){
+
+        Connect4 tested = new Connect4();
+        int column = 1;
+        tested.putDiscInColumn(column);
+        assertEquals(tested.getCurrentPlayer(), "G");
+    }
+
 }
