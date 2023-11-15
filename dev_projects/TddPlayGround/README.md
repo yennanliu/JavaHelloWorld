@@ -20,3 +20,8 @@
 
 - Other code
 	- https://github.com/in28minutes/spring-boot-master-class
+
+
+- Other video
+	- https://www.youtube.com/watch?v=eMU_hninZAs&list=PLukoBpjuyzMOPIBU8mlpkeF819h2e0dqn
+	- https://www.youtube.com/watch?v=z6gOPonp2t0
