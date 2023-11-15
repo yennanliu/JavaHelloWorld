@@ -19,6 +19,13 @@
 #java -jar ref_project/jcip-examples-src.jar -dgs=true JarToDecompile.jar DecompiledJar
 ```
 
+## Note
+
+- Lock CAN'T be unlocked automatically when exception -> need to unlock explicitly (usually via "finally")
+- Lock can "interrupt" thread; synchronize can't do so (thread in synchronize will keep waiting)
+- Lock Can know if lock is received, synchronize can't do so
+- Lock has better performance than synchronize when heavy resource competition
+
 ## Ref
 
 - https://github.com/callicoder/java-concurrency-examples
