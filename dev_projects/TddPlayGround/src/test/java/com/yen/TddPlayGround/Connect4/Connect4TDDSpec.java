@@ -98,7 +98,7 @@ class Connect4TDDSpec {
         Connect4 tested = new Connect4();
 
         int column = 1;
-        int maxDiscsInColumn = 6; // the number of rows
+        int maxDiscsInColumn = 10; // the number of rows
 
         // NOTE : ++times
         Exception exception = assertThrowsExactly(RuntimeException.class, () -> {

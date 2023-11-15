@@ -6,31 +6,68 @@ package com.yen.TddPlayGround.Connect4;
 // NOTE : in this example, we will use TDD and non TDD
 // book p. 92
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class Connect4 {
 
-    private int discNum;
+    // attr
+    private static final int ROWS = 6;
 
-    private final int maxDiscsInColumn = 6;
+    private static final int COLUMNS = 7;
+
+    private static final String EMPTY = " ";
+
+    private String[][] board = new String[ROWS][COLUMNS];
+
+//    private final int maxDiscsInColumn = 6;
+//    private int discNum;
+
+    // constructor
+    Connect4(){
+        for (String[] row : board){
+            Arrays.fill(row, EMPTY);
+        }
+    }
 
     public int getNumberOfDiscs() {
 
-        return this.discNum; //0;
+        //return this.discNum; //0;
+        return IntStream.range(0, COLUMNS).map(this::getNumberOfDiscsInColumn).sum();
+    }
+
+    private int getNumberOfDiscsInColumn(int column) {
+
+        //int res = IntStream.range(0, ROWS).filter(row -> !EMPTY).equals(board[row][column]))).count();
+        return (int) IntStream.range(0, ROWS)
+                .filter(row -> !EMPTY
+                        .equals(board[row][column]))
+                .count();
     }
 
     public int putDiscInColumn(int column) {
 
-        System.out.println("this.discNum = " + this.discNum);
+        this.checkColumn(column);
+        //System.out.println("this.discNum = " + this.discNum);
+        int row = getNumberOfDiscsInColumn(column);
+        this.checkPositionToInsert(row, column);
+        board[row][column] = "X";
+        System.out.println(">>> putDiscInColumn");
+        return column; //row;
+    }
 
-        if (column < 0){
-            throw new RuntimeException("Invalid column " + column);
-        }
+    private void checkPositionToInsert(int row, int column) {
 
-        if (this.discNum >= maxDiscsInColumn-1){
+        if (row == ROWS){
             throw new RuntimeException("No more room in column " + column);
         }
+    }
 
-        this.discNum += 1;
-        return column;
+    private void checkColumn(int column) {
+
+        if (column < 0 || column > COLUMNS){
+            throw new RuntimeException("Invalid column " + column);
+        }
     }
 
 }
