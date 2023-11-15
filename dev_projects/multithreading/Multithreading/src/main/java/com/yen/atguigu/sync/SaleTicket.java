@@ -1,10 +1,10 @@
-package com.yen.atguigu;
+package com.yen.atguigu.sync;
 
 /**
  * Multi-thread with synchronized
  */
 
-// https://youtu.be/vBzCBFpcGKk?si=V1EncXqP1IkMZrqO&t=71
+// course 06 : https://youtu.be/vBzCBFpcGKk?si=V1EncXqP1IkMZrqO&t=71
 
 /**
  *  - Step 1: Create resource class, implement attr, op method
@@ -62,6 +62,15 @@ public class SaleTicket {
             }
         }, "BB").start();
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // call resource class
+                for (int i = 0; i < 40; i++) {
+                    ticket.sale();
+                }
+            }
+        }, "CC").start();
 
         // https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/ThreadDemo5/RunnableDemo1.java#L16C16-L16C26
     //    class MyThread implements Runnable{
