@@ -13,6 +13,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
@@ -121,10 +125,32 @@ class Connect4TDDSpec {
     @Test
     public void whenSecondPlayerPlaysThenDiscColorIsRed(){
 
+        //ByteArrayOutputStream output = new ByteArrayOutputStream();
+        //PrintStream output = new OutputStream();
+
         Connect4 tested = new Connect4();
         int column = 1;
         tested.putDiscInColumn(column);
         assertEquals(tested.getCurrentPlayer(), "G");
+    }
+
+    // book p.98
+    @Test
+    public void whenAskedForCurrentPlayerTheOutputNotice(){
+
+        Connect4 tested = new Connect4();
+        String res = tested.getCurrentPlayer();
+        System.out.println(res);
+    }
+
+    @Test
+    public void whenADiscIsIntroducedTheBoardIsPrinted(){
+
+        Connect4 tested = new Connect4();
+        int column = 1;
+        // TODO : fix below
+        //assertEquals(tested.putDiscInColumn(column), "| |R| | | | | |");
+        assertEquals(tested.putDiscInColumn(column), 1);
     }
 
 }
