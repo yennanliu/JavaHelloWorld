@@ -22,12 +22,16 @@ public class TicTacToeCollection{
     }
 
     // method
+    // when TicTacToeCollection created via constructor, then mongoCollection instance is init
+    // -> we can get such mongoCollection instance via getMongoCollection()
     protected MongoCollection getMongoCollection() {
 
         return mongoCollection;
     }
 
     public void saveMove(TicTacToeBean bean) {
+
+        getMongoCollection().save(bean); // note here : we save bean
     }
 
 }
