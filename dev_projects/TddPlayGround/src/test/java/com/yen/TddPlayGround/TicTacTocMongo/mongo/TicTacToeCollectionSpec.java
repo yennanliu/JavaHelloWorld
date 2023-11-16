@@ -25,11 +25,18 @@ class TicTacToeCollectionSpec {
 
     TicTacToeCollection collection;
 
+    MongoCollection mongoCollection;
+
+    TicTacToeBean bean;
+
     @BeforeEach
     public void before() throws UnknownHostException{
         //collection = new TicTacToeCollection();
         // book p.112
         collection = spy(new TicTacToeCollection());
+        // book p.115
+        bean = new TicTacToeBean(3,2,1, 'Y');
+        mongoCollection = mock(MongoCollection.class);
     }
 
 
@@ -52,17 +59,31 @@ class TicTacToeCollectionSpec {
     @Test
     public void whenSaveMoveThenInvokeMongoCollectionSave(){
 
-        TicTacToeBean bean = new TicTacToeBean(3,2,1, 'Y');
+        //TicTacToeBean bean = new TicTacToeBean(3,2,1, 'Y');
 
         // mock MongoCollection
-        MongoCollection mongoCollection = mock(MongoCollection.class);
+        //MongoCollection mongoCollection = mock(MongoCollection.class);
         // setup mock instance behaviour
         // -> return a mock instance (mongoCollection) when TicTacToeCollection.getMongoCollection() method is called
         doReturn(mongoCollection).when(collection).getMongoCollection();
 
         collection.saveMove(bean);
 
+        // verify method called result
         verify(mongoCollection, times(1)).save(bean);
+    }
+
+    @Test
+    public void whenSaveMoveThenReturnTrue(){
+
+        //TicTacToeBean bean = new TicTacToeBean(3,2,1, 'Y');
+        // mock
+        //MongoCollection mongoCollection = mock(MongoCollection.class);
+        // setup mock instance behaviour
+        // -> return a mock instance (mongoCollection) when TicTacToeCollection.getMongoCollection() method is called
+
+        doReturn(mongoCollection).when(collection).getMongoCollection();
+        assertEquals(collection.saveMove(bean), true);
     }
 
 }

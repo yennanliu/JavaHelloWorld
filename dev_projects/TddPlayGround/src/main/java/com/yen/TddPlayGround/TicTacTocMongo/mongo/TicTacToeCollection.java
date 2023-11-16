@@ -29,9 +29,14 @@ public class TicTacToeCollection{
         return mongoCollection;
     }
 
-    public void saveMove(TicTacToeBean bean) {
-
-        getMongoCollection().save(bean); // note here : we save bean
+    public boolean saveMove(TicTacToeBean bean) {
+        try{
+            getMongoCollection().save(bean); // note here : we save bean
+            return true;
+        }catch (Exception e){
+            System.out.println(e);
+            return false;
+        }
     }
 
 }
