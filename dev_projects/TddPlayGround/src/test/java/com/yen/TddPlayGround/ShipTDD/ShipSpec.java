@@ -1,6 +1,9 @@
 package com.yen.TddPlayGround.ShipTDD;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.event.annotation.BeforeTestMethod;
 
 import java.util.ArrayList;
@@ -12,36 +15,27 @@ import static org.junit.jupiter.api.Assertions.*;
 // book p.70
 // https://bitbucket.org/vfarcic/tdd-java-ch04-ship/src/req06-obstacles/src/test/java/com/packtpublishing/tddjava/ch04ship/ShipSpec.java
 
+@ExtendWith(MockitoExtension.class)
 class ShipSpec {
 
     // TODO : fix can run with below
-//    private Ship ship;
-//    private Location location;
-//
-//    @BeforeTestMethod
-//    public void beforeTest(){
-//        Location location = new Location(
-//                new Point(21, 13), Direction.NORTH);
-//        ship = new Ship(location);
-//    }
+    private Ship ship;
+    private Location location;
+    private Planet planet;
 
-//    private Ship ship;
-//    private Planet planet;
-//    private Location location;
-//
-//    @BeforeTestMethod
-//    public void beforeTest(){
-//        Point max = new Point(50, 50);
-//        location = new Location(new Point(21, 13), Direction.NORTH);
-//        Planet planet = new Planet(max);
-//        ship = new Ship(location, planet);
-//    }
+    @BeforeEach
+    public void beforeTest(){
+        Point max = new Point(50, 50);
+        location = new Location(new Point(21, 13), Direction.NORTH);
+        Planet planet = new Planet(max);
+        ship = new Ship(location, planet);
+    }
 
     @Test
     public void whenInstantiatedThenLocationIsSet() {
-        Location location = new Location(
-                new Point(21, 13), Direction.NORTH);
-        Ship ship = new Ship(location);
+//        Location location = new Location(
+//                new Point(21, 13), Direction.NORTH);
+//        Ship ship = new Ship(location);
         assertEquals(ship.getLocation(), location);
     }
 
