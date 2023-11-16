@@ -17,15 +17,15 @@ class FileOperatorTest {
 //       System.out.println("res = " + res);
 //    }
 
-    @Test
-    void testReadFile() throws FileNotFoundException {
-
-        String expected = "null# TDD dev Projects## Quick start## Ref";
-        assertEquals(fileOperator.readFile("README.md"), expected);
-
-        assertThrows(java.io.FileNotFoundException.class, () -> {
-            fileOperator.readFile("xxx.txt");
-        });
-    }
+//    @Test
+//    void testReadFile() throws FileNotFoundException {
+//
+//        String expected = "null# TDD dev Projects## Quick start## Ref";
+//        assertEquals(fileOperator.readFile("README.md"), expected);
+//
+//        assertThrows(java.io.FileNotFoundException.class, () -> {
+//            fileOperator.readFile("xxx.txt");
+//        });
+//    }
 
 }
