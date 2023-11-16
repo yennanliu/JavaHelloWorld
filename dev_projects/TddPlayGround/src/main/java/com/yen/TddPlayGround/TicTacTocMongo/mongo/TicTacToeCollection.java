@@ -27,4 +27,7 @@ public class TicTacToeCollection{
         return mongoCollection;
     }
 
+    public void saveMove(TicTacToeBean bean) {
+    }
+
 }

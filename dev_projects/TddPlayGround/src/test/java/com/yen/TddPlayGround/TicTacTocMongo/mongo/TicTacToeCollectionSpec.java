@@ -1,5 +1,6 @@
 package com.yen.TddPlayGround.TicTacTocMongo.mongo;
 
+import org.jongo.MongoCollection;
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.net.UnknownHostException;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 /**
  *  How to fix Junit 5 "null pointer" error when use @Before
@@ -25,7 +27,9 @@ class TicTacToeCollectionSpec {
 
     @BeforeEach
     public void before() throws UnknownHostException{
-        collection = new TicTacToeCollection();
+        //collection = new TicTacToeCollection();
+        // book p.112
+        collection = spy(new TicTacToeCollection());
     }
 
 
@@ -42,6 +46,23 @@ class TicTacToeCollectionSpec {
 
         //TicTacToeCollection collection = new TicTacToeCollection();
         assertEquals(collection.getMongoCollection().getDBCollection().getName(), "game");
+    }
+
+    // book p.112
+    @Test
+    public void whenSaveMoveThenInvokeMongoCollectionSave(){
+
+        TicTacToeBean bean = new TicTacToeBean(3,2,1, 'Y');
+
+        // mock MongoCollection
+        MongoCollection mongoCollection = mock(MongoCollection.class);
+        // setup mock instance behaviour
+        // -> return a mock instance (mongoCollection) when TicTacToeCollection.getMongoCollection() method is called
+        doReturn(mongoCollection).when(collection).getMongoCollection();
+
+        collection.saveMove(bean);
+
+        verify(mongoCollection, times(1)).save(bean);
     }
 
 }
