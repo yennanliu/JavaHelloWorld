@@ -55,9 +55,12 @@ public class ThreadDemo1 {
 
     public static void main(String[] args) {
 
+
+        System.out.println("ThreadDemo1 start");
+
         // - Step 3: Create threads, call resource class
         Share share = new Share();
-        new Thread(() -> new Runnable(){
+        new Thread(new Runnable(){
             @Override
             public void run() {
                 for(int i = 0; i <= 10; i++){
@@ -70,10 +73,11 @@ public class ThreadDemo1 {
             }
         }, "AA").start();
 
-        new Thread(() -> new Runnable(){
+        new Thread(new Runnable(){
             @Override
             public void run() {
                 for(int i = 0; i <= 10; i++){
+                    //System.out.println("--> (BB) i = " + i);
                     try {
                         share.decr(); // -1
                     } catch (InterruptedException e) {
