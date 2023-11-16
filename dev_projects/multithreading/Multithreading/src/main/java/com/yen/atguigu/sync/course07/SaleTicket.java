@@ -1,4 +1,4 @@
-package com.yen.atguigu.sync;
+package com.yen.atguigu.sync.course07;
 
 /**
  * Multi-thread with synchronized
@@ -30,6 +30,7 @@ class Ticket {
             System.out.println("--> " + Thread.currentThread().getName() + " sales : " + (number--) + ", remain : " + number);
         }
     }
+
 }
 
 

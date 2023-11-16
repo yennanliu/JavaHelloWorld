@@ -1,4 +1,4 @@
-package com.yen.atguigu.lock;
+package com.yen.atguigu.lock.course07;
 
 /**
  * Multi-thread with lock
