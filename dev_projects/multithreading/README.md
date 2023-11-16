@@ -10,7 +10,9 @@
 	- main biz logic
 	- notification (other thread)
 - Step 3: Create threads, call resource class
-- Step 4: Avoid "虛假喚醒" (if logic)
+- Step 4: Avoid "虛假喚醒" (do decision via "while", instead of "if")
+
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/spurious_wakeup.png"></p>
 
 ## Command
 

@@ -1,10 +1,11 @@
-package com.yen.atguigu.sync.course08;
+package com.yen.atguigu.sync.course09_10;
 
 /**
  * Multi-thread (thread interaction) with synchronized
  */
 
-// course 08 : https://youtu.be/h-Q9bqt1CEg?si=VJBenkX6NhCSgwYD
+// course 09 : https://youtu.be/h-Q9bqt1CEg?si=VJBenkX6NhCSgwYD
+// course 10 : https://youtu.be/CvOdSZnJnnM?si=q4EsLQ_6w3t8EM6f
 
 /**
  *  - Step 1: Create resource class, implement attr, op method
@@ -28,7 +29,11 @@ class Share{
     public synchronized void incr() throws InterruptedException {
 
         // decision, do logic, notification
-        if (number != 0){
+        /** NOTE !!! use while, instead of "if" to avoid "虛假喚醒" */
+//        if (number != 0){
+//            this.wait();
+//        }
+        while (number != 0){
             this.wait();
         }
         number += 1;
@@ -40,7 +45,8 @@ class Share{
     public synchronized void decr() throws InterruptedException {
 
         // decision, do logic, notification
-        if (number != 1){
+        /** NOTE !!! use while, instead of "if" to avoid "虛假喚醒" */
+        while (number != 1){
             this.wait();
         }
 
@@ -86,6 +92,34 @@ public class ThreadDemo1 {
                 }
             }
         }, "BB").start();
+
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                for(int i = 0; i <= 10; i++){
+                    //System.out.println("--> (BB) i = " + i);
+                    try {
+                        share.incr(); // +1
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }, "CC").start();
+
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                for(int i = 0; i <= 10; i++){
+                    //System.out.println("--> (BB) i = " + i);
+                    try {
+                        share.decr(); // -1
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }, "DD").start();
 
     }
 
