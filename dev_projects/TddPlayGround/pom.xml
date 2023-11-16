@@ -54,9 +54,10 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 
-		<!-- mongo book p. 108 -->
-		<!-- https://mvnrepository.com/artifact/org.jongo/jongo -->
-		<!-- https://mvnrepository.com/artifact/org.jongo/jongo -->
+		<!-- mongo
+		book p. 108
+		jongo : do Mongo op as java code
+		-->
 		<dependency>
 			<groupId>org.jongo</groupId>
 			<artifactId>jongo</artifactId>
