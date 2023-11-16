@@ -25,7 +25,7 @@ import java.util.concurrent.locks.ReentrantLock;
 class ShareResource{
 
     // define definition (flag)
-    private int flag = 1; // flag=1 : AA, flag=2 : BB, flag=3 : CC, flag=4 : DD
+    private int flag = 1; // flag=1 : AA, flag=2 : BB, flag=3 : CC
 
     // create lock
     private Lock lock = new ReentrantLock();
@@ -113,6 +113,50 @@ class ShareResource{
 public class ThreadDemo3 {
 
     public static void main(String[] args) {
+
+        ShareResource shareResource = new ShareResource();
+
+        // - Step 3: Create threads, call resource class
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; i++) {
+                    try {
+                        shareResource.print_5(i);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }, "AA").start();
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; i++) {
+                    try {
+                        shareResource.print_10(i);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }, "BB").start();
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; i++) {
+                    try {
+                        shareResource.print_15(i);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }, "CC").start();
 
     }
 
