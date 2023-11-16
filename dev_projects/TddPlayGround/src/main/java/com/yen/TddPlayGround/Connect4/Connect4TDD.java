@@ -1,17 +1,19 @@
 package com.yen.TddPlayGround.Connect4;
 
-// https://bitbucket.org/vfarcic/tdd-java-ch05-design/src/master/src/main/java/com/packtpublishing/tddjava/ch05connect4/Connect4.java
+// Non TDD code : https://bitbucket.org/vfarcic/tdd-java-ch05-design/src/master/src/main/java/com/packtpublishing/tddjava/ch05connect4/Connect4.java
 // book p. 85
 
 // NOTE : in this example, we will use TDD and non TDD
+
+// TDD code : https://bitbucket.org/vfarcic/tdd-java-ch05-design/src/master/src/main/java/com/packtpublishing/tddjava/ch05connect4/Connect4TDD.java
 // book p. 92
 
 import java.util.Arrays;
 import java.util.StringJoiner;
+import java.util.regex.Pattern;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
-public class Connect4 {
+public class Connect4TDD {
 
     // attr
     private static final int ROWS = 7;
@@ -30,8 +32,11 @@ public class Connect4 {
 
     private static final String DELIMITER = "|";
 
+    private static final int DISCS_TO_WIN = 4;
+    private String winner = "";
+
     // constructor
-    public Connect4(){
+    public Connect4TDD(){
         for (String[] row : board){
             Arrays.fill(row, EMPTY);
         }
@@ -124,6 +129,37 @@ public class Connect4 {
 
         if (column < 0 || column > COLUMNS){
             throw new RuntimeException("Invalid column " + column);
+        }
+    }
+
+    public Boolean isFinished() {
+
+        //assertFalse("The game must not be finished",
+        //return "The game must not be finished";
+        return this.getNumberOfDiscs() == COLUMNS * ROWS;
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void checkWinner(int row, int column) {
+
+        // BOOK p.100
+        if (winner.isEmpty()){
+            String colour = board[row][column];
+            // TODO : double check below
+            Pattern winPattern =
+                    Pattern.compile(".*" + colour + "{" +
+                            DISCS_TO_WIN + "}.*");
+
+            String vertical = IntStream.range(0, ROWS)
+                    .mapToObj(r -> board[r][column])
+                    .reduce(String::concat).get();
+
+            if (winPattern.matcher(vertical).matches()){
+                winner = colour;
+            }
         }
     }
 
