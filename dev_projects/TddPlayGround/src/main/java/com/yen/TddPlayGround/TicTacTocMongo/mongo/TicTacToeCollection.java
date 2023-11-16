@@ -7,16 +7,18 @@ import com.mongodb.MongoClient;
 import org.jongo.Jongo;
 import org.jongo.MongoCollection;
 
-public class TicTacToeCollection {
+import java.net.UnknownHostException;
+
+public class TicTacToeCollection{
 
     private
     MongoCollection mongoCollection;
 
     // constructor
-    public TicTacToeCollection(){
+    public TicTacToeCollection() throws UnknownHostException {
 
         DB db = new MongoClient().getDB("tic-tac-toe");
-        mongoCollection = new Jongo(db).getCollection("bla");
+        mongoCollection = new Jongo(db).getCollection("game");
     }
 
     // method
