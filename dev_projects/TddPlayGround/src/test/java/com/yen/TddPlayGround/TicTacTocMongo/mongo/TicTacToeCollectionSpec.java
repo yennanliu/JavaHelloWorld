@@ -1,5 +1,6 @@
 package com.yen.TddPlayGround.TicTacTocMongo.mongo;
 
+import com.mongodb.MongoException;
 import org.jongo.MongoCollection;
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
@@ -84,6 +85,23 @@ class TicTacToeCollectionSpec {
 
         doReturn(mongoCollection).when(collection).getMongoCollection();
         assertEquals(collection.saveMove(bean), true);
+    }
+
+    // book p.116
+    @Test
+    public void givenExceptionWhenSaveMoveThenReturnFalse(){
+
+        // check if MongoException is thrown
+        doThrow(new MongoException("bla"))
+                .when(mongoCollection)
+                .save(any(TicTacToeBean.class));
+
+        // check if mongoCollection is return
+        doReturn(mongoCollection)
+                .when(collection)
+                .getMongoCollection();
+
+        assertFalse(collection.saveMove(bean));
     }
 
 }
