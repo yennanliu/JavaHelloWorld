@@ -1,13 +1,13 @@
-package com.yen.atguigu.lock.course14_15;
+package com.yen.atguigu.lock.course14_15_16;
 
-import java.util.List;
-import java.util.UUID;
-import java.util.Vector;
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /** Demo list thread unsafely */
 
 // Course 14 : https://youtu.be/0gz3RKOlt1g?si=2_jswaYyskzx0PsU
 // Course 15 : https://youtu.be/bKVsxSjySiY?si=9lKReBdU48Y6zDiW
+// Course 16 : https://youtu.be/AGA6KL4VvJk?si=KZQOr0udWPXCD6uA
 
 /**
  *  - Step 1: Create resource class, implement attr, op method
@@ -26,13 +26,21 @@ public class ThreadDemo4 {
 
         // create ArrayList
 
-        // ArrayList : thread UNSAFELY
+        // method 1) : ArrayList : thread UNSAFELY
         // will cause exception below : Exception in thread "2" java.util.ConcurrentModificationException
         //List<String> list = new ArrayList<>();
 
-        // Vector : thread SAFELY
+        // method 2) : Vector : thread SAFELY
         // this works, since it implements synchronize in add method
-        List<String> list = new Vector<>();
+        //List<String> list = new Vector<>();
+
+        // method 3) :
+        // Collections.synchronizedList : thread SAFELY
+        //List<String> list = Collections.synchronizedList(new ArrayList<>());
+
+        // method 4) (preferable)  :  CopyOnWriteArrayList
+        // https://youtu.be/AGA6KL4VvJk?si=wHESlS_gfXL5YzIm&t=142
+        List<String> list = new CopyOnWriteArrayList();
 
         for (int i = 0; i < 10; i++){
 
