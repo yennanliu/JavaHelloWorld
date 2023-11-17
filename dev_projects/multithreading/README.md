@@ -23,7 +23,7 @@
 
 ## Note
 
-- Synchronized
+Synchronized
 
 	- Every instance in java can lock with "Synchronized" 
 	- 3 types
@@ -31,7 +31,7 @@
 		- synchronized "static method" : lock current class instance 
 		- synchronized "code block" : lock instances inside code block
 
-- Lock
+Lock
 
 	- Lock CAN'T be unlocked automatically when exception -> need to unlock explicitly (usually via "finally")
 	- Lock can "interrupt" thread; synchronize can't do so (thread in synchronize will keep waiting)
