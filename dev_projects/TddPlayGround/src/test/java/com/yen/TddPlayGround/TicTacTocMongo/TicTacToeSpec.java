@@ -37,26 +37,28 @@ class TicTacToeSpec {
 
     // book p.120
     @BeforeEach
-    public final void before() throws UnknownHostException {
-
+    public final void before() {
         collection = mock(TicTacToeCollection.class);
-
-//        doReturn(true).when(collection).drop();
+        doReturn(true).when(collection).drop();
+        // TODO : check why below cause error ?
 //        doReturn(true).when(collection).saveMove(any(TicTacToeBean.class));
-
+//        ticTacToe = new TicTacToe();
         ticTacToe = new TicTacToe(collection);
     }
+
+
+    // TODO : check what's @Rule
 
     @Test
     public void whenInstantiatedThenSetCollection() {
 
         assertNotNull(ticTacToe.getTicTacToeCollection());
     }
-
+//
     @Test
     public void test_1(){
-//        System.out.println("123");
-//        assertEquals(true, true);
+       System.out.println("123");
+       assertEquals(true, true);
     }
 
 //    @Test
