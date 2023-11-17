@@ -53,4 +53,25 @@ class ShortServiceSpec {
         assertEquals(res, "yahoo.com");
     }
 
+    @Test
+    public void shouldReturnHashCodeWithNormalInput(){
+
+        String input = "https://google.com";
+        String res = shortService.shortener(input);//"https://yen_shortner/wfwergere";
+
+        assertTrue(res.contains("https://yen_shortner"));
+    }
+
+
+    @Test
+    public void shouldReturnSameWhenSameInput(){
+
+        String input1 = "https://google.com";
+        String input2 = "https://google.com";
+
+        System.out.println("res1 = " + shortService.shortener(input1));
+
+        assertEquals(shortService.shortener(input1), shortService.shortener(input2));
+    }
+
 }
