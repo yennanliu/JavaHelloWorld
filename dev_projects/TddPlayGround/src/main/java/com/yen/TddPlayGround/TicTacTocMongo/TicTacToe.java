@@ -35,8 +35,8 @@ public class TicTacToe {
         checkAxis(y);
         lastPlayer = nextPlayer();
 //        setBox(x, y, lastPlayer);
-//        setBox(new TicTacToeBean(1, x, y, lastPlayer));
-        //setBox(new TicTacToeBean(++turn, x, y, lastPlayer));
+        //setBox(new TicTacToeBean(1, x, y, lastPlayer));
+        setBox(new TicTacToeBean(++turn, x, y, lastPlayer));
         if (isWin(x, y)) {
             return lastPlayer + " is the winner";
         } else if (isDraw()) {
@@ -59,16 +59,16 @@ public class TicTacToe {
         }
     }
 
-//    private void setBox(TicTacToeBean bean) {
-//        if (board[bean.getX() - 1][bean.getY() - 1] != '\0') {
-//            throw new RuntimeException("Box is occupied");
-//        } else {
-//            board[bean.getX() - 1][bean.getY() - 1] = lastPlayer;
-//            if (!getTicTacToeCollection().saveMove(bean)) {
-//                throw new RuntimeException("Saving to DB failed");
-//            }
-//        }
-//    }
+    private void setBox(TicTacToeBean bean) {
+        if (board[bean.getX() - 1][bean.getY() - 1] != '\0') {
+            throw new RuntimeException("Box is occupied");
+        } else {
+            board[bean.getX() - 1][bean.getY() - 1] = lastPlayer;
+            if (!getTicTacToeCollection().saveMove(bean)) {
+                throw new RuntimeException("Saving to DB failed");
+            }
+        }
+    }
 
     private boolean isWin(int x, int y) {
         int playerTotal = lastPlayer * SIZE;

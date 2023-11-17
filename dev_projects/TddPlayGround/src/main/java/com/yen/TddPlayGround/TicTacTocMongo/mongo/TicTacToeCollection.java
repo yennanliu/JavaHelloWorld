@@ -30,11 +30,12 @@ public class TicTacToeCollection{
     }
 
     public boolean saveMove(TicTacToeBean bean) {
+        System.out.println(">>> saveMove start");
         try{
             getMongoCollection().save(bean); // note here : we save bean
             return true;
         }catch (Exception e){
-            System.out.println(e);
+            System.out.println("saveMove Exception : " + e);
             return false;
         }
     }
