@@ -9,18 +9,26 @@ import java.net.UnknownHostException;
 public class TicTacToe {
 
     private TicTacToeCollection ticTacToeCollection;
-    protected TicTacToeCollection getTicTacToeCollection() {
-        return ticTacToeCollection;
-    }
 
+    // constructor
     public TicTacToe() throws UnknownHostException {
+
         this(new TicTacToeCollection());
     }
     public TicTacToe(TicTacToeCollection collection) {
+
+        System.out.println(">>> init TicTacToe with collection");
         ticTacToeCollection = collection;
         if (!ticTacToeCollection.drop()) {
             throw new RuntimeException("Dropping DB collection failed");
         }
     }
+
+    // method
+    protected TicTacToeCollection getTicTacToeCollection() {
+
+        return ticTacToeCollection;
+    }
+
 
 }
