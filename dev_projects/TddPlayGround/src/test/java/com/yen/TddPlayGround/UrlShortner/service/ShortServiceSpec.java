@@ -74,4 +74,16 @@ class ShortServiceSpec {
         assertEquals(shortService.shortener(input1), shortService.shortener(input2));
     }
 
+    @Test
+    public void shouldReturnDifferentWhenDifferentInput(){
+
+        String input1 = "https://google.com";
+        String input2 = "https://meta.com";
+
+        System.out.println("res1 = " + shortService.shortener(input1));
+        System.out.println("res2 = " + shortService.shortener(input2));
+
+        assertNotEquals(shortService.shortener(input1), shortService.shortener(input2));
+    }
+
 }
