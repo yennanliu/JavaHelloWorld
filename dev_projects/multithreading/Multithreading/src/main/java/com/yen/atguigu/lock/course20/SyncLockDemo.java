@@ -22,9 +22,19 @@ public class SyncLockDemo {
         new Thread(new Runnable() {
             @Override
             public void run() {
+
                 synchronized (o){
                     System.out.println(Thread.currentThread().getName() + " 外層 ");
+
+                    synchronized(o){
+                        System.out.println(Thread.currentThread().getName() + " 中層 ");
+
+                        synchronized(o){
+                            System.out.println(Thread.currentThread().getName() + " 內層 ");
+                        }
+                    }
                 }
+                
             }
         }, "t1").start();
 
