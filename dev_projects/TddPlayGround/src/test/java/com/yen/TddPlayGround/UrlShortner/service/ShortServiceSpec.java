@@ -86,4 +86,19 @@ class ShortServiceSpec {
         assertNotEquals(shortService.shortener(input1), shortService.shortener(input2));
     }
 
+    @Test
+    public void shouldReturnOriginalURLWhenInverse(){
+
+        String input1 = "https://google.com";
+        String res = shortService.shortener(input1);
+        System.out.println("res1 = " + shortService.shortener(input1));
+        // inverse
+        assertEquals(shortService.inverse(res), "https://google.com");
+
+        String input2 = "https://amazon.com";
+        String res2 = shortService.shortener(input2);
+        System.out.println("input2 inverse = " + shortService.inverse(res2));
+        assertEquals(shortService.inverse(res2), "https://amazon.com");
+    }
+
 }

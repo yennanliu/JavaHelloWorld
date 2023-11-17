@@ -1,5 +1,6 @@
 package com.yen.TddPlayGround.UrlShortner.service;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -62,6 +63,26 @@ public class ShortService {
 
     public void setMap(HashMap<String, String> map) {
         this.map = map;
+    }
+
+    public String inverse(String input) {
+
+        // TODO : optimize below (O(N) time complexity now)
+        Collection<String> values = this.map.values();
+        if (!values.contains(input)){
+            System.out.println("Not a valid short URL");
+            return null;
+        }
+        for (String key : this.map.keySet()){
+            String val = this.map.get(key);
+            if (val.equals(input)){
+                return key;
+            }
+        }
+
+        //return "https://google.com";
+        System.out.println("Not a valid short URL");
+        return null;
     }
 
 }
