@@ -39,4 +39,15 @@ public class TicTacToeCollection{
         }
     }
 
+    public boolean drop() {
+        //mongoCollection.drop();
+        try{
+            getMongoCollection().drop(); // NOTE : we use getMongoCollection().drop(), instead of mongoCollection.drop() (since it's not init yet)
+            return true;
+        }catch (Exception e){
+            System.out.println("drop exception : " + e);
+            return false;
+        }
+    }
+
 }
