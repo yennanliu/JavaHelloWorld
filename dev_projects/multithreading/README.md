@@ -23,12 +23,18 @@
 
 ## Note
 
+Synchronized : Implicit lock
+Lock : explicit lock
+Synchronized, Lock are both ReentrantLock (可重入鎖)
+
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ReentrantLock.png"></p>
+
 Synchronized
 
 	- Every instance in java can lock with "Synchronized" 
 	- 3 types
 		- synchronized "method" : lock current instance 
-		- synchronized "static method" : lock current class instance 
+		- synchronized "static method" : lock current Class instance 
 		- synchronized "code block" : lock instances inside code block
 
 Lock
@@ -37,6 +43,10 @@ Lock
 	- Lock can "interrupt" thread; synchronize can't do so (thread in synchronize will keep waiting)
 	- Lock Can know if lock is received, synchronize can't do so
 	- Lock has better performance than synchronize when heavy resource competition
+
+	- Unfair lock VS fair lock
+		- Unfair : good performance, but some threads have nothing to do
+		- fair : less performance, but threads work evenly
 
 Collection for `thready safety`
 
