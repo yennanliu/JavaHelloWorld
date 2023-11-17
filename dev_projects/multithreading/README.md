@@ -23,9 +23,11 @@
 
 ## Note
 
-Synchronized : Implicit lock
-Lock : explicit lock
-Synchronized, Lock are both ReentrantLock (可重入鎖)
+- Synchronized : Implicit lock
+- Lock : explicit lock
+- Synchronized, Lock are both `ReentrantLock (可重入鎖)`
+	- so thread can freely visit any component inside once receive a lock
+	- [code](https://github.com/yennanliu/JavaHelloWorld/blob/main/dev_projects/multithreading/Multithreading/src/main/java/com/yen/atguigu/lock/course20/SyncLockDemo.java#L24)
 
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ReentrantLock.png"></p>
 
