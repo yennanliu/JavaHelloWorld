@@ -3,7 +3,7 @@ package com.yen.atguigu.lock.course14_15_16;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/** Demo list thread unsafely */
+/** Demo List thread unsafely */
 
 // Course 14 : https://youtu.be/0gz3RKOlt1g?si=2_jswaYyskzx0PsU
 // Course 15 : https://youtu.be/bKVsxSjySiY?si=9lKReBdU48Y6zDiW

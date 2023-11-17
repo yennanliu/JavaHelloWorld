@@ -28,6 +28,19 @@
 - Lock Can know if lock is received, synchronize can't do so
 - Lock has better performance than synchronize when heavy resource competition
 
+Collection for `thready safety`
+
+- List:
+	- Vector
+	- Collections.synchronizedList(new ArrayList<>())
+	- CopyOnWriteArrayList
+
+- Set:
+	- CopyOnWriteArraySet
+
+- Map:
+	- ConcurrentHashMap
+
 ## Ref
 
 - https://github.com/callicoder/java-concurrency-examples
