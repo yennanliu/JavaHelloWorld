@@ -41,7 +41,7 @@ class UrlServiceTest {
 
     @BeforeEach
     public void before(){
-        System.out.println("before");
+        System.out.println("pre setup ...");
     }
 
     @Test
@@ -66,6 +66,26 @@ class UrlServiceTest {
 
         // Verify that the method was called exactly once
         verify(urlService, times(1)).getUrlByKey(anyString());
+    }
+
+    @Test
+    public void shouldReturnDifferentWhenDifferentInput(){
+
+        urlService = Mockito.mock(UrlService.class);
+
+        String result1 = urlService.getUrlByKey("some-key-1");
+        String result2 = urlService.getUrlByKey("some-key-2");
+
+        System.out.println(result1);
+
+        assertNotNull(result1);
+        assertNotEquals(result1, result2);
+    }
+
+    @Test
+    public void shouldReturnSameWhenSameInput(){
+
+
     }
 
 
