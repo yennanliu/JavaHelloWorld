@@ -51,7 +51,9 @@ JUnit API
 
 - Other projects
   - URL Shortener
+  
     - https://medium.com/geekculture/create-your-own-url-shorteners-with-spring-boot-redis-289c9000f747
+    - https://github.com/abinator-1308/urlshortener
   
     - https://www.youtube.com/watch?v=qfkFhcxd2XI - video
     - https://github.com/arocks/tiny - py code
