@@ -46,5 +46,16 @@ JUnit API
 
 
 - Other video
-	- https://www.youtube.com/watch?v=eMU_hninZAs&list=PLukoBpjuyzMOPIBU8mlpkeF819h2e0dqn
-	- https://www.youtube.com/watch?v=z6gOPonp2t0
+    - https://www.youtube.com/watch?v=eMU_hninZAs&list=PLukoBpjuyzMOPIBU8mlpkeF819h2e0dqn
+    - https://www.youtube.com/watch?v=z6gOPonp2t0
+
+- Other projects
+  - URL Shortener
+    - https://medium.com/geekculture/create-your-own-url-shorteners-with-spring-boot-redis-289c9000f747
+  
+    - https://www.youtube.com/watch?v=qfkFhcxd2XI - video
+    - https://github.com/arocks/tiny - py code
+
+    - https://www.youtube.com/watch?v=xlFvb-3CbsE - video
+    - https://github.com/talk2amareswaran/Building-a-Simple-URL-Shortener-with-Spring-Boot - java code
+    - https://github.com/zeeshaanahmad/url-shortener/tree/master - java code
