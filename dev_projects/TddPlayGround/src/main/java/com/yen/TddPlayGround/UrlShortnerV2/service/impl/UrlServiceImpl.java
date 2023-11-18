@@ -5,7 +5,12 @@ package com.yen.TddPlayGround.UrlShortnerV2.service.impl;
 import com.yen.TddPlayGround.UrlShortner.bean.Url;
 import com.yen.TddPlayGround.UrlShortnerV2.service.UrlService;
 
+// implements ICustomJpaService
 public class UrlServiceImpl implements UrlService {
+
+    public UrlServiceImpl(){
+
+    }
 
     @Override
     public String getUrlByKey(String key) {

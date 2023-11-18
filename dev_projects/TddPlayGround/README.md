@@ -38,12 +38,15 @@ JUnit API
 ## Ref
 
 - TDD book
-	- https://github.com/yennanliu/knowledge_base_repo/blob/master/book/java/Java%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91.pdf - book
-	- https://bitbucket.org/vfarcic/workspace/projects/PROJ - code
+    - https://github.com/yennanliu/knowledge_base_repo/blob/master/book/java/Java%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91.pdf - book
+    - https://bitbucket.org/vfarcic/workspace/projects/PROJ - code
+
+- Concept
+  - https://www.tpisoftware.com/tpu/articleDetails/1294
+  - https://hackmd.io/@KaiChen/H1R5Nq5FI
 
 - Other code
-	- https://github.com/in28minutes/spring-boot-master-class
-
+    - https://github.com/in28minutes/spring-boot-master-class
 
 - Other video
     - https://www.youtube.com/watch?v=eMU_hninZAs&list=PLukoBpjuyzMOPIBU8mlpkeF819h2e0dqn

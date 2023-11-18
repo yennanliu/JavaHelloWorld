@@ -21,6 +21,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 // https://www.tpisoftware.com/tpu/articleDetails/1294
+// https://hackmd.io/@KaiChen/H1R5Nq5FI
 
 @ExtendWith(MockitoExtension.class)
 class UrlServiceTest {
@@ -28,8 +29,15 @@ class UrlServiceTest {
     @Mock
     RedisConfiguration redisConfiguration;
 
-    @InjectMocks
-    UrlServiceImpl urlService; // TOOD : fix this
+//    @InjectMocks // InjectMocks can ONLY inject class, NOT interface
+//    UrlServiceImpl urlService; // TOOD : fix this
+
+    /**
+     *  Manually Create Mocks: If you want to mock an interface,
+     *  you can create a mock manually using Mockito.mock(UrlService.class).
+     */
+    @Mock
+    UrlService urlService;
 
     @BeforeEach
     public void before(){
@@ -39,8 +47,10 @@ class UrlServiceTest {
     @Test
     public void shouldGetUrlIfKeyExist(){
 
-//        when(urlService.getUrlByKey(anyString())).thenReturn("https://short_url/abc");
-        System.out.println(urlService.getUrlByKey("123"));
+        // setup behaviour of mock instance method
+        urlService = Mockito.mock(UrlService.class);
+        when(urlService.getUrlByKey(anyString())).thenReturn("https://short_url/abc");
+        //System.out.println(urlService.getUrlByKey("123"));
         assertEquals(urlService.getUrlByKey("some-key"), "https://short_url/abc");
     }
 
