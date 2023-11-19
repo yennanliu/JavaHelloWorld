@@ -17,8 +17,9 @@ public class User {
         return balance;
     }
 
-    public void setBalance(Double balance) {
+    public double setBalance(Double balance) {
         this.balance = balance;
+        return balance;
     }
 
     @Override
