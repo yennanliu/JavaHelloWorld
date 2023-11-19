@@ -2,6 +2,14 @@ package com.yen.TddPlayGround.Bank.service;
 
 import com.yen.TddPlayGround.Bank.bean.User;
 
+import java.util.Optional;
+
 public interface TransferService {
-    Double updateBalance(Double amount);
+    public Double updateBalance(User user, Double amount);
+
+    public void transfer(User u1, User u2, double amount);
+
+    public User getUserById(String id);
+
+    public User insertUser(User user);
 }
