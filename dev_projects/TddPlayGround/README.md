@@ -48,6 +48,9 @@ JUnit API
 - Other code
     - https://github.com/in28minutes/spring-boot-master-class
 
+    - https://github.com/teddysmithdev/pokemon-review-springboot
+    - https://www.youtube.com/watch?v=jqwZthuBmZY&list=PL82C6-O4XrHcg8sNwpoDDhcxUCbFy855E
+
 - Other video
     - https://www.youtube.com/watch?v=eMU_hninZAs&list=PLukoBpjuyzMOPIBU8mlpkeF819h2e0dqn
     - https://www.youtube.com/watch?v=z6gOPonp2t0
