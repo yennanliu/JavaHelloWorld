@@ -71,7 +71,9 @@ How to create Thread ?
 	- run(): NO return value, CAN'T throw exception
 
 - Callable
-	- call() : CAN have return value, Can throw exception
+	- call() : 
+		- CAN have return value, Can throw exception
+		- if call 2nd times (or more), return result directly (Not compute again)
 	- FutureTask implement Runnable
 	- FutureTask can be constructed with Callable
 

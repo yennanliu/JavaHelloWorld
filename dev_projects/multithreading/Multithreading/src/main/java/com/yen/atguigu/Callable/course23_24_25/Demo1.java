@@ -74,14 +74,18 @@ public class Demo1 {
         });
 
         // create a thread (with Callable)
-        new Thread(futureTask2, "c_1").start();
+        new Thread(futureTask2, "c_2").start();
+        new Thread(futureTask1, "c_1").start();
 
-        while(!futureTask2.isDone()){
-            System.out.println("wait ....");
-        }
+//        while(!futureTask2.isDone()){
+//            System.out.println("wait ....");
+//        }
 
         // get() method
         System.out.println(futureTask2.get()); // 100
+        System.out.println(futureTask2.get());
+
+        System.out.println(futureTask1.get());
 
         System.out.println(Thread.currentThread().getName() + " done !!!");
     }
