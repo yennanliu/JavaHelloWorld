@@ -72,6 +72,8 @@ How to create Thread ?
 
 - Callable
 	- call() : CAN have return value, Can throw exception
+	- FutureTask implement Runnable
+	- FutureTask can be constructed with Callable
 
 - ThreadPool
 
