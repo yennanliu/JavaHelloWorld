@@ -87,3 +87,10 @@ How to create Thread ?
 - https://github.com/PacktPublishing/Java-Concurrency-Multithreading-in-Practice/tree/master
 - https://jcip.net/
 - https://jcip.net/listings.html
+
+- Concurrent bank
+
+	- https://github.com/AndreiLoyevets/concurrency-lab/tree/master/src/com/epam/andrii_loievets/concurrency/bank
+	- https://www.geeksforgeeks.org/banking-transaction-system-using-java/
+	- https://home.csulb.edu/~pnguyen/cecs277/lecnotes/ch21Thread.pdf
+	- https://www.unlogged.io/post/java-concurrency-unlocked-a-comparative-guide-to-synchronization-tools
