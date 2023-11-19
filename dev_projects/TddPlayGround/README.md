@@ -27,6 +27,9 @@
   - 可用來實現部分模擬。 除非另有說明，否則間諜物件呼叫實際方法。 與模擬物件 一樣，對於間諜物件的每個公有或受保護的方法（靜態方法除外），都可設定其行為。
   - 主要差異在 mock()創建一個完全偽造的對象，而spy()使用實際對象。
 - verify()：用於檢查呼叫方法時提供的是否為指定參數，這是一種斷言。
+- @Mocks VS @InjectMocks
+  - https://matthung0807.blogspot.com/2018/08/mockito-mockinjectmocks.html
+  - https://juejin.cn/post/7056621888088309790
 
 JUnit API
 - @BeforeClass: 在類別被載入前（第一個測試方法運行前）執行與它相關聯的方法

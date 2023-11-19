@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -23,14 +24,18 @@ import static org.mockito.Mockito.verify;
 
 /** unit test for TransferService */
 
+// https://github.com/teddysmithdev/pokemon-review-springboot/blob/master/src/test/java/com/pokemonreview/api/service/PokemonServiceTests.java
+
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 class TransferServiceTest {
 
-    @Mock
-    TransferService transferService;
+    // InjectMocks : for inject service which will use Dao/repository
+    @InjectMocks // https://blog.csdn.net/yangyangrenren/article/details/118555559
+    TransferServiceImpl transferService;
 
-    @MockBean
+    // Mock : for mock Dao/repository
+    @Mock
     UserRepository userRepository;
 
 
@@ -82,21 +87,28 @@ class TransferServiceTest {
     }
 
 
+
     @Test
     public void getUserById() throws Exception {
 
+        User u1 = new User("id-01", 20.0);
+
         Mockito.when(userRepository.findById("id-01"))
-                .thenReturn(Optional.of(new User("id-01", 0.0)));
+                .thenReturn(Optional.of(u1));
 
-        User user = transferService.getUserById("id-01");
+        User resultUser = transferService.getUserById("id-01");
 
-        //檢查結果
-        Assert.assertNotNull(user);
-        Assert.assertEquals(user.getId(), "id-01");
+        System.out.println(resultUser.toString());
+
+        //check result
+        Assert.assertNotNull(resultUser);
+        Assert.assertEquals(resultUser.getId(), "id-01");
+        assertEquals(resultUser.getBalance(), 20.0);
     }
 
     @Test
     public void test1(){
+
         System.out.println(123);
     }
 
