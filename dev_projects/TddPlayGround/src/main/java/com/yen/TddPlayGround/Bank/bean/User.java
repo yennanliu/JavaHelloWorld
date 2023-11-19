@@ -26,11 +26,26 @@ public class User {
     }
 
     public Double getBalance() {
+
         return balance;
     }
 
     public void setBalance(Double balance) {
         this.balance = balance;
+    }
+
+    public double updateBalance(Double balance) {
+        System.out.println("(User) updateBalance ...");
+        this.balance = balance;
+        return this.balance;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 
 }
