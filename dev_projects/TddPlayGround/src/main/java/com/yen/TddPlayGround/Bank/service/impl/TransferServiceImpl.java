@@ -28,6 +28,10 @@ public class TransferServiceImpl implements TransferService {
     @Override
     public String transfer(User sender, User receiver, double amount){
 
+        if (amount > sender.getBalance() || sender.getBalance() < 0){
+            return "transfer failed, not enough balance";
+        }
+
         sender.setBalance(sender.getBalance() - amount);
         receiver.setBalance(receiver.getBalance() + amount);
 
@@ -38,10 +42,12 @@ public class TransferServiceImpl implements TransferService {
     }
 
     public User getUserById(String id) {
+
         return userRepository.findById(id).get();
     }
 
     public User insertUser(User user) {
+
         return userRepository.save(user);
     }
 

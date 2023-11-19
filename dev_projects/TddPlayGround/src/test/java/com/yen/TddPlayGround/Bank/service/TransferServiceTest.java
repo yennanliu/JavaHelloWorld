@@ -95,6 +95,23 @@ class TransferServiceTest {
         assertEquals(res, "transfer 10.0 from id-01 to id-02");
     }
 
+    @Test
+    public void shouldNotTransferIfNotEnoughBalance(){
+
+        User u1 = new User("id-01", 10.0);
+        User u2 = new User("id-02", 10.0);
+        User u3 = new User("id-01", -10.0);
+
+        // mock
+        Mockito.when(userRepository.save(any(User.class))).thenReturn(null);
+
+        String res = transferService.transfer(u1, u2, 20.0);
+        System.out.println(res);
+        assertEquals(res, "transfer failed, not enough balance");
+
+        String res2 = transferService.transfer(u3, u2, 20.0);
+        assertEquals(res2, "transfer failed, not enough balance");
+    }
 
 
     @Test
@@ -113,12 +130,6 @@ class TransferServiceTest {
         Assert.assertNotNull(resultUser);
         Assert.assertEquals(resultUser.getId(), "id-01");
         assertEquals(resultUser.getBalance(), 20.0);
-    }
-
-    @Test
-    public void test1(){
-
-        System.out.println(123);
     }
 
 }
