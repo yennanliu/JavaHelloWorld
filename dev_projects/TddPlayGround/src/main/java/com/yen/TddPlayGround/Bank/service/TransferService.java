@@ -7,7 +7,7 @@ import java.util.Optional;
 public interface TransferService {
     public Double updateBalance(User user, Double amount);
 
-    public void transfer(User u1, User u2, double amount);
+    public String transfer(User u1, User u2, double amount);
 
     public User getUserById(String id);
 

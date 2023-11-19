@@ -47,43 +47,52 @@ class TransferServiceTest {
     @Test
     public void shouldUpdateBalanceWhenAdd(){
 
-        User userMock = mock(User.class);
-
-        UserRepository userRepository = mock(UserRepository.class);
+        // mock
+//        User userMock = mock(User.class);
+//        UserRepository userRepository = mock(UserRepository.class);
 
         // TODO : fix below
-        TransferService transferService = new TransferServiceImpl(userRepository);
+        //TransferService transferService = new TransferServiceImpl(userRepository);
         //transferService = Mockito.mock(TransferService.class);
 
         // Stub the behavior of the mock User
-        when(userMock.setBalance(10.0)).thenReturn(10.0);
+        //when(userMock.setBalance(10.0)).thenReturn(10.0);
+
+        User u1 = new User("id-01", 10.0);
+
+        Mockito.when(userRepository.save(any(User.class)))
+                .thenReturn(u1);
 
         // Call the method under test
-        transferService.updateBalance(userMock, 10.0);
+        transferService.updateBalance(u1, 10.0);
 
         // Verify that the setBalance method was called with the correct argument
-        verify(userMock, times(1)).setBalance(10.0);
+        verify(userRepository, times(1)).save(u1);
 
-        assertEquals(userMock.setBalance(10.0), 10.0);
+        assertEquals(u1.getBalance(), 10.0);
     }
 
     @Test
     public void transferShouldUpdateBalance(){
 
         // mock
-        UserRepository userRepository = mock(UserRepository.class);
-        User userMock = mock(User.class);
-
+//        UserRepository userRepository = mock(UserRepository.class);
+//        User userMock = mock(User.class);
         //when(userRepository.save(userMock)).thenReturn(new User("id-01", 20.0));
-        Mockito.when(userRepository.save(any())).thenReturn(new User("id-01", 20.0));
+        Mockito.when(userRepository
+                .save(any(User.class)))
+                .thenReturn(new User("id-01", 20.0));
 
         User u1 = new User("id-01", 10.0);
         User u2 = new User("id-02", 10.0);
 
-        transferService.transfer(u1, u2, 10);
+        String res = transferService.transfer(u1, u2, 10);
 
+        System.out.println(res);
         System.out.println(u1);
         System.out.println(u2);
+
+        assertEquals(res, "transfer 10.0 from id-01 to id-02");
     }
 
 

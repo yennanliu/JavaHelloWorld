@@ -24,14 +24,17 @@ public class TransferServiceImpl implements TransferService {
         return user.getBalance();
     }
 
+    // TODO : verify what to return
     @Override
-    public void transfer(User u1, User u2, double amount){
+    public String transfer(User sender, User receiver, double amount){
 
-        u1.setBalance(u1.getBalance() - amount);
-        u2.setBalance(u2.getBalance() + amount);
+        sender.setBalance(sender.getBalance() - amount);
+        receiver.setBalance(receiver.getBalance() + amount);
 
-        userRepository.save(u1);
-        userRepository.save(u2);
+        userRepository.save(sender);
+        userRepository.save(receiver);
+
+        return "transfer " + amount + " from " + sender.getId() + " to " + receiver.getId();
     }
 
     public User getUserById(String id) {
