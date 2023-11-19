@@ -41,6 +41,7 @@ class TransferServiceTest {
 
     @BeforeEach
     public void before(){
+
         System.out.println("setup ...");
     }
 
@@ -111,6 +112,28 @@ class TransferServiceTest {
 
         String res2 = transferService.transfer(u3, u2, 20.0);
         assertEquals(res2, "transfer failed, not enough balance");
+    }
+
+    @Test
+    public void shouldAggregateToResultMultipleTransaction(){
+
+        User u1 = new User("id-01", 30.0);
+        User u2 = new User("id-02", 30.0);
+
+        // mock
+        Mockito.when(userRepository.save(any(User.class))).
+                thenReturn(new User("id-01", 10.0));
+
+        String res1 = transferService.transfer(u1, u2, 10.0);
+        String res2 = transferService.transfer(u1, u2, 10.0);
+        String res3 = transferService.transfer(u1, u2, 10.0);
+
+        System.out.println(res1);
+        System.out.println(res2);
+        System.out.println(u1.getBalance());
+
+        assertEquals(u1.getBalance(), 0.0);
+        assertEquals(u2.getBalance(), 60.0);
     }
 
 
