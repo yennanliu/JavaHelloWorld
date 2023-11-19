@@ -16,7 +16,7 @@ package com.yen.atguigu.lock.course20;
 public class SyncLockDemo {
 
     // https://youtu.be/kfgWpS8bSHw?si=ZBddSaM4AXGmF3ZI&t=404
-    // since synchronized is a ReentrantLock lock, so thread can freely visit
+    // since synchronized is a ReentrantLock lock, so thread can freely visit any lock "inside" first layer
     // can call add() recursively -> cause stackoverflow exception
     public synchronized void add(){
         add();

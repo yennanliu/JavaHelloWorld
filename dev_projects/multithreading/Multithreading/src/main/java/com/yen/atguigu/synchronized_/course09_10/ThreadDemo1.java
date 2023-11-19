@@ -1,4 +1,4 @@
-package com.yen.atguigu.sync.course09_10;
+package com.yen.atguigu.synchronized_.course09_10;
 
 /**
  * Multi-thread (thread interaction) with synchronized
