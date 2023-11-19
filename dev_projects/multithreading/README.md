@@ -33,35 +33,47 @@
 
 Synchronized
 
-	- Every instance in java can lock with "Synchronized" 
-	- 3 types
-		- synchronized "method" : lock current instance 
-		- synchronized "static method" : lock current Class instance 
-		- synchronized "code block" : lock instances inside code block
+- Every instance in java can lock with "Synchronized" 
+- 3 types
+	- synchronized "method" : lock current instance 
+	- synchronized "static method" : lock current Class instance 
+	- synchronized "code block" : lock instances inside code block
 
 Lock
 
-	- Lock CAN'T be unlocked automatically when exception -> need to unlock explicitly (usually via "finally")
-	- Lock can "interrupt" thread; synchronize can't do so (thread in synchronize will keep waiting)
-	- Lock Can know if lock is received, synchronize can't do so
-	- Lock has better performance than synchronize when heavy resource competition
+- Lock CAN'T be unlocked automatically when exception -> need to unlock explicitly (usually via "finally")
+- Lock can "interrupt" thread; synchronize can't do so (thread in synchronize will keep waiting)
+- Lock Can know if lock is received, synchronize can't do so
+- Lock has better performance than synchronize when heavy resource competition
 
-	- Unfair lock VS fair lock
-		- Unfair : good performance, but some threads have nothing to do
-		- fair : less performance, but threads work evenly
+- Unfair lock VS fair lock
+	- Unfair : good performance, but some threads have nothing to do
+	- fair : less performance, but threads work evenly
 
 Collection for `thready safety`
 
-	- List:
-		- Vector
-		- Collections.synchronizedList(new ArrayList<>())
-		- CopyOnWriteArrayList
+- List:
+	- Vector
+	- Collections.synchronizedList(new ArrayList<>())
+	- CopyOnWriteArrayList
 
-	- Set:
-		- CopyOnWriteArraySet
+- Set:
+	- CopyOnWriteArraySet
 
-	- Map:
-		- ConcurrentHashMap
+- Map:
+	- ConcurrentHashMap
+
+How to create Thread ?
+
+- Thread
+
+- Runnable
+	- run(): NO return value, CAN'T throw exception
+
+- Callable
+	- call() : CAN have return value, Can throw exception
+
+- ThreadPool
 
 ## Ref
 
