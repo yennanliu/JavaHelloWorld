@@ -23,11 +23,27 @@ class UserTest {
     @Test
     public void shouldInitUserWithZeroBalance(){
 
-        User u1 = new User();
+        User u1 = new User("id-001", 0.0);
         assertEquals(u1.getBalance(), 0.0);
 
         User u2 = new User("id-002", 0.0);
         assertEquals(u2.getBalance(), 0.0);
+    }
+
+    @Test
+    public void shouldAddBalanceWhenAdd(){
+
+        User u1 = new User("id-001", 0.0);
+        u1.setBalance(u1.getBalance() + 10.0);
+        assertEquals(u1.getBalance(), 10.0);
+    }
+
+    @Test
+    public void shouldMinusBalanceWhenMinus(){
+
+        User u1 = new User("id-001", 0.0);
+        u1.setBalance(u1.getBalance() - 10.0);
+        assertEquals(u1.getBalance(), -10.0);
     }
 
 }
