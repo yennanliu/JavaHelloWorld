@@ -3,7 +3,7 @@
 
 ## Relative projects
 - [Java utils](https://github.com/yennanliu/JavaHelloWorld/tree/main/src/main/java/utils) : Useful java util scripts
-- [Design Pattern](https://github.com/yennanliu/utility_Java/src/main/java/DesignPattern) : Useful java util scripts
+- [Design Pattern](https://github.com/yennanliu/JavaHelloWorld/tree/main/src/main/java/DesignPattern/Singleton) : Design Pattern examples
 - [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java intro project
 - [Spring play ground](https://github.com/yennanliu/SpringPlayground) : web/backend projects via spring boot framework
 - [JVM faq](https://github.com/yennanliu/CS_basics/blob/master/doc/faq/faq_JVM.md) : JVM cheatsheet
