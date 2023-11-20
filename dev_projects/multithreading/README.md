@@ -31,7 +31,7 @@
 
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ReentrantLock.png"></p>
 
-Synchronized
+1) Synchronized
 
 - Every instance in java can lock with "Synchronized" 
 - 3 types
@@ -39,7 +39,7 @@ Synchronized
 	- synchronized "static method" : lock current Class instance 
 	- synchronized "code block" : lock instances inside code block
 
-Lock
+2) Lock
 
 - Lock CAN'T be unlocked automatically when exception -> need to unlock explicitly (usually via "finally")
 - Lock can "interrupt" thread; synchronize can't do so (thread in synchronize will keep waiting)
@@ -50,7 +50,15 @@ Lock
 	- Unfair : good performance, but some threads have nothing to do
 	- fair : less performance, but threads work evenly
 
-Collection for `thready safety`
+
+Optimistic lock vs pessimistic lock
+- pessimistic lock
+	- NOT supprot concurrency op
+- optimistic lock
+	- supprot concurrency op
+
+
+3) Collection for `thready safety`
 
 - List:
 	- Vector
@@ -63,7 +71,7 @@ Collection for `thready safety`
 - Map:
 	- ConcurrentHashMap
 
-How to create Thread ?
+4) How to create Thread ?
 
 - Thread
 
