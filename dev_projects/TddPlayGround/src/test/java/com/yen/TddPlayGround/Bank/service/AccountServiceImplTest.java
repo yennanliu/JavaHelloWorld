@@ -11,6 +11,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -43,5 +45,19 @@ class AccountServiceImplTest {
         assertEquals(res, 20.0);
     }
 
+    @Test
+    public void shouldReturnAllUsers(){
+
+        List<User> myUserList = new ArrayList<>();
+        myUserList.add(new User("id-01", 0.0));
+        myUserList.add(new User("id-02", 10.0));
+
+        // mock
+        Mockito.when(userRepository.findAll()).thenReturn(myUserList);
+
+        List<User> users = accountService.getAllUsers();
+        assertEquals(users.size(), 2);
+        assertNotNull(users);
+    }
 
 }

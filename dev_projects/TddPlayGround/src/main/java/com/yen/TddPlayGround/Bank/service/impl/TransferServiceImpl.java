@@ -32,11 +32,13 @@ public class TransferServiceImpl implements TransferService {
             return "transfer failed, not enough balance";
         }
 
-        sender.setBalance(sender.getBalance() - amount);
-        receiver.setBalance(receiver.getBalance() + amount);
+        //sender.setBalance(sender.getBalance() - amount);
+        //receiver.setBalance(receiver.getBalance() + amount);
+        //userRepository.save(sender);
+        //userRepository.save(receiver);
 
-        userRepository.save(sender);
-        userRepository.save(receiver);
+        this.withdraw(sender, amount);
+        this.deposit(receiver, amount);
 
         return "transfer " + amount + " from " + sender.getId() + " to " + receiver.getId();
     }

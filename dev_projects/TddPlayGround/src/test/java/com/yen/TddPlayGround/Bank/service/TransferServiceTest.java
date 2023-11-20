@@ -36,32 +36,45 @@ class TransferServiceTest {
     @Mock
     UserRepository userRepository;
 
+    User u1;
+    User u2;
+    User u3;
+    User u4;
+    User u5;
+
 
     @BeforeEach
     public void before(){
 
         System.out.println("setup ...");
+        u1 = new User("id-01", 10.0);
+        u2 = new User("id-02", 10.0);
+        u3 = new User("id-03", -10.0);
+        u4 = new User("id-04", 30.0);
+        u5 = new User("id-05", 30.0);
     }
 
     @Test
     public void depositShouldAddBalance(){
 
-        User u1 = new User("id-01", 10.0);
+        // mock
         Mockito.when(userRepository.save(any(User.class)))
                 .thenReturn(u1);
-
+        // run
         transferService.deposit(u1, 10.0);
+        // verify
         assertEquals(u1.getBalance(), 20.0);
     }
 
     @Test
     public void withdrawShouldMinusBalance(){
 
-        User u1 = new User("id-01", 10.0);
+        // mock
         Mockito.when(userRepository.save(any(User.class)))
                 .thenReturn(u1);
-
+        // run
         transferService.withdraw(u1, 10.0);
+        // verify
         assertEquals(u1.getBalance(), 0.0);
     }
 
@@ -69,27 +82,11 @@ class TransferServiceTest {
     public void shouldUpdateBalanceWhenAdd(){
 
         // mock
-//        User userMock = mock(User.class);
-//        UserRepository userRepository = mock(UserRepository.class);
-
-        // TODO : fix below
-        //TransferService transferService = new TransferServiceImpl(userRepository);
-        //transferService = Mockito.mock(TransferService.class);
-
-        // Stub the behavior of the mock User
-        //when(userMock.setBalance(10.0)).thenReturn(10.0);
-
-        User u1 = new User("id-01", 10.0);
-
-        Mockito.when(userRepository.save(any(User.class)))
-                .thenReturn(u1);
-
-        // Call the method under test
+        Mockito.when(userRepository.save(any(User.class))).thenReturn(u1);
+        // run
         transferService.updateBalance(u1, 10.0);
-
-        // Verify that the setBalance method was called with the correct argument
+        // verify
         verify(userRepository, times(1)).save(u1);
-
         assertEquals(u1.getBalance(), 10.0);
     }
 
@@ -97,82 +94,63 @@ class TransferServiceTest {
     public void transferShouldUpdateBalance(){
 
         // mock
-//        UserRepository userRepository = mock(UserRepository.class);
-//        User userMock = mock(User.class);
-        //when(userRepository.save(userMock)).thenReturn(new User("id-01", 20.0));
         Mockito.when(userRepository
                 .save(any(User.class)))
                 .thenReturn(new User("id-01", 20.0));
-
-        User u1 = new User("id-01", 10.0);
-        User u2 = new User("id-02", 10.0);
-
+        // run
         String res = transferService.transfer(u1, u2, 10);
-
-        System.out.println(res);
-        System.out.println(u1);
-        System.out.println(u2);
-
+        // verify
         assertEquals(res, "transfer 10.0 from id-01 to id-02");
     }
 
     @Test
     public void shouldNotTransferIfNotEnoughBalance(){
 
-        User u1 = new User("id-01", 10.0);
-        User u2 = new User("id-02", 10.0);
-        User u3 = new User("id-01", -10.0);
-
         // mock
         Mockito.when(userRepository.save(any(User.class))).thenReturn(null);
 
+        // run
         String res = transferService.transfer(u1, u2, 20.0);
-        System.out.println(res);
+        // verify
         assertEquals(res, "transfer failed, not enough balance");
 
+        // run
         String res2 = transferService.transfer(u3, u2, 20.0);
+        // verify
         assertEquals(res2, "transfer failed, not enough balance");
     }
 
     @Test
     public void shouldAggregateToResultMultipleTransaction(){
 
-        User u1 = new User("id-01", 30.0);
-        User u2 = new User("id-02", 30.0);
-
         // mock
         Mockito.when(userRepository.save(any(User.class))).
-                thenReturn(new User("id-01", 10.0));
-
-        String res1 = transferService.transfer(u1, u2, 10.0);
-        String res2 = transferService.transfer(u1, u2, 10.0);
-        String res3 = transferService.transfer(u1, u2, 10.0);
-
-        System.out.println(res1);
-        System.out.println(res2);
-        System.out.println(u1.getBalance());
-
-        assertEquals(u1.getBalance(), 0.0);
-        assertEquals(u2.getBalance(), 60.0);
+                thenReturn(u1);
+        // run
+        String res1 = transferService.transfer(u1, u2, 1.0);
+        String res2 = transferService.transfer(u1, u2, 2.0);
+//        System.out.println(res1);
+//        System.out.println(res2);
+//        System.out.println(u1.getBalance());
+        // verify
+        assertEquals(u1.getBalance(), 7.0);
+        assertEquals(u2.getBalance(), 13.0);
     }
 
 
     @Test
     public void getUserById() throws Exception {
 
-        User u1 = new User("id-01", 20.0);
-
+        // mock
         Mockito.when(userRepository.findById("id-01"))
                 .thenReturn(Optional.of(u1));
 
-        User resultUser = transferService.getUserById("id-01");
-
-        System.out.println(resultUser.toString());
-
-        //check result
-        Assert.assertNotNull(resultUser);
-        Assert.assertEquals(resultUser.getId(), "id-01");
-        assertEquals(resultUser.getBalance(), 20.0);
+        // run
+        User user = transferService.getUserById("id-01");
+        // verify
+        Assert.assertNotNull(user);
+        Assert.assertEquals(user.getId(), "id-01");
+        assertEquals(user.getBalance(), 10);
     }
 
 }
