@@ -107,3 +107,8 @@
 	- https://www.geeksforgeeks.org/banking-transaction-system-using-java/
 	- https://home.csulb.edu/~pnguyen/cecs277/lecnotes/ch21Thread.pdf
 	- https://www.unlogged.io/post/java-concurrency-unlocked-a-comparative-guide-to-synchronization-tools
+
+
+- Note
+	- Synchronized + Runnable example
+	- https://hackmd.io/@no4sms04/H10xNAs7q
