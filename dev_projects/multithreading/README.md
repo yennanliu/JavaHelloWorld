@@ -17,8 +17,6 @@
 ## Command
 
 ```bash
-#java -jar fernflower.jar -dgs=true JarToDecompile.jar DecompiledJar
-#java -jar ref_project/jcip-examples-src.jar -dgs=true JarToDecompile.jar DecompiledJar
 ```
 
 ## Note
@@ -50,12 +48,19 @@
 	- Unfair : good performance, but some threads have nothing to do
 	- fair : less performance, but threads work evenly
 
+- Optimistic lock vs pessimistic lock
+	- pessimistic lock
+		- NOT supprot concurrency op
+	- optimistic lock
+		- supprot concurrency op
+		- via "version" control data consistency
 
-Optimistic lock vs pessimistic lock
-- pessimistic lock
-	- NOT supprot concurrency op
-- optimistic lock
-	- supprot concurrency op
+- Table lock VS row lock
+	- Table lock : Lock all records in table in DB
+	- row lock : ONLY lock a row in table in DB
+
+- Read lock VS write lock
+	- BOTH Read, and write lock can cause "dead" lock
 
 
 3) Collection for `thready safety`
@@ -67,7 +72,7 @@ Optimistic lock vs pessimistic lock
 
 - Set:
 	- CopyOnWriteArraySet
-
+	
 - Map:
 	- ConcurrentHashMap
 
