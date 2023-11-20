@@ -3,22 +3,31 @@ package com.yen.TddPlayGround.Bank.service.impl;
 import com.yen.TddPlayGround.Bank.bean.po.User;
 import com.yen.TddPlayGround.Bank.repository.UserRepository;
 import com.yen.TddPlayGround.Bank.service.TransferService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class TransferServiceImpl implements TransferService {
 
+    //@Autowired
     private UserRepository userRepository;
+
+    // constructor
+    public TransferServiceImpl(){
+
+        this.userRepository = userRepository;
+    }
 
     public TransferServiceImpl(UserRepository userRepository) {
 
         this.userRepository = userRepository;
     }
 
+
     @Override
     public Double updateBalance(User user, Double amount) {
 
         //user.setBalance(user.getBalance() + amount);
         user.setBalance(amount);
-        userRepository.save(user);
+        this.userRepository.save(user);
         return user.getBalance();
     }
 
@@ -43,12 +52,12 @@ public class TransferServiceImpl implements TransferService {
 
     public User getUserById(String id) {
 
-        return userRepository.findById(id).get();
+        return this.userRepository.findById(id).get();
     }
 
     public User insertUser(User user) {
 
-        return userRepository.save(user);
+        return this.userRepository.save(user);
     }
 
     @Override
@@ -56,15 +65,16 @@ public class TransferServiceImpl implements TransferService {
 
         Double updatedBalance = user.getBalance() + amount;
         user.setBalance(updatedBalance);
-        userRepository.save(user);
+        this.userRepository.save(user);
         return updatedBalance;
     }
 
     @Override
     public Double withdraw(User user, double amount) {
+
         Double updatedBalance = user.getBalance() - amount;
         user.setBalance(updatedBalance);
-        userRepository.save(user);
+        this.userRepository.save(user);
         return updatedBalance;
     }
 
