@@ -1,6 +1,8 @@
 package DesignPattern.Singleton;
 
-/** Singleton Demo 1 **/
+/** Singleton Demo 1  : Hungry (餓漢式)
+ *
+ */
 
 // https://www.runoob.com/design-pattern/singleton-pattern.html
 
@@ -26,15 +28,15 @@ class MyClass{
     }
 
     public static MyClass getInstance(){
-        if (instance != null){
-            return instance;
+        if (instance == null){
+            return new MyClass();
         }
-        return new MyClass();
+        return instance;
     }
 
 }
 
-public class demo1 {
+public class Hungry {
 
     public static void main(String[] args) {
 

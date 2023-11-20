@@ -16,7 +16,7 @@ import java.util.*;
  *
  *    1) ..
  *    2) ..
- *    plz check Advances.MapDemo.demo1.java
+ *    plz check Advances.MapDemo.Hungry.java
  *
  *
  *    7) Methods

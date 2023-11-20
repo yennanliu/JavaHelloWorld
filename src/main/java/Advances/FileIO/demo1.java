@@ -27,7 +27,7 @@ public class demo1 {
     public void test1(){
         // constructor 1
         File file = new File("hello.txt"); // relative path (current module)
-        File file2 = new File("/Users/yennanliu/JavaHelloWorld/src/main/java/Advances/FileIO/demo1.java"); // absolute path
+        File file2 = new File("/Users/yennanliu/JavaHelloWorld/src/main/java/Advances/FileIO/Hungry.java"); // absolute path
 
         System.out.println(file);
         System.out.println(file2);
