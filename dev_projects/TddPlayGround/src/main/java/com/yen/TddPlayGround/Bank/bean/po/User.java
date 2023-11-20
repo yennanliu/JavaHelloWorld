@@ -1,4 +1,4 @@
-package com.yen.TddPlayGround.Bank.bean;
+package com.yen.TddPlayGround.Bank.bean.po;
 
 public class User {
     private String id;

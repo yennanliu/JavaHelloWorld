@@ -1,6 +1,6 @@
 package com.yen.TddPlayGround.Bank.service;
 
-import com.yen.TddPlayGround.Bank.bean.User;
+import com.yen.TddPlayGround.Bank.bean.po.User;
 
 import java.util.List;
 

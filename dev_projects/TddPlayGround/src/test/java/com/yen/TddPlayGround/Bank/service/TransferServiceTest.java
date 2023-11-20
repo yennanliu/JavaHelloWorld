@@ -1,6 +1,6 @@
 package com.yen.TddPlayGround.Bank.service;
 
-import com.yen.TddPlayGround.Bank.bean.User;
+import com.yen.TddPlayGround.Bank.bean.po.User;
 import com.yen.TddPlayGround.Bank.repository.UserRepository;
 import com.yen.TddPlayGround.Bank.service.impl.TransferServiceImpl;
 import org.junit.Assert;
@@ -152,6 +152,14 @@ class TransferServiceTest {
         Assert.assertNotNull(user);
         Assert.assertEquals(user.getId(), "id-01");
         assertEquals(user.getBalance(), 10);
+    }
+
+    @Test
+    public void testInterface(){
+
+        TransferService transferService = mock(TransferService.class);
+        when(transferService.deposit(u1, 10.0)).thenReturn(20.0);
+        assertEquals(transferService.deposit(u1, 10.0), 20.0);
     }
 
 }

@@ -1,11 +1,10 @@
 package com.yen.TddPlayGround.Bank.service.impl;
 
-import com.yen.TddPlayGround.Bank.bean.User;
+import com.yen.TddPlayGround.Bank.bean.po.User;
 import com.yen.TddPlayGround.Bank.repository.UserRepository;
 import com.yen.TddPlayGround.Bank.service.AccountService;
 
 import java.util.List;
-import java.util.Optional;
 
 public class AccountServiceImpl implements AccountService {
 

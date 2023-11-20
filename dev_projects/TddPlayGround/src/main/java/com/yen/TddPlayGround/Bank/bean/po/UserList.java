@@ -1,4 +1,4 @@
-package com.yen.TddPlayGround.Bank.bean;
+package com.yen.TddPlayGround.Bank.bean.po;
 
 import java.util.List;
 

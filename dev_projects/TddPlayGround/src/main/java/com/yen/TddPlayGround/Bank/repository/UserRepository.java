@@ -1,6 +1,6 @@
 package com.yen.TddPlayGround.Bank.repository;
 
-import com.yen.TddPlayGround.Bank.bean.User;
+import com.yen.TddPlayGround.Bank.bean.po.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 //import org.springframework.data.repository.CrudRepository;
 
