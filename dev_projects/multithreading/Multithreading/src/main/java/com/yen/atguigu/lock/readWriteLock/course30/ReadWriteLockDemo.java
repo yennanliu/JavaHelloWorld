@@ -4,6 +4,8 @@ package com.yen.atguigu.lock.readWriteLock.course30;
 
 // course 30 : https://youtu.be/vQ3sv-8iL70?si=lqU61Jg4l1l1V6gT
 
+// TODO : fix read, write ordering
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -76,7 +78,7 @@ class myCache{
 
 public class ReadWriteLockDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         myCache myCache = new myCache();
 
@@ -91,6 +93,7 @@ public class ReadWriteLockDemo {
             }, String.valueOf(i)).start();
         }
 
+        TimeUnit.MICROSECONDS.sleep(300);
 
         // create thread get data
         for (int i = 0; i < 5; i++){
