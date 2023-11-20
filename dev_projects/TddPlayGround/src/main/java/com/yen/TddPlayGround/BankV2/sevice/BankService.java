@@ -1,8 +1,8 @@
-package com.yen.TddPlayGround.BankV2;
+package com.yen.TddPlayGround.BankV2.sevice;
 
 // https://www.geeksforgeeks.org/banking-transaction-system-using-java/
 
-public class Bank {
+public class BankService {
 
     // Initial custom balance
     int total = 100;

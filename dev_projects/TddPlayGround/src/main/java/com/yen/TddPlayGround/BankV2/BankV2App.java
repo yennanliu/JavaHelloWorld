@@ -2,6 +2,10 @@ package com.yen.TddPlayGround.BankV2;
 
 // https://www.geeksforgeeks.org/banking-transaction-system-using-java/
 
+import com.yen.TddPlayGround.BankV2.sevice.BankService;
+import com.yen.TddPlayGround.BankV2.sevice.ThreadDeposit;
+import com.yen.TddPlayGround.BankV2.sevice.ThreadWithdrawal;
+
 public class BankV2App {
 
     // Main driver method
@@ -14,7 +18,7 @@ public class BankV2App {
         // methods from those class
 
         // Creating an object of class1
-        Bank obj = new Bank();
+        BankService obj = new BankService();
 
         ThreadWithdrawal t1
                 = new ThreadWithdrawal(obj, "Arnab", 20);

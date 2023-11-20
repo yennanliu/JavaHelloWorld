@@ -1,15 +1,15 @@
-package com.yen.TddPlayGround.BankV2;
+package com.yen.TddPlayGround.BankV2.sevice;
 
 // Deposit method is called from ThreadDeposit class
 // using the object of Bank class passed
 // from the main method
-class ThreadDeposit extends Thread {
+public class ThreadDeposit extends Thread {
 
-    Bank object;
+    BankService object;
     String name;
     int dollar;
 
-    ThreadDeposit(Bank ob, String name, int money) {
+    public ThreadDeposit(BankService ob, String name, int money) {
         // This keyword refers t ocurrent instance itself
         this.object = ob;
         this.name = name;
