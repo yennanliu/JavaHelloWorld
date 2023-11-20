@@ -5,7 +5,9 @@ package com.yen.TddPlayGround.UrlShortnerV2.service;
 
 import com.yen.TddPlayGround.UrlShortnerV2.bean.Url;
 
+import java.io.UnsupportedEncodingException;
+
 public interface UrlService {
     public Url getUrlByKey(String key);
-    public String shortenUrl(String url);
+    public String shortenUrl(String url) throws UnsupportedEncodingException;
 }

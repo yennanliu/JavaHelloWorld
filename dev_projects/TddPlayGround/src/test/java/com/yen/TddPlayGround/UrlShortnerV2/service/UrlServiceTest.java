@@ -11,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -87,13 +88,15 @@ class UrlServiceTest {
     }
 
     @Test
-    public void shouldGetShortUrl(){
+    public void shouldGetShortUrl() throws UnsupportedEncodingException {
 
         Url url = new Url(url_1, short_url_1);
         // mock
         Mockito.when(urlRepository.findById(url_1)).thenReturn(Optional.of(url));
-
-        System.out.println(urlService.shortenUrl(url_1));
+        //System.out.println(urlService.shortenUrl(url_1));
+        // run
+        // verify
+        assertEquals(urlService.shortenUrl(url_1), short_url_1);
     }
 
 }
