@@ -26,7 +26,14 @@ public class UrlServiceImpl implements UrlService {
     }
 
     @Override
-    public Url shortenUrl(String url) {
+    public String shortenUrl(String url) {
+
+        Optional<Url> res = urlRepository.findById(url);
+        // if exist
+        if (res != null){
+            return res.get().getShortUrl();
+        }
+
 
         return null;
     }

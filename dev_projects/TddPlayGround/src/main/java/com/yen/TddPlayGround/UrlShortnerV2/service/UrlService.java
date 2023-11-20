@@ -7,5 +7,5 @@ import com.yen.TddPlayGround.UrlShortnerV2.bean.Url;
 
 public interface UrlService {
     public Url getUrlByKey(String key);
-    public Url shortenUrl(String url);
+    public String shortenUrl(String url);
 }

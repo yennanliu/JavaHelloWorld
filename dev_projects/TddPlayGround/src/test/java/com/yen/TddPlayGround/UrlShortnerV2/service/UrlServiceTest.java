@@ -24,22 +24,76 @@ class UrlServiceTest {
     @InjectMocks
     UrlServiceImpl urlService;
 
+    private String url_1;
+    private String short_url_1;
+    private String short_url_2;
+
+    private String short_url_3;
+
+    private String url_2;
+
+    private String url_3;
+
     @BeforeEach
     public void before(){
 
+        url_1 = "https/google.com";
+        url_2 = "https/google.com";
+        url_3 = "https://meta.com";
+        short_url_1 = "https://short_url/abc";
+        short_url_2 = "https://short_url/abc";
+        short_url_3 = "https://short_url/xyz";
         System.out.println("before");
     }
 
     @Test
     public void shouldReturnShortUrlIfKeyExist(){
 
-        Url url = new Url("https/google.com", "https://short_url/abc");
+        Url url = new Url(url_1, short_url_1);
         // mock
-        Mockito.when(urlRepository.findById("https/google.com")).thenReturn(Optional.of(url));
+        Mockito.when(urlRepository.findById(url_1)).thenReturn(Optional.of(url));
+        // run
         Url res = urlService.getUrlByKey(url.getOriginalUrl());
-//        System.out.println(res);
-//        System.out.println(res.getShortUrl());
-        assertEquals(res.getShortUrl(), "https://short_url/abc");
+        // verify
+        assertEquals(res.getShortUrl(), short_url_1);
+    }
+
+    @Test
+    public void shouldReturnSameUrlIfSameInput(){
+
+        Url url = new Url(url_1, short_url_1);
+
+        // mock
+        Mockito.when(urlRepository.findById(url_1)).thenReturn(Optional.of(url));
+        // run
+        Url res1 = urlService.getUrlByKey(url_1);
+        Url res2 = urlService.getUrlByKey(url_2);
+        // verify
+        assertEquals(res1, res2);
+    }
+
+    @Test
+    public void shouldReturnDifferentUrlIfDifferentInput(){
+
+        Url url = new Url(url_1, short_url_1);
+        Url url2 = new Url(url_3, short_url_3);
+
+        // mock
+        Mockito.when(urlRepository.findById(url_1)).thenReturn(Optional.of(url));
+        Mockito.when(urlRepository.findById(url_3)).thenReturn(Optional.of(url2));
+        // run
+        // verify
+        assertNotNull(urlService.getUrlByKey(url_1).getShortUrl(), urlService.getUrlByKey(url_3).getShortUrl());
+    }
+
+    @Test
+    public void shouldGetShortUrl(){
+
+        Url url = new Url(url_1, short_url_1);
+        // mock
+        Mockito.when(urlRepository.findById(url_1)).thenReturn(Optional.of(url));
+
+        System.out.println(urlService.shortenUrl(url_1));
     }
 
 }
