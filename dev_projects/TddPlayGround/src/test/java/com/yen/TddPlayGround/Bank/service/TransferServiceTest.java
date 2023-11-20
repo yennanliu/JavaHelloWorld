@@ -7,14 +7,12 @@ import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.Optional;
 
@@ -43,6 +41,28 @@ class TransferServiceTest {
     public void before(){
 
         System.out.println("setup ...");
+    }
+
+    @Test
+    public void depositShouldAddBalance(){
+
+        User u1 = new User("id-01", 10.0);
+        Mockito.when(userRepository.save(any(User.class)))
+                .thenReturn(u1);
+
+        transferService.deposit(u1, 10.0);
+        assertEquals(u1.getBalance(), 20.0);
+    }
+
+    @Test
+    public void withdrawShouldMinusBalance(){
+
+        User u1 = new User("id-01", 10.0);
+        Mockito.when(userRepository.save(any(User.class)))
+                .thenReturn(u1);
+
+        transferService.withdraw(u1, 10.0);
+        assertEquals(u1.getBalance(), 0.0);
     }
 
     @Test

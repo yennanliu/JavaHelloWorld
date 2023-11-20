@@ -51,4 +51,21 @@ public class TransferServiceImpl implements TransferService {
         return userRepository.save(user);
     }
 
+    @Override
+    public Double deposit(User user, double amount){
+
+        Double updatedBalance = user.getBalance() + amount;
+        user.setBalance(updatedBalance);
+        userRepository.save(user);
+        return updatedBalance;
+    }
+
+    @Override
+    public Double withdraw(User user, double amount) {
+        Double updatedBalance = user.getBalance() - amount;
+        user.setBalance(updatedBalance);
+        userRepository.save(user);
+        return updatedBalance;
+    }
+
 }

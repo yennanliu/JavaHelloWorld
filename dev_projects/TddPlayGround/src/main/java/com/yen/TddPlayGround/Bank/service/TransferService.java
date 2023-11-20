@@ -12,4 +12,8 @@ public interface TransferService {
     public User getUserById(String id);
 
     public User insertUser(User user);
+
+    public Double deposit(User user, double amount);
+
+    public Double withdraw(User user, double amount);
 }
