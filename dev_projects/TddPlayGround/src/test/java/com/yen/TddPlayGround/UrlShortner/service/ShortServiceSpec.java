@@ -14,12 +14,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(MockitoExtension.class)
 class ShortServiceSpec {
 
+    private String header;
+
     private ShortService shortService;
+
+    String input1;
+
+    String input2;
 
     @BeforeEach
     public void before(){
+
         // TODO : mock below
         shortService = new ShortService();
+        header = "https://yen_shortner";
+        input1 = "https://google.com";
+        input2 = "http://yahoo.com";
     }
 
     @Test
@@ -40,48 +50,35 @@ class ShortServiceSpec {
     @Test
     public void shouldSplitWithHttpsInput(){
 
-        String input = "https://google.com";
-        String res = shortService.split(input);
+        String res = shortService.split(input1);
         assertEquals(res, "google.com");
     }
 
     @Test
     public void shouldSplitWithHttpInput(){
 
-        String input = "http://yahoo.com";
-        String res = shortService.split(input);
+        String res = shortService.split(input2);
         assertEquals(res, "yahoo.com");
     }
 
     @Test
     public void shouldReturnHashCodeWithNormalInput(){
 
-        String input = "https://google.com";
-        String res = shortService.shortener(input);//"https://yen_shortner/wfwergere";
-
-        assertTrue(res.contains("https://yen_shortner"));
+        String res = shortService.shortener(input1);//"https://yen_shortner/wfwergere";
+        assertTrue(res.contains(header));
     }
 
 
     @Test
     public void shouldReturnSameWhenSameInput(){
 
-        String input1 = "https://google.com";
-        String input2 = "https://google.com";
-
-        System.out.println("res1 = " + shortService.shortener(input1));
-
-        assertEquals(shortService.shortener(input1), shortService.shortener(input2));
+        String input1_ = "https://google.com";
+        //System.out.println("res1 = " + shortService.shortener(input1));
+        assertEquals(shortService.shortener(input1), shortService.shortener(input1_));
     }
 
     @Test
     public void shouldReturnDifferentWhenDifferentInput(){
-
-        String input1 = "https://google.com";
-        String input2 = "https://meta.com";
-
-        System.out.println("res1 = " + shortService.shortener(input1));
-        System.out.println("res2 = " + shortService.shortener(input2));
 
         assertNotEquals(shortService.shortener(input1), shortService.shortener(input2));
     }
@@ -89,16 +86,14 @@ class ShortServiceSpec {
     @Test
     public void shouldReturnOriginalURLWhenInverse(){
 
-        String input1 = "https://google.com";
         String res = shortService.shortener(input1);
-        System.out.println("res1 = " + shortService.shortener(input1));
+        //System.out.println("res1 = " + shortService.shortener(input1));
         // inverse
-        assertEquals(shortService.inverse(res), "https://google.com");
+        assertEquals(shortService.inverse(res), input1);
 
-        String input2 = "https://amazon.com";
         String res2 = shortService.shortener(input2);
-        System.out.println("input2 inverse = " + shortService.inverse(res2));
-        assertEquals(shortService.inverse(res2), "https://amazon.com");
+        //System.out.println("input2 inverse = " + shortService.inverse(res2));
+        assertEquals(shortService.inverse(res2), input2);
     }
 
 }

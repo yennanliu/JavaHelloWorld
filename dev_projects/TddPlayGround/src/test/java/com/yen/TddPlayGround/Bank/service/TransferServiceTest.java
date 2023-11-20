@@ -29,7 +29,8 @@ import static org.mockito.Mockito.verify;
 class TransferServiceTest {
 
     // InjectMocks : for inject service which will use Dao/repository
-    @InjectMocks // https://blog.csdn.net/yangyangrenren/article/details/118555559
+    // https://blog.csdn.net/yangyangrenren/article/details/118555559
+    @InjectMocks
     TransferServiceImpl transferService;
 
     // Mock : for mock Dao/repository

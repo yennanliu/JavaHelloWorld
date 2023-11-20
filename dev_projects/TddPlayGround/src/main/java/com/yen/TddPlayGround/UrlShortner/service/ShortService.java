@@ -16,6 +16,7 @@ public class ShortService {
     }
 
     ShortService(HashMap<String, String> map){
+
         this.map = map;
     }
 
@@ -46,14 +47,12 @@ public class ShortService {
             return this.map.get(input);
         }
 
-        // if not exists, make hash, save to map, and return
-        //int len = input.length();
-        // make some hash
-        //int hash = len % 13;
+        // TODO : use hash, example : base64
         String uuid = UUID.randomUUID().toString().substring(0,5);
         String short_url = prefix + uuid;
         this.map.put(input, short_url);
-        return short_url; // return "https://yen_shortner";
+        // example "https://yen_shortner/54ve";
+        return short_url;
     }
 
     // getter, setter
@@ -79,8 +78,6 @@ public class ShortService {
                 return key;
             }
         }
-
-        //return "https://google.com";
         System.out.println("Not a valid short URL");
         return null;
     }
