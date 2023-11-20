@@ -1,12 +1,12 @@
-package com.yen.TddPlayGround.BankV2;
+package com.yen.TddPlayGround.BankV3;
 
 // https://www.geeksforgeeks.org/banking-transaction-system-using-java/
 
-import com.yen.TddPlayGround.BankV2.sevice.BankService;
-import com.yen.TddPlayGround.BankV2.sevice.ThreadDeposit;
-import com.yen.TddPlayGround.BankV2.sevice.ThreadWithdrawal;
+import com.yen.TddPlayGround.BankV3.service.BankService;
+import com.yen.TddPlayGround.BankV3.service.ThreadDeposit;
+import com.yen.TddPlayGround.BankV3.service.ThreadWithdrawal;
 
-public class BankV2App {
+public class BankV3App {
 
     // Main driver method
     public static void main(String[] args)
@@ -17,9 +17,10 @@ public class BankV2App {
         // will be required to call withdrawn and deposit
         // methods from those class
 
-        // Creating an object of class1
+        // Creating object of above class inside main()
         BankService obj = new BankService();
 
+        // Creating threads
         ThreadWithdrawal t1
                 = new ThreadWithdrawal(obj, "Arnab", 20);
         ThreadWithdrawal t2
@@ -33,36 +34,13 @@ public class BankV2App {
 
         // When a program calls the start() method, a new
         // thread is created and then the run() method is
-        // executed.
-
-        // Starting threads created above
+        // executed
         t1.start();
         t2.start();
         t3.start();
         t4.start();
         t5.start();
-
-        /**
-         *  Execution log :
-         *
-         *   -> Problem : should NOT have balance < 0
-         *   -> reason : thread is NOT safe
-         *      (shared data read/write by different thread on the same time)
-         *      e.g. : all the threads are updating the same resource at a time.
-         *
-         * Mukta deposited 35
-         * Shubham withdrawn 40
-         * 95
-         * Arnab withdrawn 20
-         * 75
-         * Rinkel withdrawn 80
-         * -5
-         * Monodwip withdrawn 40
-         * -45
-         * Balance after deposit: 135
-         *
-         *
-         */
     }
 
 }
+
