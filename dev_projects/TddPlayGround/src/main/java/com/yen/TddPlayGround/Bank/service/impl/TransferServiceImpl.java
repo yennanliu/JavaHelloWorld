@@ -4,13 +4,16 @@ import com.yen.TddPlayGround.Bank.bean.po.User;
 import com.yen.TddPlayGround.Bank.repository.UserRepository;
 import com.yen.TddPlayGround.Bank.service.TransferService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TransferServiceImpl implements TransferService {
 
     //@Autowired
     private UserRepository userRepository;
 
     // constructor
+    //@Autowired // TODO : double check if @Autowired is necessary ?
     public TransferServiceImpl(){
 
         this.userRepository = userRepository;
