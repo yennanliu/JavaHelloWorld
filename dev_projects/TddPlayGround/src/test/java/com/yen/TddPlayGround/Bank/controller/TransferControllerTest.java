@@ -77,8 +77,10 @@ class TransferControllerTest {
                 .deposit(any(User.class), any(Double.class)))
                 .willAnswer((invocation -> invocation.getArgument(0)));
 
+        depositRequest = new DepositRequest(u1, 5.0);
+
         // run
-        ResultActions response = mockMvc.perform(post("/deposite")
+        ResultActions response = mockMvc.perform(post("/deposit")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(depositRequest))
         );

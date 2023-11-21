@@ -15,10 +15,12 @@ public class TransferController {
     TransferService transferService;
 
     @PostMapping("/deposit")
-    public int deposit(@RequestParam DepositRequest request){
+    public int deposit(@RequestParam DepositRequest depositRequest){
+
+        System.out.println("(deposit) controller, request = " + depositRequest.toString());
 
         try{
-            transferService.deposit(request.getUser(), request.getAmount());
+            transferService.deposit(depositRequest.getUser(), depositRequest.getAmount());
             return 200;
         }catch (Exception e){
             return 500;
