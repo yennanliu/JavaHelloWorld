@@ -16,31 +16,37 @@ public class BankV4App {
         // init
         BankService bank = new BankService();
 
-        User u1 = new User("Mary", 10.0);
-        User u2 = new User("Kim", 10.0);
+        User u1 = new User("Mary", 1);
+        //User u2 = new User("Kim", 10.0);
 
         System.out.println(u1);
-        System.out.println(u2);
+        //System.out.println(u2);
 
         System.out.println("---- bank op ----");
 
-        ThreadDeposit threadDeposit_1 = new ThreadDeposit(bank, u1, 10.0);
-        ThreadDeposit threadDeposit_2 = new ThreadDeposit(bank, u2, 10.0);
+        ThreadDeposit threadDeposit_1 = new ThreadDeposit(bank, u1, 1.0);
+        //ThreadDeposit threadDeposit_2 = new ThreadDeposit(bank, u2, 10.0);
 
         TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
-        
-        ThreadWithdraw threadWithdraw_1 = new ThreadWithdraw(bank, u1, 30.0);
-        ThreadWithdraw threadWithdraw_2 = new ThreadWithdraw(bank, u2, 20.0);
+
+        ThreadWithdraw threadWithdraw_1 = new ThreadWithdraw(bank, u1, 1.0);
+        //ThreadWithdraw threadWithdraw_2 = new ThreadWithdraw(bank, u2, 20.0);
 
         Thread thread_1 = new Thread(threadDeposit_1);
-        Thread thread_2 = new Thread(threadDeposit_2);
+        //Thread thread_2 = new Thread(threadDeposit_2);
         Thread thread_3 = new Thread(threadWithdraw_1);
-        Thread thread_4 = new Thread(threadWithdraw_2);
+        //Thread thread_4 = new Thread(threadWithdraw_2);
 
         thread_1.start();
-        thread_2.start();
+//        //thread_2.start();
         thread_3.start();
-        thread_4.start();
+//        //thread_4.start();
+
+        // simulate multi times op
+//        for(int i = 0; i < 3; i++){
+//            thread_1.start();
+//            thread_3.start();
+//        }
 
         System.out.println("BankV4App end ...");
     }

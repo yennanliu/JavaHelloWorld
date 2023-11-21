@@ -31,7 +31,8 @@ public class BankService {
         double curBalance = user.getBalance();
         // TODO : check "虛假喚醒" (should use "while" instead of "if)
         while (curBalance >= amount){
-            user.setBalance(user.getBalance() - amount);
+            curBalance -= amount; // NOTE !! we update curBalance, so can reflect to while logic above (used by synchronized)
+            user.setBalance(curBalance);
             System.out.println("(after withdraw) current balance : " + user);
             TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
         }
