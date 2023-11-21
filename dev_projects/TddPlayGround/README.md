@@ -38,6 +38,8 @@ JUnit API
 - 與這兩個註解對應的是@After和@AfterClass，它們的主要用途是銷毀設定階段或其他測試創建的資料或狀
   態。 每個測試都應獨立於其他測試，另外，任何測試都不應受其他測試的影響。拆除階段有助於確保系統就像未執行任何測試一樣。
 
+- MockBean VS InjectMocks ??
+
 ## Ref
 
 - TDD book

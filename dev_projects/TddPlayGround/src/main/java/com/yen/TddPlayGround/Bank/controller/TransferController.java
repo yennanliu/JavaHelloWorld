@@ -2,11 +2,11 @@ package com.yen.TddPlayGround.Bank.controller;
 
 import com.yen.TddPlayGround.Bank.bean.dto.DepositRequest;
 import com.yen.TddPlayGround.Bank.bean.dto.TransferRequest;
+import com.yen.TddPlayGround.Bank.bean.po.User;
+import com.yen.TddPlayGround.Bank.repository.UserRepository;
 import com.yen.TddPlayGround.Bank.service.TransferService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class TransferController {
@@ -14,13 +14,18 @@ public class TransferController {
     @Autowired
     TransferService transferService;
 
-    @PostMapping("/deposit")
-    public int deposit(@RequestParam DepositRequest depositRequest){
+    @Autowired
+    UserRepository userRepository;
 
-        System.out.println("(deposit) controller, request = " + depositRequest.toString());
+    @GetMapping("/deposit/{id}")
+    public int deposit(@PathVariable String id){
+
+        System.out.println("(deposit) controller, id = " + id);
 
         try{
-            transferService.deposit(depositRequest.getUser(), depositRequest.getAmount());
+            //transferService.deposit(depositRequest.getUser(), depositRequest.getAmount());
+            User user = userRepository.getById(id);
+            transferService.deposit(user, 100.0);
             return 200;
         }catch (Exception e){
             return 500;
