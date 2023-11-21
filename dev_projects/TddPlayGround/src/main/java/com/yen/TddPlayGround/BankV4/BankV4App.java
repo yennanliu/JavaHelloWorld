@@ -38,7 +38,6 @@ public class BankV4App {
         Thread thread_3 = new Thread(threadWithdraw_1);
         //Thread thread_4 = new Thread(threadWithdraw_2);
 
-
 //        thread_1.start();
 //        //thread_2.start();
 //        thread_3.start();
@@ -56,7 +55,7 @@ public class BankV4App {
 //        }
 
         // V2
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             // deposit
             ThreadDeposit threadDeposit = new ThreadDeposit(bank, u1, 1.0);
             Thread thread_d = new Thread(threadDeposit);

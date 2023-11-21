@@ -6,15 +6,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BankService {
 
-    //private User user;
-
     public BankService(){
 
     }
-
-//    public BankService(User user){
-//        this.user = user;
-//    }
 
     public synchronized void deposit(User user, double amount) throws InterruptedException {
 
