@@ -24,6 +24,7 @@ public class BankV4App {
 
         System.out.println("---- bank op ----");
 
+        /** Run single */
         ThreadDeposit threadDeposit_1 = new ThreadDeposit(bank, u1, 1.0);
         //ThreadDeposit threadDeposit_2 = new ThreadDeposit(bank, u2, 10.0);
 
@@ -37,16 +38,34 @@ public class BankV4App {
         Thread thread_3 = new Thread(threadWithdraw_1);
         //Thread thread_4 = new Thread(threadWithdraw_2);
 
-        thread_1.start();
+
+//        thread_1.start();
 //        //thread_2.start();
-        thread_3.start();
+//        thread_3.start();
 //        //thread_4.start();
 
-        // simulate multi times op
-//        for(int i = 0; i < 3; i++){
+        /** Run multiple times  */
+        //simulate multi times op
+
+        // V1
+        // below is WRONG, thread CAN'T be activated again once finished
+        // -> will cause IllegalThreadStateException exception
+//        for(int i = 0; i < 10; i++){
 //            thread_1.start();
 //            thread_3.start();
 //        }
+
+        // V2
+        for (int i = 0; i < 10; i++) {
+            // deposit
+            ThreadDeposit threadDeposit = new ThreadDeposit(bank, u1, 1.0);
+            Thread thread_d = new Thread(threadDeposit);
+            thread_d.start();
+            // withdraw
+            ThreadWithdraw threadWithdraw = new ThreadWithdraw(bank, u1, 1.0);
+            Thread thread_w = new Thread(threadWithdraw);
+            thread_w.start();
+        }
 
         System.out.println("BankV4App end ...");
     }
