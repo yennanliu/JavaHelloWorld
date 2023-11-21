@@ -37,8 +37,6 @@ public class BankServiceWithLock implements BaseBankService{
                 curBalance -= amount; // NOTE !! we update curBalance, so can reflect to while logic above (used by synchronized)
                 user.setBalance(curBalance);
                 System.out.println("(after withdraw) current balance : " + user);
-                // unlock
-                lock.unlock();
                 TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
             }
         }catch (InterruptedException e){

@@ -15,8 +15,8 @@ public class BankV4App {
         System.out.println("BankV4App start ...");
 
         // init
-        BankService bank = new BankService();
-        //BankServiceWithLock bank = new BankServiceWithLock();
+        //BankService bank = new BankService();
+        BankServiceWithLock bank = new BankServiceWithLock();
 
         User u1 = new User("Mary", 1);
         //User u2 = new User("Kim", 10.0);
@@ -27,18 +27,18 @@ public class BankV4App {
         System.out.println("---- bank op ----");
 
         /** Run single */
-        ThreadDeposit threadDeposit_1 = new ThreadDeposit(bank, u1, 1.0);
-        //ThreadDeposit threadDeposit_2 = new ThreadDeposit(bank, u2, 10.0);
-
-        TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
-
-        ThreadWithdraw threadWithdraw_1 = new ThreadWithdraw(bank, u1, 1.0);
-        //ThreadWithdraw threadWithdraw_2 = new ThreadWithdraw(bank, u2, 20.0);
-
-        Thread thread_1 = new Thread(threadDeposit_1);
-        //Thread thread_2 = new Thread(threadDeposit_2);
-        Thread thread_3 = new Thread(threadWithdraw_1);
-        //Thread thread_4 = new Thread(threadWithdraw_2);
+//        ThreadDeposit threadDeposit_1 = new ThreadDeposit(bank, u1, 1.0);
+//        //ThreadDeposit threadDeposit_2 = new ThreadDeposit(bank, u2, 10.0);
+//
+//        TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
+//
+//        ThreadWithdraw threadWithdraw_1 = new ThreadWithdraw(bank, u1, 1.0);
+//        //ThreadWithdraw threadWithdraw_2 = new ThreadWithdraw(bank, u2, 20.0);
+//
+//        Thread thread_1 = new Thread(threadDeposit_1);
+//        //Thread thread_2 = new Thread(threadDeposit_2);
+//        Thread thread_3 = new Thread(threadWithdraw_1);
+//        //Thread thread_4 = new Thread(threadWithdraw_2);
 
 //        thread_1.start();
 //        //thread_2.start();
@@ -63,7 +63,7 @@ public class BankV4App {
             Thread thread_d = new Thread(threadDeposit);
             thread_d.start();
             // withdraw
-            ThreadWithdraw threadWithdraw = new ThreadWithdraw(bank, u1, 1.0);
+            ThreadWithdraw threadWithdraw = new ThreadWithdraw(bank, u1, 2.0);
             Thread thread_w = new Thread(threadWithdraw);
             thread_w.start();
         }
