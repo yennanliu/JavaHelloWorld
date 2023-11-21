@@ -16,8 +16,8 @@ public class BankV4App {
         // init
         BankService bank = new BankService();
 
-        User u1 = new User("mary", 10.0);
-        User u2 = new User("kim", 10.0);
+        User u1 = new User("Mary", 10.0);
+        User u2 = new User("Kim", 10.0);
 
         System.out.println(u1);
         System.out.println(u2);
@@ -27,6 +27,8 @@ public class BankV4App {
         ThreadDeposit threadDeposit_1 = new ThreadDeposit(bank, u1, 10.0);
         ThreadDeposit threadDeposit_2 = new ThreadDeposit(bank, u2, 10.0);
 
+        TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
+        
         ThreadWithdraw threadWithdraw_1 = new ThreadWithdraw(bank, u1, 30.0);
         ThreadWithdraw threadWithdraw_2 = new ThreadWithdraw(bank, u2, 20.0);
 

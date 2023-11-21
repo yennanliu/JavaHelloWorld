@@ -34,7 +34,7 @@ public class BankService {
             System.out.println("(after withdraw) current balance : " + user);
             TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
         }else{
-            System.out.println("Not enough balance, sleep 3 sec ..." + user);
+            System.out.println("Not enough balance, sleep 3 sec ..." + user + " amount = " + amount);
             TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
         }
     }
