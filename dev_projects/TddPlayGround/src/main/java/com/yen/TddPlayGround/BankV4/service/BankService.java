@@ -16,18 +16,25 @@ public class BankService {
 //        this.user = user;
 //    }
 
-    public void deposit(User user, double amount) throws InterruptedException {
+    public synchronized void deposit(User user, double amount) throws InterruptedException {
 
-        user.setBalance(user.getBalance() + amount);
+        double curBalance = user.getBalance();
+        user.setBalance(curBalance + amount);
         System.out.println("(after deposit) current balance : " + user);
         TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
     }
 
-    public void withdraw(User user, double amount) throws InterruptedException {
+    public synchronized void withdraw(User user, double amount) throws InterruptedException {
 
-        user.setBalance(user.getBalance() - amount);
-        System.out.println("(after withdraw) current balance : " + user);
-        TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
+        double curBalance = user.getBalance();
+        if (curBalance >= amount){
+            user.setBalance(user.getBalance() - amount);
+            System.out.println("(after withdraw) current balance : " + user);
+            TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
+        }else{
+            System.out.println("Not enough balance, sleep 3 sec ...");
+            TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
+        }
     }
 
 }
