@@ -29,14 +29,18 @@ public class BankService {
         TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
 
         double curBalance = user.getBalance();
-        if (curBalance >= amount){
+        // TODO : check "虛假喚醒" (should use "while" instead of "if)
+        while (curBalance >= amount){
             user.setBalance(user.getBalance() - amount);
             System.out.println("(after withdraw) current balance : " + user);
             TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
-        }else{
-            System.out.println("Not enough balance, sleep 3 sec ..." + user + " amount = " + amount);
-            TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
         }
+//        else{
+//            System.out.println("Not enough balance, sleep 3 sec ..." + user + " amount = " + amount);
+//            TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
+//        }
+        System.out.println("Not enough balance, sleep 3 sec ..." + user + " amount = " + amount);
+        TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
     }
 
 }
