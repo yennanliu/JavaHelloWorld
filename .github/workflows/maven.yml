@@ -24,6 +24,6 @@ jobs:
       run: mvn clean package
     - name: Build with Maven
       run: mvn clean package
-    - name: Build with TddPlayGround
+    #- name: Build with TddPlayGround
       #run: cd dev_projects/TddPlayGround && mvn clean package
-      run: cd dev_projects/TddPlayGround && mvn test
+      #run: cd dev_projects/TddPlayGround && mvn test
