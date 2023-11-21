@@ -2,6 +2,7 @@ package com.yen.TddPlayGround.BankV4;
 
 import com.yen.TddPlayGround.BankV4.bean.User;
 import com.yen.TddPlayGround.BankV4.service.BankService;
+import com.yen.TddPlayGround.BankV4.service.BankServiceWithLock;
 import com.yen.TddPlayGround.BankV4.service.ThreadDeposit;
 import com.yen.TddPlayGround.BankV4.service.ThreadWithdraw;
 
@@ -15,6 +16,7 @@ public class BankV4App {
 
         // init
         BankService bank = new BankService();
+        //BankServiceWithLock bank = new BankServiceWithLock();
 
         User u1 = new User("Mary", 1);
         //User u2 = new User("Kim", 10.0);

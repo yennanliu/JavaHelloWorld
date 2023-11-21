@@ -4,7 +4,7 @@ import com.yen.TddPlayGround.BankV4.bean.User;
 
 import java.util.concurrent.TimeUnit;
 
-public class BankService {
+public class BankService implements BaseBankService{
 
     public BankService(){
 

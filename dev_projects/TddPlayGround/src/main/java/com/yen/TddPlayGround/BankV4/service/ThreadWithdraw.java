@@ -5,13 +5,13 @@ import com.yen.TddPlayGround.BankV4.bean.User;
 public class ThreadWithdraw implements Runnable{
 
     // attr
-    private BankService bank;
+    private BaseBankService bank;
     private User user;
     private double amount;
 
 
     // TODO : double check this design (put Bank in ThreadDeposit constructor)
-    public ThreadWithdraw(BankService bank, User user, double amount){
+    public ThreadWithdraw(BaseBankService bank, User user, double amount){
         this.bank = bank;
         this.user = user;
         this.amount = amount;
