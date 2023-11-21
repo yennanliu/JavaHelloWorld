@@ -62,6 +62,15 @@
 - Read lock VS write lock
 	- BOTH Read, and write lock can cause "dead" lock
 
+- ReadWrite lock
+	- A resource can be accessed by multiple read threads, or a write thread, but CAN'T be accessed by write tread and read thread on the same time (讀寫互斥, 讀讀共享)
+
+- *Evolution*
+- https://youtu.be/RYGSlLYoesg?si=HJLztBKMm1ZmLdo2&t=529
+```
+No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (ReentrantReadWriteLock)
+                 (讀佔, ONLY 1 thread can access resource)            (讀讀共享, 可多人同時讀)(1.鎖飢餓 2. can't write while read)
+```
 
 3) Collection for `thready safety`
 
