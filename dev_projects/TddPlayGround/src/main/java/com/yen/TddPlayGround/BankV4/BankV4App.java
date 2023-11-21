@@ -4,9 +4,11 @@ import com.yen.TddPlayGround.BankV4.bean.User;
 import com.yen.TddPlayGround.BankV4.service.BankService;
 import com.yen.TddPlayGround.BankV4.service.ThreadDeposit;
 
+import java.util.concurrent.TimeUnit;
+
 public class BankV4App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.out.println("BankV4App start ...");
 
@@ -29,10 +31,7 @@ public class BankV4App {
 
         thread_1.start();
         thread_2.start();
-
-        System.out.println(u1);
-        System.out.println(u2);
-
+        
         System.out.println("BankV4App end ...");
     }
 
