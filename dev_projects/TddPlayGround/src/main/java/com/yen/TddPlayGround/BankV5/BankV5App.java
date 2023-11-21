@@ -2,15 +2,35 @@ package com.yen.TddPlayGround.BankV5;
 
 // https://www.unlogged.io/post/java-concurrency-unlocked-a-comparative-guide-to-synchronization-tools
 
+import com.yen.TddPlayGround.BankV5.account.ReadWriteLockAccount;
+import com.yen.TddPlayGround.BankV5.account.ReentrantLockAccount;
+import com.yen.TddPlayGround.BankV5.account.SynchronizedAccount;
+
 public class BankV5App {
     public static void main(String[] args) throws InterruptedException {
 
         System.out.println("BankV5App run !!!");
 
-        var account1 = new SimpleAccount();
-        var account2 = new SimpleAccount();
+        /** V1 **/
+//        var account1 = new SimpleAccount();
+//        var account2 = new SimpleAccount();
 
-        int repeat = 1000;
+        /** V2 **/
+        // will cause dead lock
+//        var account1 = new SynchronizedAccount();
+//        var account2 = new SynchronizedAccount();
+
+        /** V3 **/
+        // will cause dead lock
+//        var account1 = new ReentrantLockAccount();
+//        var account2 = new ReentrantLockAccount();
+
+        // ReadWriteLockAccount
+        /** V4 **/
+        var account1 = new ReadWriteLockAccount();
+        var account2 = new ReadWriteLockAccount();
+
+        final int REPEAT = 10;
 
         //Thread thread = Thread.ofPlatform().daemon().start(runnable);
 
@@ -18,7 +38,7 @@ public class BankV5App {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < repeat; i++) {
+                for (int i = 0; i < REPEAT; i++) {
                     System.out.println(Thread.currentThread().getName());
                     account1.transfer(account2, 100.00);
                 }
@@ -41,7 +61,7 @@ public class BankV5App {
         Thread t2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < repeat; i++) {
+                for (int i = 0; i < REPEAT; i++) {
                     System.out.println(Thread.currentThread().getName());
                     account2.transfer(account1, 100.00);
                 }

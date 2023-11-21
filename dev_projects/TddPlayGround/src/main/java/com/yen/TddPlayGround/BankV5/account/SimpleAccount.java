@@ -1,4 +1,4 @@
-package com.yen.TddPlayGround.BankV5;
+package com.yen.TddPlayGround.BankV5.account;
 
 // https://www.unlogged.io/post/java-concurrency-unlocked-a-comparative-guide-to-synchronization-tools
 
@@ -24,6 +24,7 @@ public class SimpleAccount {
     }
 
     public double getBalance() {
+
         return balance;
     }
 

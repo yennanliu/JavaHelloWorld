@@ -1,4 +1,4 @@
-package com.yen.TddPlayGround.BankV5;
+package com.yen.TddPlayGround.BankV5.account;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -29,7 +29,9 @@ public class ReentrantLockAccount {
 
     public void transfer(ReentrantLockAccount to, double amount) {
         lock.lock(); // The current thread acquires the lock
+        System.out.println("transfer start ... ");
         try {
+            System.out.println("transfer " + amount + " to " + to.toString());
             this.withdraw(amount); // The same thread reacquires the lock
             to.deposit(amount);
         } finally {
@@ -45,4 +47,13 @@ public class ReentrantLockAccount {
             lock.unlock();
         }
     }
+
+    @Override
+    public String toString() {
+        return "ReentrantLockAccount{" +
+                "balance=" + balance +
+                ", lock=" + lock +
+                '}';
+    }
+
 }
