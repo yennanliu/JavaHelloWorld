@@ -108,6 +108,11 @@ No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (Ree
 
 - ThreadPool
 
+5) Queue
+
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/block_queue_method.png"></p>
+
+
 ## Ref
 
 - https://github.com/callicoder/java-concurrency-examples
