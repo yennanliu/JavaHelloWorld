@@ -21,10 +21,12 @@ public class BankService {
         double curBalance = user.getBalance();
         user.setBalance(curBalance + amount);
         System.out.println("(after deposit) current balance : " + user);
-        TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
+        //TimeUnit.MILLISECONDS.sleep(100); // sleep 1 sec
     }
 
     public synchronized void withdraw(User user, double amount) throws InterruptedException {
+
+        TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
 
         double curBalance = user.getBalance();
         if (curBalance >= amount){
@@ -32,7 +34,7 @@ public class BankService {
             System.out.println("(after withdraw) current balance : " + user);
             TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
         }else{
-            System.out.println("Not enough balance, sleep 3 sec ...");
+            System.out.println("Not enough balance, sleep 3 sec ..." + user);
             TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
         }
     }
