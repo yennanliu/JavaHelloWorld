@@ -133,13 +133,40 @@ class Meal{
             System.out.println(", Price : "+item.price());
         }
     }
+}
+
+// mealBuilder
+class MealBuilder{
+
+    // method
+    public Meal prepareVegMeal(){
+        Meal meal = new Meal();
+        meal.addItem(new VegBurger());
+        meal.addItem(new Coke());
+        return meal;
+    }
+
+    public Meal prepareNonVegMeal(){
+        Meal meal = new Meal();
+        meal.addItem(new ChickenBurger());
+        meal.addItem(new Coke());
+        return meal;
+    }
 
 }
 
 public class demo1 {
 
     public static void main(String[] args) {
+
         // run
+        MealBuilder builder = new MealBuilder();
+
+        Meal vegMeal = builder.prepareVegMeal();
+        vegMeal.showItems();
+
+        Meal NonVegMeal = builder.prepareNonVegMeal();
+        NonVegMeal.showItems();
     }
 
 }
