@@ -1,12 +1,9 @@
 package com.yen.TddPlayGround.BankV4;
 
 import com.yen.TddPlayGround.BankV4.bean.User;
-import com.yen.TddPlayGround.BankV4.service.BankService;
 import com.yen.TddPlayGround.BankV4.service.BankServiceWithLock;
-import com.yen.TddPlayGround.BankV4.service.ThreadDeposit;
-import com.yen.TddPlayGround.BankV4.service.ThreadWithdraw;
-
-import java.util.concurrent.TimeUnit;
+import com.yen.TddPlayGround.BankV4.Tread.ThreadDeposit;
+import com.yen.TddPlayGround.BankV4.Tread.ThreadWithdraw;
 
 public class BankV4App {
 
