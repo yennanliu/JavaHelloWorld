@@ -24,20 +24,26 @@ class A_ParkingLot_Test {
 
     ParkingLot parkingLot_b;
 
+    ParkingLot parkingLot_c;
+
     Car car_a;
+    Car car_b;
 
     @BeforeEach
     public void before(){
         System.out.println("before");
 
+        car_a = new Car("c-01");
+        car_b = new Car("c-02");
+
         List<ParkingSpace> parkingSpaceList = new ArrayList<>();
-        parkingSpaceList.add(new ParkingSpace("c-01", "occupied"));
-        parkingSpaceList.add(new ParkingSpace("c-02", "occupied"));
+        parkingSpaceList.add(new ParkingSpace(car_a.getId(), "occupied"));
+        parkingSpaceList.add(new ParkingSpace(car_b.getId(), "occupied"));
         parkingLot_a = new ParkingLot("p-01", 2, parkingSpaceList);
 
         parkingLot_b = new ParkingLot("p-02", 1, new ArrayList<>());
 
-        car_a = new Car("c-01");
+        parkingLot_c = new ParkingLot("p-03", 0, new ArrayList<>());
     }
 
     @Test
@@ -73,11 +79,26 @@ class A_ParkingLot_Test {
     }
 
     @Test
-    public void shouldReturnTrueIfLeaveParkingLotSuccess(){
+    public void shouldReturnTrueIfCarInParkingLot(){
 
         boolean res = a_parkingLot.leave(car_a, parkingLot_a);
         System.out.println(res);
         assertEquals(res, true);
+    }
+
+    @Test
+    public void shouldReturnFalseIfNoCarInParkingLot(){
+
+        boolean res = a_parkingLot.leave(car_a, parkingLot_c);
+        System.out.println(res);
+        assertEquals(res, false);
+    }
+
+    @Test
+    public void shouldReturnParkingLotSize(){
+
+        System.out.println(parkingLot_c.getSize());
+        System.out.println(parkingLot_c.getFreeAmount());
     }
 
 }

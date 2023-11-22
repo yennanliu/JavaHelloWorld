@@ -1,5 +1,6 @@
 package com.yen.TddPlayGround.ParkingLot.bean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingLot {
@@ -8,7 +9,7 @@ public class ParkingLot {
     private String id;
 
     private int size;
-    private List<ParkingSpace> spaces;
+    private List<ParkingSpace> spaces = new ArrayList<>(); // TODO : check if should init List here or not
 
     // constructor
     public ParkingLot(){

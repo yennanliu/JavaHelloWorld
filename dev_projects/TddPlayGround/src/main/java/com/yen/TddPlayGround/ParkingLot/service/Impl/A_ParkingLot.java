@@ -6,6 +6,7 @@ import com.yen.TddPlayGround.ParkingLot.bean.ParkingSpace;
 import com.yen.TddPlayGround.ParkingLot.service.ParkingService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class A_ParkingLot implements ParkingService {
 
@@ -17,12 +18,13 @@ public class A_ParkingLot implements ParkingService {
 
     @Override
     public boolean park(Car car, ParkingLot parkingLot) {
+
         if(parkingLot.getFreeAmount() == 0){
+            System.out.println("No free space in parking lot");
             return false;
         }
         List<ParkingSpace> parkingSpaceList = parkingLot.getSpaces();
-        // TODO : optimize below
-        parkingSpaceList.add(new ParkingSpace("p-01", "occupied"));
+        parkingSpaceList.add(new ParkingSpace(car.getId(), "occupied"));
         return true;
     }
 
@@ -33,8 +35,24 @@ public class A_ParkingLot implements ParkingService {
 
     @Override
     public boolean leave(Car car, ParkingLot parkingLot) {
+
+        List<ParkingSpace> spaces = parkingLot
+                .getSpaces();
+
+        List<String> carList = spaces
+                .stream()
+                .filter(x -> x.getStatus().equals("occupied"))
+                .map(x -> x.getId()).collect(Collectors.toList());
+
+        if (carList.size() == 0){
+            System.out.println("No car in parking lot");
+            return false;
+        }
+
         if(parkingLot.getFreeAmount() < parkingLot.getSize()){
-            //parkingLot.
+//            // update parking space
+//            int idx = spaces.indexOf(car.getId());
+//            spaces.remove(idx);
             return true;
         }
         System.out.println("No car to leave parking lot");
