@@ -114,7 +114,7 @@ No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (Ree
 
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/block_queue.png"></p>
 
-- [Blocking Queue demo](https://github.com/yennanliu/JavaHelloWorld/blob/main/dev_projects/multithreading/Multithreading/src/main/java/com/yen/atguigu/queue/course35/BlockingQueueDemo.java)
+- [code demo](https://github.com/yennanliu/JavaHelloWorld/blob/main/dev_projects/multithreading/Multithreading/src/main/java/com/yen/atguigu/queue/course35/BlockingQueueDemo.java)
 
 
 6) Thread pool
@@ -124,11 +124,13 @@ No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (Ree
 	- better performance (no need to wait new thread creatation)
 - Threads are waiting in queue to be assigned, used. Once thread usage is finish, it will be PUT BACK to the pool, so can be used by other task
 - Similar to DB connection pool
+- newSingleThreadExecutor, newFixedThreadPool, newCachedThreadPool are ALL using `ThreadPool` under the hood
 
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_pool_class.png"></p>
 
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_pool_class_2.png"></p>
 
+- [code demo](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/multithreading/Multithreading/src/main/java/com/yen/atguigu/pool/course37)
 
 ## Ref
 
