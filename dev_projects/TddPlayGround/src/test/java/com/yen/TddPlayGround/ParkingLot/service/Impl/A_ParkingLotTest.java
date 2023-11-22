@@ -1,5 +1,6 @@
 package com.yen.TddPlayGround.ParkingLot.service.Impl;
 
+import com.yen.TddPlayGround.ParkingLot.bean.Car;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingLot;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingSpace;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,6 +24,8 @@ class A_ParkingLot_Test {
 
     ParkingLot parkingLot_b;
 
+    Car car_a;
+
     @BeforeEach
     public void before(){
         System.out.println("before");
@@ -33,6 +36,8 @@ class A_ParkingLot_Test {
         parkingLot_a = new ParkingLot("p-01", 2, parkingSpaceList);
 
         parkingLot_b = new ParkingLot("p-02", 1, new ArrayList<>());
+
+        car_a = new Car("c-01");
     }
 
     @Test
@@ -49,6 +54,22 @@ class A_ParkingLot_Test {
         Boolean res = a_parkingLot.isFull(parkingLot_a);
         System.out.println(res);
         assertEquals(res, true);
+    }
+
+    @Test
+    public void shouldReturnTrueIfParkingLotIsNotFull(){
+
+        boolean res = a_parkingLot.park(car_a, parkingLot_b);
+        System.out.println(res);
+        assertEquals(res, true);
+    }
+
+    @Test
+    public void shouldReturnFalseIfParkingLotIsFull(){
+
+        boolean res = a_parkingLot.park(car_a, parkingLot_a);
+        System.out.println(res);
+        assertEquals(res, false);
     }
 
 }

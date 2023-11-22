@@ -8,7 +8,7 @@ public interface ParkingService {
     public boolean isFull(ParkingLot parkingLot);
 
     // park a car in parking lot
-    public String park(Car car, ParkingLot parkingLot);
+    public boolean park(Car car, ParkingLot parkingLot);
 
     public int getAvailableSpace(String parkingLotId);
 

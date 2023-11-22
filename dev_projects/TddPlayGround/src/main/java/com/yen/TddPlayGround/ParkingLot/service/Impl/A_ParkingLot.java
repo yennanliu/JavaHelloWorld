@@ -2,7 +2,10 @@ package com.yen.TddPlayGround.ParkingLot.service.Impl;
 
 import com.yen.TddPlayGround.ParkingLot.bean.Car;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingLot;
+import com.yen.TddPlayGround.ParkingLot.bean.ParkingSpace;
 import com.yen.TddPlayGround.ParkingLot.service.ParkingService;
+
+import java.util.List;
 
 public class A_ParkingLot implements ParkingService {
 
@@ -13,8 +16,14 @@ public class A_ParkingLot implements ParkingService {
     }
 
     @Override
-    public String park(Car car, ParkingLot parkingLot) {
-        return null;
+    public boolean park(Car car, ParkingLot parkingLot) {
+        if(parkingLot.getFreeAmount() == 0){
+            return false;
+        }
+        List<ParkingSpace> parkingSpaceList = parkingLot.getSpaces();
+        // TODO : optimize below
+        parkingSpaceList.add(new ParkingSpace("p-01", "occupied"));
+        return true;
     }
 
     @Override
