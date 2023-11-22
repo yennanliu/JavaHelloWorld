@@ -4,11 +4,12 @@ import com.yen.TddPlayGround.ParkingLot.bean.Car;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingLot;
 import com.yen.TddPlayGround.ParkingLot.service.ParkingService;
 
-public class A_ParlongLot implements ParkingService {
+public class A_ParkingLot implements ParkingService {
 
     @Override
-    public boolean isFull(String id) {
-        return false;
+    public boolean isFull(ParkingLot parkingLot) {
+
+        return parkingLot.getFreeAmount() == 0;
     }
 
     @Override
