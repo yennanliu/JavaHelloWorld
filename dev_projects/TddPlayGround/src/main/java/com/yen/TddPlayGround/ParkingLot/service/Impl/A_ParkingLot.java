@@ -42,6 +42,7 @@ public class A_ParkingLot implements ParkingService {
         List<String> carList = spaces
                 .stream()
                 .filter(x -> x.getStatus().equals("occupied"))
+                .filter(x -> x.getId().equals(car.getId()))
                 .map(x -> x.getId()).collect(Collectors.toList());
 
         if (carList.size() == 0){
@@ -56,6 +57,7 @@ public class A_ParkingLot implements ParkingService {
             spaces.remove(idx);
             return true;
         }
+
         System.out.println("No car to leave parking lot");
         return false;
     }

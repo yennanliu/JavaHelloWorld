@@ -29,12 +29,15 @@ class A_ParkingLot_Test {
     Car car_a;
     Car car_b;
 
+    Car car_c;
+
     @BeforeEach
     public void before(){
         System.out.println("before");
 
         car_a = new Car("c-01");
         car_b = new Car("c-02");
+        car_c = new Car("c-03");
 
         List<ParkingSpace> parkingSpaceList = new ArrayList<>();
         parkingSpaceList.add(new ParkingSpace(car_a.getId(), "occupied"));
@@ -97,8 +100,24 @@ class A_ParkingLot_Test {
     @Test
     public void shouldReturnParkingLotSize(){
 
-        System.out.println(parkingLot_c.getSize());
-        System.out.println(parkingLot_c.getFreeAmount());
+        assertEquals(parkingLot_c.getSize(), 0);
+        assertEquals(parkingLot_c.getFreeAmount(), 0);
+    }
+
+    @Test
+    public void shouldUpdateParkingLotSize(){
+
+        assertEquals(parkingLot_a.getFreeAmount(), 0);
+        assertEquals(parkingLot_a.getSize(), 2);
+
+        a_parkingLot.leave(car_a, parkingLot_a);
+        assertEquals(parkingLot_a.getFreeAmount(), 1);
+
+        a_parkingLot.leave(car_c, parkingLot_a);
+        assertEquals(parkingLot_a.getFreeAmount(), 1);
+
+        a_parkingLot.leave(car_b, parkingLot_a);
+        assertEquals(parkingLot_a.getFreeAmount(), 2);
     }
 
 }
