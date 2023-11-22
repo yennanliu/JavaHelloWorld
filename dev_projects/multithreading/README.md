@@ -147,6 +147,14 @@ No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (Ree
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_abort_policy.png"></p>
 
 
+7) Fork/join
+
+- Break down a complex task to small sub tasks, run separately, then join results to final output
+
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/fork_join_1.png"></p>
+
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/fork_join_2.png"></p>
+
 
 ## Ref
 
