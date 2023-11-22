@@ -117,6 +117,17 @@ No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (Ree
 - [Blocking Queue demo](https://github.com/yennanliu/JavaHelloWorld/blob/main/dev_projects/multithreading/Multithreading/src/main/java/com/yen/atguigu/queue/course35/BlockingQueueDemo.java)
 
 
+6) Thread pool
+
+- Maintain several threads, make sure resorces is managed.
+	- reduce resource cost
+	- better performance (no need to wait new thread creatation)
+- Threads are waiting in queue to be assigned, used. Once thread usage is finish, it will be PUT BACK to the pool, so can be used by other task
+- Similar to DB connection pool
+
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_pool_class.png"></p>
+
+
 ## Ref
 
 - https://github.com/callicoder/java-concurrency-examples
