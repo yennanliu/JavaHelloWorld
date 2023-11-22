@@ -127,6 +127,8 @@ No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (Ree
 
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_pool_class.png"></p>
 
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_pool_class_2.png"></p>
+
 
 ## Ref
 
