@@ -112,6 +112,10 @@ No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (Ree
 
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/block_queue_method.png"></p>
 
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/block_queue.png"></p>
+
+- [Blocking Queue demo](https://github.com/yennanliu/JavaHelloWorld/blob/main/dev_projects/multithreading/Multithreading/src/main/java/com/yen/atguigu/queue/course35/BlockingQueueDemo.java)
+
 
 ## Ref
 
