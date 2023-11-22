@@ -132,6 +132,22 @@ No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (Ree
 
 - [code demo](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/multithreading/Multithreading/src/main/java/com/yen/atguigu/pool/course37)
 
+- ThreadPoolExecutor parameters :
+
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/ThreadPoolExecutor_param.png"></p>
+
+- ONLY when execute() is executed, then thread is created (e.g. : cachedThreadPool.execute)
+
+- ThreadPool internal structure
+
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_pool_internal.png"></p>
+
+- RejectPolicy
+
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_abort_policy.png"></p>
+
+
+
 ## Ref
 
 - https://github.com/callicoder/java-concurrency-examples
