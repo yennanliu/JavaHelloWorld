@@ -31,8 +31,8 @@ class A_ParkingLot_Test {
         System.out.println("before");
 
         List<ParkingSpace> parkingSpaceList = new ArrayList<>();
-        parkingSpaceList.add(new ParkingSpace("s-01", "occupied"));
-        parkingSpaceList.add(new ParkingSpace("s-02", "occupied"));
+        parkingSpaceList.add(new ParkingSpace("c-01", "occupied"));
+        parkingSpaceList.add(new ParkingSpace("c-02", "occupied"));
         parkingLot_a = new ParkingLot("p-01", 2, parkingSpaceList);
 
         parkingLot_b = new ParkingLot("p-02", 1, new ArrayList<>());
@@ -70,6 +70,14 @@ class A_ParkingLot_Test {
         boolean res = a_parkingLot.park(car_a, parkingLot_a);
         System.out.println(res);
         assertEquals(res, false);
+    }
+
+    @Test
+    public void shouldReturnTrueIfLeaveParkingLotSuccess(){
+
+        boolean res = a_parkingLot.leave(car_a, parkingLot_a);
+        System.out.println(res);
+        assertEquals(res, true);
     }
 
 }

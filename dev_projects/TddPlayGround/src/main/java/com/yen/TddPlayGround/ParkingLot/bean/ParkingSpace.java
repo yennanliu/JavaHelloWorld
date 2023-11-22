@@ -3,7 +3,7 @@ package com.yen.TddPlayGround.ParkingLot.bean;
 public class ParkingSpace {
 
     // attr
-    private String id;
+    private String carId;
     private String status;
 
     public ParkingSpace(){
@@ -11,17 +11,17 @@ public class ParkingSpace {
     }
 
     // constructor
-    public ParkingSpace(String id, String status){
-        this.id = id;
+    public ParkingSpace(String carId, String status){
+        this.carId = carId;
         this.status = status;
     }
 
     public String getId() {
-        return id;
+        return carId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String carId) {
+        this.carId = carId;
     }
 
     public String getStatus() {
@@ -35,7 +35,7 @@ public class ParkingSpace {
     @Override
     public String toString() {
         return "ParkingSpace{" +
-                "id='" + id + '\'' +
+                "carId='" + carId + '\'' +
                 ", status='" + status + '\'' +
                 '}';
     }

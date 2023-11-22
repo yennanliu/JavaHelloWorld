@@ -27,13 +27,18 @@ public class A_ParkingLot implements ParkingService {
     }
 
     @Override
-    public int getAvailableSpace(String parkingLotId) {
-        return 0;
+    public int getAvailableSpace(ParkingLot parkingLot) {
+        return parkingLot.getFreeAmount();
     }
 
     @Override
-    public String leave(Car car, ParkingLot parkingLot) {
-        return null;
+    public boolean leave(Car car, ParkingLot parkingLot) {
+        if(parkingLot.getFreeAmount() < parkingLot.getSize()){
+            //parkingLot.
+            return true;
+        }
+        System.out.println("No car to leave parking lot");
+        return false;
     }
 
 }
