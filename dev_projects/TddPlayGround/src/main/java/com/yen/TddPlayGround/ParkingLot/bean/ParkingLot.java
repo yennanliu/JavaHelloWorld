@@ -23,12 +23,25 @@ public class ParkingLot {
     }
 
     // method
+    public int getCarIdx(Car car){
+
+        List<ParkingSpace> spaces = this.getSpaces();
+        for (int j = 0; j < spaces.size(); j++){
+            if (spaces.get(j).getId().equals(car.getId())){
+                return j;
+            }
+        }
+        System.out.println("Car not found in parkingLot");
+        return -1;
+    }
+
     public int getFreeAmount(){
 
         int occupiedCount = (int) this.getSpaces().stream()
                 .filter(x -> x.getStatus().equals("occupied")).count();
         return this.size - occupiedCount;
     }
+
     public int getSize() {
         return size;
     }

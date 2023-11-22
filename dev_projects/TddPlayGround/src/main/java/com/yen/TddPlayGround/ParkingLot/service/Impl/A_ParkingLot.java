@@ -50,9 +50,10 @@ public class A_ParkingLot implements ParkingService {
         }
 
         if(parkingLot.getFreeAmount() < parkingLot.getSize()){
-//            // update parking space
-//            int idx = spaces.indexOf(car.getId());
-//            spaces.remove(idx);
+            // update parking space
+            int idx = parkingLot.getCarIdx(car);
+            System.out.println("remove car from parkingLot : " + car);
+            spaces.remove(idx);
             return true;
         }
         System.out.println("No car to leave parking lot");
