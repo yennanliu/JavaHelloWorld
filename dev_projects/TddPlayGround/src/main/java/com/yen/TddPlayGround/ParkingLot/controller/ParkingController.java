@@ -14,7 +14,7 @@ public class ParkingController {
 
     @Autowired
     ParkingService parkingService;
-
+    
     @GetMapping("/hello")
     public ResponseEntity<String> hello(){
 
@@ -22,17 +22,27 @@ public class ParkingController {
     }
 
     @GetMapping("/size/{parkinglot_id}")
-    public ResponseEntity<String> getParkingSize(@PathVariable String parkinglot_id){System.out.println("getParkingSize, parkinglot_id = " + parkinglot_id);
+    public ResponseEntity<String> getParkingSize(@PathVariable String parkinglot_id){
+
        ParkingLot parkingLot = parkingService.getById(parkinglot_id);
        int size = parkingLot.getSize();
        return ResponseEntity.ok("size = " + size);
     }
 
     @GetMapping("/freeSpace/{parkinglot_id}")
-    public ResponseEntity<String> getParkingFreeSpace(@PathVariable String parkinglot_id){System.out.println("getParkingSize, parkinglot_id = " + parkinglot_id);
+    public ResponseEntity<String> getParkingFreeSpace(@PathVariable String parkinglot_id){
+
         ParkingLot parkingLot = parkingService.getById(parkinglot_id);
         int size = parkingLot.getFreeAmount();
         return ResponseEntity.ok("free space size = " + size);
+    }
+
+    @GetMapping("/park/parkinglot_id/{car_id}")
+    public ResponseEntity<String> park_car(@PathVariable String parkinglot_id, @PathVariable String car_id){
+
+//        ParkingLot parkingLot = parkingService.park(parkinglot_id, car_id);
+//        int size = parkingLot.getFreeAmount();
+          return ResponseEntity.ok("park car OK");
     }
 
 }

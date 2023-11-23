@@ -35,6 +35,7 @@ public class A_ParkingLot implements ParkingService {
 
     @Override
     public int getAvailableSpace(ParkingLot parkingLot) {
+
         return parkingLot.getFreeAmount();
     }
 
@@ -69,6 +70,7 @@ public class A_ParkingLot implements ParkingService {
 
     @Override
     public ParkingLot getById(String parkinglot_id) {
+
         return parkingLotRepository.getReferenceById(parkinglot_id);
     }
 
