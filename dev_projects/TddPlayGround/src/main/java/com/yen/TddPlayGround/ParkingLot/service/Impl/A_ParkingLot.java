@@ -3,17 +3,24 @@ package com.yen.TddPlayGround.ParkingLot.service.Impl;
 import com.yen.TddPlayGround.ParkingLot.bean.Car;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingLot;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingSpace;
+import com.yen.TddPlayGround.ParkingLot.exception.CarNotFoundException;
+import com.yen.TddPlayGround.ParkingLot.exception.ParkingLotNotFoundException;
+import com.yen.TddPlayGround.ParkingLot.repository.CarRepository;
 import com.yen.TddPlayGround.ParkingLot.repository.ParkingLotRepository;
 import com.yen.TddPlayGround.ParkingLot.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class A_ParkingLot implements ParkingService {
 
     @Autowired
     ParkingLotRepository parkingLotRepository;
+
+    @Autowired
+    CarRepository carRepository;
 
     @Override
     public boolean isFull(ParkingLot parkingLot) {
@@ -22,7 +29,11 @@ public class A_ParkingLot implements ParkingService {
     }
 
     @Override
-    public boolean park(Car car, ParkingLot parkingLot) {
+    public boolean park(String carId, String parkingLotId){
+
+        // NOTE !!! below trick
+        ParkingLot parkingLot = parkingLotRepository.findById(parkingLotId).orElseThrow(() -> new ParkingLotNotFoundException("ParkingLot Not found"));
+        Car car = carRepository.findById(carId).orElseThrow(() -> new CarNotFoundException("Car Not found"));
 
         if(parkingLot.getFreeAmount() == 0){
             System.out.println("No free space in parking lot");

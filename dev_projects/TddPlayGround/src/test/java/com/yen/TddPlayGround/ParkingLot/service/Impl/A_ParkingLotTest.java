@@ -3,22 +3,37 @@ package com.yen.TddPlayGround.ParkingLot.service.Impl;
 import com.yen.TddPlayGround.ParkingLot.bean.Car;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingLot;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingSpace;
+import com.yen.TddPlayGround.ParkingLot.repository.CarRepository;
+import com.yen.TddPlayGround.ParkingLot.repository.ParkingLotRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
+@MockitoSettings(strictness = Strictness.LENIENT)
 @ExtendWith(MockitoExtension.class)
 class A_ParkingLot_Test {
 
     @InjectMocks
     A_ParkingLot a_parkingLot;
+
+    @Mock
+    CarRepository carRepository;
+
+    @Mock
+    ParkingLotRepository parkingLotRepository;
 
     ParkingLot parkingLot_a;
 
@@ -68,16 +83,26 @@ class A_ParkingLot_Test {
     @Test
     public void shouldReturnTrueIfParkingLotIsNotFull(){
 
-        boolean res = a_parkingLot.park(car_a, parkingLot_b);
-        System.out.println(res);
+        // mock
+        Mockito.when(carRepository.findById("c-01")).thenReturn(Optional.ofNullable(car_a));
+        Mockito.when(parkingLotRepository.findById("p-02")).thenReturn(Optional.ofNullable(parkingLot_b));
+
+        // run
+        boolean res = a_parkingLot.park(car_a.getId(), parkingLot_b.getId());
+        // verify
         assertEquals(res, true);
     }
 
     @Test
     public void shouldReturnFalseIfParkingLotIsFull(){
 
-        boolean res = a_parkingLot.park(car_a, parkingLot_a);
-        System.out.println(res);
+        // mock
+        Mockito.when(carRepository.findById("c-01")).thenReturn(Optional.ofNullable(car_a));
+        Mockito.when(parkingLotRepository.findById("p-01")).thenReturn(Optional.ofNullable(parkingLot_a));
+
+        // run
+        boolean res = a_parkingLot.park(car_a.getId(), parkingLot_a.getId());
+        // verify
         assertEquals(res, false);
     }
 

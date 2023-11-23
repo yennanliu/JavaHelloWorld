@@ -14,7 +14,7 @@ public class ParkingController {
 
     @Autowired
     ParkingService parkingService;
-    
+
     @GetMapping("/hello")
     public ResponseEntity<String> hello(){
 
