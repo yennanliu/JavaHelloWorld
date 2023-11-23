@@ -74,11 +74,17 @@ class ParkingControllerTest {
     }
 
 //    @Test
-//    public void testGetParkingLotSize(){
+//    public void testGetParkingLotSize() throws Exception {
 //
 //        // mock
 //        when(parkingLotRepository.findById(anyString()))
 //                .thenReturn(Optional.ofNullable(parkingLot_a));
+//
+//        mockMvc.perform(MockMvcRequestBuilders
+//                        .get("/parking/hello")
+//                        .contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andExpect(content().string("hello !!!"));
 //
 //    }
 

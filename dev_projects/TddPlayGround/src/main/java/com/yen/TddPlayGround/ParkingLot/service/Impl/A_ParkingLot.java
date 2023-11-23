@@ -3,12 +3,17 @@ package com.yen.TddPlayGround.ParkingLot.service.Impl;
 import com.yen.TddPlayGround.ParkingLot.bean.Car;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingLot;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingSpace;
+import com.yen.TddPlayGround.ParkingLot.repository.ParkingLotRepository;
 import com.yen.TddPlayGround.ParkingLot.service.ParkingService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class A_ParkingLot implements ParkingService {
+
+    @Autowired
+    ParkingLotRepository parkingLotRepository;
 
     @Override
     public boolean isFull(ParkingLot parkingLot) {
@@ -60,6 +65,11 @@ public class A_ParkingLot implements ParkingService {
 
         System.out.println("No car to leave parking lot");
         return false;
+    }
+
+    @Override
+    public ParkingLot getById(String parkinglot_id) {
+        return parkingLotRepository.getReferenceById(parkinglot_id);
     }
 
 }

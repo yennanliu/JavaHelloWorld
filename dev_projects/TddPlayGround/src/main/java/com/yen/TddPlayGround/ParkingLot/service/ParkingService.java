@@ -15,4 +15,5 @@ public interface ParkingService {
     // leave parking lot
     public boolean leave(Car car, ParkingLot parkingLot);
 
+    ParkingLot getById(String parkinglot_id);
 }

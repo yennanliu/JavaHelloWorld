@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ParkingController {
 
-//    @Autowired
-//    ParkingService parkingService;
-//
-//    @Autowired
-//    ParkingLotRepository parkingLotRepository;
+    @Autowired
+    ParkingService parkingService;
 
     @GetMapping("/hello")
     public ResponseEntity<String> hello(){
@@ -24,11 +21,11 @@ public class ParkingController {
         return ResponseEntity.ok("hello !!!");
     }
 
-//    @GetMapping("/parkSize/{parkinglot_id}")
-//    public ResponseEntity<String> getParkingSize(@PathVariable String parkinglot_id){
-//       ParkingLot parkingLot = parkingLotRepository.getById(parkinglot_id);
-//       int size = parkingLot.getSize();
-//       return ResponseEntity.ok("size = " + size);
-//    }
+    @GetMapping("/parkSize/{parkinglot_id}")
+    public ResponseEntity<String> getParkingSize(@PathVariable String parkinglot_id){
+       ParkingLot parkingLot = parkingService.getById(parkinglot_id);
+       int size = parkingLot.getSize();
+       return ResponseEntity.ok("size = " + size);
+    }
 
 }
