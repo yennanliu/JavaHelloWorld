@@ -5,10 +5,9 @@ import com.yen.TddPlayGround.ParkingLot.bean.ParkingLot;
 
 public interface ParkingService {
 
-    public boolean isFull(ParkingLot parkingLot);
+    public boolean isFull(String parkingLotId);
 
     // park a car in parking lot
-    //public boolean park(Car car, ParkingLot parkingLot);
     public boolean park(String carId, String parkingLotId);
 
     public int getAvailableSpace(ParkingLot parkingLot);

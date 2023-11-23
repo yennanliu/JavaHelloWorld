@@ -23,8 +23,9 @@ public class A_ParkingLot implements ParkingService {
     CarRepository carRepository;
 
     @Override
-    public boolean isFull(ParkingLot parkingLot) {
+    public boolean isFull(String parkingLotId) {
 
+        ParkingLot parkingLot = parkingLotRepository.findById(parkingLotId).orElseThrow(() -> new ParkingLotNotFoundException("ParkingLot Not found"));
         return parkingLot.getFreeAmount() == 0;
     }
 

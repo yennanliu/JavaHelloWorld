@@ -62,12 +62,21 @@ class A_ParkingLot_Test {
         parkingLot_b = new ParkingLot("p-02", 1, new ArrayList<>());
 
         parkingLot_c = new ParkingLot("p-03", 0, new ArrayList<>());
+
+        // mock
+        Mockito.when(carRepository.findById("c-01")).thenReturn(Optional.ofNullable(car_a));
+        Mockito.when(carRepository.findById("c-02")).thenReturn(Optional.ofNullable(car_b));
+        Mockito.when(carRepository.findById("c-03")).thenReturn(Optional.ofNullable(car_c));
+
+        Mockito.when(parkingLotRepository.findById("p-01")).thenReturn(Optional.ofNullable(parkingLot_a));
+        Mockito.when(parkingLotRepository.findById("p-02")).thenReturn(Optional.ofNullable(parkingLot_b));
+        Mockito.when(parkingLotRepository.findById("p-03")).thenReturn(Optional.ofNullable(parkingLot_c));
     }
 
     @Test
     public void shouldReturnFalseIfParkingLotIsNotFull(){
 
-        Boolean res = a_parkingLot.isFull(parkingLot_b);
+        Boolean res = a_parkingLot.isFull("p-02");
         System.out.println(res);
         assertEquals(res, false);
     }
@@ -75,7 +84,7 @@ class A_ParkingLot_Test {
     @Test
     public void shouldReturnTrueIfParkingLotIsFull(){
 
-        Boolean res = a_parkingLot.isFull(parkingLot_a);
+        Boolean res = a_parkingLot.isFull("p-01");
         System.out.println(res);
         assertEquals(res, true);
     }
@@ -84,8 +93,7 @@ class A_ParkingLot_Test {
     public void shouldReturnTrueIfParkingLotIsNotFull(){
 
         // mock
-        Mockito.when(carRepository.findById("c-01")).thenReturn(Optional.ofNullable(car_a));
-        Mockito.when(parkingLotRepository.findById("p-02")).thenReturn(Optional.ofNullable(parkingLot_b));
+        // (we move all mock to before method, which run before each test)
 
         // run
         boolean res = a_parkingLot.park(car_a.getId(), parkingLot_b.getId());
@@ -97,8 +105,7 @@ class A_ParkingLot_Test {
     public void shouldReturnFalseIfParkingLotIsFull(){
 
         // mock
-        Mockito.when(carRepository.findById("c-01")).thenReturn(Optional.ofNullable(car_a));
-        Mockito.when(parkingLotRepository.findById("p-01")).thenReturn(Optional.ofNullable(parkingLot_a));
+        // (we move all mock to before method, which run before each test)
 
         // run
         boolean res = a_parkingLot.park(car_a.getId(), parkingLot_a.getId());
