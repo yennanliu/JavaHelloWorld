@@ -90,13 +90,32 @@ class ParkingControllerTest {
         // mock // TODO : here we mock repository and service, check if it's correct / necessary
         Mockito.when(parkingLotRepository.findById(anyString()))
                 .thenReturn(Optional.ofNullable(parkingLot_a));
+
         Mockito.when(parkingService.getById(PARKINGLOT_ID)).thenReturn(parkingLot_a);
 
         mockMvc.perform(MockMvcRequestBuilders
-                        .get("/parking/parkSize/" + PARKINGLOT_ID)
+                        .get("/parking/size/" + PARKINGLOT_ID)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string("size = 2"));
+    }
+
+    @Test
+    public void testGetParkingLotFreeSpace() throws Exception {
+
+        String PARKINGLOT_ID = "p-01";
+
+        // mock // TODO : here we mock repository and service, check if it's correct / necessary
+        Mockito.when(parkingLotRepository.findById(anyString()))
+                .thenReturn(Optional.ofNullable(parkingLot_a));
+
+        Mockito.when(parkingService.getById(PARKINGLOT_ID)).thenReturn(parkingLot_a);
+
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/parking/freeSpace/" + PARKINGLOT_ID)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string("free space size = 2"));
     }
 
 }
