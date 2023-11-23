@@ -22,7 +22,7 @@ public class ParkingController {
     }
 
     @GetMapping("/parkSize/{parkinglot_id}")
-    public ResponseEntity<String> getParkingSize(@PathVariable String parkinglot_id){
+    public ResponseEntity<String> getParkingSize(@PathVariable String parkinglot_id){System.out.println("getParkingSize, parkinglot_id = " + parkinglot_id);
        ParkingLot parkingLot = parkingService.getById(parkinglot_id);
        int size = parkingLot.getSize();
        return ResponseEntity.ok("size = " + size);

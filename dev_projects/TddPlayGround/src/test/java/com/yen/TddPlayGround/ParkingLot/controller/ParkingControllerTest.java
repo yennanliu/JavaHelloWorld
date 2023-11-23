@@ -60,6 +60,7 @@ class ParkingControllerTest {
     public void before(){
 
         System.out.println("before");
+
         parkingLot_a = new ParkingLot("p-01", 2, new ArrayList<>());
     }
 
@@ -81,7 +82,7 @@ class ParkingControllerTest {
 //                .thenReturn(Optional.ofNullable(parkingLot_a));
 //
 //        mockMvc.perform(MockMvcRequestBuilders
-//                        .get("/parking/hello")
+//                        .get("/parking/parkSize/p-01")
 //                        .contentType(MediaType.APPLICATION_JSON))
 //                .andExpect(status().isOk())
 //                .andExpect(content().string("hello !!!"));
