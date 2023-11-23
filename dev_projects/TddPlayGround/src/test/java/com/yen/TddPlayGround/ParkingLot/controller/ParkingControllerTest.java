@@ -1,12 +1,15 @@
 package com.yen.TddPlayGround.ParkingLot.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yen.TddPlayGround.Bank.bean.po.User;
 import com.yen.TddPlayGround.Bank.repository.UserRepository;
 import com.yen.TddPlayGround.ParkingLot.ParkingLotApp;
+import com.yen.TddPlayGround.ParkingLot.bean.HelloMsg;
 import com.yen.TddPlayGround.ParkingLot.bean.ParkingLot;
 import com.yen.TddPlayGround.ParkingLot.repository.ParkingLotRepository;
 import com.yen.TddPlayGround.ParkingLot.service.Impl.A_ParkingLot;
 import com.yen.TddPlayGround.ParkingLot.service.ParkingService;
+import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,7 +27,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -33,6 +38,7 @@ import java.util.Optional;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
+import static org.springframework.http.RequestEntity.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
@@ -61,6 +67,9 @@ class ParkingControllerTest {
 
     @Mock
     ParkingLotRepository parkingLotRepository;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     ParkingLot parkingLot_a;
 
@@ -91,6 +100,23 @@ class ParkingControllerTest {
                 .andExpect(content().string("hello !!!"));
     }
 
+    // TODO : fix below
+//    @Test
+//    public void testHello2() throws Exception {
+//
+//        HelloMsg helloMsg = new HelloMsg("iori", 17);
+//
+//
+//        ResultActions response =  mockMvc.perform(
+//                        post("/parking/hello2")
+//                        .contentType(MediaType.APPLICATION_JSON).;
+//
+//        // verify
+//        response.andExpect(status().isCreated());
+////                .andExpect(MockMvcResultMatchers.jsonPath("$.name", CoreMatchers.is(helloMsg.getName())))
+////                .andExpect(MockMvcResultMatchers.jsonPath("$.age", CoreMatchers.is(helloMsg.getAge())));
+//    }
+
     @Test
     public void testGetParkingLotSize() throws Exception {
 
@@ -117,15 +143,6 @@ class ParkingControllerTest {
                 .andExpect(content().string("free space size = 2"));
     }
 
-    /**
-     *      @GetMapping("/park/parkinglot_id/{car_id}")
-     *     public ResponseEntity<String> park_car(@PathVariable String parkinglot_id, @PathVariable String car_id){
-     *
-     *           boolean result = parkingService.park(parkinglot_id, car_id);
-     *           return ResponseEntity.ok("park_car OK " + result);
-     *     }
-     *
-     */
     @Test
     public void shouldReturnTrueWhenParkSuccess() throws Exception {
 
@@ -137,8 +154,6 @@ class ParkingControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string("park_car OK false"));
-
-
     }
 
 }
