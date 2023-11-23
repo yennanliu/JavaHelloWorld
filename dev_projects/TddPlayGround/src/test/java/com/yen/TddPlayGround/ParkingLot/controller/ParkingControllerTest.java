@@ -70,6 +70,15 @@ class ParkingControllerTest {
         System.out.println("before");
 
         parkingLot_a = new ParkingLot("p-01", 2, new ArrayList<>());
+
+        String PARKINGLOT_ID_A = "p-01";
+
+        // mock // TODO : here we mock repository and service, check if it's correct / necessary
+        Mockito.when(parkingLotRepository.findById(anyString()))
+                .thenReturn(Optional.ofNullable(parkingLot_a));
+
+        Mockito.when(parkingService.getById(PARKINGLOT_ID_A))
+                .thenReturn(parkingLot_a);
     }
 
     @Test
@@ -85,16 +94,12 @@ class ParkingControllerTest {
     @Test
     public void testGetParkingLotSize() throws Exception {
 
-        String PARKINGLOT_ID = "p-01";
+        String PARKINGLOT_ID_A = "p-01";
 
-        // mock // TODO : here we mock repository and service, check if it's correct / necessary
-        Mockito.when(parkingLotRepository.findById(anyString()))
-                .thenReturn(Optional.ofNullable(parkingLot_a));
-
-        Mockito.when(parkingService.getById(PARKINGLOT_ID)).thenReturn(parkingLot_a);
+        // mock : we move all mock to before method
 
         mockMvc.perform(MockMvcRequestBuilders
-                        .get("/parking/size/" + PARKINGLOT_ID)
+                        .get("/parking/size/" + PARKINGLOT_ID_A)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string("size = 2"));
@@ -105,17 +110,35 @@ class ParkingControllerTest {
 
         String PARKINGLOT_ID = "p-01";
 
-        // mock // TODO : here we mock repository and service, check if it's correct / necessary
-        Mockito.when(parkingLotRepository.findById(anyString()))
-                .thenReturn(Optional.ofNullable(parkingLot_a));
-
-        Mockito.when(parkingService.getById(PARKINGLOT_ID)).thenReturn(parkingLot_a);
-
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/parking/freeSpace/" + PARKINGLOT_ID)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string("free space size = 2"));
+    }
+
+    /**
+     *      @GetMapping("/park/parkinglot_id/{car_id}")
+     *     public ResponseEntity<String> park_car(@PathVariable String parkinglot_id, @PathVariable String car_id){
+     *
+     *           boolean result = parkingService.park(parkinglot_id, car_id);
+     *           return ResponseEntity.ok("park_car OK " + result);
+     *     }
+     *
+     */
+    @Test
+    public void shouldReturnTrueWhenParkSuccess() throws Exception {
+
+        String PARKINGLOT_ID = "p-01";
+        String CAR_ID = "c-01";
+
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/parking/park/" + PARKINGLOT_ID + "/" + CAR_ID)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string("park_car OK false"));
+
+
     }
 
 }

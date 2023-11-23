@@ -37,12 +37,11 @@ public class ParkingController {
         return ResponseEntity.ok("free space size = " + size);
     }
 
-    @GetMapping("/park/parkinglot_id/{car_id}")
+    @GetMapping("/park/{parkinglot_id}/{car_id}")
     public ResponseEntity<String> park_car(@PathVariable String parkinglot_id, @PathVariable String car_id){
 
-//        ParkingLot parkingLot = parkingService.park(parkinglot_id, car_id);
-//        int size = parkingLot.getFreeAmount();
-          return ResponseEntity.ok("park car OK");
+          boolean result = parkingService.park(parkinglot_id, car_id);
+          return ResponseEntity.ok("park_car OK " + result);
     }
 
 }
