@@ -116,7 +116,7 @@ class A_ParkingLot_Test {
     @Test
     public void shouldReturnTrueIfCarInParkingLot(){
 
-        boolean res = a_parkingLot.leave(car_a, parkingLot_a);
+        boolean res = a_parkingLot.leave(car_a.getId(), parkingLot_a.getId());
         System.out.println(res);
         assertEquals(res, true);
     }
@@ -124,7 +124,7 @@ class A_ParkingLot_Test {
     @Test
     public void shouldReturnFalseIfNoCarInParkingLot(){
 
-        boolean res = a_parkingLot.leave(car_a, parkingLot_c);
+        boolean res = a_parkingLot.leave(car_a.getId(), parkingLot_c.getId());
         System.out.println(res);
         assertEquals(res, false);
     }
@@ -142,13 +142,13 @@ class A_ParkingLot_Test {
         assertEquals(parkingLot_a.getFreeAmount(), 0);
         assertEquals(parkingLot_a.getSize(), 2);
 
-        a_parkingLot.leave(car_a, parkingLot_a);
+        a_parkingLot.leave(car_a.getId(), parkingLot_a.getId());
         assertEquals(parkingLot_a.getFreeAmount(), 1);
 
-        a_parkingLot.leave(car_c, parkingLot_a);
+        a_parkingLot.leave(car_c.getId(), parkingLot_a.getId());
         assertEquals(parkingLot_a.getFreeAmount(), 1);
 
-        a_parkingLot.leave(car_b, parkingLot_a);
+        a_parkingLot.leave(car_b.getId(), parkingLot_a.getId());
         assertEquals(parkingLot_a.getFreeAmount(), 2);
     }
 

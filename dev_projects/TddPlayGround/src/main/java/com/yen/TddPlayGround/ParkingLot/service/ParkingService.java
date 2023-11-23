@@ -10,10 +10,10 @@ public interface ParkingService {
     // park a car in parking lot
     public boolean park(String carId, String parkingLotId);
 
-    public int getAvailableSpace(ParkingLot parkingLot);
+    public int getAvailableSpace(String parkingLotId);
 
     // leave parking lot
-    public boolean leave(Car car, ParkingLot parkingLot);
+    public boolean leave(String carId, String parkingLotId);
 
     ParkingLot getById(String parkinglot_id);
 }

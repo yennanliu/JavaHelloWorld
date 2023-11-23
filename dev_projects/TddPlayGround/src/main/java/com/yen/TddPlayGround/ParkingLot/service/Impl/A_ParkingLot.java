@@ -46,13 +46,19 @@ public class A_ParkingLot implements ParkingService {
     }
 
     @Override
-    public int getAvailableSpace(ParkingLot parkingLot) {
+    public int getAvailableSpace(String parkingLotId) {
 
+        // NOTE !!! below trick
+        ParkingLot parkingLot = parkingLotRepository.findById(parkingLotId).orElseThrow(() -> new ParkingLotNotFoundException("ParkingLot Not found"));
         return parkingLot.getFreeAmount();
     }
 
     @Override
-    public boolean leave(Car car, ParkingLot parkingLot) {
+    public boolean leave(String carId, String parkingLotId) {
+
+        // NOTE !!! below trick
+        ParkingLot parkingLot = parkingLotRepository.findById(parkingLotId).orElseThrow(() -> new ParkingLotNotFoundException("ParkingLot Not found"));
+        Car car = carRepository.findById(carId).orElseThrow(() -> new CarNotFoundException("Car Not found"));
 
         List<ParkingSpace> spaces = parkingLot
                 .getSpaces();
