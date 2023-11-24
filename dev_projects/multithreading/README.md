@@ -56,6 +56,8 @@
 	- optimistic lock
 		- supprot concurrency op
 		- via "version" control data consistency
+		- CAS algorithm (compare and swap)
+			- https://blog.csdn.net/j1231230/article/details/120477010
 		- cons : SQL code is not general within different types of DB
 
 	- 資料表中用 syncronized 實現的鎖均為悲觀鎖(ex：行鎖，表鎖，讀鎖，寫鎖)
@@ -69,6 +71,13 @@
 
 - ReadWrite lock
 	- A resource can be accessed by multiple read threads, or a write thread, but CAN'T be accessed by write tread and read thread on the same time (讀寫互斥, 讀讀共享)
+
+- Conclusion:
+1. 讀讀共享
+2. 寫寫互斥 (thread unsafe)
+3. 讀寫互斥 (thread unsafe)
+- [demo](https://github.com/yennanliu/JavaHelloWorld/blob/main/dev_projects/multithreading/Multithreading/src/main/java/com/yen/atguigu/lock/readWriteLock/demo2.java)
+
 
 - Lock `Evolution`
 - https://youtu.be/RYGSlLYoesg?si=HJLztBKMm1ZmLdo2&t=529
