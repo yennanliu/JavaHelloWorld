@@ -56,7 +56,7 @@ public class BankV4App {
 //        }
 
         // V2
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 20; i++) {
             // deposit
             ThreadDeposit threadDeposit = new ThreadDeposit(bank, u1, 1.0);
             Thread thread_d = new Thread(threadDeposit);
