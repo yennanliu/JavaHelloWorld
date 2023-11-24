@@ -6,6 +6,9 @@ import com.yen.TddPlayGround.BankV4.Tread.ThreadWithdraw;
 import com.yen.TddPlayGround.BankV4.bean.User;
 import com.yen.TddPlayGround.BankV4.service.BankServiceWithReadWriteLock;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class BankV4_1App {
 
     public static void main(String[] args) throws InterruptedException {
@@ -28,36 +31,71 @@ public class BankV4_1App {
         /** Run single */
 
         /** Run multiple times  */
-        //simulate multi times op
-
-        // V1
-        // below is WRONG, thread CAN'T be activated again once finished
-        // -> will cause IllegalThreadStateException exception
-//        for(int i = 0; i < 10; i++){
-//            thread_1.start();
-//            thread_3.start();
+//        //simulate multi times op
+//
+//        // V1
+//        // below is WRONG, thread CAN'T be activated again once finished
+//        // -> will cause IllegalThreadStateException exception
+////        for(int i = 0; i < 10; i++){
+////            thread_1.start();
+////            thread_3.start();
+////        }
+//
+//        // V2
+//        for (int i = 0; i < 5; i++) {
+//
+//            // get current balance
+//            ThreadGetBalance threadGetBalance = new ThreadGetBalance(bank, u1);
+//            Thread thread_g = new Thread(threadGetBalance);
+//            thread_g.start();
+//
+//            // deposit
+//            ThreadDeposit threadDeposit = new ThreadDeposit(bank, u1, 1.0);
+//            Thread thread_d = new Thread(threadDeposit);
+//            thread_d.start();
+//
+//            //thread_g.start();
+//
+//            // withdraw
+//            ThreadWithdraw threadWithdraw = new ThreadWithdraw(bank, u1, 2.0);
+//            Thread thread_w = new Thread(threadWithdraw);
+//            thread_w.start();
 //        }
 
-        // V2
-        for (int i = 0; i < 5; i++) {
+        /** Run multiple times with Thread pool  */
+        int POOL_SIZE = 5;
+        ExecutorService threadPool_1 = Executors.newFixedThreadPool(POOL_SIZE);
+        try{
+            for (int i = 0; i < 10; i++){
+                threadPool_1.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        // get current balance
+                        ThreadGetBalance threadGetBalance = new ThreadGetBalance(bank, u1);
+                        Thread thread_g = new Thread(threadGetBalance);
+                        thread_g.start();
 
-            // get current balance
-            ThreadGetBalance threadGetBalance = new ThreadGetBalance(bank, u1);
-            Thread thread_g = new Thread(threadGetBalance);
-            thread_g.start();
+                        // deposit
+                        ThreadDeposit threadDeposit = new ThreadDeposit(bank, u1, 1.0);
+                        Thread thread_d = new Thread(threadDeposit);
+                        thread_d.start();
 
-            // deposit
-            ThreadDeposit threadDeposit = new ThreadDeposit(bank, u1, 1.0);
-            Thread thread_d = new Thread(threadDeposit);
-            thread_d.start();
+                        //thread_g.start();
 
-            //thread_g.start();
+                        // withdraw
+                        ThreadWithdraw threadWithdraw = new ThreadWithdraw(bank, u1, 2.0);
+                        Thread thread_w = new Thread(threadWithdraw);
+                        thread_w.start();
+                    }
+                });
+            }
 
-            // withdraw
-            ThreadWithdraw threadWithdraw = new ThreadWithdraw(bank, u1, 2.0);
-            Thread thread_w = new Thread(threadWithdraw);
-            thread_w.start();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            threadPool_1.shutdown();
         }
+
 
         System.out.println("BankV4_1App end ...");
     }
