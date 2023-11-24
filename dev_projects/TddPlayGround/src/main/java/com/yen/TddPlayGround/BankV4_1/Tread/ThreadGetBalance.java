@@ -3,7 +3,7 @@ package com.yen.TddPlayGround.BankV4_1.Tread;
 import com.yen.TddPlayGround.BankV4_1.bean.User;
 import com.yen.TddPlayGround.BankV4_1.service.BaseBankService;
 
-public class ThreadGetBalance implements Runnable{
+public class ThreadGetBalance implements ThreadFactory {
 
     // attr
     private BaseBankService bankService;

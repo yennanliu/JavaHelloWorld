@@ -5,7 +5,7 @@ import com.yen.TddPlayGround.BankV4_1.service.BaseBankService;
 
 /** Withdraw thread */
 
-public class ThreadWithdraw implements Runnable{
+public class ThreadWithdraw implements ThreadFactory {
 
     // attr
     private BaseBankService bank;

@@ -6,7 +6,7 @@ import com.yen.TddPlayGround.BankV4_1.service.BaseBankService;
 /** Deposit thread */
 
 
-public class ThreadDeposit implements Runnable{
+public class ThreadDeposit implements ThreadFactory {
 
     // attr
     private BaseBankService bank;
