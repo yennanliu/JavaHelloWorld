@@ -10,7 +10,7 @@ public class BankV4_1App {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("BankV4App start ...");
+        System.out.println("BankV4_1App start ...");
 
         // init
         //BankService bank = new BankService();
@@ -26,23 +26,6 @@ public class BankV4_1App {
         System.out.println("---- bank op ----");
 
         /** Run single */
-//        ThreadDeposit threadDeposit_1 = new ThreadDeposit(bank, u1, 1.0);
-//        //ThreadDeposit threadDeposit_2 = new ThreadDeposit(bank, u2, 10.0);
-//
-//        TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
-//
-//        ThreadWithdraw threadWithdraw_1 = new ThreadWithdraw(bank, u1, 1.0);
-//        //ThreadWithdraw threadWithdraw_2 = new ThreadWithdraw(bank, u2, 20.0);
-//
-//        Thread thread_1 = new Thread(threadDeposit_1);
-//        //Thread thread_2 = new Thread(threadDeposit_2);
-//        Thread thread_3 = new Thread(threadWithdraw_1);
-//        //Thread thread_4 = new Thread(threadWithdraw_2);
-
-//        thread_1.start();
-//        //thread_2.start();
-//        thread_3.start();
-//        //thread_4.start();
 
         /** Run multiple times  */
         //simulate multi times op
@@ -76,7 +59,7 @@ public class BankV4_1App {
             thread_w.start();
         }
 
-        System.out.println("BankV4App end ...");
+        System.out.println("BankV4_1App end ...");
     }
 
 }

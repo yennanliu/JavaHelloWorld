@@ -147,6 +147,12 @@ No lock  -----> 讀佔鎖 (synchronized, ReentrantLock)    -----> 讀寫鎖 (Ree
 <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/thread_abort_policy.png"></p>
 
 
+Java implement producer-consumer:
+	1. wait + notify
+	2. BlockingQueue
+	3. Lock + conditon
+
+
 7) Fork/join
 
 - Break down a complex task to small sub tasks, run separately, then join results to final output
