@@ -51,9 +51,14 @@
 - Optimistic lock vs pessimistic lock
 	- pessimistic lock
 		- NOT supprot concurrency op
+		- DB transaction is pessimistic lock
+		- cons: may slow down system process (since add lock to DB)
 	- optimistic lock
 		- supprot concurrency op
 		- via "version" control data consistency
+		- cons : SQL code is not general within different types of DB
+
+	- 資料表中用 syncronized 實現的鎖均為悲觀鎖(ex：行鎖，表鎖，讀鎖，寫鎖)
 
 - Table lock VS row lock
 	- Table lock : Lock all records in table in DB
