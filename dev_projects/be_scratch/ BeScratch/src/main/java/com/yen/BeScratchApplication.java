@@ -27,6 +27,18 @@ public class BeScratchApplication {
             exchange.close();
         }));
 
+        server.createContext("/hello2", (exchange -> {
+            String respText = "hello world 2 !!!";
+            exchange.sendResponseHeaders(200, respText.getBytes().length);
+            OutputStream output = exchange.getResponseBody();
+            output.write(respText.getBytes());
+            output.flush();
+            output.close();
+            exchange.close();
+        }));
+
+        // TODO : do the rest for ProductController endpoint
+
         server.setExecutor(null); // create a default executor (?)
         server.start();
     }
