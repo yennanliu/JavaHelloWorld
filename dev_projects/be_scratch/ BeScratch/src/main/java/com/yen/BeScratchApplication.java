@@ -1,6 +1,8 @@
 package com.yen;
 
 import com.sun.net.httpserver.HttpServer;
+import com.yen.repository.ProductRepository;
+import com.yen.service.ProductService;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -38,6 +40,10 @@ public class BeScratchApplication {
         }));
 
         // TODO : do the rest for ProductController endpoint
+
+//        RegistrationHandler registrationHandler =
+//                new RegistrationHandler(ProductService.class, ProductRepository.class);
+//        server.createContext("products", registrationHandler::handle);
 
         server.setExecutor(null); // create a default executor (?)
         server.start();
