@@ -1,7 +1,7 @@
 package com.yen.TddPlayGround.BankV4_1.service;
 
-import com.yen.TddPlayGround.BankV4.bean.User;
-import com.yen.TddPlayGround.BankV4.service.BaseBankService;
+import com.yen.TddPlayGround.BankV4_1.bean.User;
+import com.yen.TddPlayGround.BankV4_1.service.BaseBankService;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -15,10 +15,11 @@ public class BankServiceWithReadWriteLock implements BaseBankService {
 
     }
 
+    // NOTE !!! since 讀讀互斥, there is ONLY 1 thread can write data on the same time (so still use synchronized for now)
     public synchronized void deposit(User user, double amount) throws InterruptedException {
 
-        // add read lock
-        rwLock.readLock().lock();
+        // add write lock
+        rwLock.writeLock().lock();
 
         try{
             double curBalance = user.getBalance();
@@ -27,11 +28,12 @@ public class BankServiceWithReadWriteLock implements BaseBankService {
         }catch (Exception e){
             e.printStackTrace();
         }finally {
-            // release read lock
-            rwLock.readLock().unlock();
+            // release write lock
+            rwLock.writeLock().unlock();
         }
     }
 
+    // NOTE !!! since 讀讀互斥, there is ONLY 1 thread can write data on the same time (so still use synchronized for now)
     public synchronized void withdraw(User user, double amount) throws InterruptedException {
 
         TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec

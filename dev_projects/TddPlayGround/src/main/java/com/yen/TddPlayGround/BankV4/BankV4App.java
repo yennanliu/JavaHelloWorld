@@ -1,5 +1,6 @@
 package com.yen.TddPlayGround.BankV4;
 
+import com.yen.TddPlayGround.BankV4.Tread.ThreadGetBalance;
 import com.yen.TddPlayGround.BankV4.bean.User;
 import com.yen.TddPlayGround.BankV4.service.BankServiceWithLock;
 import com.yen.TddPlayGround.BankV4.Tread.ThreadDeposit;
@@ -57,10 +58,19 @@ public class BankV4App {
 
         // V2
         for (int i = 0; i < 5; i++) {
+
+            // get current balance
+            ThreadGetBalance threadGetBalance = new ThreadGetBalance(bank, u1);
+            Thread thread_g = new Thread(threadGetBalance);
+            thread_g.start();
+
             // deposit
             ThreadDeposit threadDeposit = new ThreadDeposit(bank, u1, 1.0);
             Thread thread_d = new Thread(threadDeposit);
             thread_d.start();
+
+            //thread_g.start();
+
             // withdraw
             ThreadWithdraw threadWithdraw = new ThreadWithdraw(bank, u1, 2.0);
             Thread thread_w = new Thread(threadWithdraw);

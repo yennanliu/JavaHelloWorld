@@ -7,4 +7,6 @@ public interface BaseBankService {
     public void deposit(User user, double amount) throws InterruptedException;
 
     public void withdraw(User user, double amount) throws InterruptedException;
+
+    public void getBalance(User user);
 }
