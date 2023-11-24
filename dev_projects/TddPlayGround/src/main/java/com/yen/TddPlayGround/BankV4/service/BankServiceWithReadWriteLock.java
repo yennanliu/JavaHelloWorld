@@ -17,8 +17,8 @@ public class BankServiceWithReadWriteLock implements BaseBankService{
 
     public synchronized void deposit(User user, double amount) throws InterruptedException {
 
-        // add read lock
-        rwLock.readLock().lock();
+        // add write lock
+        rwLock.writeLock().lock();
 
         try{
             double curBalance = user.getBalance();
@@ -27,8 +27,8 @@ public class BankServiceWithReadWriteLock implements BaseBankService{
         }catch (Exception e){
             e.printStackTrace();
         }finally {
-            // release read lock
-            rwLock.readLock().unlock();
+            // release write lock
+            rwLock.writeLock().unlock();
         }
     }
 
