@@ -72,3 +72,6 @@ JUnit API
     - https://www.youtube.com/watch?v=xlFvb-3CbsE - video
     - https://github.com/talk2amareswaran/Building-a-Simple-URL-Shortener-with-Spring-Boot - java code
     - https://github.com/zeeshaanahmad/url-shortener/tree/master - java code
+
+    - https://medium.com/hackernoon/url-shortening-service-in-java-spring-boot-and-redis-d2a0f8848a1d - redis, java code
+    - https://github.com/DenimMazuki/URLShortener
