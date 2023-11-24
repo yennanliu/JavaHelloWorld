@@ -49,4 +49,10 @@ public class BankServiceWithLock implements BaseBankService {
         }
     }
 
+    @Override
+    public void getBalance(User user) {
+
+        System.out.println(user.getBalance());
+    }
+
 }

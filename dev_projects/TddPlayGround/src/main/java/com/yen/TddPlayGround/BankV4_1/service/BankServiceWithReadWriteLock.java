@@ -1,7 +1,6 @@
 package com.yen.TddPlayGround.BankV4_1.service;
 
 import com.yen.TddPlayGround.BankV4_1.bean.User;
-import com.yen.TddPlayGround.BankV4_1.service.BaseBankService;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -60,6 +59,23 @@ public class BankServiceWithReadWriteLock implements BaseBankService {
 
             System.out.println("Not enough balance, sleep 3 sec ..." + user + " amount = " + amount);
             TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
+        }
+    }
+
+    @Override
+    public void getBalance(User user) {
+
+        // add write lock
+        rwLock.readLock().lock();
+
+        try{
+            System.out.println("balance = " + user.getBalance());
+            TimeUnit.MILLISECONDS.sleep(200); // sleep 2 sec
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            // unlock read lock
+            rwLock.readLock().unlock();
         }
     }
 

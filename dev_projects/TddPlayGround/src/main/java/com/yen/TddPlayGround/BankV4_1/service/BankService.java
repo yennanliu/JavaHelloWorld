@@ -38,4 +38,10 @@ public class BankService implements BaseBankService {
         TimeUnit.MILLISECONDS.sleep(300); // sleep 3 sec
     }
 
+    @Override
+    public void getBalance(User user) {
+
+       System.out.println(user.getBalance());
+    }
+
 }

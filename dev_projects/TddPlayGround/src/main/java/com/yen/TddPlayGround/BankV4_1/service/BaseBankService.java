@@ -8,4 +8,5 @@ public interface BaseBankService {
 
     public void withdraw(User user, double amount) throws InterruptedException;
 
+    public void getBalance(User user);
 }
