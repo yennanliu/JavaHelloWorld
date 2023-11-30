@@ -25,12 +25,12 @@ public class workspace3 {
         Solution s = new Solution();
 
         // test 1
-        int[] nums = new int[]{1,2,3};
+        //int[] nums = new int[]{1,2,3};
 
-        // test 1
-        //int[] nums = new int[]{5,6,1,2,4};
+        // test 2
+        String[] nums = new String[]{"A", "B", "C"};
 
-        List<List<Integer>> res = s.permute(nums);
+        List<List<String>> res = s.permute(nums);
 
         res.forEach(System.out::println);
 
@@ -40,20 +40,20 @@ public class workspace3 {
 
 // https://leetcode.com/problems/permutations/
 class Solution {
-    public List<List<Integer>> permute(int[] nums) {
+    public List<List<String>> permute(String[] nums) {
 
         if (nums == null || nums.length == 0){
             return null;
         }
 
-        List<List<Integer>> res = new ArrayList<>();
-        List<Integer> tmp = new ArrayList<>();
+        List<List<String>> res = new ArrayList<>();
+        List<String> tmp = new ArrayList<>();
         int start_idx = 0;
         backTrack(nums, start_idx, tmp, res);
         return res;
     }
 
-    private void backTrack(int[] nums, int start_idx, List<Integer> tmp, List<List<Integer>> res){
+    private void backTrack(String[] nums, int start_idx, List<String> tmp, List<List<String>> res){
 
         if (tmp.size() == nums.length){
             if (!res.contains(tmp)){
@@ -63,13 +63,7 @@ class Solution {
         }
 
         for (int i = start_idx; i < nums.length; i++){
-            int cur = nums[i];
-//            if (!tmp.contains(cur)){
-//                tmp.add(cur);
-//                backTrack(nums, start_idx, tmp, res);
-//                // undo
-//                tmp.remove(tmp.size()-1);
-//            }
+            String cur = nums[i];
             tmp.add(cur);
             backTrack(nums, start_idx, tmp, res);
             // undo
