@@ -15,7 +15,8 @@ CREATE TABLE Employees (
 # Table 2 : Projects
 
 CREATE TABLE Projects (
-    ProjectName VARCHAR(255) PRIMARY KEY,
+    ProjectID INT PRIMARY KEY,
+    ProjectName VARCHAR(255),
     PM INT,
     FOREIGN KEY (PM) REFERENCES Employees(EID)
 );
@@ -25,12 +26,12 @@ CREATE TABLE Projects (
 
 CREATE TABLE EmployeeProjects (
     EID INT,
-    ProjectName VARCHAR(255),
+    ProjectID INT,
     Position VARCHAR(255),
     TimePercentage INT,
-    PRIMARY KEY (EID, ProjectName),
+    PRIMARY KEY (EID, ProjectID),
     FOREIGN KEY (EID) REFERENCES Employees(EID),
-    FOREIGN KEY (ProjectName) REFERENCES Projects(ProjectName)
+    FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
 );
 
 
@@ -39,13 +40,13 @@ CREATE TABLE EmployeeProjects (
 Employees (EID) -< EmployeeProjects (EID)
 
 One-to-Many relationship: An employee can be associated with multiple projects.
-Projects (ProjectName) -< EmployeeProjects (ProjectName)
+Projects (ProjectID) -< EmployeeProjects (ProjectID)
 
 One-to-Many relationship: A project can have multiple employees associated with it.
 Employees (EID) >- Projects (PM)
 
 Many-to-One relationship: The PM field in the Projects table references the EID field in the Employees table, indicating that an employee can be the project manager for multiple projects.
-This database schema adheres to the third normal form (3NF) by eliminating transitive dependencies and ensuring that each table serves a specific purpose without unnecessary redundancy.
+This redesign includes an id (ProjectID) as the primary key for the Projects table, providing a more standardized approach for primary keys. The foreign key relationship between EmployeeProjects and Projects is maintained using the ProjectID field.
 
 
 #-----------------------
@@ -68,4 +69,5 @@ GROUP BY
     EP.EID, E.Name
 HAVING
     SUM(EP.TimePercentage) < 100;
+
 
