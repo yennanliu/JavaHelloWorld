@@ -1,0 +1,71 @@
+#-----------------------
+ 1) 請以上述範例資料,設計出關聯式資料庫的所有表格(Table),需列出欄位(Field)、名 稱、主鍵(Primary Key)、外鍵(Foreign Key)、以及參考關係。請至少做到第三正規化。
+#------------------------
+
+
+# Table 1 : Employees
+
+CREATE TABLE Employees (
+    EID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Salary INT
+);
+
+
+# Table 2 : Projects
+
+CREATE TABLE Projects (
+    ProjectName VARCHAR(255) PRIMARY KEY,
+    PM INT,
+    FOREIGN KEY (PM) REFERENCES Employees(EID)
+);
+
+
+# Table 3 : EmployeeProjects
+
+CREATE TABLE EmployeeProjects (
+    EID INT,
+    ProjectName VARCHAR(255),
+    Position VARCHAR(255),
+    TimePercentage INT,
+    PRIMARY KEY (EID, ProjectName),
+    FOREIGN KEY (EID) REFERENCES Employees(EID),
+    FOREIGN KEY (ProjectName) REFERENCES Projects(ProjectName)
+);
+
+
+# Relationships
+
+Employees (EID) -< EmployeeProjects (EID)
+
+One-to-Many relationship: An employee can be associated with multiple projects.
+Projects (ProjectName) -< EmployeeProjects (ProjectName)
+
+One-to-Many relationship: A project can have multiple employees associated with it.
+Employees (EID) >- Projects (PM)
+
+Many-to-One relationship: The PM field in the Projects table references the EID field in the Employees table, indicating that an employee can be the project manager for multiple projects.
+This database schema adheres to the third normal form (3NF) by eliminating transitive dependencies and ensuring that each table serves a specific purpose without unnecessary redundancy.
+
+
+#-----------------------
+(2) 請依據上述關聯式資料庫,撰寫一 SQL 指令,列出所有在各專案投入時間加總未達 100%的員工。
+#------------------------
+
+
+# SQL query:
+
+
+SELECT
+    EP.EID,
+    E.Name,
+    SUM(EP.TimePercentage) AS TotalTimePercentage
+FROM
+    EmployeeProjects EP
+JOIN
+    Employees E ON EP.EID = E.EID
+GROUP BY
+    EP.EID, E.Name
+HAVING
+    SUM(EP.TimePercentage) < 100;
+
