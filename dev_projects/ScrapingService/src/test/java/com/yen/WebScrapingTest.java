@@ -40,8 +40,12 @@ public class WebScrapingTest {
         String inputLine;
         StringBuilder response = new StringBuilder();
 
+        // save to html/txt
+        Writer writer = Files.newBufferedWriter(Paths.get("links.html"));
+
         while ((inputLine = in.readLine()) != null) {
             System.out.println("inputLine = " + inputLine);
+            writer.append(inputLine);
             response.append(inputLine);
         }
 
@@ -50,18 +54,18 @@ public class WebScrapingTest {
         String html = response.toString();
         System.out.println("html = " + html);
 
-        // parse HTML (select "a[href]" element)
-        Document doc = Jsoup.parse(html);
-        Elements links = doc.select("a[href]");
-        for (Element link : links) {
-            String href = link.attr("href");
-            System.out.println("href = " + href);
-        }
-
-        // save to csv
-        System.out.println("save to csv");
-        Writer writer = Files.newBufferedWriter(Paths.get("links.csv"));
+        System.out.println("save to file");
         CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT);
+        writer.close();
+
+        // parse HTML (select "a[href]" element)
+//        Document doc = Jsoup.parse(html);
+//        Elements links = doc.select("a[href]");
+//        for (Element link : links) {
+//            String href = link.attr("href");
+//            System.out.println("href = " + href);
+//        }
+
     }
 
 }
