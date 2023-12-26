@@ -1,6 +1,8 @@
 package com.yen;
 
 import model.PokemonProduct;
+import net.minidev.json.JSONArray;
+import net.minidev.json.parser.JSONParser;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.jsoup.Jsoup;
@@ -9,12 +11,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.jupiter.api.Test;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Writer;
+import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -123,7 +121,28 @@ public class WebScrapingTest {
         }
 
         System.out.println(">>> pokemonProducts = ");
-        System.out.println(pokemonProducts);
+        System.out.println(pokemonProducts.toString());
+
+        String resultDir = "./scrap_data.json";
+
+        // save to JSON
+        JSONParser parser = new JSONParser();
+        try {
+            Object object = parser.parse(pokemonProducts.toString());
+            //convert Object to JSONObject
+            JSONArray jsonObject3 = (JSONArray) object;
+            try {
+                FileWriter file = new FileWriter(resultDir);
+                file.write(jsonObject3.toString());
+                file.close();
+            } catch (IOException e) {
+                System.out.println("write to JSON fail : " + e);
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
