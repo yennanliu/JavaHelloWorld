@@ -168,13 +168,13 @@ public class WebScrapingTest {
         // the number of iteration executed
         int i = 0;
         // to limit the number to scrape to 5
-        int limit = 5;
+        int limit = 5; //48;
 
         while (!pagesToScrape.isEmpty() && i < limit) {
             System.out.println(">>> i = " + i);
 
             /** help func*/
-            scrapeProductPage(pokemonProducts, pagesDiscovered, pagesToScrape);
+            scrapeProductPage(pokemonProducts, pagesDiscovered, pagesToScrape, i);
 
             // incrementing the iteration number
             i++;
@@ -187,7 +187,8 @@ public class WebScrapingTest {
 
     private void scrapeProductPage(List<PokemonProduct> pokemonProducts,
                                    Set<String> pagesDiscovered,
-                                   List<String> pagesToScrape ) throws IOException {
+                                   List<String> pagesToScrape,
+                                   Integer i) throws IOException {
 
 
         System.out.println(">>> (scrapeProductPage) pagesDiscovered = " + pagesDiscovered + " pagesToScrape = " + pagesToScrape);
@@ -203,8 +204,9 @@ public class WebScrapingTest {
         // doc = Jsoup.connect(URL).get();
         // initializing the HTML Document page variable
         Document doc;
-        String URL = "https://scrapeme.live/shop";
-         doc = Jsoup
+        String URL = "https://scrapeme.live/shop"+"/page/" + i;
+        System.out.println("URL = " + URL);
+        doc = Jsoup
                 .connect(URL)
                 .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36")
                 .header("Accept-Language", "*")
@@ -213,6 +215,9 @@ public class WebScrapingTest {
 
         // iterating over the pagination HTML elements
         for (Element pageElement : paginationElements) {
+
+            //System.out.println(">>> pageElement = " + pageElement.text());
+
             // the new link discovered
             String pageUrl = pageElement.attr("href");
 
