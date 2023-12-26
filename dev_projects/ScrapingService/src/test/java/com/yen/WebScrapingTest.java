@@ -168,7 +168,7 @@ public class WebScrapingTest {
         // the number of iteration executed
         int i = 0;
         // to limit the number to scrape to 5
-        int limit = 5; //48;
+        int limit = 5; //50;
 
         while (!pagesToScrape.isEmpty() && i < limit) {
             System.out.println(">>> i = " + i);
@@ -211,7 +211,10 @@ public class WebScrapingTest {
                 .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36")
                 .header("Accept-Language", "*")
                 .get();
+
+
         Elements paginationElements = doc.select("a.page-numbers");
+        Elements products = doc.select("li.product");
 
         // iterating over the pagination HTML elements
         for (Element pageElement : paginationElements) {
@@ -229,6 +232,24 @@ public class WebScrapingTest {
             // adding the link just discovered
             // to the set of pages discovered so far
             pagesDiscovered.add(pageUrl);
+        }
+
+
+        // collect data
+        for (Element product : products){
+
+            // collect data
+            PokemonProduct pokemonProduct = new PokemonProduct();
+
+            // extracting the data of interest from the product HTML element
+            // and storing it in pokemonProduct
+            pokemonProduct.setUrl(product.selectFirst("a").attr("href"));
+            pokemonProduct.setImage(product.selectFirst("img").attr("src"));
+            pokemonProduct.setName(product.selectFirst("h2").text());
+            pokemonProduct.setPrice(product.selectFirst("span").text());
+
+            // adding pokemonProduct to the list of the scraped products
+            pokemonProducts.add(pokemonProduct);
         }
     }
 
@@ -266,7 +287,7 @@ public class WebScrapingTest {
         // the number of iteration executed
         int i = 1;
         // to limit the number to scrape to 5
-        int limit = 48; //10;
+        int limit = 50; //48; //10;
 
         while (!pagesToScrape.isEmpty() && i < limit) {
             // registering the web scraping task
