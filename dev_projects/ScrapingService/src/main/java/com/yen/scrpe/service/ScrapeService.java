@@ -30,10 +30,10 @@ public class ScrapeService {
 
     // method
 
-    private void scrapeProductPage(List<PokemonProduct> pokemonProducts,
-                                   Set<String> pagesDiscovered,
-                                   List<String> pagesToScrape,
-                                   Integer i) throws IOException {
+    public void scrapeProductPage(List<PokemonProduct> pokemonProducts,
+                                  Set<String> pagesDiscovered,
+                                  List<String> pagesToScrape,
+                                  Integer i) throws IOException {
 
 
         System.out.println(">>> (scrapeProductPage) pagesDiscovered = " + pagesDiscovered + " pagesToScrape = " + pagesToScrape);
