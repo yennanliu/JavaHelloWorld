@@ -1,4 +1,4 @@
-package model;
+package com.yen.scrpe.model;
 
 // https://www.zenrows.com/blog/web-scraping-java#extract-data
 

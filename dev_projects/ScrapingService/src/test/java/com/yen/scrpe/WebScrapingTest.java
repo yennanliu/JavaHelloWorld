@@ -1,6 +1,6 @@
-package com.yen;
+package com.yen.scrpe;
 
-import model.PokemonProduct;
+import com.yen.scrpe.model.PokemonProduct;
 import net.minidev.json.JSONArray;
 import net.minidev.json.parser.JSONParser;
 import org.apache.commons.csv.CSVFormat;
