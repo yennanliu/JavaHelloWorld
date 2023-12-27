@@ -41,7 +41,7 @@ public class ScrappingApplication {
         // the number of iteration executed
         int i = 0;
         // to limit the number to scrape to 5
-        int limit = 50; //50;
+        int limit = 3; //50;
 
         while (!pagesToScrape.isEmpty() && i < limit) {
             System.out.println(">>> i = " + i);
