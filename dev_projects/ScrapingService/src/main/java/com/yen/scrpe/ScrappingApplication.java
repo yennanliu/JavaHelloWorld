@@ -1,5 +1,6 @@
 package com.yen.scrpe;
 
+import com.yen.scrpe.Task.PokemonCollectTaskV1;
 import com.yen.scrpe.model.PokemonProduct;
 import com.yen.scrpe.service.ScrapeService;
 
@@ -18,11 +19,11 @@ public class ScrappingApplication {
 
     public static void main(String[] args) throws IOException {
 
-        ScrapeService scrapeService = new ScrapeService();
-
+        Long start = System.currentTimeMillis();
         System.out.println("ScrappingApplication start");
 
-        Long start = System.currentTimeMillis();
+        ScrapeService scrapeService = new ScrapeService();
+        PokemonCollectTaskV1 pokemonCollectTaskV1 = new PokemonCollectTaskV1();
 
         // initializing the list of Java object to store
         // the scraped data
@@ -34,33 +35,19 @@ public class ScrappingApplication {
 
         // initializing the queue of urls to scrape
         List<String> pagesToScrape = new ArrayList<>();
+
         // initializing the scraping queue with the
         // first pagination page
         pagesToScrape.add("https://scrapeme.live/shop/page/1/");
 
-        // the number of iteration executed
-        int i = 0;
         // to limit the number to scrape to 5
         int limit = 3; //50;
 
-        while (!pagesToScrape.isEmpty() && i < limit) {
-            System.out.println(">>> i = " + i);
-
-            /** help func*/
-            scrapeService.scrapeProductPage(pokemonProducts, pagesDiscovered, pagesToScrape, i);
-
-            // incrementing the iteration number
-            i++;
-        }
-
+        // List<String> pagesToScrape, ScrapeService scrapeService, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, int limit, int i
+        pokemonCollectTaskV1.run(scrapeService, pagesToScrape, pokemonProducts, pagesDiscovered, limit);
         System.out.println("pokemonProducts.size() = " + pokemonProducts.size());
 
-        // writing the scraped data to a db or export it to a file...
-
         Long end = System.currentTimeMillis();
-
-        // limit = 5, -----> Total duration = 11344
-        // limit = 50, -----> Total duration = 101870
         System.out.println("-----> Total duration = " + ( end - start));
     }
 

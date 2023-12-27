@@ -48,8 +48,7 @@ public class ScrapeService {
         // fetching the target website
         // doc = Jsoup.connect(URL).get();
         // initializing the HTML Document page variable
-        Document doc;
-        String URL = BASE_URL + "/page/" + pageNum;
+        String URL = this.BASE_URL + "/page/" + pageNum;
         System.out.println("URL = " + URL);
         return Jsoup
                 .connect(URL)
