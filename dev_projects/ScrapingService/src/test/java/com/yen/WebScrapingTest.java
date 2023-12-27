@@ -151,6 +151,8 @@ public class WebScrapingTest {
     @Test
     public void webScrapTestPokemonV2() throws IOException {
 
+        Long start = System.currentTimeMillis();
+
         // initializing the list of Java object to store
         // the scraped data
         List<PokemonProduct> pokemonProducts = new ArrayList<>();
@@ -168,7 +170,7 @@ public class WebScrapingTest {
         // the number of iteration executed
         int i = 0;
         // to limit the number to scrape to 5
-        int limit = 5; //50;
+        int limit = 50; //50;
 
         while (!pagesToScrape.isEmpty() && i < limit) {
             System.out.println(">>> i = " + i);
@@ -183,6 +185,12 @@ public class WebScrapingTest {
         System.out.println("pokemonProducts.size() = " + pokemonProducts.size());
 
         // writing the scraped data to a db or export it to a file...
+
+        Long end = System.currentTimeMillis();
+
+        // limit = 5, -----> Total duration = 11344
+        // limit = 50, -----> Total duration = 101870
+        System.out.println("-----> Total duration = " + ( end - start));
     }
 
     private void scrapeProductPage(List<PokemonProduct> pokemonProducts,
@@ -211,7 +219,6 @@ public class WebScrapingTest {
                 .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36")
                 .header("Accept-Language", "*")
                 .get();
-
 
         Elements paginationElements = doc.select("a.page-numbers");
         Elements products = doc.select("li.product");
@@ -257,7 +264,9 @@ public class WebScrapingTest {
     // https://www.zenrows.com/blog/web-scraping-java#java-web-crawling
     // scrape https://scrapeme.live/shop/ with page limit and run in parallel
     @Test
-    public void webScrapTestPokemonV2Parallel() throws Exception {
+    public void webScrapTestPokemonV2MultiThread() throws Exception {
+
+        Long start = System.currentTimeMillis();
 
         // initializing the list of Java object to store
         // the scraped data
@@ -275,7 +284,8 @@ public class WebScrapingTest {
 
         // initializing the ExecutorService to run the
         // web scraping process in parallel on 4 pages at a time
-        ExecutorService executorService = Executors.newFixedThreadPool(4);
+        int THREAD_COUNT = 4;
+        ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
 
         /** help func
          *
@@ -312,6 +322,12 @@ public class WebScrapingTest {
         executorService.awaitTermination(300, TimeUnit.SECONDS);
 
         System.out.println(pokemonProducts.size());
+
+        Long end = System.currentTimeMillis();
+
+        // limit = 5, -----> Total duration = 5240
+        // limit = 50, -----> Total duration = 27258
+        System.out.println("-----> Total duration = " + ( end - start));
     }
 
 //    public static void scrapeProductPage(
@@ -321,7 +337,6 @@ public class WebScrapingTest {
 //    ) {
 //        // omitted for brevity...
 //    }
-
 
 
 }
