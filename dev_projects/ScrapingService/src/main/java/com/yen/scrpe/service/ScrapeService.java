@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
-public class ScrapeService {
+public class ScrapeService implements BaseScrapeService{
 
     // attr
     public ScrapeService(){

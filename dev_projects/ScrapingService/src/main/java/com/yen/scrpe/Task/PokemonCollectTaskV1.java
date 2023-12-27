@@ -1,6 +1,7 @@
 package com.yen.scrpe.Task;
 
 import com.yen.scrpe.model.PokemonProduct;
+import com.yen.scrpe.service.BaseScrapeService;
 import com.yen.scrpe.service.ScrapeService;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.util.Set;
 
 public class PokemonCollectTaskV1 {
 
-    public void run(ScrapeService scrapeService, List<String> pagesToScrape, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, int limit) throws IOException {
+    public void run(BaseScrapeService scrapeService, List<String> pagesToScrape, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, int limit) throws IOException {
 
         int i  = 0;
 

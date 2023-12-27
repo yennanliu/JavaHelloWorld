@@ -19,8 +19,8 @@ public class ScrappingApplication {
 
     public static void main(String[] args) throws IOException {
 
-        Long start = System.currentTimeMillis();
         System.out.println("ScrappingApplication start");
+        Long start = System.currentTimeMillis();
 
         ScrapeService scrapeService = new ScrapeService();
         PokemonCollectTaskV1 pokemonCollectTaskV1 = new PokemonCollectTaskV1();
@@ -28,23 +28,17 @@ public class ScrappingApplication {
         // initializing the list of Java object to store
         // the scraped data
         List<PokemonProduct> pokemonProducts = new ArrayList<>();
-
         // initializing the set of web page urls
-        // discovered while crawling the target website
-        Set<String> pagesDiscovered = new HashSet<>();
-
+        Set<String> pagesDiscovered = new HashSet<>(); // discovered while crawling the target website
         // initializing the queue of urls to scrape
         List<String> pagesToScrape = new ArrayList<>();
-
         // initializing the scraping queue with the
-        // first pagination page
         pagesToScrape.add("https://scrapeme.live/shop/page/1/");
 
         // to limit the number to scrape to 5
-        int limit = 3; //50;
+        int LIMIT = 3; //50;
 
-        // List<String> pagesToScrape, ScrapeService scrapeService, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, int limit, int i
-        pokemonCollectTaskV1.run(scrapeService, pagesToScrape, pokemonProducts, pagesDiscovered, limit);
+        pokemonCollectTaskV1.run(scrapeService, pagesToScrape, pokemonProducts, pagesDiscovered, LIMIT);
         System.out.println("pokemonProducts.size() = " + pokemonProducts.size());
 
         Long end = System.currentTimeMillis();
