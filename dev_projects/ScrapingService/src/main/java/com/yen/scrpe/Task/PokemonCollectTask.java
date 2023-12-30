@@ -2,7 +2,6 @@ package com.yen.scrpe.Task;
 
 import com.yen.scrpe.model.PokemonProduct;
 import com.yen.scrpe.service.BaseScrapeService;
-import com.yen.scrpe.service.ScrapeService;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,7 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PokemonCollectTaskV1 {
+public class PokemonCollectTask implements BaseScrapeTask {
 
     // attr
     //int limit;
@@ -26,11 +25,11 @@ public class PokemonCollectTaskV1 {
 
     // constructor
     // PokemonCollectTaskV1.run(scrapeService, pagesToScrape, pokemonProducts, pagesDiscovered, LIMIT);
-    public PokemonCollectTaskV1(){
+    public PokemonCollectTask(){
 
     }
 
-    public PokemonCollectTaskV1(BaseScrapeService scrapeService){
+    public PokemonCollectTask(BaseScrapeService scrapeService){
 
         this.scrapeService = scrapeService;
         this.pokemonProducts = new ArrayList<>();
