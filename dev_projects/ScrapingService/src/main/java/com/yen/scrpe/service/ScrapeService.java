@@ -12,12 +12,12 @@ import java.util.Set;
 
 public class ScrapeService implements BaseScrapeService{
 
-    // attr
+    // constructor
     public ScrapeService(){
 
     }
 
-    // constructor
+    // attr
     private String BASE_URL = "https://scrapeme.live/shop";
 
     // method

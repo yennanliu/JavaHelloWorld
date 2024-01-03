@@ -3,6 +3,7 @@ package com.yen.scrpe;
 import com.yen.scrpe.Task.PokemonCollectTask;
 import com.yen.scrpe.Task.ScrapeTaskFactory;
 import com.yen.scrpe.service.ScrapeService;
+import com.yen.scrpe.service.ScrapeServiceMultiThread;
 
 import java.io.IOException;
 
@@ -13,22 +14,25 @@ import java.io.IOException;
  */
 public class ScrappingApplication {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Long start = System.currentTimeMillis();
 
         // to limit the number to scrape to 5
         int LIMIT = 3; // 50;
 
-        ScrapeService scrapeService = new ScrapeService();
-        PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
-        pokemonCollectTask.run(LIMIT);
+//        ScrapeService scrapeService = new ScrapeService();
+//        PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
+//        pokemonCollectTask.run(LIMIT);
 
 //        ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, PokemonCollectTask, LIMIT);
 //        scrapeTaskFactory.run();
 
-        System.out.println("pokemonProducts.size() = " + pokemonCollectTask.getPokemonProducts().size());
-        System.out.println("pokemonProducts = " + pokemonCollectTask.getPokemonProducts());
+        ScrapeServiceMultiThread scrapeServiceMultiThread = new ScrapeServiceMultiThread();
+        scrapeServiceMultiThread.testRun();
+
+//        System.out.println("pokemonProducts.size() = " + pokemonCollectTask.getPokemonProducts().size());
+//        System.out.println("pokemonProducts = " + pokemonCollectTask.getPokemonProducts());
 
         Long end = System.currentTimeMillis();
         System.out.println("-----> Total duration = " + ( end - start));
