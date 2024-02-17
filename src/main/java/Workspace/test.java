@@ -9,6 +9,8 @@ public class test {
         System.out.println(util.substract(1,2));
         System.out.println(util.product(1,2));
         System.out.println(util.division(1,2));
+        System.out.println(util.square(10));
+        System.out.println(util.sin(10));
     }
 
 }
