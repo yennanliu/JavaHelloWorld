@@ -28,6 +28,7 @@ public class ScrappingApplication {
 //        ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, PokemonCollectTask, LIMIT);
 //        scrapeTaskFactory.run();
 
+
         ScrapeServiceMultiThread scrapeServiceMultiThread = new ScrapeServiceMultiThread();
         scrapeServiceMultiThread.testRun();
 

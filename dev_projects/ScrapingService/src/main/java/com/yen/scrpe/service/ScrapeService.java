@@ -29,8 +29,7 @@ public class ScrapeService implements BaseScrapeService{
 
         System.out.println(">>> (scrapeProductPage) pagesDiscovered = " + pagesDiscovered + " pagesToScrape = " + pagesToScrape);
 
-        // the current web page is about to be scraped and
-        // should no longer be part of the scraping queue
+        // the current web page is about to be scraped and, should no longer be part of the scraping queue
         String url = pagesToScrape.remove(0);
         pagesDiscovered.add(url);
         Document doc = this.prepareConnect(i);

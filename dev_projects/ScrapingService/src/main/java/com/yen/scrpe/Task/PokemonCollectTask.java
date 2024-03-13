@@ -80,7 +80,7 @@ public class PokemonCollectTask implements BaseScrapeTask {
         while (!this.pagesToScrape.isEmpty() && i < limit) {
             System.out.println(">>> i = " + i);
 
-            /** help func*/
+            /** help func */
             this.scrapeService.scrapeProductPage(pokemonProducts, pagesDiscovered, pagesToScrape, i);
 
             // incrementing the iteration number
