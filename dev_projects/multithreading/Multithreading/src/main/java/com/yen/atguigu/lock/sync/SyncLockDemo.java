@@ -1,11 +1,11 @@
-//package com.yen.atguigu.lock.sync;
+// package com.yen.atguigu.lock.sync;
 //
-//import java.util.concurrent.locks.Lock;
-//import java.util.concurrent.locks.ReentrantLock;
-//import java.util.concurrent.locks.ReentrantReadWriteLock;
+// import java.util.concurrent.locks.Lock;
+// import java.util.concurrent.locks.ReentrantLock;
+// import java.util.concurrent.locks.ReentrantReadWriteLock;
 //
-////可重入锁
-//public class SyncLockDemo {
+//// 可重入锁
+// public class SyncLockDemo {
 //
 //    public synchronized void add() {
 //        add();
@@ -61,4 +61,4 @@
 ////        },"t1").start();
 //    }
 //
-//}
+// }

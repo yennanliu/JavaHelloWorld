@@ -1,11 +1,11 @@
-//package com.yen.atguigu.lock.sync;
+// package com.yen.atguigu.lock.sync;
 //
-//import java.util.concurrent.TimeUnit;
+// import java.util.concurrent.TimeUnit;
 //
-///**
+/// **
 // * 演示死锁
 // */
-//public class DeadLock {
+// public class DeadLock {
 //
 //    //创建两个对象
 //    static Object a = new Object();
@@ -40,4 +40,4 @@
 //            }
 //        },"B").start();
 //    }
-//}
+// }
