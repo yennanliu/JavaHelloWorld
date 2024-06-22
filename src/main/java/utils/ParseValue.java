@@ -1,6 +1,5 @@
 package utils;
 
-import java.lang.Math;
 
 public class ParseValue {
     public boolean CheckPostive(Integer x) {

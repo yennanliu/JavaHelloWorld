@@ -6,10 +6,9 @@ package Advances.CollectionDemo;
 
 /** Collection demo 1 */
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Collection;
+import org.junit.jupiter.api.Test;
 
 /**
  *   Collection demo 1

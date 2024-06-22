@@ -2,12 +2,11 @@ package Advances.Lambda.demo4;
 
 // https://www.youtube.com/watch?v=e9K5R0jygsY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=674
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import org.junit.jupiter.api.Test;
 
 /**
  *   Constructor Ref demo 1

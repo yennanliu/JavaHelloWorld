@@ -7,11 +7,10 @@ package Advances.CollectionDemo;
 
 /** Set demo 1 */
 
-import org.junit.jupiter.api.Test;
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import org.junit.jupiter.api.Test;
 
 /**
  *  Set Demo 1

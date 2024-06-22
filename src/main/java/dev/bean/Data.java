@@ -3,7 +3,6 @@ package dev.bean;
 // https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/Advances/ComparableComparator/Goods.java
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class Data implements Comparable {
 

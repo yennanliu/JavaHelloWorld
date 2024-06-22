@@ -1,4 +1,3 @@
 package Advances.Generic;
 
-public class Student {
-}
+public class Student {}

@@ -2,9 +2,8 @@ package Advances.TreeMap;
 
 // https://www.youtube.com/watch?v=d7sNFM8wL5A&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=556
 
-import org.junit.jupiter.api.Test;
-
 import java.util.*;
+import org.junit.jupiter.api.Test;
 
 /** TreeMap demo 1 */
 

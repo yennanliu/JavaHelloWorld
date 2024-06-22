@@ -1,8 +1,8 @@
-//package thread;
+// package thread;
 //
-//import jdk.nashorn.internal.runtime.regexp.joni.exception.InternalException;
+// import jdk.nashorn.internal.runtime.regexp.joni.exception.InternalException;
 //
-//public class ThreadSleep {
+// public class ThreadSleep {
 //    public static void main(String[] args){
 //        // define 2 thread objects
 //
@@ -34,4 +34,4 @@
 //        thread1.start();
 //        thread2.start();
 //    }
-//}
+// }

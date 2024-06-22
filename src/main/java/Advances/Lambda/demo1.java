@@ -2,9 +2,8 @@ package Advances.Lambda;
 
 // https://www.youtube.com/watch?v=lZf5ojE6X4k&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=667
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Comparator;
+import org.junit.jupiter.api.Test;
 
 /**
  *  Lambda expression demo 1

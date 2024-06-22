@@ -12,31 +12,6 @@ public class Programmer extends Employee{
     private Status status = Status.FREE;  // employee status : BUSY, FREE, VOCATION...
     private Equipment equipment;
 
-    // getter, setter
-    public int getMemberId() {
-        return memberId;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public Equipment getEquipment() {
-        return equipment;
-    }
-
-    public void setMemberId(int memberId) {
-        this.memberId = memberId;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public void setEquipment(Equipment equipment) {
-        this.equipment = equipment;
-    }
-
     // constructor
     public Programmer(){
         super();
@@ -45,6 +20,31 @@ public class Programmer extends Employee{
     public Programmer(int id, String name, int age, double salary, Equipment equipment){
         // NOTE here
         super(id, name, age, salary);
+        this.equipment = equipment;
+    }
+
+    // getter, setter
+    public int getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
     }
 

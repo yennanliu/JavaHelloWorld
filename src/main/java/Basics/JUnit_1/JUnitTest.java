@@ -2,8 +2,6 @@ package Basics.JUnit_1;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
 // https://www.youtube.com/watch?v=O1XnFHdsjYU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=302
 
 /**

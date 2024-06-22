@@ -3,10 +3,9 @@ package Advances.Reflection;
 // https://www.youtube.com/watch?v=x6tmNMxMmZo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=648
 // https://www.youtube.com/watch?v=E8iPgoskpZU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=649
 
-import org.junit.jupiter.api.Test;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import org.junit.jupiter.api.Test;
 
 /**
  *   Reflection demo4 : get attr, class name, data type, permission (running class instance)

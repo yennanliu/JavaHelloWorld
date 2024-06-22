@@ -5,60 +5,58 @@ package Advances.DynamicProxy;
 /** static proxy demo 1 */
 
 /**
- *  Review : static proxy
+ * Review : static proxy
  *
- *  -> static : proxy class - proxied class relation is fixed since compile step
+ * <p>-> static : proxy class - proxied class relation is fixed since compile step
  */
 
 /** factory */
-interface ClothFactory{
-    void produceCloth();
+interface ClothFactory {
+  void produceCloth();
 }
 
 /** proxy class (代理類) */
-class ProxyClothFactory implements ClothFactory{
+class ProxyClothFactory implements ClothFactory {
 
-    private ClothFactory factory; // init instance with proxied class (e.g. ClothFactory)
+  private ClothFactory factory; // init instance with proxied class (e.g. ClothFactory)
 
-    // constructor
-    public ProxyClothFactory(ClothFactory factory){
-        this.factory = factory;
-    }
+  // constructor
+  public ProxyClothFactory(ClothFactory factory) {
+    this.factory = factory;
+  }
 
-    @Override
-    public void produceCloth() {
+  @Override
+  public void produceCloth() {
 
-        System.out.println(">>> (ProxyClothFactory) proxy factory start ...");
+    System.out.println(">>> (ProxyClothFactory) proxy factory start ...");
 
-        // run factory's produceCloth method, will be dynamic when different "proxied class" is loaded ( e.g. ProxyClothFactory(ClothFactory factory) )
-        factory.produceCloth();
+    // run factory's produceCloth method, will be dynamic when different "proxied class" is loaded (
+    // e.g. ProxyClothFactory(ClothFactory factory) )
+    factory.produceCloth();
 
-        System.out.println(">>> (ProxyClothFactory) proxy factory do more ...");
-    }
-
+    System.out.println(">>> (ProxyClothFactory) proxy factory do more ...");
+  }
 }
 
 /** proxied class (被代理類) */
-class NikeClothFactory implements ClothFactory{
+class NikeClothFactory implements ClothFactory {
 
-    @Override
-    public void produceCloth() {
-        System.out.println(">>> Nike factory produces AF1");
-    }
-
+  @Override
+  public void produceCloth() {
+    System.out.println(">>> Nike factory produces AF1");
+  }
 }
 
 public class StaticProxyDemo1 {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        // step 1 : create "proxied class" (被代理類) instance
-        NikeClothFactory nike = new NikeClothFactory();
+    // step 1 : create "proxied class" (被代理類) instance
+    NikeClothFactory nike = new NikeClothFactory();
 
-        // step 2 : create "proxy class" (代理類) instance
-        ProxyClothFactory proxyClothFactory = new ProxyClothFactory(nike);
+    // step 2 : create "proxy class" (代理類) instance
+    ProxyClothFactory proxyClothFactory = new ProxyClothFactory(nike);
 
-        // step 3 : run
-        proxyClothFactory.produceCloth();
-    }
-
+    // step 3 : run
+    proxyClothFactory.produceCloth();
+  }
 }

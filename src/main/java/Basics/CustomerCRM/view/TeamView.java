@@ -13,118 +13,119 @@ import Basics.EmployeeCRM.team.utils.TSUtility;
 
 public class TeamView {
 
-    // attr
-    private NameListService listSvc = new NameListService();
-    private TeamService teamSvc = new TeamService();
+  // attr
+  private NameListService listSvc = new NameListService();
+  private TeamService teamSvc = new TeamService();
 
-    // method
-    public void enterMainMenu(){
+  /** entry point */
+  public static void main(String[] args) {
+    TeamView view = new TeamView();
+    view.enterMainMenu();
+  }
 
-        // if keep looping
-        boolean loopFlag = true;
-        char menu = 0;
+  // method
+  public void enterMainMenu() {
 
-        while(loopFlag){
+    // if keep looping
+    boolean loopFlag = true;
+    char menu = 0;
 
-            if (menu != '1'){
-                listAllEmployees();
-            }
+    while (loopFlag) {
 
-            System.out.println("1) Employee List 2) Add Member 3) Remove Member 4) Exist. Please select (1 to 4)\n");
+      if (menu != '1') {
+        listAllEmployees();
+      }
 
-            menu = TSUtility.readMenuSelection();
+      System.out.println(
+          "1) Employee List 2) Add Member 3) Remove Member 4) Exist. Please select (1 to 4)\n");
 
-            switch (menu){
-                case '1':
-                    getTeam();
-                    break;
-                case '2':
-                    addMember();
-                    break;
-                case '3':
-                    deleteMember();
-                    break;
-                case '4':
-                    System.out.println("Exit ? (Y/N) ");
-                    char isExist = TSUtility.readConfirmSelection();
-                    if (isExist == 'Y'){
-                        loopFlag = false;
-                    }
-                    break;
-            }
-        }
+      menu = TSUtility.readMenuSelection();
+
+      switch (menu) {
+        case '1':
+          getTeam();
+          break;
+        case '2':
+          addMember();
+          break;
+        case '3':
+          deleteMember();
+          break;
+        case '4':
+          System.out.println("Exit ? (Y/N) ");
+          char isExist = TSUtility.readConfirmSelection();
+          if (isExist == 'Y') {
+            loopFlag = false;
+          }
+          break;
+      }
+    }
+  }
+
+  /** show all employees */
+  private void listAllEmployees() {
+
+    System.out.println("--------------------- List All Employees --------------------- \n");
+
+    Employee[] employees = listSvc.getAllEmployees();
+
+    if (employees == null || employees.length == 0) {
+
+      System.out.println("No employee in company !");
+    } else {
+
+      System.out.println("ID\tName\tAge\tSalary\tPosition\tStatus\tBonus\tStock\tDevice");
+
+      for (int i = 0; i < employees.length; i++) {
+        System.out.println(employees[i]);
+      }
     }
 
-    /** show all employees */
-    private void listAllEmployees(){
+    System.out.println("--------------------- List All Employees --------------------- \n");
+  }
 
-        System.out.println("--------------------- List All Employees --------------------- \n");
+  private void getTeam() {
+    System.out.println("getTeam");
+  }
 
-        Employee[] employees =  listSvc.getAllEmployees();
+  private void addMember() {
 
-        if (employees == null || employees.length == 0){
+    System.out.println("--------------------- Add Member --------------------- \n");
+    System.out.println("Plz enter the to-add member id");
+    int id = TSUtility.readInt();
 
-            System.out.println("No employee in company !");
-        }else{
+    try {
+      Employee emp = listSvc.getEmployee(id);
+      teamSvc.addMember(emp);
+      System.out.println("add member OK !");
+      TSUtility.readReturn();
+    } catch (TeamException e) {
+      System.out.println("add member failed ! " + e.getMessage());
+    }
+  }
 
-            System.out.println("ID\tName\tAge\tSalary\tPosition\tStatus\tBonus\tStock\tDevice");
+  private void deleteMember() {
+    System.out.println("--------------------- Delete Member --------------------- \n");
 
-            for (int i =0; i < employees.length; i++){
-                System.out.println(employees[i]);
-            }
-        }
+    System.out.println("Plz enter the to-delete member id");
+    int memberId = TSUtility.readInt();
 
-        System.out.println("--------------------- List All Employees --------------------- \n");
+    System.out.println("Confirm to Delete ? (Y/N)");
+    char isDelete = TSUtility.readConfirmSelection();
+
+    // if Not delete
+    if (isDelete == 'N') {
+      return;
     }
 
-    private void getTeam(){
-        System.out.println("getTeam");
+    // if delete
+    try {
+      teamSvc.removeMember(memberId);
+      System.out.println("delete member OK!");
+    } catch (TeamException e) {
+      System.out.println("delete member failed!" + e.getMessage());
     }
-
-    private void addMember(){
-
-        System.out.println("--------------------- Add Member --------------------- \n");
-        System.out.println("Plz enter the to-add member id");
-        int id = TSUtility.readInt();
-
-        try {
-            Employee emp =  listSvc.getEmployee(id);
-            teamSvc.addMember(emp);
-            System.out.println("add member OK !");
-            TSUtility.readReturn();
-        } catch (TeamException e) {
-            System.out.println("add member failed ! " + e.getMessage());
-        }
-    }
-
-    private void deleteMember(){
-        System.out.println("--------------------- Delete Member --------------------- \n");
-
-        System.out.println("Plz enter the to-delete member id");
-        int memberId = TSUtility.readInt();
-
-        System.out.println("Confirm to Delete ? (Y/N)");
-        char isDelete = TSUtility.readConfirmSelection();
-
-        // if Not delete
-        if (isDelete == 'N'){
-            return;
-        }
-
-        // if delete
-        try {
-            teamSvc.removeMember(memberId);
-            System.out.println("delete member OK!");
-        } catch (TeamException e) {
-            System.out.println("delete member failed!" + e.getMessage());
-        }
-        // back to the main program
-        TSUtility.readReturn();
-    }
-
-    /** entry point */
-    public static void main(String[] args){
-        TeamView view = new TeamView();
-        view.enterMainMenu();
-    }
+    // back to the main program
+    TSUtility.readReturn();
+  }
 }

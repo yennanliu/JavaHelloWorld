@@ -1,6 +1,6 @@
 package thread;
 
-import java.util.concurrent.locks. * ;
+import java.util.concurrent.locks.*;
 
 public class ThreadLock {
   public static void main(String[] args) {
@@ -15,9 +15,10 @@ public class ThreadLock {
 }
 
 class LockThread implements Runnable {
-  private int tickets = 10;
   // *** define a lock object
   private final Lock lock = new ReentrantLock();
+  private int tickets = 10;
+
   public void run() {
     while (true) {
       // add lock to the the application code
@@ -25,11 +26,11 @@ class LockThread implements Runnable {
       while (tickets > 0) {
         try {
           Thread.sleep(100);
-          System.out.println(Thread.currentThread().getName() + " is selling the " + tickets-- + "ticket");
-        } catch(InterruptedException e) {
+          System.out.println(
+              Thread.currentThread().getName() + " is selling the " + tickets-- + "ticket");
+        } catch (InterruptedException e) {
           e.printStackTrace();
-        }
-        finally {
+        } finally {
           // release the lock when code run completed
           lock.unlock();
         }

@@ -3,6 +3,39 @@ package Basics;
 // https://www.youtube.com/watch?v=qXb8Z9cjcDk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=351
 // https://www.youtube.com/watch?v=rM2f0mTie_Q&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=352
 
+interface Flyable2{
+
+    // attr
+    // global constant
+    public static final int MAX_SPEED = 100;
+    //public static final int MIN_SPEED = 1;
+    // or, can write as below
+    int MIN_SPEED = 1; // omit public static final
+
+    // method
+    public abstract void fly();
+
+    void stop(); // omit public abstract
+}
+
+interface Attackable2{
+    void attack();
+}
+
+interface AA_{
+    void method1();
+}
+
+
+interface BB_ {
+    void method2();
+}
+
+// interface's multiple inheritance
+interface CC_ extends AA_, BB_{
+
+}
+
 /**
  *   Interface part 2
  *
@@ -82,26 +115,6 @@ abstract class Kite2 implements Flyable2{
     }
 }
 
-
-interface Flyable2{
-
-    // attr
-    // global constant
-    public static final int MAX_SPEED = 100;
-    //public static final int MIN_SPEED = 1;
-    // or, can write as below
-    int MIN_SPEED = 1; // omit public static final
-
-    // method
-    public abstract void fly();
-
-    void stop(); // omit public abstract
-}
-
-interface Attackable2{
-    void attack();
-}
-
 class Bullet2 implements Flyable2, Attackable2{
 
     @Override
@@ -119,7 +132,6 @@ class Bullet2 implements Flyable2, Attackable2{
 
     }
 }
-
 
 class Bullet3 extends Object implements Flyable2, Attackable2, CC_ {
 
@@ -147,17 +159,4 @@ class Bullet3 extends Object implements Flyable2, Attackable2, CC_ {
     public void method2() {
 
     }
-}
-
-interface AA_{
-    void method1();
-}
-
-interface BB_ {
-    void method2();
-}
-
-// interface's multiple inheritance
-interface CC_ extends AA_, BB_{
-
 }

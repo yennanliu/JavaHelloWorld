@@ -8,9 +8,8 @@ package Advances.ObjectInputOutputFlow;
  *   NOTE !!! : if we want a java class serializable, it needs below conditions (check Advances.ObjectInputOutputFlow.Person.java)
  */
 
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
+import org.junit.jupiter.api.Test;
 
 public class demo2 {
 

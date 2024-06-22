@@ -4,8 +4,8 @@ package Basics.EmployeeCRM.team.domain;
 
 /** Equipment interface */
 public interface Equipment {
-    // attr
+  // attr
 
-    // method
-    String getDescription();
+  // method
+  String getDescription();
 }

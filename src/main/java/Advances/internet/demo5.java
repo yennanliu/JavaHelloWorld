@@ -2,10 +2,9 @@ package Advances.internet;
 
 // https://www.youtube.com/watch?v=NdnJMytRW04&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=626
 
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
 import java.net.*;
+import org.junit.jupiter.api.Test;
 
 /**
  *   UDP intro & demo 1

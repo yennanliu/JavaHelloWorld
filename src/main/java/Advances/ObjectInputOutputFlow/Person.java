@@ -5,53 +5,47 @@ package Advances.ObjectInputOutputFlow;
 import java.io.Serializable;
 
 /**
- *  Note : Person class needs to have below things, so can be serializable:
+ * Note : Person class needs to have below things, so can be serializable:
  *
- *   1) need to implements Serializable interface
- *   2) offer a global static value : serialVersionUID
+ * <p>1) need to implements Serializable interface 2) offer a global static value : serialVersionUID
  */
 public class Person implements Serializable {
 
-    // serialVersionUID for offering an unique version id
-    public static final long serialVersionUID = 345345345345346L;
+  // serialVersionUID for offering an unique version id
+  public static final long serialVersionUID = 345345345345346L;
 
-    // attr
-    private String name;
-    private int age;
+  // attr
+  private String name;
+  private int age;
 
-    // constructor
-    public Person(){
+  // constructor
+  public Person() {}
 
-    }
+  public Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
 
-    public Person(String name, int age){
-        this.name = name;
-        this.age = age;
-    }
+  // getter, setter
+  public String getName() {
+    return name;
+  }
 
-    // getter, setter
-    public String getName() {
-        return name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public int getAge() {
-        return age;
-    }
+  public int getAge() {
+    return age;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setAge(int age) {
+    this.age = age;
+  }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    // method
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
+  // method
+  @Override
+  public String toString() {
+    return "Person{" + "name='" + name + '\'' + ", age=" + age + '}';
+  }
 }

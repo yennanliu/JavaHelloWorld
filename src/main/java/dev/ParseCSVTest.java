@@ -1,11 +1,10 @@
 package dev;
 
-import org.junit.jupiter.api.Test;
-import utils.IFileUtils;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
+import org.junit.jupiter.api.Test;
+import utils.IFileUtils;
 
 public class ParseCSVTest {
 

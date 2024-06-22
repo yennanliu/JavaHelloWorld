@@ -4,10 +4,8 @@ package Advances.Generic;
 
 /** demo4 : generic method */
 
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 public class demo4 {
     @Test

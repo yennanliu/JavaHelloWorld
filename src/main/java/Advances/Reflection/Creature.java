@@ -6,15 +6,14 @@ import java.io.Serializable;
 
 public class Creature<T> implements Serializable {
 
-    private char gender;
-    public double weight;
+  public double weight;
+  private char gender;
 
-    private void breath(){
-        System.out.println(">>> creature breath ...");
-    }
+  private void breath() {
+    System.out.println(">>> creature breath ...");
+  }
 
-    private void eat(){
-        System.out.println(">>> creature eat ...");
-    }
-
+  private void eat() {
+    System.out.println(">>> creature eat ...");
+  }
 }

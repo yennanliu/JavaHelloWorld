@@ -2,12 +2,11 @@ package Advances.internet;
 
 // https://www.youtube.com/watch?v=IOpiio4vub0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=623
 
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import org.junit.jupiter.api.Test;
 
 /**
  *   Implement TCP internet protocol : demo 3

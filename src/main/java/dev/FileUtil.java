@@ -1,8 +1,8 @@
-//package dev;
+// package dev;
 //
-//import java.io.File;
+// import java.io.File;
 //
-//public class FileUtil {
+// public class FileUtil {
 //
 //    public static void cleanFile(String filePath){
 //
@@ -23,4 +23,4 @@
 //        }
 //    }
 //
-//}
+// }

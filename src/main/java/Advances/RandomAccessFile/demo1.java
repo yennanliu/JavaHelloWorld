@@ -3,12 +3,10 @@ package Advances.RandomAccessFile;
 // https://www.youtube.com/watch?v=_SvhcNMsyO8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=615
 // https://www.youtube.com/watch?v=r-PXKqeMPgE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=616
 
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import org.junit.jupiter.api.Test;
 
 /**
  *  RandomAccessFile demo 1

@@ -6,11 +6,11 @@ package dev;
  */
 
 import dev.bean.Car;
-import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.junit.jupiter.api.Test;
 
 public class StreamTest1 {
 

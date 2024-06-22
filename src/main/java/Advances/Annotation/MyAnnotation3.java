@@ -10,5 +10,5 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE, ElementType.TYPE_PARAMETER, ElementType.TYPE_USE})
 public @interface MyAnnotation3 {
 
-    String value() default "hello";
+  String value() default "hello";
 }

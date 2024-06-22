@@ -15,6 +15,12 @@ public class TeamView {
     private NameListService listSvc = new NameListService();
     private TeamService teamSvc = new TeamService();
 
+    /** entry point */
+    public static void main(String[] args){
+        TeamView view = new TeamView();
+        view.enterMainMenu();
+    }
+
     // method
     public void enterMainMenu(){
 
@@ -118,11 +124,5 @@ public class TeamView {
         }
         // back to the main program
         TSUtility.readReturn();
-    }
-
-    /** entry point */
-    public static void main(String[] args){
-        TeamView view = new TeamView();
-        view.enterMainMenu();
     }
 }

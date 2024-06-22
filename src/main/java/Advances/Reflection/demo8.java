@@ -2,9 +2,8 @@ package Advances.Reflection;
 
 // https://www.youtube.com/watch?v=hMoeW6hyE0Q&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=655
 
-import org.junit.jupiter.api.Test;
-
 import java.lang.reflect.Field;
+import org.junit.jupiter.api.Test;
 
 /** get specific structure from running class
  *

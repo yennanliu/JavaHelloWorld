@@ -4,11 +4,10 @@ package Advances.CollectionDemo;
 
 /** LinkedHashSet demo 1 */
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import org.junit.jupiter.api.Test;
 
 public class LinkedHashSetDemo1 {
 

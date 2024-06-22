@@ -5,13 +5,9 @@ package Advances.Annotation;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
-/**
- *  an array of Annotation for using multiple Annotations at once
- *
- */
-
+/** an array of Annotation for using multiple Annotations at once */
 @Target({ElementType.TYPE})
 public @interface MyAnnotations {
 
-    MyAnnotation3[] value();
+  MyAnnotation3[] value();
 }

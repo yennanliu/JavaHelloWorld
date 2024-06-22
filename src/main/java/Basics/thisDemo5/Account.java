@@ -4,34 +4,34 @@ package Basics.thisDemo5;
 
 public class Account {
 
-    // attr
-    private double balance;
+  // attr
+  private double balance;
 
-    // constructor
-    public Account(double init_balance){
-        this.balance = init_balance;
-    }
+  // constructor
+  public Account(double init_balance) {
+    this.balance = init_balance;
+  }
 
-    // method
-    public double getBalance(){
-        return balance;
-    }
+  // method
+  public double getBalance() {
+    return balance;
+  }
 
-    public void deposit(double amt){
-        if (amt > 0){
-            balance += amt;
-            System.out.println("deposit OK!");
-        } else {
-            System.out.println("deposit failed!");
-        }
+  public void deposit(double amt) {
+    if (amt > 0) {
+      balance += amt;
+      System.out.println("deposit OK!");
+    } else {
+      System.out.println("deposit failed!");
     }
+  }
 
-    public void withDraw(double amt){
-        if (balance >= amt){
-            balance -= amt;
-            System.out.println("withDraw OK!");
-        } else {
-            System.out.println("withDraw failed!");
-        }
+  public void withDraw(double amt) {
+    if (balance >= amt) {
+      balance -= amt;
+      System.out.println("withDraw OK!");
+    } else {
+      System.out.println("withDraw failed!");
     }
+  }
 }

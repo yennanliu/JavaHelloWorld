@@ -5,34 +5,29 @@ package Advances.Generic.dao;
 import java.util.List;
 
 /** DAO : data(base) access object */
+public class DAO<T> { // DAO for common table op
+  // general methods
 
-public class DAO<T> {  // DAO for common table op
-    // general methods
+  public void add(T t) {}
 
-    public void add(T t){
+  public boolean remove(int index) {
+    return false;
+  }
 
-    }
+  public void update(int index) {}
 
-    public boolean remove(int index){
-        return false;
-    }
+  public T get(int index) {
+    return null;
+  }
 
-    public void update(int index){
+  public List<T> getList(int index) {
+    return null;
+  }
 
-    }
-
-    public T get(int index){
-        return null;
-    }
-
-    public List<T> getList(int index){
-        return null;
-    }
-
-    // generic method
-    // E : generic type
-    // example : how many record in table ? max time for buying order ?
-    public <E> E getValue(){
-        return null;
-    }
+  // generic method
+  // E : generic type
+  // example : how many record in table ? max time for buying order ?
+  public <E> E getValue() {
+    return null;
+  }
 }

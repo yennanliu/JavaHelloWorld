@@ -4,21 +4,23 @@ package Basics.polymorphism_2;
 
 import java.sql.Connection;
 
-public class OrderTest{
-}
+public class OrderTest {}
 
 class Order {
-    // example 1
-    public void method(Object obj){ // can use any subclass of Object with polymorphism feature
-
-    }
+  // example 1
+  public void method(Object obj) { // can use any subclass of Object with polymorphism feature
+  }
 }
 
-class Driver{
-    // example 2
-    public void getData(Connection conn){ // Connection is the superclass (interface), but when runtime, it will use different conn (subclass), e.g. : mysqlConn, postgreConn... ( polymorphism feature)
-        //conn.method1();
-        //conn.method2();
-        // ....
-    }
+class Driver {
+  // example 2
+  public void getData(
+      Connection
+          conn) { // Connection is the superclass (interface), but when runtime, it will use
+                  // different conn (subclass), e.g. : mysqlConn, postgreConn... ( polymorphism
+                  // feature)
+    // conn.method1();
+    // conn.method2();
+    // ....
+  }
 }

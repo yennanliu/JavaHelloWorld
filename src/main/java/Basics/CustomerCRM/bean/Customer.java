@@ -9,62 +9,61 @@ package Basics.CustomerCRM.bean;
  */
 
 public class Customer {
-    // attr
-    private String name;
-    private char gender;
-    private int age;
-    private String phone;
-    private String email;
+  // attr
+  private String name;
+  private char gender;
+  private int age;
+  private String phone;
+  private String email;
 
-    // constructor
-    public Customer(){
-    }
+  // constructor
+  public Customer() {}
 
-    public Customer(String name, char gender, int age, String phone, String email){
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
-        this.email = email;
-    }
+  public Customer(String name, char gender, int age, String phone, String email) {
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
+    this.email = email;
+  }
 
-    // getter, setter
-    public String getName() {
-        return name;
-    }
+  // getter, setter
+  public String getName() {
+    return name;
+  }
 
-    public char getGender() {
-        return gender;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public int getAge() {
-        return age;
-    }
+  public char getGender() {
+    return gender;
+  }
 
-    public String getPhone() {
-        return phone;
-    }
+  public void setGender(char gender) {
+    this.gender = gender;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public int getAge() {
+    return age;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setAge(int age) {
+    this.age = age;
+  }
 
-    public void setGender(char gender) {
-        this.gender = gender;
-    }
+  public String getPhone() {
+    return phone;
+  }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 }

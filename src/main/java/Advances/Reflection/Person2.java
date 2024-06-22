@@ -3,48 +3,47 @@ package Advances.Reflection;
 // https://www.youtube.com/watch?v=x6tmNMxMmZo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=648
 // https://www.youtube.com/watch?v=Y2vkfcQZ8Es&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=655
 
-//@MyAnnotation(value = "hi")
+// @MyAnnotation(value = "hi")
 @MyAnnotation()
-public class Person2 extends Creature<String> implements Comparable<String>, MyInterface{
+public class Person2 extends Creature<String> implements Comparable<String>, MyInterface {
 
-    private String name;
-    int age;
-    public int id;
+  public int id;
+  int age;
+  private String name;
 
-    public Person2(){}
+  public Person2() {}
 
-    private Person2(String name){
-        this.name = name;
-    }
+  private Person2(String name) {
+    this.name = name;
+  }
 
-    public Person2(String name, int age){
-        this.name = name;
-        this.age = age;
-    }
+  public Person2(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
 
-    @Override
-    public int compareTo(String o) {
-        return 0;
-    }
+  private static void showDest() {
+    System.out.println(">>> showDest");
+  }
 
-    @MyAnnotation(value = "abc")
-    @Override
-    public void info() {
-        System.out.println(">>> I am a person2 ...");
-    }
+  @Override
+  public int compareTo(String o) {
+    return 0;
+  }
 
-    private String show(String msg){
+  @MyAnnotation(value = "abc")
+  @Override
+  public void info() {
+    System.out.println(">>> I am a person2 ...");
+  }
 
-        System.out.println(">>> person2 show ..." + msg);
-        return msg;
-    }
+  private String show(String msg) {
 
-    public String display(String input) throws NullPointerException, ClassCastException{
-        return ">>> person2 input = " + input;
-    }
+    System.out.println(">>> person2 show ..." + msg);
+    return msg;
+  }
 
-    private static void showDest(){
-        System.out.println(">>> showDest");
-    }
-
+  public String display(String input) throws NullPointerException, ClassCastException {
+    return ">>> person2 input = " + input;
+  }
 }

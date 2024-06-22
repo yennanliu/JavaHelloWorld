@@ -10,73 +10,64 @@ import java.lang.reflect.Type;
 
 public class demo6 {
 
-    /**
-     *  get constructor from runtime class
-     */
-    @Test
-    public void test1() throws NoSuchMethodException {
+  /** get constructor from runtime class */
+  @Test
+  public void test1() throws NoSuchMethodException {
 
-        Class clazz = Person.class;
+    Class clazz = Person.class;
 
-        // getConstructors() :  get public constructors from current running class
-        Constructor[] constructors =  clazz.getConstructors();
+    // getConstructors() :  get public constructors from current running class
+    Constructor[] constructors = clazz.getConstructors();
 
-        for (Constructor c : constructors){
-            System.out.println(c);
-        }
-
-        System.out.println("================");
-
-        // getDeclaredConstructors() : get ALL constructors from current running class
-        Constructor[] declaredConstructors =  clazz.getDeclaredConstructors();
-
-        for (Constructor c : declaredConstructors){
-            System.out.println(c);
-        }
+    for (Constructor c : constructors) {
+      System.out.println(c);
     }
 
-    /**
-     *  get parent class from runtime class
-     */
-    @Test
-    public void test2(){
+    System.out.println("================");
 
-        Class clazz = Person2.class;
+    // getDeclaredConstructors() : get ALL constructors from current running class
+    Constructor[] declaredConstructors = clazz.getDeclaredConstructors();
 
-        Class superclass = clazz.getSuperclass();
-
-        System.out.println(">>> superclass = " + superclass);
+    for (Constructor c : declaredConstructors) {
+      System.out.println(c);
     }
+  }
 
-    /**
-     *  get parent class (with generic type) from runtime class
-     */
-    @Test
-    public void test3(){
+  /** get parent class from runtime class */
+  @Test
+  public void test2() {
 
-        Class clazz = Person2.class;
+    Class clazz = Person2.class;
 
-        Type genericSuperclass = clazz.getGenericSuperclass();
+    Class superclass = clazz.getSuperclass();
 
-        System.out.println(">>> genericSuperclass = " + genericSuperclass);
-    }
+    System.out.println(">>> superclass = " + superclass);
+  }
 
-    /**
-     *  get parent class (with generic type)'s  generic type from runtime class
-     */
-    @Test
-    public void test4(){
+  /** get parent class (with generic type) from runtime class */
+  @Test
+  public void test3() {
 
-        Class clazz = Person2.class;
+    Class clazz = Person2.class;
 
-        Type genericSuperclass = clazz.getGenericSuperclass();
+    Type genericSuperclass = clazz.getGenericSuperclass();
 
-        // get ParameterizedType (implement 強轉 as well)
-        ParameterizedType paramType = (ParameterizedType) genericSuperclass;
-        // get genetic type
-        Type[] actualTypeArguments = paramType.getActualTypeArguments();
+    System.out.println(">>> genericSuperclass = " + genericSuperclass);
+  }
 
-        System.out.println(">>> actualTypeArguments = " + actualTypeArguments[0]);
-    }
+  /** get parent class (with generic type)'s generic type from runtime class */
+  @Test
+  public void test4() {
 
+    Class clazz = Person2.class;
+
+    Type genericSuperclass = clazz.getGenericSuperclass();
+
+    // get ParameterizedType (implement 強轉 as well)
+    ParameterizedType paramType = (ParameterizedType) genericSuperclass;
+    // get genetic type
+    Type[] actualTypeArguments = paramType.getActualTypeArguments();
+
+    System.out.println(">>> actualTypeArguments = " + actualTypeArguments[0]);
+  }
 }

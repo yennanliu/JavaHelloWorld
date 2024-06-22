@@ -6,67 +6,80 @@ import org.junit.jupiter.api.Test;
 
 public class demo5 {
 
-    @Test
-    public void test1(){
+  @Test
+  public void test1() {
 
-        Color c1 = Color.RED;
-        System.out.println(c1.getInfo());
-        System.out.println(c1);
-        System.out.println(c1.index);
-        System.out.println(c1.name);
+    Color c1 = Color.RED;
+    System.out.println(c1.getInfo());
+    System.out.println(c1);
+    System.out.println(c1.index);
+    System.out.println(c1.name);
 
-        System.out.println("===============");
+    System.out.println("===============");
 
-        Color[] arr = Color.values();
-        for (Color c : arr){
-            System.out.println(">>> c = " + c);
-        }
+    Color[] arr = Color.values();
+    for (Color c : arr) {
+      System.out.println(">>> c = " + c);
+    }
+  }
+
+  @Test
+  public void test2() {
+
+    // TODO : check below syntax/logic
+    Food d1 = Food.Dessert.CAKE;
+    System.out.println(d1);
+
+    Food d2 = Food.Dessert.FRUIT;
+    System.out.println(d2);
+  }
+
+  public enum Color implements Behaviour {
+    RED("紅色", 1),
+    GREEN("綠色", 2),
+    BLANK("白色", 3),
+    YELLOW("黃色", 4);
+    // 成員變量
+    private String name;
+    private int index;
+
+    // 構造方法
+    private Color(String name, int index) {
+      this.name = name;
+      this.index = index;
     }
 
-    @Test
-    public void test2(){
-
-        // TODO : check below syntax/logic
-        Food d1 = Food.Dessert.CAKE;
-        System.out.println(d1);
-
-        Food d2 = Food.Dessert.FRUIT;
-        System.out.println(d2);
+    // 接口方法
+    @Override
+    public String getInfo() {
+      return this.name;
     }
 
-    public interface Behaviour {
-        void print();
-        String getInfo();
+    // 接口方法
+    @Override
+    public void print() {
+      System.out.println(this.index + ":" + this.name);
+    }
+  }
+
+  public interface Behaviour {
+    void print();
+
+    String getInfo();
+  }
+
+  public interface Food {
+    enum Coffee implements Food {
+      BLACK_COFFEE,
+      DECAF_COFFEE,
+      LATTE,
+      CAPPUCCINO
     }
 
-    public enum Color implements Behaviour{
-        RED("紅色", 1), GREEN("綠色", 2), BLANK("白色", 3), YELLOW("黃色", 4);
-        // 成員變量
-        private String name;
-        private int index;
-        // 構造方法
-        private Color(String name, int index) {
-            this.name = name; this.index = index;
-        }
-        //接口方法
-        @Override
-        public String getInfo() {
-            return this.name;
-        }
-        //接口方法
-        @Override
-        public void print() {
-            System.out.println(this.index+":"+this.name);
-        }
+    enum Dessert implements Food {
+      FRUIT,
+      CAKE,
+      GELATO
     }
-
-    public interface Food {
-        enum Coffee implements Food{
-            BLACK_COFFEE,DECAF_COFFEE,LATTE,CAPPUCCINO
-        }
-        enum Dessert implements Food{
-            FRUIT, CAKE, GELATO
-        }
-    }
-
+  }
 }

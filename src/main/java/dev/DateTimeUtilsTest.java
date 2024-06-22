@@ -8,7 +8,7 @@ import utils.DateTimeUtils;
 public class DateTimeUtilsTest {
 
   @Test
-  public void test1(){
+  public void test1() {
 
     String yesterday = DateTimeUtils.getNDayBeforeDate(1);
     System.out.println("yesterday = " + yesterday);
@@ -20,11 +20,9 @@ public class DateTimeUtilsTest {
   }
 
   @Test
-  public void test2(){
+  public void test2() {
     int expireDay = 7;
-    long days = 1L * 1000 * 3600 * 24 * expireDay -1;
+    long days = 1L * 1000 * 3600 * 24 * expireDay - 1;
     System.out.println(days);
-
   }
-
 }

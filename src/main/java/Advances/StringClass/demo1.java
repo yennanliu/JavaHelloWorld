@@ -5,78 +5,73 @@ package Advances.StringClass;
 
 import org.junit.jupiter.api.Test;
 
-/**
- *  String class demo 1 : String class basic property
- */
+/** String class demo 1 : String class basic property */
 
 // demo via junit
 public class demo1 {
+  /**
+   * String: example : `xxx`
+   *
+   * <p>1) String is `final`, CAN NOT BE INHERITED
+   *
+   * <p>2) String implements Serializable interface -> support serialization: -> can be transmitted
+   * (e.g. via flow via internet)
+   *
+   * <p>3) String implements Deserializable interface: -> can be transmitted (e.g. via flow via
+   * internet)
+   *
+   * <p>4) String implements Comparable interface: -> can be compared (bigger or smaller)
+   *
+   * <p>5) String defines `final char[] value` for string data storage
+   *
+   * <p>6) String is unchangeable (CAN NOT BE modified)
+   *
+   * <p>- 6-1) when we re-assign value to a string java will re-assign a new address for it (string)
+   * but NOT reuse the original address
+   *
+   * <p>- 6-2) when concatenate string, the address will be re-assigned
+   *
+   * <p>- 6-3) when use String's replace() method, the address will be re-assigned
+   *
+   * <p>7) when via `literal` (not `new`) giving value to a string, the string is storage in the
+   * "string constant pool"
+   *
+   * <p>8) "string constant pool" DOES NOT storage duplicated values
+   */
+  @Test
+  public void test1() {
     /**
-     *  String: example : `xxx`
+     * We don't need to `new` when create a new String
      *
-     *  1) String is `final`, CAN NOT BE INHERITED
-     *
-     *  2) String implements Serializable interface -> support serialization:
-     *      -> can be transmitted (e.g. via flow via internet)
-     *
-     *  3) String implements Deserializable interface:
-     *     -> can be transmitted (e.g. via flow via internet)
-     *
-     *  4) String implements Comparable interface:
-     *     -> can be compared (bigger or smaller)
-     *
-     *  5) String defines `final char[] value` for string data storage
-     *
-     *  6) String is unchangeable (CAN NOT BE modified)
-     *
-     *     - 6-1) when we re-assign value to a string
-     *        java will re-assign a new address for it (string)
-     *        but NOT reuse the original address
-     *
-     *     - 6-2) when concatenate string, the address will be re-assigned
-     *
-     *     - 6-3) when use String's replace() method, the address will be re-assigned
-     *
-     *  7) when via `literal` (not `new`) giving value to a string,
-     *     the string is storage in the "string constant pool"
-     *
-     *  8) "string constant pool" DOES NOT storage duplicated values
-     *
+     * <p>-> s1, s2 are actually using the SAME address
      */
-    @Test
-    public void test1(){
-        /**
-         * We don't need to `new` when create a new String
-         *
-         *  -> s1, s2 are actually using the SAME address
-         */
-        String s1 = "abc"; // literal (No need to `new` when create a new one)
-        String s2 = "abc";
+    String s1 = "abc"; // literal (No need to `new` when create a new one)
+    String s2 = "abc";
 
-        // compare s1, s2's address
-        System.out.println(s1==s2); // true
+    // compare s1, s2's address
+    System.out.println(s1 == s2); // true
 
-        s1 = "hello";
+    s1 = "hello";
 
-        System.out.println("s1 = " + s1 );
-        System.out.println("s2 = " + s2 );
+    System.out.println("s1 = " + s1);
+    System.out.println("s2 = " + s2);
 
-        System.out.println(s1==s2); // false
+    System.out.println(s1 == s2); // false
 
-        System.out.println("===================");
+    System.out.println("===================");
 
-        String s3 = "abc";
-        s3 += "def";
+    String s3 = "abc";
+    s3 += "def";
 
-        System.out.println("s3 = " + s3); // abcdef (address will be re-assigned)
-        System.out.println("s2 = " + s2 );
+    System.out.println("s3 = " + s3); // abcdef (address will be re-assigned)
+    System.out.println("s2 = " + s2);
 
-        System.out.println("===================");
+    System.out.println("===================");
 
-        String s4 = "abc";
-        String s4_ =  s4.replace("a", "?");
+    String s4 = "abc";
+    String s4_ = s4.replace("a", "?");
 
-        System.out.println("s4 = " + s4 );
-        System.out.println("s4_ = " + s4_ );
-    }
+    System.out.println("s4 = " + s4);
+    System.out.println("s4_ = " + s4_);
+  }
 }

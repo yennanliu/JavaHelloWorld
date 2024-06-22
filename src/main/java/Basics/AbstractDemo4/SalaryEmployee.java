@@ -4,36 +4,36 @@ package Basics.AbstractDemo4;
 
 public class SalaryEmployee extends Employee {
 
-    // attr
-    private double monthlySalary;
+  // attr
+  private double monthlySalary;
 
-    // constructor
-    public SalaryEmployee(String name, int number, MyDate birthday){
-        super(name, number, birthday);
-    }
+  // constructor
+  public SalaryEmployee(String name, int number, MyDate birthday) {
+    super(name, number, birthday);
+  }
 
-    public SalaryEmployee(String name, int number, MyDate birthday, double monthlySalary){
-        super(name, number, birthday);
-        this.monthlySalary = monthlySalary;
-    }
+  public SalaryEmployee(String name, int number, MyDate birthday, double monthlySalary) {
+    super(name, number, birthday);
+    this.monthlySalary = monthlySalary;
+  }
 
-    // getter, setter
-    public double getMonthlySalary() {
-        return monthlySalary;
-    }
+  // getter, setter
+  public double getMonthlySalary() {
+    return monthlySalary;
+  }
 
-    public void setMonthlySalary(double monthlySalary) {
-        this.monthlySalary = monthlySalary;
-    }
+  public void setMonthlySalary(double monthlySalary) {
+    this.monthlySalary = monthlySalary;
+  }
 
-    // method
-    @Override
-    public double earnings() {
-        return monthlySalary;
-    }
+  // method
+  @Override
+  public double earnings() {
+    return monthlySalary;
+  }
 
-    public String toString(){
-        // NOTE : call super class' toString method via :  super.toString()
-        return "SalaryEmployee : " + super.toString();
-    }
+  public String toString() {
+    // NOTE : call super class' toString method via :  super.toString()
+    return "SalaryEmployee : " + super.toString();
+  }
 }

@@ -5,6 +5,5 @@ package Advances.Generic.dao;
 import Advances.Generic.Student;
 
 /** extends from DAO (for Student class) */
-
-public class StudentDAO extends DAO<Student>{ // can ONLY be used for one table
+public class StudentDAO extends DAO<Student> { // can ONLY be used for one table
 }

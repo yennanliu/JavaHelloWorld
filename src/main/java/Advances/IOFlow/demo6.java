@@ -3,9 +3,8 @@ package Advances.IOFlow;
 // https://www.youtube.com/watch?v=Rxm-W6-AK1c&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=593
 // https://www.youtube.com/watch?v=l7xOFkOQS7w&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=594
 
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
+import org.junit.jupiter.api.Test;
 
 /** Buffered IO flow demo1
  *

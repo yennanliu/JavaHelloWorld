@@ -47,10 +47,9 @@ package Advances.ComparableComparator;
  *      -> Comparator can only being used in that temperate place
  */
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.Comparator;
+import org.junit.jupiter.api.Test;
 
 public class demo1 {
     @Test

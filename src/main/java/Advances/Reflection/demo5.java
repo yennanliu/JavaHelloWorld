@@ -3,11 +3,10 @@ package Advances.Reflection;
 // https://www.youtube.com/watch?v=Exf2IxnQL3E&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=650
 // https://www.youtube.com/watch?v=BlwTpjp-9Pw&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=650
 
-import org.junit.jupiter.api.Test;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import org.junit.jupiter.api.Test;
 
 /**
  *   Reflection demo5 : get method (running class instance)

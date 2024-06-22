@@ -6,40 +6,37 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- *   Method override
+ * Method override
  *
- *   1) exception from overwritten method in subclass
- *      should be "smaller" than the exception from
- *      method in superclass
+ * <p>1) exception from overwritten method in subclass should be "smaller" than the exception from
+ * method in superclass
  */
-
 public class OverrideTest {
 
-    public static void main(String[] args) {
-        // run
-        OverrideTest test = new OverrideTest();
-        test.display(new SubClass());
-    }
+  public static void main(String[] args) {
+    // run
+    OverrideTest test = new OverrideTest();
+    test.display(new SubClass());
+  }
 
-    public void display(SuperClass s){
-        try {
-            s.method();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+  public void display(SuperClass s) {
+    try {
+      s.method();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+  }
 }
 
-class SuperClass{
+class SuperClass {
 
-    public void method() throws IOException {
-
-    }
+  public void method() throws IOException {}
 }
 
 class SubClass extends SuperClass {
-    @Override
-    public void method() throws FileNotFoundException { // FileNotFoundException is "smaller" than IOException. So it's OK
-
-    }
+  @Override
+  public void method()
+      throws
+          FileNotFoundException { // FileNotFoundException is "smaller" than IOException. So it's OK
+  }
 }

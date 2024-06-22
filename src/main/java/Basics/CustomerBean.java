@@ -7,28 +7,27 @@ package Basics;
  */
 
 public class CustomerBean {
-    // attr
-    private int id;
-    private String name;
+  // attr
+  private int id;
+  private String name;
 
-    // constructor
-    public CustomerBean(){
-    }
+  // constructor
+  public CustomerBean() {}
 
-    // getter, setter
-    public void setId(int i){
-        id = i;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public int getId(){
-        return id;
-    }
+  // getter, setter
+  public void setId(int i) {
+    id = i;
+  }
 
-    public void setName(String n){
-        name = n;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getName(){
-        return name;
-    }
+  public void setName(String n) {
+    name = n;
+  }
 }

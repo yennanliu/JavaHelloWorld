@@ -2,8 +2,8 @@ package Basics;
 
 // https://stackoverflow.com/questions/14743516/create-map-in-java
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashMapDemo1 {
     public static void main(String[] args) {

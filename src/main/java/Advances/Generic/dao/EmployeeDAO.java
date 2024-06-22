@@ -5,6 +5,5 @@ package Advances.Generic.dao;
 import Advances.Generic.Employee;
 
 /** extends from DAO (for Employee class) */
-
 public class EmployeeDAO extends DAO<Employee> { // can ONLY be used for one table
 }

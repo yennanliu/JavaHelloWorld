@@ -2,9 +2,8 @@ package Advances.IOFlow;
 
 // https://www.youtube.com/watch?v=p-hBYK_NMXo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=588
 
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
+import org.junit.jupiter.api.Test;
 
 /** FileWriter demo */
 

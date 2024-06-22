@@ -5,7 +5,6 @@ package Advances.Generic;
 /** test for dao2.DAO */
 
 import Advances.Generic.dao2.*;
-
 import java.util.List;
 
 public class demo9 {

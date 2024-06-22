@@ -6,9 +6,8 @@ package Advances.Generic;
 /** demo3 : generic class, generic interface, generic method */
 
 import Advances.CollectionDemo.Person;
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
+import org.junit.jupiter.api.Test;
 
 public class demo3 {
     @Test

@@ -1,8 +1,7 @@
 package dev.bean;
 
-import org.junit.jupiter.api.Test;
-
 import java.math.BigDecimal;
+import org.junit.jupiter.api.Test;
 
 public class BigDecimalTest {
 

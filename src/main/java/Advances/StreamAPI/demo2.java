@@ -6,13 +6,11 @@ package Advances.StreamAPI;
 
 import Advances.Lambda.demo4.Employee;
 import Advances.Lambda.demo4.EmployeeData;
-
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+import org.junit.jupiter.api.Test;
 
 /**
  *  Stream API demo 2
@@ -25,6 +23,16 @@ import java.util.stream.Stream;
  */
 
 public class demo2 {
+
+    /** transform char in string to stream */
+    public static Stream<Character> fromStringToStream(String str){
+
+        ArrayList<Character> list = new ArrayList<>();
+        for(Character c : str.toCharArray()){
+            list.add(c);
+        }
+        return list.stream();
+    }
 
     /**
      *  demo 1 :
@@ -110,16 +118,6 @@ public class demo2 {
 
         Stream<Character> characterStream = list.stream().flatMap(demo2::fromStringToStream);
         characterStream.forEach(System.out::println);
-    }
-
-    /** transform char in string to stream */
-    public static Stream<Character> fromStringToStream(String str){
-
-        ArrayList<Character> list = new ArrayList<>();
-        for(Character c : str.toCharArray()){
-            list.add(c);
-        }
-        return list.stream();
     }
 
     /**

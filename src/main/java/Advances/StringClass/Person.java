@@ -4,17 +4,15 @@ package Advances.StringClass;
 
 public class Person {
 
-    // attr
-    String name;
-    int age;
+  // attr
+  String name;
+  int age;
 
-    // constructor
-    Person(){
+  // constructor
+  Person() {}
 
-    }
-
-    Person(String name, int age){
-        this.name = name;
-        this.age = age;
-    }
+  Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
 }

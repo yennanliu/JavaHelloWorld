@@ -3,35 +3,31 @@ package Basics.Extends_demo2;
 // https://www.youtube.com/watch?v=i4HGpPEWN2k&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=266
 
 /**
- * Note : Kids is a java bean, since it meets
- *   1) is a public class
- *   2) has a non-input constructor
- *   3) has getter, setter
+ * Note : Kids is a java bean, since it meets 1) is a public class 2) has a non-input constructor 3)
+ * has getter, setter
  */
+public class Kids extends ManKind {
+  // attr
+  private int yearsOld;
 
-public class Kids extends ManKind{
-    // attr
-    private int yearsOld;
+  // constructor
+  public Kids() {}
 
-    // method
-    public void printAge(){
-        System.out.println("hii i am " + yearsOld + " years old !");
-    }
+  public Kids(int yearsOld) {
+    this.yearsOld = yearsOld;
+  }
 
-    // constructor
-    public Kids() {
-    }
+  // method
+  public void printAge() {
+    System.out.println("hii i am " + yearsOld + " years old !");
+  }
 
-    public Kids(int yearsOld) {
-        this.yearsOld = yearsOld;
-    }
+  // getter, setter
+  public int getYearsOld() {
+    return yearsOld;
+  }
 
-    // getter, setter
-    public int getYearsOld() {
-        return yearsOld;
-    }
-
-    public void setYearsOld(int yearsOld) {
-        this.yearsOld = yearsOld;
-    }
+  public void setYearsOld(int yearsOld) {
+    this.yearsOld = yearsOld;
+  }
 }

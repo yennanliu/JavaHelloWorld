@@ -3,7 +3,6 @@ package Basics;
 /** for loop demo 2 : ArrayList */
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 
 public class forLoop2 {

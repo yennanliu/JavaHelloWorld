@@ -3,9 +3,8 @@ package Advances.IOFlow2;
 // https://www.youtube.com/watch?v=ITikQNDAYEc&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=599
 // https://www.youtube.com/watch?v=JE-Vpvvdzr0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=600
 
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
+import org.junit.jupiter.api.Test;
 
 /**
  *  IOFlow2 demo1 : Transformation flow :

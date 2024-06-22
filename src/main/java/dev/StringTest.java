@@ -1,13 +1,8 @@
 package dev;
 
 import java.text.DecimalFormat;
-import java.util.List;
-import java.util.stream.Collectors;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-
+import org.junit.jupiter.api.Test;
 
 public class StringTest {
     public static void main(String[] args) {

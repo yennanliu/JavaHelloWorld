@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Test;
 /** test NameListService class */
 public class NameListServiceTest {
 
-    @Test
-    public void getAllEmployees(){
-        NameListService service = new NameListService();
-        Employee[] employees =  service.getAllEmployees();
-        for (int i=0; i < employees.length; i++){
-            System.out.println(employees[i]);
-        }
+  @Test
+  public void getAllEmployees() {
+    NameListService service = new NameListService();
+    Employee[] employees = service.getAllEmployees();
+    for (int i = 0; i < employees.length; i++) {
+      System.out.println(employees[i]);
     }
+  }
 }

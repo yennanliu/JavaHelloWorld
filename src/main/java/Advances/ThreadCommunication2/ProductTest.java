@@ -2,7 +2,6 @@ package Advances.ThreadCommunication2;
 
 // https://www.youtube.com/watch?v=97HVF6GT0AI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=441
 
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  *  Thread Communication example 2 :  producer-consumer question

@@ -4,46 +4,46 @@ package Basics.AbstractDemo4;
 
 public class HourlyEmployee extends Employee {
 
-    // attr
-    private int wage; // hourly salary
-    private int hour;
+  // attr
+  private int wage; // hourly salary
+  private int hour;
 
-    // constructor
-    public HourlyEmployee(String name, int number, MyDate birthday) {
-        super(name, number, birthday);
-    }
+  // constructor
+  public HourlyEmployee(String name, int number, MyDate birthday) {
+    super(name, number, birthday);
+  }
 
-    public HourlyEmployee(String name, int number, MyDate birthday, int wage, int hour) {
-        super(name, number, birthday);
-        this.wage = wage;
-        this.hour = hour;
-    }
+  public HourlyEmployee(String name, int number, MyDate birthday, int wage, int hour) {
+    super(name, number, birthday);
+    this.wage = wage;
+    this.hour = hour;
+  }
 
-    // getter, setter
-    public int getWage() {
-        return wage;
-    }
+  // getter, setter
+  public int getWage() {
+    return wage;
+  }
 
-    public int getHour() {
-        return hour;
-    }
+  public void setWage(int wage) {
+    this.wage = wage;
+  }
 
-    public void setWage(int wage) {
-        this.wage = wage;
-    }
+  public int getHour() {
+    return hour;
+  }
 
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
+  public void setHour(int hour) {
+    this.hour = hour;
+  }
 
-    // method
-    @Override
-    public double earnings() {
-        return wage * hour;
-    }
+  // method
+  @Override
+  public double earnings() {
+    return wage * hour;
+  }
 
-    public String toString(){
-        // NOTE : call super class' toString method via :  super.toString()
-        return "HourlyEmployee : " + super.toString();
-    }
+  public String toString() {
+    // NOTE : call super class' toString method via :  super.toString()
+    return "HourlyEmployee : " + super.toString();
+  }
 }

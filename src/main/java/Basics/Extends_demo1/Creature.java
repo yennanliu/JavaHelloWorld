@@ -4,7 +4,7 @@ package Basics.Extends_demo1;
 
 public class Creature {
 
-    public void breath(){
-        System.out.println("i am breath !!!");
-    }
+  public void breath() {
+    System.out.println("i am breath !!!");
+  }
 }

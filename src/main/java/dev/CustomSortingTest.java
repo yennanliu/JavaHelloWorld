@@ -2,12 +2,11 @@ package dev;
 
 import dev.bean.Data;
 import dev.bean.Data2;
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 /**
  *

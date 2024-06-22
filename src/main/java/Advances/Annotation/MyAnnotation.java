@@ -4,5 +4,5 @@ package Advances.Annotation;
 
 public @interface MyAnnotation {
 
-    String value() default "hello";
+  String value() default "hello";
 }

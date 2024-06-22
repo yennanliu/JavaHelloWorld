@@ -27,11 +27,10 @@ package Advances.CollectionDemo;
  *
  */
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeSet;
+import org.junit.jupiter.api.Test;
 
 public class TreeSetDemo1 {
     @Test

@@ -4,24 +4,24 @@ package Basics;
 
 // example : BinarySearch, sort, ....
 
-
 public class Overloading1 {
-    public static void main(String[] args){
-        // run
-        OverloadingClass1 overload_c = new OverloadingClass1();
-        System.out.println(overload_c.myPrint("yayaya"));
-        System.out.println(overload_c.myPrint(100));
-    }
+  public static void main(String[] args) {
+    // run
+    OverloadingClass1 overload_c = new OverloadingClass1();
+    System.out.println(overload_c.myPrint("yayaya"));
+    System.out.println(overload_c.myPrint(100));
+  }
 }
 
+class OverloadingClass1 {
 
-class OverloadingClass1{
+  public String myPrint(String s) {
+    return "this is String print !!! " + s;
+  }
+  ;
 
-    public String myPrint(String s) {
-        return  "this is String print !!! " + s;
-    };
-
-    public String myPrint(Integer i) {
-        return  "this is Integer print !!!  " + i.toString();
-    };
+  public String myPrint(Integer i) {
+    return "this is Integer print !!!  " + i.toString();
+  }
+  ;
 }

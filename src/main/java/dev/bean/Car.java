@@ -2,56 +2,49 @@ package dev.bean;
 
 public class Car {
 
-    private int id;
-    private String brand;
-    private double price;
+  private int id;
+  private String brand;
+  private double price;
 
-    public Car(){
+  public Car() {}
 
-    }
+  public Car(int id, String brand, double price) {
+    this.id = id;
+    this.brand = brand;
+    this.price = price;
+  }
 
-    public Car(int id, String brand, double price) {
-        this.id = id;
-        this.brand = brand;
-        this.price = price;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public String getBrand() {
+    return brand;
+  }
 
-    public String getBrand() {
-        return brand;
-    }
+  public void setBrand(String brand) {
+    this.brand = brand;
+  }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+  public double getPrice() {
+    return price;
+  }
 
-    public double getPrice() {
-        return price;
-    }
+  public void setPrice(double price) {
+    this.price = price;
+  }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+  public String getIdAndBrand() {
 
-    public String getIdAndBrand() {
+    return id + "-" + brand;
+  }
 
-        return id + "-" + brand;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
-                ", price=" + price +
-                '}';
-    }
-
+  @Override
+  public String toString() {
+    return "Car{" + "id=" + id + ", brand='" + brand + '\'' + ", price=" + price + '}';
+  }
 }

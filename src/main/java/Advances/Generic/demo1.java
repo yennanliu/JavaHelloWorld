@@ -28,9 +28,8 @@ package Advances.Generic;
  *     5) generic type CAN'T be used in exception class
  */
 
-import org.junit.jupiter.api.Test;
-
 import java.util.*;
+import org.junit.jupiter.api.Test;
 
 public class demo1 {
     @Test

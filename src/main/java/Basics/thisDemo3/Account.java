@@ -15,29 +15,29 @@ public class Account {
         this.annualInterestRate = annualInterestRate;
     }
 
+    public int getId() {
+        return id;
+    }
+
     // getter, setter
     public void setId(int id) {
         this.id = id;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public void setAnnualInterestRate(double annualInterestRate) {
-        this.annualInterestRate = annualInterestRate;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public double getBalance() {
         return balance;
     }
 
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public double getAnnualInterestRate() {
         return annualInterestRate;
+    }
+
+    public void setAnnualInterestRate(double annualInterestRate) {
+        this.annualInterestRate = annualInterestRate;
     }
 
     // method

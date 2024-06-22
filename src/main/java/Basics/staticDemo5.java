@@ -2,7 +2,6 @@ package Basics;
 
 // https://www.youtube.com/watch?v=U_ho3BRDwsE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=321
 
-import java.io.DataOutput;
 
 /**
  *   static attr can be shared by ALL instances
@@ -32,13 +31,12 @@ public class staticDemo5 {
 }
 
 class Circle{
-    // attr
-    private double radius;
-    private int id;
-
     // static attr
     private static int total; // how many instances created
     private static int init = 1001; // multiple instances share this attr
+    // attr
+    private double radius;
+    private int id;
 
     // constructor
     public Circle(){
@@ -63,26 +61,26 @@ class Circle{
         this.radius = radius;
     }
 
-    // getter, setter
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    /** Note : getter for total is static method (since total is static attr) */
+    public static int getTotal() {
+        return total;
     }
 
     public double getRadius() {
         return radius;
     }
 
+    // getter, setter
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     public int getId() {
         return id;
     }
 
-    /** Note : getter for total is static method (since total is static attr) */
-    public static int getTotal() {
-        return total;
+    public void setId(int id) {
+        this.id = id;
     }
 
     // method

@@ -14,6 +14,7 @@ public class ThreadSynchronizeed {
 
 class SalesThread3 implements Runnable {
   private int tickets = 20;
+
   public void run() {
     while (true) {
       saleTicket();
@@ -25,10 +26,11 @@ class SalesThread3 implements Runnable {
     if (tickets > 0) {
       try {
         Thread.sleep(100);
-      } catch(InterruptedException e) {
+      } catch (InterruptedException e) {
         e.printStackTrace();
       }
-      System.out.println(Thread.currentThread().getName() + " is selling the " + tickets--+"ticket");
+      System.out.println(
+          Thread.currentThread().getName() + " is selling the " + tickets-- + "ticket");
     }
   }
 }

@@ -4,29 +4,29 @@ package Basics.polymorphism_6;
 
 public class Circle extends GeometricObj {
 
-    // attr
-    private double radius;
+  // attr
+  private double radius;
 
-    // constructor
-    // this constructor is necessary,
-    // since there is no such constructor (Circle) in superclass (GeometricObj)
-    public Circle(double radius, String color, double weight) {
-        super(color, weight);
-        this.radius = radius;
-    }
+  // constructor
+  // this constructor is necessary,
+  // since there is no such constructor (Circle) in superclass (GeometricObj)
+  public Circle(double radius, String color, double weight) {
+    super(color, weight);
+    this.radius = radius;
+  }
 
-    // getter, setter
-    public double getRadius() {
-        return radius;
-    }
+  // getter, setter
+  public double getRadius() {
+    return radius;
+  }
 
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
+  public void setRadius(double radius) {
+    this.radius = radius;
+  }
 
-    // method
-    @Override
-    public double findArea(){
-        return 3.14 * radius * radius;
-    }
+  // method
+  @Override
+  public double findArea() {
+    return 3.14 * radius * radius;
+  }
 }

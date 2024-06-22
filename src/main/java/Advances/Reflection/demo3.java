@@ -2,9 +2,8 @@ package Advances.Reflection;
 
 // https://www.youtube.com/watch?v=wXRHrDoR6lI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=647
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Random;
+import org.junit.jupiter.api.Test;
 
 /**
  *   Reflection demo3  :  reflection dynamic

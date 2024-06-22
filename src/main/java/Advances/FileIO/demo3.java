@@ -2,12 +2,25 @@ package Advances.FileIO;
 
 // https://www.youtube.com/watch?v=qGibCZce_bI&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=579
 
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.io.IOException;
+import org.junit.jupiter.api.Test;
 
 public class demo3 {
+
+    // help func
+    public static void printSubFile(File dir){
+        // print sub files
+        File[] subfiles = dir.listFiles();
+
+        for (File f: subfiles){
+            if (f.isDirectory()){  // if directory
+                printSubFile(f);
+            }else{ // if file
+              System.out.println(f.getAbsolutePath());
+            }
+        }
+    }
 
     @Test
     public void test1() throws IOException {
@@ -31,20 +44,6 @@ public class demo3 {
         // if we want to delete path, there MUST be NO files, sub paths under it
         File file = new File("hello2.txt");
         System.out.println(file.delete());
-    }
-
-    // help func
-    public static void printSubFile(File dir){
-        // print sub files
-        File[] subfiles = dir.listFiles();
-
-        for (File f: subfiles){
-            if (f.isDirectory()){  // if directory
-                printSubFile(f);
-            }else{ // if file
-              System.out.println(f.getAbsolutePath());
-            }
-        }
     }
 
     public void deleteDirectory(File file){

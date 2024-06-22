@@ -12,10 +12,9 @@ package Advances.StringTransform;
  *   3) String <--> byte[]
  */
 
-import org.junit.jupiter.api.Test;
-
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
+import org.junit.jupiter.api.Test;
 
 public class demo1 {
 

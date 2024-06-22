@@ -4,50 +4,56 @@ package Basics.AbstractDemo4;
 
 public abstract class Employee {
 
-    //attr
-    private String name;
-    private int number;
-    private MyDate birthday;
+  // attr
+  private String name;
+  private int number;
+  private MyDate birthday;
 
-    // constructor
-    public Employee(String name, int number, MyDate birthday){
-        super();
-        this.name = name;
-        this.number = number;
-        this.birthday = birthday;
-    }
+  // constructor
+  public Employee(String name, int number, MyDate birthday) {
+    super();
+    this.name = name;
+    this.number = number;
+    this.birthday = birthday;
+  }
 
-    // getter, setter
-    public String getName() {
-        return name;
-    }
+  // getter, setter
+  public String getName() {
+    return name;
+  }
 
-    public int getNumber() {
-        return number;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public MyDate getBirthday() {
-        return birthday;
-    }
+  public int getNumber() {
+    return number;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setNumber(int number) {
+    this.number = number;
+  }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
+  public MyDate getBirthday() {
+    return birthday;
+  }
 
-    public void setBirthday(MyDate birthday) {
-        this.birthday = birthday;
-    }
+  public void setBirthday(MyDate birthday) {
+    this.birthday = birthday;
+  }
 
-    // method
-    public abstract double earnings();
+  // method
+  public abstract double earnings();
 
-    @Override
-    public String toString() {
-        // need to call birthday.toDateString() for getting its content
-        return "name='" + name + '\'' + ", number=" + number + ", birthday : " + birthday.toDateString();
-    }
+  @Override
+  public String toString() {
+    // need to call birthday.toDateString() for getting its content
+    return "name='"
+        + name
+        + '\''
+        + ", number="
+        + number
+        + ", birthday : "
+        + birthday.toDateString();
+  }
 }

@@ -6,16 +6,14 @@ package Basics.EmployeeCRM.team.service;
 import javax.print.attribute.standard.MediaSize;
 
 /**
- *  class defines employee status
+ * class defines employee status
  *
- *  NOTE : We can also use `Enum Class` for implementation here
- *  ref :
- *      https://www.programiz.com/java-programming/enums
- *      https://www.twblogs.net/a/5e8ac450bd9eee61ab2feb56
- *
+ * <p>NOTE : We can also use `Enum Class` for implementation here ref :
+ * https://www.programiz.com/java-programming/enums
+ * https://www.twblogs.net/a/5e8ac450bd9eee61ab2feb56
  */
 
-//public class Status {
+// public class Status {
 //    // attr
 //    public String NAME;
 //
@@ -41,9 +39,11 @@ import javax.print.attribute.standard.MediaSize;
 //    public String toString() {
 //        return NAME;
 //    }
-//}
+// }
 
 // update : 20211204, create Enumeration (枚舉類) via enum
-public enum Status{
-    FREE,BUSY,VOCATION;
+public enum Status {
+  FREE,
+  BUSY,
+  VOCATION;
 }

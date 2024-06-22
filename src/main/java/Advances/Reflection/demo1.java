@@ -8,14 +8,11 @@ package Advances.Reflection;
 // https://www.youtube.com/watch?v=mH0oEYLXk-U&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=641
 // https://www.youtube.com/watch?v=gqTCsLOIVRk&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=642
 
-import Advances.Generic.SubOrder;
-import org.junit.jupiter.api.Test;
-
 import java.lang.annotation.ElementType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import org.junit.jupiter.api.Test;
 
 /**
  *  Reflection demo 1 : basic

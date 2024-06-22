@@ -4,23 +4,24 @@ package Basics.ControllAccess_1_1;
 
 import Basics.ControllAccess_1.Order;
 
-public class subOrder extends Order{
+public class subOrder extends Order {
 
-    public void method(){
-        orderProtected = 1;
-        orderPublic = 2;
+  public void method() {
+    orderProtected = 1;
+    orderPublic = 2;
 
-        methodProtected();
-        methodPublic();
+    methodProtected();
+    methodPublic();
 
-        /** For subclass In different package
-         *  -> We CAN NOT use its methods with default, private, and "missing" control access
-         */
+    /**
+     * For subclass In different package -> We CAN NOT use its methods with default, private, and
+     * "missing" control access
+     */
 
-        //orderDefault;
-        //orderPrivate ;
+    // orderDefault;
+    // orderPrivate ;
 
-        //methodDefault();
-        //methodPrivate();
-    }
+    // methodDefault();
+    // methodPrivate();
+  }
 }

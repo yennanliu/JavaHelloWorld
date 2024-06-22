@@ -2,9 +2,8 @@ package Advances.IOFlow3;
 
 // https://www.youtube.com/watch?v=YwR1vvjO3Xo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=604
 
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
+import org.junit.jupiter.api.Test;
 
 /**
  *  IOFlow3 demo 2: DataInputStream, DataOutputStream

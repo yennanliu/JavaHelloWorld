@@ -1,4 +1,3 @@
 package dev;
 
-public class StreamTest2 {
-}
+public class StreamTest2 {}

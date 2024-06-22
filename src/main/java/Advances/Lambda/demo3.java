@@ -2,13 +2,12 @@ package Advances.Lambda;
 
 // https://www.youtube.com/watch?v=Lzq9O7_p9O0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=671
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import org.junit.jupiter.api.Test;
 
 /**
  *  Lambda expression demo 3

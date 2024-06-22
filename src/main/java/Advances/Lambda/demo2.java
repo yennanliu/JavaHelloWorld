@@ -4,11 +4,10 @@ package Advances.Lambda;
 // https://www.youtube.com/watch?v=zBCTy62MTfU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=669
 // https://www.youtube.com/watch?v=bI2bXJs28Ok&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=670
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.function.Consumer;
+import org.junit.jupiter.api.Test;
 
 /**
  *  Lambda expression demo 2

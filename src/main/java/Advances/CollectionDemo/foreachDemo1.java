@@ -4,11 +4,9 @@ package Advances.CollectionDemo;
 
 /** foreach demo 1 */
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
+import org.junit.jupiter.api.Test;
 
 /**
  *  foreach : for looping over collection, array
