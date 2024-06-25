@@ -27,6 +27,6 @@ public class Lazy {
 
     MyClass2 myClass2_1 = MyClass2.getInstance();
     MyClass2 myClass2_2 = MyClass2.getInstance();
-    System.out.println(myClass2_1 == myClass2_2);
+    System.out.println(myClass2_1 == myClass2_2); // true
   }
 }

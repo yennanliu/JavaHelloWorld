@@ -663,9 +663,10 @@
             - thread as an allocation & execution unit, each thread has its independent running thread and counter (pc)
             - Multiple threads in the same process CAN USE `same storage unit / memory space ..` -> they allocate instance from the same `heap`
                 -> but such memory sharing mechanisms may cause `thready safety` concerns.
-        - `Parallelism (並行) VS Concurrency (並發)`
+        - `parallel (並行) VS Concurrency (並發)`
             - Parallelism : multiple CPUs run different tasks. e.g. multiple people do different stuffs
             - Concurrency : One CPU does different tasks (jump between tasks). e.g. one person does different stuffs
+            - https://github.com/yennanliu/CS_basics/blob/master/doc/faq/java/java_multi_thread.md
     - Process
     - Thread
         - A `thread` is a thread of execution in a program. The JVM allows an application to have multiple threads of execution running concurrently.
