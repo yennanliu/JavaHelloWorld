@@ -756,6 +756,9 @@
             - [ThreadSynchronizeed](./src/main/java/thread/ThreadSynchronizeed.java)
             - [LockThread](./src/main/java/thread/ThreadLock.java)
 
+        - Lock
+            - `synchronized`, `ReentrantLock` are `pessimistic` lock
+
     - Generic type
         - [demo 1](./src/main/java/Advances/Generic/demo1.java) : Generic intro
         - [demo 2](./src/main/java/Advances/Generic/demo2.java) : Generic type with custom class demo
