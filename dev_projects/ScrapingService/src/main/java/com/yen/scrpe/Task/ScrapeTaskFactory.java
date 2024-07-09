@@ -35,12 +35,18 @@ public class ScrapeTaskFactory {
   // method
   public void run() throws IOException {
 
-    switch (this.jobName) {
-      case "PokemonCollectTask":
-        // pokemonCollectTask.run(LIMIT);
-        this.scrapeTask.run(this.limit);
-      default:
-        throw new RuntimeException("Not a valid task name :" + this.scrapeTask.toString());
-    }
+    //    this.jobName = "PokemonCollectTask";
+    //    System.out.println("this.jobName = " + this.jobName);
+
+    this.scrapeTask.run(this.limit);
+
+    //    switch (this.jobName) {
+    //      case "PokemonCollectTask":
+    //        // pokemonCollectTask.run(LIMIT);
+    //        this.scrapeTask.run(this.limit);
+    //      default:
+    //        throw new RuntimeException("Not a valid task name :" + this.scrapeTask.toString());
+    //    }
   }
+
 }

@@ -2,8 +2,9 @@ package com.yen.scrpe;
 
 import com.yen.scrpe.Task.PokemonCollectTask;
 import com.yen.scrpe.Task.ScrapeTaskFactory;
+import com.yen.scrpe.Task.ScrapeTaskFactory2;
 import com.yen.scrpe.service.ScrapeService;
-import com.yen.scrpe.service.ScrapeServiceMultiThread;
+import com.yen.scrpe.service.ScrapeServiceMultiThreadV2Gpt;
 
 import java.io.IOException;
 
@@ -18,18 +19,28 @@ public class ScrappingApplication {
     Long start = System.currentTimeMillis();
 
     // to limit the number to scrape to 5
-    int LIMIT = 3; // 50;
+    int LIMIT = 10; // 50;
 
-    //        ScrapeService scrapeService = new ScrapeService();
-    //        PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
-    //        pokemonCollectTask.run(LIMIT);
+    /** V1 : single thread (original code ) */
+//    ScrapeService scrapeService = new ScrapeService();
+//    PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
+//    pokemonCollectTask.run(LIMIT);
+//
+//    ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, pokemonCollectTask, LIMIT);
+//    scrapeTaskFactory.run();
 
-    //        ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService,
-    // PokemonCollectTask, LIMIT);
-    //        scrapeTaskFactory.run();
 
-    ScrapeServiceMultiThread scrapeServiceMultiThread = new ScrapeServiceMultiThread();
-    scrapeServiceMultiThread.testRun();
+      /** V2 : multi thread (gpt) */
+      ScrapeServiceMultiThreadV2Gpt scrapeService = new ScrapeServiceMultiThreadV2Gpt();
+      PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
+      pokemonCollectTask.run(LIMIT);
+
+    ScrapeTaskFactory2 scrapeTaskFactory = new ScrapeTaskFactory2(scrapeService, pokemonCollectTask, LIMIT);
+      scrapeTaskFactory.run();
+
+      // ScrapeServiceMultiThread scrapeServiceMultiThread = new
+    // ScrapeServiceMultiThread();
+    //            scrapeServiceMultiThread.testRun();
 
     //        System.out.println("pokemonProducts.size() = " +
     // pokemonCollectTask.getPokemonProducts().size());

@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class ScrapeServiceMultiThread implements BaseScrapeService {
+public class ScrapeServiceMultiThreadV1 implements BaseScrapeService {
 
   @Override
   public void scrapeProductPage(

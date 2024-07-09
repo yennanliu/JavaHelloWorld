@@ -33,8 +33,10 @@ public class PokemonCollectTask implements BaseScrapeTask {
     this.pokemonProducts = new ArrayList<>();
     this.pagesDiscovered = new HashSet<>();
     this.pagesToScrape = new ArrayList<>();
-    // initializing the scraping queue with the
+
+    // initializing the scraping queue
     this.pagesToScrape.add("https://scrapeme.live/shop/page/1/");
+    this.pagesToScrape.add("https://scrapeme.live/shop/page/2/");
   }
 
   // getter, setter

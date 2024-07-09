@@ -42,6 +42,12 @@ public class ScrapeService implements BaseScrapeService {
 
     pagesToScrape = this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered);
     pokemonProducts = this.collectProductData(products, pokemonProducts);
+
+    //    System.out.println("pokemonProducts = ");
+    //    pokemonProducts.forEach(item -> {
+    //      System.out.println(item.getImage());
+    //    });
+
   }
 
   private Document prepareConnect(int pageNum) throws IOException {
