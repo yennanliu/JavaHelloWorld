@@ -80,5 +80,6 @@ public class ScrapeServiceMultiThread implements BaseScrapeService{
         // limit = 50, -----> Total duration = 27258
         System.out.println("-----> Total duration = " + ( end - start));
     }
+    
 
 }
