@@ -73,7 +73,7 @@ public class PokemonCollectTask implements BaseScrapeTask {
   }
 
   // method
-  public void run(int limit) throws IOException {
+  public void run(int limit) throws IOException, InterruptedException {
 
     int i = 0;
 

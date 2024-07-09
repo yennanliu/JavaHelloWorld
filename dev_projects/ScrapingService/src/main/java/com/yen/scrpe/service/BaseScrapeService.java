@@ -12,5 +12,5 @@ public interface BaseScrapeService {
       Set<String> pagesDiscovered,
       List<String> pagesToScrape,
       Integer i)
-      throws IOException;
+      throws IOException, InterruptedException;
 }

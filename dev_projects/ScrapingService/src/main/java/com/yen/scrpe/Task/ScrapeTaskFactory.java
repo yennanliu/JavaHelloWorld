@@ -33,7 +33,7 @@ public class ScrapeTaskFactory {
   }
 
   // method
-  public void run() throws IOException {
+  public void run() throws IOException, InterruptedException {
 
     //    this.jobName = "PokemonCollectTask";
     //    System.out.println("this.jobName = " + this.jobName);

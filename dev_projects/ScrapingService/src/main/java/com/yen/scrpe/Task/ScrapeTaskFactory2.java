@@ -36,5 +36,9 @@ public class ScrapeTaskFactory2 {
         for (PokemonProduct product : pokemonProducts) {
             System.out.println(product);
         }
+
+        // Ensure the executor service is shut down
+        scrapeService.shutdown();
     }
+
 }

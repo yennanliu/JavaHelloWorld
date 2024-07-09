@@ -4,5 +4,5 @@ import java.io.IOException;
 
 public interface BaseScrapeTask {
 
-  void run(int limit) throws IOException;
+  void run(int limit) throws IOException, InterruptedException;
 }

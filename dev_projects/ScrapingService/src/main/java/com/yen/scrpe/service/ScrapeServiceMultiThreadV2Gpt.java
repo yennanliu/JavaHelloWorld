@@ -9,6 +9,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -16,7 +17,7 @@ public class ScrapeServiceMultiThreadV2Gpt implements BaseScrapeService {
 
     // attr
     private final String BASE_URL = "https://scrapeme.live/shop";
-    static int THREAD_POOL_SIZE = 10;
+    static int THREAD_POOL_SIZE = 20;
     private final ExecutorService executorService = Executors.newFixedThreadPool(THREAD_POOL_SIZE); // Thread pool with 10 threads
 
     // constructor
@@ -28,13 +29,17 @@ public class ScrapeServiceMultiThreadV2Gpt implements BaseScrapeService {
             Set<String> pagesDiscovered,
             List<String> pagesToScrape,
             Integer i)
-            throws IOException {
+            throws IOException, InterruptedException {
 
         System.out.println(
                 ">>> (scrapeProductPage) pagesDiscovered = "
                         + pagesDiscovered
                         + " pagesToScrape = "
                         + pagesToScrape);
+
+
+        /** make sure main thread wait till all scrapping thread completed */
+        CountDownLatch latch = new CountDownLatch(pagesToScrape.size());
 
         while (!pagesToScrape.isEmpty()) {
             String url = pagesToScrape.remove(0);
@@ -46,6 +51,9 @@ public class ScrapeServiceMultiThreadV2Gpt implements BaseScrapeService {
                     scrapePage(url, pokemonProducts, pagesDiscovered, pagesToScrape, i);
                 } catch (IOException e) {
                     e.printStackTrace();
+                }finally{
+                    /** latch -= 1 */
+                    latch.countDown();
                 }
             });
         }
@@ -59,8 +67,11 @@ public class ScrapeServiceMultiThreadV2Gpt implements BaseScrapeService {
 //            }
 //        });
 
+        // Wait for all tasks to complete
+        latch.await();
+
         // Shutdown the executor service once all tasks are submitted
-        executorService.shutdown();
+        //executorService.shutdown();
     }
 
     private void scrapePage(String url, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, List<String> pagesToScrape, Integer i) throws IOException {
@@ -136,4 +147,9 @@ public class ScrapeServiceMultiThreadV2Gpt implements BaseScrapeService {
 
         return pokemonProduct;
     }
+
+    public void shutdown() {
+        executorService.shutdown();
+    }
+
 }
