@@ -1,20 +1,12 @@
 package threadDev;
 
-// https://docs.hazelcast.org/docs/1.9/manual/html/ch07s02.html
-
-import java.io.Serializable;
 import java.util.concurrent.*;
 
 public class Test1 {
-    public static void main(String[] args){
-
-        //ThreadPoolExecutor es = new ThreadPoolExecutor(10); //Hazelcast.getExecutorService();
-
-        final int _pcautoSchedulerPoolSize = 10;
-        final int KEEP_ALIVE_TIME = 60;
-
+    public static void main(String[] args) {
+        final int CORE_POOL_SIZE = 10;
         final int MAX_POOL_SIZE = 11;
-        final int CORE_POOL_SIZE = 10; // Example value, set according to your needs
+        final int KEEP_ALIVE_TIME = 60;
 
         ThreadPoolExecutor executor = new ThreadPoolExecutor(
                 CORE_POOL_SIZE,
@@ -22,68 +14,57 @@ public class Test1 {
                 KEEP_ALIVE_TIME,
                 TimeUnit.SECONDS,
                 new SynchronousQueue<>(),
-                new ThreadPoolExecutor.AbortPolicy() // DiscardPolicy
+                new ThreadPoolExecutor.AbortPolicy()
         );
 
-        //Test1 t1 = new Test1();
-        Fibonacci fibonacci = new Fibonacci();
-        System.out.println("executor submit task");
-
-        int N = 3;
-        Future future = executor.submit(() -> {
+        int N = 10;
+        Future<Integer> future = executor.submit(() -> {
             System.out.println("--> Thread name : " + Thread.currentThread().getName() + ", id = " + Thread.currentThread().getId());
-            //fibonacci.call(10);
-            new Fibonacci(N);
+            return new Fibonacci2(N).calculate();
         });
 
-        Fibonacci f = new Fibonacci(10);
-
-//        FutureTask<Integer> futureTask = new FutureTask<>(() -> {
-//            System.out.println("--> Thread name : " + Thread.currentThread().getName() + ", id = " + Thread.currentThread().getId());
-//            // Simulate some work, e.g., Fibonacci calculation
-//            //new Fibonacci(10); // Replace '10' with 'N' if 'N' is defined elsewhere
-//        });
-
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             executor.submit(() -> {
                 System.out.println("--> Thread name : " + Thread.currentThread().getName() + ", id = " + Thread.currentThread().getId());
-                new Fibonacci(2);
+                new Fibonacci2(2).calculate();
             });
         }
 
-
         try {
-
-//            while(!futureTask.isDone()){
-//                System.out.println("wait for futureTask done, sleep 3 milli sec");
-//                Thread.sleep(3);
-//            }
-//
-//            System.out.println("futureTask.isDone() = " + futureTask.isDone());
-//            System.out.println("futureTask result = " + futureTask.get());
-
-            //return future.get(3, TimeUnit.SECONDS);
-            System.out.println("future.isDone() = " + future.isDone());
-            System.out.println("future result = " + future.get(10, TimeUnit.SECONDS));
+            System.out.println("Waiting for future result...");
+            Integer result = future.get(10, TimeUnit.SECONDS);
+            System.out.println("Future result: " + result);
         } catch (TimeoutException e) {
-            System.out.println("future cancel");
+            System.out.println("Future task timed out, cancelling...");
             future.cancel(true);
         } catch (ExecutionException e) {
-            throw new RuntimeException(e);
+            System.out.println("Exception occurred during task execution");
+            e.printStackTrace();
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }finally{
-            System.out.println("executor shutdown");
+            System.out.println("Main thread interrupted");
+            e.printStackTrace();
+        } finally {
             executor.shutdown();
         }
 
-        System.out.println(123);
+        System.out.println("Main method finished");
+    }
+}
 
+class Fibonacci2 {
+    private final int N;
+
+    public Fibonacci2(int N) {
+        this.N = N;
     }
 
-    public void myFunc(){
-       System.out.println(123);
+    public int calculate() {
+        System.out.println("Fibonacci2 calculate, N = " + N);
+        return fibonacci(N);
     }
 
-
+    private int fibonacci(int n) {
+        if (n <= 1) return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
 }
