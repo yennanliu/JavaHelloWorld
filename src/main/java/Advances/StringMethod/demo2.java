@@ -23,7 +23,7 @@ public class demo2 {
 
     System.out.println("================");
 
-    System.out.println(str1.startsWith("h", 0));
+    System.out.println(str1.startsWith("h"));
     System.out.println(str1.startsWith("h", 1));
 
     System.out.println("================");
@@ -39,7 +39,7 @@ public class demo2 {
 
     System.out.println("================");
 
-    System.out.println(str1.indexOf("ll", 0)); // 2
+    System.out.println(str1.indexOf("ll")); // 2
     System.out.println(str1.indexOf("ll", 3)); // -1
 
     System.out.println("================");

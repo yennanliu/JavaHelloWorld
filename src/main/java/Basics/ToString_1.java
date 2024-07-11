@@ -23,12 +23,12 @@ public class ToString_1 {
     // example 1
     CustomerX cust1 = new CustomerX("JIM", 19);
     System.out.println(cust1); // Basics.CustomerX@33c7353a (before rewrite toString)
-    System.out.println(cust1.toString()); // Basics.CustomerX@33c7353a (before rewrite toString)
+    System.out.println(cust1); // Basics.CustomerX@33c7353a (before rewrite toString)
 
     System.out.println("=====================");
 
     // example 2
-    String str1 = new String("USA");
+    String str1 = "USA";
     System.out.println(str1);
 
     System.out.println("=====================");
@@ -36,14 +36,14 @@ public class ToString_1 {
     // example 3
     Date date1 = new Date(23534534534L);
     System.out.println(date1);
-    System.out.println(date1.toString());
+    System.out.println(date1);
   }
 }
 
 class CustomerX {
   // attr
-  private String name;
-  private int id;
+  private final String name;
+  private final int id;
 
   // constructor
   public CustomerX(String name, int id) {

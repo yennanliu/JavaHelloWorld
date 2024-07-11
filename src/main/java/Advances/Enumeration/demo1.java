@@ -64,6 +64,7 @@ class Season {
   // step 1) declare Season object's attr, and make it private final
   private final String seasonName;
   private final String seasonDesc;
+
   // constructor
   // step 2) make constructor private, and give attr value
   private Season(String seasonName, String seasonDesc) {

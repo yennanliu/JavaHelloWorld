@@ -33,7 +33,7 @@ package DesignPattern.Singleton;
 class MyClass {
 
   // attr
-  private static MyClass instance = new MyClass();
+  private static final MyClass instance = new MyClass();
 
   // constructor
   // below is WRONG

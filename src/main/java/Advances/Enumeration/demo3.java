@@ -37,7 +37,7 @@ enum Season2 implements Info {
   private final String seasonDesc;
 
   // constructor
-  private Season2(String seasonName, String seasonDesc) {
+  Season2(String seasonName, String seasonDesc) {
     this.seasonName = seasonName;
     this.seasonDesc = seasonDesc;
   }

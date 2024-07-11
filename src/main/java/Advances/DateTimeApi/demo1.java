@@ -7,9 +7,8 @@ package Advances.DateTimeApi;
  * DateTimeApi demo1 : DateTime API before JDK 8 1) System.currentTimeTimeMillis(); 2)
  * java.util.Date and its sub class java.sql.Date 3) SimpleDateFormat 4) Calendar
  */
-import org.junit.jupiter.api.Test;
-
 import java.util.Date;
+import org.junit.jupiter.api.Test;
 
 public class demo1 {
 
@@ -39,7 +38,7 @@ public class demo1 {
     // constructor1 : Date()
     //              -> create an Date() instance of CURRENT TIME
     Date date1 = new Date(); // java.util.Date
-    System.out.println(date1.toString()); // Sun Nov 07 08:21:46 CST 2021
+    System.out.println(date1); // Sun Nov 07 08:21:46 CST 2021
     System.out.println(date1.getTime()); // 1636244580892 (milliSecond)
 
     System.out.println("================");
@@ -47,7 +46,7 @@ public class demo1 {
     // constructor2 : Date(year, month, date, hr, min)  (this constructor is depreciated)
     //              -> create an Date() instance with year, month, date, hr, min
     Date date2 = new Date(2021, 11, 01, 01, 00);
-    System.out.println(date2.toString()); // Thu Dec 01 01:00:00 CST 3921
+    System.out.println(date2); // Thu Dec 01 01:00:00 CST 3921
     System.out.println(date2.getTime()); // 61596435600000 (milliSecond)
 
     System.out.println("================");
@@ -55,7 +54,7 @@ public class demo1 {
     // constructor3 : Date(someTimeStamp)
     //              -> create an Date() instance of `given timestamp`
     Date date3 = new Date(1636244580892L);
-    System.out.println(date3.toString()); // Sun Nov 07 08:23:00 CST 2021
+    System.out.println(date3); // Sun Nov 07 08:23:00 CST 2021
     System.out.println(date3.getTime()); // 1636244580892 (milliSecond)
   }
 
@@ -64,7 +63,7 @@ public class demo1 {
   public void test3() {
     // create a java.sql.Date object
     java.sql.Date sql_date1 = new java.sql.Date(1636244580892L);
-    System.out.println(sql_date1.toString()); // 2021-11-07
+    System.out.println(sql_date1); // 2021-11-07
     System.out.println(sql_date1.getTime()); // 1636244580892
 
     System.out.println("================");

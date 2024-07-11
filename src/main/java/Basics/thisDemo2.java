@@ -3,7 +3,7 @@ package Basics;
 // https://www.youtube.com/watch?v=Pmqp7R-J3ys&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=232
 
 public class thisDemo2 {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     // run
     Person_4 p1 = new Person_4();
     p1.setAge(100);

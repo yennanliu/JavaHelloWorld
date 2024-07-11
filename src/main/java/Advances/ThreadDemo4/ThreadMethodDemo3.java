@@ -33,7 +33,7 @@ class MyThread4_3 extends Thread {
         /**
          * `yield` will release current CPU execution ->(other thread may get the lock then run )
          */
-        this.yield();
+        yield();
       }
     }
   }

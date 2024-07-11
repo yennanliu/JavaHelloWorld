@@ -7,7 +7,7 @@ public class Account {
   private static double minBalance = 1.0;
   private static int init = 1001; // for id
   // attr
-  private int id;
+  private final int id;
   private String pwd = "0000"; // init with 0000
   private double balance;
 

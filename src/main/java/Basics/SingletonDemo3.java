@@ -32,7 +32,8 @@ class Order2 {
   // step 1) private constructor
   // constructor
   private Order2() {}
-            // stage)
+
+  // stage)
 
   // step 3) offer a public, static method that can return current class
   public static Order2 getInstance() {

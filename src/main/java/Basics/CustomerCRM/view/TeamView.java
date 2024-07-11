@@ -14,8 +14,8 @@ import Basics.EmployeeCRM.team.utils.TSUtility;
 public class TeamView {
 
   // attr
-  private NameListService listSvc = new NameListService();
-  private TeamService teamSvc = new TeamService();
+  private final NameListService listSvc = new NameListService();
+  private final TeamService teamSvc = new TeamService();
 
   /** entry point */
   public static void main(String[] args) {

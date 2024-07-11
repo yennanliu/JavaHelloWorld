@@ -2,9 +2,8 @@ package Advances.IOFlow;
 
 // https://www.youtube.com/watch?v=bksGRkSwEBM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=596
 
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
+import org.junit.jupiter.api.Test;
 
 /** File encrypt/decrypt demo */
 public class demo8 {

@@ -25,7 +25,7 @@ class Window implements Runnable {
   private int ticket = 100;
 
   // step 1) define/instantiate a lock
-  private ReentrantLock lock = new ReentrantLock();
+  private final ReentrantLock lock = new ReentrantLock();
 
   @Override
   public void run() {

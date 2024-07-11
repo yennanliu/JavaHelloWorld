@@ -3,11 +3,10 @@ package Advances.DateTimeApi;
 // https://www.youtube.com/watch?v=Zbr_gOK-3Go&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=480
 
 /** DateTimeApi demo3 : String -> java.sql.Date (transform "2021-01-01" to java.sql.Date) */
-import org.junit.jupiter.api.Test;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.junit.jupiter.api.Test;
 
 public class demo3 {
 

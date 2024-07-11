@@ -17,7 +17,7 @@ public class GetterSetterDemo2 {
   }
 
   public static class Encrypt {
-    private char[] cArray = new char[26];
+    private final char[] cArray = new char[26];
     private int a;
     private int b;
     private int n;

@@ -3,11 +3,10 @@ package Advances.CollectionDemo;
 // https://www.youtube.com/watch?v=HA7LSr6-xls&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=525
 
 /** Iterator demo 1 */
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import org.junit.jupiter.api.Test;
 
 /**
  * Iterator Demo1 -> collection iteration op, via Iterator interface
@@ -27,7 +26,7 @@ public class IteratorDemo1 {
     col1.add(456);
     col1.add(789);
     col1.add("yooooo");
-    col1.add(new String("kate"));
+    col1.add("kate");
     col1.add(new Person("kyo", 19));
 
     Iterator iterator = col1.iterator();

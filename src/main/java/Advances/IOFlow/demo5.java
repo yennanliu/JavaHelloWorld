@@ -2,9 +2,8 @@ package Advances.IOFlow;
 
 // https://www.youtube.com/watch?v=OsfY3Y5ZDGM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=592
 
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
+import org.junit.jupiter.api.Test;
 
 /** copyFile method demo (FileInputStream, FileOutputStream) demo */
 public class demo5 {

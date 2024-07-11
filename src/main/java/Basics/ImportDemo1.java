@@ -1,6 +1,5 @@
 package Basics;
 
-
 import java.util.Arrays;
 
 // https://www.youtube.com/watch?v=0ErGo2Dj7lM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=239
@@ -23,15 +22,15 @@ import java.util.Arrays;
  */
 
 public class ImportDemo1 {
-    public static void main(String[] args){
-        // run
-        String info = Arrays.toString(new int[] {1,2,3});
+  public static void main(String[] args) {
+    // run
+    String info = Arrays.toString(new int[] {1, 2, 3});
 
-        System.out.println("info = " + info);
+    System.out.println("info = " + info);
 
-        // use class/interface with same name but from different package
-        Basics.thisDemo5.Account acc1 = new Basics.thisDemo5.Account(1000);
+    // use class/interface with same name but from different package
+    Basics.thisDemo5.Account acc1 = new Basics.thisDemo5.Account(1000);
 
-        Basics.thisDemo3.Account acc2 = new Basics.thisDemo3.Account(1, 100, 0.1);
-    }
+    Basics.thisDemo3.Account acc2 = new Basics.thisDemo3.Account(1, 100, 0.1);
+  }
 }

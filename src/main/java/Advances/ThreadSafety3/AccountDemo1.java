@@ -61,7 +61,7 @@ class Account {
 class Customer extends Thread {
 
   // attr
-  private Account acct;
+  private final Account acct;
 
   // constructor
   public Customer(Account acct) {

@@ -2,7 +2,6 @@ package Basics;
 
 // plz compare with valueTransfer2
 
-import java.util.Arrays;
 
 public class valueTransfer1 {
   public static void main(String[] args) {
@@ -25,7 +24,7 @@ public class valueTransfer1 {
 
     System.out.println("--------------");
 
-    int arr[] = {1, 3};
+    int[] arr = {1, 3};
     test.swap_1_fixed(arr);
     for (int j = 0; j < arr.length; j++) {
       System.out.println(arr[j]);

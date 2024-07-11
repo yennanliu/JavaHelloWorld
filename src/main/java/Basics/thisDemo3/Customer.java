@@ -4,8 +4,8 @@ package Basics.thisDemo3;
 
 public class Customer {
   // attr
-  private String firstName;
-  private String lastName;
+  private final String firstName;
+  private final String lastName;
   private Account account; // from AccountDemo1.java (class type = Account)
 
   // constructor

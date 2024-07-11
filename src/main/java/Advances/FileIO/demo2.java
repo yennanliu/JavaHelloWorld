@@ -3,11 +3,10 @@ package Advances.FileIO;
 // https://www.youtube.com/watch?v=4d426JMTXhc&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=577
 // https://www.youtube.com/watch?v=mPFq9hUP74c&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=578
 
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import org.junit.jupiter.api.Test;
 
 /** File IO demo 2 : File common methods */
 public class demo2 {
@@ -49,9 +48,8 @@ public class demo2 {
 
     File[] files = file.listFiles();
     for (File f : files) {
-      System.out.println(
-          f); // absolute path : e.g.
-              // /Users/yennanliu/JavaHelloWorld/src/main/java/Advances/InstantApi ...
+      System.out.println(f); // absolute path : e.g.
+      // /Users/yennanliu/JavaHelloWorld/src/main/java/Advances/InstantApi ...
     }
   }
 

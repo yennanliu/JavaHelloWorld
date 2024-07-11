@@ -3,9 +3,8 @@ package Advances.Optional;
 // https://www.youtube.com/watch?v=MYXoEU3RkG0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=684
 // https://www.youtube.com/watch?v=wOi2k4dJviM&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=684
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Optional;
+import org.junit.jupiter.api.Test;
 
 /**
  * Optional demo 1

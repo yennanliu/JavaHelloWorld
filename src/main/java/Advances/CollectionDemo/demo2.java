@@ -6,11 +6,10 @@ package Advances.CollectionDemo;
 // https://www.youtube.com/watch?v=hyj5uygJyLU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=520
 // https://www.youtube.com/watch?v=hyj5uygJyLU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=520
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import org.junit.jupiter.api.Test;
 
 /**
  * Collection interface method demo
@@ -28,7 +27,7 @@ public class demo2 {
     col1.add(123);
     col1.add(456);
     col1.add("yooooo");
-    col1.add(new String("kate"));
+    col1.add("kate");
     Person p = new Person("tom", 20);
     col1.add(p);
     col1.add(new Person("kyo", 19));
@@ -39,7 +38,7 @@ public class demo2 {
     // Contains(Object obj) : check if current collections has obj
     // *** Will use obj class' `equals()` when check above
     // --> if needed, we can override obj class' `equals()`
-    System.out.println(col1.contains(new String("kate"))); // true
+    System.out.println(col1.contains("kate")); // true
 
     System.out.println(
         col1.contains(
@@ -69,7 +68,7 @@ public class demo2 {
     col1.add(123);
     col1.add(456);
     col1.add("yooooo");
-    col1.add(new String("kate"));
+    col1.add("kate");
     col1.add(new Person("kyo", 19));
 
     System.out.println(col1.remove(123));
@@ -127,7 +126,7 @@ public class demo2 {
     col1.add(456);
     col1.add(789);
     col1.add("yooooo");
-    col1.add(new String("kate"));
+    col1.add("kate");
     col1.add(new Person("kyo", 19));
 
     col1.remove(123);
@@ -155,7 +154,7 @@ public class demo2 {
     col1.add(456);
     col1.add(789);
     col1.add("yooooo");
-    col1.add(new String("kate"));
+    col1.add("kate");
     col1.add(new Person("kyo", 19));
 
     Collection col2 = Arrays.asList(456, 789);
@@ -174,7 +173,7 @@ public class demo2 {
     col1.add(456);
     col1.add(789);
     col1.add("yooooo");
-    col1.add(new String("kate"));
+    col1.add("kate");
     col1.add(new Person("kyo", 19));
 
     Collection col2 = Arrays.asList(456, 789);

@@ -4,14 +4,13 @@ package Advances.Lambda.demo4;
 // https://www.youtube.com/watch?v=jVfmtHhrKgA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=672
 // https://www.youtube.com/watch?v=0lufoYMLsF4&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=674
 
-import org.junit.jupiter.api.Test;
-
 import java.io.PrintStream;
 import java.util.Comparator;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import org.junit.jupiter.api.Test;
 
 /**
  * Method reference demo 1
@@ -90,7 +89,7 @@ public class MethodRefTest {
     Comparator<Integer> com2 =
         Integer
             ::compare; // NOTE : we DON'T need to have param (t1, t2) here, since the method we use
-                       // here is AS SAME AS the lambda expression it refers
+    // here is AS SAME AS the lambda expression it refers
     System.out.println(com2.compare(1, 100));
   }
 

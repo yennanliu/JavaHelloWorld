@@ -16,9 +16,8 @@ public class StaticProxyDemo2 {
       @Override
       public void run() {}
     }
-    ;
 
-    // proxy class
+      // proxy class
     class Thread implements Runnable {
       public Thread(MyThread t) {}
 

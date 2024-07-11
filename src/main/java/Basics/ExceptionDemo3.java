@@ -48,13 +48,13 @@ public class ExceptionDemo3 {
   }
 
   public static void method2()
-      throws FileNotFoundException,
+      throws
           IOException { // or throws IOException only, since IOException is FileNotFoundException's
-                        // superclass
+    // superclass
     method1();
   }
 
-  public static void method1() throws FileNotFoundException, IOException {
+  public static void method1() throws IOException {
     File file = new File("test.txt");
     FileInputStream fis = new FileInputStream(file);
     int data = fis.read();

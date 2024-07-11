@@ -1,27 +1,25 @@
 package threadDev;
 
-
 import java.io.Serializable;
 import java.util.concurrent.Callable;
 
 public class Fibonacci<Long> implements Callable<java.lang.Long>, Serializable {
-    int input = 0;
+  int input = 0;
 
-    public Fibonacci() {
-    }
+  public Fibonacci() {}
 
-    public Fibonacci(int input) {
-        System.out.println("Fibonacci init ..., input = " + input);
-        this.input = input;
-    }
+  public Fibonacci(int input) {
+    System.out.println("Fibonacci init ..., input = " + input);
+    this.input = input;
+  }
 
-    public java.lang.Long call() {
-        return calculate (input);
-    }
+  public java.lang.Long call() {
+    return calculate(input);
+  }
 
-    private long calculate (int n) {
-        if (Thread.currentThread().isInterrupted()) return 0;
-        if (n <= 1) return n;
-        else return calculate(n-1) + calculate(n-2);
-    }
+  private long calculate(int n) {
+    if (Thread.currentThread().isInterrupted()) return 0;
+    if (n <= 1) return n;
+    else return calculate(n - 1) + calculate(n - 2);
+  }
 }

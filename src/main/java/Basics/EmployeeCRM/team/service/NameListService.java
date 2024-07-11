@@ -15,7 +15,7 @@ import Basics.EmployeeCRM.team.domain.*;
 public class NameListService {
 
   // attr
-  private Employee[] employees;
+  private final Employee[] employees;
 
   // constructor
 

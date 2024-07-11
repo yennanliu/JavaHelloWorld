@@ -5,7 +5,7 @@ package Basics.thisDemo5;
 public class Bank {
 
   // attr
-  private Customer[] customers; // an array can save multiple customers inside
+  private final Customer[] customers; // an array can save multiple customers inside
   private int numberOfCustomers; // record customer count
 
   // constructor

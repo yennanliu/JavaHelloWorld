@@ -11,11 +11,11 @@ public class ExceptionDemo8 {
      */
     ReturnExceptionDemo returnExceptionDemo = new ReturnExceptionDemo();
     try {
-      returnExceptionDemo.methodA();
+      ReturnExceptionDemo.methodA();
     } catch (Exception e) {
       System.out.println(e.getMessage());
     }
-    returnExceptionDemo.methodB();
+    ReturnExceptionDemo.methodB();
   }
 }
 

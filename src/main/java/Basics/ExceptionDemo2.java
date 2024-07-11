@@ -3,11 +3,10 @@ package Basics;
 // https://www.youtube.com/watch?v=kA42AuUDWJY&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=374
 // https://www.youtube.com/watch?v=u9Jz6ja8GiU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=376
 
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import org.junit.jupiter.api.Test;
 
 /**
  * Exception 2 - finally using

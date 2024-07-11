@@ -6,13 +6,13 @@ interface Flyable {
 
   // attr
   // global constant
-  public static final int MAX_SPEED = 100;
+  int MAX_SPEED = 100;
   // public static final int MIN_SPEED = 1;
   // or, can write as below
   int MIN_SPEED = 1; // omit public static final
 
   // method
-  public abstract void fly();
+  void fly();
 
   void stop(); // omit public abstract
 }

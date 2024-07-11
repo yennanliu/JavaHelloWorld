@@ -10,13 +10,13 @@ public class test {
 
     Account a2 = new Account("123", 100);
 
-    System.out.println(a1.toString());
-    System.out.println(a2.toString());
+    System.out.println(a1);
+    System.out.println(a2);
 
     Account.setInterestRate(0.38);
 
     Account a3 = new Account();
-    System.out.println(a3.getInterestRate());
-    System.out.println(a3.toString());
+    System.out.println(Account.getInterestRate());
+    System.out.println(a3);
   }
 }

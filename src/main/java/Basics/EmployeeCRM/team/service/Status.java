@@ -3,7 +3,6 @@ package Basics.EmployeeCRM.team.service;
 // https://www.youtube.com/watch?v=rN0byZHtGw8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=390
 // https://www.youtube.com/watch?v=mwg4N3epx9Y&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=502
 
-import javax.print.attribute.standard.MediaSize;
 
 /**
  * class defines employee status
@@ -45,5 +44,5 @@ import javax.print.attribute.standard.MediaSize;
 public enum Status {
   FREE,
   BUSY,
-  VOCATION;
+  VOCATION
 }

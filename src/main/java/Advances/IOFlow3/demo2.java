@@ -6,58 +6,52 @@ import java.io.*;
 import org.junit.jupiter.api.Test;
 
 /**
- *  IOFlow3 demo 2: DataInputStream, DataOutputStream
+ * IOFlow3 demo 2: DataInputStream, DataOutputStream
  *
- *   1) use cases :
- *      -> for easily deal with "basic data structure", and "String" in Java
- *      -> read/write basic data type, String data type
+ * <p>1) use cases : -> for easily deal with "basic data structure", and "String" in Java ->
+ * read/write basic data type, String data type
  *
- *   2) DataInputStream common methods:
- *          readBoolean()
- *          readChar()
- *          readByte()
- *          readFloat()
- *          ....
+ * <p>2) DataInputStream common methods: readBoolean() readChar() readByte() readFloat() ....
  *
- *   3) DataOutputStream common methods:
- *
+ * <p>3) DataOutputStream common methods:
  */
-
 public class demo2 {
 
-    /** demo 1 : write file via DataOutputStream */
-    @Test
-    public void test1() throws IOException {
+  /** demo 1 : write file via DataOutputStream */
+  @Test
+  public void test1() throws IOException {
 
-        DataOutputStream dos = new DataOutputStream(new FileOutputStream("src/main/java/Advances/IOFlow3/data.txt"));
-        dos.writeUTF("ann");
-        dos.flush(); // flush, so every write op will be reflected to output file
-        dos.writeInt(17);
-        dos.flush();
-        dos.writeBoolean(false);
-        dos.flush();
+    DataOutputStream dos =
+        new DataOutputStream(new FileOutputStream("src/main/java/Advances/IOFlow3/data.txt"));
+    dos.writeUTF("ann");
+    dos.flush(); // flush, so every write op will be reflected to output file
+    dos.writeInt(17);
+    dos.flush();
+    dos.writeBoolean(false);
+    dos.flush();
 
-        // close resource
-        dos.close();
-    }
+    // close resource
+    dos.close();
+  }
 
-    /** demo 2 : read file via DataInputStream
-     *
-     *  1) read basic data type in disk via DataInputStream
-     *  2) read data type (code) should be same as data type in disk
-     */
-    @Test
-    public void test2() throws IOException {
+  /**
+   * demo 2 : read file via DataInputStream
+   *
+   * <p>1) read basic data type in disk via DataInputStream 2) read data type (code) should be same
+   * as data type in disk
+   */
+  @Test
+  public void test2() throws IOException {
 
-        DataInputStream dis = new DataInputStream(new FileInputStream("src/main/java/Advances/IOFlow3/data.txt"));
+    DataInputStream dis =
+        new DataInputStream(new FileInputStream("src/main/java/Advances/IOFlow3/data.txt"));
 
-        String name = dis.readUTF();
-        int age = dis.readInt();
-        boolean isMale = dis.readBoolean();
+    String name = dis.readUTF();
+    int age = dis.readInt();
+    boolean isMale = dis.readBoolean();
 
-        System.out.println("name = " + name + " age = " + age + " isMale = " + isMale);
+    System.out.println("name = " + name + " age = " + age + " isMale = " + isMale);
 
-        dis.close();
-    }
-
+    dis.close();
+  }
 }

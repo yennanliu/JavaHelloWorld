@@ -46,8 +46,8 @@ public class demo2 {
     System.out.println("==============");
 
     // example 2
-    String str1 = new String("java");
-    String str2 = new String("java");
+    String str1 = "java";
+    String str2 = "java";
 
     /**
      * NOTE : the equals in String are actually overridden, -> so it is comparing the value, but

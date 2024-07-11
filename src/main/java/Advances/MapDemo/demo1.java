@@ -7,12 +7,11 @@ package Advances.MapDemo;
 // https://www.youtube.com/watch?v=y-MDDtzyjKE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=552
 // https://www.youtube.com/watch?v=8_yeocWxCqU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=553
 
-import org.junit.jupiter.api.Test;
-
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import org.junit.jupiter.api.Test;
 
 /** Map demo 1 : concepts, properties */
 

@@ -6,11 +6,10 @@ package Advances.CollectionDemo;
 // https://www.youtube.com/watch?v=KptmLcdTECg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=531
 
 /** List demo 1 */
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 /**
  * List Demo1 |-- List interface : storage ordering, duplicated record -> "dynamic" array |---

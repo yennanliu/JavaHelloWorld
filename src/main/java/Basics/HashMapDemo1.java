@@ -6,25 +6,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HashMapDemo1 {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        HashMap<String, Integer> myHashMap  = new HashMap<String, Integer>(1, 1);
-        System.out.println("myHashMap = " + myHashMap);
+    HashMap<String, Integer> myHashMap = new HashMap<String, Integer>(1, 1);
+    System.out.println("myHashMap = " + myHashMap);
 
-        myHashMap.put("abc", 123);
+    myHashMap.put("abc", 123);
 
-        System.out.println("myMap = " + myHashMap);
-        System.out.println("keys =" + myHashMap.keySet());
-        System.out.println("values =" + myHashMap.values());
+    System.out.println("myMap = " + myHashMap);
+    System.out.println("keys =" + myHashMap.keySet());
+    System.out.println("values =" + myHashMap.values());
 
-        System.out.println("=======================");
+    System.out.println("=======================");
 
-        Map<String, Integer> myMap  = new HashMap<String, Integer>(1, 1);
-        System.out.println("myMap = " + myMap);
+    Map<String, Integer> myMap = new HashMap<String, Integer>(1, 1);
+    System.out.println("myMap = " + myMap);
 
-        myMap.put("abc", 123);
+    myMap.put("abc", 123);
 
-        System.out.println("keys =" + myMap.keySet());
-        System.out.println("values =" + myMap.values());
-    }
+    System.out.println("keys =" + myMap.keySet());
+    System.out.println("values =" + myMap.values());
+  }
 }

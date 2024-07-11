@@ -10,14 +10,12 @@ package Advances.DateTimeFormatterApi;
  * ofLocalizeDateTime (FormatStyle.Long. FormatStyle.MEDIUM, FormatStyle.SHORT) 3-3) user-defined
  * (common usage) : e.g. : offPattern("yyyy-mm-dd")
  */
-import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAccessor;
+import org.junit.jupiter.api.Test;
 
 public class demo1 {
   @Test

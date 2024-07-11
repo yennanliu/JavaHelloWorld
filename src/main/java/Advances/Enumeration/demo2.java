@@ -23,7 +23,7 @@ enum Season1 {
 
   // constructor
   // step 3) make constructor private, and give attr value
-  private Season1(String seasonName, String seasonDesc) {
+  Season1(String seasonName, String seasonDesc) {
     this.seasonName = seasonName;
     this.seasonDesc = seasonDesc;
   }
@@ -98,6 +98,6 @@ public class demo2 {
     System.out.println("==================");
 
     // toString()
-    System.out.println(summer.toString());
+    System.out.println(summer);
   }
 }

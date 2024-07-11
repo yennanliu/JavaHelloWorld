@@ -4,5 +4,5 @@ package Basics.interfaceDemo5;
 
 public interface CompareObject {
   // if 0 -> equals, if positive -> current value is larger, if minus -> current value is smaller
-  public int compareTo(Object o);
+  int compareTo(Object o);
 }

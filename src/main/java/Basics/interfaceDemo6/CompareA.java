@@ -11,12 +11,12 @@ package Basics.interfaceDemo6;
 public interface CompareA {
 
   // static method
-  public static void method1() {
+  static void method1() {
     System.out.println("Compare A : N.Y.");
   }
 
   // default method
-  public default void method2() {
+  default void method2() {
     System.out.println("Compare A : C.A.");
   }
 

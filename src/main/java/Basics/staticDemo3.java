@@ -8,7 +8,7 @@ public class staticDemo3 {
     Japanese j1 = new Japanese();
     j1.name = "yoshi";
     j1.age = 19;
-    j1.nation = "JP";
+    Japanese.nation = "JP";
 
     Japanese j2 = new Japanese();
     j2.name = "Lynn";
@@ -17,11 +17,11 @@ public class staticDemo3 {
     // nation is static attr
     // so there is ONLY ONE such value in the "static area"
     // and j1 already define nation
-    System.out.println("j2.nation = " + j2.nation);
+    System.out.println("j2.nation = " + Japanese.nation);
 
-    j2.nation = "Japan";
+    Japanese.nation = "Japan";
 
-    System.out.println("j1.nation = " + j1.nation);
+    System.out.println("j1.nation = " + Japanese.nation);
 
     // and we can call the static method directly
     System.out.println(Japanese.nation);

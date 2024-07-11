@@ -40,11 +40,11 @@ public class demo5 {
     BLANK("白色", 3),
     YELLOW("黃色", 4);
     // 成員變量
-    private String name;
-    private int index;
+    private final String name;
+    private final int index;
 
     // 構造方法
-    private Color(String name, int index) {
+    Color(String name, int index) {
       this.name = name;
       this.index = index;
     }

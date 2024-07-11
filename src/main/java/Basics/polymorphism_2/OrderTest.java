@@ -15,10 +15,9 @@ class Order {
 class Driver {
   // example 2
   public void getData(
-      Connection
-          conn) { // Connection is the superclass (interface), but when runtime, it will use
-                  // different conn (subclass), e.g. : mysqlConn, postgreConn... ( polymorphism
-                  // feature)
+      Connection conn) { // Connection is the superclass (interface), but when runtime, it will use
+    // different conn (subclass), e.g. : mysqlConn, postgreConn... ( polymorphism
+    // feature)
     // conn.method1();
     // conn.method2();
     // ....

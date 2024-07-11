@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class User implements Comparable {
   private String name;
-  private int age;
+  private final int age;
 
   // constructor
   public User(String name, int age) {

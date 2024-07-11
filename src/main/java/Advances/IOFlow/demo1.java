@@ -3,12 +3,10 @@ package Advances.IOFlow;
 // https://www.youtube.com/watch?v=kqG8IQNMN_s&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=584
 // https://www.youtube.com/watch?v=lms-HDCYCvQ&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=586
 
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import org.junit.jupiter.api.Test;
 
 /**
  * - FileReader demo

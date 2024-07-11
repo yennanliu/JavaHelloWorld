@@ -4,12 +4,11 @@ package Basics;
 // https://www.youtube.com/watch?v=RXPAMZEYEi8&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=374
 // https://www.youtube.com/watch?v=JBGh4Lb9Fns&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=380
 
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import org.junit.jupiter.api.Test;
 
 /**
  * Exception 1

@@ -1,13 +1,12 @@
 package dev;
 
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.dataformat.csv.*;
+import dev.bean.Sales;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-
-import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.dataformat.csv.*;
-import dev.bean.Sales;
 import org.junit.jupiter.api.Test;
 
 public class CSV2Json {

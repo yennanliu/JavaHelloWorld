@@ -3,13 +3,10 @@ package Advances.ClassLoader;
 // https://www.youtube.com/watch?v=rePjvHVWnQ0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=643
 // https://www.youtube.com/watch?v=bpP8CE98MhE&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=644
 
-import org.junit.jupiter.api.Test;
-
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Properties;
+import org.junit.jupiter.api.Test;
 
 public class demo1 {
 

@@ -5,9 +5,8 @@ package Advances.Generic;
 /** demo5 : generic example : DAO */
 import Advances.Generic.dao.EmployeeDAO;
 import Advances.Generic.dao.StudentDAO;
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 public class demo5 {
   @Test

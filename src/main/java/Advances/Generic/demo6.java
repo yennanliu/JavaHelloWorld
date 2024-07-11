@@ -4,11 +4,10 @@ package Advances.Generic;
 // https://www.youtube.com/watch?v=_53WGmiijGA&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=572
 // https://www.youtube.com/watch?v=UWwPoU_SId0&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=573
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 /**
  * demo6 : generic

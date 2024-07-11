@@ -63,7 +63,7 @@ public class demo1 {
   // common methods in SpringBuffer / SpringBuilder
   @Test
   public void test2() {
-    StringBuffer s1 = new StringBuffer("");
+    StringBuffer s1 = new StringBuffer();
     StringBuffer s2 = new StringBuffer("abcde");
 
     // append

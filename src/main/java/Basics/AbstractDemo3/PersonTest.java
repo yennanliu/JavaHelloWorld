@@ -34,13 +34,11 @@ public class PersonTest {
           public void eat() {
             System.out.println("new eat !!");
           }
-          ;
 
-          @Override
+            @Override
           public void sleep() {
             System.out.println("new sleep !!");
           }
-          ;
         };
 
     method1(p);
@@ -78,9 +76,7 @@ public class PersonTest {
 class Worker2 extends Person {
   @Override
   public void eat() {}
-  ;
 
-  @Override
+    @Override
   public void sleep() {}
-  ;
 }

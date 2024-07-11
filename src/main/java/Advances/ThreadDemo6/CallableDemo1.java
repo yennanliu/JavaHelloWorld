@@ -66,7 +66,7 @@ class NumThread implements Callable {
     }
     // the call() method can have return value (optional)
     return sum; // NOTE : int (sum) is NOT sub type of Object (Object call()), but we transform int
-                // to Integer
+    // to Integer
     // return _;
   }
 }

@@ -64,7 +64,7 @@ class Lexus implements Vehicle {
 class CarFactory {
 
   // attr
-  private Vehicle vehicle;
+  private final Vehicle vehicle;
 
   // constructor
   public CarFactory(Vehicle vehicle) {

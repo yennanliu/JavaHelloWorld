@@ -5,7 +5,7 @@ package Basics;
 interface Network {
   // attr
   // method
-  public void browse();
+  void browse();
 }
 
 /**
@@ -53,7 +53,7 @@ class Server implements Network {
 /** proxy class */
 class ProxyServer implements Network {
   // attr
-  private Network work;
+  private final Network work;
 
   // constructor
   public ProxyServer(Network work) {

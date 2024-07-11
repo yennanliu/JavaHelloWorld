@@ -9,72 +9,71 @@ import java.net.Socket;
 import org.junit.jupiter.api.Test;
 
 /**
- *   Implement TCP internet protocol : demo 3
+ * Implement TCP internet protocol : demo 3
  *
- *   1) client sends doc, server saves it to local
+ * <p>1) client sends doc, server saves it to local
  */
-
 
 // NOTE : should use "try-catch-finally" for exception handling (as demo2.java)
 public class demo3 {
 
-    // client
-    @Test
-    public void client() throws IOException {
+  // client
+  @Test
+  public void client() throws IOException {
 
-        // step 1) create socket
-        Socket socket = new Socket(InetAddress.getByName("127.0.0.1"), 9999);
+    // step 1) create socket
+    Socket socket = new Socket(InetAddress.getByName("127.0.0.1"), 9999);
 
-        // step 2) create output stream
-        OutputStream os =  socket.getOutputStream();
+    // step 2) create output stream
+    OutputStream os = socket.getOutputStream();
 
-        String srcFile = "src/main/java/Advances/internet/data.txt";
+    String srcFile = "src/main/java/Advances/internet/data.txt";
 
-        // step 3) read file
-        FileInputStream fis = new FileInputStream(new File(srcFile));
+    // step 3) read file
+    FileInputStream fis = new FileInputStream(new File(srcFile));
 
-        // step 4) actual read op
-        byte[] buffer = new byte[1024];
-        int len;
-        while((len = fis.read(buffer)) != -1){
-            os.write(buffer, 0, len);
-        }
-
-        // step 5) close resources
-        fis.close();
-        os.close();
-        socket.close();
+    // step 4) actual read op
+    byte[] buffer = new byte[1024];
+    int len;
+    while ((len = fis.read(buffer)) != -1) {
+      os.write(buffer, 0, len);
     }
 
-    // server
-    @Test
-    public void server() throws IOException {
+    // step 5) close resources
+    fis.close();
+    os.close();
+    socket.close();
+  }
 
-        // step 1) create ServerSocket
-        ServerSocket ss = new ServerSocket(9999);
+  // server
+  @Test
+  public void server() throws IOException {
 
-        // step 2) get client socket
-        Socket socket =  ss.accept();
+    // step 1) create ServerSocket
+    ServerSocket ss = new ServerSocket(9999);
 
-        // step 3) get client input stream
-        InputStream is = socket.getInputStream();
+    // step 2) get client socket
+    Socket socket = ss.accept();
 
-        String destFile = "src/main/java/Advances/internet/data_output.txt";
+    // step 3) get client input stream
+    InputStream is = socket.getInputStream();
 
-        // step 4) create file output stream
-        FileOutputStream fos = new FileOutputStream(destFile);
+    String destFile = "src/main/java/Advances/internet/data_output.txt";
 
-        // step 5) read, write op
-        byte[] buffer = new byte[1024];
-        int len;
-        while((len = is.read(buffer)) != -1){
-            fos.write(buffer, 0, len);
-        }
+    // step 4) create file output stream
+    FileOutputStream fos = new FileOutputStream(destFile);
 
-        // step 6) close resources
-        fos.close();
-        is.close();
-        socket.close();
-        ss.close();
+    // step 5) read, write op
+    byte[] buffer = new byte[1024];
+    int len;
+    while ((len = is.read(buffer)) != -1) {
+      fos.write(buffer, 0, len);
     }
+
+    // step 6) close resources
+    fos.close();
+    is.close();
+    socket.close();
+    ss.close();
+  }
 }

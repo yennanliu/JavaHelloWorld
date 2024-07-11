@@ -4,9 +4,8 @@ package Advances.MapDemo;
 // https://www.youtube.com/watch?v=OmWTqukxSzU&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=555
 
 /** Map demo 2 : methods */
-import org.junit.jupiter.api.Test;
-
 import java.util.*;
+import org.junit.jupiter.api.Test;
 
 /**
  * Map : double array data structure -> key-value record

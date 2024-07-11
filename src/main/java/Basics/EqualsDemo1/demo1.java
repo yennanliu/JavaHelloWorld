@@ -56,8 +56,8 @@ public class demo1 {
     System.out.println(cust1 == cust2); // FALSE
 
     // example 5
-    String str1 = new String("java");
-    String str2 = new String("java");
+    String str1 = "java";
+    String str2 = "java";
     System.out.println(
         str1 == str2); // FALSE, same as above, str1 and str2 are in different address
   }

@@ -11,7 +11,7 @@ public class DynamicNumVar1 {
     test.show("i", "love", "you");
     test.show();
     // do it via Anonymous Object
-    test.show(new String[] {"AA", "BB", "CC"});
+    test.show("AA", "BB", "CC");
 
     // String[] str_ = new String[]{"AA", "BB", "CC"};
     // test.show(str_);

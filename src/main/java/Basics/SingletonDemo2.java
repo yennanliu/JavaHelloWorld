@@ -19,7 +19,7 @@ public class SingletonDemo2 {
 
     // verify if b1, b2 are belong to same instance
     System.out.println(b1.toString());
-    System.out.println(b2.toString());
+    System.out.println(b2);
 
     System.out.println(b1 == b2); // check if b1, b2 are in the same address
   }
@@ -30,13 +30,14 @@ class Bank {
 
   // step 2) create an "internal" class instance
   // step 4) make below class as static
-  private static Bank instance =
+  private static final Bank instance =
       new Bank(); // *** MAIN DIFFERENCE WITHIN EAGER & LAZY initialization (eager : create
 
   // step 1) private constructor
   // constructor
   private Bank() {}
-                  // directly)
+
+  // directly)
 
   // step 3) offer public STATIC method that can return the class (we create above)
   //         -> reason why we use static here : we can't use getInstance without class, but we need

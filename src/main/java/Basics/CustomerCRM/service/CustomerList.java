@@ -13,7 +13,7 @@ import Basics.CustomerCRM.bean.Customer;
 
 public class CustomerList {
   // attr
-  private Customer[] customers; // the array save customer information
+  private final Customer[] customers; // the array save customer information
   private int total = 0; // how many customer in the list
 
   // constructor

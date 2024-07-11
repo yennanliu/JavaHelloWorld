@@ -54,7 +54,7 @@ class RealStar implements Star {
 /** proxy class */
 class Agent implements Star {
   // attr
-  private Star real;
+  private final Star real;
 
   // constructor
   public Agent(Star real) {

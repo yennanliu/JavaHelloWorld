@@ -18,7 +18,7 @@ interface ClothFactory {
 /** proxy class (代理類) */
 class ProxyClothFactory implements ClothFactory {
 
-  private ClothFactory factory; // init instance with proxied class (e.g. ClothFactory)
+  private final ClothFactory factory; // init instance with proxied class (e.g. ClothFactory)
 
   // constructor
   public ProxyClothFactory(ClothFactory factory) {

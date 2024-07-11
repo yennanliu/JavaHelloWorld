@@ -10,9 +10,8 @@ import utils.IFileUtils;
 
 public class IFileUtilsTest {
 
-
   @Test
-  public void test1(){
+  public void test1() {
 
     System.out.println(123);
     IFileUtils fileUtils = new IFileUtils();
@@ -22,7 +21,7 @@ public class IFileUtilsTest {
     srcFiles.add("src/main/resources/" + "test2.csv");
     srcFiles.add("src/main/resources/" + "test1.txt");
 
-    //String destZipFiles = "src/main/resources/" + "zipEncryptFile.zip";
+    // String destZipFiles = "src/main/resources/" + "zipEncryptFile.zip";
     String destZipFiles = "src/main/resources" + ".zip";
     fileUtils.encryptFile(srcFiles, destZipFiles, "123");
   }
@@ -46,27 +45,25 @@ public class IFileUtilsTest {
     FileUtils.copyFile(new File(unzipFilePath), new File(copiedFile));
 
     files.add(copiedFile);
-    //files.add(copiedFile);
+    // files.add(copiedFile);
 
     System.out.println(">>> files = " + files);
 
-    //String encryptFileUrl = fileUtils.encryptFile(files, uploadPath + tempFile, password);
+    // String encryptFileUrl = fileUtils.encryptFile(files, uploadPath + tempFile, password);
     fileUtils.encryptFile(files, destZipFiles, "123");
   }
 
   @Test
-  public void test4(){
-    System.out.println(">>>  File.separator = " +  File.separator);
+  public void test4() {
+    System.out.println(">>>  File.separator = " + File.separator);
   }
-
 
   @Test
   public void test5() throws IOException {
 
     String srcFile = "src/main/resources/" + "test.csv";
-    FileUtils.copyFileToDirectory(new File(srcFile), new File( "src/main/resources/" + "backup"));
+    FileUtils.copyFileToDirectory(new File(srcFile), new File("src/main/resources/" + "backup"));
 
-    //FileUtils.listFiles(new File("XXX"));
+    // FileUtils.listFiles(new File("XXX"));
   }
-
 }

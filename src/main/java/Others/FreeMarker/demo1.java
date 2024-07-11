@@ -6,11 +6,9 @@ package Others.FreeMarker;
 import Others.FreeMarker.bean.Book;
 import Others.FreeMarker.bean.User;
 import Others.FreeMarker.bean.User2;
-
 import Others.FreeMarker.utls.FileUtil;
-import org.junit.jupiter.api.Test;
-
-import java.io.FileWriter;
+import freemarker.template.Configuration;
+import freemarker.template.TemplateException;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.file.Path;
@@ -18,9 +16,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import freemarker.template.Configuration;
-import freemarker.template.TemplateException;
+import org.junit.jupiter.api.Test;
 
 public class demo1 {
 

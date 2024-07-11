@@ -31,8 +31,8 @@ public class demo2 {
 
     // method 2) via new + constructor:
     // s3, s3 are defined in address in java's stack space
-    String s3 = new String("scala");
-    String s4 = new String("scala");
+    String s3 = "scala";
+    String s4 = "scala";
 
     System.out.println(s1 == s2); // true
     System.out.println(s1 == s3); // false
@@ -68,9 +68,8 @@ public class demo2 {
     String s3 = "javahadoop"; // literal value
     String s4 = "java" + "hadoop"; // concatenation of 2 literal values is still literal value
     String s5 =
-        s1
-            + "hadoop"; // NOTE*** : if there is a variable (e.g. s1) then this value is storage in
-                        // stack space, but not constant pool space
+        s1 + "hadoop"; // NOTE*** : if there is a variable (e.g. s1) then this value is storage in
+    // stack space, but not constant pool space
     String s6 = "java" + s2;
     String s7 = s1 + s2;
 
@@ -90,11 +89,11 @@ public class demo2 {
   @Test
   public void test3() {
     // equals `this.value = new char[0];`
-    String s1_ = new String();
+    String s1_ = "";
 
     // this.value = original.value;
     String str = "helo";
-    String s2_ = new String(str); // (String str);
+    String s2_ = str; // (String str);
 
     // this.value = Arrays.copyOf(value, value.length);
     // String s3 = new String(char[] a);

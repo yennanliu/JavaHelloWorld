@@ -2,7 +2,6 @@ package Basics.TimeZone;
 
 // https://mkyong.com/java/java-display-list-of-timezone-with-gmt/
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TimeZone;
@@ -13,8 +12,7 @@ public class demo1 {
   public static void main(String[] args) {
 
     String[] ids = TimeZone.getAvailableIDs();
-    ;
-    Set<String> hash_Set = new HashSet<String>();
+      Set<String> hash_Set = new HashSet<String>();
 
     for (String id : ids) {
 

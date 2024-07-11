@@ -24,15 +24,15 @@ import java.util.List;
  * <p>關鍵程式碼：建造者：創建和提供實例，導演：管理建造出來的實例的依賴關係。
  */
 interface Item {
-  public String name();
+  String name();
 
-  public Packing packing();
+  Packing packing();
 
-  public float price();
+  float price();
 }
 
 interface Packing {
-  public String pack();
+  String pack();
 }
 
 class Wrapper implements Packing {
@@ -119,7 +119,7 @@ class Coke extends ColdDrink {
 class Meal {
 
   // attr
-  private List<Item> items = new ArrayList<>();
+  private final List<Item> items = new ArrayList<>();
 
   // method
   void addItem(Item item) {

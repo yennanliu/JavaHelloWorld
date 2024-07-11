@@ -2,12 +2,11 @@ package Advances.Collections;
 
 // https://www.youtube.com/watch?v=ATfSTvS60Gg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=558
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 /**
  * Collections demo 1

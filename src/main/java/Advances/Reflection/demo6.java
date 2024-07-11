@@ -3,10 +3,10 @@ package Advances.Reflection;
 // https://www.youtube.com/watch?v=A4oHXSAlmFg&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=652
 // https://www.youtube.com/watch?v=1cZzR0lmaPo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=652
 
-import org.junit.jupiter.api.Test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import org.junit.jupiter.api.Test;
 
 public class demo6 {
 

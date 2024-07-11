@@ -12,7 +12,6 @@ public class ForLoopFunc {
       e.printStackTrace();
     }
   }
-  ;
 }
 
 class RunForLoop {

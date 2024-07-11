@@ -12,7 +12,7 @@ public class TeamService {
   // attr
   private static int counter = 1; // increasing, for member id
   private final int MAX_MEMBER = 5; // mex members in a dev team
-  private Programmer[] team = new Programmer[MAX_MEMBER]; // storage dev team members
+  private final Programmer[] team = new Programmer[MAX_MEMBER]; // storage dev team members
   private int total; // current total member count in dev team
 
   // getter, setter

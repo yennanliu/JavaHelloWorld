@@ -25,7 +25,7 @@ public class demo2 {
   public void test1()
       throws
           ParseException { // we need this ParseException, since defined format/parse pattern may be
-                           // wrong
+    // wrong
     // instantiation
     SimpleDateFormat sdf = new SimpleDateFormat();
 

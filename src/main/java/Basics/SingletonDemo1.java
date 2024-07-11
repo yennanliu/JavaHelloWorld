@@ -23,8 +23,8 @@ public class SingletonDemo1 {
 // pros : Thread safety
 // cons : could create a class, but not uses it -> resource wasting
 class Single {
-  private static Single s = new Single();
-  ; // make constructor private
+  private static final Single s = new Single();
+    // make constructor private
 
   public Single() {}
 
@@ -55,9 +55,8 @@ class Single2 {
 // pros : 2. Thread safety (no interruption when running)
 class Singleton {
   private Singleton() {}
-  ;
 
-  // export below static method to public
+    // export below static method to public
   public static Singleton getInstance() {
     return SingltonInstance.INSTANCE;
   }

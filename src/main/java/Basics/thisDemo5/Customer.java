@@ -5,8 +5,8 @@ package Basics.thisDemo5;
 public class Customer {
 
   // attr
-  private String firstName;
-  private String lastName;
+  private final String firstName;
+  private final String lastName;
   private Account account;
 
   // constructor

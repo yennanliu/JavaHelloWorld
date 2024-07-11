@@ -54,11 +54,11 @@ public class demo4 {
     YELLOW("黃色", 4);
 
     // 成員變量
-    private String name;
-    private int index;
+    private final String name;
+    private final int index;
 
     // 構造方法
-    private Color1(String name, int index) {
+    Color1(String name, int index) {
       this.name = name;
       this.index = index;
     }
@@ -75,10 +75,10 @@ public class demo4 {
     Bmw("BMW", "bmw"),
     Tesla("TESLA", "tesla");
 
-    private String nominalName;
-    private String name;
+    private final String nominalName;
+    private final String name;
 
-    private Car(String nominalName, String name) {
+    Car(String nominalName, String name) {
       this.nominalName = nominalName;
       this.name = name;
     }

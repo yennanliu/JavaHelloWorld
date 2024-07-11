@@ -17,17 +17,17 @@ public class WrapperTest {
     int num1 = 10;
     // System.out.println(num1.toString()); // this one is not correct
     Integer in1 = new Integer(num1);
-    System.out.println(in1.toString());
+    System.out.println(in1);
 
     // this one is also OK
     Integer in2 = new Integer("123");
-    System.out.println(in2.toString());
+    System.out.println(in2);
 
     Float f1 = new Float(12.3f);
-    System.out.println(f1.toString());
+    System.out.println(f1);
 
     Float f2 = new Float("12.3");
-    System.out.println(f2.toString());
+    System.out.println(f2);
 
     Boolean b1 = new Boolean(true);
     Boolean b2 = new Boolean("true");

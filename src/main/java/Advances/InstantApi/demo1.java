@@ -3,10 +3,9 @@ package Advances.InstantApi;
 // https://www.youtube.com/watch?v=Mhi4rGPlUwo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=485
 
 /** InstantApi demo1 : -> similar as java.util.Date class */
-import org.junit.jupiter.api.Test;
-
 import java.time.Instant;
 import java.time.ZoneOffset;
+import org.junit.jupiter.api.Test;
 
 public class demo1 {
   @Test

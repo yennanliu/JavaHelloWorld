@@ -17,7 +17,7 @@ import Basics.CustomerCRM.service.CustomerList;
 import Basics.CustomerCRM.utils.CMUtility;
 
 public class CustomerView {
-  private CustomerList customerList = new CustomerList(10);
+  private final CustomerList customerList = new CustomerList(10);
 
   // constructor
 
@@ -37,9 +37,8 @@ public class CustomerView {
     CustomerView customerView = new CustomerView();
     customerView.enterMainMenu();
   }
-  ;
 
-  /***
+    /***
    *  show customer app interface
    */
   private void enterMainMenu() {
@@ -82,9 +81,8 @@ public class CustomerView {
       // isFlag = false;
     }
   }
-  ;
 
-  /***
+    /***
    *  add new customer
    */
   private void addNewCustomer() {
@@ -118,9 +116,8 @@ public class CustomerView {
       System.out.println("add new customer failed !");
     }
   }
-  ;
 
-  /***
+    /***
    *  modify customer
    */
   private void modifyCustomer() {
@@ -151,10 +148,8 @@ public class CustomerView {
     System.out.println("Customer name(" + cust.getName() + "):");
     String name =
         CMUtility.readString(
-            10,
-            cust
-                .getName()); // if user don't input new name, but just press enter -> use the
-                             // original customer name by default
+            10, cust.getName()); // if user don't input new name, but just press enter -> use the
+    // original customer name by default
 
     System.out.println("Customer gender(" + cust.getGender() + "):");
     char gender = CMUtility.readChar(cust.getGender());
@@ -177,9 +172,8 @@ public class CustomerView {
       System.out.println("--------------------- Modify Customer Failed ! --------------------- \n");
     }
   }
-  ;
 
-  /***
+    /***
    *  delete customer
    */
   private void deleteCustomer() {
@@ -222,9 +216,8 @@ public class CustomerView {
       return;
     }
   }
-  ;
 
-  /***
+    /***
    *  list all customer
    */
   private void listAllCustomer() {

@@ -5,14 +5,12 @@ package Advances.StreamAPI;
 
 import Advances.Lambda.demo4.Employee;
 import Advances.Lambda.demo4.EmployeeData;
-
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.junit.jupiter.api.Test;
 
 /**
  * Stream API demo 3

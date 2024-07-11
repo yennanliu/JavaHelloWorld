@@ -7,7 +7,7 @@ public class GCdemo1 {
     // run
     User u1 = new User("001", 19);
 
-    System.out.println(u1.toString());
+    System.out.println(u1);
 
     System.out.println(u1);
 

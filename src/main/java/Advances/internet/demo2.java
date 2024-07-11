@@ -2,8 +2,6 @@ package Advances.internet;
 
 // https://www.youtube.com/watch?v=GEGJuUUM_Zo&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=623
 
-import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +9,7 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import org.junit.jupiter.api.Test;
 
 /**
  * Implement TCP internet protocol : demo 2
@@ -91,7 +90,7 @@ public class demo2 {
         baos.write(buffer, 0, len);
       }
 
-      System.out.println(baos.toString());
+      System.out.println(baos);
       System.out.println("receive msg from client : " + socket.getInetAddress().getHostAddress());
 
     } catch (IOException e) {

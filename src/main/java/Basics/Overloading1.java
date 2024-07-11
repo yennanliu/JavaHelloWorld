@@ -18,10 +18,8 @@ class OverloadingClass1 {
   public String myPrint(String s) {
     return "this is String print !!! " + s;
   }
-  ;
 
-  public String myPrint(Integer i) {
+    public String myPrint(Integer i) {
     return "this is Integer print !!!  " + i.toString();
   }
-  ;
 }

@@ -15,9 +15,12 @@ public class WrapperTest3 {
 
   /** autoboxing */
   int num2 = 10;
+
   Integer in1 = num2;
+
   /** unboxing */
   int num3 = in1;
+
   boolean b1 = true;
   Boolean b2 = b1;
   boolean b3 = b2;
