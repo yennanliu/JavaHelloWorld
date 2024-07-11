@@ -11,6 +11,7 @@ public class Fibonacci<Long> implements Callable<java.lang.Long>, Serializable {
     }
 
     public Fibonacci(int input) {
+        System.out.println("Fibonacci init ..., input = " + input);
         this.input = input;
     }
 
