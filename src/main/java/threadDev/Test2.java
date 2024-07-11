@@ -12,7 +12,23 @@ public class Test2 {
           @Override
           public void run() {
             try {
-              for (; ; ) {}
+              while (!Thread.currentThread().isInterrupted()) {
+                for (; ; ) {
+                  System.out.println(
+                          "--> Thread name : "
+                                  + Thread.currentThread().getName()
+                                  + ", id = "
+                                  + Thread.currentThread().getId());
+                  System.out.println("i = ");
+                }
+              }
+
+              //              for (; ; ) {
+              //                System.out.println("i = ");
+              //              }
+              //              for (int i = 0; i < 10; i++) {
+              //                System.out.println("i = " + i);
+              //              }
 
             } finally {
               System.out.println("FINALLY");
@@ -26,12 +42,19 @@ public class Test2 {
     try {
       future.get(3, TimeUnit.SECONDS);
     } catch (TimeoutException e) {
+
+      System.out.println(">>> (before) future.cancel");
       boolean c = future.cancel(true);
+      System.out.println(">>> (after) future.cancel");
+
       System.out.println("Timeout " + c);
     } catch (InterruptedException | ExecutionException e) {
       System.out.println("interrupted");
+    } finally {
+      System.out.println("executor.shutdown");
+      executor.shutdown();
+      System.out.println("END");
     }
-    System.out.println("END");
   }
-  
+
 }
