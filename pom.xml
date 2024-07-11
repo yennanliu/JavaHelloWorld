@@ -88,12 +88,12 @@
         Use my own maven package owned by github
         https://cloud.tencent.com/developer/article/1042812
         -->
-        <dependency>
-            <groupId>com.yen</groupId>
-            <artifactId>myLib</artifactId>
-<!--            <version>1.0-SNAPSHOT</version>-->
-            <version>1.1-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.yen</groupId>-->
+<!--            <artifactId>myLib</artifactId>-->
+<!--&lt;!&ndash;            <version>1.0-SNAPSHOT</version>&ndash;&gt;-->
+<!--            <version>1.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
