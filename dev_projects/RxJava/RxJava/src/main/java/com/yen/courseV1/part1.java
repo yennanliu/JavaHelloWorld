@@ -7,6 +7,7 @@ import rx.Observable;
 public class part1 {
     public static void main(String[] args){
 
+        // Observable.create
         Observable<String> observable = Observable.create(emitter -> {
             emitter.onNext("click on 1");
             emitter.onNext("click on 2");
