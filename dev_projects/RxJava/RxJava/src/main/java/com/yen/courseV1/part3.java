@@ -6,9 +6,9 @@ import java.awt.event.ActionEvent;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
-import rx.Completable;
+
+import io.reactivex.rxjava3.core.Completable;
 import rx.Observable;
-import rx.functions.Action0;
 
 public class part3 {
   public static void main(String[] args) {
@@ -36,6 +36,7 @@ public class part3 {
           System.out.println("5 sec passed " + item);
         });
 
+    // TODO : FIX BELOW
     //Action action2 = () -> System.out.println("hello world!!");
     Action action =
         new AbstractAction() {
@@ -45,7 +46,7 @@ public class part3 {
           }
         };
 
-    Completable completable = Completable.fromAction((Action0) action);
+    Completable completable = Completable.fromAction((io.reactivex.rxjava3.functions.Action) action);
 
     completable.subscribe(() -> {
         System.out.println("---> Action ends");

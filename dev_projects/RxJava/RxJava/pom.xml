@@ -19,10 +19,23 @@
             rxjava
             https://mvnrepository.com/artifact/io.reactivex/rxjava
         -->
+<!--        <dependency>-->
+<!--            <groupId>io.reactivex</groupId>-->
+<!--            <artifactId>rxjava</artifactId>-->
+<!--            <version>1.3.8</version>-->
+<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/com.netflix.rxjava/rxjava-core -->
         <dependency>
-            <groupId>io.reactivex</groupId>
+            <groupId>com.netflix.rxjava</groupId>
+            <artifactId>rxjava-core</artifactId>
+            <version>0.20.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.reactivex.rxjava3</groupId>
             <artifactId>rxjava</artifactId>
-            <version>1.3.8</version>
+            <version>3.1.6</version>
         </dependency>
 
     </dependencies>
