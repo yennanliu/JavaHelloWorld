@@ -2,8 +2,9 @@
 
 ## Concept
 
-- Observe type
-- <p><img src ="./doc/pic/rx_java_can_onserver.png" ></p>
+- Observable type
+	- https://youtu.be/l4zfIkRsT_8?si=7O7qBEwWrwGd4qnn&t=345
+<p><img src ="./doc/pic/rx_java_can_onserver.png" ></p>
 
 
 ## Ref
