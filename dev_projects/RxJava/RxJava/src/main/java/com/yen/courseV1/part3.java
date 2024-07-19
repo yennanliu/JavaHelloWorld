@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
+import io.reactivex.rxjava3.functions.Action;
 
 import io.reactivex.rxjava3.core.Completable;
 import rx.Observable;
@@ -36,17 +37,10 @@ public class part3 {
           System.out.println("5 sec passed " + item);
         });
 
-    // TODO : FIX BELOW
-    //Action action2 = () -> System.out.println("hello world!!");
-    Action action =
-        new AbstractAction() {
-          @Override
-          public void actionPerformed(ActionEvent e) {
-            System.out.println("ActionEvent = " + e);
-          }
-        };
+    // NOTE !!! use io.reactivex.rxjava3.functions.Action
+    Action action2 = () -> System.out.println("hello world!!");
 
-    Completable completable = Completable.fromAction((io.reactivex.rxjava3.functions.Action) action);
+    Completable completable = Completable.fromAction(action2);
 
     completable.subscribe(() -> {
         System.out.println("---> Action ends");
