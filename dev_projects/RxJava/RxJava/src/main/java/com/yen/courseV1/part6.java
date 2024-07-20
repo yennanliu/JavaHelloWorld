@@ -25,12 +25,3 @@ public class part6 {
             });
   }
 }
-
-// static class ?
-class Item {
-  public Integer id;
-
-  public Item(Integer id) {
-    this.id = id;
-  }
-}
