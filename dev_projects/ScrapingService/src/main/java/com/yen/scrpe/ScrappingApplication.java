@@ -22,21 +22,25 @@ public class ScrappingApplication {
     int LIMIT = 10; // 50;
 
     /** V1 : single thread (original code ) */
-//    ScrapeService scrapeService = new ScrapeService();
-//    PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
-//    pokemonCollectTask.run(LIMIT);
-//
-//    ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, pokemonCollectTask, LIMIT);
-//    scrapeTaskFactory.run();
+    ScrapeService scrapeService = new ScrapeService();
+    PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
+    //pokemonCollectTask.run(LIMIT);
+
+    ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, pokemonCollectTask, LIMIT);
+    //scrapeTaskFactory.run();
 
 
       /** V2 : multi thread (gpt) */
-      ScrapeServiceMultiThreadV2Gpt scrapeService = new ScrapeServiceMultiThreadV2Gpt();
-      PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
-      pokemonCollectTask.run(LIMIT);
+//      ScrapeServiceMultiThreadV2Gpt scrapeService = new ScrapeServiceMultiThreadV2Gpt();
+//      PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
+////      pokemonCollectTask.run(LIMIT);
+//
+//      ScrapeTaskFactory2 scrapeTaskFactory = new ScrapeTaskFactory2(scrapeService, pokemonCollectTask, LIMIT);
+//      scrapeTaskFactory.run();
 
-    ScrapeTaskFactory2 scrapeTaskFactory = new ScrapeTaskFactory2(scrapeService, pokemonCollectTask, LIMIT);
-      scrapeTaskFactory.run();
+
+
+
 
       // ScrapeServiceMultiThread scrapeServiceMultiThread = new
     // ScrapeServiceMultiThread();
