@@ -8,7 +8,7 @@
 
 - Schedulers
 	- https://youtu.be/4menosDtstk?si=e6JB22qoqaSwXFQa&t=440
-<p><img src ="./doc/pic/rx_java_can_onserver.png" ></p>
+<p><img src ="./doc/pic/schedulers.png" ></p>
 
 
 
