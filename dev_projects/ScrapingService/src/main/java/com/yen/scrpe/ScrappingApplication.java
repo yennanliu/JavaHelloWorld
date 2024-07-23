@@ -1,10 +1,8 @@
 package com.yen.scrpe;
 
 import com.yen.scrpe.Task.PokemonCollectTask;
-import com.yen.scrpe.Task.ScrapeTaskFactory;
-import com.yen.scrpe.Task.ScrapeTaskFactory2;
+import com.yen.scrpe.Task.Factory.ScrapeTaskFactory;
 import com.yen.scrpe.service.ScrapeService;
-import com.yen.scrpe.service.ScrapeServiceMultiThreadV2Gpt;
 
 import java.io.IOException;
 
@@ -42,7 +40,7 @@ public class ScrappingApplication {
 
 
 
-      // ScrapeServiceMultiThread scrapeServiceMultiThread = new
+    // ScrapeServiceMultiThread scrapeServiceMultiThread = new
     // ScrapeServiceMultiThread();
     //            scrapeServiceMultiThread.testRun();
 
