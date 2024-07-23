@@ -27,7 +27,7 @@ public class ScrappingApplication {
     //pokemonCollectTask.run(LIMIT);
 
     ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, pokemonCollectTask, LIMIT);
-    //scrapeTaskFactory.run();
+    scrapeTaskFactory.run();
 
 
       /** V2 : multi thread (gpt) */
