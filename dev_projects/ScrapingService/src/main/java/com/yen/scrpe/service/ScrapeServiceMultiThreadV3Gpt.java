@@ -62,7 +62,7 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
 
         // Wait for all tasks to complete
         latch.await();
-        //shutdown();
+        shutdown();
     }
 
     private void scrapePage(String url, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, List<String> pagesToScrape) throws IOException {
@@ -128,7 +128,7 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
     }
 
     private void shutdown() {
-        executorService.shutdown();
+        //executorService.shutdown();
         try {
             if (!executorService.awaitTermination(60, TimeUnit.SECONDS)) {
                 executorService.shutdownNow();
