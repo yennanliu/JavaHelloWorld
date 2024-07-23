@@ -10,30 +10,4 @@ public class part6 {
 
   }
 
-  private static Stream<String> stringNumbersStrean(){
-      return Stream.of("one", "teo", "three");
-  }
-
-  private static Stream<Integer> intNumbersStrean(){
-      return Stream.iterate(0, i -> i * 2)
-              .limit(10);
-  }
-
-  private static Stream<User> userStream(){
-      return Stream.of(
-              new User(1, "aa"),
-              new User(2, "bb")
-      );
-  }
-
-  private static class User{
-      private Integer id;
-      private String name;
-
-      public User(int id, String name) {
-          this.id = id;
-          this.name = name;
-      }
-  }
-
 }
