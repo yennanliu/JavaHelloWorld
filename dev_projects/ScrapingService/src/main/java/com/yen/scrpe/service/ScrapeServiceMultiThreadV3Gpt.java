@@ -62,7 +62,7 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
 
         // Wait for all tasks to complete
         latch.await();
-        shutdown();
+        //shutdown();
     }
 
     private void scrapePage(String url, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, List<String> pagesToScrape) throws IOException {
@@ -73,10 +73,12 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
         Elements products = doc.select("li.product");
 
         synchronized (pagesToScrape) {
+            System.out.println("(scrapePage) pagesToScrape");
             pagesToScrape.addAll(this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered));
         }
 
         synchronized (pokemonProducts) {
+            System.out.println("(scrapePage) pokemonProducts");
             pokemonProducts.addAll(this.collectProductData(products, pokemonProducts));
         }
     }
