@@ -8,8 +8,10 @@ import java.io.IOException;
 public class Part12 {
   public static void main(String[] args) throws IOException {
 
-    StreamSources streamSources =  new StreamSources();
-    //reactiveSources.
+    // when a new event generated, do something (print it out)
+    ReactiveSources.intNumbersFlux().subscribe(x -> System.out.println(x));
+
+    ReactiveSources.userFlux().subscribe(user -> System.out.println(user));
 
     System.out.println("press a key to end");
     System.in.read();
