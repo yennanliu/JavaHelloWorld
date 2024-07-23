@@ -1,31 +1,49 @@
 package com.yen.scrpe.service;
 
 import com.yen.scrpe.model.PokemonProduct;
+import java.io.IOException;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.*;
-
 public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
 
-    // attr
-    private final String BASE_URL = "https://scrapeme.live/shop";
-    private final ExecutorService executorService = Executors.newFixedThreadPool(10); // Thread pool with 10 threads
+  // attr
+  private final String BASE_URL = "https://scrapeme.live/shop";
 
-    // constructor
-    public ScrapeServiceMultiThreadV3Gpt() {}
+  private final int _pcautoSchedulerPoolSize = 1000;
+  private static final int KEEP_ALIVE_TIME = 60;
 
-    // method
-    public void scrapeProductPage(
-            List<PokemonProduct> pokemonProducts,
-            Set<String> pagesDiscovered,
-            List<String> pagesToScrape,
-            Integer limit) throws InterruptedException {
+  private static final int MAX_POOL_SIZE = 1000;
+  private static final int CORE_POOL_SIZE = 500;
+
+  // private final ExecutorService executorService = Executors.newFixedThreadPool(100); // Thread
+  // pool with 10 threads
+
+  private final ExecutorService executorService =
+      new ThreadPoolExecutor(
+          CORE_POOL_SIZE,
+          MAX_POOL_SIZE,
+          KEEP_ALIVE_TIME,
+          TimeUnit.SECONDS,
+          new SynchronousQueue<>(),
+          new ThreadPoolExecutor.AbortPolicy() // DiscardPolicy
+          );
+
+  // constructor
+  public ScrapeServiceMultiThreadV3Gpt() {}
+
+  // method
+  public void scrapeProductPage(
+      List<PokemonProduct> pokemonProducts,
+      Set<String> pagesDiscovered,
+      List<String> pagesToScrape,
+      Integer limit)
+      throws InterruptedException {
 
         CountDownLatch latch = new CountDownLatch(pagesToScrape.size());
 

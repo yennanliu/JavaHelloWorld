@@ -4,10 +4,9 @@ import com.yen.scrpe.Task.BaseScrapeTask;
 import com.yen.scrpe.service.BaseScrapeService;
 
 import java.io.IOException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.*;
 
 public class ScrapeTaskFactoryV3Gpt {
 
@@ -26,20 +25,32 @@ public class ScrapeTaskFactoryV3Gpt {
 
     // Method to run tasks
     public void run() throws IOException, InterruptedException {
+        List<Future<?>> futures = new ArrayList<>();
         try {
-            // Submit the task to the executor service
-            Future<?> future = executorService.submit(() -> {
+            // Submit tasks to the executor service
+            for (int i = 0; i < limit; i++) {
+                Future<?> future = executorService.submit(() -> {
+                    try {
+                        this.scrapeTask.run(this.limit);
+                    } catch (IOException | InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                });
+                futures.add(future);
+            }
+
+            // Wait for all tasks to complete
+            for (Future<?> future : futures) {
                 try {
-                    this.scrapeTask.run(this.limit);
-                } catch (IOException | InterruptedException e) {
+                    if (future.isDone()){
+                        Object result = future.get(); // Blocking call to ensure completion
+                        System.out.println("---> result = " + result);
+                    }
+                } catch (ExecutionException e) {
+                    System.out.println("exception !!!  " + e.getLocalizedMessage());
                     e.printStackTrace();
                 }
-            });
-
-            // Wait for the task to complete
-            future.get(); // Blocking call to ensure the task is complete
-        } catch (Exception e) {
-            e.printStackTrace();
+            }
         } finally {
             shutdown();
         }

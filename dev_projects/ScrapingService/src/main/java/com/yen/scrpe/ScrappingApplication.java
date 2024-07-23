@@ -1,8 +1,11 @@
 package com.yen.scrpe;
 
+import com.yen.scrpe.Task.Factory.ScrapeTaskFactoryV3Gpt;
 import com.yen.scrpe.Task.PokemonCollectTask;
 import com.yen.scrpe.Task.Factory.ScrapeTaskFactory;
+import com.yen.scrpe.Task.PokemonCollectTaskV3Gpt;
 import com.yen.scrpe.service.ScrapeService;
+import com.yen.scrpe.service.ScrapeServiceMultiThreadV3Gpt;
 
 import java.io.IOException;
 
@@ -20,11 +23,18 @@ public class ScrappingApplication {
     int LIMIT = 10; // 50;
 
     /** V1 : single thread (original code ) */
-    ScrapeService scrapeService = new ScrapeService();
-    PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
-    //pokemonCollectTask.run(LIMIT);
+//    ScrapeService scrapeService = new ScrapeService();
+//    PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
+//    //pokemonCollectTask.run(LIMIT);
+//
+//    ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, pokemonCollectTask, LIMIT);
+//    scrapeTaskFactory.run();
 
-    ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, pokemonCollectTask, LIMIT);
+    /** V3 : multi thread (gpt) */
+    ScrapeServiceMultiThreadV3Gpt scrapeService = new ScrapeServiceMultiThreadV3Gpt();
+    PokemonCollectTaskV3Gpt pokemonCollectTask = new PokemonCollectTaskV3Gpt(scrapeService);
+
+    ScrapeTaskFactoryV3Gpt scrapeTaskFactory = new ScrapeTaskFactoryV3Gpt(scrapeService, pokemonCollectTask, LIMIT);
     scrapeTaskFactory.run();
 
 
