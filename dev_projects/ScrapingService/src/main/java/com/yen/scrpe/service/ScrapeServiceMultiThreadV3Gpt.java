@@ -64,7 +64,7 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
         }
 
         // Wait for all tasks to complete
-        latch.await(30, TimeUnit.SECONDS);
+        latch.await(45, TimeUnit.SECONDS);
         shutdown();
     }
 

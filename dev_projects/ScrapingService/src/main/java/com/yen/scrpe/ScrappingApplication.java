@@ -20,7 +20,7 @@ public class ScrappingApplication {
     Long start = System.currentTimeMillis();
 
     // to limit the number to scrape to 5
-    int LIMIT = 30; // 50;
+    int LIMIT = 90; // 50;
 
     /** V1 : single thread (original code ) */
 //    ScrapeService scrapeService = new ScrapeService();
