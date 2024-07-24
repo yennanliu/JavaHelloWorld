@@ -20,22 +20,22 @@ public class ScrappingApplication {
     Long start = System.currentTimeMillis();
 
     // to limit the number to scrape to 5
-    int LIMIT = 10; // 50;
+    int LIMIT = 30; // 50;
 
     /** V1 : single thread (original code ) */
-    ScrapeService scrapeService = new ScrapeService();
-    PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
-    //pokemonCollectTask.run(LIMIT);
-
-    ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, pokemonCollectTask, LIMIT);
-    scrapeTaskFactory.run();
+//    ScrapeService scrapeService = new ScrapeService();
+//    PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
+//    //pokemonCollectTask.run(LIMIT);
+//
+//    ScrapeTaskFactory scrapeTaskFactory = new ScrapeTaskFactory(scrapeService, pokemonCollectTask, LIMIT);
+//    scrapeTaskFactory.run();
 
     /** V3 : multi thread (gpt) */
-//    ScrapeServiceMultiThreadV3Gpt scrapeService = new ScrapeServiceMultiThreadV3Gpt();
-//    PokemonCollectTaskV3Gpt pokemonCollectTask = new PokemonCollectTaskV3Gpt(scrapeService);
-//
-//    ScrapeTaskFactoryV3Gpt scrapeTaskFactory = new ScrapeTaskFactoryV3Gpt(scrapeService, pokemonCollectTask, LIMIT);
-//    scrapeTaskFactory.run();
+    ScrapeServiceMultiThreadV3Gpt scrapeService = new ScrapeServiceMultiThreadV3Gpt();
+    PokemonCollectTaskV3Gpt pokemonCollectTask = new PokemonCollectTaskV3Gpt(scrapeService);
+
+    ScrapeTaskFactoryV3Gpt scrapeTaskFactory = new ScrapeTaskFactoryV3Gpt(scrapeService, pokemonCollectTask, LIMIT);
+    scrapeTaskFactory.run();
 
 
 

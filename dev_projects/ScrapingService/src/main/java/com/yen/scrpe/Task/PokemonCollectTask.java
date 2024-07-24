@@ -89,4 +89,5 @@ public class PokemonCollectTask implements BaseScrapeTask {
       i++;
     }
   }
+
 }

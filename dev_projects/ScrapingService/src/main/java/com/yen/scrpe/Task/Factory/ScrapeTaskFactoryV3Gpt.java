@@ -23,15 +23,20 @@ public class ScrapeTaskFactoryV3Gpt {
         this.executorService = Executors.newFixedThreadPool(10); // Fixed thread pool with 10 threads
     }
 
+    //int j = 0;
     // Method to run tasks
     public void run() throws IOException, InterruptedException {
         List<Future<?>> futures = new ArrayList<>();
+        System.out.println(" (ScrapeTaskFactoryV3Gpt.run) limit = " + limit);
         try {
             // Submit tasks to the executor service
-            for (int i = 0; i < limit; i++) {
+            for (int j = 0; j < limit; j++) {
+                int finalJ = j;
                 Future<?> future = executorService.submit(() -> {
                     try {
-                        this.scrapeTask.run(this.limit);
+                        //this.scrapeTask.run(this.limit);
+                        System.out.println("finalJ = " + finalJ);
+                        this.scrapeTask.run(finalJ);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }

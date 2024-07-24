@@ -26,13 +26,18 @@ public class PokemonCollectTaskV3Gpt implements BaseScrapeTask {
         this.pagesToScrape.add("https://scrapeme.live/shop/page/2/");
     }
 
+    int i = 0;
+
+
+    // used in ScrapeTaskFactoryV3Gpt
     @Override
-    public void run(int limit) throws IOException, InterruptedException {
-        int i = 0;
-        while (!this.pagesToScrape.isEmpty() && i < limit) {
-            System.out.println(">>> i = " + i + ", thread name = " + Thread.currentThread().getName() + ", limit = " + limit);
-            this.scrapeService.scrapeProductPage(pokemonProducts, pagesDiscovered, pagesToScrape, i);
-            i++;
-        }
+    public void run(int i) throws IOException, InterruptedException {
+//        while (!this.pagesToScrape.isEmpty() && i < limit) {
+//            System.out.println(">>> i = " + i + ", thread name = " + Thread.currentThread().getName() + ", limit = " + limit);
+//            this.scrapeService.scrapeProductPage(pokemonProducts, pagesDiscovered, pagesToScrape, i);
+//            i++;
+//        }
+        System.out.println(">>> i = " + i + ", thread name = " + Thread.currentThread().getName());
+        this.scrapeService.scrapeProductPage(pokemonProducts, pagesDiscovered, pagesToScrape, i);
     }
 }

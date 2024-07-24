@@ -42,16 +42,19 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
       List<PokemonProduct> pokemonProducts,
       Set<String> pagesDiscovered,
       List<String> pagesToScrape,
-      Integer limit)
+      Integer i)
       throws InterruptedException {
 
         CountDownLatch latch = new CountDownLatch(pagesToScrape.size());
+
+        System.out.println("scrapeProductPage run ... " + ", i = " + i + ", pagesToScrape = " + pagesToScrape);
 
         while (!pagesToScrape.isEmpty()) {
             String url = pagesToScrape.remove(0);
             executorService.submit(() -> {
                 try {
-                    scrapePage(url, pokemonProducts, pagesDiscovered, pagesToScrape);
+                    scrapePage(url, pokemonProducts, pagesDiscovered, pagesToScrape, i);
+                    //scrapePage(limit, pokemonProducts, pagesDiscovered, pagesToScrape);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
@@ -61,30 +64,47 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
         }
 
         // Wait for all tasks to complete
-        latch.await();
+        latch.await(30, TimeUnit.SECONDS);
         shutdown();
     }
 
-    private void scrapePage(String url, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, List<String> pagesToScrape) throws IOException {
+    private void scrapePage(String url, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, List<String> pagesToScrape, Integer i) throws IOException {
+
+        //String url2 = pagesToScrape.remove(0);
         pagesDiscovered.add(url);
-        Document doc = this.prepareConnect(url);
+
+        Document doc = this.prepareConnect(i);
 
         Elements paginationElements = doc.select("a.page-numbers");
         Elements products = doc.select("li.product");
 
         synchronized (pagesToScrape) {
             System.out.println("(scrapePage) pagesToScrape");
-            pagesToScrape.addAll(this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered));
+
+            //pagesToScrape.addAll(this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered));
+            List<String> urls = this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered);
+            for (String url_ : urls){
+                if(!pagesToScrape.contains(url_)){
+                    pagesToScrape.add(url_);
+                }
+            }
+
+            System.out.println(">>> (scrapePage) pagesToScrape = " + pagesToScrape);
+            System.out.println(">>> (scrapePage) pagesDiscovered = " + pagesDiscovered);
         }
 
         synchronized (pokemonProducts) {
             System.out.println("(scrapePage) pokemonProducts");
             pokemonProducts.addAll(this.collectProductData(products, pokemonProducts));
+            //System.out.println(">>> (scrapePage) pokemonProducts = " + pokemonProducts);
+            System.out.println(">>> (scrapePage) pokemonProducts size = " + pokemonProducts.size());
         }
     }
 
-    private Document prepareConnect(String url) throws IOException {
-        System.out.println("URL = " + url);
+    private Document prepareConnect(Integer i) throws IOException {
+        String url = this.BASE_URL + "/page/" + i;
+        System.out.println("url = " + url);
+        System.out.println("i = " + i);
         return Jsoup.connect(url)
                 .userAgent(
                         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36")
@@ -102,6 +122,7 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
                 pagesToScrape.add(pageUrl);
             }
 
+            System.out.println("--> (collectToScrape) pageUrl = " + pageUrl);
             pagesDiscovered.add(pageUrl);
         }
         return pagesToScrape;
