@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 public class part26 {
   public static void main(String[] args) throws IOException {
 
+      // example 1
       List<Integer> numbers = ReactiveSources
               .intNumbersFlux()
               .log() // NOTE !!! add log within processing
@@ -40,8 +41,21 @@ public class part26 {
        *
        *
        */
+
       System.out.println("List is  = " + numbers);
       System.out.println("List size = " + numbers.size());
+
+      // example 2
+      ReactiveSources
+              .intNumbersFlux()
+              //.log() // NOTE !!! can add log at different step in op
+              .filter(e -> e > 5)
+              .log() // NOTE !!! add log within processing
+              .subscribe(System.out::println);
+
+      System.out.println("press a key to end");
+      System.in.read();
+
   }
 
 }
