@@ -1,4 +1,4 @@
-package com.yen.scrpe.Task;
+package com.yen.scrpe.Task.Factory;
 
 import com.yen.scrpe.Task.PokemonCollectTask;
 import com.yen.scrpe.model.PokemonProduct;

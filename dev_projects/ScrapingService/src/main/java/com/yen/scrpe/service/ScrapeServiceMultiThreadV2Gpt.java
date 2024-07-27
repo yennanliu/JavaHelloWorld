@@ -81,18 +81,18 @@ public class ScrapeServiceMultiThreadV2Gpt implements BaseScrapeService {
         Elements paginationElements = doc.select("a.page-numbers");
         Elements products = doc.select("li.product");
 
-//        pagesToScrape = this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered);
-//        pokemonProducts = this.collectProductData(products, pokemonProducts);
+        pagesToScrape = this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered);
+        pokemonProducts = this.collectProductData(products, pokemonProducts);
 
-        synchronized (pagesToScrape) {
-            System.out.println("synchronized (pagesToScrape) run ...");
-            pagesToScrape = this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered);
-        }
-
-        synchronized (pokemonProducts) {
-            System.out.println("synchronized (pokemonProducts) run ...");
-            pokemonProducts = this.collectProductData(products, pokemonProducts);
-        }
+//        synchronized (pagesToScrape) {
+//            System.out.println("synchronized (pagesToScrape) run ...");
+//            pagesToScrape = this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered);
+//        }
+//
+//        synchronized (pokemonProducts) {
+//            System.out.println("synchronized (pokemonProducts) run ...");
+//            pokemonProducts = this.collectProductData(products, pokemonProducts);
+//        }
 
     }
 

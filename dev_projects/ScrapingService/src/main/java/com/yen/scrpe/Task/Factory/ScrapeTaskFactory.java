@@ -1,5 +1,6 @@
-package com.yen.scrpe.Task;
+package com.yen.scrpe.Task.Factory;
 
+import com.yen.scrpe.Task.BaseScrapeTask;
 import com.yen.scrpe.service.BaseScrapeService;
 import java.io.IOException;
 
