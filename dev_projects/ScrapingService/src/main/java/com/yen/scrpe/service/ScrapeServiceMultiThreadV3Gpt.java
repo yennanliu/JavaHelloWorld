@@ -73,7 +73,7 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
     }
 
     private void scrapePage(String url, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, List<String> pagesToScrape, Integer i) throws IOException {
-      
+
         //String url2 = pagesToScrape.remove(0);
         String url2 = BASE_URL + "/" + i;
         if (!pagesDiscovered.contains(url2)){
@@ -85,11 +85,14 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
         Elements paginationElements = doc.select("a.page-numbers");
         Elements products = doc.select("li.product");
 
+        System.out.println(">>>> (scrapePage) paginationElements = " + paginationElements);
+
         synchronized (pagesToScrape) {
             System.out.println("(scrapePage) pagesToScrape");
 
             //pagesToScrape.addAll(this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered));
-            List<String> urls = this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered);
+            //List<String> urls = this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered);
+            List<String> urls = this.collectToScrape2(paginationElements, pagesToScrape, pagesDiscovered);
             for (String url_ : urls){
                 if(!pagesToScrape.contains(url_)){
                     pagesToScrape.add(url_);
@@ -130,6 +133,17 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
                 pagesToScrape.add(pageUrl);
             }
 
+            System.out.println("--> (collectToScrape) pageUrl = " + pageUrl);
+            pagesDiscovered.add(pageUrl);
+        }
+        return pagesToScrape;
+    }
+
+    // get page url via iteration over integer range
+    private List<String> collectToScrape2(
+            Elements paginationElements, List<String> pagesToScrape, Set<String> pagesDiscovered) {
+        for (int i = 0; i < 50; i++){
+            String pageUrl = this.BASE_URL + "/page/" + i;
             System.out.println("--> (collectToScrape) pageUrl = " + pageUrl);
             pagesDiscovered.add(pageUrl);
         }
