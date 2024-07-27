@@ -51,7 +51,7 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
 
         while (!pagesToScrape.isEmpty()) {
             String url = pagesToScrape.remove(0);
-            executorService.submit(() -> {
+            Future<?> future = executorService.submit(() -> {
                 try {
                     scrapePage(url, pokemonProducts, pagesDiscovered, pagesToScrape, i);
                     //scrapePage(limit, pokemonProducts, pagesDiscovered, pagesToScrape);
@@ -61,6 +61,10 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
                     latch.countDown();
                 }
             });
+
+            if (future.isDone()){
+                System.out.println(">>> (scrapeProductPage) future = " + future);
+            }
         }
 
         // Wait for all tasks to complete
@@ -69,9 +73,12 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
     }
 
     private void scrapePage(String url, List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, List<String> pagesToScrape, Integer i) throws IOException {
-
+      
         //String url2 = pagesToScrape.remove(0);
-        pagesDiscovered.add(url);
+        String url2 = BASE_URL + "/" + i;
+        if (!pagesDiscovered.contains(url2)){
+            pagesDiscovered.add(url2);
+        }
 
         Document doc = this.prepareConnect(i);
 
@@ -117,6 +124,7 @@ public class ScrapeServiceMultiThreadV3Gpt implements BaseScrapeService {
 
         for (Element pageElement : paginationElements) {
             String pageUrl = pageElement.attr("href");
+            System.out.println("---> (collectToScrape) pageUrl = " + pageUrl);
 
             if (!pagesDiscovered.contains(pageUrl) && !pagesToScrape.contains(pageUrl)) {
                 pagesToScrape.add(pageUrl);
