@@ -9,6 +9,7 @@
 - [JVM faq](https://github.com/yennanliu/CS_basics/blob/master/doc/faq/faq_JVM.md) : JVM cheatsheet
 - [RX Java](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/RxJava) : Reactive programming with Java
 - [Scraping service](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/ScrapingService)
+- [webFluxPoc](https://github.com/yennanliu/SpringPlayground/tree/main/webFluxPoc) - Spring Web flux POC
 
 <details>
 <summary>Java Hello World</summary>
