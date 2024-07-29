@@ -40,6 +40,7 @@
 
 - Publisher, Subscriber, Subscription, Processer
 	<p><img src ="./doc/pic/subscribe_publisher.png" ></p>
+	<p><img src ="./doc/pic/subscribe_publisher2.png" ></p>
 
 ## Ref
 - video
