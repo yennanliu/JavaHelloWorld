@@ -38,6 +38,9 @@
 	- https://github.com/yennanliu/til/blob/master/README.md#20240727
 
 
+- Publisher, Subscriber, Subscription, Processer
+	<p><img src ="./doc/pic/subscribe_publisher.png" ></p>
+
 ## Ref
 - video
 	- https://www.youtube.com/watch?v=7mbjhNCWqvs&list=PLZ3FH0lcV0117kiek3g-qiQDkO4ezy_Ro
@@ -55,3 +58,6 @@
   	- https://www.tpisoftware.com/tpu/articleDetails/1726
   	- https://juejin.cn/post/7129076913951211557
   	- https://ithelp.ithome.com.tw/users/20141418/ironman/4617
+
+ - others
+ 	- https://ithelp.ithome.com.tw/articles/10264448
