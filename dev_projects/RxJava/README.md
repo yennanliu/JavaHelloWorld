@@ -2,6 +2,9 @@
 
 ## Concept
 
+- Reactive programming
+	<p><img src ="./doc/pic/reactive_programming.png" ></p>
+
 - Observable type
 	- https://youtu.be/l4zfIkRsT_8?si=7O7qBEwWrwGd4qnn&t=345
 <p><img src ="./doc/pic/rx_java_can_onserver.png" ></p>
@@ -41,6 +44,7 @@
 - Publisher, Subscriber, Subscription, Processer
 	<p><img src ="./doc/pic/subscribe_publisher.png" ></p>
 	<p><img src ="./doc/pic/subscribe_publisher2.png" ></p>
+
 
 ## Ref
 - video
