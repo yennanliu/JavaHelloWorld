@@ -24,7 +24,8 @@ public class GrpcClient {
         System.out.println("stub = " + stub);
 
         GreetingServiceProto.GreetingRequest request = GreetingServiceProto.GreetingRequest.newBuilder()
-                .setName("John Doe")
+                //.setName("John Doe")
+                .setName("kkkk")
                 .build();
 
         GreetingServiceProto.GreetingResponse response = stub.greet(request);

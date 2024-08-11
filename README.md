@@ -10,7 +10,8 @@
 - [RX Java](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/RxJava) : Reactive programming with Java
 - [Scraping service](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/ScrapingService)
 - [webFluxPoc](https://github.com/yennanliu/SpringPlayground/tree/main/webFluxPoc) - Spring Web flux POC
-    - [webFluxPoc 尚硅谷](https://github.com/yennanliu/SpringPlayground/tree/main/webFluxPoc/src/main/java/com/yen/webFluxPoc/dev) 
+    - [webFluxPoc 尚硅谷](https://github.com/yennanliu/SpringPlayground/tree/main/webFluxPoc/src/main/java/com/yen/webFluxPoc/dev)
+- [Grpc Demo](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/GrpcDemo)
 
 <details>
 <summary>Java Hello World</summary>

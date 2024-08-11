@@ -16,7 +16,18 @@ mvn protobuf:compile
 mvn protobuf:compile-custom
 ```
 
-## Project structrure
+## Concept
+
+- Protobuf
+  - which is short for “Protocol Buffers,”
+  - is an efficient, language-agnostic data serialization mechanism.
+  - It enables developers to define structured data in a . proto file, which is then used to generate source code that can write and read data from different data streams.
+  - https://blog.postman.com/what-is-protobuf/#:~:text=Protobuf%2C%20which%20is%20short%20for,data%20from%20different%20data%20streams.
+
+- IDL : Interface definition language
+- Protoc : protobuf compiler
+
+## Project structure
 
 - NOTE !!! `.proto` file needs to under `src/main/proto` path
 
