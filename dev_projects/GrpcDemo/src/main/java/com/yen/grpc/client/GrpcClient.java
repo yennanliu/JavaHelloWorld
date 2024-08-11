@@ -17,7 +17,11 @@ public class GrpcClient {
                 .usePlaintext()
                 .build();
 
+        System.out.println("channel = " + channel);
+
         GreetingServiceGrpc.GreetingServiceBlockingStub stub = GreetingServiceGrpc.newBlockingStub(channel);
+
+        System.out.println("stub = " + stub);
 
         GreetingServiceProto.GreetingRequest request = GreetingServiceProto.GreetingRequest.newBuilder()
                 .setName("John Doe")
@@ -25,6 +29,7 @@ public class GrpcClient {
 
         GreetingServiceProto.GreetingResponse response = stub.greet(request);
 
+        System.out.println("response = " + response);
         System.out.println(response.getMessage());
 
         System.out.println("GRPC client shutdown ...");
