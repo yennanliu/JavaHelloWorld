@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "com.yen.grpc";
+option java_outer_classname = "CarServiceProto";
+
+service CarService{
+  rpc drive (DriveRequest) returns (DriveResponse);
+}
+
+message DriveRequest{
+  string name = 1;
+}
+
+message DriveResponse{
+  int32 speed = 1;
+}
