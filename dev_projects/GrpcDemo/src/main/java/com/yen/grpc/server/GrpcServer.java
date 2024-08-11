@@ -1,16 +1,13 @@
 package com.yen.grpc.server;
 
 // import com.yen.service.GreetingServiceImpl;
+import com.yen.grpc.service.CarServiceImpl;
 import com.yen.grpc.service.GreetingServiceImpl;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import java.io.IOException;
 
 public class GrpcServer {
-
-  //  public static void main(String[] args) {
-  //    System.out.println("GRPC Hello world!");
-  //  }
 
   private static final int PORT = 7777;
 
@@ -22,6 +19,7 @@ public class GrpcServer {
         ServerBuilder.forPort(PORT)
             // TODO : check if necessary to cast
             .addService(new GreetingServiceImpl())
+            .addService(new CarServiceImpl()) // NOTE !!! need to add service here
             .build();
 
     server.start();

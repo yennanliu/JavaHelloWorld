@@ -18,14 +18,14 @@ public class GrpcClient {
     ManagedChannel channel =
         ManagedChannelBuilder.forAddress("localhost", PORT).usePlaintext().build();
 
-    System.out.println("channel = " + channel);
+    //System.out.println("channel = " + channel);
 
     /** V1 : call GreetingServiceGrpc */
     System.out.println("---------- GreetingServiceGrpc ----------");
     GreetingServiceGrpc.GreetingServiceBlockingStub stub =
         GreetingServiceGrpc.newBlockingStub(channel);
 
-    System.out.println("stub = " + stub);
+    //System.out.println("stub = " + stub);
 
     GreetingServiceProto.GreetingRequest request =
         GreetingServiceProto.GreetingRequest.newBuilder()
@@ -35,22 +35,22 @@ public class GrpcClient {
 
     GreetingServiceProto.GreetingResponse response = stub.greet(request);
 
-    System.out.println("response = " + response);
+    //System.out.println("response = " + response);
     System.out.println(response.getMessage());
 
-    /** V1 : call CarServiceGrpc */
+    /** V2 : call CarServiceGrpc */
     System.out.println("---------- CarServiceGrpc ----------");
 
-//    CarServiceGrpc.CarServiceBlockingStub stub2 = CarServiceGrpc.newBlockingStub(channel);
-//
-//    CarServiceProto.DriveRequest request2 =
-//        CarServiceProto.DriveRequest.newBuilder().setName("lexus").build();
-//
-//    CarServiceProto.DriveResponse response2 = stub2.drive(request2);
-//    System.out.println(response2.getSpeed());
+    CarServiceGrpc.CarServiceBlockingStub stub2 = CarServiceGrpc.newBlockingStub(channel);
+
+    CarServiceProto.DriveRequest request2 =
+        CarServiceProto.DriveRequest.newBuilder().setName("lexus").build();
+
+    // TODO : fix below
+    CarServiceProto.DriveResponse response2 = stub2.drive(request2);
+    System.out.println(response2.getSpeed());
 
     System.out.println("GRPC client shutdown ...");
     channel.shutdown();
   }
-
 }
