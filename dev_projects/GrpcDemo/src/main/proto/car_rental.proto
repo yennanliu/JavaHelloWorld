@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+option java_package = "com.yen.grpc";
+option java_outer_classname = "CarRentalProto";
+
+// Service definition
+service CarRentalService {
+  rpc ListAvailableCars (Empty) returns (CarListResponse);
+  rpc RentCar (RentCarRequest) returns (RentCarResponse);
+  rpc ReturnCar (ReturnCarRequest) returns (ReturnCarResponse);
+  rpc GetCarDetails (CarDetailsRequest) returns (CarDetailsResponse);
+}
+
+// Empty message for methods with no input
+message Empty {}
+
+// Message representing a car
+message Car {
+  string id = 1;
+  string make = 2;
+  string model = 3;
+  int32 year = 4;
+  bool is_rented = 5;
+}
+
+// Response message for ListAvailableCars
+message CarListResponse {
+  repeated Car cars = 1;
+}
+
+// Request message for RentCar
+message RentCarRequest {
+  string car_id = 1;
+  string renter_name = 2;
+}
+
+// Response message for RentCar
+message RentCarResponse {
+  string message = 1;
+}
+
+// Request message for ReturnCar
+message ReturnCarRequest {
+  string car_id = 1;
+}
+
+// Response message for ReturnCar
+message ReturnCarResponse {
+  string message = 1;
+}
+
+// Request message for GetCarDetails
+message CarDetailsRequest {
+  string car_id = 1;
+}
+
+// Response message for GetCarDetails
+message CarDetailsResponse {
+  Car car = 1;
+}

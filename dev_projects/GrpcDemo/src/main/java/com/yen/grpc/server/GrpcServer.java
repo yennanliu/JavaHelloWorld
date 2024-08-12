@@ -1,6 +1,7 @@
 package com.yen.grpc.server;
 
 // import com.yen.service.GreetingServiceImpl;
+import com.yen.grpc.service.CarRentalServiceImpl;
 import com.yen.grpc.service.CarServiceImpl;
 import com.yen.grpc.service.GreetingServiceImpl;
 import io.grpc.Server;
@@ -20,6 +21,7 @@ public class GrpcServer {
             // TODO : check if necessary to cast
             .addService(new GreetingServiceImpl())
             .addService(new CarServiceImpl()) // NOTE !!! need to add service here
+            .addService(new CarRentalServiceImpl())
             .build();
 
     server.start();
