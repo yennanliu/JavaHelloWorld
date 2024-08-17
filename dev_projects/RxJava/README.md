@@ -45,6 +45,9 @@
 	<p><img src ="./doc/pic/subscribe_publisher.png" ></p>
 	<p><img src ="./doc/pic/subscribe_publisher2.png" ></p>
 
+- Lambda, flatMap example:
+	- https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/RxJava/RxJava/src/main/java/com/yen/dev
+
 
 ## Ref
 - video

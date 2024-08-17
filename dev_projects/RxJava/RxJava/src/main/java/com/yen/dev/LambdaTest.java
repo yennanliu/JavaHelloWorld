@@ -1,16 +1,19 @@
 package com.yen.dev;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import io.reactivex.rxjava3.core.Maybe;
 import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.functions.Predicate;
 import io.reactivex.rxjava3.functions.Supplier;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
+//import rx.functions.Function;
 
 public class LambdaTest {
 
@@ -83,43 +86,104 @@ public class LambdaTest {
         System.out.println(randomSupplier.get());
     }
 
-    /**
-     *  Consumer
-     *
-     *  -> is a functional interface that takes one argument
-     *  and returns no result (it “consumes” the input).
-     *
-     *   how to run ?
-     *
-     *   xxx.accept()
-     *
-     */
+  /**
+   * Consumer
+   *
+   * <p>-> is a functional interface that takes one argument and returns no result (it “consumes”
+   * the input).
+   *
+   * <p>how to run ?
+   *
+   * <p>xxx.accept()
+   */
+  @Test
+  public void test5() throws Throwable {
+
+    Consumer<String> printConsumer = s -> System.out.println("res = " + s);
+
+    printConsumer.accept("ohhhh");
+    printConsumer.accept("yaaaaa");
+  }
+
+  /**
+   * BinaryOperator
+   *
+   * <p>-> is a functional interface that takes two arguments of the same type and returns a result
+   * of the same type.
+   *
+   * <p>how to run ?
+   *
+   * <p>xxx.apply()
+   */
+  @Test
+  public void test6() throws Throwable {
+
+    BinaryOperator<Integer> sum = (a, b) -> a + b;
+    System.out.println(sum.apply(1, 10));
+    System.out.println(sum.apply(1, 2));
+  }
+
+   /**
+    *  Consumer example (advanced)
+    */
     @Test
-    public void test5() throws Throwable {
+    public void test7() throws Throwable {
 
-        Consumer<String> printConsumer = s -> System.out.println("res = " + s);
+    Consumer<String> printUpper = s-> System.out.println(s.toUpperCase());
+    Consumer<String> printlower = s-> System.out.println(s.toLowerCase());
 
-        printConsumer.accept("ohhhh");
-        printConsumer.accept("yaaaaa");
+     // TODO : fix below
+//        Consumer<String> printUpperCase = s -> System.out.println(s.toUpperCase());
+//        Consumer<String> printLowerCase = s -> System.out.println(s.toLowerCase());
+//
+//        // Chaining consumers
+//        Consumer<String> combinedConsumer = printUpperCase.andThen(printLowerCase);
+
     }
 
-    /**
-     *
-     * BinaryOperator
-     *
-     * -> is a functional interface that takes
-     *    two arguments of the same type and returns
-     *    a result of the same type.
-     */
     @Test
-    public void test6() throws Throwable {
+    public void test8() throws Throwable {
 
-        Consumer<String> printConsumer = s -> System.out.println("res = " + s);
+        Function<String, String> trim = String::trim;
+        Function<String, String> toUpperCase = String::toUpperCase;;
+        Function<String, String> addExclamation = s -> s + "!";
 
-        printConsumer.accept("ohhhh");
-        printConsumer.accept("yaaaaa");
+        // TODO : fix below
+        // Composing functions
+//        Function<String, String> composedFunction = trim.andThen(toUpperCase).andThen(addExclamation);
+//
+//        // Applying the composed function
+//        System.out.println(composedFunction.apply("  hello world  ")); // "HELLO WORLD!"
     }
 
+    @Test
+    public void test9() throws Throwable {
 
+        List<Integer> list2 = new ArrayList<>();
+        for (int i  = 0; i < 5; i++){
+            list2.add(i);
+        }
+
+        Function<Integer, Integer> stringLen = s -> s * 10;
+        BinaryOperator<Integer> sum2 = (a, b) -> a + b;
+
+        // TODO : fix below
+//
+//        // Creating the list using a stream and lambda
+//        List<Integer> list = IntStream.range(0, 5)
+//                .boxed()
+//                .collect(Collectors.toList());
+//
+//        // Defining the Function and BinaryOperator
+//        Function<Integer, Integer> multiplyByTen = s -> s * 10;
+//        BinaryOperator<Integer> sum = Integer::sum;
+//
+//        // Using the function within the Flux operation
+//        Flux.fromIterable(list)
+//                .map(multiplyByTen)
+//                .reduce(sum)
+//                .subscribe(result -> System.out.println("Sum of all elements after multiplication: " + result));
+
+    }
 
 }
