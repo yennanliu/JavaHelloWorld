@@ -1,5 +1,6 @@
 package com.yen.dev;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
@@ -59,15 +60,87 @@ public class FlatMapTest {
     Car c3 = new Car(3, "c-car");
 
     Flux.just(c1, c2, c3)
-            .flatMap(x -> {
-                String name = x.getName();
-                Car newCar = new Car();
-                newCar.setId(x.id+10);
-                newCar.setName(name + " ohhh");
-                //return Flux.just(name);
-                return Flux.just(newCar);
+        .flatMap(
+            x -> {
+              String name = x.getName();
+              Car newCar = new Car();
+              newCar.setId(x.id + 10);
+              newCar.setName(name + " ohhh");
+              // return Flux.just(name);
+              return Flux.just(newCar);
             })
-            .subscribe(x -> System.out.println(x));
+        .subscribe(x -> System.out.println(x));
+  }
+
+  /** flatMap with custom method 1 */
+  @Test
+  public void test5() {
+
+    Flux.just(1, 2, 3).flatMap(this::repeatValue).subscribe(x -> System.out.println(x));
+  }
+
+  /** flatMap with custom method 2 */
+  @Test
+  public void test6() {
+
+    Flux.just(1, 2, 3).flatMap(this::prepareList).subscribe(x -> System.out.println(x));
+  }
+
+  /** flatMap with custom method 3 */
+  @Test
+  public void test7() {
+
+    Flux.just(1, 2, 3)
+        .flatMap(this::prepareList)
+        .flatMap(
+            x -> {
+              int val = x.get(0);
+              return Flux.just(val);
+            })
+        .map(y -> y + 10)
+        .subscribe(x -> System.out.println(x));
+  }
+
+
+    /** flatMap with custom method 4 */
+    @Test
+    public void test8() {
+
+        List<String> data = Flux.just("Jolyne Cujoh", "Jotaro Kujo", "Dio Brando")
+                .flatMap(x -> {
+                    String[] res = x.split(" ");
+                    return Flux.fromArray(res);
+                })
+                .flatMap(this::toUpperCase)
+//                .map(x -> {
+//                    return x.length();
+//                })
+                .toStream().collect(Collectors.toList());
+                //.subscribe(x -> System.out.println(x));
+
+        // [Jolyne, Cujoh, Jotaro, Kujo, Dio, Brando]
+        // data = [JOLYNE, CUJOH, JOTARO, KUJO, DIO, BRANDO]
+        System.out.println("data = " + data);
+    }
+
+
+
+    // define custom method
+  // Custom function that returns a Flux<String>
+  public Flux<String> repeatValue(int number) {
+    return Flux.range(1, number).map(i -> "Value: " + number);
+  }
+
+  public Flux<List<Integer>> prepareList(int number) {
+    List<Integer> list = new ArrayList<>();
+    for (int i = number; i < number + 3; i++) {
+      list.add(i);
+    }
+    return Flux.just(list);
+  }
+
+  public Flux<String> toUpperCase(String name){
+        return Flux.just(name.toUpperCase());
   }
 
   class Car {
