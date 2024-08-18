@@ -1,6 +1,8 @@
 # GrpcDemo
 > POC service for [grpc](https://grpc.io/)
 
+- [Grpc syntax](https://github.com/yennanliu/JavaHelloWorld/blob/main/dev_projects/GrpcDemo/doc/grpc_syntax.md)
+
 ## Dependency
 - JDK 17
 

@@ -123,6 +123,28 @@ public class FlatMapTest {
         System.out.println("data = " + data);
     }
 
+    /**
+     *  FlatMap
+     *  Flux.fromIterable demo
+     */
+    // https://youtu.be/E-9UjhOu8Ps?si=Bi_l-ujqu22Jj5W7&t=2105
+    @Test
+    public void test9() throws InterruptedException {
+        Flux.range(1, 100)
+                // NOTE !!! set batch size as 10
+                .buffer(10)
+                .flatMap(list -> {
+                    /** NOTE !!!
+                     *
+                     *  list can be used with
+                     *  Flux.fromIterable(list);
+                     */
+                    return Flux.fromIterable(list);
+                }).subscribe(x->System.out.println("--> x = " + x));
+
+        Thread.sleep(20000);
+    }
+
 
 
     // define custom method
