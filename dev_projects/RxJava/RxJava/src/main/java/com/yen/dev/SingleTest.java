@@ -1,10 +1,15 @@
 package com.yen.dev;
 
 import io.reactivex.rxjava3.core.Single;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import io.reactivex.rxjava3.disposables.Disposable;
 import org.junit.jupiter.api.Test;
+import reactor.core.publisher.Flux;
 
 public class SingleTest {
 
@@ -92,6 +97,28 @@ public class SingleTest {
       }
     });
     
+  }
+
+
+  @Test
+  public void test6() {
+
+    User u1 = new User(1,"a");
+    User u2 = new User(2,"b");
+    User u3 = new User(3,"c");
+    // Create a Single<Stream<String>> object
+    Single<Stream<List<User>>> singleStream = Single.just(Stream.of(Arrays.asList(u1,u2,u3)));
+
+    // v1
+    singleStream.subscribe(stream ->
+            stream.forEach(System.out::println));
+
+    // v2
+    singleStream.subscribe(stream -> {
+      List<List<User>> list = stream.collect(Collectors.toList());
+      list.forEach(System.out::println);
+    });
+
   }
 
   class User {
