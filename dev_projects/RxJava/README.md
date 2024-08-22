@@ -48,6 +48,15 @@
 - Lambda, flatMap example:
 	- https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/RxJava/RxJava/src/main/java/com/yen/dev
 
+- Single
+	- https://blog.csdn.net/JMW1407/article/details/121007602
+
+- Flowable
+	- https://zouzhberk.github.io/rxjava-study/
+
+- Stream
+	- https://blog.csdn.net/xiaofeng10330111/article/details/130457788
+	- https://blog.csdn.net/netyeaxi/article/details/103757510
 
 ## Ref
 - video
