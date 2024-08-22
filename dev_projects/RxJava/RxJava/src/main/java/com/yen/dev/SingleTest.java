@@ -3,7 +3,9 @@ package com.yen.dev;
 import io.reactivex.rxjava3.core.Single;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,7 +19,7 @@ public class SingleTest {
   public void test1() {
 
     Single<String> single = Single.just("Hello, RxJava!");
-    //Flux<String> single = Flux.just("Hello, RxJava!", "ohhhhh");
+    // Flux<String> single = Flux.just("Hello, RxJava!", "ohhhhh");
 
     // v1
     single.subscribe(
@@ -64,10 +66,9 @@ public class SingleTest {
     Single<Stream<String>> singleStream = Single.just(Stream.of("One", "Two", "Three"));
 
     // Subscribe to the Single and print each element in the Stream
-    singleStream.subscribe(stream ->
-                    stream.forEach(System.out::println),
-            error -> System.err.println("Error: " + error)
-    );
+    singleStream.subscribe(
+        stream -> stream.forEach(System.out::println),
+        error -> System.err.println("Error: " + error));
   }
 
   @Test
@@ -78,47 +79,74 @@ public class SingleTest {
 
     // Subscribe to the Single and print each element in the Stream
     // v1
-    singleStream.subscribe(stream ->
-                    stream.forEach(System.out::println));
+    singleStream.subscribe(stream -> stream.forEach(System.out::println));
 
-    //singleStream.subscribe(x -> System.out.println("--> x = " + x));
+    // singleStream.subscribe(x -> System.out.println("--> x = " + x));
 
     // v2
-    singleStream.subscribe(stream -> {
-      List<String> list = stream.collect(Collectors.toList());
-      list.forEach(System.out::println);
-    });
+    singleStream.subscribe(
+        stream -> {
+          List<String> list = stream.collect(Collectors.toList());
+          list.forEach(System.out::println);
+        });
 
     // v3
-    singleStream.subscribe(stream -> {
-      String[] array = stream.toArray(String[]::new);
-      for (String s : array) {
-        System.out.println(s);
-      }
-    });
-    
+    singleStream.subscribe(
+        stream -> {
+          String[] array = stream.toArray(String[]::new);
+          for (String s : array) {
+            System.out.println(s);
+          }
+        });
   }
-
 
   @Test
   public void test6() {
 
-    User u1 = new User(1,"a");
-    User u2 = new User(2,"b");
-    User u3 = new User(3,"c");
+    Map<Integer,String> map = new HashMap<>();
+    for(int i = 0; i < 3; i++){
+      map.put(i, "val=" + i);
+    }
     // Create a Single<Stream<String>> object
-    Single<Stream<List<User>>> singleStream = Single.just(Stream.of(Arrays.asList(u1,u2,u3)));
+    Single<Stream<Map<Integer, String>>> singleStream = Single.just(Stream.of(map));
 
     // v1
-    singleStream.subscribe(stream ->
-            stream.forEach(System.out::println));
+    //singleStream.subscribe(stream -> stream.forEach(System.out::println));
 
     // v2
-    singleStream.subscribe(stream -> {
-      List<List<User>> list = stream.collect(Collectors.toList());
-      list.forEach(System.out::println);
-    });
+    singleStream.subscribe(
+        stream -> {
+          List<Map<Integer, String>> list = stream.collect(Collectors.toList());
+          list.forEach(System.out::println);
+        });
 
+//    singleStream.subscribe(
+//            stream -> {
+//              stream.forEach(x -> {
+//
+//              });
+//            });
+
+  }
+
+  @Test
+  public void test7() {
+
+    User u1 = new User(1, "a");
+    User u2 = new User(2, "b");
+    User u3 = new User(3, "c");
+    // Create a Single<Stream<String>> object
+    Single<Stream<List<User>>> singleStream = Single.just(Stream.of(Arrays.asList(u1, u2, u3)));
+
+    // v1
+    singleStream.subscribe(stream -> stream.forEach(System.out::println));
+
+    // v2
+    singleStream.subscribe(
+        stream -> {
+          List<List<User>> list = stream.collect(Collectors.toList());
+          list.forEach(System.out::println);
+        });
   }
 
   class User {
@@ -146,5 +174,4 @@ public class SingleTest {
       return "User{" + "id=" + id + ", name='" + name + '\'' + '}';
     }
   }
-
 }
