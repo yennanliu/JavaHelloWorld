@@ -1,6 +1,8 @@
 package com.yen.dev;
 
 import io.reactivex.rxjava3.core.Single;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +12,7 @@ public class SingleTest {
   public void test1() {
 
     Single<String> single = Single.just("Hello, RxJava!");
+    //Flux<String> single = Flux.just("Hello, RxJava!", "ohhhhh");
 
     // v1
     single.subscribe(
@@ -62,6 +65,35 @@ public class SingleTest {
     );
   }
 
+  @Test
+  public void test5() {
+
+    // Create a Single<Stream<String>> object
+    Single<Stream<String>> singleStream = Single.just(Stream.of("One", "Two", "Three"));
+
+    // Subscribe to the Single and print each element in the Stream
+    // v1
+    singleStream.subscribe(stream ->
+                    stream.forEach(System.out::println));
+
+    //singleStream.subscribe(x -> System.out.println("--> x = " + x));
+
+    // v2
+    singleStream.subscribe(stream -> {
+      List<String> list = stream.collect(Collectors.toList());
+      list.forEach(System.out::println);
+    });
+
+    // v3
+    singleStream.subscribe(stream -> {
+      String[] array = stream.toArray(String[]::new);
+      for (String s : array) {
+        System.out.println(s);
+      }
+    });
+    
+  }
+
   class User {
     private int id;
 
@@ -87,5 +119,5 @@ public class SingleTest {
       return "User{" + "id=" + id + ", name='" + name + '\'' + '}';
     }
   }
-  
+
 }
