@@ -57,6 +57,7 @@
 - Stream
 	- https://blog.csdn.net/xiaofeng10330111/article/details/130457788
 	- https://blog.csdn.net/netyeaxi/article/details/103757510
+	- [rx_java_stream.md](https://github.com/yennanliu/JavaHelloWorld/blob/main/dev_projects/RxJava/doc/rxjava_stream.md)
 
 ## Ref
 - video

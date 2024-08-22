@@ -1,5 +1,5 @@
 
-# RxJava Streams: Concept vs. Interface
+# RxJava Streams: Concept vs. Interface (by GPT)
 
 In RxJava, "streams" refer to the concept of an asynchronous, observable sequence of data or events over time. This concept is realized through various reactive types such as `Observable`, `Flowable`, `Single`, `Maybe`, and `Completable`. Below is an explanation of these concepts, interfaces, and classes in RxJava.
 
