@@ -6,22 +6,39 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ReportUtil {
 
   public static List<TestResult> getTestResultByserialNum(String serialNum){
     List<TestResult> res = new ArrayList<>();
     List<Report> reports = getReports();
-    // TODO : optimize below
-    for (Report report : reports) {
-      List<TestResult> results = report.getResults();
-      for (TestResult t : results){
-        if (t.getSerialNum().equals(serialNum)){
-          res.add(t);
-        }
-      }
-    }
-    return res;
+
+    // V1
+//    for (Report report : reports) {
+//      List<TestResult> results = report.getResults();
+//      for (TestResult t : results){
+//        if (t.getSerialNum().equals(serialNum)){
+//          res.add(t);
+//        }
+//      }
+//    }
+    //return res;
+
+    // V2
+    return getReports().stream()
+            /**
+             * NOTE !!! flatMap syntax
+             *
+             *  1) flatMap(report -> report.getResults().stream()): Flattens the stream of reports into a stream of test results.
+             *
+             *  2) result type of flatMap :  Stream<TestResult>
+             *     e.g. : Stream<TestResult> tmp = getReports().stream().flatMap(report -> report.getResults().stream());
+             */
+            .flatMap(report -> report.getResults().stream())
+            .filter(testResult -> testResult.getSerialNum().equals(serialNum))
+            .collect(Collectors.toList());
   }
 
   public static List<Report> getReports() {
