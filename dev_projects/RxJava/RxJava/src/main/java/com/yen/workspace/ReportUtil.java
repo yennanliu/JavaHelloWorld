@@ -9,6 +9,21 @@ import java.util.List;
 
 public class ReportUtil {
 
+  public static List<TestResult> getTestResultByserialNum(String serialNum){
+    List<TestResult> res = new ArrayList<>();
+    List<Report> reports = getReports();
+    // TODO : optimize below
+    for (Report report : reports) {
+      List<TestResult> results = report.getResults();
+      for (TestResult t : results){
+        if (t.getSerialNum().equals(serialNum)){
+          res.add(t);
+        }
+      }
+    }
+    return res;
+  }
+
   public static List<Report> getReports() {
 
     TestResult t1 = new TestResult(1, "s1", "ok", java.util.Date.from(Instant.now()));
