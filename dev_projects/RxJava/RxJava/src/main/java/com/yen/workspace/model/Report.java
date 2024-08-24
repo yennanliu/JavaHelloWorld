@@ -1,15 +1,17 @@
 package com.yen.workspace.model;
 
+import java.util.List;
+
 public class Report {
 
     private Integer id;
-    private TestResult[] results;
+    private List<TestResult> results;
 
     public Report(){
 
     }
 
-    public Report(Integer id, TestResult[] results) {
+    public Report(Integer id, List<TestResult> results) {
         this.id = id;
         this.results = results;
     }
@@ -22,12 +24,19 @@ public class Report {
         this.id = id;
     }
 
-    public TestResult[] getResults() {
+    public List<TestResult> getResults() {
         return results;
     }
 
-    public void setResults(TestResult[] results) {
+    public void setResults(List<TestResult> results) {
         this.results = results;
     }
 
+    @Override
+    public String toString() {
+        return "Report{" +
+                "id=" + id +
+                ", results=" + results +
+                '}';
+    }
 }
