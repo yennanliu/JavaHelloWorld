@@ -43,7 +43,6 @@ public class GrpcClient {
     CarServiceProto.DriveRequest request2 =
         CarServiceProto.DriveRequest.newBuilder().setName("lexus").build();
 
-    // TODO : fix below
     CarServiceProto.DriveResponse response2 = stub2.drive(request2);
     System.out.println(response2.getSpeed());
 

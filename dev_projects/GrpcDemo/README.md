@@ -18,6 +18,13 @@ mvn protobuf:compile
 mvn protobuf:compile-custom
 ```
 
+## Call Grpc API
+- Show available Grpc API
+  - `grpcurl -plaintext localhost:7777 list`
+- Call carService
+- grpcurl -plaintext -d '{"name": "Tesla"}' localhost:7777 CarService/drive
+- grpcurl -plaintext -import-path dev_projects/GrpcDemo/src/main/proto/car.proto -proto CarService.proto -d '{"name": "Tesla"}' localhost:7777 CarService/drive
+
 ## Concept
 
 - Protobuf
@@ -76,3 +83,7 @@ mvn protobuf:compile-custom
     │   └── protoc-gen-grpc-java-1.56.0-osx-aarch_64.exe
     └── test-classes
 ```
+
+## Tool
+- [grpcurl](https://github.com/fullstorydev/grpcurl)
+  - install : `brew install grpcurl` 
