@@ -85,5 +85,5 @@ mvn protobuf:compile-custom
 ```
 
 ## Tool
-- [grpcurl](https://github.com/fullstorydev/grpcurl)
+- [grpcurl](https://github.com/fullstorydev/grpcurl) : CLI tool calls Grpc API
   - install : `brew install grpcurl` 

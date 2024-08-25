@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_package = "com.yen.grpc";
+option java_outer_classname = "BookShelfServiceProto"; // CarServiceProto
+
+// define service
+service BookShelfService{
+  rpc ListBookShelfs (Empty2) returns (BookShelfListResponse);
+  rpc GetBookShelfById (ReturnBookShelfRequest) returns (ReturnBookShelfResponse);
+}
+
+// Empty message for methods with no input
+message Empty2 {}
+
+message Book {
+  string id = 1;
+  string name = 2;
+}
+
+message Location{
+  string id = 1;
+  string name = 2;
+}
+
+message BookShelf{
+  string id = 1;
+  Book book = 2;
+  Location location = 3;
+}
+
+message BookShelfListResponse{
+  repeated BookShelf bookshelfs = 1;
+}
+
+message ReturnBookShelfRequest{
+  string bookshelf_id = 1;
+}
+
+message ReturnBookShelfResponse{
+  string message = 1;
+}
