@@ -7,11 +7,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ReportUtil {
 
-  public static List<TestResult> getTestResultByserialNum(String serialNum){
+  public static List<TestResult> getTestResultBySerialNum(String serialNum){
     List<TestResult> res = new ArrayList<>();
     List<Report> reports = getReports();
 

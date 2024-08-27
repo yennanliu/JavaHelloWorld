@@ -1,12 +1,10 @@
 package com.yen.workspace;
 
-import com.yen.workspace.model.Report;
-
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ReportUtilTest {
+public class ReportUtilTest_ {
   public static void main(String[] args) {
 
 //    System.out.println(ReportUtil.getTestResults());
@@ -16,11 +14,11 @@ public class ReportUtilTest {
 //    System.out.println(ReportUtil.getReports());
 
     //System.out.println("==================");
-    System.out.println(ReportUtil.getTestResultByserialNum("s1"));
+    System.out.println(ReportUtil.getTestResultBySerialNum("s1"));
 
     System.out.println("==================");
 
-    List<String> statusList = ReportUtil.getTestResultByserialNum("s1").stream().flatMap(
+    List<String> statusList = ReportUtil.getTestResultBySerialNum("s1").stream().flatMap(
             x -> {
               String status = x.getStatus();
               return Stream.of(status);
@@ -31,10 +29,10 @@ public class ReportUtilTest {
 
     System.out.println("==================");
 
-    System.out.println(ReportUtil.getTestResultByserialNum("s2"));
+    System.out.println(ReportUtil.getTestResultBySerialNum("s2"));
 
     System.out.println("==================");
 
-    System.out.println(ReportUtil.getTestResultByserialNum("some_num"));
+    System.out.println(ReportUtil.getTestResultBySerialNum("some_num"));
   }
 }
