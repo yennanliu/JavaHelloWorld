@@ -1,26 +1,26 @@
 package com.yen.workspace;
 
-import com.yen.workspace.model.TestResult;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ReportUtilTest {
+import com.yen.workspace.model.TestResult;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import org.junit.jupiter.api.Test;
 
-//    @Test
-//    public void test1(){
-//        System.out.println(123);
-//    }
+class ReportUtilTest {
 
     @Test
     public void testReturnReportWhenSerialNumExisted(){
 
         List<TestResult> res = ReportUtil.getTestResultBySerialNum("s1");
+        List<String> statsList = res.stream().flatMap(report -> Stream.of(report.getStatus())).collect(Collectors.toList());
+        List<String> serialNumList = res.stream().flatMap(report -> Stream.of(report.getSerialNum())).collect(Collectors.toList());
+
         assertEquals(res.size(), 2);
+        assertEquals(statsList, Arrays.asList("ok", "ok"));
+        assertEquals(serialNumList, Arrays.asList("s1", "s1"));
     }
 
     @Test
@@ -28,6 +28,7 @@ class ReportUtilTest {
 
         List<TestResult> res = ReportUtil.getTestResultBySerialNum("some_serial_num");
         assertEquals(res.size(), 0);
+        assertEquals(res, Arrays.asList());
     }
 
 }
