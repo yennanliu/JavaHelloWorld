@@ -19,8 +19,10 @@ public class RunningService {
         this.impl = myInterface;
     }
 
-    public void print(){
-        System.out.println("msg from impl : " + impl.getClassName());
+    public String print(){
+        String msg = "msg from impl : " + impl.getClassName();
+        System.out.println(msg);
+        return msg;
     }
 
 }

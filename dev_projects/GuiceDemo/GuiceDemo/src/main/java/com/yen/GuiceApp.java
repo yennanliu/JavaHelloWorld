@@ -7,7 +7,7 @@ import com.yen.service.RunningService;
 
 // import javax.inject.Inject;
 
-public class Main {
+public class GuiceApp {
   public static void main(String[] args) {
 
     System.out.println("Guice Hello world !!!");
@@ -17,7 +17,8 @@ public class Main {
 
     // inject via Guice, and get the instance
     RunningService runningService = injector.getInstance(RunningService.class);
-    runningService.print();
+    String res = runningService.print();
+    //System.out.println(">>> res = " + res);
   }
 
 }
