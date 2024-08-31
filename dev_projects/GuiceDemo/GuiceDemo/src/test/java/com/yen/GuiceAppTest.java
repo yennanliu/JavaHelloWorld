@@ -42,6 +42,7 @@ public class GuiceAppTest {
 
         RunningService runningService = injector.getInstance(RunningService.class);
 
+        // TODO : fix error : java.lang.NullPointerException
         Assert.assertSame("msg from impl : this is Implementation_A", runningService.print());
 
         //System.out.println(123);

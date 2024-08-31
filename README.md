@@ -482,7 +482,7 @@
             ```java
             // https://www.youtube.com/watch?v=b-UAaq-G4uI&list=PLmOn9nNkQxJEqCNXBu5ozT_26xwvUbHyE&index=91
 
-            // Method 1) : 餓漢式 (Eager initialization)
+            // Method 1) : 餓漢式 (Eager Singleton)
             // pros : Thread safety
             // cons : could create a class, but not uses it -> resource wasting
             class Single{
@@ -493,9 +493,11 @@
                 }
             }
 
-            // Method 2) : 懶漢式 (lazy initialization)
+            // Method 2) : 懶漢式 (Singleton)
             // pros : no resource wasting, only make the instance when need it
             // cons : Thread safety concern
+
+            // https://www.baeldung.com/guice
             class Single2{
                 private Single2(){}
                 private static Single2 s = null;
