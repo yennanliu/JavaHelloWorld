@@ -69,7 +69,7 @@ public class CallableTest {
 
       data2.subscribe(System.out::println);
 
-      // V1 : functional style  (since there is only 1 method called fromCallable under Mono)
+      // V2 : lambda expression :  (since there is only 1 method called fromCallable under Mono)
       Mono<String> data3 = Mono.fromCallable(() -> "yooooo");
 
       data3.subscribe(System.out::println);
