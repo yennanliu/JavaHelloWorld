@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import reactor.core.publisher.Flux;
 
@@ -84,6 +85,30 @@ public class ScrapeServiceRxJavaGpt implements BaseScrapeService {
         return x.singleOrError();
     }
 
+    private List<PokemonProduct> collectProductData(
+            Elements products, List<PokemonProduct> pokemonProducts) {
 
+        for (Element product : products) {
+            PokemonProduct pokemonProduct = this.enrichProduct(product);
+            pokemonProducts.add(pokemonProduct);
+        }
 
+        return pokemonProducts;
+    }
+
+    private PokemonProduct enrichProduct(Element product) {
+
+        // collect data
+        PokemonProduct pokemonProduct = new PokemonProduct();
+
+        // extracting the data of interest from the product HTML element
+        // and storing it in pokemonProduct
+        pokemonProduct.setUrl(product.selectFirst("a").attr("href"));
+        pokemonProduct.setImage(product.selectFirst("img").attr("src"));
+        pokemonProduct.setName(product.selectFirst("h2").text());
+        pokemonProduct.setPrice(product.selectFirst("span").text());
+
+        return pokemonProduct;
+    }
+    
 }
