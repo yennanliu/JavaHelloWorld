@@ -28,7 +28,28 @@ public class ScrapeServiceRxJavaGpt implements BaseScrapeService {
       Set<String> pagesDiscovered,
       List<String> pagesToScrape,
       Integer i)
-      throws IOException, InterruptedException {}
+      throws IOException, InterruptedException {
+
+      System.out.println(
+              ">>> (scrapeProductPage) pagesDiscovered = "
+                      + pagesDiscovered
+                      + " pagesToScrape = "
+                      + pagesToScrape);
+
+      // the current web page is about to be scraped and
+      // should no longer be part of the scraping queue
+      String url = pagesToScrape.remove(0);
+      pagesDiscovered.add(url);
+      Single<Document> doc = this.prepareConnect(i);
+
+      // TODO : optimize below
+      Elements paginationElements = doc.blockingGet().select("a.page-numbers");
+      Elements products = doc.blockingGet().select("li.product");
+
+      pagesToScrape = this.collectToScrape(paginationElements, pagesToScrape, pagesDiscovered).blockingGet();
+      pokemonProducts = this.collectProductData(products, pokemonProducts);
+
+  }
 
   private Single<Document> prepareConnect(int pageNum) {
 
@@ -110,5 +131,5 @@ public class ScrapeServiceRxJavaGpt implements BaseScrapeService {
 
         return pokemonProduct;
     }
-    
+
 }
