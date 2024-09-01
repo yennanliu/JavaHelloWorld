@@ -3,7 +3,6 @@ package com.yen.scrpe.Task;
 import com.yen.scrpe.model.PokemonProduct;
 import com.yen.scrpe.service.BaseScrapeService;
 import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 import java.io.IOException;
@@ -12,7 +11,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PokemonCollectTaskRxJava implements BaseScrapeTask {
+public class PokemonCollectTaskRxJavaGpt implements BaseScrapeTask {
 
     // Attributes
     private BaseScrapeService scrapeService;
@@ -21,9 +20,9 @@ public class PokemonCollectTaskRxJava implements BaseScrapeTask {
     private List<String> pagesToScrape;
 
     // Constructors
-    public PokemonCollectTaskRxJava() {}
+    public PokemonCollectTaskRxJavaGpt() {}
 
-    public PokemonCollectTaskRxJava(BaseScrapeService scrapeService) {
+    public PokemonCollectTaskRxJavaGpt(BaseScrapeService scrapeService) {
         this.scrapeService = scrapeService;
         this.pokemonProducts = new ArrayList<>();
         this.pagesDiscovered = new HashSet<>();
