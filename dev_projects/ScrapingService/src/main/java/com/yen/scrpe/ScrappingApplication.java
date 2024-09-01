@@ -39,9 +39,6 @@ public class ScrappingApplication {
 
 
 
-
-
-
       /** V2 : multi thread (gpt) */
 //      ScrapeServiceMultiThreadV2Gpt scrapeService = new ScrapeServiceMultiThreadV2Gpt();
 //      PokemonCollectTask pokemonCollectTask = new PokemonCollectTask(scrapeService);
