@@ -27,6 +27,27 @@ public class ScrapeServiceRxJava implements BaseScrapeService{
     @Override
     public void scrapeProductPage(List<PokemonProduct> pokemonProducts, Set<String> pagesDiscovered, List<String> pagesToScrape, Integer i) throws IOException, InterruptedException {
 
+        System.out.println(
+                ">>> (scrapeProductPage) pagesDiscovered = "
+                        + pagesDiscovered
+                        + " pagesToScrape = "
+                        + pagesToScrape);
+
+        // the current web page is about to be scraped and
+        // should no longer be part of the scraping queue
+        String url = pagesToScrape.remove(0);
+        pagesDiscovered.add(url);
+        Document doc = this.prepareConnect(i);
+
+        Elements paginationElements = doc.select("a.page-numbers");
+        Elements products = doc.select("li.product");
+
+        Flux<String> pagesToScrape_ = Flux.fromIterable(pagesToScrape);
+
+        // TODO : fix below
+//        pagesToScrape_ = this.collectToScrape(paginationElements, pagesToScrape_, pagesDiscovered);
+//        pokemonProducts = this.collectProductData(products, pokemonProducts);
+
     }
 
 

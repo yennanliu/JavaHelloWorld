@@ -20,7 +20,7 @@ public class ScrappingApplication {
     Long start = System.currentTimeMillis();
 
     // to limit the number to scrape to 5
-    int LIMIT = 50; // 50;
+    int LIMIT = 5; // 50;
 
     /** V1 : single thread (original code ) */
 //    ScrapeService scrapeService = new ScrapeService();
@@ -36,6 +36,9 @@ public class ScrappingApplication {
 
     ScrapeTaskFactoryV3Gpt scrapeTaskFactory = new ScrapeTaskFactoryV3Gpt(scrapeService, pokemonCollectTask, LIMIT);
     scrapeTaskFactory.run();
+
+
+
 
 
 
@@ -55,6 +58,12 @@ public class ScrappingApplication {
     //        System.out.println("pokemonProducts.size() = " +
     // pokemonCollectTask.getPokemonProducts().size());
     //        System.out.println("pokemonProducts = " + pokemonCollectTask.getPokemonProducts());
+
+
+
+    /** V3 : RX JAVA (gpt) */
+
+
 
     Long end = System.currentTimeMillis();
     System.out.println("-----> Total duration = " + (end - start));
