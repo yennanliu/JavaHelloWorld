@@ -1,5 +1,7 @@
 
-# Google Guice: Understanding the `@Provides` Annotation
+# Google Guice: Understanding the `@Provides` Annotation (gpt)
+
+- https://github.com/google/guice/wiki/ProvidesMethods
 
 ## Overview
 
