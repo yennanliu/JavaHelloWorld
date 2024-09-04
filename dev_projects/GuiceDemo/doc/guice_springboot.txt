@@ -1,0 +1,24 @@
+@Inject (Guice) vs @Autowired (Spring Boot)
+
+	•	@Inject (Guice):
+	•	Yes, this is similar to Spring Boot’s @Autowired. Both are used to automatically inject dependencies (beans or objects) into a class. It’s how you tell the framework to inject an instance of a class (usually an interface implementation or a configured service) wherever needed.
+	•	@Autowired (Spring Boot):
+	•	In Spring Boot, @Autowired is used to inject beans (managed objects) into other classes, similar to @Inject in Guice.
+
+@Provides (Guice) vs @Component, @Service, etc. (Spring Boot)
+
+	•	@Provides (Guice):
+	•	This is not exactly equivalent to @Component or @Service. @Provides is used to define a method in a Guice module that provides a specific instance of a class, especially when the instance requires complex creation logic. It’s used when Guice cannot instantiate the object directly through a constructor.
+	•	A more direct Spring Boot equivalent of @Provides would be a @Bean method in a Spring @Configuration class, where you define how a bean should be created and configured.
+	•	@Component, @Service, etc. (Spring Boot):
+	•	These annotations mark classes as Spring-managed beans (services, repositories, etc.), allowing Spring to instantiate and inject them automatically where needed.
+	•	This is more similar to defining Guice bindings in an AbstractModule, where you bind an interface to an implementation, rather than directly using @Provides.
+
+Corrected Comparison
+
+	•	@Inject in Guice ≈ @Autowired in Spring Boot.
+	•	Both are used for injecting dependencies into classes.
+	•	@Provides in Guice ≈ @Bean in Spring Boot.
+	•	Both are used to define how an object or service should be created/configured when automatic injection is not sufficient.
+	•	Guice Module Binding (bind(...)) ≈ @Component, @Service, @Repository in Spring Boot.
+	•	Both register classes with the dependency injection container.
