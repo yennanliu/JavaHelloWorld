@@ -24,8 +24,13 @@ public class GuiceApp {
 
     /** demo 2 */
     Injector injector1 = Guice.createInjector(new CalculatorModule());
+
     Calculator calculator =  injector1.getInstance(Calculator.class);
     System.out.println("addition = " + calculator.addition(1,2));
+    System.out.println("calculator = " + calculator);
+
+    Calculator calculator2 =  injector1.getInstance(Calculator.class);
+    System.out.println("calculator2 = " + calculator2);
 
   }
 
