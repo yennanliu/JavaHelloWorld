@@ -1,5 +1,8 @@
 # Guice Demo
 
+## Install
+- JDK 11
+
 ## Concept
 - Inject can be applied on
   - value
@@ -14,5 +17,5 @@
 
 
 ## Ref
-- https://github.com/google/guice/wiki/Injections
-- https://www.baeldung.com/guice
+  - https://github.com/google/guice/wiki/Injections
+  - https://www.baeldung.com/guice
