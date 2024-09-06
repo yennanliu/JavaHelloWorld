@@ -1,7 +1,9 @@
-package com.yen;
+package com.yen.example0.module;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
+import com.yen.example0.service.Calculator;
+import com.yen.example0.service.impl.Implementation_A;
 
 // https://youtu.be/fe1n8VIXZ-k?si=LrKQXWec3aGJfCA_&t=271
 
@@ -22,7 +24,7 @@ public class CalculatorModule extends AbstractModule {
     //bind(Calculator.class);
     // set as singleton
     // https://youtu.be/fe1n8VIXZ-k?si=KTFK0Q8rr5-sLuMJ&t=461
-    bind(Calculator.class).to(CalculatorImpl.class).in(Singleton.class);
+    bind(Calculator.class).to(Implementation_A.CalculatorImpl.class).in(Singleton.class);
   }
 
 }

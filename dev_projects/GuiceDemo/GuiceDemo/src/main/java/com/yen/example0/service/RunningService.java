@@ -1,4 +1,4 @@
-package com.yen.service;
+package com.yen.example0.service;
 
 // https://jimwayne.blogspot.com/2015/09/guice-dependency-imjection.html
 

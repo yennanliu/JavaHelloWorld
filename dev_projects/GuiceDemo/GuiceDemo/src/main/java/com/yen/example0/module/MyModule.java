@@ -1,8 +1,8 @@
-package com.yen.module;
+package com.yen.example0.module;
 
 import com.google.inject.AbstractModule;
-import com.yen.service.MyInterface;
-import com.yen.service.impl.Implementation_A;
+import com.yen.example0.service.MyInterface;
+import com.yen.example0.service.impl.Implementation_A;
 
 public class MyModule extends AbstractModule {
 

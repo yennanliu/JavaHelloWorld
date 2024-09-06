@@ -1,6 +1,8 @@
-package com.yen;
+package com.yen.example0.service.impl;
 
 // https://youtu.be/fe1n8VIXZ-k?si=wUM5aVKv1zqjynL7&t=547
+
+import com.yen.example0.service.Calculator;
 
 import javax.inject.Inject;
 

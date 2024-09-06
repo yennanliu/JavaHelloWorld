@@ -4,8 +4,8 @@
 //import com.google.inject.Guice;
 //import com.google.inject.Injector;
 //import com.yen.service.MyInterface;
-//import com.yen.service.RunningService;
-//import com.yen.service.impl.Implementation_A;
+//import com.yen.example0.service.RunningService;
+//import com.yen.example0.service.impl.Implementation_A;
 //import org.junit.After;
 //import org.junit.Assert;
 //import org.junit.Before;

@@ -2,8 +2,10 @@ package com.yen;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.yen.module.MyModule;
-import com.yen.service.RunningService;
+import com.yen.example0.module.CalculatorModule;
+import com.yen.example0.module.MyModule;
+import com.yen.example0.service.impl.CalculatorService;
+import com.yen.example0.service.RunningService;
 
 // import javax.inject.Inject;
 
