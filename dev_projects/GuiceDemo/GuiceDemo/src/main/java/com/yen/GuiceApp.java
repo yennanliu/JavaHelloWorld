@@ -6,6 +6,9 @@ import com.yen.example0.module.CalculatorModule;
 import com.yen.example0.module.MyModule;
 import com.yen.example0.service.impl.CalculatorService;
 import com.yen.example0.service.RunningService;
+import com.yen.example1.AnimalModule;
+import com.yen.example1.Dog;
+import com.yen.example1.Host;
 
 // import javax.inject.Inject;
 
@@ -59,6 +62,17 @@ public class GuiceApp {
     CalculatorService calculatorService = injector1.getInstance(CalculatorService.class);
     System.out.println("addition = " + calculatorService.calculate(1,2, "add"));
 
+    System.out.println("===========");
+
+    /** demo 4 */
+    // create injector
+    Injector injector2 = Guice.createInjector(new AnimalModule());
+    
+    // get instance
+    Host host = injector2.getInstance(Host.class);
+
+    // call instance method
+    System.out.println(host.getAnimal().eat());
   }
 
 }
