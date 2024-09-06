@@ -72,6 +72,9 @@ public class GuiceApp {
         // call instance method
         System.out.println(host.getAnimal().eat());
 
+        // or, can do above step in one line :
+        // Host host = Guice.createInjector(new MyTestModule()).getInstance(Host.class);
+
         System.out.println("===========");
 
         /** demo 5 */

@@ -12,6 +12,11 @@ public class DummyModule extends AbstractModule {
 
     /**
      * Provides demo
+     *
+     *  via Provides. we can provide complex class init
+     *  within the class with @Provides annotation,
+     *  when the class is called, all dependent classed
+     *  will be init by Guice
      */
     @Provides
     ThirdPartyClass provideThirdPartyClass() {
