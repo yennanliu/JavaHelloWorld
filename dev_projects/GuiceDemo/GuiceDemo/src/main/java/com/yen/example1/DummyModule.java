@@ -18,6 +18,8 @@ public class DummyModule extends AbstractModule {
      *  when the class is called, all dependent classed
      *  will be init by Guice
      */
+    // not directly used, but it's needed to for code in GuiceApp.java
+    // e.g. : ThirdPartyClass thirdPartyClass = injector3.getInstance(ThirdPartyClass.class);
     @Provides
     ThirdPartyClass provideThirdPartyClass() {
 //        ThirdPartyClass thirdPartyClass = new ThirdPartyClass();

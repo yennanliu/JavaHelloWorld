@@ -54,7 +54,9 @@ class MyTestModule extends AbstractModule{
 
     @Override
     protected void configure() {
+        // install is used frequently as well
         //super.configure();
+        install(new DummyModule());
         bind(Animal.class).to(Dog.class);
     }
 }

@@ -78,16 +78,17 @@ public class GuiceApp {
         System.out.println("===========");
 
         /** demo 5 */
+        /**
+         *  Guice can create injector with multiple modules
+         *  e.g. :
+         *   Guice.createInjector(new DummyModule(), new AnimalModule());
+         *
+         */
         Injector injector3 = Guice.createInjector(new DummyModule());
         ThirdPartyClass thirdPartyClass = injector3.getInstance(ThirdPartyClass.class);
 
-        //ThirdPartyClass t = new ThirdPartyClass();
-//    ThirdPartyClass.print();
-//    thirdPartyClass.
-
         System.out.println(thirdPartyClass.getClass());
         System.out.println(thirdPartyClass.print());
-
     }
 
 }

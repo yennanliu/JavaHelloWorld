@@ -3,7 +3,19 @@
 ## Install
 - JDK 11
 
+## Steps
+1. Create interface, its impl (implementation)
+2. Module binding interface to impl
+3. Create injector via module
+4. get class instance via injector
+5. uses methods defined in impl
+
 ## Concept
+
+- Guice Main purpose:
+  - configuration : add dependency to `guice map`, so app can use
+  - injection : decouple code dep, make testing easier
+
 - Inject can be applied on
   - value
   - constructor
