@@ -8,8 +8,8 @@ public class MyModule extends AbstractModule {
 
     /**
      * binding interface and implementation
-     *
-     *  https://jimwayne.blogspot.com/2015/09/guice-dependency-imjection.html
+     * <p>
+     * https://jimwayne.blogspot.com/2015/09/guice-dependency-imjection.html
      */
     @Override
     protected void configure() {
