@@ -44,6 +44,7 @@ public class FileUtil {
      *     If the operation succeeds, the Single will emit the list of files;
      *     otherwise, it will trigger an error.
      */
+    // V1
     return Single.fromCallable(
             () ->
                 //  NOTE !! : java.nio.file.Files
@@ -61,5 +62,36 @@ public class FileUtil {
               System.out.println("(RX) get file list exception: " + e.getMessage());
               return List.of(); // return an empty list if an error occurs
             });
+
+    // V2 (without lambda)
+//      return Single.fromCallable(new Callable<List<Path>>() {
+//          @Override
+//          public List<Path> call() throws Exception {
+//              //  NOTE !! : java.nio.file.Files
+//              return Files.list(Paths.get(dir))
+//                      .filter(new Predicate<Path>() {
+//                          @Override
+//                          public boolean test(Path file) {
+//                              return !Files.isDirectory(file);
+//                          }
+//                      })
+//                      .map(new Function<Path, Path>() {
+//                          @Override
+//                          public Path apply(Path file) {
+//                              System.out.println("file = " + file + " filename = " + file.getFileName());
+//                              return file;
+//                          }
+//                      })
+//                      .collect(Collectors.toList());
+//          }
+//      }).onErrorReturn(new Function<Throwable, List<Path>>() {
+//          @Override
+//          public List<Path> apply(Throwable e) {
+//              System.out.println("(RX) get file list exception: " + e.getMessage());
+//              return List.of(); // return an empty list if an error occurs
+//          }
+//      });
+
   }
+
 }
