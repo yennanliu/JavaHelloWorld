@@ -63,14 +63,16 @@
 	- toStream() is blocking because it waits for all elements in the reactive pipeline to be available before iterating over them.
 	- In reactive programming, blocking operations (like block(), toStream(), and Thread.sleep()) should be avoided as they break the asynchronous, non-blocking flow, reducing scalability and performance.
 	- In reactive programming (like in Spring WebFlux), non-blocking operations are crucial because they allow efficient handling of I/O-bound and CPU-bound tasks without holding up the thread. Blocking operations, like toStream(), halt the thread until the operation completes, which disrupts the non-blocking, asynchronous flow.
-	- Why `toStream()`` is Blocking:
+	- Why `toStream()` is Blocking:
 		- The toStream() method in a Flux (or any reactive type) is blocking because it converts the reactive stream into a Java Stream, which is inherently synchronous and pull-based. This means that when you invoke toStream(), the system waits (blocks) until all elements are available or until it reaches the end of the stream. This breaks the reactive, non-blocking behavior since it forces the application to consume all elements in a blocking, sequential manner.
+		- [example code](https://github.com/yennanliu/SpringPlayground/blob/employee-system-dev007-rx-java/springEmployeeSystem/backend/EmployeeSystem/src/main/java/EmployeeSystem/service/UserService.java#L163)
 	- other common blocking op
 		- `block()`
 		- `subscribe().get()` or `Future.get()`
 		- `toIterable()`
 		- Thread.sleep()
 		- JDBC call 
+
 
 
 ## Ref
