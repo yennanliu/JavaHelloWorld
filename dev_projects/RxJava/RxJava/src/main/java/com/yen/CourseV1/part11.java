@@ -1,4 +1,4 @@
-package com.yen.courseV1;
+package com.yen.CourseV1;
 
 // part 11 : Operators - utility and error handling
 // https://youtu.be/nY1Phpp0BkA?si=fN_Aavl9xD2xs3FT

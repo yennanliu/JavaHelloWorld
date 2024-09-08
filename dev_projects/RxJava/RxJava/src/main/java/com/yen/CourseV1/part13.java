@@ -1,4 +1,4 @@
-package com.yen.courseV1;
+package com.yen.CourseV1;
 
 // part 13 : Custom operator
 // https://youtu.be/xMY0pVrLJgY?si=WCQcYoowGEXP0oVw

@@ -1,4 +1,4 @@
-package com.yen.courseV1;
+package com.yen.CourseV1;
 
 // static class ?
 class Item {

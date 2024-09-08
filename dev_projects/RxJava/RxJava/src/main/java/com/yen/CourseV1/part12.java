@@ -1,4 +1,4 @@
-package com.yen.courseV1;
+package com.yen.CourseV1;
 
 // part 12 : Subject
 // https://youtu.be/rhkPPFVw5Ns?si=O7c0MkjflPsPENAa

@@ -1,4 +1,4 @@
-package com.yen.courseV1;
+package com.yen.CourseV1;
 
 // https://youtu.be/l4zfIkRsT_8?si=3geV4TPwRFlq7s1g
 

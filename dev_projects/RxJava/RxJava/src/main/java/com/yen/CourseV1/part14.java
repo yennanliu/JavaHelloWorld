@@ -1,4 +1,4 @@
-package com.yen.courseV1;
+package com.yen.CourseV1;
 
 // part 14 : Threading - subscribeOn()
 // https://youtu.be/4menosDtstk?si=G2hBbjGornntY0BT

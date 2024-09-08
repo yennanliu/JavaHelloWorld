@@ -1,11 +1,10 @@
-package com.yen.courseV1;
+package com.yen.CourseV1;
 
 // https://youtu.be/yWdl58IXuPQ?si=NfR3e0V24xWjk1Sc
 
-import java.awt.event.ActionEvent;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-import javax.swing.*;
+
 import io.reactivex.rxjava3.functions.Action;
 
 import io.reactivex.rxjava3.core.Completable;
