@@ -16,6 +16,7 @@ public class FileUtil {
     System.out.println("dir = " + dir);
     List<Path> fileList = null;
     try {
+      //  java.nio.file.Files
       fileList =
           Files.list(Paths.get(dir))
               .filter(file -> !Files.isDirectory(file))
@@ -34,8 +35,18 @@ public class FileUtil {
   public static Single<List<Path>> getFileListRx(String dir) {
     System.out.println("(RX) dir = " + dir);
 
+    /** NOTE !!!
+     *
+     *  Single.fromCallable
+     *
+     *  -> Wraps the code that retrieves the file list into a Single.
+     *     It will execute the file listing operation in a reactive way.
+     *     If the operation succeeds, the Single will emit the list of files;
+     *     otherwise, it will trigger an error.
+     */
     return Single.fromCallable(
             () ->
+                //  NOTE !! : java.nio.file.Files
                 Files.list(Paths.get(dir))
                     .filter(file -> !Files.isDirectory(file))
                     .map(
