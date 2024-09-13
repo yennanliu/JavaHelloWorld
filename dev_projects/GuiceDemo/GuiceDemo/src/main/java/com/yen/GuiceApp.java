@@ -7,6 +7,8 @@ import com.yen.example0.module.MyModule;
 import com.yen.example0.service.impl.CalculatorService;
 import com.yen.example0.service.RunningService;
 import com.yen.example1.*;
+import com.yen.example2.CarModule;
+import com.yen.example2.Driver;
 
 // import javax.inject.Inject;
 
@@ -89,6 +91,17 @@ public class GuiceApp {
 
         System.out.println(thirdPartyClass.getClass());
         System.out.println(thirdPartyClass.print());
+
+        /** demo 6 : AbstractModule install
+         *
+         */
+        Injector injector4 = Guice.createInjector(new CarModule());
+
+        Driver driver = injector4.getInstance(Driver.class);
+
+        System.out.println(driver.getCar());
+        System.out.println(driver.getCar().drive());
+
     }
 
 }
