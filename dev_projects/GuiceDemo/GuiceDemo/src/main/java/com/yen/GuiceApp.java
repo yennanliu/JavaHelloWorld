@@ -9,6 +9,8 @@ import com.yen.example0.service.RunningService;
 import com.yen.example1.*;
 import com.yen.example2.CarModule;
 import com.yen.example2.Driver;
+//import com.yen.example2.Eater;
+import com.yen.example2.Food;
 
 // import javax.inject.Inject;
 
@@ -102,6 +104,16 @@ public class GuiceApp {
         System.out.println(driver.getCar());
         System.out.println(driver.getCar().drive());
 
+        /**
+         *  NOTE !!!
+         *
+         *  below we get Food instance via Driver (instance),
+         *  since we install FoodModule inside CarModule
+         *  -> see src/main/java/com/yen/example2/CarModule.java
+         */
+        Food food = injector4.getInstance(Food.class);
+        System.out.println(food);
+        System.out.println(food.cook());
     }
 
 }
