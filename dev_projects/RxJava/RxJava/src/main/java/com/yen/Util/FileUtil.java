@@ -114,16 +114,30 @@ public class FileUtil {
   }
 
     public static Single<Path> createDirRX(String dir){
+//        Path path = Paths.get(dir);
+//        Path createdPath = null;
+//        if(Files.isDirectory(path)){
+//            System.out.println("dir already existed");
+//            return Single.fromCallable(null);
+//        }
+//        return Single.fromCallable(() ->
+//                Files.createDirectory(path)).onErrorReturn(e -> {
+//            System.out.println("create path error : " + e.getMessage());
+//            return createdPath;
+//        });
+
         Path path = Paths.get(dir);
-        Path createdPath = null;
-        if(Files.isDirectory(path)){
-            System.out.println("dir already existed");
-            return Single.fromCallable(null);
-        }
-        return Single.fromCallable(() ->
-                Files.createDirectory(path)).onErrorReturn(e -> {
-            System.out.println("create path error : " + e.getMessage());
-            return createdPath;
+
+        return Single.fromCallable(() -> {
+            if (Files.isDirectory(path)) {
+                System.out.println("Directory already exists: " + path);
+                return path; // Return the existing directory
+            } else {
+                return Files.createDirectory(path);
+            }
+        }).onErrorResumeNext(e -> {
+            System.out.println("Error creating directory: " + e.getMessage());
+            return Single.just(path); // Return the original path even if creation failed
         });
     }
 
