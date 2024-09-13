@@ -2,6 +2,8 @@ package com.yen.Util;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Single;
+
+import java.io.*;
 import java.nio.file.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -139,6 +141,20 @@ public class FileUtil {
             System.out.println("Error creating directory: " + e.getMessage());
             return Single.just(path); // Return the original path even if creation failed
         });
+    }
+
+    public static OutputStream readFile(String fileName) throws IOException {
+        InputStream inputStream = new FileInputStream(fileName);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+        byte[] buffer = new byte[1024];
+        int bytesRead;
+        while ((bytesRead = inputStream.read(buffer)) != -1) {
+            outputStream.write(buffer, 0, bytesRead);
+        }
+
+        inputStream.close();
+        return outputStream;
     }
 
 }
