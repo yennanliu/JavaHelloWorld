@@ -3,18 +3,32 @@ package com.yen;
 import com.yen.Util.FileUtil;
 
 public class Main {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    System.out.println("RX Hello world!");
-    //
-    //    System.out.println(FileUtil.getFileList(""));
-    //    System.out.println(FileUtil.getFileList("src/main/java/com/yen/dev"));
+        System.out.println("RX Hello world!");
 
-    FileUtil.getFileListRx("src/main/java/com/yen/dev")
-        .subscribe(
-            file -> {
-              System.out.println("file = " + file);
-            });
-  }
+        /** TEST 1 */
+        //
+        //    System.out.println(FileUtil.getFileList(""));
+        //    System.out.println(FileUtil.getFileList("src/main/java/com/yen/dev"));
+
+        /** TEST 2 */
+//        FileUtil.getFileListRx("src/main/java/com/yen/dev")
+//                .subscribe(
+//                        file -> {
+//                            System.out.println("file = " + file);
+//                        });
+
+        /** TEST 3 */
+        //System.out.println(FileUtil.createDir("zzz"));
+
+
+        /** TEST 4 */
+        FileUtil.createDirRX("zzz").subscribe(
+                path -> {
+                    System.out.println("path = " + path);
+                }
+        );
+    }
 
 }

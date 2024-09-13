@@ -1,10 +1,12 @@
 package com.yen.Util;
 
+import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Single;
 import java.nio.file.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -93,5 +95,36 @@ public class FileUtil {
 //      });
 
   }
+
+  public static Path createDir(String dir){
+      Path path = Paths.get(dir);
+      Path createdPath = null;
+      if(Files.isDirectory(path)){
+          System.out.println("dir already existed");
+          return path;
+      }
+      try{
+          createdPath = Files.createDirectory(path);
+          System.out.println("new path is created : " + createdPath.getFileName());
+          return createdPath;
+      }catch (Exception e){
+          System.out.println("create path error : " + e.getStackTrace());
+      }
+      return path;
+  }
+
+    public static Single<Path> createDirRX(String dir){
+        Path path = Paths.get(dir);
+        Path createdPath = null;
+        if(Files.isDirectory(path)){
+            System.out.println("dir already existed");
+            return Single.fromCallable(null);
+        }
+        return Single.fromCallable(() ->
+                Files.createDirectory(path)).onErrorReturn(e -> {
+            System.out.println("create path error : " + e.getMessage());
+            return createdPath;
+        });
+    }
 
 }
