@@ -62,29 +62,25 @@ public class part8 {
 
   private static void disposasableExample3() {
 
-      Observable<Long> seconds = Observable.interval(1, TimeUnit.SECONDS);
+    Observable<Long> seconds = Observable.interval(1, TimeUnit.SECONDS);
 
-      ResourceObserver<Long> resourceObserver = new ResourceObserver<Long>() {
+    ResourceObserver<Long> resourceObserver =
+        new ResourceObserver<Long>() {
           @Override
           public void onNext(@NonNull Long item) {
 
-              System.out.println("item = " + item);
+            System.out.println("item = " + item);
           }
 
           @Override
-          public void onError(@NonNull Throwable e) {
-
-          }
+          public void onError(@NonNull Throwable e) {}
 
           @Override
-          public void onComplete() {
+          public void onComplete() {}
+        };
 
-          }
-      };
+    seconds.subscribe(resourceObserver);
 
-      seconds.subscribe(resourceObserver);
-
-      resourceObserver.dispose();
+    resourceObserver.dispose();
   }
-
 }

@@ -101,53 +101,52 @@ public class FlatMapTest {
         .subscribe(x -> System.out.println(x));
   }
 
+  /** flatMap with custom method 4 */
+  @Test
+  public void test8() {
 
-    /** flatMap with custom method 4 */
-    @Test
-    public void test8() {
-
-        List<String> data = Flux.just("Jolyne Cujoh", "Jotaro Kujo", "Dio Brando")
-                .flatMap(x -> {
-                    String[] res = x.split(" ");
-                    return Flux.fromArray(res);
+    List<String> data =
+        Flux.just("Jolyne Cujoh", "Jotaro Kujo", "Dio Brando")
+            .flatMap(
+                x -> {
+                  String[] res = x.split(" ");
+                  return Flux.fromArray(res);
                 })
-                .flatMap(this::toUpperCase)
-//                .map(x -> {
-//                    return x.length();
-//                })
-                .toStream().collect(Collectors.toList());
-                //.subscribe(x -> System.out.println(x));
+            .flatMap(this::toUpperCase)
+            //                .map(x -> {
+            //                    return x.length();
+            //                })
+            .toStream()
+            .collect(Collectors.toList());
+    // .subscribe(x -> System.out.println(x));
 
-        // [Jolyne, Cujoh, Jotaro, Kujo, Dio, Brando]
-        // data = [JOLYNE, CUJOH, JOTARO, KUJO, DIO, BRANDO]
-        System.out.println("data = " + data);
-    }
+    // [Jolyne, Cujoh, Jotaro, Kujo, Dio, Brando]
+    // data = [JOLYNE, CUJOH, JOTARO, KUJO, DIO, BRANDO]
+    System.out.println("data = " + data);
+  }
 
-    /**
-     *  FlatMap
-     *  Flux.fromIterable demo
-     */
-    // https://youtu.be/E-9UjhOu8Ps?si=Bi_l-ujqu22Jj5W7&t=2105
-    @Test
-    public void test9() throws InterruptedException {
-        Flux.range(1, 100)
-                // NOTE !!! set batch size as 10
-                .buffer(10)
-                .flatMap(list -> {
-                    /** NOTE !!!
-                     *
-                     *  list can be used with
-                     *  Flux.fromIterable(list);
-                     */
-                    return Flux.fromIterable(list);
-                }).subscribe(x->System.out.println("--> x = " + x));
+  /** FlatMap Flux.fromIterable demo */
+  // https://youtu.be/E-9UjhOu8Ps?si=Bi_l-ujqu22Jj5W7&t=2105
+  @Test
+  public void test9() throws InterruptedException {
+    Flux.range(1, 100)
+        // NOTE !!! set batch size as 10
+        .buffer(10)
+        .flatMap(
+            list -> {
+              /**
+               * NOTE !!!
+               *
+               * <p>list can be used with Flux.fromIterable(list);
+               */
+              return Flux.fromIterable(list);
+            })
+        .subscribe(x -> System.out.println("--> x = " + x));
 
-        Thread.sleep(20000);
-    }
+    Thread.sleep(20000);
+  }
 
-
-
-    // define custom method
+  // define custom method
   // Custom function that returns a Flux<String>
   public Flux<String> repeatValue(int number) {
     return Flux.range(1, number).map(i -> "Value: " + number);
@@ -161,8 +160,8 @@ public class FlatMapTest {
     return Flux.just(list);
   }
 
-  public Flux<String> toUpperCase(String name){
-        return Flux.just(name.toUpperCase());
+  public Flux<String> toUpperCase(String name) {
+    return Flux.just(name.toUpperCase());
   }
 
   class Car {
@@ -192,13 +191,9 @@ public class FlatMapTest {
       this.name = name;
     }
 
-      @Override
-      public String toString() {
-          return "Car{" +
-                  "id=" + id +
-                  ", name='" + name + '\'' +
-                  '}';
-      }
+    @Override
+    public String toString() {
+      return "Car{" + "id=" + id + ", name='" + name + '\'' + '}';
+    }
   }
-
 }

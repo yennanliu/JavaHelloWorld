@@ -3,8 +3,8 @@ package com.yen.CourseV1;
 // part 15 : Threading - observeOn()
 // https://youtu.be/9yk3vlalj3E?si=G0vJk_jI90WQlIym
 
-//import rx.Observable;
-//import rx.schedulers.Schedulers;
+// import rx.Observable;
+// import rx.schedulers.Schedulers;
 
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -17,7 +17,8 @@ public class part15 {
         .subscribeOn(Schedulers.io()) // NOTE here
         .doOnNext(item -> System.out.println("emit item : " + Thread.currentThread().getName()))
         .observeOn(Schedulers.single()) // NOTE here
-        .subscribe(item -> System.out.println("observe item : " + Thread.currentThread().getName()));
+        .subscribe(
+            item -> System.out.println("observe item : " + Thread.currentThread().getName()));
 
     // prevent app from exciting
     try {
@@ -25,6 +26,5 @@ public class part15 {
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
     }
-
   }
 }

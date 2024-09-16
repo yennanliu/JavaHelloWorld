@@ -15,7 +15,5 @@ public class Part12 {
 
     System.out.println("press a key to end");
     System.in.read();
-
   }
-
 }

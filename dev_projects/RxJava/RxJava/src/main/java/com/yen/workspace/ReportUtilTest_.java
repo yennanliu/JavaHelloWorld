@@ -7,23 +7,25 @@ import java.util.stream.Stream;
 public class ReportUtilTest_ {
   public static void main(String[] args) {
 
-//    System.out.println(ReportUtil.getTestResults());
-//
-//    System.out.println("==================");
-//
-//    System.out.println(ReportUtil.getReports());
+    //    System.out.println(ReportUtil.getTestResults());
+    //
+    //    System.out.println("==================");
+    //
+    //    System.out.println(ReportUtil.getReports());
 
-    //System.out.println("==================");
+    // System.out.println("==================");
     System.out.println(ReportUtil.getTestResultBySerialNum("s1"));
 
     System.out.println("==================");
 
-    List<String> statusList = ReportUtil.getTestResultBySerialNum("s1").stream().flatMap(
-            x -> {
-              String status = x.getStatus();
-              return Stream.of(status);
-            }
-    ).collect(Collectors.toList());
+    List<String> statusList =
+        ReportUtil.getTestResultBySerialNum("s1").stream()
+            .flatMap(
+                x -> {
+                  String status = x.getStatus();
+                  return Stream.of(status);
+                })
+            .collect(Collectors.toList());
 
     System.out.println("statusList = " + statusList);
 

@@ -12,18 +12,17 @@ public class part19 {
   public static void main(String[] args) throws IOException {
 
     // dispose
-//    ReactiveSources.intNumbersFlux()
-//        .subscribe(
-//            number -> System.out.println(number),
-//            err -> System.out.println("error = " + err),
-//            () -> System.out.println("completed !!!"));
+    //    ReactiveSources.intNumbersFlux()
+    //        .subscribe(
+    //            number -> System.out.println(number),
+    //            err -> System.out.println("error = " + err),
+    //            () -> System.out.println("completed !!!"));
 
     ReactiveSources.intNumbersFlux().subscribe(new mySubscriber<>());
 
     System.out.println("press a key to end");
     System.in.read();
   }
-
 }
 
 class mySubscriber<T> extends BaseSubscriber<T> {

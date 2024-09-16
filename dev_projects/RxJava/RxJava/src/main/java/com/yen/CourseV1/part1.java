@@ -5,24 +5,28 @@ package com.yen.CourseV1;
 import rx.Observable;
 
 public class part1 {
-    public static void main(String[] args){
+  public static void main(String[] args) {
 
-        // Observable.create
-        Observable<String> observable = Observable.create(emitter -> {
-            emitter.onNext("click on 1");
-            emitter.onNext("click on 2");
-            emitter.onNext("click on 3");
+    // Observable.create
+    Observable<String> observable =
+        Observable.create(
+            emitter -> {
+              emitter.onNext("click on 1");
+              emitter.onNext("click on 2");
+              emitter.onNext("click on 3");
 
-            emitter.onCompleted();
+              emitter.onCompleted();
+            });
+
+    observable.subscribe(
+        item -> {
+          System.out.println(item);
+        },
+        throwable -> {
+          System.out.println(throwable.getMessage());
+        },
+        () -> {
+          System.out.println("op complete !");
         });
-
-        observable.subscribe(item -> {
-            System.out.println(item);
-        }, throwable -> {
-            System.out.println(throwable.getMessage());
-        }, () -> {
-            System.out.println("op complete !");
-        });
-
-    }
+  }
 }

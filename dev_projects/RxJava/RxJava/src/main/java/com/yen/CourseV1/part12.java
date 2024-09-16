@@ -62,6 +62,4 @@ public class part12 {
 
     subject3.onComplete();
   }
-
-
 }

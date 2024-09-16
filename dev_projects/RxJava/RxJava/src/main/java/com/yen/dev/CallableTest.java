@@ -55,7 +55,7 @@ public class CallableTest {
   @Test
   public void test_1() {
 
-//    Mono<Integer> data1 = Mono.just(1);
+    //    Mono<Integer> data1 = Mono.just(1);
 
     // V1 : regular style
     Mono<String> data2 =
@@ -67,12 +67,11 @@ public class CallableTest {
               }
             });
 
-      data2.subscribe(System.out::println);
+    data2.subscribe(System.out::println);
 
-      // V2 : lambda expression :  (since there is only 1 method called fromCallable under Mono)
-      Mono<String> data3 = Mono.fromCallable(() -> "yooooo");
+    // V2 : lambda expression :  (since there is only 1 method called fromCallable under Mono)
+    Mono<String> data3 = Mono.fromCallable(() -> "yooooo");
 
-      data3.subscribe(System.out::println);
+    data3.subscribe(System.out::println);
   }
-
 }

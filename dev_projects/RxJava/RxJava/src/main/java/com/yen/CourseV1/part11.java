@@ -51,5 +51,4 @@ public class part11 {
             },
             throwable -> System.out.println(throwable.getMessage()));
   }
-
 }

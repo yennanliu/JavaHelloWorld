@@ -6,42 +6,41 @@ import java.util.stream.Stream;
 
 public class StreamSources {
 
-    private static Stream<String> stringNumbersStrean(){
-        return Stream.of("one", "teo", "three");
+  private static Stream<String> stringNumbersStrean() {
+    return Stream.of("one", "teo", "three");
+  }
+
+  private static Stream<Integer> intNumbersStrean() {
+    return Stream.iterate(0, i -> i * 2).limit(10);
+  }
+
+  private static Stream<User> userStream() {
+    return Stream.of(new User(1, "aa", "a"), new User(2, "bb", "b"), new User(3, "cc", "c"));
+  }
+
+  public static class User {
+    private final Integer id;
+    private final String firstName;
+    private final String lastName;
+
+    public User(int id, String firstName, String lastName) {
+      this.id = id;
+      this.firstName = firstName;
+      this.lastName = lastName;
     }
 
-    private static Stream<Integer> intNumbersStrean(){
-        return Stream.iterate(0, i -> i * 2)
-                .limit(10);
+    @Override
+    public String toString() {
+      return "User{"
+          + "id="
+          + id
+          + ", firstName='"
+          + firstName
+          + '\''
+          + ", lastName='"
+          + lastName
+          + '\''
+          + '}';
     }
-
-    private static Stream<User> userStream(){
-        return Stream.of(
-                new User(1, "aa", "a"),
-                new User(2, "bb", "b"),
-                new User(3, "cc", "c")
-        );
-    }
-
-    public static class User{
-        private Integer id;
-        private String firstName;
-        private String lastName;
-
-        public User(int id, String firstName, String lastName) {
-            this.id = id;
-            this.firstName = firstName;
-            this.lastName = lastName;
-        }
-
-        @Override
-        public String toString() {
-            return "User{" +
-                    "id=" + id +
-                    ", firstName='" + firstName + '\'' +
-                    ", lastName='" + lastName + '\'' +
-                    '}';
-        }
-    }
-
+  }
 }

@@ -13,32 +13,29 @@ public class part5 {
 
     Completable completable = createCompletable();
 
-    completable.subscribe(new CompletableObserver() {
-      @Override
-      public void onSubscribe(@NonNull Disposable d) {
-        System.out.println("d = " + d);
-      }
+    completable.subscribe(
+        new CompletableObserver() {
+          @Override
+          public void onSubscribe(@NonNull Disposable d) {
+            System.out.println("d = " + d);
+          }
 
-      @Override
-      public void onComplete() {
-        System.out.println("op is completed !");
+          @Override
+          public void onComplete() {
+            System.out.println("op is completed !");
+          }
 
-      }
-
-      @Override
-      public void onError(@NonNull Throwable e) {
-
-      }
-    });
-
+          @Override
+          public void onError(@NonNull Throwable e) {}
+        });
   }
 
-  private static Completable createCompletable(){
+  private static Completable createCompletable() {
     return Completable.fromAction(deleteItemFromDBAction());
   }
 
   // NOTE !!! use io.reactivex.rxjava3.functions.Action
-  private static Action deleteItemFromDBAction(){
+  private static Action deleteItemFromDBAction() {
 
     return new Action() {
       @Override
@@ -47,5 +44,4 @@ public class part5 {
       }
     };
   }
-
 }

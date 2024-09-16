@@ -2,12 +2,10 @@ package com.yen.CourseV1;
 
 // https://youtu.be/yWdl58IXuPQ?si=NfR3e0V24xWjk1Sc
 
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.functions.Action;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-
-import io.reactivex.rxjava3.functions.Action;
-
-import io.reactivex.rxjava3.core.Completable;
 import rx.Observable;
 
 public class part3 {
@@ -41,10 +39,10 @@ public class part3 {
 
     Completable completable = Completable.fromAction(action2);
 
-    completable.subscribe(() -> {
-        System.out.println("---> Action ends");
-    });
-
+    completable.subscribe(
+        () -> {
+          System.out.println("---> Action ends");
+        });
 
     // to avoid program completed while intervalObservable, timeObservable are still running
     new Scanner(System.in).nextLine();

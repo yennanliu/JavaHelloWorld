@@ -1,17 +1,13 @@
 package com.yen.dev;
 
 import io.reactivex.rxjava3.core.Single;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import io.reactivex.rxjava3.disposables.Disposable;
 import org.junit.jupiter.api.Test;
-import reactor.core.publisher.Flux;
 
 public class SingleTest {
 
@@ -103,15 +99,15 @@ public class SingleTest {
   @Test
   public void test6() {
 
-    Map<Integer,String> map = new HashMap<>();
-    for(int i = 0; i < 3; i++){
+    Map<Integer, String> map = new HashMap<>();
+    for (int i = 0; i < 3; i++) {
       map.put(i, "val=" + i);
     }
     // Create a Single<Stream<String>> object
     Single<Stream<Map<Integer, String>>> singleStream = Single.just(Stream.of(map));
 
     // v1
-    //singleStream.subscribe(stream -> stream.forEach(System.out::println));
+    // singleStream.subscribe(stream -> stream.forEach(System.out::println));
 
     // v2
     singleStream.subscribe(
@@ -120,12 +116,12 @@ public class SingleTest {
           list.forEach(System.out::println);
         });
 
-//    singleStream.subscribe(
-//            stream -> {
-//              stream.forEach(x -> {
-//
-//              });
-//            });
+    //    singleStream.subscribe(
+    //            stream -> {
+    //              stream.forEach(x -> {
+    //
+    //              });
+    //            });
 
   }
 

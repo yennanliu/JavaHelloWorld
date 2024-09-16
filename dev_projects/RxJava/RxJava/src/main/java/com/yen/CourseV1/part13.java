@@ -8,13 +8,14 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableOperator;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.observers.DisposableObserver;
-//import rx.Observable;
+
+// import rx.Observable;
 
 public class part13 {
   public static void main(String[] args) {
 
     Observable.just(1, 2, 3, 4)
-        //.filter(item -> item % 2 == 0) // V1
+        // .filter(item -> item % 2 == 0) // V1
         .lift(takeEven()) // V2 (do above logic with custom operator)
         .subscribe(item -> System.out.println(item));
   }
@@ -29,9 +30,9 @@ public class part13 {
         return new DisposableObserver<Integer>() {
           @Override
           public void onNext(@NonNull Integer item) {
-              if(item % 2 == 0){
-                  observer.onNext(item);
-              }
+            if (item % 2 == 0) {
+              observer.onNext(item);
+            }
           }
 
           @Override
@@ -43,5 +44,4 @@ public class part13 {
       }
     };
   }
-
 }
