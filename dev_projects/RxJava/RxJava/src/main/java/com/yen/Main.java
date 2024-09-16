@@ -35,8 +35,18 @@ public class Main {
 
 
         /** TEST 5 */
-        OutputStream outputStream = FileUtil.readFile("pom.xml");
-        System.out.println(outputStream.toString());
+//        OutputStream outputStream = FileUtil.readFile("pom.xml");
+//        System.out.println(outputStream.toString());
+
+        /** TEST 6 */
+        // readFileRX
+        FileUtil.readFileRX("pom.xml")
+                .subscribe(System.out::println);
+
+        /** TEST 7 */
+//        FileUtil.readFileRxAsStream("pom.xml")
+//                .subscribe(System.out::println); // TODO : fix this
+
     }
 
 }
