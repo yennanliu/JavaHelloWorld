@@ -1,12 +1,13 @@
 package com.yen;
 
 import com.yen.Util.FileUtil;
+import com.yen.Util.HttpUtil;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
 public class Main {
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws Exception {
 
     System.out.println("RX Hello world!");
 
@@ -38,11 +39,14 @@ public class Main {
 
     /** TEST 6 */
     // readFileRX
-    FileUtil.readFileRX("pom.xml").subscribe(System.out::println);
+    //FileUtil.readFileRX("pom.xml").subscribe(System.out::println);
 
     /** TEST 7 */
     //        FileUtil.readFileRxAsStream("pom.xml")
     //                .subscribe(System.out::println); // TODO : fix this
 
+    /** TEST 8 */
+    String url = "https://scrapeme.live/shop/page/2/";
+    System.out.println(HttpUtil.getHttpResponse(url));
   }
 }
