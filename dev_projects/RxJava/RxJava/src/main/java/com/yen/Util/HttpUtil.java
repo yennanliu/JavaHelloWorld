@@ -36,21 +36,70 @@ public class HttpUtil {
     }
 
     public static Single<String> getHttpResponseRX(String url) throws Exception{
-        // TODO : check why Single.fromCallable
-        return Single.fromCallable(() -> {
+    // TODO : check why Single.fromCallable
+    /**
+     *     @CheckReturnValue
+     *     @SchedulerSupport("none")
+     *     public static <@NonNull T> @NonNull Single<T> fromCallable(@NonNull Callable<? extends T> callable) {
+     *         Objects.requireNonNull(callable, "callable is null");
+     *         return RxJavaPlugins.onAssembly(new SingleFromCallable(callable));
+     *     }
+     *
+     *
+     *
+     *   Difference Between Single.fromCallable() and Single.just()
+     *
+     * 	•	Single.just():
+     * 	    •	Immediately emits the result when created. It’s used when you already have the data available at the time of creating the Single.
+     * 	    •	If any exception occurs during the creation of the data, it will not handle it properly (it will throw the exception during creation, not during subscription).
+     *
+     * 	•	Single.fromCallable():
+     * 	    •	Defer execution until the Single is subscribed to.
+     * 	    •	Captures exceptions thrown during the task and forwards them as onError events, making it safer for potentially error-prone operations like IO or database access.
+     *
+     *
+     *  Key Reasons to Use Single.fromCallable():
+     *
+     * 	1.	Defer Execution Until Subscription:
+     * 	    •	Single.fromCallable() defers the execution of the provided Callable until someone subscribes to the Single. This means the task is not performed immediately, but only when a subscriber requests it.
+     * 	    •	This is useful when you want to delay an operation until the data is needed (lazy evaluation).
+     * 	2.	Thread Management:
+     * 	    •	With Single.fromCallable(), you can easily execute the task on different schedulers (like IO, computation, etc.) without manually managing threads. For example, you can move blocking IO operations to a background thread with RxJava schedulers.
+     * 	    •	Example: .subscribeOn(Schedulers.io()) to handle an IO operation on a background thread.
+     * 	3.	Error Handling:
+     * 	    •	Single.fromCallable() makes error handling straightforward. If the Callable throws an exception, it automatically propagates that error downstream to the onError handler.
+     * 	    •	You don’t need to wrap the code in try-catch blocks; any exception inside the Callable is treated as an error event.
+     * 	4.	Avoid Blocking the Main Thread:
+     * 	    •	When used with schedulers, you can offload blocking operations (e.g., database or network calls) to background threads, making it ideal for UI or other non-blocking contexts.
+     * 	5.	Converting Synchronous Code to Reactive Streams:
+     * 	    •	You can use Single.fromCallable() to adapt existing synchronous code (e.g., fetching data from a database, reading files) into a reactive, non-blocking flow without changing the original logic much.
+     *
+     *
+     *
+     *  Summary of When to Use Single.fromCallable():
+     *
+     * 	    •	When you have blocking operations (e.g., IO, file reading, database access) that should be executed asynchronously.
+     * 	    •	When you want to handle exceptions and errors in a reactive flow.
+     * 	    •	When the task should be deferred until subscription.
+     * 	    •	When integrating synchronous code into a reactive system.
+     */
+    return Single.fromCallable(
+            () -> {
+              HttpClient client = HttpClient.newHttpClient();
 
-            HttpClient client = HttpClient.newHttpClient();
+              HttpRequest request =
+                  HttpRequest.newBuilder()
+                      .uri(URI.create(url))
+                      .GET() // GET method
+                      .build();
 
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url))
-                    .GET() // GET method
-                    .build();
+              HttpResponse<String> response =
+                  client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            return response.body();
-        }).timeout(5, TimeUnit.SECONDS)
-                .onErrorReturn(throwable -> "Error occurred: " + throwable.getMessage());
+              return response.body();
+            })
+        .timeout(5, TimeUnit.SECONDS)
+        .onErrorReturn(throwable -> "Error occurred: " + throwable.getMessage());
 
         // TODO : check if use onErrorResumeNext or onErrorReturn .. for code above
     }

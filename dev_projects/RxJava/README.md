@@ -74,6 +74,15 @@
 		- JDBC call 
 
 
+- Difference Between Single.fromCallable() and Single.just()
+
+	- `Single.just()`:
+		- Immediately emits the result when created. It’s used when you already have the data available at the time of creating the Single.
+		- If any exception occurs during the creation of the data, it will not handle it properly (it will throw the exception during creation, not during subscription).
+	- `Single.fromCallable()`:
+		- Defer execution until the Single is subscribed to.
+		- Captures exceptions thrown during the task and forwards them as onError events, making it safer for potentially error-prone operations like IO or database access.
+
 
 ## Ref
 - video
