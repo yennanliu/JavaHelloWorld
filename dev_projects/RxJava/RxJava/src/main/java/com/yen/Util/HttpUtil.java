@@ -20,16 +20,16 @@ public class HttpUtil {
 
     public static String getHttpResponse(String url) throws Exception {
         // Create HttpClient
-        HttpClient client = HttpClient.newHttpClient();
+        //HttpClient client = HttpClient.newHttpClient();
 
         // Build HTTP Request
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .GET() // GET method
-                .build();
+//        HttpRequest request = HttpRequest.newBuilder()
+//                .uri(URI.create(url))
+//                .GET() // GET method
+//                .build();
 
         // Send request and get response (synchronous/blocking)
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        HttpResponse<String> response = getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
 
         // Return the body of the response
         return response.body();
@@ -85,16 +85,9 @@ public class HttpUtil {
      */
     return Single.fromCallable(
             () -> {
-              HttpClient client = HttpClient.newHttpClient();
-
-              HttpRequest request =
-                  HttpRequest.newBuilder()
-                      .uri(URI.create(url))
-                      .GET() // GET method
-                      .build();
 
               HttpResponse<String> response =
-                  client.send(request, HttpResponse.BodyHandlers.ofString());
+                      getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
 
               return response.body();
             })
@@ -102,6 +95,17 @@ public class HttpUtil {
         .onErrorReturn(throwable -> "Error occurred: " + throwable.getMessage());
 
         // TODO : check if use onErrorResumeNext or onErrorReturn .. for code above
+    }
+
+    private static HttpClient getHttpClient(){
+        return HttpClient.newHttpClient();
+    }
+
+    private static HttpRequest createHttpRequest(String url){
+        return HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .GET() // GET method
+                .build();
     }
 
 }
