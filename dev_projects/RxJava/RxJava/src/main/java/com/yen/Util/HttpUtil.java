@@ -11,6 +11,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,6 +21,8 @@ import java.util.regex.Pattern;
 public class HttpUtil {
 
     private String BASE_URL = "https://scrapeme.live/shop/";
+
+    List<String> collectedUrl = new ArrayList<>();
 
     public static String getHttpResponse(String url) throws Exception {
         // Create HttpClient
@@ -36,6 +40,25 @@ public class HttpUtil {
         // Return the body of the response
         return filterHrefContent(response.body());
         //return response.body();
+    }
+
+    public List<String> getHttpResponseRecusive(String url) throws Exception {
+
+        System.out.println(">>> url = " + url);
+        HttpResponse<String> response = getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
+        String res = filterHrefContent(response.body());
+
+        for (String _url: res.split("\n")){
+            if(this.collectedUrl.contains(_url)){
+                continue;
+            }
+            this.collectedUrl.add(_url);
+            // recursive call
+            getHttpResponseRecusive(_url);
+        }
+        //return filterHrefContent(response.body());
+
+        return this.collectedUrl;
     }
 
     public static Single<String> getHttpResponseRX(String url) throws Exception{
@@ -121,9 +144,11 @@ public class HttpUtil {
         StringBuilder sb = new StringBuilder();
         while (matcher.find()) {
             // Append only the href content
-            sb.append(matcher.group()).append("\n");
+            //sb.append(matcher.group()).append("\n");
+            sb.append(matcher.group(1)).append("\n"); // remove no need item from filter result, e.g.  get https://scrapeme.live/shop/page/1/ from href="https://scrapeme.live/shop/page/1/"
         }
 
+        System.out.println("size = " + sb.toString().split("\n").length);
         return sb.toString();
     }
 

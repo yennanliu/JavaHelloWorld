@@ -48,6 +48,8 @@ public class Main {
     /** TEST 8 */
     String url = "https://scrapeme.live/shop/page/2/";
     System.out.println(HttpUtil.getHttpResponse(url));
+//    HttpUtil httpUtil = new HttpUtil();
+//    System.out.println(httpUtil.getHttpResponseRecusive(url));
 
     /** TEST 9 */
 //    HttpUtil.getHttpResponseRX(url).subscribe(
