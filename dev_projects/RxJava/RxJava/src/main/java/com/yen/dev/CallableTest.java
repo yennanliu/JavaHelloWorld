@@ -74,4 +74,41 @@ public class CallableTest {
 
     data3.subscribe(System.out::println);
   }
+
+  @Test
+  public void test_without_lambda_expression() {
+    // System.out.println(myFunc("123"));
+    // without lambda
+    rxCall().subscribe(System.out::println);
+  }
+
+  // https://github.com/yennanliu/til#20240908
+  @Test
+  public void test_with_lambda_expression() {
+    rxCallLambda().subscribe(System.out::println);
+  }
+
+  private Mono<String> rxCallLambda() {
+    return fromCallable(() -> myFunc());
+  }
+
+  private Mono<String> rxCall() {
+      Callable<String> callable = new Callable<String>() {
+          @Override
+          public String call() throws Exception {
+              return myFunc();
+          }
+      };
+
+      return fromCallable(callable);
+  }
+
+  private String myFunc() {
+    return "yooo";
+  }
+
+  private String myFuncWithParam(String x) {
+    return "input = " + x;
+  }
+
 }
