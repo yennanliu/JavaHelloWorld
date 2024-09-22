@@ -17,11 +17,11 @@ public class Main {
     // System.out.println(FileUtil.getFileList("src/main/java/com/yen/dev"));
 
     /** TEST 2 */
-    //        FileUtil.getFileListRx("src/main/java/com/yen/dev")
-    //                .subscribe(
-    //                        file -> {
-    //                            System.out.println("file = " + file);
-    //                        });
+            FileUtil.getFileListRx("src/main/java/com/yen/dev")
+                    .subscribe(
+                            file -> {
+                                System.out.println("file = " + file);
+                            });
 
     /** TEST 3 */
     // System.out.println(FileUtil.createDir("zzz"));
@@ -50,9 +50,10 @@ public class Main {
     //System.out.println(HttpUtil.getHttpResponse(url));
 
     /** TEST 9 */
-    HttpUtil.getHttpResponseRX(url).subscribe(
-            resp -> System.out.println("resp = " + resp),
-            throwable -> System.out.println("error = " + throwable.getMessage()));
-  }
+//    HttpUtil.getHttpResponseRX(url).subscribe(
+//            resp -> System.out.println("resp = " + resp),
+//            throwable -> System.out.println("error = " + throwable.getMessage())
+//    );
 
+  }
 }

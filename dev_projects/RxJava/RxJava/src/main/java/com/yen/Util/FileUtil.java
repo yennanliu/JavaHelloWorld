@@ -1,5 +1,7 @@
 package com.yen.Util;
 
+import static io.reactivex.rxjava3.core.Single.fromCallable;
+
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Single;
 import java.io.*;
@@ -47,7 +49,7 @@ public class FileUtil {
      * of files; otherwise, it will trigger an error.
      */
     // V1
-    return Single.fromCallable(
+    return fromCallable(
             () ->
                 //  NOTE !! : java.nio.file.Files
                 Files.list(Paths.get(dir))
@@ -66,34 +68,22 @@ public class FileUtil {
             });
 
     // V2 (without lambda)
-    //      return Single.fromCallable(new Callable<List<Path>>() {
+    //      Single<List<Path>> callable = new Callable<List<Path>>(){
     //          @Override
-    //          public List<Path> call() throws Exception {
-    //              //  NOTE !! : java.nio.file.Files
-    //              return Files.list(Paths.get(dir))
-    //                      .filter(new Predicate<Path>() {
-    //                          @Override
-    //                          public boolean test(Path file) {
-    //                              return !Files.isDirectory(file);
-    //                          }
-    //                      })
-    //                      .map(new Function<Path, Path>() {
-    //                          @Override
-    //                          public Path apply(Path file) {
-    //                              System.out.println("file = " + file + " filename = " +
+    //          public List<Path> call() throws IOException {
+    //              List<Path> res = Files.list(Paths.get(dir))
+    //                      .filter(file -> !Files.isDirectory(file))
+    //                      .map(
+    //                              file -> {
+    //                                  System.out.println(
+    //                                          "file = " + file + " filename = " +
     // file.getFileName());
-    //                              return file;
-    //                          }
-    //                      })
+    //                                  return file;
+    //                              })
     //                      .collect(Collectors.toList());
-    //          }
-    //      }).onErrorReturn(new Function<Throwable, List<Path>>() {
-    //          @Override
-    //          public List<Path> apply(Throwable e) {
-    //              System.out.println("(RX) get file list exception: " + e.getMessage());
-    //              return List.of(); // return an empty list if an error occurs
-    //          }
-    //      });
+    //
+    //              return fromCallable(callable)};
+    //      };
 
   }
 
@@ -129,7 +119,7 @@ public class FileUtil {
 
     Path path = Paths.get(dir);
 
-    return Single.fromCallable(
+    return fromCallable(
             () -> {
               if (Files.isDirectory(path)) {
                 System.out.println("Directory already exists: " + path);
@@ -195,4 +185,5 @@ public class FileUtil {
           }
         });
   }
+
 }
