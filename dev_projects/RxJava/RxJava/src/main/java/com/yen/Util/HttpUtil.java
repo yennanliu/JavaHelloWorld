@@ -42,21 +42,24 @@ public class HttpUtil {
         //return response.body();
     }
 
-    public List<String> getHttpResponseRecusive(String url) throws Exception {
+    public List<String> getHttpResponseRecursive(String url) throws Exception {
 
         System.out.println(">>> url = " + url);
         HttpResponse<String> response = getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
-        String res = filterHrefContent(response.body());
+        if (response != null && response.body() != null && response.body().contains("https://scrapeme.live/shop/page")){
 
-        for (String _url: res.split("\n")){
-            if(this.collectedUrl.contains(_url)){
-                continue;
+            String res = filterHrefContent(response.body());
+
+            for (String _url: res.split("\n")){
+                if(this.collectedUrl.contains(_url)){
+                    continue;
+                }
+                this.collectedUrl.add(_url);
+                // recursive call
+                getHttpResponseRecursive(_url);
             }
-            this.collectedUrl.add(_url);
-            // recursive call
-            getHttpResponseRecusive(_url);
+            //return filterHrefContent(response.body());
         }
-        //return filterHrefContent(response.body());
 
         return this.collectedUrl;
     }
@@ -135,6 +138,9 @@ public class HttpUtil {
     }
 
     private static String filterHrefContent(String responseBody) {
+
+        //System.out.println(">>> responseBody = " + responseBody);
+
         // Regular expression to find href="..."
         //Pattern hrefPattern = Pattern.compile("href=\"(.*?)\"");
         //Pattern hrefPattern = Pattern.compile("href=\"(https://scrapeme\\.live/shop/page/\\d+/)\"");
