@@ -75,34 +75,84 @@ public class CallableTest {
     data3.subscribe(System.out::println);
   }
 
+  /** Callable call (NO lambda expression) method without param */
   @Test
   public void test_without_lambda_expression() {
-    // System.out.println(myFunc("123"));
     // without lambda
     rxCall().subscribe(System.out::println);
   }
 
+  /** Callable call (lambda expression) method without param */
   // https://github.com/yennanliu/til#20240908
   @Test
   public void test_with_lambda_expression() {
+    // with lambda
     rxCallLambda().subscribe(System.out::println);
   }
 
+  /** Callable call (NO lambda expression) method with param */
+  @Test
+  public void test_without_lambda_expression_method_with_param() {
+    // without lambda
+    rxCallParam("123").subscribe(System.out::println);
+  }
+
+    /** Callable call (lambda expression) method with param */
+    @Test
+    public void test_with_lambda_expression_with_param() {
+        // with lambda
+        rxCallParamLambda("123").subscribe(System.out::println);
+    }
+
+
+  /** CALLABLE CALL */
   private Mono<String> rxCallLambda() {
     return fromCallable(() -> myFunc());
   }
 
   private Mono<String> rxCall() {
-      Callable<String> callable = new Callable<String>() {
+    // V1
+    Callable<String> callable =
+        new Callable<String>() {
           @Override
           public String call() throws Exception {
-              return myFunc();
+            return myFunc();
           }
-      };
+        };
 
-      return fromCallable(callable);
+    // V2
+    // Callable<String> callable = () -> myFunc();
+
+    return fromCallable(callable);
   }
 
+    private Mono<String> rxCallParamLambda(String param) {
+        return fromCallable(() -> myFuncWithParam(param));
+    }
+
+  private Mono<String> rxCallParam(String param) {
+    // V1
+    Callable<String> callable =
+        new Callable<String>() {
+          @Override
+          public String call() throws Exception {
+            /**
+             * NOTE !!! below
+             *
+             * <p>1. no need to setup param in call() 2. ONLY need setup param when call the actual
+             * method (e.g. myFuncWithParam(param)) 3. rest of things remain same
+             */
+            return myFuncWithParam(param);
+          }
+        };
+
+    // V2
+    // Callable<String> callable = () -> myFunc();
+
+    return fromCallable(callable);
+  }
+
+  /** METHOD */
   private String myFunc() {
     return "yooo";
   }
