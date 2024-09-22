@@ -17,11 +17,11 @@ public class Main {
     // System.out.println(FileUtil.getFileList("src/main/java/com/yen/dev"));
 
     /** TEST 2 */
-            FileUtil.getFileListRx("src/main/java/com/yen/dev")
-                    .subscribe(
-                            file -> {
-                                System.out.println("file = " + file);
-                            });
+//            FileUtil.getFileListRx("src/main/java/com/yen/dev")
+//                    .subscribe(
+//                            file -> {
+//                                System.out.println("file = " + file);
+//                            });
 
     /** TEST 3 */
     // System.out.println(FileUtil.createDir("zzz"));
@@ -47,7 +47,7 @@ public class Main {
 
     /** TEST 8 */
     String url = "https://scrapeme.live/shop/page/2/";
-    //System.out.println(HttpUtil.getHttpResponse(url));
+    System.out.println(HttpUtil.getHttpResponse(url));
 
     /** TEST 9 */
 //    HttpUtil.getHttpResponseRX(url).subscribe(

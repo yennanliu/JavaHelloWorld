@@ -12,6 +12,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class HttpUtil {
@@ -32,7 +34,8 @@ public class HttpUtil {
         HttpResponse<String> response = getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
 
         // Return the body of the response
-        return response.body();
+        return filterHrefContent(response.body());
+        //return response.body();
     }
 
     public static Single<String> getHttpResponseRX(String url) throws Exception{
@@ -106,6 +109,22 @@ public class HttpUtil {
                 .uri(URI.create(url))
                 .GET() // GET method
                 .build();
+    }
+
+    private static String filterHrefContent(String responseBody) {
+        // Regular expression to find href="..."
+        //Pattern hrefPattern = Pattern.compile("href=\"(.*?)\"");
+        //Pattern hrefPattern = Pattern.compile("href=\"(https://scrapeme\\.live/shop/page/\\d+/)\"");
+        Pattern hrefPattern = Pattern.compile("href=['\"](https://scrapeme\\.live/shop/page/\\d+/)['\"]");
+        Matcher matcher = hrefPattern.matcher(responseBody);
+
+        StringBuilder sb = new StringBuilder();
+        while (matcher.find()) {
+            // Append only the href content
+            sb.append(matcher.group()).append("\n");
+        }
+
+        return sb.toString();
     }
 
 }
