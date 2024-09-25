@@ -86,23 +86,28 @@ public class HttpUtil {
                             HttpResponse<String> response =
                                     getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
 
+                            System.out.println(">>> response = " + response);
                             return response; //.body();
                         })
                 .timeout(5, TimeUnit.SECONDS)
-                .subscribeOn(Schedulers.io())
+                //.subscribeOn(Schedulers.io())
                 .flatMap(resp -> {
                     // TODO : fix below
+                    System.out.println("need scrape ? " + needToScrape(resp));
                     if (needToScrape(resp)){
                         String res = filterHrefContent(resp.body());
                         List<String> newUrls = List.of(res.split("\n"));
+                        System.out.println(">>> newUrls = " + newUrls);
                         return Observable.fromIterable(newUrls)
                                 .filter(_url -> !collectedUrl.contains(_url))
                                 .doOnNext(_url -> collectedUrl.add(_url)) // Add the new URL to the collected list
                                // .flatMap(_url -> Flux.fromArray( getHttpResponseRecursiveRX(_url))) // Recursive call
                                 // TODO : fix below
+                                // below is same as : Observable::just (lambda expression)
                                 .flatMap(_url -> {
                                     // return Flux.just(y);
-                                    return Observable.just("xxx");
+                                    //return Observable.just("xxx");
+                                    return Observable.just(_url);
                                 });
                                 //.concatWith(Observable.just(collectedUrl)); // Combine results
                     }else{
