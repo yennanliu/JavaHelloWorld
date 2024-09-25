@@ -6,21 +6,26 @@ package com.yen.Util;
  */
 
 import io.reactivex.rxjava3.core.Single;
+import reactor.core.publisher.Flux;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 
 public class HttpUtil {
 
     private String BASE_URL = "https://scrapeme.live/shop/";
+
+    //private String BASE_PAGE_URL = "https://scrapeme.live/shop/page";
 
     List<String> collectedUrl = new ArrayList<>();
 
@@ -46,7 +51,7 @@ public class HttpUtil {
 
         System.out.println(">>> url = " + url);
         HttpResponse<String> response = getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
-        if (response != null && response.body() != null && response.body().contains("https://scrapeme.live/shop/page")){
+        if (response != null && response.body() != null && response.body().contains(BASE_URL + "/page")){
 
             String res = filterHrefContent(response.body());
 
@@ -61,7 +66,26 @@ public class HttpUtil {
             //return filterHrefContent(response.body());
         }
 
+        System.out.println("final collected URL count = " + this.collectedUrl.size());
         return this.collectedUrl;
+    }
+
+    public Flux<String> getHttpResponseRecursiveRX(String url) throws Exception{
+
+        System.out.println(">>> url = " + url);
+
+        Single<String> x = Single.fromCallable(
+                        () -> {
+
+                            HttpResponse<String> response =
+                                    getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
+
+                            return response.body();
+                        })
+                .timeout(5, TimeUnit.SECONDS)
+                .onErrorReturn(throwable -> "Error occurred: " + throwable.getMessage());
+
+        return null;
     }
 
     public static Single<String> getHttpResponseRX(String url) throws Exception{
@@ -154,7 +178,7 @@ public class HttpUtil {
             sb.append(matcher.group(1)).append("\n"); // remove no need item from filter result, e.g.  get https://scrapeme.live/shop/page/1/ from href="https://scrapeme.live/shop/page/1/"
         }
 
-        System.out.println("size = " + sb.toString().split("\n").length);
+        //System.out.println("size = " + sb.toString().split("\n").length);
         return sb.toString();
     }
 
