@@ -5,7 +5,9 @@ package com.yen.Util;
  *
  */
 
+import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Single;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import reactor.core.publisher.Flux;
 
 import java.net.URI;
@@ -15,6 +17,7 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -51,7 +54,7 @@ public class HttpUtil {
 
         System.out.println(">>> url = " + url);
         HttpResponse<String> response = getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
-        if (response != null && response.body() != null && response.body().contains(BASE_URL + "/page")){
+        if (needToScrape(response)){
 
             String res = filterHrefContent(response.body());
 
@@ -70,23 +73,108 @@ public class HttpUtil {
         return this.collectedUrl;
     }
 
-    public Flux<String> getHttpResponseRecursiveRX(String url) throws Exception{
+
+    // TODO : fix below
+    public Observable<List<Object>> getHttpResponseRecursiveRX(String url) throws Exception{
 
         System.out.println(">>> url = " + url);
+        //HttpResponse<String> response = getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
 
-        Single<String> x = Single.fromCallable(
+        return Observable.fromCallable(
                         () -> {
 
                             HttpResponse<String> response =
                                     getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
 
-                            return response.body();
+                            return response; //.body();
                         })
                 .timeout(5, TimeUnit.SECONDS)
-                .onErrorReturn(throwable -> "Error occurred: " + throwable.getMessage());
+                .subscribeOn(Schedulers.io())
+                .flatMap(resp -> {
+                    // TODO : fix below
+                    if (needToScrape(resp)){
+                        String res = filterHrefContent(resp.body());
+                        List<String> newUrls = List.of(res.split("\n"));
+                        return Observable.fromIterable(newUrls)
+                                .filter(_url -> !collectedUrl.contains(_url))
+                                .doOnNext(_url -> collectedUrl.add(_url)) // Add the new URL to the collected list
+                               // .flatMap(_url -> Flux.fromArray( getHttpResponseRecursiveRX(_url))) // Recursive call
+                                // TODO : fix below
+                                .flatMap(_url -> {
+                                    // return Flux.just(y);
+                                    return Observable.just("xxx");
+                                });
+                                //.concatWith(Observable.just(collectedUrl)); // Combine results
+                    }else{
+                        return Observable.just(this.collectedUrl);
+                    }
+                }).toList().toObservable();
 
-        return null;
+        //return null;
     }
+
+//    public Flux<List<String>> getHttpResponseRecursiveRX(String url) throws Exception{
+//
+//        System.out.println(">>> url = " + url);
+//
+////        Single<String> x = Single.fromCallable(
+////                        () -> {
+////
+////                            HttpResponse<String> response =
+////                                    getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
+////
+////                            return response.body();
+////                        })
+////                .timeout(5, TimeUnit.SECONDS)
+////                .onErrorReturn(throwable -> "Error occurred: " + throwable.getMessage());
+//
+//        Single.fromCallable(
+//                        () -> {
+//
+//                            HttpResponse<String> response =
+//                                    getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
+//
+//                            return response.body();
+//                        })
+//                .timeout(5, TimeUnit.SECONDS)
+//                .onErrorReturn(throwable -> "Error occurred: " + throwable.getMessage());
+//                //.flatMap(x -> x)
+//
+//        //this.collectedUrl.add(x);
+//
+//        return Flux.just(this.collectedUrl);
+//    }
+
+//    public Observable<List<String>> getHttpResponseRecursiveRX(String url) {
+//        System.out.println(">>> url = " + url);
+//
+//        return Observable.fromCallable(new Callable<HttpResponse<String>>() {
+//                    @Override
+//                    public HttpResponse<String> call() throws Exception {
+//                        return getHttpClient().send(createHttpRequest(url), HttpResponse.BodyHandlers.ofString());
+//                    }
+//                })
+//                .subscribeOn(Schedulers.io())
+//                .flatMap(response -> {
+//                    if (response != null && response.body() != null && response.body().contains(BASE_URL + "/page")) {
+//                        String res = filterHrefContent(response.body());
+//                        List<String> newUrls = List.of(res.split("\n"));
+//
+//                        return Observable.fromIterable(newUrls)
+//                                .filter(_url -> !collectedUrl.contains(_url))
+//                                .doOnNext(_url -> collectedUrl.add(_url)) // Add the new URL to the collected list
+//                                .flatMap(_url -> getHttpResponseRecursiveRX(_url)) // Recursive call
+//                                .concatWith(Observable.just(collectedUrl)); // Combine results
+//                    } else {
+//                        return Observable.just(collectedUrl);
+//                    }
+//                })
+//                //.flatMap(x -> Flux.fromIterable(x))
+//                .toList()
+//                .toObservable();
+//    }
+
+
 
     public static Single<String> getHttpResponseRX(String url) throws Exception{
     // TODO : check why Single.fromCallable
@@ -148,6 +236,10 @@ public class HttpUtil {
         .onErrorReturn(throwable -> "Error occurred: " + throwable.getMessage());
 
         // TODO : check if use onErrorResumeNext or onErrorReturn .. for code above
+    }
+
+    private Boolean needToScrape(HttpResponse<String> response){
+        return response != null && response.body() != null && response.body().contains(BASE_URL + "/page");
     }
 
     private static HttpClient getHttpClient(){

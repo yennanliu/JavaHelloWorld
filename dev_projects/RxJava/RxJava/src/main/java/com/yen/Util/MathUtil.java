@@ -89,5 +89,5 @@ public class MathUtil {
                 .reduce(0, Integer::sum); // Sum the emitted Fibonacci numbers
                // .toBlocking(); // Get the result
     }
-    
+
 }
