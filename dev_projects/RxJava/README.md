@@ -87,12 +87,12 @@
 
   - 1. Observable:
 
-		•	Definition: Observable can emit zero or more items over time and may complete or error out.
-		•	Use Case: Use Observable when you expect a stream of multiple items over time (like continuous data or events).
-		•	Examples:
-		•	A stream of user input events (like mouse clicks, key presses).
-		•	Data streams from sensors (multiple temperature readings).
-		•	A paginated API that returns multiple responses over time.
+		- Definition: Observable can emit zero or more items over time and may complete or error out.
+		- Use Case: Use Observable when you expect a stream of multiple items over time (like continuous data or events).
+		- Examples:
+		- A stream of user input events (like mouse clicks, key presses).
+		- Data streams from sensors (multiple temperature readings).
+		- A paginated API that returns multiple responses over time.
 		```java
 		// java
 		// In this example, the Observable emits a series of integers (1, 2, 3, 4, 5), which are received one by one.
@@ -107,12 +107,12 @@
 
   - 2. Single:
 
-		•	Definition: Single is a specialized type that emits exactly one item or an error. It doesn’t emit multiple items or stay active after sending its single response.
-		•	Use Case: Use Single when you expect exactly one item or a result, such as when you are making a network request or querying a database for a single value.
-		•	Examples:
-		•	Fetching a single user profile from a database.
-		•	Making an HTTP request to retrieve a specific resource.
-		•	Computing a single result (e.g., mathematical calculation).
+		- Definition: Single is a specialized type that emits exactly one item or an error. It doesn’t emit multiple items or stay active after sending its single response.
+		- Use Case: Use Single when you expect exactly one item or a result, such as when you are making a network request or querying a database for a single value.
+		- Examples:
+		- Fetching a single user profile from a database.
+		- Making an HTTP request to retrieve a specific resource.
+		- Computing a single result (e.g., mathematical calculation).
 		```java
 		// java
 		// In this example, Single emits only one item ("Hello World") and completes.
@@ -127,24 +127,24 @@
 	- When to Use Single vs. Observable?
 
 		- Use Single when:
-			•	You need a single response or value.
-			•	The operation you are performing can either succeed or fail and provides only one result.
-			•	Example use cases:
-			•	HTTP requests where you expect a single result (e.g., fetching one user profile).
-			•	Database queries that return one row or one value.
+			- You need a single response or value.
+			- The operation you are performing can either succeed or fail and provides only one result.
+			- Example use cases:
+			- HTTP requests where you expect a single result (e.g., fetching one user profile).
+			- Database queries that return one row or one value.
 		- Use Observable when:
-			•	You expect to work with a stream of multiple items.
-			•	The operation can emit zero, one, or more items.
-			•	You want to respond to real-time events or handle streams of data over time.
-			•	Example use cases:
-			•	Streams of user interactions (button clicks, gestures).
-			•	Data streams from a continuous source (e.g., a sensor).
-			•	Paginated responses from an API.
+			- You expect to work with a stream of multiple items.
+			- The operation can emit zero, one, or more items.
+			- You want to respond to real-time events or handle streams of data over time.
+			- Example use cases:
+			- Streams of user interactions (button clicks, gestures).
+			- Data streams from a continuous source (e.g., a sensor).
+			- Paginated responses from an API.
 
 	- Summary:
 
-		•	Single is for operations that will emit one item or an error.
-		•	Observable is for operations that can emit zero or more items (it could be continuous or a finite sequence).
+		- Single is for operations that will emit one item or an error.
+		- Observable is for operations that can emit zero or more items (it could be continuous or a finite sequence).
 
 	- Choosing between Single and Observable depends on the type of data you are working with and the result you expect from the operation.
 
