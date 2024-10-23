@@ -36,10 +36,13 @@ public class MapTest1 {
          *     a List<String> and builds a CustomResponse object.
          */
         // Transforming the Single<List<String>> to a new structure
+        // e.g.  Single<List<String>> -> Single<CustomResponse>
         Single<CustomResponse> res = myData.map(this::transformToCustomResponse);
 
+        Single<CustomResponse> res2 = myData.map(x -> transformToCustomResponse(x));
+
         // consume
-        res.subscribe(x->System.out.println(x));
+        res2.subscribe(x->System.out.println(x));
 
         Thread.sleep(3);
     }
