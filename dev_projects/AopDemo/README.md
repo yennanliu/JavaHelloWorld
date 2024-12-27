@@ -8,6 +8,7 @@
 - 靜態代理:
 	- https://youtu.be/gVpjE2dYD3w?si=C58N0pYmq0FI1HzG&t=256
 - 動態代理:
+	- https://youtu.be/pjGu5Y8e2vU?si=MUW7sIWMNfssyhWH
 
 ## Ref
 - https://youtu.be/U40ZiGNKmiI?si=FsOigwm9KeyqLvaT
