@@ -13,7 +13,7 @@
     - [webFluxPoc 尚硅谷](https://github.com/yennanliu/SpringPlayground/tree/main/webFluxPoc/src/main/java/com/yen/webFluxPoc/dev)
 - [Grpc Demo](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/GrpcDemo) : `grpc` request, response demo
 - [Guice Demo](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/GuiceDemo/GuiceDemo) : `Guice` injection framework demo
-- [AOP Demo](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/AopDemo)
+- [AOP Demo](https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/AopDemo): AOP（Aspect Oriented Programming intro）
 
 <details>
 <summary>Java Hello World</summary>
