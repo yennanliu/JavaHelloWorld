@@ -19,9 +19,20 @@ AOP（Aspect Oriented Programming，面向切面編程）是一種設計思想�
 - 靜態代理:
 	- https://youtu.be/gVpjE2dYD3w?si=C58N0pYmq0FI1HzG&t=256
 	- https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/AopDemo/src/main/java/org/example/StaticProxy
+
 - 動態代理:
 	- https://youtu.be/pjGu5Y8e2vU?si=MUW7sIWMNfssyhWH
 	- https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/AopDemo/src/main/java/org/example/DynamicProxy
+	- Types
+		- https://youtu.be/DMGd5egBl00?si=n68tbwFP-LMVaIv6&t=47
+		- type 1) JDK 動態代理
+			- 代理對象`有接口`(interface)
+			- 生成接口實現類的代理對象
+			- 代理對象, 目標對象都實現相同接口
+		- type 2) cglib 動態代理
+			- 代理對象沒有接口(interface)
+			- 通過`繼承`被代理的目標類
+			- 不需要目標類實現接口
 
 ## Ref
 - https://youtu.be/U40ZiGNKmiI?si=FsOigwm9KeyqLvaT
