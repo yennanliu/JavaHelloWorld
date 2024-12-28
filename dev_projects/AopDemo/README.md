@@ -7,8 +7,10 @@
 
 - 靜態代理:
 	- https://youtu.be/gVpjE2dYD3w?si=C58N0pYmq0FI1HzG&t=256
+	- https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/AopDemo/src/main/java/org/example/StaticProxy
 - 動態代理:
 	- https://youtu.be/pjGu5Y8e2vU?si=MUW7sIWMNfssyhWH
+	- https://github.com/yennanliu/JavaHelloWorld/tree/main/dev_projects/AopDemo/src/main/java/org/example/DynamicProxy
 
 ## Ref
 - https://youtu.be/U40ZiGNKmiI?si=FsOigwm9KeyqLvaT
