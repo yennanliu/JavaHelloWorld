@@ -24,7 +24,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>6.0.2</version>
+            <version>5.3.28</version> <!-- Last Spring 5 version supporting Java 11 -->
         </dependency>
 
         <dependency>
