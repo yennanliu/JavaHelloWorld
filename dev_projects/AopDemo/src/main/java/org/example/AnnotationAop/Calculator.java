@@ -1,6 +1,9 @@
 package org.example.AnnotationAop;
 
+import org.springframework.stereotype.Component;
+
 // https://youtu.be/U40ZiGNKmiI?si=f5OLDwVTKYnwCJVl
+
 public interface Calculator {
     int add(int i, int j);
     int sub(int i, int j);
