@@ -4,6 +4,7 @@
 ## Projects
 - [Java utils](https://github.com/yennanliu/JavaHelloWorld/tree/main/src/main/java/utils) : Useful java util scripts
 - [Design Pattern](https://github.com/yennanliu/JavaHelloWorld/tree/main/src/main/java/DesignPattern/Singleton) : Design Pattern examples
+    - [neetcode - 8-design-patterns](https://neetcode.io/courses/lessons/8-design-patterns)
 - [utility_Java](https://github.com/yennanliu/utility_Java) : legacy java project
 - [Spring play ground](https://github.com/yennanliu/SpringPlayground) : backend projects built with spring boot framework
 - [JVM faq](https://github.com/yennanliu/CS_basics/blob/master/doc/faq/faq_JVM.md) : JVM cheatsheet
