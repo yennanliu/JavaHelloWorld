@@ -5,6 +5,7 @@ package org.example.AnnotationAop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -45,6 +46,22 @@ public class LogAspect {
         Object[] args = joinPoint.getArgs();
     System.out.println(
         "[Logging] afterMethod (後置通知) start, 方法名: " + methodName + ", 參數 = " + Arrays.toString(args));
+    }
+
+    /** NOTE !!!
+     *
+     *  AfterReturning 可以回傳返回值
+     *
+     *   1) put `returning = "result"` in annotation
+     *   2) param name need to be same
+     *      e.g. Object result
+     */
+    @AfterReturning(value = "execution(* org.example.AnnotationAop.CalculatorImpl.*(..))", returning = "result")
+    public void afterReturningMethod(JoinPoint joinPoint, Object result){
+        String methodName = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        System.out.println(
+                "[Logging] afterMethod (返回通知) start, 方法名: " + methodName + ", 參數 = " + Arrays.toString(args) + ", 結果 = " + result);
     }
 
 }
