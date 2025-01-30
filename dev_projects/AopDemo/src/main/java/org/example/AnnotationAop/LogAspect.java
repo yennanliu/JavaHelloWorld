@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 /** class for AOP */
-@Component // IOC, managed by spring container
+@Component // IOC, make this class managed by spring boot container
 @Aspect // aspect class
 public class LogAspect {
 
@@ -32,7 +32,6 @@ public class LogAspect {
   @Before(value = "execution(public int org.example.AnnotationAop.CalculatorImpl.*(..))")
   public void beforeMethod(){
       System.out.println("[Logging] beforeMethod (前置通知) start");
-
   }
 
 }

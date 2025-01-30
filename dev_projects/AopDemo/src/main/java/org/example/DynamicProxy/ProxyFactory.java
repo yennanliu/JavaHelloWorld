@@ -13,7 +13,6 @@ public class ProxyFactory {
     // pass proxied instance (目標對象)
     private Object target;
 
-
     // constructor
     public ProxyFactory(Object target){
         this.target = target;
