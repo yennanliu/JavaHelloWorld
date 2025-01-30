@@ -6,25 +6,25 @@ import org.springframework.stereotype.Component;
 public class CalculatorImpl implements Calculator {
     @Override
     public int add(int i, int j) {
-        System.out.println("--> before");
+        //System.out.println("--> before");
         int res = i + j;
-        System.out.println("--> after");
+        //System.out.println("--> after");
         return res;
     }
 
     @Override
     public int sub(int i, int j) {
-        System.out.println("--> before");
+        //System.out.println("--> before");
         int res = i - j;
-        System.out.println("--> after");
+        //System.out.println("--> after");
         return res;
     }
 
     @Override
     public int mul(int i, int j) {
-        System.out.println("--> before");
+        //System.out.println("--> before");
         int res = i * j;
-        System.out.println("--> after");
+        //System.out.println("--> after");
         return res;
     }
 
@@ -33,9 +33,9 @@ public class CalculatorImpl implements Calculator {
         if (j == 0){
             return 0;
         }
-        System.out.println("--> before");
+        //System.out.println("--> before");
         int res = i / j;
-        System.out.println("--> after");
+        //System.out.println("--> after");
         return res;
     }
 }
