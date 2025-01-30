@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 /** class for AOP */
-@Component // IOC, make this class managed by spring boot container
+@Component // IOC (inverse of control), make this class managed by spring boot container
 @Aspect // aspect class
 public class LogAspect {
 
