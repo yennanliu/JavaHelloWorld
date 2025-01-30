@@ -4,6 +4,7 @@ package org.example.AnnotationAop;
 // https://youtu.be/ishWB-NpDWo?si=1VgP9aKA3pxa_jvx
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
@@ -80,5 +81,31 @@ public class LogAspect {
                 "[Logging] afterMethod (異常通知) start, 方法名: " + methodName + ", 參數 = " + Arrays.toString(args) + ", exception = " + ex);
     }
 
+    /**
+     *  環繞 @Around
+     *
+     *  -> will be triggered before, after target method
+     *
+     */
+    @Around(value = "execution(public int org.example.AnnotationAop.CalculatorImpl.*(..))")
+    public Object aroundMethod(ProceedingJoinPoint joinPoint){
+        String methodName = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        String argStr = Arrays.toString(args);
+        Object res = null;
+        try{
+            System.out.println("[Logging] aroundMethod (環繞通知) (目標方法之前)");
+            // call target method
+            res = joinPoint.proceed(); // call target method
+            System.out.println("[Logging] aroundMethod (環繞通知) (目標方法之後), res = " + res);
+        }catch (Throwable throwable){
+            throwable.printStackTrace();
+            System.out.println("[Logging] aroundMethod (環繞通知) exception = " + throwable);
+        }finally{
+            System.out.println("[Logging] aroundMethod (環繞通知) (目標方法執行完畢)");
+        }
+
+        return res;
+    }
 
 }
