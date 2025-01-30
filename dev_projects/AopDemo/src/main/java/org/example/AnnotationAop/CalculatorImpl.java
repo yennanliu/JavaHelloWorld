@@ -9,6 +9,10 @@ public class CalculatorImpl implements Calculator {
         //System.out.println("--> before");
         int res = i + j;
         //System.out.println("--> after");
+
+        // for `AfterThrowing` testing only
+        //int x = 1 / 0;
+
         return res;
     }
 

@@ -4,10 +4,7 @@ package org.example.AnnotationAop;
 // https://youtu.be/ishWB-NpDWo?si=1VgP9aKA3pxa_jvx
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -63,5 +60,25 @@ public class LogAspect {
         System.out.println(
                 "[Logging] afterMethod (返回通知) start, 方法名: " + methodName + ", 參數 = " + Arrays.toString(args) + ", 結果 = " + result);
     }
+
+
+    /**
+     *   異常 @AfterThrowing
+     *
+     *   if method face exception, AfterThrowing will be triggered
+     *
+     *
+     *   1) throwing = "ex"
+     *   2) Throwable ex
+     *
+     */
+    @AfterThrowing(value = "execution(* org.example.AnnotationAop.CalculatorImpl.*(..))", throwing = "ex")
+    public void afterThrowingMethod(JoinPoint joinPoint, Throwable ex){
+        String methodName = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        System.out.println(
+                "[Logging] afterMethod (異常通知) start, 方法名: " + methodName + ", 參數 = " + Arrays.toString(args) + ", exception = " + ex);
+    }
+
 
 }
