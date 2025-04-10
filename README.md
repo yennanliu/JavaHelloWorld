@@ -904,7 +904,7 @@
         - https://github.com/yennanliu/JavaHelloWorld/tree/main/src/main/java/DesignPattern
 
 
-    <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/oop_design.png"></p>
+<p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/oop_design.png"></p>
 
 </details>
 
