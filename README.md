@@ -898,9 +898,13 @@
         - https://www.youtube.com/watch?v=fVF31BTB97I&list=PLmOn9nNkQxJH-C-qEI2rpewHTI9ITpMkt&index=2
    - Ref
         - [neetcode - 8-design-patterns](https://neetcode.io/courses/lessons/8-design-patterns)
+        - https://blog.bytebytego.com/p/oop-design-patterns-and-anti-patterns?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65279cf0-3266-445d-852b-a45d6ac9afa4_2250x2862.png&open=false
 
    - Code
         - https://github.com/yennanliu/JavaHelloWorld/tree/main/src/main/java/DesignPattern
+
+
+    <p ><img src ="https://github.com/yennanliu/JavaHelloWorld/blob/main/doc/pic/oop_design.png"></p>
 
 </details>
 
