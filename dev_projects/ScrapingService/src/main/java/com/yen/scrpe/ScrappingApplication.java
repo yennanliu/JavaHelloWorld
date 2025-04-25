@@ -1,11 +1,14 @@
 package com.yen.scrpe;
 
+import com.yen.scrpe.Task.Factory.ScrapeTaskFactoryRxJavaGpt;
 import com.yen.scrpe.Task.Factory.ScrapeTaskFactoryV3Gpt;
 import com.yen.scrpe.Task.PokemonCollectTask;
 import com.yen.scrpe.Task.Factory.ScrapeTaskFactory;
+import com.yen.scrpe.Task.PokemonCollectTaskRxJavaGpt;
 import com.yen.scrpe.Task.PokemonCollectTaskV3Gpt;
 import com.yen.scrpe.service.ScrapeService;
 import com.yen.scrpe.service.ScrapeServiceMultiThreadV3Gpt;
+import com.yen.scrpe.service.ScrapeServiceRxJavaGpt;
 
 import java.io.IOException;
 
@@ -20,7 +23,7 @@ public class ScrappingApplication {
     Long start = System.currentTimeMillis();
 
     // to limit the number to scrape to 5
-    int LIMIT = 50; // 50;
+    int LIMIT = 5; // 50;
 
     /** V1 : single thread (original code ) */
 //    ScrapeService scrapeService = new ScrapeService();
@@ -31,11 +34,11 @@ public class ScrappingApplication {
 //    scrapeTaskFactory.run();
 
     /** V3 : multi thread (gpt) */
-    ScrapeServiceMultiThreadV3Gpt scrapeService = new ScrapeServiceMultiThreadV3Gpt();
-    PokemonCollectTaskV3Gpt pokemonCollectTask = new PokemonCollectTaskV3Gpt(scrapeService);
-
-    ScrapeTaskFactoryV3Gpt scrapeTaskFactory = new ScrapeTaskFactoryV3Gpt(scrapeService, pokemonCollectTask, LIMIT);
-    scrapeTaskFactory.run();
+//    ScrapeServiceMultiThreadV3Gpt scrapeService = new ScrapeServiceMultiThreadV3Gpt();
+//    PokemonCollectTaskV3Gpt pokemonCollectTask = new PokemonCollectTaskV3Gpt(scrapeService);
+//
+//    ScrapeTaskFactoryV3Gpt scrapeTaskFactory = new ScrapeTaskFactoryV3Gpt(scrapeService, pokemonCollectTask, LIMIT);
+//    scrapeTaskFactory.run();
 
 
 
@@ -58,6 +61,16 @@ public class ScrappingApplication {
     //        System.out.println("pokemonProducts.size() = " +
     // pokemonCollectTask.getPokemonProducts().size());
     //        System.out.println("pokemonProducts = " + pokemonCollectTask.getPokemonProducts());
+
+
+
+    /** V3 : RX JAVA (gpt) */
+    ScrapeServiceRxJavaGpt scrapeService = new ScrapeServiceRxJavaGpt();
+    PokemonCollectTaskRxJavaGpt pokemonCollectTask = new PokemonCollectTaskRxJavaGpt(scrapeService);
+    pokemonCollectTask.run(LIMIT);
+
+    ScrapeTaskFactoryRxJavaGpt scrapeTaskFactory = new ScrapeTaskFactoryRxJavaGpt(scrapeService, pokemonCollectTask, LIMIT);
+    scrapeTaskFactory.run();
 
     Long end = System.currentTimeMillis();
     System.out.println("-----> Total duration = " + (end - start));
