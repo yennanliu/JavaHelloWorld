@@ -1,5 +1,6 @@
 # JavaHelloWorld
 > `Java` basic demo & projects
+> [Blog Post](https://yennj12.js.org/yennj12_blog_V4/posts/comprehensive-java-learning-journey-fundamentals-to-advanced/)
 
 ## Projects
 - [Java utils](https://github.com/yennanliu/JavaHelloWorld/tree/main/src/main/java/utils) : Useful java util scripts
